@@ -1,14 +1,97 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
+  <ion-navbar>    
+    <ion-buttons right>
+      <button ion-button icon-only (click)="showAlert()"><ion-icon name="power" ></ion-icon></button>
+    </ion-buttons>
+    <ion-title align="center">
+        Home Page
+      </ion-title> 
+    <ion-buttons end>  
+        <button ion-button icon-only><ion-icon name="notifications"></ion-icon></button>             
+    </ion-buttons>    
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <form>
+      <ion-label stacked align="center">Services</ion-label>
+  <div class="row">
+   
+    <ion-card>
+        <ion-slides>
+      <ion-col>
+         
+      <ion-item>
+      <ion-avatar>
+        <img src="../assets/doctor.jpg"/><div class="card-title">Doctor</div>
+      </ion-avatar>      
+    </ion-item> 
+
+  </ion-col>
+  <ion-col>       
+        <ion-item>
+      <ion-avatar>
+        <img src="../assets/electrician.jpg"/><div class="card-title">Electrician</div>
+      </ion-avatar>
+    </ion-item>  
+  </ion-col>
+
+    <ion-col> 
+    <ion-item>
+        <ion-avatar>
+          <img src="../assets/plumber.jpg"/><div class="card-title">Plumber</div>
+        </ion-avatar>
+      </ion-item>   
+  </ion-col>
+ </ion-slides>
+      </ion-card>  
+    </div>
+  
+   
+  <div class="row">
+      <div class="col">
+          <ion-card>
+            <ion-buttons align="center">
+              <ion-icon name="logo-designernews" align="center"></ion-icon>
+              </ion-buttons>
+              <!-- <img src="../assets/news.jpg"/> -->
+              <div class="card-title" align="center">NEWS</div>              
+          </ion-card>
+      </div>
+      <div class="col">
+        <ion-card>
+          <ion-buttons align="center">
+            <ion-icon name="people" align="center"></ion-icon>
+          </ion-buttons>
+          <!-- <img src="assets/img/card-amsterdam.png"/> -->
+          <div class="card-title" align="center">MEMBERSHIP</div>         
+        </ion-card>
+      </div>
+
+
+  <div class="row">
+      <div class="col">
+          <ion-card>
+              <ion-buttons align="center">
+              <ion-icon name="clipboard" ></ion-icon>
+            </ion-buttons>
+            <!-- <img src="assets/img/card-sf.png"/> -->
+            <div class="card-title" align="center">RULES & REGULATIONS</div>            
+          </ion-card>
+      </div>
+      <div class="col">
+          <ion-card>
+              <ion-buttons align="center" >
+              <ion-icon name="school"></ion-icon>
+            </ion-buttons>
+            <!-- <img src="assets/img/card-madison.png"/> -->
+            <div class="card-title" align="center" >HELPDESK</div>            
+          </ion-card>
+      </div>
+    </div>
+    </div>
+
+    <button ion-button (click)="login()">Login</button>
+
+</form>
 </ion-content>
