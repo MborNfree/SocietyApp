@@ -1,3 +1,9 @@
+import { DosdontsPage } from './../pages/dosdonts/dosdonts';
+import { EmergencycontactlistPage } from './../pages/emergencycontactlist/emergencycontactlist';
+import { CommitteelistPage } from './../pages/committeelist/committeelist';
+import { ResidentlistPage } from './../pages/residentlist/residentlist';
+import { NewsPage } from './../pages/news/news';
+import { ProfilePage } from './../pages/profile/profile';
 import { LoginPage } from './../pages/login/login';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
@@ -12,7 +18,13 @@ import { HomePage } from '../pages/home/home';
   declarations: [
     MyApp,
     HomePage,
-    LoginPage
+    LoginPage,
+    ProfilePage,
+    ResidentlistPage,
+    NewsPage,
+    CommitteelistPage,
+    EmergencycontactlistPage,
+    DosdontsPage
 
   ],
   imports: [
@@ -23,7 +35,14 @@ import { HomePage } from '../pages/home/home';
   entryComponents: [
     MyApp,
     HomePage,
-    LoginPage
+    LoginPage,
+    ResidentlistPage,
+    ProfilePage,
+    NewsPage,
+    CommitteelistPage,
+    EmergencycontactlistPage,
+    DosdontsPage
+
   ],
   providers: [
     StatusBar,

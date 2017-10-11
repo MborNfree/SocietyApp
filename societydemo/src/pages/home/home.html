@@ -3,6 +3,12 @@
     <ion-buttons right>
       <button ion-button icon-only (click)="showAlert()"><ion-icon name="power" ></ion-icon></button>
     </ion-buttons>
+
+    <button ion-button icon-only menuToggle start>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+
+
     <ion-title align="center">
         Home Page
       </ion-title> 
@@ -50,7 +56,7 @@
    
   <div class="row">
       <div class="col">
-          <ion-card>
+          <ion-card  (click)="shownews()">
             <ion-buttons align="center">
               <ion-icon name="logo-designernews" align="center"></ion-icon>
               </ion-buttons>
@@ -91,7 +97,7 @@
     </div>
     </div>
 
-    <button ion-button (click)="login()">Login</button>
+    
 
 </form>
 </ion-content>

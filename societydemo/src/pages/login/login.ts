@@ -16,10 +16,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class LoginPage {
 
-  // login: { name1: string,  password1: string } = {    
-  //   name1: '',
-  //   password1 : '' 
-  // };
+  login: { name1: string,  password1: string } = {    
+    name1: '',
+    password1 : '' 
+  };
 
 
 
@@ -29,15 +29,12 @@ export class LoginPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }
-
   
     
   loginclick()
   {
     alert('Login Success!');
     this.navCtrl.push(HomePage);
-
-
   }  
 
 

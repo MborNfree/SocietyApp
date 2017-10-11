@@ -1,3 +1,4 @@
+import { NewsPage } from './../news/news';
 import { LoginPage } from './../login/login';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
@@ -13,11 +14,12 @@ export class HomePage {
 
   }
 
-
-  login()
+  shownews()
   {
-    this.navCtrl.push(LoginPage);
+    this.navCtrl.push(NewsPage);
   }
+
+
 
   
   showAlert()
