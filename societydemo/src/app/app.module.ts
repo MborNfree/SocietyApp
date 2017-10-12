@@ -1,3 +1,4 @@
+import { ElectricianlistPage } from './../pages/electricianlist/electricianlist';
 import { SignupPage } from './../pages/signup/signup';
 import { PlumberlistPage } from './../pages/plumberlist/plumberlist';
 import { DoctorlistPage } from './../pages/doctorlist/doctorlist';
@@ -29,7 +30,8 @@ import { HomePage } from '../pages/home/home';
     DoctorlistPage,
     DosdontsPage,
     PlumberlistPage,
-    SignupPage
+    SignupPage,
+    ElectricianlistPage
 
   ],
   imports: [
@@ -48,7 +50,8 @@ import { HomePage } from '../pages/home/home';
      DoctorlistPage,
     DosdontsPage,
     PlumberlistPage,
-    SignupPage  
+    SignupPage,
+    ElectricianlistPage 
    
 
   ],

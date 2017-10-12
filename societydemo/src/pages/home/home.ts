@@ -1,3 +1,4 @@
+import { ElectricianlistPage } from './../electricianlist/electricianlist';
 import { PlumberlistPage } from './../plumberlist/plumberlist';
 import { DoctorlistPage } from './../doctorlist/doctorlist';
 import { NewsPage } from './../news/news';
@@ -33,6 +34,11 @@ export class HomePage {
   showplumberlist()
   {
     this.navCtrl.push(PlumberlistPage);
+  }
+
+  showelectricianlist()
+  {
+    this.navCtrl.push(ElectricianlistPage);
   }
 
 
