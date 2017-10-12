@@ -18,21 +18,75 @@
 
 
 <ion-content padding>
-  <form>
+        <!-- <div>
+      <ion-segment [(ngModel)]="account.Instructions">
+          <ion-segment-button value="Do'S">
+          DO'S
+          </ion-segment-button>
+          <ion-segment-button value="Don'ts">
+              Don'ts
+          </ion-segment-button>
+        </ion-segment>
+     </div>
+    
+        <div [ngSwitch]="account.Instructions">
+            <ion-list *ngSwitchCase="'DoS'">
+              <ion-item>
+                <ion-thumbnail item-start>
+                  
+               
+                <h2>Keep Corridors! Lobby Clean and Tidy</h2>
+                <h2>Park your vehicles in allotted area.</h2>
+              </ion-thumbnail >
+              </ion-item >
+                </ion-list >
 
-    <div class="row">
-      <div class="col">
+              <ion-list *ngSwitchCase="'Donts'">
+                    <ion-item>
+                      <ion-thumbnail item-start>
+                        
+                      </ion-thumbnail>
+                      <h2>Do Not Keep Dust Bins, Plastic Bags in the Corridor/ Lobby</h2>
+                      <h2>Do not spit on the walls, floors, inside the lift, corridor, porch etc</h2>
+                    </ion-item>
+                </ion-list>
+            </div> -->
 
-          <button ion-button>Do's</button>
+         
+            <form>
+              <ion-item-group>
+                <ion-item-divider>
+                    DO'S
+                  </ion-item-divider>
+                    <ion-item >
+                        <h2>Keep Corridors! Lobby Clean and Tidy</h2>
+                        <h2>Park your vehicles in allotted area.</h2>
+                        <h2>Make Payment of the Maintenance charges within the stipulated time.</h2>
+                    </ion-item>
+                    <ion-item-divider>
+                        DON'TS
+                      </ion-item-divider>
+                      <ion-item >
+                          <h2>Do Not Keep Dust Bins, Plastic Bags in the Corridor/ Lobby</h2>
+                          <h2>Do not spit on the walls, floors, inside the lift, corridor, porch etc</h2>
+                          <h2>Do not overload lift beyond its capacity.</h2>
+                        </ion-item>
 
-</div>
-<div class="col">
-    <button ion-button>Don'ts</button>
-    </div>
-</div>
-    </form>
+
+              </ion-item-group>
 
 
 
 
+
+
+
+
+            </form>
+
+
+
+
+
+    
 </ion-content>

@@ -1,3 +1,4 @@
+import { SignupPage } from './../signup/signup';
 import { HomePage } from './../home/home';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
@@ -32,10 +33,20 @@ export class LoginPage {
   
     
   loginclick()
-  {
-    alert('Login Success!');
-    this.navCtrl.push(HomePage);
-  }  
+  {    
+      if (this.login.name1 != '' && this.login.name1 != "undefined" && this.login.name1 != 'null'  ) {
+        alert('Login Success!');
+       // alert('uid-'+this.login.name1);
+       // alert('pwd-'+this.login.password1);
 
+        this.navCtrl.push(HomePage);
 
+    }else{
+      alert('Not Login?Go to sign up!');
+      this.navCtrl.push(SignupPage);
+    }
+  }
+
+    // alert('Login Success!');
+    // this.navCtrl.push(HomePage);
 }

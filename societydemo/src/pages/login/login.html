@@ -14,23 +14,23 @@
 
 
 <ion-content padding>
-    <form>
+    
       <ion-list>
         <ion-item>
             <ion-label color="primary" stacked>UserName</ion-label>
-            <ion-input type="email" placeholder="Enter E-mail"  ></ion-input>
+            <ion-input type="email" placeholder="Enter E-mail" [(ngModel)]="login.name1" ></ion-input>
           </ion-item>
 
           <ion-item>
               <ion-label color="primary" stacked>Password</ion-label>
-              <ion-input type="password" placeholder="Enter Password"></ion-input>
+              <ion-input type="password" placeholder="Enter Password" [(ngModel)]="login.password1" ></ion-input>
             </ion-item>
 
             <div padding>
                 <button ion-button full    (click)="loginclick()" >Login</button>
-                <button ion-button  clear >Forgot Password?</button><button ion-button  clear>Sign Up</button>
+                <button ion-button  clear >Forgot Password?</button><button ion-button  clear  >Sign Up</button>
             </div>
 
           </ion-list>
-  </form>
+  
 </ion-content>

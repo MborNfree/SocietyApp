@@ -1,3 +1,5 @@
+import { PlumberlistPage } from './../plumberlist/plumberlist';
+import { DoctorlistPage } from './../doctorlist/doctorlist';
 import { NewsPage } from './../news/news';
 import { LoginPage } from './../login/login';
 import { Component } from '@angular/core';
@@ -19,9 +21,21 @@ export class HomePage {
     this.navCtrl.push(NewsPage);
   }
 
+  showdoctorlist()
+  {
+    this.navCtrl.push(DoctorlistPage);
+  }
+  // showelectricianlist()
+  // {
+  //   this.navCtrl.push(electricianpage);
+  // }
+
+  showplumberlist()
+  {
+    this.navCtrl.push(PlumberlistPage);
+  }
 
 
-  
   showAlert()
   {
     let confirm = this.alertCtrl.create({

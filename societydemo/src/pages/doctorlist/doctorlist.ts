@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the DosdontsPage page.
+ * Generated class for the DoctorlistPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,23 +10,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-dosdonts',
-  templateUrl: 'dosdonts.html',
+  selector: 'page-doctorlist',
+  templateUrl: 'doctorlist.html',
 })
-export class DosdontsPage {
+export class DoctorlistPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-
-  account: { Instructions: string} = {
-    Instructions:'',
-   
-  };
-
-
   ionViewDidLoad() {
-    console.log('ionViewDidLoad DosdontsPage');
+    console.log('ionViewDidLoad DoctorlistPage');
   }
 
 }

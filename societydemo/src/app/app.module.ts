@@ -1,5 +1,8 @@
+import { SignupPage } from './../pages/signup/signup';
+import { PlumberlistPage } from './../pages/plumberlist/plumberlist';
+import { DoctorlistPage } from './../pages/doctorlist/doctorlist';
 import { DosdontsPage } from './../pages/dosdonts/dosdonts';
-import { EmergencycontactlistPage } from './../pages/emergencycontactlist/emergencycontactlist';
+
 import { CommitteelistPage } from './../pages/committeelist/committeelist';
 import { ResidentlistPage } from './../pages/residentlist/residentlist';
 import { NewsPage } from './../pages/news/news';
@@ -23,8 +26,10 @@ import { HomePage } from '../pages/home/home';
     ResidentlistPage,
     NewsPage,
     CommitteelistPage,
-    EmergencycontactlistPage,
-    DosdontsPage
+    DoctorlistPage,
+    DosdontsPage,
+    PlumberlistPage,
+    SignupPage
 
   ],
   imports: [
@@ -40,8 +45,11 @@ import { HomePage } from '../pages/home/home';
     ProfilePage,
     NewsPage,
     CommitteelistPage,
-    EmergencycontactlistPage,
-    DosdontsPage
+     DoctorlistPage,
+    DosdontsPage,
+    PlumberlistPage,
+    SignupPage  
+   
 
   ],
   providers: [

@@ -1,5 +1,8 @@
+import { DoctorlistPage } from './../pages/doctorlist/doctorlist';
+import { PlumberlistPage } from './../pages/plumberlist/plumberlist';
+import { DosdontsPage } from './../pages/dosdonts/dosdonts';
 import { NewsPage } from './../pages/news/news';
-import { EmergencycontactlistPage } from './../pages/emergencycontactlist/emergencycontactlist';
+
 import { CommitteelistPage } from './../pages/committeelist/committeelist';
 import { ResidentlistPage } from './../pages/residentlist/residentlist';
 import { ProfilePage } from './../pages/profile/profile';
@@ -36,6 +39,9 @@ this.initializeApp();
            {title: 'News',component: NewsPage},
            {title: 'Committee List',component: CommitteelistPage},
            {title: 'Resident List',component: ResidentlistPage},
+           {title: 'DOS & DONTS',component: DosdontsPage},
+           {title: 'Plumber Lists',component: PlumberlistPage},
+           {title: 'Doctor List',component: DoctorlistPage},
        ];
 
        this.activePage=this.pages[0];
@@ -56,7 +62,7 @@ this.initializeApp();
       //this.nav.setRoot(page.component);
   
         if(page.component) {
-          
+
              this.nav.setRoot(page.component);
           } else {
             // Since the component is null, this is the logout option
