@@ -1,3 +1,7 @@
+import { EventlistPage } from './../pages/eventlist/eventlist';
+import { EmergencycontactlistPage } from './../pages/emergencycontactlist/emergencycontactlist';
+import { HomePage } from './../pages/home/home';
+import { ElectricianlistPage } from './../pages/electricianlist/electricianlist';
 import { DoctorlistPage } from './../pages/doctorlist/doctorlist';
 import { PlumberlistPage } from './../pages/plumberlist/plumberlist';
 import { DosdontsPage } from './../pages/dosdonts/dosdonts';
@@ -12,8 +16,9 @@ import { Nav, Platform, MenuController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { HomePage } from '../pages/home/home';
+
 @Component({
+ 
   templateUrl: 'app.html'
 })
 export class MyApp {
@@ -21,8 +26,12 @@ export class MyApp {
   rootPage: any = LoginPage;
   activePage:any;
   @ViewChild(Nav) nav: Nav;
+ 
+   pages: Array<{title: string, component: any,icon:string}>;
+   
 
-   pages: Array<{title: string, component: any}>;
+
+
 
   constructor(public platform: Platform, public statusBar: StatusBar,public splashScreen: SplashScreen,public menuCtrl: MenuController) {
     // platform.ready().then(() => {
@@ -34,14 +43,18 @@ export class MyApp {
 this.initializeApp();
       this.pages=[
 
-           {title: 'Home', component:HomePage},
-           {title: 'Profile',component: ProfilePage},
-           {title: 'News',component: NewsPage},
-           {title: 'Committee List',component: CommitteelistPage},
-           {title: 'Resident List',component: ResidentlistPage},
-           {title: 'DOS & DONTS',component: DosdontsPage},
-           {title: 'Plumber Lists',component: PlumberlistPage},
-           {title: 'Doctor List',component: DoctorlistPage},
+           {title: 'Home', component:HomePage,icon:'home'},
+           {title: 'Profile',component: ProfilePage,icon:'contact'},
+           {title: 'News',component: NewsPage,icon:'logo-designernews'},
+           {title: 'Committee List',component: CommitteelistPage,icon:'contacts'},
+           {title: 'Resident List',component: ResidentlistPage,icon:'people'},
+           {title: 'DOS & DONTS',component: DosdontsPage,icon:'clipboard'},
+           {title: 'Plumber Lists',component: PlumberlistPage,icon:'hammer'},
+           {title: 'Doctor List',component: DoctorlistPage,icon:'contact  '},
+           {title: 'Electrician List',component: ElectricianlistPage,icon:'construct'},
+           {title: 'Emergency Contacts',component:EmergencycontactlistPage,icon:''},
+           {title: 'Event List',component:EventlistPage,icon:''},
+
        ];
 
        this.activePage=this.pages[0];
@@ -65,14 +78,11 @@ this.initializeApp();
 
              this.nav.setRoot(page.component);
           } else {
-            // Since the component is null, this is the logout option
-            // ...
-  
-            // logout logic
-            // ...
-  
+            // Since the component is null, this is the logout option           
+            // logout logic            
             // redirect to home
           this.nav.setRoot(HomePage);
       }
     }
-  }
+  } 
+  

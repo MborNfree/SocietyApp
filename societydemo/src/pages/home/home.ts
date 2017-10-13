@@ -1,3 +1,4 @@
+import { CommitteelistPage } from './../committeelist/committeelist';
 import { ElectricianlistPage } from './../electricianlist/electricianlist';
 import { PlumberlistPage } from './../plumberlist/plumberlist';
 import { DoctorlistPage } from './../doctorlist/doctorlist';
@@ -21,6 +22,12 @@ export class HomePage {
   {
     this.navCtrl.push(NewsPage);
   }
+
+  showmembers()
+  {
+  this.navCtrl.push(CommitteelistPage);
+  }
+
 
   showdoctorlist()
   {

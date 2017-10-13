@@ -1,3 +1,6 @@
+import { EventlistPage } from './../pages/eventlist/eventlist';
+import { AccordionListComponent } from './../components/accordion-list/accordion-list';
+import { EmergencycontactlistPage } from './../pages/emergencycontactlist/emergencycontactlist';
 import { ElectricianlistPage } from './../pages/electricianlist/electricianlist';
 import { SignupPage } from './../pages/signup/signup';
 import { PlumberlistPage } from './../pages/plumberlist/plumberlist';
@@ -31,7 +34,10 @@ import { HomePage } from '../pages/home/home';
     DosdontsPage,
     PlumberlistPage,
     SignupPage,
-    ElectricianlistPage
+    ElectricianlistPage,
+    EmergencycontactlistPage,
+    AccordionListComponent,
+    EventlistPage
 
   ],
   imports: [
@@ -51,7 +57,10 @@ import { HomePage } from '../pages/home/home';
     DosdontsPage,
     PlumberlistPage,
     SignupPage,
-    ElectricianlistPage 
+    ElectricianlistPage,
+    EmergencycontactlistPage,
+    AccordionListComponent,
+    EventlistPage 
    
 
   ],
