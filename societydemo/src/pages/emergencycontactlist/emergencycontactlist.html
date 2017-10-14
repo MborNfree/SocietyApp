@@ -16,34 +16,15 @@
 <ion-content padding>
 <form>
 
-    <ion-list>
-        <button (click)="expandItem(item)" ion-item *ngFor="let item of items">
-          <ion-thumbnail item-start>
-            <img src="http://placehold.it/100">
-          </ion-thumbnail>
-          <h2>Mumbai Police</h2>
-         
-          <!-- //<accordion-list>
-              <ion-item>
-                <h2>Hello Everyone</h2>
-              </ion-item>
-              <ion-item>
-                <h2>Hello Everyone</h2>
-              </ion-item>
-          </accordion-list> -->
-          <button ion-button clear item-end>View</button>
-        </button>
-      </ion-list>
-
-    
-
-  
-
-
-
-
-
-
+  <ion-list>
+    <ion-item *ngFor="let d of diseases; let i=index" text-wrap (click)="toggleGroup(i)" [ngClass]="{active: isGroupShown(i)}">
+      <h3>
+        {{d.title}}
+        <ion-icon color="success" item-right [name]="isGroupShown(i) ? 'arrow-dropdown' : 'arrow-dropright'"></ion-icon>
+      </h3>
+      <div *ngIf="isGroupShown(i)">{{d.description}}</div>
+    </ion-item>
+  </ion-list> 
 
 
   </form>

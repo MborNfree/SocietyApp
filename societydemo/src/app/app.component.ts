@@ -1,3 +1,4 @@
+import { SocietybillPage } from './../pages/societybill/societybill';
 import { EventlistPage } from './../pages/eventlist/eventlist';
 import { EmergencycontactlistPage } from './../pages/emergencycontactlist/emergencycontactlist';
 import { HomePage } from './../pages/home/home';
@@ -17,6 +18,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 
+ declare var test;
 @Component({
  
   templateUrl: 'app.html'
@@ -54,7 +56,7 @@ this.initializeApp();
            {title: 'Electrician List',component: ElectricianlistPage,icon:'construct'},
            {title: 'Emergency Contacts',component:EmergencycontactlistPage,icon:''},
            {title: 'Event List',component:EventlistPage,icon:''},
-
+           {title: 'Society Bill',component:SocietybillPage,icon:''}
        ];
 
        this.activePage=this.pages[0];

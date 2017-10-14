@@ -2,38 +2,24 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the EventlistPage page.
+ * Generated class for the SocietybillPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var test;
+
 @IonicPage()
 @Component({
-  selector: 'page-eventlist',
-  templateUrl: 'eventlist.html',
+  selector: 'page-societybill',
+  templateUrl: 'societybill.html',
 })
-export class EventlistPage {
+export class SocietybillPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-
-   
-    test.thisistestfunction();
   }
-
 
   ionViewDidLoad() {
-      
-    console.log('ionViewDidLoad EventlistPage');
+    console.log('ionViewDidLoad SocietybillPage');
   }
-
-  
-
-
-
-
-    
-
-    
 
 }

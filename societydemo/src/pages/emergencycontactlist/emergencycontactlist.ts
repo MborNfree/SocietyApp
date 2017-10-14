@@ -13,50 +13,33 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   selector: 'page-emergencycontactlist',
   templateUrl: 'emergencycontactlist.html',
 })
+
 export class EmergencycontactlistPage {
 
-
-  items: any = [];
-  itemHeight: number = 0;
-
-
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-
-    this.items = [
-      {expanded: false},
-      {expanded: false},
-      {expanded: false},
-      {expanded: false},
-      {expanded: false},
-      {expanded: false},
-      {expanded: false},
-      {expanded: false},
-      {expanded: false}
+  shownGroup = null;
+  diseases = [
+    { title: "Mumbai Police", description: "Tel:+91 22 22620825" },
+    { title: "Ambulance", description: "Tel:+011 3941676" },
+    { title: "Fire Brigade", description: "Tel:+011 3578771441" },
   ];
 
+  toggleGroup(group) {
+    if (this.isGroupShown(group)) {
+        this.shownGroup = null;
+    } else {
+        this.shownGroup = group;
+    }
+};
+isGroupShown(group) {
+    return this.shownGroup === group;
+};
+
+  constructor(public navCtrl: NavController, public navParams: NavParams) {    
   }
-
-
-
-  expandItem(item){
-    
-           this.items.map((listItem) => {
-    
-               if(item == listItem){
-                   listItem.expanded = !listItem.expanded;
-               } else {
-                   listItem.expanded = false;
-               }
-    
-               return listItem;
-    
-           });
-    
-       }
-
+ 
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad EmergencycontactlistPage');
+    console.log('ionViewDidLoad EmergencycontactlistPage'); 
+
   }
 }

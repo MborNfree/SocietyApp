@@ -1,3 +1,4 @@
+import { SocietybillPage } from './../pages/societybill/societybill';
 import { EventlistPage } from './../pages/eventlist/eventlist';
 import { AccordionListComponent } from './../components/accordion-list/accordion-list';
 import { EmergencycontactlistPage } from './../pages/emergencycontactlist/emergencycontactlist';
@@ -37,7 +38,8 @@ import { HomePage } from '../pages/home/home';
     ElectricianlistPage,
     EmergencycontactlistPage,
     AccordionListComponent,
-    EventlistPage
+    EventlistPage,
+    SocietybillPage
 
   ],
   imports: [
@@ -60,7 +62,8 @@ import { HomePage } from '../pages/home/home';
     ElectricianlistPage,
     EmergencycontactlistPage,
     AccordionListComponent,
-    EventlistPage 
+    EventlistPage,
+    SocietybillPage 
    
 
   ],
