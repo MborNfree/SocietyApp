@@ -1,10 +1,13 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule} from '@angular/core';
 import { AccordionListComponent } from './accordion-list/accordion-list';
+import { FlashCardComponent } from './flash-card/flash-card';
+
 @NgModule({
-	declarations: [AccordionListComponent],
-	imports: [],
-	exports: [AccordionListComponent],
-	schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+	declarations: [AccordionListComponent,
+    FlashCardComponent
+   
+    ]
 	
 })
+
 export class ComponentsModule {}

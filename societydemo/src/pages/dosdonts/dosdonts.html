@@ -18,12 +18,12 @@
 
 
 <ion-content padding>
-        <!-- <div>
+      <div>
       <ion-segment [(ngModel)]="account.Instructions">
-          <ion-segment-button value="Do'S">
+          <ion-segment-button value="DoS">
           DO'S
           </ion-segment-button>
-          <ion-segment-button value="Don'ts">
+          <ion-segment-button value="Donts">
               Don'ts
           </ion-segment-button>
         </ion-segment>
@@ -32,34 +32,55 @@
         <div [ngSwitch]="account.Instructions">
             <ion-list *ngSwitchCase="'DoS'">
               <ion-item>
-                <ion-thumbnail item-start>
-                  
-               
-                <h2>Keep Corridors! Lobby Clean and Tidy</h2>
-                <h2>Park your vehicles in allotted area.</h2>
-              </ion-thumbnail >
-              </ion-item >
+              <ul>               
+                <li>Keep Corridors! Lobby Clean and Tidy</li>
+                </ul>
+              <ul>
+                <li>Park your vehicles in allotted area.</li>
+              </ul>
+              <ul>
+                <li>Make Payment of the Maintenance charges within the stipulated time.</li>
+              </ul>
+               <ul>
+                <li>Make Payment of the Maintenance charges within the stipulated time.</li>
+              </ul>
+               <ul>
+                <li>Operate Lift gently to avoid Frequent Breakdown and Inconvenience to the residents</li>
+              </ul>
+              </ion-item>
                 </ion-list >
 
               <ion-list *ngSwitchCase="'Donts'">
                     <ion-item>
-                      <ion-thumbnail item-start>
-                        
-                      </ion-thumbnail>
-                      <h2>Do Not Keep Dust Bins, Plastic Bags in the Corridor/ Lobby</h2>
-                      <h2>Do not spit on the walls, floors, inside the lift, corridor, porch etc</h2>
+                      <ul>
+                      <li>Do Not Keep Dust Bins, Plastic Bags in the Corridor/ Lobby</li>
+                      </ul>
+                    <ul>
+                      <li>Do not overload lift beyond its capacity.</li>
+                    </ul>
+                     <ul>
+                      <li>Do not spit on the walls, floors, inside the lift, corridor, porch etc</li>
+                    </ul>
+                     <ul>
+                      <li>Do not park your vehicles on the Main Entrance.</li>
+                    </ul>
+                    <ul>
+                      <li>Do not throw Wastes/Articles from Windows/ Balconies</li>
+                    </ul>
                     </ion-item>
                 </ion-list>
-            </div> -->
+            </div> 
 
          
-            <form>
+            <!-- <form>
               <ion-item-group>
                 <ion-item-divider>
                     DO'S
                   </ion-item-divider>
                     <ion-item >
-                        <h2>Keep Corridors! Lobby Clean and Tidy</h2>
+                        <ul>
+                          <li>Keep Corridors! Lobby Clean and Tidy</li>
+                        </ul>
                         <h2>Park your vehicles in allotted area.</h2>
                         <h2>Make Payment of the Maintenance charges within the stipulated time.</h2>
                     </ion-item>
@@ -74,19 +95,6 @@
 
 
               </ion-item-group>
+            </form> -->
 
-
-
-
-
-
-
-
-            </form>
-
-
-
-
-
-    
 </ion-content>
