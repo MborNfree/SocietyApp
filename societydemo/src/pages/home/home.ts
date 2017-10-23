@@ -3,7 +3,7 @@ import { ElectricianlistPage } from './../electricianlist/electricianlist';
 import { PlumberlistPage } from './../plumberlist/plumberlist';
 import { DoctorlistPage } from './../doctorlist/doctorlist';
 import { NewsPage } from './../news/news';
-import { LoginPage } from './../login/login';
+
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import{ AlertController } from 'ionic-angular';
