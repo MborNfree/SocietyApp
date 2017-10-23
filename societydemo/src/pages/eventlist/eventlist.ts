@@ -8,7 +8,7 @@ import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angu
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var invokeGoBack: any;
+
 @IonicPage()
 @Component({
   selector: 'page-eventlist',
