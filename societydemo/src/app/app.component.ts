@@ -1,3 +1,4 @@
+import { DocumentuploadPage } from './../pages/documentupload/documentupload';
 import { SocietybillPage } from './../pages/societybill/societybill';
 import { EventlistPage } from './../pages/eventlist/eventlist';
 import { EmergencycontactlistPage } from './../pages/emergencycontactlist/emergencycontactlist';
@@ -20,17 +21,17 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 
 @Component({
- 
+
   templateUrl: 'app.html'
 })
 export class MyApp {
- 
-  rootPage: any = LoginPage;
+
+  rootPage: any = DocumentuploadPage;
   activePage:any;
   @ViewChild(Nav) nav: Nav;
- 
+
    pages: Array<{title: string, component: any,icon:string}>;
-   
+
 
 
 
@@ -71,7 +72,7 @@ this.initializeApp();
       });
     }
 
-    
+
 
 
 
@@ -79,16 +80,15 @@ this.initializeApp();
       // Reset the content nav to have just this page
       // we wouldn't want the back button to show in this scenario
       //this.nav.setRoot(page.component);
-  
+
         if(page.component) {
 
              this.nav.setRoot(page.component);
           } else {
-            // Since the component is null, this is the logout option           
-            // logout logic            
+            // Since the component is null, this is the logout option
+            // logout logic
             // redirect to home
           this.nav.setRoot(HomePage);
       }
     }
-  } 
-  
+  }
