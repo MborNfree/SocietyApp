@@ -24,7 +24,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
   templateUrl: 'app.html'
 })
-export class MyApp {
+export class MySocietyApp {
 
   rootPage: any = LoginPage;
   activePage:any;
@@ -57,7 +57,8 @@ this.initializeApp();
            {title: 'Electrician List',component: ElectricianlistPage,icon:'construct'},
            {title: 'Emergency Contacts',component:EmergencycontactlistPage,icon:''},
            {title: 'Event List',component:EventlistPage,icon:''},
-           {title: 'Society Bill',component:SocietybillPage,icon:''}
+           {title: 'Society Bill',component:SocietybillPage,icon:''},
+           {title: 'Upload Document',component:DocumentuploadPage,icon:''}
        ];
 
        this.activePage=this.pages[0];

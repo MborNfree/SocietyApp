@@ -1,8 +1,10 @@
+import { LoginPage } from './../login/login';
 import { CommitteelistPage } from './../committeelist/committeelist';
 import { ElectricianlistPage } from './../electricianlist/electricianlist';
 import { PlumberlistPage } from './../plumberlist/plumberlist';
 import { DoctorlistPage } from './../doctorlist/doctorlist';
 import { NewsPage } from './../news/news';
+
 
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
@@ -65,7 +67,7 @@ export class HomePage {
           text: 'YES',
           handler: () => {
             console.log('YES clicked');
-            
+            this.navCtrl.push(LoginPage);
           }
         }
       ]
