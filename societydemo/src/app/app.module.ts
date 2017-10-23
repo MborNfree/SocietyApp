@@ -1,3 +1,6 @@
+import { EventlistPage } from './../pages/eventlist/eventlist';
+import { EmergencycontactlistPage } from './../pages/emergencycontactlist/emergencycontactlist';
+import { SocietybillPage } from './../pages/societybill/societybill';
 import { DocumentuploadPage } from './../pages/documentupload/documentupload';
 import { ElectricianlistPage } from './../pages/electricianlist/electricianlist';
 import { SignupPage } from './../pages/signup/signup';
@@ -34,7 +37,10 @@ import { HomePage } from '../pages/home/home';
     PlumberlistPage,
     SignupPage,
     ElectricianlistPage,
-    DocumentuploadPage
+    DocumentuploadPage,
+    SocietybillPage,
+    EmergencycontactlistPage,
+    EventlistPage
 
   ],
   imports: [
@@ -55,7 +61,10 @@ import { HomePage } from '../pages/home/home';
     PlumberlistPage,
     SignupPage,
     ElectricianlistPage,
-    DocumentuploadPage
+    DocumentuploadPage,
+    SocietybillPage,
+    EmergencycontactlistPage,
+    EventlistPage
 
 
   ],
@@ -65,4 +74,6 @@ import { HomePage } from '../pages/home/home';
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
+
+
 export class AppModule {}

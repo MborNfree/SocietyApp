@@ -26,14 +26,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 })
 export class MyApp {
 
-  rootPage: any = DocumentuploadPage;
+  rootPage: any = LoginPage;
   activePage:any;
   @ViewChild(Nav) nav: Nav;
 
    pages: Array<{title: string, component: any,icon:string}>;
 
 
-
+ 
 
 
   constructor(public platform: Platform, public statusBar: StatusBar,public splashScreen: SplashScreen,public menuCtrl: MenuController) {
