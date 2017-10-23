@@ -34,15 +34,17 @@ export class LoginPage {
     
   loginclick()
   {    
-      if (this.login.name1 != '' && this.login.name1 != "undefined" && this.login.name1 != 'null'  ) {
+      if (this.login.name1 != '' && this.login.name1 != '' && this.login.name1 != 'null'   && this.login.password1 != 'null' ) {
         alert('Login Success!');
        // alert('uid-'+this.login.name1);
        // alert('pwd-'+this.login.password1);
 
         this.navCtrl.push(HomePage);
 
-    }else{
+    }
+    else{
       alert('Not Login?Go to sign up!');
+      
       this.navCtrl.push(SignupPage);
     }
   }

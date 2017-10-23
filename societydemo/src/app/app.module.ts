@@ -1,4 +1,12 @@
+<<<<<<< HEAD
 import { DocumentuploadPage } from './../pages/documentupload/documentupload';
+=======
+
+import { SocietybillPage } from './../pages/societybill/societybill';
+import { EventlistPage } from './../pages/eventlist/eventlist';
+import { AccordionListComponent } from './../components/accordion-list/accordion-list';
+import { EmergencycontactlistPage } from './../pages/emergencycontactlist/emergencycontactlist';
+>>>>>>> a5037a190b06e009e754d76531bda8c37616e6a6
 import { ElectricianlistPage } from './../pages/electricianlist/electricianlist';
 import { SignupPage } from './../pages/signup/signup';
 import { PlumberlistPage } from './../pages/plumberlist/plumberlist';
@@ -11,13 +19,14 @@ import { NewsPage } from './../pages/news/news';
 import { ProfilePage } from './../pages/profile/profile';
 import { LoginPage } from './../pages/login/login';
 import { BrowserModule } from '@angular/platform-browser';
-import { ErrorHandler, NgModule } from '@angular/core';
+import { ErrorHandler, NgModule} from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+
 
 @NgModule({
   declarations: [
@@ -33,7 +42,16 @@ import { HomePage } from '../pages/home/home';
     PlumberlistPage,
     SignupPage,
     ElectricianlistPage,
+<<<<<<< HEAD
     DocumentuploadPage
+=======
+    EmergencycontactlistPage,
+    AccordionListComponent,
+    EventlistPage,
+    SocietybillPage,
+    
+    
+>>>>>>> a5037a190b06e009e754d76531bda8c37616e6a6
 
   ],
   imports: [
@@ -54,8 +72,18 @@ import { HomePage } from '../pages/home/home';
     PlumberlistPage,
     SignupPage,
     ElectricianlistPage,
+<<<<<<< HEAD
     DocumentuploadPage
 
+=======
+    EmergencycontactlistPage,
+    AccordionListComponent,
+    EventlistPage,
+    SocietybillPage,
+    
+  
+   
+>>>>>>> a5037a190b06e009e754d76531bda8c37616e6a6
 
   ],
   providers: [

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Platform } from 'ionic-angular';
 
 /**
  * Generated class for the DosdontsPage page.
@@ -15,7 +15,12 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class DosdontsPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  Instructions:string="DoS";
+  //  isAndroid: boolean = true;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams,public Platform:Platform) {
+
+    //  this.isAndroid = Platform.is('android');
   }
 
 
