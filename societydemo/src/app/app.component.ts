@@ -55,10 +55,10 @@ this.initializeApp();
            {title: 'Plumber Lists',component: PlumberlistPage,icon:'hammer'},
            {title: 'Doctor List',component: DoctorlistPage,icon:'contact'},
            {title: 'Electrician List',component: ElectricianlistPage,icon:'construct'},
-           {title: 'Emergency Contacts',component:EmergencycontactlistPage,icon:''},
+           {title: 'Emergency Contacts',component:EmergencycontactlistPage,icon:'md-call'},
            {title: 'Event List',component:EventlistPage,icon:''},
            {title: 'Society Bill',component:SocietybillPage,icon:''},
-           {title: 'Upload Document',component:DocumentuploadPage,icon:''}
+           {title: 'Upload Document',component:DocumentuploadPage,icon:'download'}
        ];
 
        this.activePage=this.pages[0];
