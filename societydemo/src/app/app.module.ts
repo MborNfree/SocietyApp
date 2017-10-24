@@ -1,6 +1,8 @@
+import { BillingchargesPage } from './../pages/billingcharges/billingcharges';
+import { SelectBillPage } from './../pages/select-bill/select-bill';
 import { EventlistPage } from './../pages/eventlist/eventlist';
 import { EmergencycontactlistPage } from './../pages/emergencycontactlist/emergencycontactlist';
-import { SocietybillPage } from './../pages/societybill/societybill';
+
 import { DocumentuploadPage } from './../pages/documentupload/documentupload';
 import { ElectricianlistPage } from './../pages/electricianlist/electricianlist';
 import { SocietybillPage } from './../pages/societybill/societybill';
@@ -8,8 +10,7 @@ import { SignupPage } from './../pages/signup/signup';
 import { PlumberlistPage } from './../pages/plumberlist/plumberlist';
 import { DoctorlistPage } from './../pages/doctorlist/doctorlist';
 import { DosdontsPage } from './../pages/dosdonts/dosdonts';
-import { EventlistPage } from './../pages/eventlist/eventlist';
-import { EmergencycontactlistPage } from './../pages/emergencycontactlist/emergencycontactlist';
+
 
 import { CommitteelistPage } from './../pages/committeelist/committeelist';
 import { ResidentlistPage } from './../pages/residentlist/residentlist';
@@ -42,13 +43,10 @@ import { HomePage } from '../pages/home/home';
     ElectricianlistPage,
     DocumentuploadPage,
     SocietybillPage,
-<<<<<<< HEAD
     EventlistPage,
-    EmergencycontactlistPage
-=======
     EmergencycontactlistPage,
-    EventlistPage
->>>>>>> fe0bbe5491ebb9c3275cd5cedf54f7e8711e786a
+    SelectBillPage,
+    BillingchargesPage
 
   ],
   imports: [
@@ -71,14 +69,11 @@ import { HomePage } from '../pages/home/home';
     ElectricianlistPage,
     DocumentuploadPage,
     SocietybillPage,
-<<<<<<< HEAD
     EventlistPage,
-    EmergencycontactlistPage
-
-=======
     EmergencycontactlistPage,
-    EventlistPage
->>>>>>> fe0bbe5491ebb9c3275cd5cedf54f7e8711e786a
+    SelectBillPage,
+    BillingchargesPage
+
 
 
   ],
