@@ -1,23 +1,23 @@
 <ion-header>
     <!-- <ion-navbar hide-back-button="true"> -->
-     
+
       <ion-toolbar>
-      
+
     <button ion-button icon-only menuToggle start>
         <ion-icon name="menu"></ion-icon>
     </button>
 
     <ion-buttons right>
         <button ion-button icon-only (click)="showAlert()"><ion-icon name="power" ></ion-icon></button>
-      </ion-buttons> 
+      </ion-buttons>
     <ion-title align="center">
         Home Page
       </ion-title>
-       
-    <ion-buttons end>  
-        <button ion-button icon-only><ion-icon name="notifications"></ion-icon></button>             
-    </ion-buttons>  
-  
+
+    <ion-buttons end>
+        <button ion-button icon-only><ion-icon name="notifications"></ion-icon></button>
+    </ion-buttons>
+
   <!-- </ion-navbar> -->
   </ion-toolbar>
 </ion-header>
@@ -26,35 +26,35 @@
   <form>
       <ion-label stacked align="center">Services</ion-label>
   <div class="row">
-   
+
     <ion-card >
         <ion-slides>
       <ion-col>
-         
+
       <ion-item (click)="showdoctorlist()">
       <ion-avatar>
-        <img src="../assets/doctor.jpg"/><div class="card-title">Doctor</div>
-      </ion-avatar>      
-    </ion-item> 
+        <img src="assets/doctor.jpg"/><div class="card-title">Doctor</div>
+      </ion-avatar>
+    </ion-item>
 
   </ion-col>
-  <ion-col>       
+  <ion-col>
         <ion-item (click)="showelectricianlist()">
       <ion-avatar>
-        <img src="../assets/electrician.jpg"/><div class="card-title">Electrician</div>
+        <img src="assets/electrician.jpg"/><div class="card-title">Electrician</div>
       </ion-avatar>
-    </ion-item>  
+    </ion-item>
   </ion-col>
 
-    <ion-col> 
+    <ion-col>
     <ion-item (click)="showplumberlist()">
         <ion-avatar>
-          <img src="../assets/plumber.jpg"/><div class="card-title">Plumber</div>
+          <img src="assets/plumber.jpg"/><div class="card-title">Plumber</div>
         </ion-avatar>
-      </ion-item>   
+      </ion-item>
   </ion-col>
  </ion-slides>
-      </ion-card>  
+      </ion-card>
     </div>
   <div class="row">
       <div class="col">
@@ -63,7 +63,7 @@
               <ion-icon name="logo-designernews" align="center"></ion-icon>
               </ion-buttons>
               <!-- <img src="../assets/news.jpg"/> -->
-              <div class="card-title" align="center">NEWS</div>              
+              <div class="card-title" align="center">NEWS</div>
           </ion-card>
       </div>
       <div class="col">
@@ -72,7 +72,7 @@
             <ion-icon name="people" align="center"></ion-icon>
           </ion-buttons>
           <!-- <img src="assets/img/card-amsterdam.png"/> -->
-          <div class="card-title" align="center">MEMBERSHIP</div>         
+          <div class="card-title" align="center">MEMBERSHIP</div>
         </ion-card>
       </div>
 
@@ -84,7 +84,7 @@
               <ion-icon name="clipboard" ></ion-icon>
             </ion-buttons>
             <!-- <img src="assets/img/card-sf.png"/> -->
-            <div class="card-title" align="center">RULES & REGULATIONS</div>            
+            <div class="card-title" align="center">RULES & REGULATIONS</div>
           </ion-card>
       </div>
       <div class="col">
@@ -93,13 +93,13 @@
               <ion-icon name="school"></ion-icon>
             </ion-buttons>
             <!-- <img src="assets/img/card-madison.png"/> -->
-            <div class="card-title" align="center" >HELPDESK</div>            
+            <div class="card-title" align="center" >HELPDESK</div>
           </ion-card>
       </div>
     </div>
     </div>
 
-    
+
 
 </form>
 </ion-content>
