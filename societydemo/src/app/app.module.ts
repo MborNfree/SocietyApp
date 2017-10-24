@@ -19,13 +19,13 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
-import { MyApp } from './app.component';
+import { MySocietyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 
 
 @NgModule({
   declarations: [
-    MyApp,
+    MySocietyApp,
     HomePage,
     LoginPage,
     ProfilePage,
@@ -45,11 +45,11 @@ import { HomePage } from '../pages/home/home';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MySocietyApp)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp,
+    MySocietyApp,
     HomePage,
     LoginPage,
     ResidentlistPage,

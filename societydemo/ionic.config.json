@@ -1,6 +1,6 @@
 {
   "name": "societydemo",
-  "app_id": "",
+  "app_id": "4bff88b5",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}
