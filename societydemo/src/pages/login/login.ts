@@ -39,7 +39,10 @@ export class LoginPage {
        // alert('uid-'+this.login.name1);
        // alert('pwd-'+this.login.password1);
 
-        this.navCtrl.push(HomePage);
+        this.navCtrl.push(HomePage, {
+          thing1: this.login.name1,
+          thing2: this.login.password1
+      });
 
     }
     else{

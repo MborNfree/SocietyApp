@@ -1,9 +1,12 @@
 import { DocumentuploadPage } from './../pages/documentupload/documentupload';
 import { ElectricianlistPage } from './../pages/electricianlist/electricianlist';
+import { SocietybillPage } from './../pages/societybill/societybill';
 import { SignupPage } from './../pages/signup/signup';
 import { PlumberlistPage } from './../pages/plumberlist/plumberlist';
 import { DoctorlistPage } from './../pages/doctorlist/doctorlist';
 import { DosdontsPage } from './../pages/dosdonts/dosdonts';
+import { EventlistPage } from './../pages/eventlist/eventlist';
+import { EmergencycontactlistPage } from './../pages/emergencycontactlist/emergencycontactlist';
 
 import { CommitteelistPage } from './../pages/committeelist/committeelist';
 import { ResidentlistPage } from './../pages/residentlist/residentlist';
@@ -34,7 +37,10 @@ import { HomePage } from '../pages/home/home';
     PlumberlistPage,
     SignupPage,
     ElectricianlistPage,
-    DocumentuploadPage
+    DocumentuploadPage,
+    SocietybillPage,
+    EventlistPage,
+    EmergencycontactlistPage
 
   ],
   imports: [
@@ -55,7 +61,11 @@ import { HomePage } from '../pages/home/home';
     PlumberlistPage,
     SignupPage,
     ElectricianlistPage,
-    DocumentuploadPage
+    DocumentuploadPage,
+    SocietybillPage,
+    EventlistPage,
+    EmergencycontactlistPage
+
 
 
   ],
