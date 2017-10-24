@@ -33,7 +33,7 @@ export class MySocietyApp {
    pages: Array<{title: string, component: any,icon:string}>;
 
 
-
+ 
 
 
   constructor(public platform: Platform, public statusBar: StatusBar,public splashScreen: SplashScreen,public menuCtrl: MenuController) {
