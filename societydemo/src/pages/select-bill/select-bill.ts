@@ -16,14 +16,33 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class SelectBillPage {
 
+   modeofpayment: { mptm: string; }[];
+ 
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+
+
+    this.modeofpayment = [
+      {mptm:'NEFT'},
+      {mptm:'Credit'},
+      {mptm:'Debit'},
+    ]
+
   }
+
+
+   account:{modeofpay:string , payamount:string,charges:string}=
+  {
+    modeofpay:'',
+    payamount:'',
+    charges:'',
+  };
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SelectBillPage');
   }
 
-
+ 
 viewbill()
 {
 this.navCtrl.push(BillingchargesPage);

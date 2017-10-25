@@ -1,3 +1,4 @@
+import { SelectBillPage } from './../select-bill/select-bill';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -21,5 +22,12 @@ export class BillingchargesPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad BillingchargesPage');
   }
+
+proceedpayment()
+{
+this.navCtrl.push(SelectBillPage);
+}
+
+
 
 }

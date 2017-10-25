@@ -1,3 +1,4 @@
+import { MemberprofilePage } from './../pages/memberprofile/memberprofile';
 import { BillingchargesPage } from './../pages/billingcharges/billingcharges';
 import { SelectBillPage } from './../pages/select-bill/select-bill';
 import { EventlistPage } from './../pages/eventlist/eventlist';
@@ -46,7 +47,8 @@ import { HomePage } from '../pages/home/home';
     EventlistPage,
     EmergencycontactlistPage,
     SelectBillPage,
-    BillingchargesPage
+    BillingchargesPage,
+    MemberprofilePage
 
   ],
   imports: [
@@ -72,8 +74,8 @@ import { HomePage } from '../pages/home/home';
     EventlistPage,
     EmergencycontactlistPage,
     SelectBillPage,
-    BillingchargesPage
-
+    BillingchargesPage,
+    MemberprofilePage
 
 
   ],

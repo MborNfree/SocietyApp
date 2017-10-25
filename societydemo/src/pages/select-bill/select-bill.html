@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title align="center">Select Bill</ion-title>
+    <ion-title align="center">Payment</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -16,39 +16,21 @@
 <ion-content padding>
   <form>
     <ion-list>
-  <ion-item>
-<li>Bill No.:421</li>
-<li>Bill Due:08/10/2017</li>
-<li>Bill Period :07/01/2017-08/01/2017</li>
-  <li>Total:Rs.1748 </li>
-  </ion-item>
+   <ion-item>
+     <ion-label color="primary">Amount Payable</ion-label>
+      <ion-input type="text" [(ngModel)]="account.payamount" name="name1"></ion-input>
+   </ion-item>
 
+<ion-item>
+      <ion-label color="primary">Convinience Charges</ion-label>
+    <ion-input type="text" [(ngModel)]="account.charges" name="name1"></ion-input>
+</ion-item>
 
-  <ion-item>
-<li>Bill No.:422</li>
-<li>Bill Due:09/11/2017</li>
-<li>Bill Period :08/10/2017-09/10/2017</li>
-  <li>Total:Rs.1200 </li>
-  </ion-item>
-    </ion-list>
-
-     <div class="row">    
-      <div class="col">
-      <button ion-button block>Cancel</button>
-      </div>
-      
-<div class="col">
-<button ion-button  block (click)="viewbill()">
-Proceed
-
-</button>  
-</div>
-</div> 
-
-<!-- <button ion-button block class="col-50">Cancel</button><button ion-button  block class="col-50">
-Proceed
-
-</button>    -->
-
+     <ion-item>
+   <ion-label color="primary">Mode of Payments</ion-label><ion-select [(ngModel)]="account.modeofpay" interface="popover"   [ngModelOptions]="{standalone: true}">
+              <ion-option *ngFor="let mode of modeofpayment" [value]="mode">{{mode.mptm}}</ion-option>
+            </ion-select>
+    </ion-item>      
+    </ion-list>     
   </form>
 </ion-content>

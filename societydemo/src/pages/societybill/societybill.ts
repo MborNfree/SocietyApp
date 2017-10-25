@@ -21,16 +21,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class SocietybillPage {
 
 
-  tab1Root = SelectBillPage;
-  tab2Root = BillingchargesPage;
-  tab3Root = PlumberlistPage;
-
-
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SocietybillPage');
   }
+
+viewbill()
+{
+this.navCtrl.push(BillingchargesPage);
+}
 
 }

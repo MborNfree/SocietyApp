@@ -20,7 +20,7 @@ export class EmergencycontactlistPage {
   diseases = [
     { title: "Mumbai Police", description: "Tel:+91 22 22620825",MobileNo:"Mob No:+91 78777445788",Fax:"Fax :+ 914565645"},
     { title: "Ambulance", description: "Tel:+011 3941676",MobileNo:"Mob No: +91 78777445788",Fax:"Fax:+91 225447" },
-    { title: "Fire Brigade", description: "Tel:+011 3578771441" ,MobileNo:"Mob No:+91 78777445788",Fax:"Fax:+91 225447"},
+    { title: "Fire Brigade", description: "Tel:+011 3578771441", MobileNo:"Mob No:+91 78777445788", Fax:"Fax:+91 225447"},
   ];
 
   toggleGroup(group) {
