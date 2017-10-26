@@ -1,3 +1,4 @@
+import { CircularlistPage } from './../pages/circularlist/circularlist';
 import { MemberprofilePage } from './../pages/memberprofile/memberprofile';
 
 import { RulesPage } from './../pages/rules/rules';
@@ -10,14 +11,11 @@ import { ErrorHandler, NgModule} from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
-import { AngularFireModule } from 'angularfire2';
-import firebase from 'firebase';
-
+// import { AngularFireModule } from 'angularfire2';
+// import firebase from 'firebase';
 
 import { DocumentuploadPage } from './../pages/documentupload/documentupload';
 import { ElectricianlistPage } from './../pages/electricianlist/electricianlist';
-import { SocietybillPage } from './../pages/societybill/societybill';
-import { SignupPage } from './../pages/signup/signup';
 import { PlumberlistPage } from './../pages/plumberlist/plumberlist';
 import { DoctorlistPage } from './../pages/doctorlist/doctorlist';
 import { DosdontsPage } from './../pages/dosdonts/dosdonts';
@@ -28,11 +26,10 @@ import { ResidentlistPage } from './../pages/residentlist/residentlist';
 import { NewsPage } from './../pages/news/news';
 import { ProfilePage } from './../pages/profile/profile';
 import { LoginPage } from './../pages/login/login';
-
-
 import { MySocietyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { MemberlistPage } from '../pages/memberlist/memberlist';
+
 
 
 var config = {
@@ -43,7 +40,7 @@ var config = {
   storageBucket: "society-182906.appspot.com",
   messagingSenderId: "583609948893"
 };
-firebase.initializeApp(config);
+// firebase.initializeApp(config);
 
 
 @NgModule({
@@ -58,28 +55,26 @@ firebase.initializeApp(config);
     DoctorlistPage,
     DosdontsPage,
     PlumberlistPage,
-    SignupPage,
+    RegisterPage,
     ElectricianlistPage,
     DocumentuploadPage,
-  
     ViewprofilePage,
     RegisterPage,
     MemberlistPage,
     ForgotpasswordPage,
-    SocietybillPage,
-
-    EventlistPage,
+   EventlistPage,
     EmergencycontactlistPage,
-    RulesPage
-
-
+    RulesPage,     
+    MemberprofilePage,
+    CircularlistPage
   ],
+  
   imports: [
     BrowserModule,
     IonicModule.forRoot(MySocietyApp),
-    AngularFireModule.initializeApp(config)
+    // AngularFireModule.initializeApp(config)
   ],
-  bootstrap: [IonicApp],
+    bootstrap: [IonicApp],
   entryComponents: [
     MySocietyApp,
     HomePage,
@@ -88,26 +83,25 @@ firebase.initializeApp(config);
     ProfilePage,
     NewsPage,
     CommitteelistPage,
-     DoctorlistPage,
+    DoctorlistPage,
     DosdontsPage,
     PlumberlistPage,
-    SignupPage,
+    RegisterPage,
     ElectricianlistPage,
     DocumentuploadPage,
     ViewprofilePage,
     RegisterPage,
     MemberlistPage,
-    ForgotpasswordPage,
-    SocietybillPage,
-   
+    ForgotpasswordPage,    
     EventlistPage,
     EmergencycontactlistPage,
     RulesPage,
-  
-    MemberprofilePage
+    MemberprofilePage,
+    CircularlistPage
 
 
   ],
+  
   providers: [
     StatusBar,
     SplashScreen,

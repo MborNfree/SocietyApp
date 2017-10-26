@@ -1,6 +1,7 @@
+import { CircularlistPage } from './../pages/circularlist/circularlist';
 import { RulesPage } from './../pages/rules/rules';
 import { DocumentuploadPage } from './../pages/documentupload/documentupload';
-import { SocietybillPage } from './../pages/societybill/societybill';
+
 import { EventlistPage } from './../pages/eventlist/eventlist';
 import { EmergencycontactlistPage } from './../pages/emergencycontactlist/emergencycontactlist';
 import { HomePage } from './../pages/home/home';
@@ -18,7 +19,6 @@ import { Component,ViewChild } from '@angular/core';
 import { Nav, Platform, MenuController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
 
 
 @Component({
@@ -54,9 +54,14 @@ this.initializeApp();
            {title: 'Electrician List',component: ElectricianlistPage,icon:'construct'},
            {title: 'Emergency Contacts',component:EmergencycontactlistPage,icon:''},
            {title: 'Event List',component:EventlistPage,icon:''},
-           {title: 'Society Bill',component:SocietybillPage,icon:''},
+            {title: 'Circular List',component:CircularlistPage,icon:''},
+          //  {title: 'Society Bill',component:SocietybillPage,icon:''},
            {title: 'Upload Document',component:DocumentuploadPage,icon:''},
-           {title: 'Rules & Regulations',component:RulesPage,icon:''},
+           {title: 'Rules & Regulations',component:RulesPage,icon:'book'},
+
+
+           {title: 'Upload Document',component:DocumentuploadPage,icon:''}
+
        ];
 
        this.activePage=this.pages[0];
@@ -70,10 +75,6 @@ this.initializeApp();
         this.splashScreen.hide();
       });
     }
-
-
-
-
 
     openPage(page) {
       // Reset the content nav to have just this page

@@ -20,7 +20,7 @@
 
     <form>
 
-                  <ion-card>
+                  <ion-card (click)="memberprofile()">
                       <div class="row">
                         <div class="col">
                         <ion-card-header>
@@ -39,7 +39,7 @@
                           </div>
                     </ion-card>
 
-                    <ion-card>
+                    <ion-card (click)="memberprofile()">
                         <div class="row">
                             <div class="col">
                         <ion-card-header>
@@ -56,8 +56,8 @@
 
                         </div>
                       </div>
-                    </ion-card>
-                    <ion-card>
+                    </ion-card >
+                    <ion-card (click)="memberprofile()">
                         <div class="row">
                             <div class="col">
                         <ion-card-header>
@@ -93,6 +93,25 @@
                           </div>
                     </ion-card>
 
+
+                    <ion-card>
+                      <div class="row">
+                        <div class="col">
+                        <ion-card-header>
+                        <ion-item>
+                            <ion-avatar>
+                              <img src="assets/plumber.jpg"/>
+                            </ion-avatar>
+                          </ion-item>
+                          </ion-card-header>
+                          </div>
+                          <div class="col">
+                              <ion-label>Sanket Patil</ion-label>
+                          <ion-label ><ion-icon name="call"></ion-icon> 8574877745</ion-label>
+
+                          </div>
+                          </div>
+                    </ion-card>
               </form>
 
 </ion-content>

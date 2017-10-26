@@ -1,3 +1,4 @@
+import { MemberprofilePage } from './../memberprofile/memberprofile';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -21,5 +22,11 @@ export class ResidentlistPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad ResidentlistPage');
   }
+
+memberprofile()
+{
+  this.navCtrl.push(MemberprofilePage);
+
+}
 
 }
