@@ -1,10 +1,10 @@
+import { MemberprofilePage } from './../pages/memberprofile/memberprofile';
+
 import { RulesPage } from './../pages/rules/rules';
-<<<<<<< HEAD
 import { ForgotpasswordPage } from './../pages/forgotpassword/forgotpassword';
 import { RegisterPage } from './../pages/register/register';
 import { ViewprofilePage } from './../pages/viewprofile/viewprofile';
-=======
-<<<<<<< HEAD
+
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule} from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -13,15 +13,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { AngularFireModule } from 'angularfire2';
 import firebase from 'firebase';
 
-=======
-import { MemberprofilePage } from './../pages/memberprofile/memberprofile';
-import { BillingchargesPage } from './../pages/billingcharges/billingcharges';
-import { SelectBillPage } from './../pages/select-bill/select-bill';
-import { EventlistPage } from './../pages/eventlist/eventlist';
-import { EmergencycontactlistPage } from './../pages/emergencycontactlist/emergencycontactlist';
->>>>>>> bae53240fd80e1c17bba7fbe4a998239208e017f
 
->>>>>>> fec05b0fe5c23d98d84b3d439133fc0074adf239
 import { DocumentuploadPage } from './../pages/documentupload/documentupload';
 import { ElectricianlistPage } from './../pages/electricianlist/electricianlist';
 import { SocietybillPage } from './../pages/societybill/societybill';
@@ -69,24 +61,17 @@ firebase.initializeApp(config);
     SignupPage,
     ElectricianlistPage,
     DocumentuploadPage,
-<<<<<<< HEAD
+  
     ViewprofilePage,
     RegisterPage,
     MemberlistPage,
-    ForgotpasswordPage
-=======
+    ForgotpasswordPage,
     SocietybillPage,
+
     EventlistPage,
     EmergencycontactlistPage,
-<<<<<<< HEAD
     RulesPage
-=======
-    SelectBillPage,
-    BillingchargesPage,
-    MemberprofilePage
->>>>>>> bae53240fd80e1c17bba7fbe4a998239208e017f
->>>>>>> fec05b0fe5c23d98d84b3d439133fc0074adf239
->>>>>>> d149de2a8f44b82d71f5345bd041da490ccefdd1
+
 
   ],
   imports: [
@@ -109,25 +94,18 @@ firebase.initializeApp(config);
     SignupPage,
     ElectricianlistPage,
     DocumentuploadPage,
-<<<<<<< HEAD
     ViewprofilePage,
     RegisterPage,
     MemberlistPage,
-    ForgotpasswordPage
-=======
+    ForgotpasswordPage,
     SocietybillPage,
+   
     EventlistPage,
     EmergencycontactlistPage,
-<<<<<<< HEAD
-    RulesPage
-=======
-    SelectBillPage,
-    BillingchargesPage,
+    RulesPage,
+  
     MemberprofilePage
->>>>>>> fec05b0fe5c23d98d84b3d439133fc0074adf239
 
->>>>>>> bae53240fd80e1c17bba7fbe4a998239208e017f
->>>>>>> d149de2a8f44b82d71f5345bd041da490ccefdd1
 
   ],
   providers: [

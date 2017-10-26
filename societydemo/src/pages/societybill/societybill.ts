@@ -15,10 +15,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class SocietybillPage {
 
-<<<<<<< HEAD
-=======
-
->>>>>>> bae53240fd80e1c17bba7fbe4a998239208e017f
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
@@ -26,9 +22,9 @@ export class SocietybillPage {
     console.log('ionViewDidLoad SocietybillPage');
   }
 
-viewbill()
-{
-this.navCtrl.push(BillingchargesPage);
-}
+// viewbill()
+// {
+// this.navCtrl.push(BillingchargesPage);
+// }
 
 }
