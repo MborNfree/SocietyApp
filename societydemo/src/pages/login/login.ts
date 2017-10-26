@@ -17,9 +17,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class LoginPage {
 
-  login: { name1: string,  password1: string } = {    
+  login: { name1: string,  password1: string } = {
     name1: '',
-    password1 : '' 
+    password1 : ''
   };
 
 
@@ -30,25 +30,37 @@ export class LoginPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }
-  
-    
+
+
   loginclick()
-  {    
+  {
       if (this.login.name1 != '' && this.login.name1 != '' && this.login.name1 != 'null'   && this.login.password1 != 'null' ) {
         alert('Login Success!');
        // alert('uid-'+this.login.name1);
        // alert('pwd-'+this.login.password1);
 
-        this.navCtrl.push(HomePage);
+        this.navCtrl.push(HomePage, {
+          thing1: this.login.name1,
+          thing2: this.login.password1
+      });
 
     }
     else{
       alert('Not Login?Go to sign up!');
-      
+
       this.navCtrl.push(SignupPage);
     }
   }
 
+  signup()
+  {
+      this.navCtrl.push(SignupPage);
+  }
+
+  forgotPwd()
+  {
+      this.navCtrl.push(SignupPage);
+  }
     // alert('Login Success!');
     // this.navCtrl.push(HomePage);
 }

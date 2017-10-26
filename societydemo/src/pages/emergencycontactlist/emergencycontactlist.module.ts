@@ -11,3 +11,4 @@ import { EmergencycontactlistPage } from './emergencycontactlist';
   ],
 })
 export class EmergencycontactlistPageModule {}
+

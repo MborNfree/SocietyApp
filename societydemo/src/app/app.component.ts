@@ -28,17 +28,17 @@ import { ForgotpasswordPage } from '../pages/forgotpassword/forgotpassword';
 
   templateUrl: 'app.html'
 })
-export class MyApp {
+export class MySocietyApp {
 
+<<<<<<< HEAD
   rootPage: any = HomePage;
+=======
+  rootPage: any = LoginPage;
+>>>>>>> fec05b0fe5c23d98d84b3d439133fc0074adf239
   activePage:any;
   @ViewChild(Nav) nav: Nav;
 
    pages: Array<{title: string, component: any,icon:string}>;
-
-
-
-
 
   constructor(public platform: Platform, public statusBar: StatusBar,public splashScreen: SplashScreen,public menuCtrl: MenuController) {
     // platform.ready().then(() => {
@@ -61,7 +61,8 @@ this.initializeApp();
            {title: 'Electrician List',component: ElectricianlistPage,icon:'construct'},
            {title: 'Emergency Contacts',component:EmergencycontactlistPage,icon:''},
            {title: 'Event List',component:EventlistPage,icon:''},
-           {title: 'Society Bill',component:SocietybillPage,icon:''}
+           {title: 'Society Bill',component:SocietybillPage,icon:''},
+           {title: 'Upload Document',component:DocumentuploadPage,icon:''}
        ];
 
        this.activePage=this.pages[0];

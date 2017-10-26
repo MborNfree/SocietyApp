@@ -1,32 +1,61 @@
+<<<<<<< HEAD
 import { ForgotpasswordPage } from './../pages/forgotpassword/forgotpassword';
 import { RegisterPage } from './../pages/register/register';
 import { ViewprofilePage } from './../pages/viewprofile/viewprofile';
-import { DocumentuploadPage } from './../pages/documentupload/documentupload';
-import { ElectricianlistPage } from './../pages/electricianlist/electricianlist';
-import { SignupPage } from './../pages/signup/signup';
-import { PlumberlistPage } from './../pages/plumberlist/plumberlist';
-import { DoctorlistPage } from './../pages/doctorlist/doctorlist';
-import { DosdontsPage } from './../pages/dosdonts/dosdonts';
-
-import { CommitteelistPage } from './../pages/committeelist/committeelist';
-import { ResidentlistPage } from './../pages/residentlist/residentlist';
-import { NewsPage } from './../pages/news/news';
-import { ProfilePage } from './../pages/profile/profile';
-import { LoginPage } from './../pages/login/login';
+=======
+<<<<<<< HEAD
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule} from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+import { AngularFireModule } from 'angularfire2';
+import firebase from 'firebase';
 
-import { MyApp } from './app.component';
+=======
+import { MemberprofilePage } from './../pages/memberprofile/memberprofile';
+import { BillingchargesPage } from './../pages/billingcharges/billingcharges';
+import { SelectBillPage } from './../pages/select-bill/select-bill';
+import { EventlistPage } from './../pages/eventlist/eventlist';
+import { EmergencycontactlistPage } from './../pages/emergencycontactlist/emergencycontactlist';
+>>>>>>> bae53240fd80e1c17bba7fbe4a998239208e017f
+
+>>>>>>> fec05b0fe5c23d98d84b3d439133fc0074adf239
+import { DocumentuploadPage } from './../pages/documentupload/documentupload';
+import { ElectricianlistPage } from './../pages/electricianlist/electricianlist';
+import { SocietybillPage } from './../pages/societybill/societybill';
+import { SignupPage } from './../pages/signup/signup';
+import { PlumberlistPage } from './../pages/plumberlist/plumberlist';
+import { DoctorlistPage } from './../pages/doctorlist/doctorlist';
+import { DosdontsPage } from './../pages/dosdonts/dosdonts';
+import { EventlistPage } from './../pages/eventlist/eventlist';
+import { EmergencycontactlistPage } from './../pages/emergencycontactlist/emergencycontactlist';
+import { CommitteelistPage } from './../pages/committeelist/committeelist';
+import { ResidentlistPage } from './../pages/residentlist/residentlist';
+import { NewsPage } from './../pages/news/news';
+import { ProfilePage } from './../pages/profile/profile';
+import { LoginPage } from './../pages/login/login';
+
+
+import { MySocietyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { MemberlistPage } from '../pages/memberlist/memberlist';
 
 
+var config = {
+  apiKey: "AIzaSyCdBaGl6H_IuyzMyEnjq-6VRD5-2alxUtg",
+  authDomain: "society-182906.firebaseapp.com",
+  databaseURL: "https://society-182906.firebaseio.com",
+  projectId: "society-182906",
+  storageBucket: "society-182906.appspot.com",
+  messagingSenderId: "583609948893"
+};
+firebase.initializeApp(config);
+
+
 @NgModule({
   declarations: [
-    MyApp,
+    MySocietyApp,
     HomePage,
     LoginPage,
     ProfilePage,
@@ -39,19 +68,33 @@ import { MemberlistPage } from '../pages/memberlist/memberlist';
     SignupPage,
     ElectricianlistPage,
     DocumentuploadPage,
+<<<<<<< HEAD
     ViewprofilePage,
     RegisterPage,
     MemberlistPage,
     ForgotpasswordPage
+=======
+    SocietybillPage,
+    EventlistPage,
+<<<<<<< HEAD
+    EmergencycontactlistPage
+=======
+    EmergencycontactlistPage,
+    SelectBillPage,
+    BillingchargesPage,
+    MemberprofilePage
+>>>>>>> bae53240fd80e1c17bba7fbe4a998239208e017f
+>>>>>>> fec05b0fe5c23d98d84b3d439133fc0074adf239
 
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MySocietyApp),
+    AngularFireModule.initializeApp(config)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp,
+    MySocietyApp,
     HomePage,
     LoginPage,
     ResidentlistPage,
@@ -64,11 +107,24 @@ import { MemberlistPage } from '../pages/memberlist/memberlist';
     SignupPage,
     ElectricianlistPage,
     DocumentuploadPage,
+<<<<<<< HEAD
     ViewprofilePage,
     RegisterPage,
     MemberlistPage,
     ForgotpasswordPage
+=======
+    SocietybillPage,
+    EventlistPage,
+<<<<<<< HEAD
+    EmergencycontactlistPage
+=======
+    EmergencycontactlistPage,
+    SelectBillPage,
+    BillingchargesPage,
+    MemberprofilePage
+>>>>>>> fec05b0fe5c23d98d84b3d439133fc0074adf239
 
+>>>>>>> bae53240fd80e1c17bba7fbe4a998239208e017f
 
   ],
   providers: [
@@ -77,4 +133,6 @@ import { MemberlistPage } from '../pages/memberlist/memberlist';
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
+
+
 export class AppModule {}

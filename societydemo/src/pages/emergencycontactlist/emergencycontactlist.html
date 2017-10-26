@@ -25,7 +25,11 @@
         {{d.title}}
         <ion-icon color="success" item-right [name]="isGroupShown(i) ? 'arrow-dropdown' : 'arrow-dropright'"></ion-icon>
       </h3>
-      <div *ngIf="isGroupShown(i)">{{d.description}}</div>
+      <div *ngIf="isGroupShown(i)" >{{d.description}}  </div>
+      <h4>
+      <div *ngIf="isGroupShown(i)"  class="desc"><ion-icon name="call"></ion-icon>{{d.MobileNo}}</div>
+      </h4>
+     <div *ngIf="isGroupShown(i)"  >{{d.Fax}}</div>
     </ion-item>
   </ion-list> 
 
