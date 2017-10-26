@@ -1,4 +1,5 @@
 
+import { RulesPage } from './../pages/rules/rules';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule} from '@angular/core';
@@ -10,7 +11,6 @@ import firebase from 'firebase';
 
 
 import { MemberprofilePage } from './../pages/memberprofile/memberprofile';
-
 import { DocumentuploadPage } from './../pages/documentupload/documentupload';
 import { ElectricianlistPage } from './../pages/electricianlist/electricianlist';
 import { PlumberlistPage } from './../pages/plumberlist/plumberlist';
@@ -23,15 +23,14 @@ import { ResidentlistPage } from './../pages/residentlist/residentlist';
 import { NewsPage } from './../pages/news/news';
 import { ProfilePage } from './../pages/profile/profile';
 import { LoginPage } from './../pages/login/login';
-
-
 import { ForgotpasswordPage } from './../pages/forgotpassword/forgotpassword';
 import { RegisterPage } from './../pages/register/register';
 import { ViewprofilePage } from './../pages/viewprofile/viewprofile';
-
 import { MySocietyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { MemberlistPage } from '../pages/memberlist/memberlist';
+import { SelectBillPage } from '../pages/select-bill/select-bill';
+import { BillingchargesPage } from '../pages/billingcharges/billingcharges';
 
 
 var config = {
@@ -66,9 +65,10 @@ firebase.initializeApp(config);
     ForgotpasswordPage,
     EventlistPage,
     EmergencycontactlistPage,
+    RulesPage,
+    SelectBillPage,
+    BillingchargesPage,
     MemberprofilePage
-
-
   ],
   imports: [
     BrowserModule,
@@ -96,7 +96,11 @@ firebase.initializeApp(config);
     ForgotpasswordPage,
     EventlistPage,
     EmergencycontactlistPage,
-    MemberprofilePage
+    MemberprofilePage,
+    RulesPage,
+    SelectBillPage,
+    BillingchargesPage,
+
 
   ],
   providers: [
