@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule} from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -6,6 +7,13 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { AngularFireModule } from 'angularfire2';
 import firebase from 'firebase';
 
+=======
+import { MemberprofilePage } from './../pages/memberprofile/memberprofile';
+import { BillingchargesPage } from './../pages/billingcharges/billingcharges';
+import { SelectBillPage } from './../pages/select-bill/select-bill';
+import { EventlistPage } from './../pages/eventlist/eventlist';
+import { EmergencycontactlistPage } from './../pages/emergencycontactlist/emergencycontactlist';
+>>>>>>> bae53240fd80e1c17bba7fbe4a998239208e017f
 
 import { DocumentuploadPage } from './../pages/documentupload/documentupload';
 import { ElectricianlistPage } from './../pages/electricianlist/electricianlist';
@@ -55,7 +63,14 @@ firebase.initializeApp(config);
     DocumentuploadPage,
     SocietybillPage,
     EventlistPage,
+<<<<<<< HEAD
     EmergencycontactlistPage
+=======
+    EmergencycontactlistPage,
+    SelectBillPage,
+    BillingchargesPage,
+    MemberprofilePage
+>>>>>>> bae53240fd80e1c17bba7fbe4a998239208e017f
 
   ],
   imports: [
@@ -80,7 +95,15 @@ firebase.initializeApp(config);
     DocumentuploadPage,
     SocietybillPage,
     EventlistPage,
+<<<<<<< HEAD
     EmergencycontactlistPage
+=======
+    EmergencycontactlistPage,
+    SelectBillPage,
+    BillingchargesPage,
+    MemberprofilePage
+
+>>>>>>> bae53240fd80e1c17bba7fbe4a998239208e017f
 
   ],
   providers: [

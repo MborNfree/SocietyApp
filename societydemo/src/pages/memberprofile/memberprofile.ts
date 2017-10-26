@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the SocietybillPage page.
+ * Generated class for the MemberprofilePage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,25 +10,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-societybill',
-  templateUrl: 'societybill.html',
+  selector: 'page-memberprofile',
+  templateUrl: 'memberprofile.html',
 })
-export class SocietybillPage {
+export class MemberprofilePage {
 
-<<<<<<< HEAD
-=======
-
->>>>>>> bae53240fd80e1c17bba7fbe4a998239208e017f
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad SocietybillPage');
+    console.log('ionViewDidLoad MemberprofilePage');
   }
-
-viewbill()
-{
-this.navCtrl.push(BillingchargesPage);
-}
 
 }
