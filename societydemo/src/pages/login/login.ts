@@ -1,4 +1,4 @@
-import { SignupPage } from './../signup/signup';
+import { RegisterPage } from './../register/register';
 import { HomePage } from './../home/home';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
@@ -48,18 +48,18 @@ export class LoginPage {
     else{
       alert('Not Login?Go to sign up!');
 
-      this.navCtrl.push(SignupPage);
+      this.navCtrl.push(RegisterPage);
     }
   }
 
   signup()
   {
-      this.navCtrl.push(SignupPage);
+      this.navCtrl.push(RegisterPage);
   }
 
   forgotPwd()
   {
-      this.navCtrl.push(SignupPage);
+      this.navCtrl.push(RegisterPage);
   }
     // alert('Login Success!');
     // this.navCtrl.push(HomePage);

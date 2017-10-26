@@ -1,6 +1,7 @@
-import { SelectBillPage } from './../select-bill/select-bill';
+
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
+import { HomePage } from '../home/home';
 
 /**
  * Generated class for the BillingchargesPage page.
@@ -9,7 +10,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
 @Component({
   selector: 'page-billingcharges',
   templateUrl: 'billingcharges.html',
@@ -25,7 +25,7 @@ export class BillingchargesPage {
 
 proceedpayment()
 {
-this.navCtrl.push(SelectBillPage);
+this.navCtrl.push(HomePage);
 }
 
 

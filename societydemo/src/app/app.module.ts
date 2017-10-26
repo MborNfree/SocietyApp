@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-import { ForgotpasswordPage } from './../pages/forgotpassword/forgotpassword';
-import { RegisterPage } from './../pages/register/register';
-import { ViewprofilePage } from './../pages/viewprofile/viewprofile';
-=======
-<<<<<<< HEAD
+
+
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule} from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -12,19 +8,11 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { AngularFireModule } from 'angularfire2';
 import firebase from 'firebase';
 
-=======
-import { MemberprofilePage } from './../pages/memberprofile/memberprofile';
-import { BillingchargesPage } from './../pages/billingcharges/billingcharges';
-import { SelectBillPage } from './../pages/select-bill/select-bill';
-import { EventlistPage } from './../pages/eventlist/eventlist';
-import { EmergencycontactlistPage } from './../pages/emergencycontactlist/emergencycontactlist';
->>>>>>> bae53240fd80e1c17bba7fbe4a998239208e017f
 
->>>>>>> fec05b0fe5c23d98d84b3d439133fc0074adf239
+import { MemberprofilePage } from './../pages/memberprofile/memberprofile';
+
 import { DocumentuploadPage } from './../pages/documentupload/documentupload';
 import { ElectricianlistPage } from './../pages/electricianlist/electricianlist';
-import { SocietybillPage } from './../pages/societybill/societybill';
-import { SignupPage } from './../pages/signup/signup';
 import { PlumberlistPage } from './../pages/plumberlist/plumberlist';
 import { DoctorlistPage } from './../pages/doctorlist/doctorlist';
 import { DosdontsPage } from './../pages/dosdonts/dosdonts';
@@ -36,6 +24,10 @@ import { NewsPage } from './../pages/news/news';
 import { ProfilePage } from './../pages/profile/profile';
 import { LoginPage } from './../pages/login/login';
 
+
+import { ForgotpasswordPage } from './../pages/forgotpassword/forgotpassword';
+import { RegisterPage } from './../pages/register/register';
+import { ViewprofilePage } from './../pages/viewprofile/viewprofile';
 
 import { MySocietyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -65,26 +57,17 @@ firebase.initializeApp(config);
     DoctorlistPage,
     DosdontsPage,
     PlumberlistPage,
-    SignupPage,
+    RegisterPage,
     ElectricianlistPage,
     DocumentuploadPage,
-<<<<<<< HEAD
     ViewprofilePage,
     RegisterPage,
     MemberlistPage,
-    ForgotpasswordPage
-=======
-    SocietybillPage,
+    ForgotpasswordPage,
     EventlistPage,
-<<<<<<< HEAD
-    EmergencycontactlistPage
-=======
     EmergencycontactlistPage,
-    SelectBillPage,
-    BillingchargesPage,
     MemberprofilePage
->>>>>>> bae53240fd80e1c17bba7fbe4a998239208e017f
->>>>>>> fec05b0fe5c23d98d84b3d439133fc0074adf239
+
 
   ],
   imports: [
@@ -104,27 +87,16 @@ firebase.initializeApp(config);
      DoctorlistPage,
     DosdontsPage,
     PlumberlistPage,
-    SignupPage,
+    RegisterPage,
     ElectricianlistPage,
     DocumentuploadPage,
-<<<<<<< HEAD
     ViewprofilePage,
     RegisterPage,
     MemberlistPage,
-    ForgotpasswordPage
-=======
-    SocietybillPage,
+    ForgotpasswordPage,
     EventlistPage,
-<<<<<<< HEAD
-    EmergencycontactlistPage
-=======
     EmergencycontactlistPage,
-    SelectBillPage,
-    BillingchargesPage,
     MemberprofilePage
->>>>>>> fec05b0fe5c23d98d84b3d439133fc0074adf239
-
->>>>>>> bae53240fd80e1c17bba7fbe4a998239208e017f
 
   ],
   providers: [

@@ -1,7 +1,7 @@
 import { MemberlistPage } from './../pages/memberlist/memberlist';
 import { ViewprofilePage } from './../pages/viewprofile/viewprofile';
 import { DocumentuploadPage } from './../pages/documentupload/documentupload';
-import { SocietybillPage } from './../pages/societybill/societybill';
+
 import { EventlistPage } from './../pages/eventlist/eventlist';
 import { EmergencycontactlistPage } from './../pages/emergencycontactlist/emergencycontactlist';
 import { HomePage } from './../pages/home/home';
@@ -23,18 +23,13 @@ import { RegisterPage } from '../pages/register/register';
 import { ForgotpasswordPage } from '../pages/forgotpassword/forgotpassword';
 
 
-
 @Component({
 
   templateUrl: 'app.html'
 })
 export class MySocietyApp {
 
-<<<<<<< HEAD
-  rootPage: any = HomePage;
-=======
   rootPage: any = LoginPage;
->>>>>>> fec05b0fe5c23d98d84b3d439133fc0074adf239
   activePage:any;
   @ViewChild(Nav) nav: Nav;
 
@@ -61,7 +56,7 @@ this.initializeApp();
            {title: 'Electrician List',component: ElectricianlistPage,icon:'construct'},
            {title: 'Emergency Contacts',component:EmergencycontactlistPage,icon:''},
            {title: 'Event List',component:EventlistPage,icon:''},
-           {title: 'Society Bill',component:SocietybillPage,icon:''},
+
            {title: 'Upload Document',component:DocumentuploadPage,icon:''}
        ];
 
@@ -76,10 +71,6 @@ this.initializeApp();
         this.splashScreen.hide();
       });
     }
-
-
-
-
 
     openPage(page) {
       // Reset the content nav to have just this page
