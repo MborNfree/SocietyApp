@@ -29,8 +29,6 @@ import { ViewprofilePage } from './../pages/viewprofile/viewprofile';
 import { MySocietyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { MemberlistPage } from '../pages/memberlist/memberlist';
-import { SelectBillPage } from '../pages/select-bill/select-bill';
-import { BillingchargesPage } from '../pages/billingcharges/billingcharges';
 
 
 var config = {
@@ -66,8 +64,6 @@ firebase.initializeApp(config);
     EventlistPage,
     EmergencycontactlistPage,
     RulesPage,
-    SelectBillPage,
-    BillingchargesPage,
     MemberprofilePage
   ],
   imports: [
@@ -98,9 +94,6 @@ firebase.initializeApp(config);
     EmergencycontactlistPage,
     MemberprofilePage,
     RulesPage,
-    SelectBillPage,
-    BillingchargesPage,
-
 
   ],
   providers: [

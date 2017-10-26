@@ -1,7 +1,11 @@
-import { RegisterPage } from './../register/register';
-import { HomePage } from './../home/home';
+
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
+
+import { ForgotpasswordPage } from './../forgotpassword/forgotpassword';
+import { RegisterPage } from './../register/register';
+import { HomePage } from './../home/home';
 
 /**
  * Generated class for the LoginPage page.
@@ -17,38 +21,30 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class LoginPage {
 
-  login: { name1: string,  password1: string } = {
-    name1: '',
-    password1 : ''
-  };
-
-
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  username:any;
+  password:any;
+  authForm: FormGroup;
+  constructor(public navCtrl: NavController, public navParams: NavParams,public formBuilder: FormBuilder) {
+    this.username = window.localStorage.getItem('username');
+    this.password = window.localStorage.getItem('password');
+           this.authForm = formBuilder.group({
+               username: ['', Validators.compose([Validators.required, Validators.pattern('[a-zA-Z]*'), Validators.minLength(8), Validators.maxLength(30)])],
+               password: ['', Validators.compose([Validators.required, Validators.minLength(8)])]
+           });
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }
 
+  onSubmit(value: any): void {
+    if(this.authForm.valid) {
+        window.localStorage.setItem('username', value.username);
+        window.localStorage.setItem('password', value.password);
 
-  loginclick()
-  {
-      if (this.login.name1 != '' && this.login.name1 != '' && this.login.name1 != 'null'   && this.login.password1 != 'null' ) {
-        alert('Login Success!');
-       // alert('uid-'+this.login.name1);
-       // alert('pwd-'+this.login.password1);
-
-        this.navCtrl.push(HomePage, {
-          thing1: this.login.name1,
-          thing2: this.login.password1
-      });
-
-    }
-    else{
-      alert('Not Login?Go to sign up!');
-
-      this.navCtrl.push(RegisterPage);
+        if (value.username != '' && value.password != '' && value.username != 'null'   && value.password != 'null' ) {
+          this.navCtrl.push(HomePage);
+        }
     }
   }
 
@@ -59,8 +55,7 @@ export class LoginPage {
 
   forgotPwd()
   {
-      this.navCtrl.push(RegisterPage);
+      this.navCtrl.push(ForgotpasswordPage);
   }
-    // alert('Login Success!');
-    // this.navCtrl.push(HomePage);
+
 }

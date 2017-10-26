@@ -56,7 +56,6 @@ this.initializeApp();
            {title: 'Electrician List',component: ElectricianlistPage,icon:'construct'},
            {title: 'Emergency Contacts',component:EmergencycontactlistPage,icon:''},
            {title: 'Event List',component:EventlistPage,icon:''},
-
            {title: 'Upload Document',component:DocumentuploadPage,icon:''}
        ];
 
@@ -85,6 +84,15 @@ this.initializeApp();
             // logout logic
             // redirect to home
           this.nav.setRoot(HomePage);
+      }
+    }
+
+    checkPreviousAuthorization(): void {
+      if((window.localStorage.getItem('username') === "undefined" || window.localStorage.getItem('username') === null) &&
+         (window.localStorage.getItem('password') === "undefined" || window.localStorage.getItem('password') === null)) {
+        this.rootPage = LoginPage;
+      } else {
+        this.rootPage = HomePage;
       }
     }
   }
