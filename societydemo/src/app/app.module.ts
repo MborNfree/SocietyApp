@@ -1,3 +1,4 @@
+import { RulesPage } from './../pages/rules/rules';
 <<<<<<< HEAD
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule} from '@angular/core';
@@ -63,14 +64,8 @@ firebase.initializeApp(config);
     DocumentuploadPage,
     SocietybillPage,
     EventlistPage,
-<<<<<<< HEAD
-    EmergencycontactlistPage
-=======
     EmergencycontactlistPage,
-    SelectBillPage,
-    BillingchargesPage,
-    MemberprofilePage
->>>>>>> bae53240fd80e1c17bba7fbe4a998239208e017f
+    RulesPage
 
   ],
   imports: [
@@ -95,15 +90,8 @@ firebase.initializeApp(config);
     DocumentuploadPage,
     SocietybillPage,
     EventlistPage,
-<<<<<<< HEAD
-    EmergencycontactlistPage
-=======
     EmergencycontactlistPage,
-    SelectBillPage,
-    BillingchargesPage,
-    MemberprofilePage
-
->>>>>>> bae53240fd80e1c17bba7fbe4a998239208e017f
+    RulesPage
 
   ],
   providers: [
