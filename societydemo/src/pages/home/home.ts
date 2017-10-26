@@ -1,3 +1,8 @@
+
+import { Component } from '@angular/core';
+import { NavController,NavParams } from 'ionic-angular';
+import{ AlertController } from 'ionic-angular';
+
 import { LoginPage } from './../login/login';
 import { CommitteelistPage } from './../committeelist/committeelist';
 import { ElectricianlistPage } from './../electricianlist/electricianlist';
@@ -6,9 +11,6 @@ import { DoctorlistPage } from './../doctorlist/doctorlist';
 import { NewsPage } from './../news/news';
 
 
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
-import{ AlertController } from 'ionic-angular';
 
 @Component({
   selector: 'page-home',
@@ -16,8 +18,9 @@ import{ AlertController } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController,public alertCtrl: AlertController ) {
 
+  constructor(public navCtrl: NavController,public alertCtrl: AlertController ,public navParams : NavParams) {
+    this.navParams.get('this.login.name1');
   }
 
   shownews()

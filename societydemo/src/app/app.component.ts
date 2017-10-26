@@ -32,10 +32,6 @@ export class MySocietyApp {
 
    pages: Array<{title: string, component: any,icon:string}>;
 
-
- 
-
-
   constructor(public platform: Platform, public statusBar: StatusBar,public splashScreen: SplashScreen,public menuCtrl: MenuController) {
     // platform.ready().then(() => {
     //   // Okay, so the platform is ready and our plugins are available.
@@ -55,10 +51,10 @@ this.initializeApp();
            {title: 'Plumber Lists',component: PlumberlistPage,icon:'hammer'},
            {title: 'Doctor List',component: DoctorlistPage,icon:'contact'},
            {title: 'Electrician List',component: ElectricianlistPage,icon:'construct'},
-           {title: 'Emergency Contacts',component:EmergencycontactlistPage,icon:'md-call'},
+           {title: 'Emergency Contacts',component:EmergencycontactlistPage,icon:''},
            {title: 'Event List',component:EventlistPage,icon:''},
            {title: 'Society Bill',component:SocietybillPage,icon:''},
-           {title: 'Upload Document',component:DocumentuploadPage,icon:'download'}
+           {title: 'Upload Document',component:DocumentuploadPage,icon:''}
        ];
 
        this.activePage=this.pages[0];
