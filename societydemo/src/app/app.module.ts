@@ -1,3 +1,6 @@
+import { ForgotpasswordPage } from './../pages/forgotpassword/forgotpassword';
+import { RegisterPage } from './../pages/register/register';
+import { ViewprofilePage } from './../pages/viewprofile/viewprofile';
 import { DocumentuploadPage } from './../pages/documentupload/documentupload';
 import { ElectricianlistPage } from './../pages/electricianlist/electricianlist';
 import { SignupPage } from './../pages/signup/signup';
@@ -18,6 +21,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { MemberlistPage } from '../pages/memberlist/memberlist';
 
 
 @NgModule({
@@ -34,7 +38,11 @@ import { HomePage } from '../pages/home/home';
     PlumberlistPage,
     SignupPage,
     ElectricianlistPage,
-    DocumentuploadPage
+    DocumentuploadPage,
+    ViewprofilePage,
+    RegisterPage,
+    MemberlistPage,
+    ForgotpasswordPage
 
   ],
   imports: [
@@ -55,7 +63,11 @@ import { HomePage } from '../pages/home/home';
     PlumberlistPage,
     SignupPage,
     ElectricianlistPage,
-    DocumentuploadPage
+    DocumentuploadPage,
+    ViewprofilePage,
+    RegisterPage,
+    MemberlistPage,
+    ForgotpasswordPage
 
 
   ],

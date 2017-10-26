@@ -1,3 +1,5 @@
+import { MemberlistPage } from './../pages/memberlist/memberlist';
+import { ViewprofilePage } from './../pages/viewprofile/viewprofile';
 import { DocumentuploadPage } from './../pages/documentupload/documentupload';
 import { SocietybillPage } from './../pages/societybill/societybill';
 import { EventlistPage } from './../pages/eventlist/eventlist';
@@ -17,6 +19,8 @@ import { Component,ViewChild } from '@angular/core';
 import { Nav, Platform, MenuController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { RegisterPage } from '../pages/register/register';
+import { ForgotpasswordPage } from '../pages/forgotpassword/forgotpassword';
 
 
 
@@ -26,7 +30,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 })
 export class MyApp {
 
-  rootPage: any = DocumentuploadPage;
+  rootPage: any = HomePage;
   activePage:any;
   @ViewChild(Nav) nav: Nav;
 
