@@ -1,7 +1,9 @@
+import { SocietybillPage } from './../pages/societybill/societybill';
+import { EventdetailsPage } from './../pages/eventdetails/eventdetails';
 import { CircularlistPage } from './../pages/circularlist/circularlist';
 import { MemberprofilePage } from './../pages/memberprofile/memberprofile';
 
-import { RulesPage } from './../pages/rules/rules';
+
 import { ForgotpasswordPage } from './../pages/forgotpassword/forgotpassword';
 import { RegisterPage } from './../pages/register/register';
 import { ViewprofilePage } from './../pages/viewprofile/viewprofile';
@@ -28,11 +30,6 @@ import { ProfilePage } from './../pages/profile/profile';
 import { LoginPage } from './../pages/login/login';
 import { MySocietyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { MemberlistPage } from '../pages/memberlist/memberlist';
-<<<<<<< HEAD
-
-=======
->>>>>>> e92b793467a88531d90462ec0abf0c62a989957d
 
 
 var config = {
@@ -63,18 +60,15 @@ var config = {
     DocumentuploadPage,
     ViewprofilePage,
     RegisterPage,
-    MemberlistPage,
     ForgotpasswordPage,
    EventlistPage,
-    EmergencycontactlistPage,
-<<<<<<< HEAD
-    RulesPage,     
+    EmergencycontactlistPage,    
     MemberprofilePage,
-    CircularlistPage
-=======
-    RulesPage,
-    MemberprofilePage
->>>>>>> e92b793467a88531d90462ec0abf0c62a989957d
+    CircularlistPage,  
+    MemberprofilePage,
+   EventdetailsPage,
+   SocietybillPage
+
   ],
   
   imports: [
@@ -99,18 +93,13 @@ var config = {
     DocumentuploadPage,
     ViewprofilePage,
     RegisterPage,
-    MemberlistPage,
-    ForgotpasswordPage,    
+  ForgotpasswordPage,    
     EventlistPage,
     EmergencycontactlistPage,
-    RulesPage,
-<<<<<<< HEAD
     MemberprofilePage,
-    CircularlistPage
-
-=======
->>>>>>> e92b793467a88531d90462ec0abf0c62a989957d
-
+    CircularlistPage,
+    EventdetailsPage, 
+    SocietybillPage 
   ],
   
   providers: [

@@ -1,7 +1,6 @@
+import { SocietybillPage } from './../pages/societybill/societybill';
 import { CircularlistPage } from './../pages/circularlist/circularlist';
-import { RulesPage } from './../pages/rules/rules';
 import { DocumentuploadPage } from './../pages/documentupload/documentupload';
-
 import { EventlistPage } from './../pages/eventlist/eventlist';
 import { EmergencycontactlistPage } from './../pages/emergencycontactlist/emergencycontactlist';
 import { HomePage } from './../pages/home/home';
@@ -10,7 +9,6 @@ import { DoctorlistPage } from './../pages/doctorlist/doctorlist';
 import { PlumberlistPage } from './../pages/plumberlist/plumberlist';
 import { DosdontsPage } from './../pages/dosdonts/dosdonts';
 import { NewsPage } from './../pages/news/news';
-
 import { CommitteelistPage } from './../pages/committeelist/committeelist';
 import { ResidentlistPage } from './../pages/residentlist/residentlist';
 import { ProfilePage } from './../pages/profile/profile';
@@ -54,17 +52,10 @@ this.initializeApp();
            {title: 'Electrician List',component: ElectricianlistPage,icon:'construct'},
            {title: 'Emergency Contacts',component:EmergencycontactlistPage,icon:''},
            {title: 'Event List',component:EventlistPage,icon:''},
-<<<<<<< HEAD
-            {title: 'Circular List',component:CircularlistPage,icon:''},
-          //  {title: 'Society Bill',component:SocietybillPage,icon:''},
-           {title: 'Upload Document',component:DocumentuploadPage,icon:''},
-           {title: 'Rules & Regulations',component:RulesPage,icon:'book'},
-
-
-=======
->>>>>>> e92b793467a88531d90462ec0abf0c62a989957d
-           {title: 'Upload Document',component:DocumentuploadPage,icon:''}
-
+           {title: 'Circular List',component:CircularlistPage,icon:''},          
+           {title: 'Upload Document',component:DocumentuploadPage,icon:'document'},
+           {title: 'Society Bill',component:SocietybillPage,icon:''},             
+           
        ];
 
        this.activePage=this.pages[0];

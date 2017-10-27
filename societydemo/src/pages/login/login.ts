@@ -1,17 +1,11 @@
-<<<<<<< HEAD
+
 import { ForgotpasswordPage } from './../forgotpassword/forgotpassword';
 import { RegisterPage } from './../register/register';
 import { HomePage } from './../home/home';
-=======
-
->>>>>>> e92b793467a88531d90462ec0abf0c62a989957d
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
 
-import { ForgotpasswordPage } from './../forgotpassword/forgotpassword';
-import { RegisterPage } from './../register/register';
-import { HomePage } from './../home/home';
 
 /**
  * Generated class for the LoginPage page.
