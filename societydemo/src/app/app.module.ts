@@ -1,3 +1,15 @@
+<<<<<<< HEAD
+=======
+import { SocietybillPage } from './../pages/societybill/societybill';
+import { EventdetailsPage } from './../pages/eventdetails/eventdetails';
+import { CircularlistPage } from './../pages/circularlist/circularlist';
+import { MemberprofilePage } from './../pages/memberprofile/memberprofile';
+
+
+import { ForgotpasswordPage } from './../pages/forgotpassword/forgotpassword';
+import { RegisterPage } from './../pages/register/register';
+import { ViewprofilePage } from './../pages/viewprofile/viewprofile';
+>>>>>>> e9a86cfc0f2134cb444218260b378414adc334e4
 
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule} from '@angular/core';
@@ -25,6 +37,7 @@ import { ProfilePage } from './../pages/profile/profile';
 import { LoginPage } from './../pages/login/login';
 import { MySocietyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+<<<<<<< HEAD
 import { MemberlistPage } from '../pages/memberlist/memberlist';
 import { AddEventAdminPage } from '../pages/add-event-admin/add-event-admin';
 import { CircularlistPage } from './../pages/circularlist/circularlist';
@@ -41,6 +54,9 @@ import { ResidentListAdminPage } from '../pages/resident-list-admin/resident-lis
 import { AddPropertyAdminPage } from '../pages/add-property-admin/add-property-admin';
 import { AddCircularAdminPage } from '../pages/add-circular-admin/add-circular-admin';
 import { SideMenuContentComponent } from '../shared/side-menu-content/side-menu-content.component';
+=======
+
+>>>>>>> e9a86cfc0f2134cb444218260b378414adc334e4
 
 var config = {
   apiKey: "AIzaSyCdBaGl6H_IuyzMyEnjq-6VRD5-2alxUtg",
@@ -69,8 +85,8 @@ var config = {
     DocumentuploadPage,
     ViewprofilePage,
     RegisterPage,
-    MemberlistPage,
     ForgotpasswordPage,
+<<<<<<< HEAD
     EventlistPage,
     EmergencycontactlistPage,
     RulesPage,
@@ -85,6 +101,16 @@ var config = {
     AddPropertyAdminPage,
       // Side menu custom component
       SideMenuContentComponent
+=======
+   EventlistPage,
+    EmergencycontactlistPage,    
+    MemberprofilePage,
+    CircularlistPage,  
+    MemberprofilePage,
+   EventdetailsPage,
+   SocietybillPage
+
+>>>>>>> e9a86cfc0f2134cb444218260b378414adc334e4
   ],
 
   imports: [
@@ -117,6 +143,7 @@ var config = {
     DocumentuploadPage,
     ViewprofilePage,
     RegisterPage,
+<<<<<<< HEAD
     MemberlistPage,
     ForgotpasswordPage,
     EventlistPage,
@@ -132,6 +159,15 @@ var config = {
     AddCircularAdminPage,
     AddPropertyAdminPage
 
+=======
+  ForgotpasswordPage,    
+    EventlistPage,
+    EmergencycontactlistPage,
+    MemberprofilePage,
+    CircularlistPage,
+    EventdetailsPage, 
+    SocietybillPage 
+>>>>>>> e9a86cfc0f2134cb444218260b378414adc334e4
   ],
 
   providers: [

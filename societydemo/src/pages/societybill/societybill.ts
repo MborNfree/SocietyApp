@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the RulesPage page.
+ * Generated class for the SocietybillPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,16 +10,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-rules',
-  templateUrl: 'rules.html',
+  selector: 'page-societybill',
+  templateUrl: 'societybill.html',
 })
-export class RulesPage {
+export class SocietybillPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad RulesPage');
+    console.log('ionViewDidLoad SocietybillPage');
   }
 
 }

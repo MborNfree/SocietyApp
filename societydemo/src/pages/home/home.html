@@ -42,7 +42,7 @@
     </ion-item>
 
   </ion-col>
-  <ion-col>
+  <ion-col  >
         <ion-item (click)="showelectricianlist()">
       <ion-avatar>
         <img src="assets/electrician.jpg"/><div class="card-title">Electrician</div>
@@ -61,7 +61,8 @@
       </ion-card>
     </div>
   <div class="row">
-      <div class="col">
+       <div class="col col-50"> 
+        
           <ion-card  (click)="shownews()" >
             <ion-buttons align="center">
               <ion-icon name="logo-designernews" align="center"></ion-icon>
@@ -69,29 +70,30 @@
               <!-- <img src="../assets/news.jpg"/> -->
               <div class="card-title" align="center">NEWS</div>
           </ion-card>
-      </div>
-      <div class="col">
-        <ion-card  (click)="showmembers()">
+       </div>
+        
+    <div class="col col-50">               
+          <ion-card  (click)="showmembers()">
           <ion-buttons align="center">
             <ion-icon name="people" align="center"></ion-icon>
-          </ion-buttons>
-          <!-- <img src="assets/img/card-amsterdam.png"/> -->
+          </ion-buttons>         
           <div class="card-title" align="center">MEMBERSHIP</div>
         </ion-card>
-      </div>
+       </div> 
+       
 
 
   <div class="row">
-      <div class="col">
+       <div class="col col-50">        
           <ion-card  class="card">
               <ion-buttons align="center">
               <ion-icon name="clipboard" ></ion-icon>
-            </ion-buttons>
-            <!-- <img src="assets/img/card-sf.png"/> -->
+            </ion-buttons>          
             <div class="card-title" align="center">RULES & REGULATIONS</div>
           </ion-card>
-      </div>
-      <div class="col">
+       </div>   
+
+       <div class="col col-50">        
           <ion-card >
               <ion-buttons align="center" >
               <ion-icon name="school"></ion-icon>
@@ -99,7 +101,8 @@
             <!-- <img src="assets/img/card-madison.png"/> -->
             <div class="card-title" align="center" >HELPDESK</div>
           </ion-card>
-      </div>
+       </div> 
+       
     </div>
     </div>
 
