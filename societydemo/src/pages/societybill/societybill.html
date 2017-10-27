@@ -6,17 +6,14 @@
 -->
 <ion-header>
 
-<<<<<<< HEAD:societydemo/src/pages/memberlist/memberlist.html
-  <ion-navbar  color="info">
-    <ion-title>memberlist</ion-title>
+<ion-navbar  color="info">
+
+      <button ion-button icon-only menuToggle start>
+          <ion-icon name="menu"></ion-icon>
+      </button>
+    <ion-title align="center">Society Bill</ion-title>
   </ion-navbar>
-=======
-  <ion-toolbar>
-  <ion-title align="center">Society Bill</ion-title>
-
-  </ion-toolbar>
->>>>>>> e9a86cfc0f2134cb444218260b378414adc334e4:societydemo/src/pages/societybill/societybill.html
-
+  
 </ion-header>
 
 
@@ -40,7 +37,7 @@
        <h2>Bill Ampount</h2>
   </ion-col>
       <ion-row>
-     <button ion-button icon-only default click="gotobilling()">
+     <button ion-button icon-only default (click)="gotobilling()">
         <ion-icon name="eye"></ion-icon>View & Pay</button>
       </ion-row>    
 </ion-row>
@@ -64,7 +61,7 @@
        <h2>Bill Ampount</h2>
   </ion-col>
       <ion-row>
-     <button ion-button icon-only default  click="gotobilling()">
+     <button ion-button icon-only default  (click)="gotobilling()">
         <ion-icon name="eye"></ion-icon>View & Pay</button>
       </ion-row>    
 </ion-row>
@@ -88,7 +85,7 @@
        <h2>Bill Ampount</h2>
   </ion-col>
       <ion-row>
-     <button ion-button icon-only default  click="gotobilling()">
+     <button ion-button icon-only default (click)="gotobilling()">
         <ion-icon name="eye"></ion-icon>View & Pay</button>
       </ion-row>    
 </ion-row>

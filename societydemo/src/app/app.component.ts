@@ -141,7 +141,7 @@ this.initializeApp();
       this.options.push({
         iconName: 'card',
         displayName: 'Bill',
-        component: DocumentuploadPage
+        component: SocietybillPage
       });
 
  // Load options with nested items (with icons)
