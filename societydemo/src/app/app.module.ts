@@ -1,18 +1,15 @@
-import { CircularlistPage } from './../pages/circularlist/circularlist';
-import { MemberprofilePage } from './../pages/memberprofile/memberprofile';
-
-import { RulesPage } from './../pages/rules/rules';
-import { ForgotpasswordPage } from './../pages/forgotpassword/forgotpassword';
-import { RegisterPage } from './../pages/register/register';
-import { ViewprofilePage } from './../pages/viewprofile/viewprofile';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule} from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
-// import { AngularFireModule } from 'angularfire2';
-// import firebase from 'firebase';
+import { AngularFireModule } from 'angularfire2';
+import firebase from 'firebase';
+import { Ng2SmartTableModule } from 'ng2-smart-table';
+// Angular Material
+import {  MatToolbarModule, MatSidenavModule, MatButtonModule, MatChipsModule, MatListModule, MatInputModule } from '@angular/material';
+
 
 import { DocumentuploadPage } from './../pages/documentupload/documentupload';
 import { ElectricianlistPage } from './../pages/electricianlist/electricianlist';
@@ -29,11 +26,21 @@ import { LoginPage } from './../pages/login/login';
 import { MySocietyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { MemberlistPage } from '../pages/memberlist/memberlist';
-<<<<<<< HEAD
-
-=======
->>>>>>> e92b793467a88531d90462ec0abf0c62a989957d
-
+import { AddEventAdminPage } from '../pages/add-event-admin/add-event-admin';
+import { CircularlistPage } from './../pages/circularlist/circularlist';
+import { MemberprofilePage } from './../pages/memberprofile/memberprofile';
+import { RulesPage } from './../pages/rules/rules';
+import { ForgotpasswordPage } from './../pages/forgotpassword/forgotpassword';
+import { RegisterPage } from './../pages/register/register';
+import { ViewprofilePage } from './../pages/viewprofile/viewprofile';
+import { NgDatepickerModule } from 'ng2-datepicker';
+import { EventAdminPage } from '../pages/event-admin/event-admin';
+import { EventListAdminPage } from '../pages/event-list-admin/event-list-admin';
+import { CommitteeListAdminPage } from '../pages/committee-list-admin/committee-list-admin';
+import { ResidentListAdminPage } from '../pages/resident-list-admin/resident-list-admin';
+import { AddPropertyAdminPage } from '../pages/add-property-admin/add-property-admin';
+import { AddCircularAdminPage } from '../pages/add-circular-admin/add-circular-admin';
+import { SideMenuContentComponent } from '../shared/side-menu-content/side-menu-content.component';
 
 var config = {
   apiKey: "AIzaSyCdBaGl6H_IuyzMyEnjq-6VRD5-2alxUtg",
@@ -43,8 +50,7 @@ var config = {
   storageBucket: "society-182906.appspot.com",
   messagingSenderId: "583609948893"
 };
-// firebase.initializeApp(config);
-
+ firebase.initializeApp(config);
 
 @NgModule({
   declarations: [
@@ -65,22 +71,34 @@ var config = {
     RegisterPage,
     MemberlistPage,
     ForgotpasswordPage,
-   EventlistPage,
+    EventlistPage,
     EmergencycontactlistPage,
-<<<<<<< HEAD
-    RulesPage,     
-    MemberprofilePage,
-    CircularlistPage
-=======
     RulesPage,
-    MemberprofilePage
->>>>>>> e92b793467a88531d90462ec0abf0c62a989957d
+    MemberprofilePage,
+    CircularlistPage,
+    AddEventAdminPage,
+    EventAdminPage,
+    EventListAdminPage,
+    CommitteeListAdminPage,
+    ResidentListAdminPage,
+    AddCircularAdminPage,
+    AddPropertyAdminPage,
+      // Side menu custom component
+      SideMenuContentComponent
   ],
-  
+
   imports: [
     BrowserModule,
+    NgDatepickerModule,
     IonicModule.forRoot(MySocietyApp),
-    // AngularFireModule.initializeApp(config)
+    AngularFireModule.initializeApp(config),
+    MatListModule,
+    MatInputModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatButtonModule,
+    MatChipsModule,
+    Ng2SmartTableModule
   ],
     bootstrap: [IonicApp],
   entryComponents: [
@@ -100,19 +118,22 @@ var config = {
     ViewprofilePage,
     RegisterPage,
     MemberlistPage,
-    ForgotpasswordPage,    
+    ForgotpasswordPage,
     EventlistPage,
     EmergencycontactlistPage,
     RulesPage,
-<<<<<<< HEAD
     MemberprofilePage,
-    CircularlistPage
-
-=======
->>>>>>> e92b793467a88531d90462ec0abf0c62a989957d
+    CircularlistPage,
+    AddEventAdminPage,
+    EventAdminPage,
+    EventListAdminPage,
+    CommitteeListAdminPage,
+    ResidentListAdminPage,
+    AddCircularAdminPage,
+    AddPropertyAdminPage
 
   ],
-  
+
   providers: [
     StatusBar,
     SplashScreen,

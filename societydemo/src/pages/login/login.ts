@@ -1,10 +1,4 @@
-<<<<<<< HEAD
-import { ForgotpasswordPage } from './../forgotpassword/forgotpassword';
-import { RegisterPage } from './../register/register';
-import { HomePage } from './../home/home';
-=======
 
->>>>>>> e92b793467a88531d90462ec0abf0c62a989957d
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
@@ -33,6 +27,7 @@ export class LoginPage {
   constructor(public navCtrl: NavController, public navParams: NavParams,public formBuilder: FormBuilder) {
     this.username = window.localStorage.getItem('username');
     this.password = window.localStorage.getItem('password');
+    sessionStorage.setItem("Sessionusername", this.username);
            this.authForm = formBuilder.group({
                username: ['', Validators.compose([Validators.required, Validators.pattern('[a-zA-Z]*'), Validators.minLength(8), Validators.maxLength(30)])],
                password: ['', Validators.compose([Validators.required, Validators.minLength(8)])]

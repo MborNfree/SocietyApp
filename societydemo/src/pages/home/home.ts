@@ -2,6 +2,9 @@
 import { Component } from '@angular/core';
 import { NavController,NavParams } from 'ionic-angular';
 import{ AlertController } from 'ionic-angular';
+// Angular Material
+import {  MatToolbarModule, MatSidenavModule, MatButtonModule, MatChipsModule, MatListModule, MatInputModule } from '@angular/material';
+
 
 import { LoginPage } from './../login/login';
 import { CommitteelistPage } from './../committeelist/committeelist';
@@ -12,6 +15,7 @@ import { NewsPage } from './../news/news';
 
 
 
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -19,10 +23,14 @@ import { NewsPage } from './../news/news';
 export class HomePage {
 
 username:any;
+sessionUser:any;
   constructor(public navCtrl: NavController,public alertCtrl: AlertController ,public navParams : NavParams) {
 
     this.username = window.localStorage.getItem('username');
+    this.sessionUser =sessionStorage.getItem("username");
+
   }
+
   logout() {
     window.localStorage.removeItem('username');
     window.localStorage.removeItem('password');
