@@ -29,7 +29,10 @@ import { LoginPage } from './../pages/login/login';
 import { MySocietyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { MemberlistPage } from '../pages/memberlist/memberlist';
+<<<<<<< HEAD
 
+=======
+>>>>>>> e92b793467a88531d90462ec0abf0c62a989957d
 
 
 var config = {
@@ -64,9 +67,14 @@ var config = {
     ForgotpasswordPage,
    EventlistPage,
     EmergencycontactlistPage,
+<<<<<<< HEAD
     RulesPage,     
     MemberprofilePage,
     CircularlistPage
+=======
+    RulesPage,
+    MemberprofilePage
+>>>>>>> e92b793467a88531d90462ec0abf0c62a989957d
   ],
   
   imports: [
@@ -96,9 +104,12 @@ var config = {
     EventlistPage,
     EmergencycontactlistPage,
     RulesPage,
+<<<<<<< HEAD
     MemberprofilePage,
     CircularlistPage
 
+=======
+>>>>>>> e92b793467a88531d90462ec0abf0c62a989957d
 
   ],
   

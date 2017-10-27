@@ -18,11 +18,18 @@ import { NewsPage } from './../news/news';
 })
 export class HomePage {
 
-
+username:any;
   constructor(public navCtrl: NavController,public alertCtrl: AlertController ,public navParams : NavParams) {
-    this.navParams.get('this.login.name1');
-  }
 
+    this.username = window.localStorage.getItem('username');
+  }
+  logout() {
+    window.localStorage.removeItem('username');
+    window.localStorage.removeItem('password');
+
+    this.navCtrl.setRoot(LoginPage);
+    this.navCtrl.popToRoot();
+}
   shownews()
   {
     this.navCtrl.push(NewsPage);

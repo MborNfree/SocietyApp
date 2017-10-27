@@ -54,12 +54,15 @@ this.initializeApp();
            {title: 'Electrician List',component: ElectricianlistPage,icon:'construct'},
            {title: 'Emergency Contacts',component:EmergencycontactlistPage,icon:''},
            {title: 'Event List',component:EventlistPage,icon:''},
+<<<<<<< HEAD
             {title: 'Circular List',component:CircularlistPage,icon:''},
           //  {title: 'Society Bill',component:SocietybillPage,icon:''},
            {title: 'Upload Document',component:DocumentuploadPage,icon:''},
            {title: 'Rules & Regulations',component:RulesPage,icon:'book'},
 
 
+=======
+>>>>>>> e92b793467a88531d90462ec0abf0c62a989957d
            {title: 'Upload Document',component:DocumentuploadPage,icon:''}
 
        ];
@@ -89,6 +92,15 @@ this.initializeApp();
             // logout logic
             // redirect to home
           this.nav.setRoot(HomePage);
+      }
+    }
+
+    checkPreviousAuthorization(): void {
+      if((window.localStorage.getItem('username') === "undefined" || window.localStorage.getItem('username') === null) &&
+         (window.localStorage.getItem('password') === "undefined" || window.localStorage.getItem('password') === null)) {
+        this.rootPage = LoginPage;
+      } else {
+        this.rootPage = HomePage;
       }
     }
   }

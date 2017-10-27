@@ -12,34 +12,52 @@
 
 </ion-header>
 
-
 <ion-content padding>
 
+    <form [formGroup]="authForm" (ngSubmit)="onSubmit(authForm.value)">
+        <ion-item [ngClass]="{'error-border':!authForm.controls.username.valid && authForm.controls.username.touched}">
+            <ion-label floating>Username</ion-label>
+            <ion-input formControlName="username" type="text" [(ngModel)]="username"></ion-input>
+        </ion-item>
+
+        <ion-item *ngIf="authForm.controls.username.hasError('required') && authForm.controls.username.touched">
+            <p>Sorry, field username is required!</p>
+        </ion-item>
+        <ion-item *ngIf="authForm.controls.username.hasError('pattern') && authForm.controls.username.touched">
+            <p>Sorry, only small and capital letters are allowed!</p>
+        </ion-item>
+        <ion-item *ngIf="authForm.controls.username.hasError('minlength') && authForm.controls.username.touched">
+            <p>Sorry, minimum username length is 8!</p>
+        </ion-item>
+        <ion-item *ngIf="authForm.controls.username.hasError('maxlength') && authForm.controls.username.touched">
+            <p>Sorry, maximum username length is 30!</p>
+        </ion-item>
+
+        <ion-item [ngClass]="{'error-border':!authForm.controls.password.valid && authForm.controls.password.touched}">
+            <ion-label floating>Password</ion-label>
+            <ion-input formControlName="password" type="password" [(ngModel)]="password"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="authForm.controls.password.hasError('required') && authForm.controls.password.touched">
+            <p>Sorry, field password is required!</p>
+        </ion-item>
+        <ion-item *ngIf="authForm.controls.password.hasError('minlength') && authForm.controls.password.touched">
+            <p>Sorry, minimum password length is 8!</p>
+        </ion-item>
+
+        <button ion-button full color="primary" [disabled]="!authForm.valid" style="margin-top: 20px;" type="submit">Login</button>
+    </form>
       <ion-list>
         <ion-item>
-            <ion-label color="primary" stacked>Username</ion-label>
-            <ion-input type="email" placeholder="Enter E-mail" [(ngModel)]="login.name1" ></ion-input>
-          </ion-item>
 
-          <ion-item>
-              <ion-label color="primary" stacked>Password</ion-label>
-              <ion-input type="password" placeholder="Enter Password" [(ngModel)]="login.password1" ></ion-input>
-            </ion-item>
-
-            <div padding>
-
-                <button ion-button full    (click)="loginclick()" >Login</button>
-            </div>
               <div class="row">
-                <div class="col">
-                <button ion-button  clear text-align="left"  (click)="forgotPwd()" >Forgot Password?</button>
-                </div>
-                <div class="col">
-                <button ion-button  clear  text-align="right"  (click)="signup()" >Sign Up</button>
-                </div>
+                  <div class="col">
+                  <button ion-button  clear text-align="left"  (click)="forgotPwd()" >Forgot Password?</button>
+                  </div>
+                  <div class="col">
+                   <button ion-button  clear  text-align="right"  (click)="signup()" >Dont Have any account?</button>
+                  </div>
               </div>
-
-
-          </ion-list>
+        </ion-item>
+      </ion-list>
 
 </ion-content>
