@@ -1,3 +1,4 @@
+import { BillingchargesPage } from './../pages/billingcharges/billingcharges';
 import { SocietybillPage } from './../pages/societybill/societybill';
 import { EventdetailsPage } from './../pages/eventdetails/eventdetails';
 import { CircularlistPage } from './../pages/circularlist/circularlist';
@@ -67,7 +68,8 @@ var config = {
     CircularlistPage,  
     MemberprofilePage,
    EventdetailsPage,
-   SocietybillPage
+   SocietybillPage,
+   BillingchargesPage
 
   ],
   
@@ -99,7 +101,8 @@ var config = {
     MemberprofilePage,
     CircularlistPage,
     EventdetailsPage, 
-    SocietybillPage 
+    SocietybillPage,
+    BillingchargesPage 
   ],
   
   providers: [
