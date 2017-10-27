@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { Component,ViewChild } from '@angular/core';
 import { Nav, Platform, MenuController, AlertController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -7,9 +6,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 // Models
 import { MenuOptionModel, SideMenuContentComponent } from '../shared/side-menu-content/side-menu-content.component';
 
-=======
-import { SocietybillPage } from './../pages/societybill/societybill';
->>>>>>> e9a86cfc0f2134cb444218260b378414adc334e4
 import { CircularlistPage } from './../pages/circularlist/circularlist';
 import { DocumentuploadPage } from './../pages/documentupload/documentupload';
 import { EventlistPage } from './../pages/eventlist/eventlist';
@@ -29,9 +25,10 @@ import { AddPropertyAdminPage } from '../pages/add-property-admin/add-property-a
 import { AddCircularAdminPage } from '../pages/add-circular-admin/add-circular-admin';
 import { ResidentListAdminPage } from '../pages/resident-list-admin/resident-list-admin';
 import { CommitteeListAdminPage } from '../pages/committee-list-admin/committee-list-admin';
+import { SocietybillPage } from '../pages/societybill/societybill';
 
 import { SideMenuSettings } from './../shared/side-menu-content/side-menu-content.component';
-import { DosdontsPage } from '../pages/dosdonts/dosdonts';
+
 
 @Component({
 
@@ -84,24 +81,10 @@ this.initializeApp();
            {title: 'Electrician List',component: ElectricianlistPage,icon:'construct'},
            {title: 'Emergency Contacts',component:EmergencycontactlistPage,icon:'plus'},
            {title: 'Event List',component:EventlistPage,icon:''},
-<<<<<<< HEAD
-           {title: 'Circular List',component:CircularlistPage,icon:'note'},
-           {title: 'Upload Document',component:DocumentuploadPage,icon:'note'},
-           {title: 'Rules & Regulations',component:RulesPage,icon:'book'},
-           {title: 'Upload Document',component:DocumentuploadPage,icon:''},
-           {title: 'Admin add event',component:AddEventAdminPage,icon:'calender'},
-           {title: 'Admin add Property',component:AddPropertyAdminPage,icon:'building'},
-           {title: 'Admin add Circular',component:AddCircularAdminPage,icon:''},
-           {title: 'Admin Resident List',component:ResidentListAdminPage,icon:'people'},
-           {title: 'Admin Committee List',component:CommitteeListAdminPage,icon:'user'}
-
-
-=======
-           {title: 'Circular List',component:CircularlistPage,icon:''},          
+           {title: 'Circular List',component:CircularlistPage,icon:''},
            {title: 'Upload Document',component:DocumentuploadPage,icon:'document'},
-           {title: 'Society Bill',component:SocietybillPage,icon:''},             
-           
->>>>>>> e9a86cfc0f2134cb444218260b378414adc334e4
+           {title: 'Society Bill',component:SocietybillPage,icon:''},
+
        ];
 
        this.activePage=this.pages[0];
