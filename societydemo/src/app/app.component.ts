@@ -88,7 +88,6 @@ this.initializeApp();
        ];
 
        this.activePage=this.pages[0];
-
     }
     initializeApp() {
       this.platform.ready().then(() => {
