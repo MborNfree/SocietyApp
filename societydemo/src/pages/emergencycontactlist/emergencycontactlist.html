@@ -17,7 +17,7 @@
 
 
 <ion-content padding>
-<form>
+
 
   <ion-list>
     <ion-item *ngFor="let d of diseases; let i=index" text-wrap (click)="toggleGroup(i)" [ngClass]="{active: isGroupShown(i)}">
@@ -32,8 +32,5 @@
      <div *ngIf="isGroupShown(i)"  >{{d.Fax}}</div>
     </ion-item>
   </ion-list>
-
-
-  </form>
 
 </ion-content>

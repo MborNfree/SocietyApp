@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { EventAdminPage } from '../event-admin/event-admin';
 
 /**
  * Generated class for the EventListAdminPage page.
@@ -21,5 +22,7 @@ export class EventListAdminPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad EventListAdminPage');
   }
-
+  EventDetailPage(){
+    this.navCtrl.push(EventAdminPage);
+  }
 }
