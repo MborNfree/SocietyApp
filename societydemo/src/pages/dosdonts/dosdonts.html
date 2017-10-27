@@ -6,7 +6,7 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar  color="info">
 
       <button ion-button icon-only menuToggle start>
           <ion-icon name="menu"></ion-icon>
@@ -28,11 +28,11 @@
           </ion-segment-button>
         </ion-segment>
      </div>
-    
+
         <div [ngSwitch]="account.Instructions">
             <ion-list *ngSwitchCase="'DoS'">
               <ion-item>
-              <ul>               
+              <ul>
                 <li>Keep Corridors! Lobby Clean and Tidy</li>
                 </ul>
               <ul>
@@ -69,9 +69,9 @@
                     </ul>
                     </ion-item>
                 </ion-list>
-            </div> 
+            </div>
 
-         
+
             <!-- <form>
               <ion-item-group>
                 <ion-item-divider>

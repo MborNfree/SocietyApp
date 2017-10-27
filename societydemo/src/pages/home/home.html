@@ -1,7 +1,7 @@
 <ion-header>
     <!-- <ion-navbar hide-back-button="true"> -->
 
-      <ion-toolbar>
+      <ion-toolbar  color="info">
 
     <button ion-button icon-only menuToggle start>
         <ion-icon name="menu"></ion-icon>
@@ -9,6 +9,7 @@
 
     <ion-buttons right>
         <button ion-button icon-only (click)="showAlert()"><ion-icon name="power" ></ion-icon></button>
+        welcome {{username}}!
       </ion-buttons>
     <ion-title align="center">
         Home Page
@@ -20,10 +21,11 @@
 
   <!-- </ion-navbar> -->
   </ion-toolbar>
+
 </ion-header>
 
 <ion-content padding>
-    <h1>Welcome {{username}}</h1>
+
 
   <form>
       <ion-label stacked align="center">Services</ion-label>

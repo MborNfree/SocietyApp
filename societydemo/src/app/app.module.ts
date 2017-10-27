@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 import { BillingchargesPage } from './../pages/billingcharges/billingcharges';
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> 0c56b49b6574a73640a6dde3454cd9499cb6b76a
 import { SocietybillPage } from './../pages/societybill/societybill';
 import { EventdetailsPage } from './../pages/eventdetails/eventdetails';
 import { CircularlistPage } from './../pages/circularlist/circularlist';
@@ -8,14 +13,19 @@ import { MemberprofilePage } from './../pages/memberprofile/memberprofile';
 import { ForgotpasswordPage } from './../pages/forgotpassword/forgotpassword';
 import { RegisterPage } from './../pages/register/register';
 import { ViewprofilePage } from './../pages/viewprofile/viewprofile';
+>>>>>>> e9a86cfc0f2134cb444218260b378414adc334e4
 
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule} from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
-// import { AngularFireModule } from 'angularfire2';
-// import firebase from 'firebase';
+import { AngularFireModule } from 'angularfire2';
+import firebase from 'firebase';
+import { Ng2SmartTableModule } from 'ng2-smart-table';
+// Angular Material
+import {  MatToolbarModule, MatSidenavModule, MatButtonModule, MatChipsModule, MatListModule, MatInputModule } from '@angular/material';
+
 
 import { DocumentuploadPage } from './../pages/documentupload/documentupload';
 import { ElectricianlistPage } from './../pages/electricianlist/electricianlist';
@@ -31,7 +41,26 @@ import { ProfilePage } from './../pages/profile/profile';
 import { LoginPage } from './../pages/login/login';
 import { MySocietyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+<<<<<<< HEAD
+import { MemberlistPage } from '../pages/memberlist/memberlist';
+import { AddEventAdminPage } from '../pages/add-event-admin/add-event-admin';
+import { CircularlistPage } from './../pages/circularlist/circularlist';
+import { MemberprofilePage } from './../pages/memberprofile/memberprofile';
+import { RulesPage } from './../pages/rules/rules';
+import { ForgotpasswordPage } from './../pages/forgotpassword/forgotpassword';
+import { RegisterPage } from './../pages/register/register';
+import { ViewprofilePage } from './../pages/viewprofile/viewprofile';
+import { NgDatepickerModule } from 'ng2-datepicker';
+import { EventAdminPage } from '../pages/event-admin/event-admin';
+import { EventListAdminPage } from '../pages/event-list-admin/event-list-admin';
+import { CommitteeListAdminPage } from '../pages/committee-list-admin/committee-list-admin';
+import { ResidentListAdminPage } from '../pages/resident-list-admin/resident-list-admin';
+import { AddPropertyAdminPage } from '../pages/add-property-admin/add-property-admin';
+import { AddCircularAdminPage } from '../pages/add-circular-admin/add-circular-admin';
+import { SideMenuContentComponent } from '../shared/side-menu-content/side-menu-content.component';
+=======
 
+>>>>>>> e9a86cfc0f2134cb444218260b378414adc334e4
 
 var config = {
   apiKey: "AIzaSyCdBaGl6H_IuyzMyEnjq-6VRD5-2alxUtg",
@@ -41,8 +70,7 @@ var config = {
   storageBucket: "society-182906.appspot.com",
   messagingSenderId: "583609948893"
 };
-// firebase.initializeApp(config);
-
+ firebase.initializeApp(config);
 
 @NgModule({
   declarations: [
@@ -62,6 +90,22 @@ var config = {
     ViewprofilePage,
     RegisterPage,
     ForgotpasswordPage,
+<<<<<<< HEAD
+    EventlistPage,
+    EmergencycontactlistPage,
+    RulesPage,
+    MemberprofilePage,
+    CircularlistPage,
+    AddEventAdminPage,
+    EventAdminPage,
+    EventListAdminPage,
+    CommitteeListAdminPage,
+    ResidentListAdminPage,
+    AddCircularAdminPage,
+    AddPropertyAdminPage,
+      // Side menu custom component
+      SideMenuContentComponent
+=======
    EventlistPage,
     EmergencycontactlistPage,    
     MemberprofilePage,
@@ -71,12 +115,21 @@ var config = {
    SocietybillPage,
    BillingchargesPage
 
+>>>>>>> e9a86cfc0f2134cb444218260b378414adc334e4
   ],
-  
+
   imports: [
     BrowserModule,
+    NgDatepickerModule,
     IonicModule.forRoot(MySocietyApp),
-    // AngularFireModule.initializeApp(config)
+    AngularFireModule.initializeApp(config),
+    MatListModule,
+    MatInputModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatButtonModule,
+    MatChipsModule,
+    Ng2SmartTableModule
   ],
     bootstrap: [IonicApp],
   entryComponents: [
@@ -95,16 +148,38 @@ var config = {
     DocumentuploadPage,
     ViewprofilePage,
     RegisterPage,
+<<<<<<< HEAD
+    MemberlistPage,
+    ForgotpasswordPage,
+    EventlistPage,
+    EmergencycontactlistPage,
+    RulesPage,
+    MemberprofilePage,
+    CircularlistPage,
+    AddEventAdminPage,
+    EventAdminPage,
+    EventListAdminPage,
+    CommitteeListAdminPage,
+    ResidentListAdminPage,
+    AddCircularAdminPage,
+    AddPropertyAdminPage
+
+=======
   ForgotpasswordPage,    
     EventlistPage,
     EmergencycontactlistPage,
     MemberprofilePage,
     CircularlistPage,
     EventdetailsPage, 
+<<<<<<< HEAD
     SocietybillPage,
     BillingchargesPage 
+=======
+    SocietybillPage 
+>>>>>>> e9a86cfc0f2134cb444218260b378414adc334e4
+>>>>>>> 0c56b49b6574a73640a6dde3454cd9499cb6b76a
   ],
-  
+
   providers: [
     StatusBar,
     SplashScreen,
