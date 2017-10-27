@@ -1,3 +1,4 @@
+
 import { Component,ViewChild } from '@angular/core';
 import { Nav, Platform, MenuController, AlertController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -28,6 +29,7 @@ import { CommitteeListAdminPage } from '../pages/committee-list-admin/committee-
 import { SocietybillPage } from '../pages/societybill/societybill';
 
 import { SideMenuSettings } from './../shared/side-menu-content/side-menu-content.component';
+import { EventListAdminPage } from '../pages/event-list-admin/event-list-admin';
 
 
 @Component({
@@ -221,6 +223,22 @@ this.initializeApp();
       });
 
       this.options.push({
+        displayName: 'Society Member',
+        subItems: [
+          {
+            iconName: 'plus-circled',
+            displayName: 'Residents',
+            component: ResidentlistPage
+          },
+          {
+            iconName: 'hammer',
+            displayName: 'Committee',
+            component: CommitteelistPage
+          }
+
+        ]
+      });
+      this.options.push({
         displayName: 'Admin Section',
         subItems: [
           {
@@ -232,6 +250,23 @@ this.initializeApp();
             iconName: 'albums',
             displayName: 'Society Documents',
             component: EventlistPage
+          },
+          {
+            iconName: 'albums',
+            displayName: 'Events',
+            // component: EventlistPage
+            subItems: [
+              {
+                iconName: 'basket',
+                displayName: 'Add event',
+                component: AddEventAdminPage
+              },
+              {
+                iconName: 'basket',
+                displayName: 'Event List',
+                component: EventListAdminPage
+              }
+            ]
           }
         ]
       });
