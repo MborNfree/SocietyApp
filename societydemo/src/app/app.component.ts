@@ -1,5 +1,4 @@
 
-
 import { Component,ViewChild } from '@angular/core';
 import { Nav, Platform, MenuController, AlertController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -7,7 +6,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 // Models
 import { MenuOptionModel, SideMenuContentComponent } from '../shared/side-menu-content/side-menu-content.component';
-
 import { CircularlistPage } from './../pages/circularlist/circularlist';
 import { DocumentuploadPage } from './../pages/documentupload/documentupload';
 import { EventlistPage } from './../pages/eventlist/eventlist';
@@ -34,7 +32,6 @@ import { EventListAdminPage } from '../pages/event-list-admin/event-list-admin';
 
 
 @Component({
-
   templateUrl: 'app.html'
 })
 export class MySocietyApp {
