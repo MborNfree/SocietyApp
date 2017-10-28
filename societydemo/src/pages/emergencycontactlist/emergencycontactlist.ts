@@ -1,5 +1,6 @@
 import { Component} from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { EventdetailsPage } from '../eventdetails/eventdetails';
 
 /**
  * Generated class for the EmergencycontactlistPage page.
@@ -34,12 +35,16 @@ isGroupShown(group) {
     return this.shownGroup === group;
 };
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {    
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
- 
 
+  openContact(){
+    alert('test');
+    this.navCtrl.push(EventdetailsPage);
+  }
   ionViewDidLoad() {
-    console.log('ionViewDidLoad EmergencycontactlistPage'); 
+    console.log('ionViewDidLoad EmergencycontactlistPage');
 
   }
+
 }

@@ -18,16 +18,17 @@ import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/fo
 })
 export class RegisterPage {
   authForm: FormGroup;
+
   constructor(public navCtrl: NavController, public navParams: NavParams,public formBuilder: FormBuilder) {
     this.authForm = formBuilder.group({
       username: ['', Validators.compose([Validators.required, Validators.pattern('[a-zA-Z]*'), Validators.minLength(8), Validators.maxLength(30)])],
       password: ['', Validators.compose([Validators.required, Validators.minLength(8)])],
-      flatno: ['', Validators.compose([Validators.required,Validators.pattern('[0-9]*'), Validators.minLength(4)])],
+      flatno: ['', Validators.compose([Validators.required,Validators.pattern('[0-9]*'), Validators.minLength(3)])],
       email: ['',Validators.compose([Validators.required, Validators.pattern('[a-zA-Z]*'), Validators.minLength(8), Validators.maxLength(30)])],
-      family: ['',Validators.compose([Validators.required,Validators.pattern('[0-9]*'), Validators.minLength(2)])],
-      vehicles: ['',Validators.compose([Validators.required,Validators.pattern('[0-9]*'), Validators.minLength(2)])],
-      fnm: ['',Validators.compose([Validators.required, Validators.minLength(10)])],
-      lnm: ['',Validators.compose([Validators.required, Validators.minLength(10)])]
+      family: ['',Validators.compose([Validators.required,Validators.pattern('[0-9]*'), Validators.minLength(1)])],
+      vehicles: ['',Validators.compose([Validators.required,Validators.pattern('[0-9]*'), Validators.minLength(1)])],
+      fnm: ['',Validators.compose([Validators.required, Validators.minLength(4),Validators.maxLength(10)])],
+      lnm: ['',Validators.compose([Validators.required, Validators.minLength(4),Validators.maxLength(10)])]
 
   });
   }
@@ -35,6 +36,7 @@ export class RegisterPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad RegisterPage');
   }
+
   onSubmit(value: any): void {
     if(this.authForm.valid) {
         window.localStorage.setItem('username', value.username);

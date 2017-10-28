@@ -1,9 +1,10 @@
 import { Component} from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams ,ViewController} from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
 import { DatepickerOptions } from 'ng2-datepicker';
 import { FileSelectDirective, FileDropDirective, FileUploader } from 'ng2-file-upload/ng2-file-upload';
 
+import { EventListAdminPage } from '../event-list-admin/event-list-admin';
 import { EventAdminPage } from '../event-admin/event-admin';
 
 /**
@@ -25,7 +26,9 @@ export class AddEventAdminPage {
   eventnm:any;
   eventdt:any;
   eventvenue:any;
-  constructor(public navCtrl: NavController, public navParams: NavParams,public formBuilder: FormBuilder) {
+  title: string;
+  description: string;
+  constructor(public navCtrl: NavController, public navParams: NavParams,public formBuilder: FormBuilder,public view: ViewController) {
 
     this.authForm = formBuilder.group({
       eventnm: ['', Validators.compose([Validators.required, Validators.pattern('[a-zA-Z]*'), Validators.minLength(4), Validators.maxLength(30)])],
@@ -49,7 +52,31 @@ export class AddEventAdminPage {
   onSubmit(value: any): void {
 
       alert('added');
-    this.navCtrl.push(EventAdminPage);
+      // let newItem = {
+      //   title: this.title,
+      //   description: this.description
+      // };
+
+      // this.view.dismiss(newItem);
+
+    this.navCtrl.push(EventListAdminPage);
+
   }
+
+  saveItem(){
+    console.log('save');
+       let newItem = {
+         title: this.title,
+         description: this.description
+       };
+
+       this.view.dismiss(newItem);
+       this.navCtrl.push(EventAdminPage);
+
+     }
+
+     close(){
+       this.view.dismiss();
+     }
 
 }

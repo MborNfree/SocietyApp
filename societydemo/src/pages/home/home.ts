@@ -1,3 +1,5 @@
+import { SocietybillPage } from './../societybill/societybill';
+import { EventlistPage } from './../eventlist/eventlist';
 
 import { Component } from '@angular/core';
 import { NavController,NavParams } from 'ionic-angular';
@@ -45,9 +47,11 @@ sessionUser:any;
 
   showmembers()
   {
-  this.navCtrl.push(CommitteelistPage);
+  this.navCtrl.push(EventlistPage);
   }
-
+  ShowBills(){
+    this.navCtrl.push(SocietybillPage);
+  }
 
   showdoctorlist()
   {

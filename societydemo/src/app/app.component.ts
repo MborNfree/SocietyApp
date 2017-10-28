@@ -1,4 +1,5 @@
 
+
 import { Component,ViewChild } from '@angular/core';
 import { Nav, Platform, MenuController, AlertController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -24,10 +25,10 @@ import { LoginPage } from './../pages/login/login';
 import { AddEventAdminPage } from '../pages/add-event-admin/add-event-admin';
 import { AddPropertyAdminPage } from '../pages/add-property-admin/add-property-admin';
 import { AddCircularAdminPage } from '../pages/add-circular-admin/add-circular-admin';
-import { ResidentListAdminPage } from '../pages/resident-list-admin/resident-list-admin';
 import { CommitteeListAdminPage } from '../pages/committee-list-admin/committee-list-admin';
 import { SocietybillPage } from '../pages/societybill/societybill';
-
+import { ResidentListAdminPage } from './../pages/resident-list-admin/resident-list-admin';
+import { PropertyListAdminPage } from './../pages/property-list-admin/property-list-admin';
 import { SideMenuSettings } from './../shared/side-menu-content/side-menu-content.component';
 import { EventListAdminPage } from '../pages/event-list-admin/event-list-admin';
 
@@ -195,10 +196,6 @@ this.initializeApp();
       });
 
 
-
-
-
-
       // Load options with nested items (without icons)
       // -----------------------------------------------
       this.options.push({
@@ -223,7 +220,7 @@ this.initializeApp();
       });
 
       this.options.push({
-        displayName: 'Society Member',
+        displayName: 'Member List',
         subItems: [
           {
             iconName: 'plus-circled',
@@ -249,24 +246,37 @@ this.initializeApp();
           {
             iconName: 'albums',
             displayName: 'Society Documents',
-            component: EventlistPage
+            component: CircularlistPage
           },
           {
             iconName: 'albums',
-            displayName: 'Events',
-            // component: EventlistPage
-            subItems: [
-              {
-                iconName: 'basket',
-                displayName: 'Add event',
-                component: AddEventAdminPage
-              },
-              {
-                iconName: 'basket',
-                displayName: 'Event List',
-                component: EventListAdminPage
-              }
-            ]
+            displayName: 'Circualrs',
+            component: AddCircularAdminPage
+          },
+          {
+            iconName: 'albums',
+            displayName: 'Add Events',
+             component: AddEventAdminPage
+          },
+          {
+            iconName: 'albums',
+            displayName: 'Events List',
+             component: EventListAdminPage
+          },
+          {
+            iconName: 'albums',
+            displayName: 'Residents',
+             component: ResidentListAdminPage
+          },
+          {
+            iconName: 'albums',
+            displayName: 'Committee',
+             component: CommitteeListAdminPage
+          },
+          {
+            iconName: 'albums',
+            displayName: 'Society Property',
+             component: PropertyListAdminPage
           }
         ]
       });

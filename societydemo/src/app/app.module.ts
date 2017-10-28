@@ -1,3 +1,4 @@
+import { CommitteeProfileAdminPage } from './../pages/committee-profile-admin/committee-profile-admin';
 
 import { BillingchargesPage } from './../pages/billingcharges/billingcharges';
 
@@ -48,6 +49,8 @@ import { ResidentListAdminPage } from '../pages/resident-list-admin/resident-lis
 import { AddPropertyAdminPage } from '../pages/add-property-admin/add-property-admin';
 import { AddCircularAdminPage } from '../pages/add-circular-admin/add-circular-admin';
 import { SideMenuContentComponent } from '../shared/side-menu-content/side-menu-content.component';
+import { PropertyListAdminPage } from '../pages/property-list-admin/property-list-admin';
+import { ResidentProfileAdminPage } from '../pages/resident-profile-admin/resident-profile-admin';
 
 
 
@@ -94,7 +97,11 @@ var config = {
     SocietybillPage,
     BillingchargesPage,
       // Side menu custom component
-      SideMenuContentComponent
+      SideMenuContentComponent,
+      PropertyListAdminPage,
+      ResidentProfileAdminPage,
+      CommitteeListAdminPage,
+      CommitteeProfileAdminPage
   ],
 
   imports: [
@@ -126,10 +133,10 @@ var config = {
     ElectricianlistPage,
     DocumentuploadPage,
     ViewprofilePage,
-    RegisterPage, 
+    RegisterPage,
     ForgotpasswordPage,
     EventlistPage,
-    EmergencycontactlistPage, 
+    EmergencycontactlistPage,
     MemberprofilePage,
     CircularlistPage,
     AddEventAdminPage,
@@ -146,7 +153,11 @@ var config = {
     CircularlistPage,
     EventdetailsPage,
     SocietybillPage,
-    BillingchargesPage
+    BillingchargesPage,
+    PropertyListAdminPage,
+    ResidentProfileAdminPage,
+    CommitteeListAdminPage,
+    CommitteeProfileAdminPage
 
   ],
 

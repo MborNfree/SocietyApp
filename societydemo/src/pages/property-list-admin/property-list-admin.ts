@@ -14,12 +14,25 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'property-list-admin.html',
 })
 export class PropertyListAdminPage {
-
+  public items = [];
+  public assets = [];
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PropertyListAdminPage');
+    this.items = [
+      {title: 'CCTV', description: 'test1'},
+      {title: 'Sofa', description: 'test2'},
+      {title: 'Society Office', description: 'test3'}
+    ];
+
+
+    this.assets = [
+      {title: 'CCTV', description: 'test1'},
+      {title: 'Sofa', description: 'test2'},
+      {title: 'Society Office', description: 'test3'}
+    ];
   }
 
 }

@@ -8,57 +8,40 @@
 
   <ion-navbar  color="info">
     <ion-title>Event admin</ion-title>
+    <!-- <button ion-button icon-only menuToggle start>
+        <ion-icon name="menu"></ion-icon>
+    </button> -->
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
+    <ion-label align="center">Event Name:Diwali</ion-label>
+
+    <ion-label>Photos</ion-label>
+
     <ion-card>
+    <ion-slides>
+      <ion-slide>
+        <h1><img src="assets/d1.jpg"/></h1>
+      </ion-slide>
+      <ion-slide>
+        <h1><img src="assets/d2.jpg"/></h1>
+      </ion-slide>
+      <ion-slide>
+        <h1><img src="assets/d3.jpg"/></h1>
+      </ion-slide>
+    </ion-slides>
+    </ion-card>
 
-            <img src="assets/diwali.jpg" (click)='EventDetailPage()'/>
-
-            <div class="card-title">Diwali</div>
-
-            <div class="card-subtitle">The Festival Of Lights</div>
-
-          </ion-card>
-
-
-
-          <ion-card>
-
-            <img src="assets/holi.jpg" (click)='EventDetailPage()'/>
-
-            <div class="card-title">Holi</div>
-
-            <div class="card-subtitle">The Festival Of Colors</div>
-
-          </ion-card>
-
-
-
-          <ion-card>
-
-            <img src="assets/independence day.png" (click)='EventDetailPage()'/>
-
-            <div class="card-title">Independance Day</div>
-
-            <div class="card-subtitle">15 August</div>
-
-          </ion-card>
-
-
-
-          <ion-card>
-
-            <img src="assets/christmas.png" (click)='EventDetailPage()'/>
-
-            <div class="card-title">Merry christmas</div>
-
-            <div class="card-subtitle">28 Listings</div>
-
-          </ion-card>
-
-
-
+      <ion-label>Event Details</ion-label>
+      <p text-wrap>Diwali is the Hindu festival of lights, an annual celebration that signifies the victory of light over darkness, good over evil, knowledge over ignorance and hope over despair.</p>
+    <ion-list>
+      <ion-item>
+        <ion-label> <ion-icon name="calender" item-start></ion-icon> Event Date: 16/10/2017</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label> <ion-icon name="calender" item-start></ion-icon> Event Venue:The Central Park </ion-label>
+      </ion-item>
+    </ion-list>
 
 </ion-content>

@@ -15,12 +15,15 @@ import { EventListAdminPage } from '../event-list-admin/event-list-admin';
   templateUrl: 'event-admin.html',
 })
 export class EventAdminPage {
-
+  title;
+  description;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad EventAdminPage');
+    // this.title = this.navParams.get('item').title;
+    // this.description = this.navParams.get('item').description;
   }
   EventDetailPage(){
     this.navCtrl.push(EventListAdminPage);

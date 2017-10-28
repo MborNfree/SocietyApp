@@ -20,16 +20,17 @@
 
 
   <ion-list>
-    <ion-item *ngFor="let d of diseases; let i=index" text-wrap (click)="toggleGroup(i)" [ngClass]="{active: isGroupShown(i)}">
+    <ion-item  *ngFor="let d of diseases; let i=index" text-wrap (click)="toggleGroup(i)" [ngClass]="{active: isGroupShown(i)}">
       <h3>
         {{d.title}}
-        <ion-icon color="success" item-right [name]="isGroupShown(i) ? 'arrow-dropdown' : 'arrow-dropright'"></ion-icon>
+        <ion-icon color="success" item-right [name]="isGroupShown(i) ? 'arrow-dropdown' : 'arrow-dropright'" ></ion-icon>
       </h3>
-      <div *ngIf="isGroupShown(i)" >{{d.description}}  </div>
+      <div *ngIf="isGroupShown(i)" (click)='openContact()'>{{d.description}}</div>
       <h4>
       <div *ngIf="isGroupShown(i)"  class="desc"><ion-icon name="call"></ion-icon>{{d.MobileNo}}</div>
       </h4>
      <div *ngIf="isGroupShown(i)"  >{{d.Fax}}</div>
+
     </ion-item>
   </ion-list>
 

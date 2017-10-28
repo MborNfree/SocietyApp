@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ResidentProfileAdminPage } from '../resident-profile-admin/resident-profile-admin';
 
 /**
  * Generated class for the ResidentListAdminPage page.
@@ -21,5 +22,8 @@ export class ResidentListAdminPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad ResidentListAdminPage');
   }
+  memberprofile(){
+    this.navCtrl.push(ResidentProfileAdminPage);
 
+  }
 }

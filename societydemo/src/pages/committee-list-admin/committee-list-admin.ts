@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { CommitteeProfileAdminPage } from '../committee-profile-admin/committee-profile-admin';
 
 /**
  * Generated class for the CommitteeListAdminPage page.
@@ -21,5 +22,7 @@ export class CommitteeListAdminPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad CommitteeListAdminPage');
   }
-
+  memberprofile(){
+    this.navCtrl.push(CommitteeProfileAdminPage);
+  }
 }

@@ -25,85 +25,78 @@
 </ion-header>
 
 <ion-content padding>
-
-
-
+  <ion-slides class="imgcarousel"  autoplay="2000" loop="true" speed="3000">
+    <ion-slide> <img src='assets/b3.JPG'></ion-slide>
+    <ion-slide> <img src='assets/b5.JPG'></ion-slide>
+    <ion-slide> <img src='assets/b3.JPG'></ion-slide>
+  </ion-slides>
       <ion-label stacked align="center">Services</ion-label>
   <div class="row">
 
-    <ion-card >
+      <ion-card>
         <ion-slides>
-      <ion-col>
-
-      <ion-item (click)="showdoctorlist()">
-      <ion-avatar>
-        <img src="assets/doctor.jpg"/><div class="card-title">Doctor</div>
-      </ion-avatar>
-    </ion-item>
-
-  </ion-col>
-  <ion-col  >
-        <ion-item (click)="showelectricianlist()">
-      <ion-avatar>
-        <img src="assets/electrician.jpg"/><div class="card-title">Electrician</div>
-      </ion-avatar>
-    </ion-item>
-  </ion-col>
-
-    <ion-col>
-    <ion-item (click)="showplumberlist()">
-        <ion-avatar>
-          <img src="assets/plumber.jpg"/><div class="card-title">Plumber</div>
-        </ion-avatar>
-      </ion-item>
-  </ion-col>
- </ion-slides>
+            <ion-col>
+              <ion-item (click)="showdoctorlist()">
+                <ion-avatar>
+                  <img src="assets/doctor.jpg"/><div class="card-title">Doctor</div>
+                </ion-avatar>
+              </ion-item>
+            </ion-col>
+            <ion-col >
+              <ion-item (click)="showelectricianlist()">
+                <ion-avatar>
+                  <img src="assets/electrician.jpg"/><div class="card-title">Electrician</div>
+                </ion-avatar>
+              </ion-item>
+            </ion-col>
+            <ion-col>
+              <ion-item (click)="showplumberlist()">
+                <ion-avatar>
+                  <img src="assets/plumber.jpg"/><div class="card-title">Plumber</div>
+                </ion-avatar>
+              </ion-item>
+            </ion-col>
+        </ion-slides>
       </ion-card>
     </div>
   <div class="row">
-       <div class="col col-50">
+        <div class="col col-md-6">
+          <ion-card  (click)="shownews()" color='info' class="fixcard col-50">
 
-          <ion-card  (click)="shownews()" >
-            <ion-buttons align="center">
-              <ion-icon name="logo-designernews" align="center"></ion-icon>
-              </ion-buttons>
+              <ion-icon name="desktop" align="center"></ion-icon>
+
               <!-- <img src="../assets/news.jpg"/> -->
               <div class="card-title" align="center">NEWS</div>
           </ion-card>
-       </div>
-
-    <div class="col col-50">
-          <ion-card  (click)="showmembers()">
-          <ion-buttons align="center">
-            <ion-icon name="people" align="center"></ion-icon>
-          </ion-buttons>
-          <div class="card-title" align="center">MEMBERSHIP</div>
-        </ion-card>
-       </div>
-
-
-
+        </div>
+        <div class="col col-md-6">
+              <ion-card  (click)="showmembers()" color='danger' class="fixcard col-50">
+              <ion-buttons align="center" large >
+                <ion-icon name="people"  align="center"></ion-icon>
+              </ion-buttons>
+              <div class="card-title"  align="center">Events</div>
+            </ion-card>
+        </div>
+  </div>
   <div class="row">
-       <div class="col col-50">
-          <ion-card  class="card">
-              <ion-buttons align="center">
+       <div class="col col-md-6">
+          <ion-card  class="card" color='rule'  (click)="ShowBills()"  class=" fixcard col-50">
+              <ion-buttons align="center" large >
               <ion-icon name="clipboard" ></ion-icon>
             </ion-buttons>
-            <div class="card-title" align="center">RULES & REGULATIONS</div>
+            <div class="card-title"  align="center">Bills</div>
           </ion-card>
        </div>
 
-       <div class="col col-50">
-          <ion-card >
-              <ion-buttons align="center" >
+       <div class="col col-md-6">
+          <ion-card class="fixcard col-50" color='help'>
+              <ion-buttons align="center" large>
               <ion-icon name="school"></ion-icon>
             </ion-buttons>
             <!-- <img src="assets/img/card-madison.png"/> -->
-            <div class="card-title" align="center" >HELPDESK</div>
+            <div class="card-title"  align="center" >HELPDESK</div>
           </ion-card>
        </div>
-
-    </div>
     </div>
 
 </ion-content>
