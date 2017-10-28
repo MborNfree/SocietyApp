@@ -1,12 +1,4 @@
 
-<<<<<<< HEAD
-
-import { ForgotpasswordPage } from './../forgotpassword/forgotpassword';
-import { RegisterPage } from './../register/register';
-import { HomePage } from './../home/home';
-
-=======
->>>>>>> 4e111f8482220dfe7aab84a9eee76b9e1cf43f5c
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';

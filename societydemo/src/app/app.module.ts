@@ -3,13 +3,6 @@ import { BillingchargesPage } from './../pages/billingcharges/billingcharges';
 
 import { SocietybillPage } from './../pages/societybill/societybill';
 import { EventdetailsPage } from './../pages/eventdetails/eventdetails';
-import { CircularlistPage } from './../pages/circularlist/circularlist';
-import { MemberprofilePage } from './../pages/memberprofile/memberprofile';
-
-
-import { ForgotpasswordPage } from './../pages/forgotpassword/forgotpassword';
-import { RegisterPage } from './../pages/register/register';
-import { ViewprofilePage } from './../pages/viewprofile/viewprofile';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule} from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -37,8 +30,16 @@ import { LoginPage } from './../pages/login/login';
 import { MySocietyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 
+
 // import { MemberlistPage } from '../pages/memberlist/memberlist';
 import { AddEventAdminPage } from '../pages/add-event-admin/add-event-admin';
+
+import { CircularlistPage } from './../pages/circularlist/circularlist';
+import { MemberprofilePage } from './../pages/memberprofile/memberprofile';
+import { ForgotpasswordPage } from './../pages/forgotpassword/forgotpassword';
+import { RegisterPage } from './../pages/register/register';
+import { ViewprofilePage } from './../pages/viewprofile/viewprofile';
+
 import { NgDatepickerModule } from 'ng2-datepicker';
 import { EventAdminPage } from '../pages/event-admin/event-admin';
 import { EventListAdminPage } from '../pages/event-list-admin/event-list-admin';
@@ -47,6 +48,8 @@ import { ResidentListAdminPage } from '../pages/resident-list-admin/resident-lis
 import { AddPropertyAdminPage } from '../pages/add-property-admin/add-property-admin';
 import { AddCircularAdminPage } from '../pages/add-circular-admin/add-circular-admin';
 import { SideMenuContentComponent } from '../shared/side-menu-content/side-menu-content.component';
+
+
 
 var config = {
   apiKey: "AIzaSyCdBaGl6H_IuyzMyEnjq-6VRD5-2alxUtg",
@@ -91,14 +94,7 @@ var config = {
     SocietybillPage,
     BillingchargesPage,
       // Side menu custom component
-      SideMenuContentComponent,
-    EventlistPage,
-    EmergencycontactlistPage,
-    MemberprofilePage,
-    CircularlistPage,
-    MemberprofilePage,
-   EventdetailsPage,
-   BillingchargesPage
+      SideMenuContentComponent
   ],
 
   imports: [
@@ -130,10 +126,10 @@ var config = {
     ElectricianlistPage,
     DocumentuploadPage,
     ViewprofilePage,
-    RegisterPage,
+    RegisterPage, 
     ForgotpasswordPage,
     EventlistPage,
-    EmergencycontactlistPage,
+    EmergencycontactlistPage, 
     MemberprofilePage,
     CircularlistPage,
     AddEventAdminPage,
@@ -150,7 +146,7 @@ var config = {
     CircularlistPage,
     EventdetailsPage,
     SocietybillPage,
-    BillingchargesPage,
+    BillingchargesPage
 
   ],
 
