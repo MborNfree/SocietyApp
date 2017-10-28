@@ -6,49 +6,35 @@
 -->
 <ion-header>
 
-<<<<<<< HEAD
-<ion-navbar  color="info">
-=======
   <ion-toolbar color="info">
-  <ion-title align="center">Society Bill</ion-title>
-
-  </ion-toolbar>
->>>>>>> 4e111f8482220dfe7aab84a9eee76b9e1cf43f5c
+  <ion-title align="center">Society Bill</ion-title> 
 
       <button ion-button icon-only menuToggle start>
           <ion-icon name="menu"></ion-icon>
-      </button>
-    <ion-title align="center">Society Bill</ion-title>
-  </ion-navbar>
+      </button>  
   
+  </ion-toolbar>
+
 </ion-header>
 
-
 <ion-content padding>
-
-  <ion-card>
+ <!-- <ion-card>
       <ion-row>
           <ion-label>SEPT 2017-OCT 2017</ion-label>
       </ion-row>
-<ion-row>
-  <ion-col>
-    <ion-item>
-      <ion-thumbnail item-start>
-        <img src="assets/apartment2.jpg" large>
-      </ion-thumbnail>
-    </ion-item>
-  </ion-col>
-  <ion-col>
+    <ion-row>
+  
+   <ion-col>
       <h2>Bill No:115</h2>
        <h2>Bill Due:</h2>
-       <h2>Bill Ampount</h2>
+       <h2>Bill Amount</h2>
   </ion-col>
       <ion-row>
      <button ion-button icon-only default (click)="gotobilling()">
         <ion-icon name="eye"></ion-icon>View & Pay</button>
       </ion-row>
-</ion-row>
-  </ion-card>
+    </ion-row>
+ </ion-card>
 
   <ion-card>
       <ion-row>
@@ -57,16 +43,10 @@
 <ion-row>
   <ion-col>
     <ion-item>
-      <ion-thumbnail item-start>
-        <img src="assets/apartment2.jpg" large>
-      </ion-thumbnail>
+      
     </ion-item>
   </ion-col>
-  <ion-col>
-      <h2>Bill No:115</h2>
-       <h2>Bill Due:</h2>
-       <h2>Bill Ampount</h2>
-  </ion-col>
+  
       <ion-row>
      <button ion-button icon-only default  (click)="gotobilling()">
         <ion-icon name="eye"></ion-icon>View & Pay</button>
@@ -81,16 +61,10 @@
 <ion-row>
   <ion-col>
     <ion-item>
-      <ion-thumbnail item-start>
-        <img src="assets/apartment2.jpg" large>
-      </ion-thumbnail>
+      
     </ion-item>
   </ion-col>
-  <ion-col>
-      <h2>Bill No:115</h2>
-       <h2>Bill Due:</h2>
-       <h2>Bill Ampount</h2>
-  </ion-col>
+ 
       <ion-row>
      <button ion-button icon-only default (click)="gotobilling()">
         <ion-icon name="eye"></ion-icon>View & Pay</button>
@@ -105,16 +79,10 @@
 <ion-row>
   <ion-col>
     <ion-item>
-      <ion-thumbnail item-start>
-        <img src="assets/apartment2.jpg" large>
-      </ion-thumbnail>
+      
     </ion-item>
   </ion-col>
-  <ion-col>
-      <h2>Bill No:115</h2>
-       <h2>Bill Due:</h2>
-       <h2>Bill Ampount</h2>
-  </ion-col>
+  
       <ion-row>
      <button ion-button icon-only default  click="gotobilling()">
         <ion-icon name="eye"></ion-icon>View & Pay</button>
@@ -129,21 +97,41 @@
 <ion-row>
   <ion-col>
     <ion-item>
-      <ion-thumbnail item-start>
-        <img src="assets/apartment2.jpg" large>
-      </ion-thumbnail>
+      
     </ion-item>
   </ion-col>
-  <ion-col>
-      <h2>Bill No:115</h2>
-       <h2>Bill Due:</h2>
-       <h2>Bill Ampount</h2>
-  </ion-col>
+  
       <ion-row>
      <button ion-button icon-only default  click="gotobilling()">
         <ion-icon name="eye"></ion-icon>View & Pay</button>
       </ion-row>
 </ion-row>
-  </ion-card>
+  </ion-card>   -->
+
+
+<!-- 
+    <ion-list>
+    <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">
+      {{ item }}
+    </button>
+  </ion-list> -->
+
+  <ion-list>
+    <ion-list-header >Unpaid Bill</ion-list-header>
+    <ion-item  (click)="gotobilling()">SEPT 2017-OCT 2017 </ion-item>
+    </ion-list>
+
+   <ion-list>
+ <ion-list-header >Paid Bill</ion-list-header>
+    <ion-item  (click)="gotobilling()"  >AUG 2017-Sept 2017 </ion-item>
+    <ion-item  (click)="gotobilling()">JULY 2017-AUG 2017 </ion-item>
+    <ion-item  (click)="gotobilling()">JUN 2017-JULY 2017  </ion-item>
+    <ion-item  (click)="gotobilling()">MAY 2017-JUN 2017  </ion-item>
+    <ion-item  (click)="gotobilling()">APR 2017-MAY 2017  </ion-item>
+    <ion-item  (click)="gotobilling()">MAR 2017-APR 2017   </ion-item>
+    <ion-item  (click)="gotobilling()">FEB 2017-MAR 2017  </ion-item>
+    <ion-item  (click)="gotobilling()">JAN 2017-FEB 2017  </ion-item>   
+  </ion-list>
+
 
 </ion-content>

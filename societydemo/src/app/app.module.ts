@@ -1,3 +1,4 @@
+import { PaymentPage } from './../pages/payment/payment';
 
 import { BillingchargesPage } from './../pages/billingcharges/billingcharges';
 
@@ -94,7 +95,8 @@ var config = {
     SocietybillPage,
     BillingchargesPage,
       // Side menu custom component
-      SideMenuContentComponent
+      SideMenuContentComponent,
+      PaymentPage
   ],
 
   imports: [
@@ -146,7 +148,8 @@ var config = {
     CircularlistPage,
     EventdetailsPage,
     SocietybillPage,
-    BillingchargesPage
+    BillingchargesPage,
+    PaymentPage
 
   ],
 
