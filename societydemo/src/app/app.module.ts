@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { CommitteeProfileAdminPage } from './../pages/committee-profile-admin/committee-profile-admin';
+=======
+import { PaymentPage } from './../pages/payment/payment';
+>>>>>>> 894db854c6cffa8886d286544fd3f99ffa0842e4
 
 import { BillingchargesPage } from './../pages/billingcharges/billingcharges';
 
@@ -98,10 +102,14 @@ var config = {
     BillingchargesPage,
       // Side menu custom component
       SideMenuContentComponent,
+<<<<<<< HEAD
       PropertyListAdminPage,
       ResidentProfileAdminPage,
       CommitteeListAdminPage,
       CommitteeProfileAdminPage
+=======
+      PaymentPage
+>>>>>>> 894db854c6cffa8886d286544fd3f99ffa0842e4
   ],
 
   imports: [
@@ -154,10 +162,14 @@ var config = {
     EventdetailsPage,
     SocietybillPage,
     BillingchargesPage,
+<<<<<<< HEAD
     PropertyListAdminPage,
     ResidentProfileAdminPage,
     CommitteeListAdminPage,
     CommitteeProfileAdminPage
+=======
+    PaymentPage
+>>>>>>> 894db854c6cffa8886d286544fd3f99ffa0842e4
 
   ],
 

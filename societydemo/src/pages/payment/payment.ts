@@ -1,9 +1,8 @@
-import { PaymentPage } from './../payment/payment';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the BillingchargesPage page.
+ * Generated class for the PaymentPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -11,23 +10,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-billingcharges',
-  templateUrl: 'billingcharges.html',
+  selector: 'page-payment',
+  templateUrl: 'payment.html',
 })
-export class BillingchargesPage {
+export class PaymentPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad BillingchargesPage');
+    console.log('ionViewDidLoad PaymentPage');
   }
-
-  gotopayment(){
-    this.navCtrl.push(PaymentPage);
-  }
-
-  
-
 
 }

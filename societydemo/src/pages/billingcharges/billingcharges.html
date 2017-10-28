@@ -16,75 +16,15 @@
 <ion-content padding>
 
 
-<!-- <ion-grid>
-  <ion-row>
-    <ion-col >
-      Particulars
-    </ion-col>
-    <ion-col >
-     Amount
-    </ion-col>
-  </ion-row>
 
-  <ion-row>
-    <ion-col >
-      Sinking Fund
-    </ion-col>
-    <ion-col >
-    1400
-    </ion-col>
-  </ion-row>
 
-<ion-row>
-    <ion-col >
-     Repair Fund
-    </ion-col>
-    <ion-col >
-     1000
-    </ion-col>
-  </ion-row>
-    <ion-row>
-    <ion-col  >
-      Electrical Charges
-    </ion-col>
-    <ion-col >
-     1200
-    </ion-col>
-  </ion-row>
-  <ion-row>
-    <ion-col >
-      Municipal Due
-    </ion-col>
-    <ion-col>
-     350
-    </ion-col>
-  </ion-row>
-  <ion-row>
-    <ion-col >
-      Security Charges
-    </ion-col>
-    <ion-col >
-     350
-    </ion-col>
-  </ion-row>
-   <ion-row>
-    <ion-col >
-     Parking Charges
-    </ion-col>
-    <ion-col>
-    500
-    </ion-col>
-  </ion-row>
- <ion-row>
-    <ion-col >
+<ion-label>Bill Due Date:10/10/2017</ion-label>
+<ion-label>Name:</ion-label>
+<ion-label>Flat No:A-201</ion-label>
+<ion-label>Bill Due Date:10/10/2017</ion-label>
+<ion-label>Bill Amount:2700</ion-label>
 
-      Charges
-    </ion-col>
-    <ion-col>
-     350
-    </ion-col>
-  </ion-row>
-</ion-grid> -->
+
 
 <table>
   <tr>
@@ -124,8 +64,6 @@
     <td>Other Charges</td>
     <td>200</td>
   </tr>
-
-
 </table>
 
 <!-- <div class="row">
@@ -137,14 +75,14 @@
 </div> -->
  <ion-row>
 	<ion-col col-6>
-		<button ion-button color="secondary" class="my-width" large >
+		<button ion-button color="secondary" class="my-width" >
 			<b>Cancel</b>
 		</button>
 	</ion-col>
 
 	<ion-col col-6>
-		<button ion-button color="default" class="my-width" large>
-			<b>Proceed To Payment</b>
+		<button ion-button color="default" class="my-width" >
+			<b (click)="gotopayment()">Proceed To Payment</b>
 		</button>
 	</ion-col>
 </ion-row>
