@@ -24,10 +24,10 @@ export class EventListAdminPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad EventListAdminPage');
     this.items = [
-      {title: 'hi1', description: 'test1'},
-      {title: 'hi2', description: 'test2'},
-      {title: 'hi3', description: 'test3'},
-      {title: 'hi4', description: 'test3'}
+      {title: 'Diwali', description: 'test1',icon:'assets/diwali.jpg'},
+      {title: 'Holi', description: 'test2',icon:'assets/holi.jpg'},
+      {title: 'Independence day', description: 'test3',icon:'assets/independence day.png'},
+      {title: 'Chritmas', description: 'test3',icon:'assets/christmas.png'}
     ];
   }
 

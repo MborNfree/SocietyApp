@@ -1,3 +1,4 @@
+import { ProfilePage } from './../profile/profile';
 import { SocietybillPage } from './../societybill/societybill';
 import { EventlistPage } from './../eventlist/eventlist';
 
@@ -72,7 +73,9 @@ sessionUser:any;
     this.navCtrl.push(ElectricianlistPage);
   }
 
-
+  ViewProfile(){
+    this.navCtrl.push(ProfilePage);
+  }
   showAlert()
   {
     let confirm = this.alertCtrl.create({
