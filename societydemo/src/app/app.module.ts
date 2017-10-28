@@ -55,6 +55,7 @@ import { AddCircularAdminPage } from '../pages/add-circular-admin/add-circular-a
 import { SideMenuContentComponent } from '../shared/side-menu-content/side-menu-content.component';
 import { PropertyListAdminPage } from '../pages/property-list-admin/property-list-admin';
 import { ResidentProfileAdminPage } from '../pages/resident-profile-admin/resident-profile-admin';
+import { CircularListAdminPage } from '../pages/circular-list-admin/circular-list-admin';
 
 
 
@@ -102,14 +103,7 @@ var config = {
     BillingchargesPage,
       // Side menu custom component
       SideMenuContentComponent,
-<<<<<<< HEAD
-      PropertyListAdminPage,
-      ResidentProfileAdminPage,
-      CommitteeListAdminPage,
-      CommitteeProfileAdminPage
-=======
-      PaymentPage
->>>>>>> 894db854c6cffa8886d286544fd3f99ffa0842e4
+      CircularListAdminPage
   ],
 
   imports: [
@@ -162,14 +156,11 @@ var config = {
     EventdetailsPage,
     SocietybillPage,
     BillingchargesPage,
-<<<<<<< HEAD
     PropertyListAdminPage,
     ResidentProfileAdminPage,
     CommitteeListAdminPage,
-    CommitteeProfileAdminPage
-=======
-    PaymentPage
->>>>>>> 894db854c6cffa8886d286544fd3f99ffa0842e4
+    CommitteeProfileAdminPage,
+    CircularListAdminPage
 
   ],
 

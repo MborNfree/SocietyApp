@@ -1,3 +1,4 @@
+import { CircularListAdminPage } from './../circular-list-admin/circular-list-admin';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -21,5 +22,7 @@ export class AddCircularAdminPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad AddCircularAdminPage');
   }
-
+  AddCircular(){
+    this.navCtrl.push(CircularListAdminPage);
+  }
 }

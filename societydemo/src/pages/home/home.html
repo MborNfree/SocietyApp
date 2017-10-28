@@ -1,27 +1,21 @@
 <ion-header>
-    <!-- <ion-navbar hide-back-button="true"> -->
-
       <ion-toolbar  color="info">
-
-    <button ion-button icon-only menuToggle start>
-        <ion-icon name="menu"></ion-icon>
-    </button>
-
-    <ion-buttons right>
-        <button ion-button icon-only (click)="showAlert()"><ion-icon name="power" ></ion-icon></button>
-        welcome {{username}}!
-      </ion-buttons>
-    <ion-title align="center">
-        Home Page
-      </ion-title>
-
-    <ion-buttons end>
-        <button ion-button icon-only><ion-icon name="notifications"></ion-icon></button>
-    </ion-buttons>
-
-  <!-- </ion-navbar> -->
-  </ion-toolbar>
-
+        <button ion-button icon-only menuToggle start>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-buttons end>
+            <button ion-button icon-only><ion-icon name="notifications"></ion-icon></button>
+        </ion-buttons>
+        <ion-buttons end>
+            <button ion-button icon-only (click)="showAlert()"><ion-icon name="power" ></ion-icon></button>
+        </ion-buttons>
+        <ion-buttons class="profile-picture big-profile-picture" end>
+            <img src="assets/user3.jpg">
+        </ion-buttons>
+        <ion-title align="center">
+            Home Page
+          </ion-title>
+      </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
@@ -32,7 +26,6 @@
   </ion-slides>
       <ion-label stacked align="center">Services</ion-label>
   <div class="row">
-
       <ion-card>
         <ion-slides>
             <ion-col>
