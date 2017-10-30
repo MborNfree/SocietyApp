@@ -14,6 +14,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'generate-bill-admin.html',
 })
 export class GenerateBillAdminPage {
+unm:string;
+flat:number;
+Utype:string;
+pan:number;
+park:number;
+charges1:string;
+charges2:string;
+charges3:string;
+string3:string;
+total:number;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }

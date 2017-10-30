@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { CircularlistPage } from '../circularlist/circularlist';
 
 /**
  * Generated class for the CircularListAdminPage page.
@@ -14,12 +15,30 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'circular-list-admin.html',
 })
 export class CircularListAdminPage {
-
+  public items = [];
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CircularListAdminPage');
+    this.items = [
+      {title: ' Circular 1', description: ' To give permission for registering society within Co-operative Housing Societies.',icon:'assets/doctor.jpg'},
+      {title: ' Circular 2', description: ' Circular On Housing Society Management',icon:'assets/holi.jpg'},
+      {title: ' Circular 3', description: ' Circular On Housing Society Management',icon:'assets/independence day.png'},
+      {title: ' Circular 4', description: ' Circular On Housing Society Management',icon:'assets/christmas.png'}
+    ];
+  }
+  EventDetailPage(){
+    this.navCtrl.push(CircularlistPage);
   }
 
+
+     saveItem(item){
+       this.items.push(item);
+     }
+
+    viewItem(){
+      alert('test');
+      this.navCtrl.push(CircularlistPage);
+    }
 }

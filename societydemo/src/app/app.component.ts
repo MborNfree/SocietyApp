@@ -1,3 +1,4 @@
+import { BillAdminPage } from './../pages/bill-admin/bill-admin';
 
 import { Component,ViewChild } from '@angular/core';
 import { Nav, Platform, MenuController, AlertController } from 'ionic-angular';
@@ -248,7 +249,7 @@ this.initializeApp();
           {
             iconName: 'albums',
             displayName: 'Circualrs',
-            component: AddCircularAdminPage
+            component: CircularlistPage
           },
           {
             iconName: 'albums',
@@ -274,6 +275,11 @@ this.initializeApp();
             iconName: 'albums',
             displayName: 'Society Property',
              component: PropertyListAdminPage
+          },
+          {
+            iconName: 'albums',
+            displayName: 'Bill',
+             component: BillAdminPage
           }
         ]
       });

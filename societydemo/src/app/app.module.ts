@@ -52,6 +52,7 @@ import { SideMenuContentComponent } from '../shared/side-menu-content/side-menu-
 import { PropertyListAdminPage } from '../pages/property-list-admin/property-list-admin';
 import { ResidentProfileAdminPage } from '../pages/resident-profile-admin/resident-profile-admin';
 import { CircularListAdminPage } from '../pages/circular-list-admin/circular-list-admin';
+import { BillAdminPage } from '../pages/bill-admin/bill-admin';
 
 
 
@@ -102,7 +103,8 @@ var config = {
       CircularListAdminPage,
       PropertyListAdminPage,
       ResidentProfileAdminPage,
-      CommitteeProfileAdminPage
+      CommitteeProfileAdminPage,
+      BillAdminPage
   ],
 
   imports: [
@@ -159,7 +161,8 @@ var config = {
     ResidentProfileAdminPage,
     CommitteeListAdminPage,
     CommitteeProfileAdminPage,
-    CircularListAdminPage
+    CircularListAdminPage,
+    BillAdminPage
 
   ],
 
