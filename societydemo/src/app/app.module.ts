@@ -1,3 +1,4 @@
+import { CommitteeMemberProfilePage } from './../pages/committee-member-profile/committee-member-profile';
 import { CommitteeProfileAdminPage } from './../pages/committee-profile-admin/committee-profile-admin';
 
 import { BillingchargesPage } from './../pages/billingcharges/billingcharges';
@@ -52,6 +53,7 @@ import { SideMenuContentComponent } from '../shared/side-menu-content/side-menu-
 import { PropertyListAdminPage } from '../pages/property-list-admin/property-list-admin';
 import { ResidentProfileAdminPage } from '../pages/resident-profile-admin/resident-profile-admin';
 import { CircularListAdminPage } from '../pages/circular-list-admin/circular-list-admin';
+import { CallNumber } from '@ionic-native/call-number';
 
 
 
@@ -102,7 +104,10 @@ var config = {
       CircularListAdminPage,
       PropertyListAdminPage,
       ResidentProfileAdminPage,
-      CommitteeProfileAdminPage
+      CommitteeProfileAdminPage,
+      CommitteeMemberProfilePage
+
+
   ],
 
   imports: [
@@ -159,13 +164,15 @@ var config = {
     ResidentProfileAdminPage,
     CommitteeListAdminPage,
     CommitteeProfileAdminPage,
-    CircularListAdminPage
+    CircularListAdminPage,
+    CommitteeMemberProfilePage
 
   ],
 
   providers: [
     StatusBar,
     SplashScreen,
+    CallNumber,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

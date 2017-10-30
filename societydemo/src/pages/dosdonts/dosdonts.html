@@ -20,7 +20,7 @@
 <ion-content padding text-wrap>
       <div>
       <ion-segment [(ngModel)]="account.Instructions">
-          <ion-segment-button value="DoS">
+          <ion-segment-button value="DoS"  ng-selected="Dos">
           DO'S
           </ion-segment-button>
           <ion-segment-button value="Donts">
@@ -30,7 +30,7 @@
      </div>
 
         <div [ngSwitch]="account.Instructions">
-            <ion-list *ngSwitchCase="'DoS'">
+            <ion-list *ngSwitchCase="'DoS'"  >
               <ion-item>
               <ul>
                 <li>Keep Corridors! Lobby Clean and Tidy</li>
