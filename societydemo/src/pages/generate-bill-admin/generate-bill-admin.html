@@ -13,7 +13,7 @@
 </ion-header>
 
 <ion-content padding>
-    <form>
+    <form ((ngSubmit)="onSubmit()" )>
         <ion-label>Username</ion-label>
         <ion-select name="unm" ([ngModel])='unm'>
           <ion-option>Mayuri Parmar</ion-option>
@@ -39,6 +39,7 @@
         <ion-input ([ngModel])='charges4'></ion-input>
         <ion-label>Total</ion-label>
         <ion-input ([ngModel])='total'></ion-input>
+        <button class="btn btn-info">Generate</button>
     </form>
 
 </ion-content>

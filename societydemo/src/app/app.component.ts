@@ -30,6 +30,7 @@ import { ResidentListAdminPage } from './../pages/resident-list-admin/resident-l
 import { PropertyListAdminPage } from './../pages/property-list-admin/property-list-admin';
 import { SideMenuSettings } from './../shared/side-menu-content/side-menu-content.component';
 import { EventListAdminPage } from '../pages/event-list-admin/event-list-admin';
+import { CircularListAdminPage } from '../pages/circular-list-admin/circular-list-admin';
 
 
 @Component({
@@ -158,7 +159,7 @@ this.initializeApp();
           {
             iconName: 'bookmark',
             displayName: 'Society Documents',
-            component: EventlistPage
+            component: CircularlistPage
           }
         ]
       });
@@ -249,7 +250,7 @@ this.initializeApp();
           {
             iconName: 'albums',
             displayName: 'Circualrs',
-            component: CircularlistPage
+            component: CircularListAdminPage
           },
           {
             iconName: 'albums',

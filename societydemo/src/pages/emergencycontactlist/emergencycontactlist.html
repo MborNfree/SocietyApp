@@ -25,11 +25,11 @@
         {{d.title}}
         <ion-icon color="success" item-right [name]="isGroupShown(i) ? 'arrow-dropdown' : 'arrow-dropright'" ></ion-icon>
       </h3>
-      <div *ngIf="isGroupShown(i)" (click)='openContact()'>{{d.description}}</div>
+      <div *ngIf="isGroupShown(i)" (click)="launchDialer()"><ion-icon name="call"></ion-icon> {{d.description}}</div>
       <h4>
-      <div *ngIf="isGroupShown(i)"  class="desc"><ion-icon name="call"></ion-icon>{{d.MobileNo}}</div>
+      <div *ngIf="isGroupShown(i)"  class="desc"><ion-icon name="tablet-portrait"></ion-icon>  {{d.MobileNo}}</div>
       </h4>
-     <div *ngIf="isGroupShown(i)"  >{{d.Fax}}</div>
+     <div *ngIf="isGroupShown(i)"> <ion-icon name="print"></ion-icon>   {{d.Fax}}</div>
 
     </ion-item>
   </ion-list>
