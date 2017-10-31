@@ -54,6 +54,9 @@ import { PropertyListAdminPage } from '../pages/property-list-admin/property-lis
 import { ResidentProfileAdminPage } from '../pages/resident-profile-admin/resident-profile-admin';
 import { CircularListAdminPage } from '../pages/circular-list-admin/circular-list-admin';
 import { CallNumber } from '@ionic-native/call-number';
+import { CircularDetailAdminPage } from '../pages/circular-detail-admin/circular-detail-admin';
+import { BillAdminPage } from '../pages/bill-admin/bill-admin';
+import { GenerateBillAdminPage } from '../pages/generate-bill-admin/generate-bill-admin';
 
 
 
@@ -105,7 +108,11 @@ var config = {
       PropertyListAdminPage,
       ResidentProfileAdminPage,
       CommitteeProfileAdminPage,
-      CommitteeMemberProfilePage
+      CommitteeMemberProfilePage,
+      CircularDetailAdminPage,
+      BillAdminPage,
+      GenerateBillAdminPage
+
 
 
   ],
@@ -165,7 +172,10 @@ var config = {
     CommitteeListAdminPage,
     CommitteeProfileAdminPage,
     CircularListAdminPage,
-    CommitteeMemberProfilePage
+    CommitteeMemberProfilePage,
+    CircularDetailAdminPage,
+    BillAdminPage,
+    GenerateBillAdminPage
 
   ],
 

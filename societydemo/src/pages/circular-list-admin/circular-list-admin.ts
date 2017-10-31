@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { CircularlistPage } from '../circularlist/circularlist';
+
+import { CircularDetailAdminPage } from '../circular-detail-admin/circular-detail-admin';
 
 /**
  * Generated class for the CircularListAdminPage page.
@@ -28,17 +29,10 @@ export class CircularListAdminPage {
       {title: ' Circular 4', description: ' Circular On Housing Society Management',icon:'assets/christmas.png'}
     ];
   }
-  EventDetailPage(){
-    this.navCtrl.push(CircularlistPage);
-  }
-
-
      saveItem(item){
        this.items.push(item);
      }
-
-    viewItem(){
-      alert('test');
-      this.navCtrl.push(CircularlistPage);
+     viewItem(){
+      this.navCtrl.push(CircularDetailAdminPage);
     }
 }

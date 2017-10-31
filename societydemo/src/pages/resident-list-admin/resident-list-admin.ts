@@ -15,15 +15,25 @@ import { ResidentProfileAdminPage } from '../resident-profile-admin/resident-pro
   templateUrl: 'resident-list-admin.html',
 })
 export class ResidentListAdminPage {
-
+  public users = [];
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ResidentListAdminPage');
+    this.users = [
+      {name: 'Sanket Patil', icon:'assets/plumber.jpg',flat:'1'},
+      {name: 'Shivani Mali', icon:'assets/plumber.jpg',flat:'2'},
+      {name: 'Mayuri parmar', icon:'assets/plumber.jpg',flat:'3'},
+      {name: 'Sachin ', icon:'assets/plumber.jpg',flat:'4'}
+    ];
   }
   memberprofile(){
     this.navCtrl.push(ResidentProfileAdminPage);
 
+  }
+
+  viewItem(){
+    this.navCtrl.push(ResidentProfileAdminPage);
   }
 }

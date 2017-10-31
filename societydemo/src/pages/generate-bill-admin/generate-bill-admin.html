@@ -13,7 +13,7 @@
 </ion-header>
 
 <ion-content padding>
-    <form ((ngSubmit)="onSubmit()" )>
+    <form [formGroup]="authForm" (ngSubmit)="onSubmit(authForm.value)">
         <ion-label>Username</ion-label>
         <ion-select name="unm" ([ngModel])='unm'>
           <ion-option>Mayuri Parmar</ion-option>
@@ -22,24 +22,24 @@
           <ion-option>Rajkumar Yadav</ion-option>
         </ion-select>
         <ion-label>Flat</ion-label>
-        <ion-input ([ngModel])='flat'></ion-input>
+        <ion-input  formControlName="eventvenue" type="text" ([ngModel])='flat'></ion-input>
         <ion-label>User Type</ion-label>
-        <ion-input ([ngModel])='Utype'></ion-input>
+        <ion-input formControlName="eventvenue" type="text" ([ngModel])='Utype'></ion-input>
         <ion-label>PAN No</ion-label>
-        <ion-input ([ngModel])='pan'></ion-input>
+        <ion-input  formControlName="eventvenue" type="text" ([ngModel])='pan'></ion-input>
         <ion-label>Parking Slot</ion-label>
-        <ion-input ([ngModel])='park'></ion-input>
+        <ion-input  formControlName="eventvenue" type="text" ([ngModel])='park'></ion-input>
         <ion-label>charges1</ion-label>
-        <ion-input ([ngModel])='charges1'></ion-input>
+        <ion-input  formControlName="eventvenue" type="text" ([ngModel])='charges1'></ion-input>
         <ion-label>charges2</ion-label>
-        <ion-input ([ngModel])='charges2'></ion-input>
+        <ion-input  formControlName="eventvenue" type="text" ([ngModel])='charges2'></ion-input>
         <ion-label>charges3</ion-label>
-        <ion-input ([ngModel])='charges3'></ion-input>
+        <ion-input  formControlName="eventvenue" type="text" ([ngModel])='charges3'></ion-input>
         <ion-label>charges4</ion-label>
-        <ion-input ([ngModel])='charges4'></ion-input>
+        <ion-input  formControlName="eventvenue" type="text" ([ngModel])='charges4'></ion-input>
         <ion-label>Total</ion-label>
-        <ion-input ([ngModel])='total'></ion-input>
-        <button class="btn btn-info">Generate</button>
+        <ion-input formControlName="eventvenue" type="text" ([ngModel])='total'></ion-input>
+        <button ion-button full class="btn btn-info" type="submit">Generate</button>
     </form>
 
 </ion-content>

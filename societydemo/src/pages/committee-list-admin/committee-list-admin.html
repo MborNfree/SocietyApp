@@ -15,7 +15,32 @@
 
 </ion-header>
 <ion-content padding>
-    <ion-card (click)="memberprofile()">
+
+    <!-- <ion-list *ngFor="let user of users">
+        <ion-item  (click)="viewItem()">
+            <img src="{{user.icon}}">
+            <p>{{user.name}}</p>
+        </ion-item>
+    </ion-list> -->
+
+    <ion-card *ngFor="let user of users">
+
+            <ion-item  (click)="viewItem()">
+                <div class="row">
+                <div class="col">
+                  <ion-avatar>
+                    <img src="{{user.icon}}"/>
+                  </ion-avatar>
+                </div>
+                <div class="col">
+                  <p>Flat No.: {{user.flat}}</p>
+                  <p>Name: {{user.name}}</p>
+                  <p>Role: {{user.role}}</p>
+                </div>
+              </div>
+            </ion-item>
+      </ion-card>
+    <!-- <ion-card (click)="memberprofile()">
         <div class="row">
           <div class="col">
           <ion-card-header>
@@ -106,5 +131,5 @@
             <ion-label >Sanket Patil</ion-label>
             </div>
             </div>
-      </ion-card>
+      </ion-card> -->
 </ion-content>
