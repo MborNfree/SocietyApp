@@ -44,19 +44,13 @@ gotobilling()
           { description1: 'JAN 2017-FEB 2017'},
            
       ];
+    }
 
 
-
-
-
-  }
-
-
-  viewItem(item){
+ viewItem(item){
       this.navCtrl.push(BillingchargesPage, {
         item: item
       });
     }
-
 
 }
