@@ -14,21 +14,7 @@
 </ion-header>
 
 <ion-content padding>
-    <!-- <ion-list>
 
-           <ion-item>
-             <ion-label floating>Title</ion-label>
-             <ion-input type="text" [(ngModel)]="title"></ion-input>
-           </ion-item>
-
-           <ion-item>
-             <ion-label floating>Description</ion-label>
-             <ion-input type="text" [(ngModel)]="description"></ion-input>
-           </ion-item>
-
-         </ion-list>
-
-         <button full ion-button color="secondary" (click)="saveItem()">Save</button> -->
   <form [formGroup]="authForm" (ngSubmit)="onSubmit(authForm.value)">
     <ion-item [ngClass]="{'error-border':!authForm.controls.eventnm.valid && authForm.controls.eventnm.touched}">
         <ion-label floating>Event Name</ion-label>

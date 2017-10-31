@@ -23,9 +23,9 @@ export class AddEventAdminPage {
 
   authForm: FormGroup;
   eventimg:any;
-  eventnm:any;
+  eventnm:string;
   eventdt:any;
-  eventvenue:any;
+  eventvenue:string;
   title: string;
   description: string;
   constructor(public navCtrl: NavController, public navParams: NavParams,public formBuilder: FormBuilder,public view: ViewController) {

@@ -1,10 +1,4 @@
-import { CommitteeMemberProfilePage } from './../pages/committee-member-profile/committee-member-profile';
-import { CommitteeProfileAdminPage } from './../pages/committee-profile-admin/committee-profile-admin';
 
-import { BillingchargesPage } from './../pages/billingcharges/billingcharges';
-
-import { SocietybillPage } from './../pages/societybill/societybill';
-import { EventdetailsPage } from './../pages/eventdetails/eventdetails';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule} from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -13,6 +7,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { AngularFireModule } from 'angularfire2';
 import firebase from 'firebase';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
+import { EmojiProvider } from '../providers/emoji';
 // Angular Material
 import {  MatToolbarModule, MatSidenavModule, MatButtonModule, MatChipsModule, MatListModule, MatInputModule } from '@angular/material';
 
@@ -31,6 +26,11 @@ import { ProfilePage } from './../pages/profile/profile';
 import { LoginPage } from './../pages/login/login';
 import { MySocietyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { CommitteeMemberProfilePage } from './../pages/committee-member-profile/committee-member-profile';
+import { CommitteeProfileAdminPage } from './../pages/committee-profile-admin/committee-profile-admin';
+import { BillingchargesPage } from './../pages/billingcharges/billingcharges';
+import { SocietybillPage } from './../pages/societybill/societybill';
+import { EventdetailsPage } from './../pages/eventdetails/eventdetails';
 
 
 // import { MemberlistPage } from '../pages/memberlist/memberlist';
@@ -183,7 +183,8 @@ var config = {
     StatusBar,
     SplashScreen,
     CallNumber,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    EmojiProvider
   ]
 })
 
