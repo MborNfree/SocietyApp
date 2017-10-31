@@ -1,3 +1,5 @@
+import { InboxPage } from './../pages/inbox/inbox';
+import { AddAssetsAdminPage } from './../pages/add-assets-admin/add-assets-admin';
 import { GenerateBillAdminPage } from './../pages/generate-bill-admin/generate-bill-admin';
 import { BillAdminPage } from './../pages/bill-admin/bill-admin';
 
@@ -146,7 +148,11 @@ this.initializeApp();
         displayName: 'Bill',
         component: SocietybillPage
       });
-
+      this.options.push({
+        iconName: 'mail',
+        displayName: 'Inbox',
+        component: InboxPage
+      });
  // Load options with nested items (with icons)
       // -----------------------------------------------
       this.options.push({
@@ -287,6 +293,11 @@ this.initializeApp();
             iconName: 'albums',
             displayName: 'Add Society Property',
              component: AddPropertyAdminPage
+          },
+          {
+            iconName: 'albums',
+            displayName: 'Add Society Assets',
+             component: AddAssetsAdminPage
           },
           {
             iconName: 'albums',

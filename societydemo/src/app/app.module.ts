@@ -57,6 +57,8 @@ import { CallNumber } from '@ionic-native/call-number';
 import { CircularDetailAdminPage } from '../pages/circular-detail-admin/circular-detail-admin';
 import { BillAdminPage } from '../pages/bill-admin/bill-admin';
 import { GenerateBillAdminPage } from '../pages/generate-bill-admin/generate-bill-admin';
+import { AddAssetsAdminPage } from '../pages/add-assets-admin/add-assets-admin';
+import { InboxPage } from '../pages/inbox/inbox';
 
 
 
@@ -102,16 +104,18 @@ var config = {
     EventdetailsPage,
     SocietybillPage,
     BillingchargesPage,
-      // Side menu custom component
-      SideMenuContentComponent,
-      CircularListAdminPage,
-      PropertyListAdminPage,
-      ResidentProfileAdminPage,
-      CommitteeProfileAdminPage,
-      CommitteeMemberProfilePage,
-      CircularDetailAdminPage,
-      BillAdminPage,
-      GenerateBillAdminPage
+    // Side menu custom component
+    SideMenuContentComponent,
+    CircularListAdminPage,
+    PropertyListAdminPage,
+    ResidentProfileAdminPage,
+    CommitteeProfileAdminPage,
+    CommitteeMemberProfilePage,
+    CircularDetailAdminPage,
+    BillAdminPage,
+    GenerateBillAdminPage,
+    AddAssetsAdminPage,
+    InboxPage
 
 
 
@@ -175,8 +179,9 @@ var config = {
     CommitteeMemberProfilePage,
     CircularDetailAdminPage,
     BillAdminPage,
-    GenerateBillAdminPage
-
+    GenerateBillAdminPage,
+    AddAssetsAdminPage,
+    InboxPage
   ],
 
   providers: [
