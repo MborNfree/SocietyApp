@@ -27,10 +27,16 @@ export class HomePage {
 
 username:any;
 sessionUser:any;
+toUser:Object;
   constructor(public navCtrl: NavController,public alertCtrl: AlertController ,public navParams : NavParams) {
 
     this.username = window.localStorage.getItem('username');
     this.sessionUser =sessionStorage.getItem("username");
+
+    this.toUser = {
+      toUserId:'210000198410281948',
+      toUserName:'Hancock'
+    }
 
   }
 

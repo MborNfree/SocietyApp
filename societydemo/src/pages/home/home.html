@@ -25,6 +25,18 @@
     <ion-slide> <img src='assets/b3.JPG'></ion-slide>
   </ion-slides>
       <!-- <ion-label stacked align="center">Services</ion-label> -->
+
+      <ion-list>
+
+            <ion-item navPush="Chat"
+                      [navParams]="toUser">
+              <ion-avatar item-left>
+                <img src="./assets/to-user.jpg">
+              </ion-avatar>
+              <h2>Hancock</h2>
+              <p>If at first you don’t succeed, call it version 1.0</p>
+            </ion-item>
+          </ion-list>
   <div class="row">
       <ion-card>
         <ion-slides>

@@ -22,8 +22,7 @@ export class PropertyListAdminPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad PropertyListAdminPage');
     this.items = [
-      {title: 'CCTV', description: 'test1'},
-      {title: 'Sofa', description: 'test2'},
+
       {title: 'Society Office', description: 'test3'}
     ];
 

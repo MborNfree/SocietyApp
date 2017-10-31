@@ -1,4 +1,4 @@
-<ion-list no-margin no-lines>
+<ion-list no-margin no-lines class="transparent">
     <ng-template ngFor let-option [ngForOf]="menuOptions" let-i="index">
 
         <!-- It is a simple option -->
@@ -16,12 +16,12 @@
             <ion-list no-margin class="accordion-menu">
 
                 <!-- Header -->
-                <ion-item class="header" 
+                <ion-item class="header"
                     [ngClass]="menuSettings?.showSelectedOption && option.selected ? menuSettings.selectedOptionClass : null"
                     tappable (tap)="toggleItemOptions(options, headerIcon, option.subItems.length)">
-                    <ion-icon #headerIcon 
-                        [id]="'header-icon-' + i" class="header-icon" 
-                        [class.parent-of-selected]="option.selected" 
+                    <ion-icon #headerIcon
+                        [id]="'header-icon-' + i" class="header-icon"
+                        [class.parent-of-selected]="option.selected"
                         [name]="option.iconName || menuSettings.arrowIcon"
                         item-left></ion-icon>
                     {{ option.displayName }}
@@ -30,8 +30,8 @@
                 <!-- Sub items -->
                 <div #options [class.parent-of-selected]="option.selected" [id]="'sub-item-' + i" class="options">
                     <ng-template ngFor let-item [ngForOf]="option.subItems">
-                        <ion-item 
-                            [style.padding-left]="subOptionIndentation"                             
+                        <ion-item
+                            [style.padding-left]="subOptionIndentation"
                             [class.no-icon]="menuSettings?.indentSubOptionsWithoutIcons && !item.iconName"
                             [ngClass]="menuSettings?.showSelectedOption && item.selected ? menuSettings.selectedOptionClass : null"
                             tappable (tap)="select(item)">
