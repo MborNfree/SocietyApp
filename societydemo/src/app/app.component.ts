@@ -1,3 +1,4 @@
+import { GenerateBillAdminPage } from './../pages/generate-bill-admin/generate-bill-admin';
 import { BillAdminPage } from './../pages/bill-admin/bill-admin';
 
 import { Component,ViewChild } from '@angular/core';
@@ -280,7 +281,7 @@ this.initializeApp();
           {
             iconName: 'albums',
             displayName: 'Bill',
-             component: BillAdminPage
+             component: GenerateBillAdminPage
           }
         ]
       });

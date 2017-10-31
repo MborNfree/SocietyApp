@@ -5,14 +5,17 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="info">
+  <button ion-button icon-only menuToggle start>
+    <ion-icon name="menu"></ion-icon>
+</button>
     <ion-title>circularList-admin</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
     <ion-list *ngFor="let item of items">
-        <ion-item >
+        <ion-item  (click)="viewItem()">
             <ion-card>
                 <img src="{{item.icon}}"/>
                 <ion-card-content>
@@ -23,9 +26,6 @@
                   <ion-col>
                     <a href="{{item.icon}}" target="_blank"><button ion-button icon-only default><ion-icon name="download"></ion-icon>Download</button></a>
                   </ion-col>
-                  <ion-col>
-                    <button ion-button icon-only default><ion-icon name="eye"  (click)="viewItem()"></ion-icon>View</button>
-                   </ion-col>
                 </ion-row>
               </ion-card>
         </ion-item>

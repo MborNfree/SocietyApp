@@ -52,12 +52,6 @@ export class AddEventAdminPage {
   onSubmit(value: any): void {
 
       alert('added');
-      // let newItem = {
-      //   title: this.title,
-      //   description: this.description
-      // };
-
-      // this.view.dismiss(newItem);
 
     this.navCtrl.push(EventListAdminPage);
 
