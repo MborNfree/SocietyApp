@@ -255,6 +255,11 @@ this.initializeApp();
           },
           {
             iconName: 'albums',
+            displayName: 'Add Circualrs',
+            component: AddCircularAdminPage
+          },
+          {
+            iconName: 'albums',
             displayName: 'Add Events',
              component: AddEventAdminPage
           },
@@ -280,9 +285,15 @@ this.initializeApp();
           },
           {
             iconName: 'albums',
+            displayName: 'Add Society Property',
+             component: AddPropertyAdminPage
+          },
+          {
+            iconName: 'albums',
             displayName: 'Bill',
              component: GenerateBillAdminPage
           }
+
         ]
       });
 
