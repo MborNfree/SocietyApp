@@ -18,102 +18,13 @@
 </ion-header>
 
 <ion-content padding>
- <!-- <ion-card>
-      <ion-row>
-          <ion-label>SEPT 2017-OCT 2017</ion-label>
-      </ion-row>
-    <ion-row>
-
-   <ion-col>
-      <h2>Bill No:115</h2>
-       <h2>Bill Due:</h2>
-       <h2>Bill Amount</h2>
-  </ion-col>
-      <ion-row>
-     <button ion-button icon-only default (click)="gotobilling()">
-        <ion-icon name="eye"></ion-icon>View & Pay</button>
-      </ion-row>
-    </ion-row>
- </ion-card>
-
-  <ion-card>
-      <ion-row>
-          <ion-label>AUG 2017-Sept 2017</ion-label>
-      </ion-row>
-<ion-row>
-  <ion-col>
-    <ion-item>
-
-    </ion-item>
-  </ion-col>
-
-      <ion-row>
-     <button ion-button icon-only default  (click)="gotobilling()">
-        <ion-icon name="eye"></ion-icon>View & Pay</button>
-      </ion-row>
-</ion-row>
-  </ion-card>
-
-  <ion-card>
-      <ion-row>
-          <ion-label>JULY 2017-AUG 2017</ion-label>
-      </ion-row>
-<ion-row>
-  <ion-col>
-    <ion-item>
-
-    </ion-item>
-  </ion-col>
-
-      <ion-row>
-     <button ion-button icon-only default (click)="gotobilling()">
-        <ion-icon name="eye"></ion-icon>View & Pay</button>
-      </ion-row>
-</ion-row>
-  </ion-card>
-
-  <ion-card>
-      <ion-row>
-          <ion-label>JUN 2017-JULY 2017</ion-label>
-      </ion-row>
-<ion-row>
-  <ion-col>
-    <ion-item>
-
-    </ion-item>
-  </ion-col>
-
-      <ion-row>
-     <button ion-button icon-only default  click="gotobilling()">
-        <ion-icon name="eye"></ion-icon>View & Pay</button>
-      </ion-row>
-</ion-row>
-  </ion-card>
-
-  <ion-card>
-      <ion-row>
-          <ion-label>SEPT 2017-OCT 2017</ion-label>
-      </ion-row>
-<ion-row>
-  <ion-col>
-    <ion-item>
-
-    </ion-item>
-  </ion-col>
-
-      <ion-row>
-     <button ion-button icon-only default  click="gotobilling()">
-        <ion-icon name="eye"></ion-icon>View & Pay</button>
-      </ion-row>
-</ion-row>
-  </ion-card>   -->
-
-<!-- 
+ 
+ 
     <ion-list>
-    <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">
-      {{ item }}
+    <button ion-item *ngFor="let item of items" (click)="viewItem(item)">
+      {{ item.description1 }}
     </button>
-  </ion-list> -->
+  </ion-list> 
 
 
 
@@ -121,7 +32,9 @@
 
 
 
-   <ion-list>
+
+
+   <!-- <ion-list>
     <ion-list-header >Unpaid Bill</ion-list-header>
     <ion-item  (click)="gotobilling()">SEPT 2017-OCT 2017 </ion-item>
     </ion-list>
@@ -139,7 +52,5 @@
     <ion-item  (click)="gotobilling()">MAR 2017-APR 2017   </ion-item>
     <ion-item  (click)="gotobilling()">FEB 2017-MAR 2017  </ion-item>
     <ion-item  (click)="gotobilling()">JAN 2017-FEB 2017  </ion-item>
-  </ion-list> 
-
-
+  </ion-list>  -->
 </ion-content>

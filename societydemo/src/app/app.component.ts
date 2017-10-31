@@ -222,12 +222,12 @@ this.initializeApp();
         displayName: 'Member List',
         subItems: [
           {
-            iconName: 'plus-circled',
+            iconName: 'people',
             displayName: 'Residents',
             component: ResidentlistPage
           },
           {
-            iconName: 'hammer',
+            iconName: 'contacts',
             displayName: 'Committee',
             component: CommitteelistPage
           }
