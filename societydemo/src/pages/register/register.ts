@@ -2,7 +2,6 @@ import { LoginPage } from './../login/login';
 import { HomePage } from './../home/home';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { LoginPage } from '../login/login';
 import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
 
 /**
