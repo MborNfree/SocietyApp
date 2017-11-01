@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { ForumPage } from './../pages/forum/forum';
 import { InboxPage } from './../pages/inbox/inbox';
 import { AddAssetsAdminPage } from './../pages/add-assets-admin/add-assets-admin';
@@ -12,6 +13,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 // Models
 import { MenuOptionModel, SideMenuContentComponent } from '../shared/side-menu-content/side-menu-content.component';
 import { CircularlistPage } from './../pages/circularlist/circularlist';
+=======
+>>>>>>> ee7ce2f1bf2d8afa3bb3194641304c617afcba92
 import { DocumentuploadPage } from './../pages/documentupload/documentupload';
 import { EventlistPage } from './../pages/eventlist/eventlist';
 import { EmergencycontactlistPage } from './../pages/emergencycontactlist/emergencycontactlist';
@@ -87,9 +90,13 @@ this.initializeApp();
            {title: 'Electrician List',component: ElectricianlistPage,icon:'construct'},
            {title: 'Emergency Contacts',component:EmergencycontactlistPage,icon:'plus'},
            {title: 'Event List',component:EventlistPage,icon:''},
-           {title: 'Circular List',component:CircularlistPage,icon:''},
-           {title: 'Upload Document',component:DocumentuploadPage,icon:'document'},
-           {title: 'Society Bill',component:SocietybillPage,icon:''},
+            {title: 'Circular List',component:CircularListAdminPage,icon:''},
+          //  {title: 'Society Bill',component:SocietybillPage,icon:''},
+           {title: 'Upload Document',component:DocumentuploadPage,icon:''},
+
+
+
+           {title: 'Upload Document',component:DocumentuploadPage,icon:''}
 
        ];
 
