@@ -1,3 +1,7 @@
+import { MemberprofilePage } from './../pages/memberprofile/memberprofile';
+import { ForgotpasswordPage } from './../pages/forgotpassword/forgotpassword';
+import { RegisterPage } from './../pages/register/register';
+import { ViewprofilePage } from './../pages/viewprofile/viewprofile';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule} from '@angular/core';
@@ -27,6 +31,7 @@ import { ProfilePage } from './../pages/profile/profile';
 import { LoginPage } from './../pages/login/login';
 import { MySocietyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+<<<<<<< HEAD
 import { CommitteeMemberProfilePage } from './../pages/committee-member-profile/committee-member-profile';
 import { CommitteeProfileAdminPage } from './../pages/committee-profile-admin/committee-profile-admin';
 import { BillingchargesPage } from './../pages/billingcharges/billingcharges';
@@ -66,6 +71,9 @@ import { AddemergencyAdminPage } from '../pages/addemergency-admin/addemergency-
 import { EmergencyListAdminPage } from '../pages/emergency-list-admin/emergency-list-admin';
 import { ServiceListAdminPage } from '../pages/service-list-admin/service-list-admin';
 import { ServiceDetailAdminPage } from '../pages/service-detail-admin/service-detail-admin';
+=======
+import { MemberlistPage } from '../pages/memberlist/memberlist';
+>>>>>>> d3a327038965276cd50a7cb0b7394abf8f0b7870
 
 
 var config = {
@@ -99,6 +107,7 @@ var config = {
     EventlistPage,
     EmergencycontactlistPage,
     MemberprofilePage,
+<<<<<<< HEAD
     CircularlistPage,
     AddEventAdminPage,
     EventAdminPage,
@@ -128,6 +137,8 @@ var config = {
     EmergencyListAdminPage,
     ServiceListAdminPage,
     ServiceDetailAdminPage
+=======
+>>>>>>> d3a327038965276cd50a7cb0b7394abf8f0b7870
 
   ],
 
@@ -162,11 +173,13 @@ var config = {
     DocumentuploadPage,
     ViewprofilePage,
     RegisterPage,
+    MemberlistPage,
     ForgotpasswordPage,
     EventlistPage,
     EmergencycontactlistPage,
     MemberprofilePage,
     CircularlistPage,
+<<<<<<< HEAD
     AddEventAdminPage,
     EventAdminPage,
     EventListAdminPage,
@@ -199,6 +212,11 @@ var config = {
     EmergencyListAdminPage,
     ServiceListAdminPage,
     ServiceDetailAdminPage
+=======
+    CirculardetailsPage
+
+
+>>>>>>> d3a327038965276cd50a7cb0b7394abf8f0b7870
   ],
 
   providers: [

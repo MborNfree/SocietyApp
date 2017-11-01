@@ -96,9 +96,13 @@ this.initializeApp();
            {title: 'Electrician List',component: ElectricianlistPage,icon:'construct'},
            {title: 'Emergency Contacts',component:EmergencycontactlistPage,icon:'plus'},
            {title: 'Event List',component:EventlistPage,icon:''},
-           {title: 'Circular List',component:CircularlistPage,icon:''},
-           {title: 'Upload Document',component:DocumentuploadPage,icon:'document'},
-           {title: 'Society Bill',component:SocietybillPage,icon:''},
+            {title: 'Circular List',component:CircularListAdminPage,icon:''},
+          //  {title: 'Society Bill',component:SocietybillPage,icon:''},
+           {title: 'Upload Document',component:DocumentuploadPage,icon:''},
+
+
+
+           {title: 'Upload Document',component:DocumentuploadPage,icon:''}
 
        ];
 
