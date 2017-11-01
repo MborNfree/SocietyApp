@@ -5,7 +5,7 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-<ion-toolbar>
+<ion-toolbar  color="info">
 
       <button ion-button icon-only menuToggle start>
           <ion-icon name="menu"></ion-icon>
@@ -17,10 +17,7 @@
 
 
 <ion-content padding>
-
-    <form>
-
-                  <ion-card (click)="memberprofile()">
+      <ion-card (click)="memberprofile()">
                       <div class="row">
                         <div class="col">
                         <ion-card-header>
@@ -92,13 +89,11 @@
                           </div>
                           </div>
                     </ion-card>
-
-
                     <ion-card>
                       <div class="row">
                         <div class="col">
                         <ion-card-header>
-                        <ion-item>
+                          <ion-item>
                             <ion-avatar>
                               <img src="assets/plumber.jpg"/>
                             </ion-avatar>
@@ -112,6 +107,5 @@
                           </div>
                           </div>
                     </ion-card>
-              </form>
 
 </ion-content>

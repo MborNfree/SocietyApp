@@ -2,6 +2,9 @@
 import { Component } from '@angular/core';
 import { NavController,NavParams } from 'ionic-angular';
 import{ AlertController } from 'ionic-angular';
+// Angular Material
+import {  MatToolbarModule, MatSidenavModule, MatButtonModule, MatChipsModule, MatListModule, MatInputModule } from '@angular/material';
+
 
 import { LoginPage } from './../login/login';
 import { CommitteelistPage } from './../committeelist/committeelist';
@@ -9,6 +12,11 @@ import { ElectricianlistPage } from './../electricianlist/electricianlist';
 import { PlumberlistPage } from './../plumberlist/plumberlist';
 import { DoctorlistPage } from './../doctorlist/doctorlist';
 import { NewsPage } from './../news/news';
+import { ProfilePage } from './../profile/profile';
+import { SocietybillPage } from './../societybill/societybill';
+import { EventlistPage } from './../eventlist/eventlist';
+
+
 
 
 
@@ -19,10 +27,16 @@ import { NewsPage } from './../news/news';
 export class HomePage {
 
 username:any;
+sessionUser:any;
+
   constructor(public navCtrl: NavController,public alertCtrl: AlertController ,public navParams : NavParams) {
 
     this.username = window.localStorage.getItem('username');
+    this.sessionUser =sessionStorage.getItem("username");
+
+
   }
+
   logout() {
     window.localStorage.removeItem('username');
     window.localStorage.removeItem('password');
@@ -37,9 +51,11 @@ username:any;
 
   showmembers()
   {
-  this.navCtrl.push(CommitteelistPage);
+  this.navCtrl.push(EventlistPage);
   }
-
+  ShowBills(){
+    this.navCtrl.push(SocietybillPage);
+  }
 
   showdoctorlist()
   {
@@ -60,7 +76,9 @@ username:any;
     this.navCtrl.push(ElectricianlistPage);
   }
 
-
+  ViewProfile(){
+    this.navCtrl.push(ProfilePage);
+  }
   showAlert()
   {
     let confirm = this.alertCtrl.create({

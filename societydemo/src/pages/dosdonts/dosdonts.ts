@@ -20,6 +20,8 @@ export class DosdontsPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public Platform:Platform) {
 
+
+    this.account.Instructions="DoS";
     //  this.isAndroid = Platform.is('android');
   }
 

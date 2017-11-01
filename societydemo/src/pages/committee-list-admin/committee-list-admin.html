@@ -1,0 +1,135 @@
+<!--
+  Generated template for the CommitteeListAdminPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color='info'>
+    <ion-title>committeeList-admin</ion-title>
+    <button ion-button icon-only menuToggle start>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+
+</ion-header>
+<ion-content padding>
+
+    <!-- <ion-list *ngFor="let user of users">
+        <ion-item  (click)="viewItem()">
+            <img src="{{user.icon}}">
+            <p>{{user.name}}</p>
+        </ion-item>
+    </ion-list> -->
+
+    <ion-card *ngFor="let user of users">
+
+            <ion-item  (click)="viewItem()">
+                <div class="row">
+                <div class="col">
+                  <ion-avatar>
+                    <img src="{{user.icon}}"/>
+                  </ion-avatar>
+                </div>
+                <div class="col">
+                  <p>Flat No.: {{user.flat}}</p>
+                  <p>Name: {{user.name}}</p>
+                  <p>Role: {{user.role}}</p>
+                </div>
+              </div>
+            </ion-item>
+      </ion-card>
+    <!-- <ion-card (click)="memberprofile()">
+        <div class="row">
+          <div class="col">
+          <ion-card-header>
+          <ion-item>
+              <ion-avatar>
+                <img src="assets/plumber.jpg"/>
+              </ion-avatar>
+            </ion-item>
+            </ion-card-header>
+            </div>
+            <div class="col">
+            <ion-label >Flat No.  <ion-icon name="home"></ion-icon> 1</ion-label>
+            <ion-label >Sanket Patil</ion-label>
+            <ion-label >Sanket Patil</ion-label>
+            </div>
+            </div>
+      </ion-card>
+
+      <ion-card (click)="memberprofile()">
+          <div class="row">
+              <div class="col">
+          <ion-card-header>
+          <ion-item>
+              <ion-avatar>
+                <img src="assets/plumber.jpg"/>
+              </ion-avatar>
+            </ion-item>
+            </ion-card-header>
+          </div>
+          <div class="col">
+            <ion-label >Flat No.  <ion-icon name="home"></ion-icon> 2</ion-label>
+            <ion-label >Shivani Mali</ion-label>
+            <ion-label >Secretary</ion-label>
+          </div>
+        </div>
+      </ion-card>
+      <ion-card (click)="memberprofile()">
+          <div class="row">
+              <div class="col">
+          <ion-card-header>
+          <ion-item>
+              <ion-avatar>
+                <img src="assets/plumber.jpg"/>
+              </ion-avatar>
+            </ion-item>
+            </ion-card-header>
+            </div>
+            <div class="col">
+              <ion-label >Flat No.  <ion-icon name="home"></ion-icon> 3</ion-label>
+            <ion-label >Mayuri parmar</ion-label>
+            <ion-label >Treasury</ion-label>
+            </div>
+            </div>
+      </ion-card>
+      <ion-card>
+          <div class="row">
+              <div class="col">
+          <ion-card-header>
+          <ion-item>
+              <ion-avatar>
+                <img src="assets/plumber.jpg"/>
+              </ion-avatar>
+            </ion-item>
+            </ion-card-header>
+            </div>
+            <div class="col">
+              <ion-label >Flat No.  <ion-icon name="home"></ion-icon> 4</ion-label>
+            <ion-label>Sachin </ion-label>
+            <ion-label>Chairman</ion-label>
+            </div>
+            </div>
+      </ion-card>
+
+      <ion-card>
+          <div class="row">
+              <div class="col">
+          <ion-card-header>
+          <ion-item>
+              <ion-avatar>
+                <img src="assets/plumber.jpg"/>
+              </ion-avatar>
+            </ion-item>
+            </ion-card-header>
+            </div>
+            <div class="col">
+              <ion-label >Flat No.  <ion-icon name="home"></ion-icon> 5</ion-label>
+            <ion-label >Sachin </ion-label>
+            <ion-label >Sanket Patil</ion-label>
+            </div>
+            </div>
+      </ion-card> -->
+</ion-content>

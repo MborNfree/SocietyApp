@@ -1,6 +1,4 @@
 import { MemberprofilePage } from './../pages/memberprofile/memberprofile';
-
-import { RulesPage } from './../pages/rules/rules';
 import { ForgotpasswordPage } from './../pages/forgotpassword/forgotpassword';
 import { RegisterPage } from './../pages/register/register';
 import { ViewprofilePage } from './../pages/viewprofile/viewprofile';
@@ -10,8 +8,13 @@ import { ErrorHandler, NgModule} from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
-// import { AngularFireModule } from 'angularfire2';
-// import firebase from 'firebase';
+import { AngularFireModule } from 'angularfire2';
+import firebase from 'firebase';
+import { Ng2SmartTableModule } from 'ng2-smart-table';
+import { EmojiProvider } from '../providers/emoji';
+// Angular Material
+import {  MatToolbarModule, MatSidenavModule, MatButtonModule, MatChipsModule, MatListModule, MatInputModule } from '@angular/material';
+
 
 import { DocumentuploadPage } from './../pages/documentupload/documentupload';
 import { ElectricianlistPage } from './../pages/electricianlist/electricianlist';
@@ -38,8 +41,7 @@ var config = {
   storageBucket: "society-182906.appspot.com",
   messagingSenderId: "583609948893"
 };
-// firebase.initializeApp(config);
-
+ firebase.initializeApp(config);
 
 @NgModule({
   declarations: [
@@ -58,19 +60,25 @@ var config = {
     DocumentuploadPage,
     ViewprofilePage,
     RegisterPage,
-    MemberlistPage,
     ForgotpasswordPage,
-   EventlistPage,
+    EventlistPage,
     EmergencycontactlistPage,
-    RulesPage,
     MemberprofilePage,
 
   ],
 
   imports: [
     BrowserModule,
+    NgDatepickerModule,
     IonicModule.forRoot(MySocietyApp),
-    // AngularFireModule.initializeApp(config)
+    AngularFireModule.initializeApp(config),
+    MatListModule,
+    MatInputModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatButtonModule,
+    MatChipsModule,
+    Ng2SmartTableModule
   ],
     bootstrap: [IonicApp],
   entryComponents: [
@@ -93,7 +101,6 @@ var config = {
     ForgotpasswordPage,
     EventlistPage,
     EmergencycontactlistPage,
-    RulesPage,
     MemberprofilePage,
     CircularlistPage,
     CirculardetailsPage
@@ -104,9 +111,10 @@ var config = {
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    CallNumber,
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    EmojiProvider
   ]
 })
-
 
 export class AppModule {}

@@ -1,5 +1,7 @@
 import { Component} from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { EventdetailsPage } from '../eventdetails/eventdetails';
+import { CallNumber } from '@ionic-native/call-number';
 
 /**
  * Generated class for the EmergencycontactlistPage page.
@@ -34,12 +36,31 @@ isGroupShown(group) {
     return this.shownGroup === group;
 };
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {    
+  constructor(public navCtrl: NavController, public navParams: NavParams, private callNumber: CallNumber) {
   }
- 
 
+
+  launchDialer(n:string){
+        this.callNumber.callNumber(n, true)
+        .then(() => console.log('Launched dialer!'))
+        .catch(() => console.log('Error launching dialer'));
+}
+                                                                                                                                                                                                                                                                                                                                
+
+
+
+
+
+
+
+
+  // openContact(){
+  //   alert('test');
+  //   this.navCtrl.push(EventdetailsPage);
+  // }
   ionViewDidLoad() {
-    console.log('ionViewDidLoad EmergencycontactlistPage'); 
+    console.log('ionViewDidLoad EmergencycontactlistPage');
 
   }
+
 }

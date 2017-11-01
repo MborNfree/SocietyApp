@@ -24,7 +24,7 @@ export class DoctorlistPage {
   }
 
 
-  memberprofile()
+memberprofile()
 {
   this.navCtrl.push(MemberprofilePage);
 }

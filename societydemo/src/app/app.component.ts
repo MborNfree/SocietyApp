@@ -1,6 +1,4 @@
-import { RulesPage } from './../pages/rules/rules';
 import { DocumentuploadPage } from './../pages/documentupload/documentupload';
-
 import { EventlistPage } from './../pages/eventlist/eventlist';
 import { EmergencycontactlistPage } from './../pages/emergencycontactlist/emergencycontactlist';
 import { HomePage } from './../pages/home/home';
@@ -9,20 +7,23 @@ import { DoctorlistPage } from './../pages/doctorlist/doctorlist';
 import { PlumberlistPage } from './../pages/plumberlist/plumberlist';
 import { DosdontsPage } from './../pages/dosdonts/dosdonts';
 import { NewsPage } from './../pages/news/news';
-
 import { CommitteelistPage } from './../pages/committeelist/committeelist';
 import { ResidentlistPage } from './../pages/residentlist/residentlist';
 import { ProfilePage } from './../pages/profile/profile';
 import { LoginPage } from './../pages/login/login';
-import { Component,ViewChild } from '@angular/core';
-import { Nav, Platform, MenuController } from 'ionic-angular';
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
-
+import { AddEventAdminPage } from '../pages/add-event-admin/add-event-admin';
+import { AddPropertyAdminPage } from '../pages/add-property-admin/add-property-admin';
+import { AddCircularAdminPage } from '../pages/add-circular-admin/add-circular-admin';
+import { CommitteeListAdminPage } from '../pages/committee-list-admin/committee-list-admin';
+import { SocietybillPage } from '../pages/societybill/societybill';
+import { ResidentListAdminPage } from './../pages/resident-list-admin/resident-list-admin';
+import { PropertyListAdminPage } from './../pages/property-list-admin/property-list-admin';
+import { SideMenuSettings } from './../shared/side-menu-content/side-menu-content.component';
+import { EventListAdminPage } from '../pages/event-list-admin/event-list-admin';
+import { CircularListAdminPage } from '../pages/circular-list-admin/circular-list-admin';
 
 
 @Component({
-
   templateUrl: 'app.html'
 })
 export class MySocietyApp {
@@ -31,9 +32,27 @@ export class MySocietyApp {
   activePage:any;
   @ViewChild(Nav) nav: Nav;
 
+  // Get the instance to call the public methods
+	@ViewChild(SideMenuContentComponent) sideMenu: SideMenuContentComponent;
+
    pages: Array<{title: string, component: any,icon:string}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar,public splashScreen: SplashScreen,public menuCtrl: MenuController) {
+   	// Options to show in the SideMenuComponent
+	public options: Array<MenuOptionModel>;
+
+    // Settings for the SideMenuComponent
+    public sideMenuSettings: SideMenuSettings = {
+      accordionMode: true,
+      showSelectedOption: true,
+      selectedOptionClass: 'my-selected-option',
+      subOptionIndentation: {
+        md: '56px',
+        ios: '64px',
+        wp: '56px'
+      }
+    };
+
+  constructor(public platform: Platform, public statusBar: StatusBar,public splashScreen: SplashScreen,	private alertCtrl: AlertController,public menuCtrl: MenuController) {
     // platform.ready().then(() => {
     //   // Okay, so the platform is ready and our plugins are available.
     //   // Here you can do any higher level native things you might need.
@@ -52,12 +71,12 @@ this.initializeApp();
            {title: 'Plumber Lists',component: PlumberlistPage,icon:'hammer'},
            {title: 'Doctor List',component: DoctorlistPage,icon:'contact'},
            {title: 'Electrician List',component: ElectricianlistPage,icon:'construct'},
-           {title: 'Emergency Contacts',component:EmergencycontactlistPage,icon:''},
+           {title: 'Emergency Contacts',component:EmergencycontactlistPage,icon:'plus'},
            {title: 'Event List',component:EventlistPage,icon:''},
-            {title: 'Circular List',component:CircularlistPage,icon:''},
+            {title: 'Circular List',component:CircularListAdminPage,icon:''},
           //  {title: 'Society Bill',component:SocietybillPage,icon:''},
            {title: 'Upload Document',component:DocumentuploadPage,icon:''},
-           {title: 'Rules & Regulations',component:RulesPage,icon:'book'},
+
 
 
            {title: 'Upload Document',component:DocumentuploadPage,icon:''}
@@ -65,7 +84,6 @@ this.initializeApp();
        ];
 
        this.activePage=this.pages[0];
-
     }
     initializeApp() {
       this.platform.ready().then(() => {
@@ -73,9 +91,10 @@ this.initializeApp();
         // Here you can do any higher level native things you might need.
         this.statusBar.styleDefault();
         this.splashScreen.hide();
+        	// Initialize some options
+			this.initializeOptions();
       });
     }
-
     openPage(page) {
       // Reset the content nav to have just this page
       // we wouldn't want the back button to show in this scenario
@@ -100,4 +119,244 @@ this.initializeApp();
         this.rootPage = HomePage;
       }
     }
+
+    private initializeOptions(): void {
+      this.options = new Array<MenuOptionModel>();
+
+      // Load simple menu options
+      // ------------------------------------------
+      this.options.push({
+        iconName: 'home',
+        displayName: 'Home',
+        component: HomePage,
+
+        // This option is already selected
+        selected: true
+      });
+
+      this.options.push({
+        iconName: 'card',
+        displayName: 'Bill',
+        component: SocietybillPage
+      });
+      this.options.push({
+        iconName: 'mail',
+        displayName: 'Inbox',
+        component: InboxPage
+      });
+ // Load options with nested items (with icons)
+      // -----------------------------------------------
+      this.options.push({
+        displayName: 'Documents',
+        subItems: [
+          {
+            iconName: 'basket',
+            displayName: 'User Documents',
+            component: DocumentuploadPage
+          },
+          {
+            iconName: 'bookmark',
+            displayName: 'Society Documents',
+            component: CircularlistPage
+          }
+        ]
+      });
+
+      this.options.push({
+        iconName: 'calendar',
+        displayName: 'Events',
+        component: EventlistPage
+      });
+
+      this.options.push({
+        iconName: 'medkit',
+        displayName: 'Emergency Contacts',
+        component: EmergencycontactlistPage
+      });
+
+      this.options.push({
+        iconName: 'easel',
+        displayName: 'News',
+        component: NewsPage
+      });
+
+      this.options.push({
+        iconName: 'person',
+        displayName: 'Profile',
+        component: ProfilePage
+      });
+
+      this.options.push({
+        iconName: 'hand',
+        displayName: 'Rules and Regulation',
+        component: DosdontsPage
+      });
+
+
+      // Load options with nested items (without icons)
+      // -----------------------------------------------
+      this.options.push({
+        displayName: 'Services',
+        subItems: [
+          {
+            iconName: 'plus-circled',
+            displayName: 'Doctors',
+            component: DoctorlistPage
+          },
+          {
+            iconName: 'hammer',
+            displayName: 'Plumbers',
+            component: PlumberlistPage
+          },
+          {
+            iconName: 'bookmark',
+            displayName: 'Electrician',
+            component: ElectricianlistPage
+          }
+        ]
+      });
+
+      this.options.push({
+        displayName: 'Member List',
+        subItems: [
+          {
+            iconName: 'people',
+            displayName: 'Residents',
+            component: ResidentlistPage
+          },
+          {
+            iconName: 'contacts',
+            displayName: 'Committee',
+            component: CommitteelistPage
+          }
+
+        ]
+      });
+      this.options.push({
+        displayName: 'Admin Section',
+        subItems: [
+          {
+            iconName: 'basket',
+            displayName: 'User Documents',
+            component: DocumentuploadPage
+          },
+          {
+            iconName: 'albums',
+            displayName: 'Society Documents',
+            component: CircularlistPage
+          },
+          {
+            iconName: 'albums',
+            displayName: 'Circualrs',
+            component: CircularListAdminPage
+          },
+          {
+            iconName: 'albums',
+            displayName: 'Add Circualrs',
+            component: AddCircularAdminPage
+          },
+          {
+            iconName: 'albums',
+            displayName: 'Add Events',
+             component: AddEventAdminPage
+          },
+          {
+            iconName: 'albums',
+            displayName: 'Events List',
+             component: EventListAdminPage
+          },
+          {
+            iconName: 'albums',
+            displayName: 'Residents',
+             component: ResidentListAdminPage
+          },
+          {
+            iconName: 'albums',
+            displayName: 'Committee',
+             component: CommitteeListAdminPage
+          },
+          {
+            iconName: 'albums',
+            displayName: 'Society Property',
+             component: PropertyListAdminPage
+          },
+          {
+            iconName: 'albums',
+            displayName: 'Add Society Property',
+             component: AddPropertyAdminPage
+          },
+          {
+            iconName: 'albums',
+            displayName: 'Add Society Assets',
+             component: AddAssetsAdminPage
+          },
+          {
+            iconName: 'albums',
+            displayName: 'Bill',
+             component: GenerateBillAdminPage
+          }
+
+        ]
+      });
+
+      // Load special options
+      // -----------------------------------------------
+      this.options.push({
+        displayName: 'Special options',
+        subItems: [
+          {
+            iconName: 'log-in',
+            displayName: 'Login',
+            custom: {
+              isLogin: true
+            }
+          },
+          {
+            iconName: 'log-out',
+            displayName: 'Logout',
+            custom: {
+              isLogout: true
+            }
+          },
+          {
+            iconName: 'globe',
+            displayName: 'Open Google',
+            custom: {
+              isExternalLink: true,
+              externalUrl: 'http://www.google.com'
+            }
+          }
+        ]
+      });
+    }
+    public selectOption(option: MenuOptionModel): void {
+      this.menuCtrl.close().then(() => {
+
+        if (option.custom && option.custom.isLogin) {
+          this.presentAlert('You\'ve clicked the login option!');
+        } else if (option.custom && option.custom.isLogout) {
+          this.presentAlert('You\'ve clicked the logout option!');
+        } else if(option.custom && option.custom.isExternalLink) {
+          let url = option.custom.externalUrl;
+          window.open(url, '_blank');
+        } else {
+          // Redirect to the selected page
+          this.nav.setRoot(option.component || EventlistPage, { 'title': option.displayName });
+        }
+      });
+    }
+    public collapseMenuOptions(): void {
+      // Collapse all the options
+      this.sideMenu.collapseAllOptions();
+    }
+
+    public presentAlert(message: string): void {
+      let alert = this.alertCtrl.create({
+        title: 'Information',
+        message: message,
+        buttons: ['Ok']
+      });
+      alert.present();
+    }
+
   }

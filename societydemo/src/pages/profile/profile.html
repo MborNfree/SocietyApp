@@ -5,7 +5,7 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-  <ion-navbar>
+  <ion-navbar  color="info">
       <button ion-button icon-only menuToggle start>
           <ion-icon name="menu"></ion-icon>
       </button>
@@ -42,7 +42,7 @@
             <p>Sorry, maximum username length is 30!</p>
         </ion-item>
         <ion-item [ngClass]="{'error-border':!authForm.controls.flatno.valid && authForm.controls.flatno.touched}">
-            <ion-label floating>Falt No</ion-label>
+            <ion-label floating>Flat No</ion-label>
             <ion-input formControlName="flatno" type="text" [(ngModel)]="flatno"></ion-input>
         </ion-item>
         <ion-item *ngIf="authForm.controls.flatno.hasError('required') && authForm.controls.flatno.touched">
