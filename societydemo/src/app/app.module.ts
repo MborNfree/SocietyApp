@@ -1,7 +1,11 @@
+<<<<<<< HEAD
+import { ForumPage } from './../pages/forum/forum';
+=======
 import { MemberprofilePage } from './../pages/memberprofile/memberprofile';
 import { ForgotpasswordPage } from './../pages/forgotpassword/forgotpassword';
 import { RegisterPage } from './../pages/register/register';
 import { ViewprofilePage } from './../pages/viewprofile/viewprofile';
+>>>>>>> ee7ce2f1bf2d8afa3bb3194641304c617afcba92
 
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule} from '@angular/core';
@@ -131,6 +135,7 @@ var config = {
     GenerateBillAdminPage,
     AddAssetsAdminPage,
     InboxPage,
+<<<<<<< HEAD
     AddServiceAdminPage,
     AddFlatwiseServiceAdminPage,
     AddemergencyAdminPage,
@@ -139,6 +144,13 @@ var config = {
     ServiceDetailAdminPage
 =======
 >>>>>>> d3a327038965276cd50a7cb0b7394abf8f0b7870
+=======
+    ForumPage
+
+
+=======
+>>>>>>> ee7ce2f1bf2d8afa3bb3194641304c617afcba92
+>>>>>>> origin/master
 
   ],
 
@@ -206,6 +218,7 @@ var config = {
     GenerateBillAdminPage,
     AddAssetsAdminPage,
     InboxPage,
+<<<<<<< HEAD
     AddServiceAdminPage,
     AddFlatwiseServiceAdminPage,
     AddemergencyAdminPage,
@@ -213,10 +226,17 @@ var config = {
     ServiceListAdminPage,
     ServiceDetailAdminPage
 =======
+    ForumPage
+>>>>>>> origin/master
+=======
     CirculardetailsPage
 
 
+<<<<<<< HEAD
 >>>>>>> d3a327038965276cd50a7cb0b7394abf8f0b7870
+=======
+>>>>>>> ee7ce2f1bf2d8afa3bb3194641304c617afcba92
+>>>>>>> origin/master
   ],
 
   providers: [

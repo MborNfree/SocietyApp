@@ -1,12 +1,3 @@
-import { AddServiceAdminPage } from './../pages/add-service-admin/add-service-admin';
-import { AddFlatwiseServiceAdminPage } from './../pages/add-flatwise-service-admin/add-flatwise-service-admin';
-import { AddemergencyAdminPage } from './../pages/addemergency-admin/addemergency-admin';
-import { EmergencyListAdminPage } from './../pages/emergency-list-admin/emergency-list-admin';
-import { ServiceListAdminPage } from './../pages/service-list-admin/service-list-admin';
-import { InboxPage } from './../pages/inbox/inbox';
-import { AddAssetsAdminPage } from './../pages/add-assets-admin/add-assets-admin';
-import { GenerateBillAdminPage } from './../pages/generate-bill-admin/generate-bill-admin';
-import { BillAdminPage } from './../pages/bill-admin/bill-admin';
 
 import { Component,ViewChild } from '@angular/core';
 import { Nav, Platform, MenuController, AlertController } from 'ionic-angular';
@@ -16,6 +7,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 // Models
 import { MenuOptionModel, SideMenuContentComponent } from '../shared/side-menu-content/side-menu-content.component';
 import { CircularlistPage } from './../pages/circularlist/circularlist';
+
 import { DocumentuploadPage } from './../pages/documentupload/documentupload';
 import { EventlistPage } from './../pages/eventlist/eventlist';
 import { EmergencycontactlistPage } from './../pages/emergencycontactlist/emergencycontactlist';
@@ -39,6 +31,18 @@ import { PropertyListAdminPage } from './../pages/property-list-admin/property-l
 import { SideMenuSettings } from './../shared/side-menu-content/side-menu-content.component';
 import { EventListAdminPage } from '../pages/event-list-admin/event-list-admin';
 import { CircularListAdminPage } from '../pages/circular-list-admin/circular-list-admin';
+import { AddServiceAdminPage } from './../pages/add-service-admin/add-service-admin';
+import { AddFlatwiseServiceAdminPage } from './../pages/add-flatwise-service-admin/add-flatwise-service-admin';
+import { AddemergencyAdminPage } from './../pages/addemergency-admin/addemergency-admin';
+import { EmergencyListAdminPage } from './../pages/emergency-list-admin/emergency-list-admin';
+import { ServiceListAdminPage } from './../pages/service-list-admin/service-list-admin';
+import { ForumPage } from './../pages/forum/forum';
+import { InboxPage } from './../pages/inbox/inbox';
+import { AddAssetsAdminPage } from './../pages/add-assets-admin/add-assets-admin';
+import { GenerateBillAdminPage } from './../pages/generate-bill-admin/generate-bill-admin';
+import { BillAdminPage } from './../pages/bill-admin/bill-admin';
+
+
 
 
 @Component({
@@ -227,6 +231,12 @@ this.initializeApp();
         component: DosdontsPage
       });
 
+       this.options.push({
+        iconName: 'chatbubbles',
+        displayName: 'Forum',
+        component: ForumPage
+      });
+
 
       // Load options with nested items (without icons)
       // -----------------------------------------------
@@ -234,7 +244,7 @@ this.initializeApp();
         displayName: 'Services',
         subItems: [
           {
-            iconName: 'plus-circled',
+            iconName: 'add-circle',
             displayName: 'Doctors',
             component: DoctorlistPage
           },

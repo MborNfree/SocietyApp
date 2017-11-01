@@ -16,18 +16,26 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ElectricianlistPage {
 
+   public items = [];
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ElectricianlistPage');
-  }
+     this.items=[
+      {name: 'Akshay', phoneno: '9874587896'},
+      {name: 'Sanket Patil', phoneno: '8521478965'},
+      {name: 'Shivani Mali', phoneno: '9645875412'},
+      {name: 'Mayuri Parmar', phoneno: '7854879454'},
+      {name: 'Saniya Patel', phoneno: '8547125487'},
+    ];
+    }
 
 
-memberprofile()
-{
-  this.navCtrl.push(MemberprofilePage);
-}
-
+viewItem(item){
+      this.navCtrl.push(MemberprofilePage, {
+        item: item
+      });
+    }
 
 }
