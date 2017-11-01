@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-import { ForumPage } from './../pages/forum/forum';
-=======
-import { MemberprofilePage } from './../pages/memberprofile/memberprofile';
-import { ForgotpasswordPage } from './../pages/forgotpassword/forgotpassword';
-import { RegisterPage } from './../pages/register/register';
-import { ViewprofilePage } from './../pages/viewprofile/viewprofile';
->>>>>>> ee7ce2f1bf2d8afa3bb3194641304c617afcba92
-
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule} from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -35,49 +26,35 @@ import { ProfilePage } from './../pages/profile/profile';
 import { LoginPage } from './../pages/login/login';
 import { MySocietyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-<<<<<<< HEAD
-import { CommitteeMemberProfilePage } from './../pages/committee-member-profile/committee-member-profile';
-import { CommitteeProfileAdminPage } from './../pages/committee-profile-admin/committee-profile-admin';
-import { BillingchargesPage } from './../pages/billingcharges/billingcharges';
-import { SocietybillPage } from './../pages/societybill/societybill';
-import { EventdetailsPage } from './../pages/eventdetails/eventdetails';
-
-
-// import { MemberlistPage } from '../pages/memberlist/memberlist';
+import { RegisterPage } from '../pages/register/register';
+import { ViewprofilePage } from '../pages/viewprofile/viewprofile';
+import { ForgotpasswordPage } from '../pages/forgotpassword/forgotpassword';
+import { MemberprofilePage } from '../pages/memberprofile/memberprofile';
 import { AddEventAdminPage } from '../pages/add-event-admin/add-event-admin';
-
-import { CircularlistPage } from './../pages/circularlist/circularlist';
-import { MemberprofilePage } from './../pages/memberprofile/memberprofile';
-import { ForgotpasswordPage } from './../pages/forgotpassword/forgotpassword';
-import { RegisterPage } from './../pages/register/register';
-import { ViewprofilePage } from './../pages/viewprofile/viewprofile';
-
-import { NgDatepickerModule } from 'ng2-datepicker';
 import { EventAdminPage } from '../pages/event-admin/event-admin';
-import { EventListAdminPage } from '../pages/event-list-admin/event-list-admin';
 import { CommitteeListAdminPage } from '../pages/committee-list-admin/committee-list-admin';
+import { EventListAdminPage } from '../pages/event-list-admin/event-list-admin';
 import { ResidentListAdminPage } from '../pages/resident-list-admin/resident-list-admin';
-import { AddPropertyAdminPage } from '../pages/add-property-admin/add-property-admin';
 import { AddCircularAdminPage } from '../pages/add-circular-admin/add-circular-admin';
+import { EventdetailsPage } from '../pages/eventdetails/eventdetails';
+import { AddPropertyAdminPage } from '../pages/add-property-admin/add-property-admin';
+import { SocietybillPage } from '../pages/societybill/societybill';
+import { BillingchargesPage } from '../pages/billingcharges/billingcharges';
 import { SideMenuContentComponent } from '../shared/side-menu-content/side-menu-content.component';
-import { PropertyListAdminPage } from '../pages/property-list-admin/property-list-admin';
+import { CommitteeProfileAdminPage } from '../pages/committee-profile-admin/committee-profile-admin';
 import { ResidentProfileAdminPage } from '../pages/resident-profile-admin/resident-profile-admin';
+import { PropertyListAdminPage } from '../pages/property-list-admin/property-list-admin';
 import { CircularListAdminPage } from '../pages/circular-list-admin/circular-list-admin';
-import { CallNumber } from '@ionic-native/call-number';
-import { CircularDetailAdminPage } from '../pages/circular-detail-admin/circular-detail-admin';
+import { CommitteeMemberProfilePage } from '../pages/committee-member-profile/committee-member-profile';
 import { BillAdminPage } from '../pages/bill-admin/bill-admin';
-import { GenerateBillAdminPage } from '../pages/generate-bill-admin/generate-bill-admin';
 import { AddAssetsAdminPage } from '../pages/add-assets-admin/add-assets-admin';
+import { CircularDetailAdminPage } from '../pages/circular-detail-admin/circular-detail-admin';
+import { GenerateBillAdminPage } from '../pages/generate-bill-admin/generate-bill-admin';
 import { InboxPage } from '../pages/inbox/inbox';
-import { AddServiceAdminPage } from '../pages/add-service-admin/add-service-admin';
-import { AddFlatwiseServiceAdminPage } from '../pages/add-flatwise-service-admin/add-flatwise-service-admin';
-import { AddemergencyAdminPage } from '../pages/addemergency-admin/addemergency-admin';
-import { EmergencyListAdminPage } from '../pages/emergency-list-admin/emergency-list-admin';
-import { ServiceListAdminPage } from '../pages/service-list-admin/service-list-admin';
-import { ServiceDetailAdminPage } from '../pages/service-detail-admin/service-detail-admin';
-=======
-import { MemberlistPage } from '../pages/memberlist/memberlist';
->>>>>>> d3a327038965276cd50a7cb0b7394abf8f0b7870
+import { ForumPage } from '../pages/forum/forum';
+import { NgDatepickerModule } from 'ng2-datepicker';
+import { CirculardetailsPage } from '../pages/circulardetails/circulardetails';
+import { CallNumber } from '@ionic-native/call-number';
 
 
 var config = {
@@ -102,7 +79,6 @@ var config = {
     DoctorlistPage,
     DosdontsPage,
     PlumberlistPage,
-    RegisterPage,
     ElectricianlistPage,
     DocumentuploadPage,
     ViewprofilePage,
@@ -111,7 +87,6 @@ var config = {
     EventlistPage,
     EmergencycontactlistPage,
     MemberprofilePage,
-<<<<<<< HEAD
     CircularlistPage,
     AddEventAdminPage,
     EventAdminPage,
@@ -135,22 +110,7 @@ var config = {
     GenerateBillAdminPage,
     AddAssetsAdminPage,
     InboxPage,
-<<<<<<< HEAD
-    AddServiceAdminPage,
-    AddFlatwiseServiceAdminPage,
-    AddemergencyAdminPage,
-    EmergencyListAdminPage,
-    ServiceListAdminPage,
-    ServiceDetailAdminPage
-=======
->>>>>>> d3a327038965276cd50a7cb0b7394abf8f0b7870
-=======
     ForumPage
-
-
-=======
->>>>>>> ee7ce2f1bf2d8afa3bb3194641304c617afcba92
->>>>>>> origin/master
 
   ],
 
@@ -185,13 +145,11 @@ var config = {
     DocumentuploadPage,
     ViewprofilePage,
     RegisterPage,
-    MemberlistPage,
     ForgotpasswordPage,
     EventlistPage,
     EmergencycontactlistPage,
     MemberprofilePage,
     CircularlistPage,
-<<<<<<< HEAD
     AddEventAdminPage,
     EventAdminPage,
     EventListAdminPage,
@@ -218,25 +176,9 @@ var config = {
     GenerateBillAdminPage,
     AddAssetsAdminPage,
     InboxPage,
-<<<<<<< HEAD
-    AddServiceAdminPage,
-    AddFlatwiseServiceAdminPage,
-    AddemergencyAdminPage,
-    EmergencyListAdminPage,
-    ServiceListAdminPage,
-    ServiceDetailAdminPage
-=======
-    ForumPage
->>>>>>> origin/master
-=======
+    ForumPage,
     CirculardetailsPage
 
-
-<<<<<<< HEAD
->>>>>>> d3a327038965276cd50a7cb0b7394abf8f0b7870
-=======
->>>>>>> ee7ce2f1bf2d8afa3bb3194641304c617afcba92
->>>>>>> origin/master
   ],
 
   providers: [
