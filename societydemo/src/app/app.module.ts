@@ -1,3 +1,8 @@
+import { AddemergencyAdminPage } from './../pages/addemergency-admin/addemergency-admin';
+import { ServiceListAdminPage } from './../pages/service-list-admin/service-list-admin';
+import { ServiceDetailAdminPageModule } from './../pages/service-detail-admin/service-detail-admin.module';
+import { AddFlatwiseServiceAdminPage } from './../pages/add-flatwise-service-admin/add-flatwise-service-admin';
+import { AddServiceAdminPage } from './../pages/add-service-admin/add-service-admin';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule} from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -56,6 +61,8 @@ import { NgDatepickerModule } from 'ng2-datepicker';
 import { CirculardetailsPage } from '../pages/circulardetails/circulardetails';
 import { CallNumber } from '@ionic-native/call-number';
 import { CircularlistPage } from '../pages/circularlist/circularlist';
+import { ServiceDetailAdminPage } from '../pages/service-detail-admin/service-detail-admin';
+import { EmergencyListAdminPage } from '../pages/emergency-list-admin/emergency-list-admin';
 
 
 var config = {
@@ -112,7 +119,14 @@ var config = {
     AddAssetsAdminPage,
     InboxPage,
     ForumPage,
-    CirculardetailsPage
+    CirculardetailsPage,
+    AddServiceAdminPage,
+    AddFlatwiseServiceAdminPage,
+    ServiceDetailAdminPage,
+    ServiceListAdminPage,
+    AddemergencyAdminPage,
+    EmergencyListAdminPage
+
 
   ],
 
@@ -179,7 +193,14 @@ var config = {
     AddAssetsAdminPage,
     InboxPage,
     ForumPage,
-    CirculardetailsPage
+    CirculardetailsPage,
+    AddServiceAdminPage,
+    AddFlatwiseServiceAdminPage,
+    ServiceDetailAdminPage,
+    ServiceListAdminPage,
+    AddemergencyAdminPage,
+    EmergencyListAdminPage
+
 
   ],
 
