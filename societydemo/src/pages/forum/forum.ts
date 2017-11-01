@@ -21,10 +21,11 @@ export class ForumPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ForumPage');
-    this.items=
-    [
-      { Ques1:'I forgot my password'     },
-
+    this.items = [
+      {ques1: 'I forgot my password?'},
+      {ques1: 'How to pay bills?'},
+      {ques1: 'Independence day?'},
+      {ques1: 'Chritmas'}
     ];
   }
 
