@@ -1,6 +1,6 @@
-<ion-menu persistent="true" [content]="content" (ionClose)="collapseMenuOptions()" color="rule">
+<ion-menu persistent="true" [content]="content" (ionClose)="collapseMenuOptions()">
     <ion-header>
-      <ion-toolbar color="info">
+      <ion-toolbar color="navbar">
         <ion-title align="center">Menu</ion-title>
       </ion-toolbar>
     </ion-header>
@@ -14,4 +14,4 @@
   </ion-menu>
 
   <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
-  <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+  <ion-nav [root]="rootPage" #content swipeBackEnabled="false" ></ion-nav>

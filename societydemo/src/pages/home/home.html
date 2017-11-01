@@ -1,5 +1,5 @@
 <ion-header>
-      <ion-toolbar  color="info">
+      <ion-toolbar  color="navbar">
         <button ion-button icon-only menuToggle start>
             <ion-icon name="menu"></ion-icon>
         </button>
@@ -26,26 +26,25 @@
   </ion-slides>
       <!-- <ion-label stacked align="center">Services</ion-label> -->
 
-
   <div class="row">
       <ion-card>
         <ion-slides>
             <ion-col>
-              <ion-item (click)="showdoctorlist()"  color="help">
+              <ion-item (click)="showdoctorlist()"  color="info">
                 <ion-avatar>
                   <img src="assets/doctor.jpg" align="center"><div class="card-title" align="center">Doctor</div>
                 </ion-avatar>
               </ion-item>
             </ion-col>
             <ion-col >
-              <ion-item (click)="showelectricianlist()"  color="help">
+              <ion-item (click)="showelectricianlist()"  color="info">
                 <ion-avatar>
                   <img src="assets/electrician.jpg"  align="center"><div class="card-title"  align="center">Electrician</div>
                 </ion-avatar>
               </ion-item>
             </ion-col>
             <ion-col>
-              <ion-item (click)="showplumberlist()"  color="help">
+              <ion-item (click)="showplumberlist()"  color="info">
                 <ion-avatar>
                   <img src="assets/plumber.jpg" align="center"><div class="card-title"  align="center">Plumber</div>
                 </ion-avatar>
@@ -56,7 +55,7 @@
     </div>
   <div class="row">
         <div class="col col-md-6">
-          <ion-card  (click)="shownews()" color='info' class="fixcard col-50">
+          <ion-card  (click)="shownews()" color='news' class="fixcard col-50">
         <ion-buttons align="center" large >
               <ion-icon name="desktop" align="center"></ion-icon>
         </ion-buttons>
@@ -65,7 +64,7 @@
           </ion-card>
         </div>
         <div class="col col-md-6">
-              <ion-card  (click)="showmembers()" color='danger' class="fixcard col-50">
+              <ion-card  (click)="showmembers()" color='event' class="fixcard col-50">
               <ion-buttons align="center" large >
                 <ion-icon name="people"  align="center"></ion-icon>
               </ion-buttons>
@@ -75,16 +74,7 @@
   </div>
   <div class="row">
        <div class="col col-md-6">
-          <ion-card  class="card" color='rule'  (click)="ShowBills()"  class=" fixcard col-50">
-              <ion-buttons align="center" large >
-              <ion-icon name="clipboard" ></ion-icon>
-            </ion-buttons>
-            <div class="card-title"  align="center">Bills</div>
-          </ion-card>
-       </div>
-
-       <div class="col col-md-6">
-          <ion-card class="fixcard col-50" color='help'>
+          <ion-card class="fixcard col-50" color='helpdesk'>
               <ion-buttons align="center" large>
               <ion-icon name="school"></ion-icon>
             </ion-buttons>
@@ -92,6 +82,14 @@
             <div class="card-title"  align="center" >HELPDESK</div>
           </ion-card>
        </div>
-    </div>
+       <div class="col col-md-6">
+          <ion-card  class="card" color='rule'  (click)="ShowBills()"  class=" fixcard col-50">
+              <ion-buttons align="center" large >
+              <ion-icon name="clipboard" ></ion-icon>
+            </ion-buttons>
+            <div class="card-title"  align="center">Bills</div>
+          </ion-card>
+       </div>
+  </div>
 
 </ion-content>

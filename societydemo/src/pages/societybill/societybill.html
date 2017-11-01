@@ -6,7 +6,7 @@
 -->
 <ion-header>
 
-  <ion-toolbar color="info">
+  <ion-toolbar color="navbar">
   <ion-title align="center">Society Bill</ion-title>
 
       <button ion-button icon-only menuToggle start>
@@ -18,8 +18,8 @@
 </ion-header>
 
 <ion-content padding>
- 
- 
+
+
     <ion-list    *ngFor="let item of items">
       <ion-item  (click)="viewItem(item)">
     <!-- <button ion-item *ngFor="let item of items" (click)="viewItem(item)">
@@ -27,7 +27,7 @@
     </button> -->
     <p>{{item.description1}} </p>
       </ion-item>
-  </ion-list> 
+  </ion-list>
 
 
 

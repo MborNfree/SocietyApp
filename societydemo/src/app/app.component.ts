@@ -1,3 +1,8 @@
+import { AddServiceAdminPage } from './../pages/add-service-admin/add-service-admin';
+import { AddFlatwiseServiceAdminPage } from './../pages/add-flatwise-service-admin/add-flatwise-service-admin';
+import { AddemergencyAdminPage } from './../pages/addemergency-admin/addemergency-admin';
+import { EmergencyListAdminPage } from './../pages/emergency-list-admin/emergency-list-admin';
+import { ServiceListAdminPage } from './../pages/service-list-admin/service-list-admin';
 import { InboxPage } from './../pages/inbox/inbox';
 import { AddAssetsAdminPage } from './../pages/add-assets-admin/add-assets-admin';
 import { GenerateBillAdminPage } from './../pages/generate-bill-admin/generate-bill-admin';
@@ -43,6 +48,10 @@ export class MySocietyApp {
 
   rootPage: any = LoginPage;
   activePage:any;
+  username:string;
+  password:string;
+  status:any;
+
   @ViewChild(Nav) nav: Nav;
 
   // Get the instance to call the public methods
@@ -73,6 +82,7 @@ export class MySocietyApp {
     //   splashScreen.hide();
 
 this.initializeApp();
+
       this.pages=[
 
            {title: 'Home', component:HomePage,icon:'home'},
@@ -93,6 +103,9 @@ this.initializeApp();
        ];
 
        this.activePage=this.pages[0];
+
+       this.username = window.localStorage.getItem('username');
+       this.password = window.localStorage.getItem('password');
     }
     initializeApp() {
       this.platform.ready().then(() => {
@@ -100,10 +113,19 @@ this.initializeApp();
         // Here you can do any higher level native things you might need.
         this.statusBar.styleDefault();
         this.splashScreen.hide();
+        this.getStatus();
         	// Initialize some options
 			this.initializeOptions();
       });
     }
+
+  getStatus() {
+    if (this.username='admin') {
+      this.status = true;
+    } else {
+      this.status = false;
+    }
+  }
     openPage(page) {
       // Reset the content nav to have just this page
       // we wouldn't want the back button to show in this scenario
@@ -250,37 +272,37 @@ this.initializeApp();
             component: DocumentuploadPage
           },
           {
-            iconName: 'albums',
+            iconName: 'document',
             displayName: 'Society Documents',
             component: CircularlistPage
           },
           {
-            iconName: 'albums',
+            iconName: 'clipboard',
             displayName: 'Circualrs',
             component: CircularListAdminPage
           },
           {
-            iconName: 'albums',
+            iconName: 'folder',
             displayName: 'Add Circualrs',
             component: AddCircularAdminPage
           },
           {
-            iconName: 'albums',
+            iconName: 'calendar',
             displayName: 'Add Events',
              component: AddEventAdminPage
           },
           {
-            iconName: 'albums',
+            iconName: 'calendar',
             displayName: 'Events List',
              component: EventListAdminPage
           },
           {
-            iconName: 'albums',
+            iconName: 'people',
             displayName: 'Residents',
              component: ResidentListAdminPage
           },
           {
-            iconName: 'albums',
+            iconName: 'contacts',
             displayName: 'Committee',
              component: CommitteeListAdminPage
           },
@@ -300,9 +322,34 @@ this.initializeApp();
              component: AddAssetsAdminPage
           },
           {
-            iconName: 'albums',
+            iconName: 'cash',
             displayName: 'Bill',
              component: GenerateBillAdminPage
+          },
+          {
+            iconName: 'bowtie',
+            displayName: 'Add Service',
+             component: AddServiceAdminPage
+          },
+          {
+            iconName: 'happy',
+            displayName: 'Add flatwise Service',
+             component: AddFlatwiseServiceAdminPage
+          },
+          {
+            iconName: 'albums',
+            displayName: 'Add Emergency',
+             component: AddemergencyAdminPage
+          },
+          {
+            iconName: 'medkit',
+            displayName: 'Emergency List',
+             component: EmergencyListAdminPage
+          },
+          {
+            iconName: 'albums',
+            displayName: 'Service List',
+             component: ServiceListAdminPage
           }
 
         ]

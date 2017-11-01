@@ -45,13 +45,6 @@ isGroupShown(group) {
         .then(() => console.log('Launched dialer!'))
         .catch(() => console.log('Error launching dialer'));
 }
-                                                                                                                                                                                                                                                                                                                                
-
-
-
-
-
-
 
 
   // openContact(){

@@ -2,6 +2,7 @@
 import { Component } from '@angular/core';
 import { NavController,NavParams } from 'ionic-angular';
 import{ AlertController } from 'ionic-angular';
+
 // Angular Material
 import {  MatToolbarModule, MatSidenavModule, MatButtonModule, MatChipsModule, MatListModule, MatInputModule } from '@angular/material';
 
@@ -26,6 +27,7 @@ import { EventlistPage } from './../eventlist/eventlist';
 })
 export class HomePage {
 
+
 username:any;
 sessionUser:any;
 
@@ -35,9 +37,10 @@ sessionUser:any;
     this.sessionUser =sessionStorage.getItem("username");
 
 
-  }
 
-  logout() {
+
+  }
+ logout() {
     window.localStorage.removeItem('username');
     window.localStorage.removeItem('password');
 

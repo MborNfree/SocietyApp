@@ -6,7 +6,10 @@
 -->
 <ion-header>
 
-  <ion-navbar color="info">
+  <ion-navbar color="navbar">
+      <button ion-button icon-only menuToggle start>
+          <ion-icon name="menu"></ion-icon>
+      </button>
     <ion-title>GenerateBill-admin</ion-title>
   </ion-navbar>
 
@@ -14,32 +17,31 @@
 
 <ion-content padding>
     <form [formGroup]="authForm" (ngSubmit)="onSubmit(authForm.value)">
-        <ion-label>Username</ion-label>
-        <ion-select name="unm" ([ngModel])='unm'>
-          <ion-option>Mayuri Parmar</ion-option>
-          <ion-option>Tejaswi Pathari</ion-option>
-          <ion-option>Shreyas Pednekar</ion-option>
-          <ion-option>Rajkumar Yadav</ion-option>
-        </ion-select>
-        <ion-label>Flat</ion-label>
-        <ion-input  formControlName="eventvenue" type="text" ([ngModel])='flat'></ion-input>
-        <ion-label>User Type</ion-label>
-        <ion-input formControlName="eventvenue" type="text" ([ngModel])='Utype'></ion-input>
-        <ion-label>PAN No</ion-label>
-        <ion-input  formControlName="eventvenue" type="text" ([ngModel])='pan'></ion-input>
-        <ion-label>Parking Slot</ion-label>
-        <ion-input  formControlName="eventvenue" type="text" ([ngModel])='park'></ion-input>
-        <ion-label>charges1</ion-label>
-        <ion-input  formControlName="eventvenue" type="text" ([ngModel])='charges1'></ion-input>
-        <ion-label>charges2</ion-label>
-        <ion-input  formControlName="eventvenue" type="text" ([ngModel])='charges2'></ion-input>
-        <ion-label>charges3</ion-label>
-        <ion-input  formControlName="eventvenue" type="text" ([ngModel])='charges3'></ion-input>
-        <ion-label>charges4</ion-label>
-        <ion-input  formControlName="eventvenue" type="text" ([ngModel])='charges4'></ion-input>
-        <ion-label>Total</ion-label>
-        <ion-input formControlName="eventvenue" type="text" ([ngModel])='total'></ion-input>
-        <button ion-button full class="btn btn-info" type="submit">Generate</button>
+        <ion-item [ngClass]="{'error-border':!authForm.controls.unm.valid && authForm.controls.unm.touched}">
+            <ion-label floating>Name</ion-label>
+            <ion-input formControlName="unm" type="text" [(ngModel)]="unm"></ion-input>
+        </ion-item>
+
+        <ion-item [ngClass]="{'error-border':!authForm.controls.charges1.valid && authForm.controls.charges1.touched}">
+            <ion-label floating>charges1</ion-label>
+            <ion-input formControlName="charges1" type="text" [(ngModel)]="charges1"></ion-input>
+        </ion-item>
+        <ion-item [ngClass]="{'error-border':!authForm.controls.charges2.valid && authForm.controls.charges2.touched}">
+            <ion-label floating>charges2</ion-label>
+            <ion-input formControlName="charges2" type="text" [(ngModel)]="charges2"></ion-input>
+        </ion-item>
+        <ion-item [ngClass]="{'error-border':!authForm.controls.charges3.valid && authForm.controls.charges3.touched}">
+            <ion-label floating>charges3</ion-label>
+            <ion-input formControlName="charges3" type="text" [(ngModel)]="charges3"></ion-input>
+        </ion-item>
+
+        <ion-item [ngClass]="{'error-border':!authForm.controls.total.valid && authForm.controls.total.touched}">
+            <ion-label floating>Total</ion-label>
+            <ion-input formControlName="total" type="text" [(ngModel)]="total"></ion-input>
+        </ion-item>
+
+
+        <button ion-button full color="secondary" type="submit">Add Event</button>
     </form>
 
 </ion-content>

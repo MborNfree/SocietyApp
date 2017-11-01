@@ -5,6 +5,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabase, AngularFireDatabaseModule } from 'angularfire2/database';
 import firebase from 'firebase';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { EmojiProvider } from '../providers/emoji';
@@ -59,7 +60,12 @@ import { BillAdminPage } from '../pages/bill-admin/bill-admin';
 import { GenerateBillAdminPage } from '../pages/generate-bill-admin/generate-bill-admin';
 import { AddAssetsAdminPage } from '../pages/add-assets-admin/add-assets-admin';
 import { InboxPage } from '../pages/inbox/inbox';
-
+import { AddServiceAdminPage } from '../pages/add-service-admin/add-service-admin';
+import { AddFlatwiseServiceAdminPage } from '../pages/add-flatwise-service-admin/add-flatwise-service-admin';
+import { AddemergencyAdminPage } from '../pages/addemergency-admin/addemergency-admin';
+import { EmergencyListAdminPage } from '../pages/emergency-list-admin/emergency-list-admin';
+import { ServiceListAdminPage } from '../pages/service-list-admin/service-list-admin';
+import { ServiceDetailAdminPage } from '../pages/service-detail-admin/service-detail-admin';
 
 
 var config = {
@@ -115,9 +121,13 @@ var config = {
     BillAdminPage,
     GenerateBillAdminPage,
     AddAssetsAdminPage,
-    InboxPage
-
-
+    InboxPage,
+    AddServiceAdminPage,
+    AddFlatwiseServiceAdminPage,
+    AddemergencyAdminPage,
+    EmergencyListAdminPage,
+    ServiceListAdminPage,
+    ServiceDetailAdminPage
 
   ],
 
@@ -126,6 +136,7 @@ var config = {
     NgDatepickerModule,
     IonicModule.forRoot(MySocietyApp),
     AngularFireModule.initializeApp(config),
+    AngularFireDatabaseModule,
     MatListModule,
     MatInputModule,
     MatToolbarModule,
@@ -181,7 +192,13 @@ var config = {
     BillAdminPage,
     GenerateBillAdminPage,
     AddAssetsAdminPage,
-    InboxPage
+    InboxPage,
+    AddServiceAdminPage,
+    AddFlatwiseServiceAdminPage,
+    AddemergencyAdminPage,
+    EmergencyListAdminPage,
+    ServiceListAdminPage,
+    ServiceDetailAdminPage
   ],
 
   providers: [
@@ -189,7 +206,8 @@ var config = {
     SplashScreen,
     CallNumber,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    EmojiProvider
+    EmojiProvider,
+
   ]
 })
 

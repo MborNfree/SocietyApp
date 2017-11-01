@@ -18,6 +18,14 @@ import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/fo
 })
 export class RegisterPage {
   authForm: FormGroup;
+  fnm:string;
+  lnm:string;
+  username:string;
+  vehicles: number;
+  family: number;
+  password:string;
+  flatno:number;
+  email:string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public formBuilder: FormBuilder) {
     this.authForm = formBuilder.group({

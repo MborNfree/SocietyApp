@@ -6,16 +6,13 @@
 -->
 <ion-header>
 
-  <ion-navbar color="info">
+  <ion-navbar color="navbar">
     <ion-title>bill-admin</ion-title>
   </ion-navbar>
 
 </ion-header>
 
-
 <ion-content padding>
-    <div class="container">
-
         <h2>Invoice # <input type="text" value="001.13"></h2>
 
         <p>
@@ -29,8 +26,6 @@
             <th>Type</th>
             <th>Description</th>
             <th>Price</th>
-            <th>Quantity</th>
-            <th>Tax</th>
             <th>Total price</th>
             <th></th>
           </tr>
@@ -47,14 +42,6 @@
             </td>
             <td><input type="text" class="desc" name="description" value="" placeholder="product/service description here..."></td>
             <td><input type="number" class="price" name="price" step="0.01" value="10.00"></td>
-            <td><input type="number" class="quantity" name="quantity" step="1" value="3"></td>
-            <td>
-              <select name="tax" id="" class="tax_rate">
-                <option value="">None</option>
-                <option value="21">IVA 21%</option>
-                <option value="14">IVA 14%</option>
-              </select>
-            </td>
             <td class="total-price">€ 0,00</td>
             <td><a href="#" class="delete">x</a></td>
           </tr>
@@ -93,7 +80,7 @@
           </tr>
         </tbody>
       </table>
-      </div>
+
 </ion-content>
 <script type="text/javascript">
   var Invoice = {
