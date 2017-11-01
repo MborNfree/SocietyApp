@@ -1,3 +1,4 @@
+import { ForumPage } from './../pages/forum/forum';
 import { InboxPage } from './../pages/inbox/inbox';
 import { AddAssetsAdminPage } from './../pages/add-assets-admin/add-assets-admin';
 import { GenerateBillAdminPage } from './../pages/generate-bill-admin/generate-bill-admin';
@@ -201,6 +202,12 @@ this.initializeApp();
         component: DosdontsPage
       });
 
+       this.options.push({
+        iconName: 'chatbubbles',
+        displayName: 'Forum',
+        component: ForumPage
+      });
+
 
       // Load options with nested items (without icons)
       // -----------------------------------------------
@@ -208,7 +215,7 @@ this.initializeApp();
         displayName: 'Services',
         subItems: [
           {
-            iconName: 'plus-circled',
+            iconName: 'add-circle',
             displayName: 'Doctors',
             component: DoctorlistPage
           },

@@ -1,3 +1,4 @@
+import { ForumPage } from './../pages/forum/forum';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule} from '@angular/core';
@@ -115,7 +116,8 @@ var config = {
     BillAdminPage,
     GenerateBillAdminPage,
     AddAssetsAdminPage,
-    InboxPage
+    InboxPage,
+    ForumPage
 
 
 
@@ -181,7 +183,8 @@ var config = {
     BillAdminPage,
     GenerateBillAdminPage,
     AddAssetsAdminPage,
-    InboxPage
+    InboxPage,
+    ForumPage
   ],
 
   providers: [
