@@ -7,7 +7,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 // Models
 import { MenuOptionModel, SideMenuContentComponent } from '../shared/side-menu-content/side-menu-content.component';
 import { CircularlistPage } from './../pages/circularlist/circularlist';
-
 import { DocumentuploadPage } from './../pages/documentupload/documentupload';
 import { EventlistPage } from './../pages/eventlist/eventlist';
 import { EmergencycontactlistPage } from './../pages/emergencycontactlist/emergencycontactlist';

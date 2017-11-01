@@ -55,6 +55,7 @@ import { ForumPage } from '../pages/forum/forum';
 import { NgDatepickerModule } from 'ng2-datepicker';
 import { CirculardetailsPage } from '../pages/circulardetails/circulardetails';
 import { CallNumber } from '@ionic-native/call-number';
+import { CircularlistPage } from '../pages/circularlist/circularlist';
 
 
 var config = {
@@ -110,7 +111,8 @@ var config = {
     GenerateBillAdminPage,
     AddAssetsAdminPage,
     InboxPage,
-    ForumPage
+    ForumPage,
+    CirculardetailsPage
 
   ],
 
