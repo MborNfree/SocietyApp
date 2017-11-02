@@ -1,7 +1,8 @@
+
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
-import { EventListAdminPage } from '../event-list-admin/event-list-admin';
+import { FlatwiseServiceListAdminPage } from './../flatwise-service-list-admin/flatwise-service-list-admin';
 
 /**
  * Generated class for the AddFlatwiseServiceAdminPage page.
@@ -17,18 +18,17 @@ import { EventListAdminPage } from '../event-list-admin/event-list-admin';
 })
 export class AddFlatwiseServiceAdminPage {
   authForm: FormGroup;
-  eventimg:any;
-  eventnm:string;
-  eventdt:any;
-  eventvenue:string;
-  title: string;
-  description: string;
+
+  Personnm:string;
+  Serviceflat:string;
+  Personno:number;
+
   constructor(public navCtrl: NavController, public navParams: NavParams,public formBuilder: FormBuilder) {
     this.authForm = formBuilder.group({
-      eventnm: ['', Validators.compose([Validators.required, Validators.pattern('[a-zA-Z]*'), Validators.minLength(4), Validators.maxLength(30)])],
-      eventdt: ['', Validators.compose([Validators.required, Validators.minLength(8)])],
-      eventvenue: ['', Validators.compose([Validators.required,Validators.pattern('[a-zA-Z]*'), Validators.minLength(4)])],
-      eventimg: ['',Validators.compose([Validators.required, Validators.minLength(8), Validators.maxLength(30)])]
+      Personnm: ['', Validators.compose([Validators.required, Validators.pattern('[a-zA-Z]*')])],
+      Serviceflat: ['', Validators.compose([Validators.required, Validators.minLength(3)])],
+      Personno: ['', Validators.compose([Validators.required,Validators.pattern('[0-9]*'), Validators.minLength(10)])],
+
      });
   }
 
@@ -39,7 +39,7 @@ export class AddFlatwiseServiceAdminPage {
 
           alert('added');
 
-        this.navCtrl.push(EventListAdminPage);
+        this.navCtrl.push(FlatwiseServiceListAdminPage);
 
       }
 }

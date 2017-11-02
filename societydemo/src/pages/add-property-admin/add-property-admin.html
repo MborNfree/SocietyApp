@@ -14,8 +14,22 @@
   </ion-navbar>
 
 </ion-header>
-<ion-content padding>
-  <form [formGroup]="authForm" (ngSubmit)="onSubmit(authForm.value)">
+<ion-content padding class="bg-masters">
+    <button ion-button block (click)="closeModal()">Close Modal</button>
+    <form (ngSubmit)="onSubmit()">
+        <ion-item>
+            <ion-label floating>Propert Name</ion-label>
+            <ion-input name="Propertynm" type="text" [(ngModel)]="Propertynm"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating>Property Type</ion-label>
+            <ion-radio  checked="true" value="1">Property</ion-radio>
+            <ion-radio  value="2">Assets</ion-radio>
+        </ion-item>
+        <button ion-button full color="secondary" type="submit">Add Event</button>
+    </form>
+  <!-- <form [formGroup]="authForm" (ngSubmit)="onSubmit(authForm.value)">
       <ion-item [ngClass]="{'error-border':!authForm.controls.Propertynm.valid && authForm.controls.Propertynm.touched}">
           <ion-label floating>Propert Name</ion-label>
           <ion-input formControlName="Propertynm" type="text" [(ngModel)]="Propertynm"></ion-input>
@@ -32,5 +46,5 @@
           <ion-radio  formControlName="type" value="2">Assets</ion-radio>
       </ion-item>
       <button ion-button full color="secondary" type="submit">Add Event</button>
-  </form>
+  </form> -->
 </ion-content>

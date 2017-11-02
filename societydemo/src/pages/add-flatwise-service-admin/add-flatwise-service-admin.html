@@ -13,39 +13,41 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding class="bg-masters">
     <form [formGroup]="authForm" (ngSubmit)="onSubmit(authForm.value)">
-        <ion-item [ngClass]="{'error-border':!authForm.controls.eventnm.valid && authForm.controls.eventnm.touched}">
-            <ion-label floating>Event Name</ion-label>
-            <ion-input formControlName="eventnm" type="text" [(ngModel)]="eventnm"></ion-input>
+        <ion-item [ngClass]="{'error-border':!authForm.controls.Personnm.valid && authForm.controls.Personnm.touched}">
+            <ion-label floating>Service Person Name</ion-label>
+            <ion-input formControlName="Personnm" type="text" [(ngModel)]="Personnm"></ion-input>
         </ion-item>
-        <ion-item *ngIf="authForm.controls.eventnm.hasError('required') && authForm.controls.eventnm.touched">
-            <p>Sorry, field username is required!</p>
+        <ion-item *ngIf="authForm.controls.Personnm.hasError('required') && authForm.controls.Personnm.touched">
+            <p>Sorry, field Service Person Name is required!</p>
         </ion-item>
-        <ion-item *ngIf="authForm.controls.eventnm.hasError('pattern') && authForm.controls.eventnm.touched">
+        <ion-item *ngIf="authForm.controls.Personnm.hasError('pattern') && authForm.controls.Personnm.touched">
             <p>Sorry, only small and capital letters are allowed!</p>
         </ion-item>
-        <ion-item [ngClass]="{'error-border':!authForm.controls.eventdt.valid && authForm.controls.eventdt.touched}">
-            <ion-label floating>Event Date</ion-label>
-            <ion-input formControlName="eventdt" type="date" [(ngModel)]="eventdt"></ion-input>
+        <ion-item [ngClass]="{'error-border':!authForm.controls.Serviceflat.valid && authForm.controls.Serviceflat.touched}">
+            <ion-label floating>Service Flat</ion-label>
+            <ion-input formControlName="Serviceflat" type="text" [(ngModel)]="Serviceflat"></ion-input>
         </ion-item>
-        <ion-item *ngIf="authForm.controls.eventdt.hasError('required') && authForm.controls.eventdt.touched">
+        <ion-item *ngIf="authForm.controls.Serviceflat.hasError('required') && authForm.controls.Serviceflat.touched">
+            <p>Sorry, field Service flat is required!</p>
+        </ion-item>
+        <ion-item *ngIf="authForm.controls.Serviceflat.hasError('pattern') && authForm.controls.Serviceflat.touched">
+            <p>Sorry, only number are allowed!</p>
+        </ion-item>
+        <ion-item [ngClass]="{'error-border':!authForm.controls.Personno.valid && authForm.controls.Personno.touched}">
+            <ion-label floating>Service Person Number</ion-label>
+            <ion-input formControlName="Personno" type="text" [(ngModel)]="Personno"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="authForm.controls.Personno.hasError('required') && authForm.controls.Personno.touched">
             <p>Sorry, field username is required!</p>
         </ion-item>
-        <ion-item [ngClass]="{'error-border':!authForm.controls.eventvenue.valid && authForm.controls.eventvenue.touched}">
-            <ion-label floating>Event Venue</ion-label>
-            <ion-input formControlName="eventvenue" type="text" [(ngModel)]="eventvenue"></ion-input>
+        <ion-item *ngIf="authForm.controls.Personno.hasError('pattern') && authForm.controls.Personno.touched">
+            <p>Sorry, only number are allowed!</p>
         </ion-item>
-        <ion-item *ngIf="authForm.controls.eventvenue.hasError('required') && authForm.controls.eventvenue.touched">
-            <p>Sorry, field Event Venue is required!</p>
+        <ion-item *ngIf="authForm.controls.Personno.hasError('minLength') && authForm.controls.Personno.touched">
+            <p>Sorry, minimum username length is 10!</p>
         </ion-item>
-        <ion-item *ngIf="authForm.controls.eventvenue.hasError('pattern') && authForm.controls.eventvenue.touched">
-            <p>Sorry, only small and capital letters are allowed!</p>
-        </ion-item>
-        <ion-item *ngIf="authForm.controls.eventvenue.hasError('maxlength') && authForm.controls.eventvenue.touched">
-            <p>Sorry, maximum username length is 30!</p>
-        </ion-item>
-
-        <button ion-button full color="secondary" type="submit">Add Event</button>
+        <button ion-button full color="secondary" type="submit">Add</button>
     </form>
 </ion-content>

@@ -1,7 +1,10 @@
-import { CircularListAdminPage } from './../circular-list-admin/circular-list-admin';
+
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
+import { FileSelectDirective, FileDropDirective, FileUploader } from 'ng2-file-upload/ng2-file-upload';
 
+import { CircularListAdminPage } from './../circular-list-admin/circular-list-admin';
 /**
  * Generated class for the AddCircularAdminPage page.
  *
@@ -14,15 +17,29 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   selector: 'page-add-circular-admin',
   templateUrl: 'add-circular-admin.html',
 })
+
 export class AddCircularAdminPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  authForm: FormGroup;
+  Circularnm:string;
+  cfile:string;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams,public formBuilder: FormBuilder) {
+
+    this.authForm = formBuilder.group({
+      Circularnm: ['', Validators.compose([Validators.required, Validators.pattern('[a-zA-Z]*'), Validators.minLength(4), Validators.maxLength(30)])],
+       cfile: ['', Validators.compose([Validators.required])]
+
+     });
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AddCircularAdminPage');
   }
-  AddCircular(){
-    this.navCtrl.push(CircularListAdminPage);
-  }
+
+  onSubmit(value: any): void {
+    alert('added');
+  this.navCtrl.push(CircularListAdminPage);
+
+}
 }
