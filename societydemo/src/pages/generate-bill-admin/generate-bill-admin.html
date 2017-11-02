@@ -15,7 +15,10 @@
 
 </ion-header>
 
-<ion-content padding>
+<ion-content padding class="bg-masters">
+  <div padding>
+      <button type="button" class="btn btn-info" (click)="addcharges()"> Bill charges</button>
+  </div>
     <form [formGroup]="authForm" (ngSubmit)="onSubmit(authForm.value)">
         <ion-item [ngClass]="{'error-border':!authForm.controls.unm.valid && authForm.controls.unm.touched}">
             <ion-label floating>Name</ion-label>

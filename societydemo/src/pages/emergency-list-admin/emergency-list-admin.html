@@ -16,7 +16,7 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding class="bg-masters">
 
     <ion-list>
         <ion-item  *ngFor="let d of diseases; let i=index" text-wrap (click)="toggleGroup(i)" [ngClass]="{active: isGroupShown(i)}">

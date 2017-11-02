@@ -60,4 +60,10 @@ export class EventListAdminPage {
         item: item
       });
     }
+    deleteEvent(){
+      alert('deleted');
+    }
+    EditEvent(){
+      alert('edited');
+    }
 }

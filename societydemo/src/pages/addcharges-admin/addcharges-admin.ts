@@ -1,8 +1,8 @@
+
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
-import { BillAdminPage } from './../bill-admin/bill-admin';
-
+import { BillchargeListAdminPage } from './../billcharge-list-admin/billcharge-list-admin';
 /**
  * Generated class for the AddchargesAdminPage page.
  *
@@ -18,13 +18,17 @@ import { BillAdminPage } from './../bill-admin/bill-admin';
 export class AddchargesAdminPage {
 
   authForm: FormGroup;
+  chargenm:string;
+  chargetype:string;
+  chargeamt:number;
+
   constructor(public navCtrl: NavController, public navParams: NavParams,public formBuilder: FormBuilder) {
 
     this.authForm = formBuilder.group({
-      eventnm: ['', Validators.compose([Validators.required, Validators.pattern('[a-zA-Z]*'), Validators.minLength(4), Validators.maxLength(30)])],
-      eventdt: ['', Validators.compose([Validators.required, Validators.minLength(8)])],
-      eventvenue: ['', Validators.compose([Validators.required,Validators.pattern('[a-zA-Z]*'), Validators.minLength(4)])],
-      eventimg: ['',Validators.compose([Validators.required, Validators.minLength(8), Validators.maxLength(30)])]
+      chargenm: ['', Validators.compose([Validators.required, Validators.pattern('[a-zA-Z]*'), Validators.minLength(4), Validators.maxLength(15)])],
+      chargetype: ['', Validators.compose([Validators.required])],
+      chargeamt: ['', Validators.compose([Validators.required,Validators.pattern('[0-9]*'), Validators.minLength(3)])]
+
      });
   }
 
@@ -35,7 +39,7 @@ export class AddchargesAdminPage {
 
           alert('added');
 
-        this.navCtrl.push(BillAdminPage);
+        this.navCtrl.push(BillchargeListAdminPage);
 
       }
 

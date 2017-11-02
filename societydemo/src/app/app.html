@@ -5,7 +5,7 @@
       </ion-toolbar>
     </ion-header>
 
-    <ion-content>
+    <ion-content >
 
       <!-- Side Menu -->
       <side-menu-content [settings]="sideMenuSettings" [options]="options" (selectOption)="selectOption($event)"></side-menu-content>
@@ -14,4 +14,4 @@
   </ion-menu>
 
   <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
-  <ion-nav [root]="rootPage" #content swipeBackEnabled="false" ></ion-nav>
+  <ion-nav [root]="rootPage"  #content swipeBackEnabled="false" ></ion-nav>

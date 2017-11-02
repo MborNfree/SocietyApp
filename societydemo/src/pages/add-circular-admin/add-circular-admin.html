@@ -12,13 +12,32 @@
     </button>
   </ion-navbar>
 </ion-header>
-<ion-content padding>
-    <form>
-        <ion-list>
-          <ion-input type="file"></ion-input>
+<ion-content padding class="bg-masters">
 
+    <form  [formGroup]="authForm" (ngSubmit)="onSubmit(authForm.value)">
+        <ion-list>
+            <ion-item [ngClass]="{'error-border':!authForm.controls.Circularnm.valid && authForm.controls.Circularnm.touched}">
+                <ion-label floating>Circular Name</ion-label>
+                <ion-input formControlName="Circularnm" type="text" [(ngModel)]="Circularnm"></ion-input>
+            </ion-item>
+            <ion-item *ngIf="authForm.controls.Circularnm.hasError('required') && authForm.controls.Circularnm.touched">
+                <p>Sorry, field username is required!</p>
+                <ion-item *ngIf="authForm.controls.Circularnm.hasError('pattern') && authForm.controls.Circularnm.touched">
+                    <p>Sorry, only small and capital letters are allowed!</p>
+                </ion-item>
+                <ion-item *ngIf="authForm.controls.Circularnm.hasError('maxlength') && authForm.controls.Circularnm.touched">
+                    <p>Sorry, maximum username length is 30!</p>
+                </ion-item>
+            </ion-item>
+            <ion-item [ngClass]="{'error-border':!authForm.controls.cfile.valid && authForm.controls.cfile.touched}">
+                <ion-label floating>File</ion-label>
+                <ion-input type="file"></ion-input>
+            </ion-item>
+            <ion-item *ngIf="authForm.controls.cfile.hasError('required') && authForm.controls.cfile.touched">
+                <p>Sorry, field username is required!</p>
+            </ion-item>
           <div padding>
-              <button ion-button full (click)='AddCircular()'>Upload</button>
+              <button ion-button full>Upload</button>
           </div>
         </ion-list>
       </form>

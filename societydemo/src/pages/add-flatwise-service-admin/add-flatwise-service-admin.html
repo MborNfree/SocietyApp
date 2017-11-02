@@ -13,6 +13,41 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-
+<ion-content padding class="bg-masters">
+    <form [formGroup]="authForm" (ngSubmit)="onSubmit(authForm.value)">
+        <ion-item [ngClass]="{'error-border':!authForm.controls.Personnm.valid && authForm.controls.Personnm.touched}">
+            <ion-label floating>Service Person Name</ion-label>
+            <ion-input formControlName="Personnm" type="text" [(ngModel)]="Personnm"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="authForm.controls.Personnm.hasError('required') && authForm.controls.Personnm.touched">
+            <p>Sorry, field Service Person Name is required!</p>
+        </ion-item>
+        <ion-item *ngIf="authForm.controls.Personnm.hasError('pattern') && authForm.controls.Personnm.touched">
+            <p>Sorry, only small and capital letters are allowed!</p>
+        </ion-item>
+        <ion-item [ngClass]="{'error-border':!authForm.controls.Serviceflat.valid && authForm.controls.Serviceflat.touched}">
+            <ion-label floating>Service Flat</ion-label>
+            <ion-input formControlName="Serviceflat" type="text" [(ngModel)]="Serviceflat"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="authForm.controls.Serviceflat.hasError('required') && authForm.controls.Serviceflat.touched">
+            <p>Sorry, field Service flat is required!</p>
+        </ion-item>
+        <ion-item *ngIf="authForm.controls.Serviceflat.hasError('pattern') && authForm.controls.Serviceflat.touched">
+            <p>Sorry, only number are allowed!</p>
+        </ion-item>
+        <ion-item [ngClass]="{'error-border':!authForm.controls.Personno.valid && authForm.controls.Personno.touched}">
+            <ion-label floating>Service Person Number</ion-label>
+            <ion-input formControlName="Personno" type="text" [(ngModel)]="Personno"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="authForm.controls.Personno.hasError('required') && authForm.controls.Personno.touched">
+            <p>Sorry, field username is required!</p>
+        </ion-item>
+        <ion-item *ngIf="authForm.controls.Personno.hasError('pattern') && authForm.controls.Personno.touched">
+            <p>Sorry, only number are allowed!</p>
+        </ion-item>
+        <ion-item *ngIf="authForm.controls.Personno.hasError('minLength') && authForm.controls.Personno.touched">
+            <p>Sorry, minimum username length is 10!</p>
+        </ion-item>
+        <button ion-button full color="secondary" type="submit">Add</button>
+    </form>
 </ion-content>

@@ -14,7 +14,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'forum.html',
 })
 export class ForumPage {
-
+  myInput:any;
   public items=[];
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -23,9 +23,10 @@ export class ForumPage {
     console.log('ionViewDidLoad ForumPage');
     this.items = [
       {ques1: 'I forgot my password?'},
-      {ques1: 'How to pay bills?'},
-      {ques1: 'Independence day?'},
-      {ques1: 'Chritmas'}
+      {ques1: 'Illegal charges from Tenants of a CHS'},
+      {ques1: 'Parking Issue between two reserved car parking'},
+      {ques1: 'Extra maintenance on rented flat'},
+      {ques1: ' Noise pollution in co - operative housing society '}
     ];
   }
 
