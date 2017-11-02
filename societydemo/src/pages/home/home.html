@@ -56,17 +56,18 @@
   <div class="row">
         <div class="col col-md-6">
           <ion-card  (click)="shownews()" color='news' class="fixcard col-50">
-        <ion-buttons align="center" large >
-              <ion-icon name="desktop" align="center"></ion-icon>
+        <ion-buttons align="center" large class="call-to-action">
+              <!-- <ion-icon name="desktop" align="center"></ion-icon> -->
+              <img class="action-img" src="../assets/News Icon.png"/>
         </ion-buttons>
-              <!-- <img src="../assets/news.jpg"/> -->
               <div class="card-title" align="center">NEWS</div>
           </ion-card>
         </div>
         <div class="col col-md-6">
               <ion-card  (click)="showmembers()" color='event' class="fixcard col-50">
-              <ion-buttons align="center" large >
-                <ion-icon name="people"  align="center"></ion-icon>
+              <ion-buttons align="center" large class="call-to-action" >
+                <!-- <ion-icon name="people"  align="center"></ion-icon> -->
+                <img class="action-img" src="assets/CCN-2.png"/>
               </ion-buttons>
               <div class="card-title"  align="center">Events</div>
             </ion-card>
@@ -75,17 +76,20 @@
   <div class="row">
        <div class="col col-md-6">
           <ion-card class="fixcard col-50" color='helpdesk'>
-              <ion-buttons align="center" large>
-              <ion-icon name="school"></ion-icon>
+              <ion-buttons align="center" large class="call-to-action">
+              <!-- <ion-icon name="school"></ion-icon> -->
+              <img class="action-img" src="assets/servicedesk_256x256-512.png"/>
+
             </ion-buttons>
-            <!-- <img src="assets/img/card-madison.png"/> -->
-            <div class="card-title"  align="center" >HELPDESK</div>
+
+            <div class="card-title"  align="center">HELPDESK</div>
           </ion-card>
        </div>
        <div class="col col-md-6">
           <ion-card  class="card" color='rule'  (click)="ShowBills()"  class=" fixcard col-50">
-              <ion-buttons align="center" large >
-              <ion-icon name="clipboard" ></ion-icon>
+              <ion-buttons align="center" large class="call-to-action">
+              <!-- <ion-icon name="clipboard" ></ion-icon> -->
+              <img class="action-img" src="assets/bill_finance_business_trade_invoice_cost_report-2-512.png"/>
             </ion-buttons>
             <div class="card-title"  align="center">Bills</div>
           </ion-card>
