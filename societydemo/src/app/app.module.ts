@@ -55,6 +55,14 @@ import { ForumPage } from '../pages/forum/forum';
 import { NgDatepickerModule } from 'ng2-datepicker';
 import { CirculardetailsPage } from '../pages/circulardetails/circulardetails';
 import { CallNumber } from '@ionic-native/call-number';
+import { CircularlistPage } from '../pages/circularlist/circularlist';
+import { HelpdeskPage } from '../pages/helpdesk/helpdesk';
+
+
+import { File } from '@ionic-native/file';
+import { Transfer } from '@ionic-native/transfer';
+import { FilePath } from '@ionic-native/file-path';
+import { Camera } from '@ionic-native/camera';
 
 
 var config = {
@@ -110,7 +118,9 @@ var config = {
     GenerateBillAdminPage,
     AddAssetsAdminPage,
     InboxPage,
-    ForumPage
+    ForumPage,
+    CirculardetailsPage,
+    HelpdeskPage
 
   ],
 
@@ -161,7 +171,6 @@ var config = {
     EventlistPage,
     EmergencycontactlistPage,
     MemberprofilePage,
-    CircularlistPage,
     EventdetailsPage,
     SocietybillPage,
     BillingchargesPage,
@@ -177,7 +186,8 @@ var config = {
     AddAssetsAdminPage,
     InboxPage,
     ForumPage,
-    CirculardetailsPage
+    CirculardetailsPage,
+    HelpdeskPage
 
   ],
 
@@ -187,7 +197,10 @@ var config = {
     CallNumber,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     EmojiProvider,
-
+    File,
+    Transfer,
+    Camera,
+    FilePath,
   ]
 })
 

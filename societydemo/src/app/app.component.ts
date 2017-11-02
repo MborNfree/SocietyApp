@@ -1,3 +1,4 @@
+import { HelpdeskPage } from './../pages/helpdesk/helpdesk';
 
 import { Component,ViewChild } from '@angular/core';
 import { Nav, Platform, MenuController, AlertController } from 'ionic-angular';
@@ -235,6 +236,12 @@ this.initializeApp();
         iconName: 'chatbubbles',
         displayName: 'Forum',
         component: ForumPage
+      });
+
+      this.options.push({
+        iconName: 'help-circle',
+        displayName: 'Help Desk',
+        component: HelpdeskPage
       });
 
 
