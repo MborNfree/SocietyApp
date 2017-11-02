@@ -1,4 +1,5 @@
 
+
 import { Component,ViewChild } from '@angular/core';
 import { Nav, Platform, MenuController, AlertController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -40,6 +41,8 @@ import { InboxPage } from './../pages/inbox/inbox';
 import { AddAssetsAdminPage } from './../pages/add-assets-admin/add-assets-admin';
 import { GenerateBillAdminPage } from './../pages/generate-bill-admin/generate-bill-admin';
 import { BillAdminPage } from './../pages/bill-admin/bill-admin';
+import { FlatwiseServiceListAdminPage } from '../pages/flatwise-service-list-admin/flatwise-service-list-admin';
+import { UserDocumentListAdminPage } from './../pages/user-document-list-admin/user-document-list-admin';
 
 
 
@@ -282,12 +285,7 @@ this.initializeApp();
           {
             iconName: 'basket',
             displayName: 'User Documents',
-            component: DocumentuploadPage
-          },
-          {
-            iconName: 'document',
-            displayName: 'Society Documents',
-            component: CircularlistPage
+            component: UserDocumentListAdminPage
           },
           {
             iconName: 'clipboard',
@@ -348,6 +346,11 @@ this.initializeApp();
             iconName: 'happy',
             displayName: 'Add flatwise Service',
              component: AddFlatwiseServiceAdminPage
+          },
+          {
+            iconName: 'happy',
+            displayName: 'flatwise Service',
+             component: FlatwiseServiceListAdminPage
           },
           {
             iconName: 'albums',

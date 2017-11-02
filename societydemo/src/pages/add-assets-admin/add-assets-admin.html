@@ -12,7 +12,7 @@
   </button>
   </ion-navbar>
 </ion-header>
-<ion-content padding>
+<ion-content padding class="bg-masters">
   <form [formGroup]="authForm" (ngSubmit)="onSubmit(authForm.value)">
     <ion-item [ngClass]="{'error-border':!authForm.controls.Propertynm.valid && authForm.controls.Propertynm.touched}">
         <ion-label floating>Propert Name</ion-label>

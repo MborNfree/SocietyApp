@@ -1,7 +1,9 @@
+
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
 import { BillAdminPage } from '../bill-admin/bill-admin';
+import { AddchargesAdminPage } from './../addcharges-admin/addcharges-admin';
 
 
 /**
@@ -58,6 +60,10 @@ charges3:number;
   onSubmit(value: any): void {
 
         this.navCtrl.push(BillAdminPage);
+
+      }
+      addcharges(){
+        this.navCtrl.push(AddchargesAdminPage);
 
       }
 }

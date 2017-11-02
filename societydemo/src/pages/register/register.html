@@ -13,7 +13,7 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding class="bg-masters">
   <form [formGroup]="authForm" (ngSubmit)="onSubmit(authForm.value)">
       <ion-item [ngClass]="{'error-border':!authForm.controls.fnm.valid && authForm.controls.fnm.touched}">
           <ion-label floating>First Name</ion-label>

@@ -1,8 +1,5 @@
-import { AddemergencyAdminPage } from './../pages/addemergency-admin/addemergency-admin';
-import { ServiceListAdminPage } from './../pages/service-list-admin/service-list-admin';
-import { ServiceDetailAdminPageModule } from './../pages/service-detail-admin/service-detail-admin.module';
-import { AddFlatwiseServiceAdminPage } from './../pages/add-flatwise-service-admin/add-flatwise-service-admin';
-import { AddServiceAdminPage } from './../pages/add-service-admin/add-service-admin';
+
+
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule} from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -63,6 +60,17 @@ import { CallNumber } from '@ionic-native/call-number';
 import { CircularlistPage } from '../pages/circularlist/circularlist';
 import { ServiceDetailAdminPage } from '../pages/service-detail-admin/service-detail-admin';
 import { EmergencyListAdminPage } from '../pages/emergency-list-admin/emergency-list-admin';
+import { AddemergencyAdminPage } from './../pages/addemergency-admin/addemergency-admin';
+import { ServiceListAdminPage } from './../pages/service-list-admin/service-list-admin';
+import { ServiceDetailAdminPageModule } from './../pages/service-detail-admin/service-detail-admin.module';
+import { AddFlatwiseServiceAdminPage } from './../pages/add-flatwise-service-admin/add-flatwise-service-admin';
+import { AddServiceAdminPage } from './../pages/add-service-admin/add-service-admin';
+import { FlatwiseServiceListAdminPage } from '../pages/flatwise-service-list-admin/flatwise-service-list-admin';
+import { AddchargesAdminPage } from '../pages/addcharges-admin/addcharges-admin';
+import { BillchargeListAdminPage } from '../pages/billcharge-list-admin/billcharge-list-admin';
+import { UserDocumentListAdminPage } from '../pages/user-document-list-admin/user-document-list-admin';
+import { UserDocumentDetailAdminPage } from '../pages/user-document-detail-admin/user-document-detail-admin';
+import { SampleModalPage } from './../pages/sample-modal/sample-modal';
 
 
 var config = {
@@ -125,7 +133,14 @@ var config = {
     ServiceDetailAdminPage,
     ServiceListAdminPage,
     AddemergencyAdminPage,
-    EmergencyListAdminPage
+    EmergencyListAdminPage,
+    FlatwiseServiceListAdminPage,
+    AddchargesAdminPage,
+    BillchargeListAdminPage,
+    UserDocumentListAdminPage,
+    UserDocumentDetailAdminPage,
+    SampleModalPage
+
 
 
   ],
@@ -199,7 +214,13 @@ var config = {
     ServiceDetailAdminPage,
     ServiceListAdminPage,
     AddemergencyAdminPage,
-    EmergencyListAdminPage
+    EmergencyListAdminPage,
+    FlatwiseServiceListAdminPage,
+    AddchargesAdminPage,
+    BillchargeListAdminPage,
+    UserDocumentListAdminPage,
+    UserDocumentDetailAdminPage,
+    SampleModalPage
 
 
   ],

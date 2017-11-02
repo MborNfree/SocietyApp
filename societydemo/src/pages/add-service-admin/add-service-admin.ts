@@ -18,19 +18,18 @@ import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/fo
 export class AddServiceAdminPage {
 
   authForm: FormGroup;
-  eventimg:any;
-  eventnm:string;
-  eventdt:any;
-  eventvenue:string;
-  title: string;
-  description: string;
+  servicenm:any;
+  serviceType:string;
+  aboutservice:any;
+  serviceCnt:string;
+
   constructor(public navCtrl: NavController, public navParams: NavParams,public formBuilder: FormBuilder) {
 
     this.authForm = formBuilder.group({
-      eventnm: ['', Validators.compose([Validators.required, Validators.pattern('[a-zA-Z]*'), Validators.minLength(4), Validators.maxLength(30)])],
-      eventdt: ['', Validators.compose([Validators.required, Validators.minLength(8)])],
-      eventvenue: ['', Validators.compose([Validators.required,Validators.pattern('[a-zA-Z]*'), Validators.minLength(4)])],
-      eventimg: ['',Validators.compose([Validators.required, Validators.minLength(8), Validators.maxLength(30)])]
+      servicenm: ['', Validators.compose([Validators.required, Validators.pattern('[a-zA-Z]*'), Validators.minLength(4), Validators.maxLength(30)])],
+      serviceType: ['', Validators.compose([Validators.required])],
+      aboutservice: ['', Validators.compose([Validators.required,Validators.pattern('[a-zA-Z]*'), Validators.minLength(4), Validators.maxLength(30)])],
+      serviceCnt: ['',Validators.compose([Validators.required, Validators.pattern('[0-9]*'), Validators.minLength(8), Validators.maxLength(10)])]
      });
   }
 
