@@ -14,7 +14,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'forum.html',
 })
 export class ForumPage {
-
+  myInput:any;
   public items=[];
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
