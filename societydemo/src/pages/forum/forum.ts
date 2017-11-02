@@ -1,5 +1,6 @@
+import { ForumquestionPage } from './../forumquestion/forumquestion';
 import { Component, QueryList } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ModalController, IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
  * Generated class for the ForumPage page.
@@ -16,8 +17,19 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class ForumPage {
 
   public items=[];
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public modalCtrl: ModalController) {
   }
+
+
+    openModal(characterNum) {
+
+    let modal = this.modalCtrl.create(ModalContentPage, characterNum);
+    modal.present();
+  }
+
+
+
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ForumPage');
@@ -29,5 +41,15 @@ export class ForumPage {
       {ques1: ' Noise pollution in co - operative housing society '}
     ];
   }
+
+
+
+    askquestion(){
+this.navCtrl.push(ForumquestionPage);
+    }
+
+
+
+
 
 }

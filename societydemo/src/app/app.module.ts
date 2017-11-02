@@ -1,3 +1,4 @@
+import { ForumquestionPage } from './../pages/forumquestion/forumquestion';
 
 
 import { BrowserModule } from '@angular/platform-browser';
@@ -139,7 +140,8 @@ var config = {
     BillchargeListAdminPage,
     UserDocumentListAdminPage,
     UserDocumentDetailAdminPage,
-    SampleModalPage
+    SampleModalPage,
+    ForumquestionPage
 
 
 
@@ -220,7 +222,9 @@ var config = {
     BillchargeListAdminPage,
     UserDocumentListAdminPage,
     UserDocumentDetailAdminPage,
-    SampleModalPage
+    SampleModalPage,
+    ForumquestionPage
+
 
 
   ],
