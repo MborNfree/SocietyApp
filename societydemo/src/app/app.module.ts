@@ -74,6 +74,8 @@ import { SampleModalPage } from './../pages/sample-modal/sample-modal';
 import { Transfer } from '@ionic-native/transfer';
 import { Camera } from '@ionic-native/camera';
 import { FilePath } from '@ionic-native/file-path';
+import { File } from '@ionic-native/file';
+import { HelpdeskPage } from '../pages/helpdesk/helpdesk';
 
 
 var config = {
@@ -142,7 +144,8 @@ var config = {
     BillchargeListAdminPage,
     UserDocumentListAdminPage,
     UserDocumentDetailAdminPage,
-    SampleModalPage
+    SampleModalPage,
+    HelpdeskPage
 
 
 
@@ -222,7 +225,8 @@ var config = {
     BillchargeListAdminPage,
     UserDocumentListAdminPage,
     UserDocumentDetailAdminPage,
-    SampleModalPage
+    SampleModalPage,
+    HelpdeskPage
 
 
   ],
