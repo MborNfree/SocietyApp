@@ -1,8 +1,12 @@
+<<<<<<< HEAD
 import { FilePath } from '@ionic-native/file-path';
 import { Camera } from '@ionic-native/camera';
 import { Transfer } from '@ionic-native/transfer';
 
 import { ForumquestionPage } from './../pages/forumquestion/forumquestion';
+=======
+
+>>>>>>> d05484af6b7010d6ca92cd585ac93f735bca13db
 
 
 import { BrowserModule } from '@angular/platform-browser';
@@ -15,6 +19,10 @@ import { AngularFireDatabase, AngularFireDatabaseModule } from 'angularfire2/dat
 import firebase from 'firebase';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { EmojiProvider } from '../providers/emoji';
+import { FilePath } from '@ionic-native/file-path';
+import { File } from '@ionic-native/file';
+import { Camera } from '@ionic-native/camera';
+import { Transfer } from '@ionic-native/transfer';
 // Angular Material
 import {  MatToolbarModule, MatSidenavModule, MatButtonModule, MatChipsModule, MatListModule, MatInputModule } from '@angular/material';
 
@@ -77,6 +85,8 @@ import { UserDocumentListAdminPage } from '../pages/user-document-list-admin/use
 import { UserDocumentDetailAdminPage } from '../pages/user-document-detail-admin/user-document-detail-admin';
 import { SampleModalPage } from './../pages/sample-modal/sample-modal';
 import { HelpdeskPage } from "../pages/helpdesk/helpdesk";
+
+import { ForumquestionPage } from './../pages/forumquestion/forumquestion';
 
 var config = {
   apiKey: "AIzaSyCdBaGl6H_IuyzMyEnjq-6VRD5-2alxUtg",

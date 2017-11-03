@@ -110,7 +110,7 @@
       <ion-item *ngIf="authForm.controls.vehicles.hasError('minlength') && authForm.controls.vehicles.touched">
           <p>Sorry, minimum Total vehicles length is 8!</p>
       </ion-item>
-      <button ion-button full  [disabled]="!authForm.valid"  type="submit">Create Account</button>
-      <button ion-button  clear (click)="doLogin()">Already Registered?</button>
+      <button ion-button full  [disabled]="!authForm.valid"  type="submit" class="button">Create Account</button>
+      <button ion-button  clear (click)="doLogin()" class="button">Already Registered?</button>
 </form>
 </ion-content>
