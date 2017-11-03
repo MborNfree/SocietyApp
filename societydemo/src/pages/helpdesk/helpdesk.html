@@ -6,7 +6,7 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="navbar">
       <button ion-button icon-only menuToggle start>
           <ion-icon name="menu"></ion-icon>
       </button>
@@ -45,18 +45,36 @@
             </button>
           </ion-buttons>
         </ion-toolbar>
+
+        <ion-list no-lines>
+            <ion-item>
+                <ion-input type="text" placeholder="Ask your query"></ion-input>
+            </ion-item>
+            <button ion-button>Ask</button>
+
+          </ion-list>
+
+          <ion-list *ngFor="let item of items" no-lines>
+              <ion-item>
+
+                  <p>{{item.ques1}}</p>
+              </ion-item>
+          </ion-list>
       </div>
 
       <div *ngSwitchCase="'ResolvedIssues'">
 
-      </div>
-        <!-- <ion-list *ngSwitchCase="'OpenIssues'"  >
+          <ion-searchbar  [(ngModel)]="myInput">  </ion-searchbar>
 
+          <ion-list *ngFor="let item of items" no-lines>
+              <ion-item>
+
+                  <p>{{item.ques1}}</p>
+              </ion-item>
           </ion-list>
 
-          <ion-list *ngSwitchCase="'ResolvedIssues'"  >
+      </div>
 
-              </ion-list> -->
 
       </div>
 

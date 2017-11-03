@@ -164,9 +164,18 @@ public pathForImage(img){
 //   });
 // }
 
+  myInput:any;
+  public items=[];
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad HelpdeskPage');
+    this.items = [
+      {ques1: 'I forgot my password?'},
+      {ques1: 'Illegal charges from Tenants of a CHS'},
+      {ques1: 'Parking Issue between two reserved car parking'},
+      {ques1: 'Extra maintenance on rented flat'},
+      {ques1: 'Noise pollution in co-operative housing society'}
+    ];
   }
 
 }
