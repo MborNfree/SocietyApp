@@ -28,7 +28,7 @@
 
   <ion-searchbar  [(ngModel)]="myInput">  </ion-searchbar>
     <ion-list no-lines>
-  <button ion-button class="button" end>Ask a Question </button>
+  <button ion-button class="button"    (click)="askquestion()" end>Ask a Question </button>
 </ion-list>
 
 <ion-list *ngFor="let item of items">
