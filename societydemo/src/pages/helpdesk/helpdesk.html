@@ -33,12 +33,12 @@
 
         <ion-toolbar color="primary">
           <ion-buttons>
-            <button ion-button icon-left (click)="presentActionSheet()">
+            <button ion-button icon-left (click)="presentActionSheet()" class="button">
               <ion-icon name="camera">
                 </ion-icon>
                 Select Image
             </button>
-            <button ion-button icon-left>
+            <button ion-button icon-left class="button">
               <ion-icon name="cloud-upload">
                 </ion-icon>
                 Upload
@@ -48,9 +48,9 @@
 
         <ion-list no-lines>
             <ion-item>
-                <ion-input type="text" placeholder="Ask your query"></ion-input>
+                <ion-input type="text" placeholder="Ask your query" ></ion-input>
             </ion-item>
-            <button ion-button>Ask</button>
+            <button ion-button class="button">Ask</button>
 
           </ion-list>
 
