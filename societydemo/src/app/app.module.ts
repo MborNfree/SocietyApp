@@ -11,6 +11,10 @@ import { AngularFireDatabase, AngularFireDatabaseModule } from 'angularfire2/dat
 import firebase from 'firebase';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { EmojiProvider } from '../providers/emoji';
+import { Transfer } from '@ionic-native/transfer';
+import { Camera } from '@ionic-native/camera';
+import { FilePath } from '@ionic-native/file-path';
+import { File } from '@ionic-native/file';
 // Angular Material
 import {  MatToolbarModule, MatSidenavModule, MatButtonModule, MatChipsModule, MatListModule, MatInputModule } from '@angular/material';
 
@@ -72,9 +76,7 @@ import { BillchargeListAdminPage } from '../pages/billcharge-list-admin/billchar
 import { UserDocumentListAdminPage } from '../pages/user-document-list-admin/user-document-list-admin';
 import { UserDocumentDetailAdminPage } from '../pages/user-document-detail-admin/user-document-detail-admin';
 import { SampleModalPage } from './../pages/sample-modal/sample-modal';
-import { Transfer } from '@ionic-native/transfer';
-import { Camera } from '@ionic-native/camera';
-import { FilePath } from '@ionic-native/file-path';
+
 
 
 var config = {
