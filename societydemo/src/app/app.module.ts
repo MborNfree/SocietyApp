@@ -72,6 +72,9 @@ import { BillchargeListAdminPage } from '../pages/billcharge-list-admin/billchar
 import { UserDocumentListAdminPage } from '../pages/user-document-list-admin/user-document-list-admin';
 import { UserDocumentDetailAdminPage } from '../pages/user-document-detail-admin/user-document-detail-admin';
 import { SampleModalPage } from './../pages/sample-modal/sample-modal';
+import { Transfer } from '@ionic-native/transfer';
+import { Camera } from '@ionic-native/camera';
+import { FilePath } from '@ionic-native/file-path';
 
 
 var config = {
@@ -194,7 +197,6 @@ var config = {
     EventlistPage,
     EmergencycontactlistPage,
     MemberprofilePage,
-    CircularlistPage,
     EventdetailsPage,
     SocietybillPage,
     BillingchargesPage,
@@ -235,7 +237,10 @@ var config = {
     CallNumber,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     EmojiProvider,
-
+    File,
+    Transfer,
+    Camera,
+    FilePath,
   ]
 })
 

@@ -15,23 +15,24 @@ import { ModalController, IonicPage, NavController, NavParams } from 'ionic-angu
   templateUrl: 'forum.html',
 })
 export class ForumPage {
-
+  myInput:any;
   public items=[];
   constructor(public navCtrl: NavController, public navParams: NavParams,public modalCtrl: ModalController) {
   }
 
 
-    openModal(characterNum) {
+  //   openModal(characterNum) {
 
-    let modal = this.modalCtrl.create(ModalContentPage, characterNum);
-    modal.present();
-  }
+  //   let modal = this.modalCtrl.create(ModalContentPage, characterNum);
+  //   modal.present();
+  // }
 
 
 
 
 
   ionViewDidLoad() {
+    
     console.log('ionViewDidLoad ForumPage');
     this.items = [
       {ques1: 'I forgot my password?'},

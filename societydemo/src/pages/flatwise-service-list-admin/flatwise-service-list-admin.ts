@@ -29,5 +29,11 @@ export class FlatwiseServiceListAdminPage {
       {Name: 'Hemant Parekh', Flat: '4',Number:'1234567895',Service:'driver'}
     ];
   }
+  deleteFlatService(){
+    alert('deleted');
+  }
+  EditFlatService(){
+    alert('edited');
+  }
 
 }
