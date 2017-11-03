@@ -1,7 +1,7 @@
 import { FilePath } from '@ionic-native/file-path';
 import { Camera } from '@ionic-native/camera';
 import { Transfer } from '@ionic-native/transfer';
-import { HelpdeskPage } from './../pages/helpdesk/helpdesk';
+
 import { ForumquestionPage } from './../pages/forumquestion/forumquestion';
 
 
