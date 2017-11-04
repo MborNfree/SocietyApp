@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { ServiceListAdminPage } from '../service-list-admin/service-list-admin';
 
 /**
  * Generated class for the AddServiceCategoryAdminPage page.
@@ -15,11 +17,23 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class AddServiceCategoryAdminPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  authForm: FormGroup;
+  ServiceCatnm:string;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams,public formBuilder: FormBuilder) {
+    this.authForm = formBuilder.group({
+      ServiceCatnm: ['', Validators.compose([Validators.required, Validators.pattern('[a-zA-Z]*'), Validators.minLength(4), Validators.maxLength(20)])]
+     });
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AddServiceCategoryAdminPage');
   }
+  onSubmit(value: any): void {
 
+          alert('added');
+
+        this.navCtrl.push(ServiceListAdminPage);
+
+      }
 }
