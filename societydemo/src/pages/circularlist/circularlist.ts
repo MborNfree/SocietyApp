@@ -15,11 +15,26 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class CircularlistPage {
 
+   public items = [];
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+
+
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CircularlistPage');
+     this.items = [
+      {title: ' Circular 1', description: ' To give permission for registering society within Co-operative Housing Societies.',icon:'assets/doctor.jpg'},
+      {title: ' Circular 2', description: ' Circular On Housing Society Management',icon:'assets/holi.jpg'},
+      {title: ' Circular 3', description: ' Circular On Housing Society Management',icon:'assets/independence day.png'},
+      {title: ' Circular 4', description: ' Circular On Housing Society Management',icon:'assets/christmas.png'}
+    ];
   }
 
+   saveItem(item){
+       this.items.push(item);
+     }
+     viewItem(){
+      // this.navCtrl.push(CircularDetailAdminPage);
+    }
 }

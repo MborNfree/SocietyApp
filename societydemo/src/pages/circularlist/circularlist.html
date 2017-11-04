@@ -18,7 +18,38 @@
 
 <ion-content padding class="bg-masters">
 
-  <ion-card>
+  <ion-list *ngFor="let item of items">
+        <ion-item  (click)="viewItem()">
+            <ion-card>
+                <img src="{{item.icon}}"/>
+                <ion-card-content>
+                  <ion-card-title>{{item.title}}</ion-card-title>
+                  <p>{{item.description}}</p>
+                </ion-card-content>
+                <ion-row>
+                  <ion-col>
+                    <a href="{{item.icon}}" target="_blank"><button ion-button icon-only default class="button"><ion-icon name="download"></ion-icon>Download</button></a>
+                  </ion-col>
+                </ion-row>
+              </ion-card>
+        </ion-item>
+    </ion-list>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- <ion-card>
     <img src="assets/doctor.jpg"/>
     <ion-card-content>
       <ion-card-title>
@@ -113,6 +144,6 @@
         <ion-icon name="eye"></ion-icon>View</button>
 </ion-col>
     </ion-row>
-      </ion-card>
+      </ion-card> -->
 
 </ion-content>

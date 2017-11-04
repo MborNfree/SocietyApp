@@ -1,3 +1,4 @@
+import { HelpdeskPage } from './../helpdesk/helpdesk';
 
 import { Component } from '@angular/core';
 import { NavController,NavParams } from 'ionic-angular';
@@ -59,6 +60,11 @@ sessionUser:any;
   ShowBills(){
     this.navCtrl.push(SocietybillPage);
   }
+
+ShowHelpDesk(){
+ this.navCtrl.push(HelpdeskPage);
+}
+
 
   showdoctorlist()
   {

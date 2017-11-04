@@ -1,3 +1,4 @@
+import { RegisterPage } from './../register/register';
 import { LoginPage } from './../login/login';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
@@ -27,7 +28,9 @@ gotologin()
 {
 this.navCtrl.push(LoginPage);
 }
-
+gotoregister(){
+  this.navCtrl.push(RegisterPage);
+}
 
 
 }

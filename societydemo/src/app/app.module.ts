@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-import { FilePath } from '@ionic-native/file-path';
-import { Camera } from '@ionic-native/camera';
-import { Transfer } from '@ionic-native/transfer';
-
-import { ForumquestionPage } from './../pages/forumquestion/forumquestion';
-=======
-
->>>>>>> d05484af6b7010d6ca92cd585ac93f735bca13db
 
 
 import { BrowserModule } from '@angular/platform-browser';

@@ -29,6 +29,7 @@ export class PlumberlistPage {
       {name: 'Mr Ajit Patel', phoneno: '9645875412'},
       {name: 'Mr Sanket Patil', phoneno: '7854879454'},
        {name: 'Mr. Jayesh', phoneno: '7547547891'},
+        {name: 'Mr. Rahul', phoneno: '9125478451'},
     ];
  }
 
