@@ -1,6 +1,8 @@
 import { ForumquestionPage } from './../forumquestion/forumquestion';
 import { Component, QueryList } from '@angular/core';
 import { ModalController, IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ForumviewquestionPage } from '../forumviewquestion/forumviewquestion';
+
 
 /**
  * Generated class for the ForumPage page.
@@ -15,10 +17,21 @@ import { ModalController, IonicPage, NavController, NavParams } from 'ionic-angu
   templateUrl: 'forum.html',
 })
 export class ForumPage {
+
+  Instructions:string="Unanswered";
+
   myInput:any;
   public items=[];
   constructor(public navCtrl: NavController, public navParams: NavParams,public modalCtrl: ModalController) {
+
+
+    this.account.Instructions="Unanswered";
+    //  this.isAndroid = Platform.is('android');
   }
+
+  account: { Instructions: string} = {
+    Instructions:'',
+  };
 
 
   //   openModal(characterNum) {
@@ -27,12 +40,8 @@ export class ForumPage {
   //   modal.present();
   // }
 
-
-
-
-
   ionViewDidLoad() {
-    
+
     console.log('ionViewDidLoad ForumPage');
     this.items = [
       {ques1: 'I forgot my password?'},
@@ -43,14 +52,15 @@ export class ForumPage {
     ];
   }
 
-
-
     askquestion(){
-this.navCtrl.push(ForumquestionPage);
+      this.navCtrl.push(ForumquestionPage);
     }
 
-
-
-
+    viewQuestion(item)
+    {
+      this.navCtrl.push(ForumviewquestionPage, {
+        item: item
+      });
+    }
 
 }
