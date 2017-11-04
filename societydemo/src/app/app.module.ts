@@ -14,6 +14,7 @@ import { FilePath } from '@ionic-native/file-path';
 import { File } from '@ionic-native/file';
 import { Camera } from '@ionic-native/camera';
 import { Transfer } from '@ionic-native/transfer';
+import { HttpModule } from '@angular/http';
 // Angular Material
 import {  MatToolbarModule, MatSidenavModule, MatButtonModule, MatChipsModule, MatListModule, MatInputModule } from '@angular/material';
 
@@ -76,8 +77,8 @@ import { UserDocumentListAdminPage } from '../pages/user-document-list-admin/use
 import { UserDocumentDetailAdminPage } from '../pages/user-document-detail-admin/user-document-detail-admin';
 import { SampleModalPage } from './../pages/sample-modal/sample-modal';
 import { HelpdeskPage } from "../pages/helpdesk/helpdesk";
-
 import { ForumquestionPage } from './../pages/forumquestion/forumquestion';
+import { RemoteServiceProvider } from '../providers/remote-service/remote-service';
 
 var config = {
   apiKey: "AIzaSyCdBaGl6H_IuyzMyEnjq-6VRD5-2alxUtg",
@@ -152,6 +153,7 @@ var config = {
   ],
 
   imports: [
+    HttpModule,
     BrowserModule,
     NgDatepickerModule,
     IonicModule.forRoot(MySocietyApp),
@@ -228,9 +230,6 @@ var config = {
     SampleModalPage,
     ForumquestionPage,
     HelpdeskPage
-
-
-
   ],
 
   providers: [
@@ -243,6 +242,7 @@ var config = {
     Transfer,
     Camera,
     FilePath,
+    RemoteServiceProvider,
   ]
 })
 

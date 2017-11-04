@@ -37,9 +37,6 @@ sessionUser:any;
     this.username = window.localStorage.getItem('username');
     this.sessionUser =sessionStorage.getItem("username");
 
-
-
-
   }
  logout() {
     window.localStorage.removeItem('username');
