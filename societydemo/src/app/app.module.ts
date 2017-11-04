@@ -1,3 +1,4 @@
+import { ForumviewquestionPage } from './../pages/forumviewquestion/forumviewquestion';
 import { HelpdeskPage } from './../pages/helpdesk/helpdesk';
 import { ForumquestionPage } from './../pages/forumquestion/forumquestion';
 
@@ -146,7 +147,8 @@ var config = {
     UserDocumentDetailAdminPage,
     SampleModalPage,
     ForumquestionPage,
-    HelpdeskPage
+    HelpdeskPage,
+    ForumviewquestionPage
 
   ],
 
@@ -226,7 +228,8 @@ var config = {
     UserDocumentDetailAdminPage,
     SampleModalPage,
     ForumquestionPage,
-    HelpdeskPage
+    HelpdeskPage,
+    ForumviewquestionPage
 
 
 

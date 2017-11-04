@@ -1,3 +1,4 @@
+import { ForumviewquestionPage } from './../pages/forumviewquestion/forumviewquestion';
 import { HelpdeskPage } from './../pages/helpdesk/helpdesk';
 
 
