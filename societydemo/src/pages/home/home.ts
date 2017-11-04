@@ -1,3 +1,4 @@
+import { HelpdeskPage } from './../helpdesk/helpdesk';
 
 import { Component } from '@angular/core';
 import { NavController,NavParams } from 'ionic-angular';
@@ -36,9 +37,6 @@ sessionUser:any;
     this.username = window.localStorage.getItem('username');
     this.sessionUser =sessionStorage.getItem("username");
 
-
-
-
   }
  logout() {
     window.localStorage.removeItem('username');
@@ -59,6 +57,11 @@ sessionUser:any;
   ShowBills(){
     this.navCtrl.push(SocietybillPage);
   }
+
+ShowHelpDesk(){
+ this.navCtrl.push(HelpdeskPage);
+}
+
 
   showdoctorlist()
   {

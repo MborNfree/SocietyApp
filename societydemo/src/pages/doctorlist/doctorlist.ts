@@ -27,7 +27,9 @@ export class DoctorlistPage {
       {name: 'Akshay', phoneno: '9874587896'},
       {name: 'Sanket Patil', phoneno: '8521478965'},
       {name: 'Shivani Mali', phoneno: '9645875412'},
-      {name: 'Mayuri parmar', phoneno: '7854879454'}
+      {name: 'Mayuri parmar', phoneno: '7854879454'},
+      {name: 'Pooja ', phoneno: '7854125632'},
+      {name: 'Sania Mirza', phoneno: '9654787784'},
     ];
 
 

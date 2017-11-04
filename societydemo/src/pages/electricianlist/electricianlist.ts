@@ -28,8 +28,9 @@ export class ElectricianlistPage {
       {name: 'Shivani Mali', phoneno: '9645875412'},
       {name: 'Mayuri Parmar', phoneno: '7854879454'},
       {name: 'Saniya Patel', phoneno: '8547125487'},
+      {name: 'Rohit Sharma', phoneno: '7854125412'},
     ];
-    }
+    } 
 
 
 viewItem(item){

@@ -1,6 +1,9 @@
+<<<<<<< HEAD
 import { ForumviewquestionPage } from './../pages/forumviewquestion/forumviewquestion';
 import { HelpdeskPage } from './../pages/helpdesk/helpdesk';
 import { ForumquestionPage } from './../pages/forumquestion/forumquestion';
+=======
+>>>>>>> 403b91bb57f58227e02a2f4de5293d7634266c0d
 
 
 import { BrowserModule } from '@angular/platform-browser';
@@ -13,10 +16,11 @@ import { AngularFireDatabase, AngularFireDatabaseModule } from 'angularfire2/dat
 import firebase from 'firebase';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { EmojiProvider } from '../providers/emoji';
-import { Transfer } from '@ionic-native/transfer';
-import { Camera } from '@ionic-native/camera';
 import { FilePath } from '@ionic-native/file-path';
 import { File } from '@ionic-native/file';
+import { Camera } from '@ionic-native/camera';
+import { Transfer } from '@ionic-native/transfer';
+import { HttpModule } from '@angular/http';
 // Angular Material
 import {  MatToolbarModule, MatSidenavModule, MatButtonModule, MatChipsModule, MatListModule, MatInputModule } from '@angular/material';
 
@@ -78,6 +82,9 @@ import { BillchargeListAdminPage } from '../pages/billcharge-list-admin/billchar
 import { UserDocumentListAdminPage } from '../pages/user-document-list-admin/user-document-list-admin';
 import { UserDocumentDetailAdminPage } from '../pages/user-document-detail-admin/user-document-detail-admin';
 import { SampleModalPage } from './../pages/sample-modal/sample-modal';
+import { HelpdeskPage } from "../pages/helpdesk/helpdesk";
+import { ForumquestionPage } from './../pages/forumquestion/forumquestion';
+import { RemoteServiceProvider } from '../providers/remote-service/remote-service';
 
 var config = {
   apiKey: "AIzaSyCdBaGl6H_IuyzMyEnjq-6VRD5-2alxUtg",
@@ -153,6 +160,7 @@ var config = {
   ],
 
   imports: [
+    HttpModule,
     BrowserModule,
     NgDatepickerModule,
     IonicModule.forRoot(MySocietyApp),
@@ -228,11 +236,15 @@ var config = {
     UserDocumentDetailAdminPage,
     SampleModalPage,
     ForumquestionPage,
+<<<<<<< HEAD
     HelpdeskPage,
     ForumviewquestionPage
 
 
 
+=======
+    HelpdeskPage
+>>>>>>> 403b91bb57f58227e02a2f4de5293d7634266c0d
   ],
 
   providers: [
@@ -245,6 +257,7 @@ var config = {
     Transfer,
     Camera,
     FilePath,
+    RemoteServiceProvider,
   ]
 })
 

@@ -1,6 +1,6 @@
 import { Component} from '@angular/core';
 import { IonicPage, NavController, NavParams ,ViewController} from 'ionic-angular';
-import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { DatepickerOptions } from 'ng2-datepicker';
 import { FileSelectDirective, FileDropDirective, FileUploader } from 'ng2-file-upload/ng2-file-upload';
 

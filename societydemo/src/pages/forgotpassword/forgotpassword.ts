@@ -1,3 +1,4 @@
+import { RegisterPage } from './../register/register';
 import { LoginPage } from './../login/login';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
@@ -23,11 +24,15 @@ export class ForgotpasswordPage {
     console.log('ionViewDidLoad ForgotpasswordPage');
   }
 
-gotologin()
-{
-this.navCtrl.push(LoginPage);
+onSubmit(){
+  this.navCtrl.push(LoginPage);
+}
+<<<<<<< HEAD
+gotoregister(){
+  this.navCtrl.push(RegisterPage);
 }
 
-
+=======
+>>>>>>> c06f0f7822fa18c57005bd6c5c31cdebf8803bec
 
 }
