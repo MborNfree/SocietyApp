@@ -30,4 +30,9 @@ export class NewsPage {
 //         this.postList = data;
 //     });
 //   }
+<<<<<<< HEAD
  }
+=======
+// }
+}
+>>>>>>> 93fa03d5a2dd9299346a3e904897c6d64108316d

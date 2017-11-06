@@ -15,11 +15,17 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class EventdetailsPage {
 
+  showSkip = true;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad EventdetailsPage');
+  }
+
+
+  onSlideChangeStart(slider) {
+    this.showSkip = !slider.isEnd();
   }
 
 }
