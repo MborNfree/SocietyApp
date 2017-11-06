@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-import { ForumviewquestionPage } from './../pages/forumviewquestion/forumviewquestion';
-import { HelpdeskPage } from './../pages/helpdesk/helpdesk';
-import { ForumquestionPage } from './../pages/forumquestion/forumquestion';
-=======
->>>>>>> 403b91bb57f58227e02a2f4de5293d7634266c0d
 
 
 import { BrowserModule } from '@angular/platform-browser';
@@ -82,9 +76,10 @@ import { BillchargeListAdminPage } from '../pages/billcharge-list-admin/billchar
 import { UserDocumentListAdminPage } from '../pages/user-document-list-admin/user-document-list-admin';
 import { UserDocumentDetailAdminPage } from '../pages/user-document-detail-admin/user-document-detail-admin';
 import { SampleModalPage } from './../pages/sample-modal/sample-modal';
-import { HelpdeskPage } from "../pages/helpdesk/helpdesk";
-import { ForumquestionPage } from './../pages/forumquestion/forumquestion';
 import { RemoteServiceProvider } from '../providers/remote-service/remote-service';
+import { ForumviewquestionPage } from '../pages/forumviewquestion/forumviewquestion';
+import { HelpdeskPage } from '../pages/helpdesk/helpdesk';
+import { ForumquestionPage } from '../pages/forumquestion/forumquestion';
 
 var config = {
   apiKey: "AIzaSyCdBaGl6H_IuyzMyEnjq-6VRD5-2alxUtg",
@@ -236,15 +231,7 @@ var config = {
     UserDocumentDetailAdminPage,
     SampleModalPage,
     ForumquestionPage,
-<<<<<<< HEAD
-    HelpdeskPage,
-    ForumviewquestionPage
-
-
-
-=======
     HelpdeskPage
->>>>>>> 403b91bb57f58227e02a2f4de5293d7634266c0d
   ],
 
   providers: [
