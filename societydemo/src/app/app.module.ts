@@ -231,7 +231,8 @@ var config = {
     UserDocumentDetailAdminPage,
     SampleModalPage,
     ForumquestionPage,
-    HelpdeskPage
+    HelpdeskPage,
+    ForumviewquestionPage
   ],
 
   providers: [

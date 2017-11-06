@@ -30,4 +30,4 @@ export class NewsPage {
 //         this.postList = data;
 //     });
 //   }
-// }
+ }

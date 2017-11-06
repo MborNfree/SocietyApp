@@ -19,11 +19,36 @@
 <ion-content padding class="bg-masters">
   <form>
     <ion-list>
-      <ion-input type="file"></ion-input>
+      <ion-buttons>
+          <button ion-button icon-left (click)="presentActionSheet()" class="button">
+              <ion-icon name="camera">
+                </ion-icon>
+                Select File
+            </button>
+      </ion-buttons>
+      <!-- <ion-input type="file"></ion-input> -->
 
       <div padding>
           <button ion-button full>Upload</button>
       </div>
     </ion-list>
+
+
   </form>
+
+  <ion-list>
+
+        <ion-item-sliding *ngFor="let item of items" no-lines>
+
+         <ion-item no-lines>
+            {{item.title}}
+         </ion-item>
+
+         <ion-item-options>
+           <button ion-button color="danger" (click)="removeItem(item)"><ion-icon name="trash"></ion-icon> Delete</button>
+         </ion-item-options>
+       </ion-item-sliding>
+
+       </ion-list>
+
 </ion-content>

@@ -3,7 +3,7 @@ import { HelpdeskPage } from './../pages/helpdesk/helpdesk';
 
 
 import { Component,ViewChild } from '@angular/core';
-import { Nav, Platform, MenuController, AlertController } from 'ionic-angular';
+import { Nav, Platform, MenuController, AlertController, NavController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -82,7 +82,11 @@ export class MySocietyApp {
       }
     };
 
-  constructor(public platform: Platform, public statusBar: StatusBar,public splashScreen: SplashScreen,	private alertCtrl: AlertController,public menuCtrl: MenuController) {
+  constructor(public platform: Platform,
+              public statusBar: StatusBar,
+              public splashScreen: SplashScreen,
+              private alertCtrl: AlertController,
+              public menuCtrl: MenuController) {
     // platform.ready().then(() => {
     //   // Okay, so the platform is ready and our plugins are available.
     //   // Here you can do any higher level native things you might need.
@@ -396,6 +400,7 @@ this.initializeApp();
             displayName: 'Logout',
             custom: {
               isLogout: true
+
             }
           },
           {
@@ -416,6 +421,7 @@ this.initializeApp();
           this.presentAlert('You\'ve clicked the login option!');
         } else if (option.custom && option.custom.isLogout) {
           this.presentAlert('You\'ve clicked the logout option!');
+          //this.navCtrl.push(LoginPage);
         } else if(option.custom && option.custom.isExternalLink) {
           let url = option.custom.externalUrl;
           window.open(url, '_blank');
