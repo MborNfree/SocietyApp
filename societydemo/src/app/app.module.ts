@@ -1,3 +1,4 @@
+import { ViewbillPage } from './../pages/viewbill/viewbill';
 
 
 import { BrowserModule } from '@angular/platform-browser';
@@ -81,6 +82,7 @@ import { ForumviewquestionPage } from '../pages/forumviewquestion/forumviewquest
 import { HelpdeskPage } from '../pages/helpdesk/helpdesk';
 import { ForumquestionPage } from '../pages/forumquestion/forumquestion';
 
+
 var config = {
   apiKey: "AIzaSyCdBaGl6H_IuyzMyEnjq-6VRD5-2alxUtg",
   authDomain: "society-182906.firebaseapp.com",
@@ -150,7 +152,8 @@ var config = {
     SampleModalPage,
     ForumquestionPage,
     HelpdeskPage,
-    ForumviewquestionPage
+    ForumviewquestionPage,
+    ViewbillPage
 
   ],
 
@@ -232,7 +235,8 @@ var config = {
     SampleModalPage,
     ForumquestionPage,
     HelpdeskPage,
-    ForumviewquestionPage
+    ForumviewquestionPage,
+    ViewbillPage
   ],
 
   providers: [
