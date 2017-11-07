@@ -1,5 +1,5 @@
 
-
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule} from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -246,6 +246,7 @@ var config = {
     Camera,
     FilePath,
     RemoteServiceProvider,
+    InAppBrowser
   ]
 })
 

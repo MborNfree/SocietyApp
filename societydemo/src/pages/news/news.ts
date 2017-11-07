@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { RemoteServiceProvider } from '../../providers/remote-service/remote-service';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 
 /**
@@ -16,19 +17,17 @@ import { RemoteServiceProvider } from '../../providers/remote-service/remote-ser
   templateUrl: 'news.html',
 })
 export class NewsPage {
-  postList = [];
+ 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,private remoteService : RemoteServiceProvider) {
-    //this.getPosts();
+  constructor(public navCtrl: NavController, public navParams: NavParams,private remoteService : RemoteServiceProvider,private iab: InAppBrowser) {
+    
+
+    const browser = this.iab.create('http://www.dnaindia.com/','_self','location=yes');
+
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad NewsPage');
   }
-//   getPosts(){
-//     this.remoteService.getPosts().subscribe((data)=>{
-//         this.postList = data;
-//     });
-//   }
-// }
+
 }

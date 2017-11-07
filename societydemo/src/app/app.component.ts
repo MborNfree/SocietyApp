@@ -45,7 +45,7 @@ import { GenerateBillAdminPage } from './../pages/generate-bill-admin/generate-b
 import { BillAdminPage } from './../pages/bill-admin/bill-admin';
 import { FlatwiseServiceListAdminPage } from '../pages/flatwise-service-list-admin/flatwise-service-list-admin';
 import { UserDocumentListAdminPage } from './../pages/user-document-list-admin/user-document-list-admin';
-
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 
 
