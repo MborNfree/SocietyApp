@@ -1,3 +1,4 @@
+import { ViewbillPage } from './../pages/viewbill/viewbill';
 import { ForumviewquestionPage } from './../pages/forumviewquestion/forumviewquestion';
 import { HelpdeskPage } from './../pages/helpdesk/helpdesk';
 
@@ -249,6 +250,10 @@ this.initializeApp();
         iconName: 'help-circle',
         displayName: 'Help Desk',
         component: HelpdeskPage
+      });
+      this.options.push({
+        displayName: 'View Bill',
+        component: ViewbillPage
       });
 
 
