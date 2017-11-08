@@ -1,0 +1,176 @@
+<!--
+  Generated template for the BalancesheetPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar color="navbar">
+        <button ion-button icon-only menuToggle start>
+            <ion-icon name="menu" ></ion-icon>
+        </button>
+      <ion-title align="center">Balance Sheet</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div class = "balancesheet">
+    <div class = "row">
+        <div class = "col balanceSheetHeading" align="left"><h3><b>BALANCE SHEET</b></h3></div>
+    </div>
+
+    <div class = "row">
+      <div class = "col" align="left">[COMPANY NAME]</div>
+      <div class = "col" align="right">[DATE]</div>
+    </div>
+
+    <div class = "row">
+      <div class = "col">
+          <div class = "row">
+              <div class = "col">CURRENT RATIO</div>
+              <div class = "col">3.38</div>
+          </div>
+          <div class = "row">
+              <div class = "col">QUICK RATIO</div>
+              <div class = "col">2.91</div>
+          </div>
+      </div>
+      <div class = "col">
+          <div class = "row">
+              <div class = "col">CASH RATIO</div>
+              <div class = "col">0.24</div>
+          </div>
+          <div class = "row">
+              <div class = "col">WORKING CAPITAL</div>
+              <div class = "col">$3,761.00</div>
+          </div>
+      </div>
+    </div>
+
+    <div class = "row">
+      <div class = "col heading" align="center"><h5><b>TOTAL ASSETS</b></h5></div>
+      <div class = "col heading" align="center"><h5><b>TOTAL LIABILITIES</b></h5></div>
+    </div>
+
+    <div class = "row">
+        <div class = "col">
+            <div class = "row">
+                <div class = "col" col-3></div>
+                <div class = "col" col-90>5K 10K 15K 20K 25K</div>
+            </div>
+            <div class = "row">
+                <div class = "col" col-3>TOTAL ASSETS</div>
+                <div class = "col" col-90></div>
+            </div>
+          </div>
+        <div class = "col">
+            <div class = "row">
+                <div class = "col" col-3>TOTAL ASSETS</div>
+                <div class = "col" col-90>5K 10K 15K 20K 25K</div>
+            </div>
+            <div class = "row">
+                <div class = "col" col-3>TOTAL LIABILITIES</div>
+                <div class = "col" col-90></div>
+            </div>
+          </div>
+    </div>
+
+    <div class = "row">
+      <div class = "col heading"><H6><b>ASSETS</b></H6></div>
+      <div class = "col heading"><H6><b>LIABILITIES</b></H6></div>
+    </div>
+
+    <div class = "row">
+      <div class = "col subHeading"><b>CURRENT ASSETS</b></div>
+      <div class = "col subHeading"><b>CURRENT LIABILITIES</b></div>
+    </div>
+
+    <div class = "row">
+      <div class = "col">
+        <div class = "row itemList">
+            <div class = "col itemList" col-50>
+                <div class = "row itemList" *ngFor="let item of currentAssets">{{item.currentAsset}}</div>
+            </div>
+            <div class = "col itemList" col-50>
+                <div class = "row itemList" *ngFor="let item of currentAssetsAmt">{{item.currentAssetAmt}}</div>
+            </div>
+        </div>
+        <div class = "row" >
+          <div class = "col">TOTAL CURRENT ASSETS</div>
+          <div class = "col">$5,341.00</div>
+        </div>
+      </div>
+
+      <div class = "col">
+          <div class = "row itemList">
+              <div class = "col itemList" col-50>
+                  <div class = "row itemList" *ngFor="let item of currentLiabilities">{{item.currentLiability}}</div>
+              </div>
+              <div class = "col itemList" col-50>
+                  <div class = "row itemList" *ngFor="let item of currentLiabilitiesAmt">{{item.currentLiabilityAmt}}</div>
+              </div>
+          </div>
+          <div class = "row" >
+            <div class = "col">TOTAL CURRENT LIABILITIES</div>
+            <div class = "col">$1,580.00</div>
+          </div>
+      </div>
+  </div>
+
+    <div class = "row">
+        <div class = "col subHeading"><b>OTHER ASSETS</b></div>
+        <div class = "col subHeading"><b>OTHER LIABILITIES</b></div>
+    </div>
+
+    <div class = "row">
+        <div class = "col">
+            <div class = "row itemList">
+                <div class = "col itemList" col-50>
+                    <div class = "row itemList" *ngFor="let item of otherAssets">{{item.otherAsset}}</div>
+                </div>
+                <div class = "col itemList" col-50>
+                    <div class = "row itemList" *ngFor="let item of otherAssetsAmt">{{item.otherAssetAmt}}</div>
+                </div>
+            </div>
+            <div class = "row" >
+              <div class = "col">TOTAL OTHER ASSETS</div>
+              <div class = "col">$17,875.00</div>
+            </div>
+          </div>
+
+          <div class = "col">
+              <div class = "row itemList">
+                  <div class = "col itemList" col-50>
+                      <div class = "row itemList" *ngFor="let item of otherLiabilities">{{item.otherLiability}}</div>
+                  </div>
+                  <div class = "col itemList" col-50>
+                      <div class = "row itemList" *ngFor="let item of otherLiabilitiesAmt">{{item.otherLiabilityAmt}}</div>
+                  </div>
+              </div>
+              <div class = "row" >
+                <div class = "col">TOTAL OTHER LIABILITIES</div>
+                <div class = "col">$4,372.00</div>
+              </div>
+          </div>
+    </div>
+
+    <div class = "row">
+      <div class = "col">
+          <div class = "row">
+              <div class = "col">TOTAL ASSETS</div>
+              <div class = "col">$23,216.00</div>
+          </div>
+      </div>
+      <div class = "col">
+          <div class = "row">
+              <div class = "col">TOTAL LIABILITIES</div>
+              <div class = "col">$5,952.00</div>
+          </div>
+      </div>
+    </div>
+
+  </div>
+</ion-content>

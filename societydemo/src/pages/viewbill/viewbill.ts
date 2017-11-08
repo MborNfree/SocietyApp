@@ -15,11 +15,31 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ViewbillPage {
 
+  public srNo = [];
+  public particulars = [];
+  public particularAmt = [];
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ViewbillPage');
+    this.srNo = [
+      {no: '1'},
+      {no: '2'},
+      {no: '3'}
+    ];
+
+    this.particulars = [
+      {particular: 'Particular 1'},
+      {particular: 'Particular 2'},
+      {particular: 'Particular 3'}
+    ];
+
+    this.particularAmt = [
+      {amount: '100'},
+      {amount: '500'},
+      {amount: '1000'}
+    ];
   }
 
 }

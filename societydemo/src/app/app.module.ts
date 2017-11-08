@@ -1,3 +1,4 @@
+import { BalancesheetPage } from './../pages/balancesheet/balancesheet';
 import { ViewbillPage } from './../pages/viewbill/viewbill';
 
 
@@ -153,7 +154,8 @@ var config = {
     ForumquestionPage,
     HelpdeskPage,
     ForumviewquestionPage,
-    ViewbillPage
+    ViewbillPage,
+    BalancesheetPage
 
   ],
 
@@ -236,7 +238,8 @@ var config = {
     ForumquestionPage,
     HelpdeskPage,
     ForumviewquestionPage,
-    ViewbillPage
+    ViewbillPage,
+    BalancesheetPage
   ],
 
   providers: [

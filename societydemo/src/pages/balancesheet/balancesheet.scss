@@ -1,0 +1,35 @@
+page-balancesheet {
+
+  .balancesheet{
+    background: white;
+    border: solid black;
+    border-width: 2px;
+  }
+
+  .col{
+    background: white;
+    border: solid rgb(0, 0, 0);
+    border-width: 1px;
+    }
+
+  .balanceSheetHeading{
+    background-color: #02D681;
+    color: white;
+  }
+
+  .heading{
+    background-color: rgb(255, 173, 22);
+    color: white;
+  }
+
+  .subHeading{
+    background-color: rgb(46, 192, 250);
+    color: white;
+  }
+
+  .itemList{
+    background-color: rgb(228, 227, 227);
+  }
+
+
+}

@@ -64,6 +64,20 @@
         </div>
 
         <div class = "row">
+          <div class = "col particularsList" col-2>
+            <div class = "row particularsList" *ngFor="let item of srNo">{{item.no}}</div>
+          </div>
+          <div class = "col particularsList" col-50>
+              <div class = "row particularsList" *ngFor="let item of particulars">{{item.particular}}</div>
+          </div>
+          <div class = "col particularsList"col-3>
+              <div class = "row particularsList" *ngFor="let item of particularAmt">{{item.amount}}</div>
+          </div>
+        </div>
+
+
+
+        <!-- <div class = "row">
           <div class = "col particularsList" col-2>1 </div>
           <div class = "col particularsList" col-50>Particular 1</div>
           <div class = "col particularsList"col-3>100.00</div>
@@ -73,7 +87,7 @@
             <div class = "col particularsList" col-2>2 </div>
             <div class = "col particularsList" col-50>Particular 2</div>
             <div class = "col particularsList"col-3>500.00</div>
-          </div>
+          </div> -->
 
           <div class = "row">
             <div class = "col">Previous Arrears :- Rupees Twenty One Thousand Seven Hundred Eight Only</div>
