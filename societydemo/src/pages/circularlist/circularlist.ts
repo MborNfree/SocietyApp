@@ -1,3 +1,4 @@
+import { CirculardetailsPage } from './../circulardetails/circulardetails';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -35,6 +36,6 @@ export class CircularlistPage {
        this.items.push(item);
      }
      viewItem(){
-      // this.navCtrl.push(CircularDetailAdminPage);
+       this.navCtrl.push(CirculardetailsPage);
     }
 }
