@@ -14,28 +14,26 @@
 
 <ion-content padding class="bg-masters">
 
-    <form [formGroup]="authForm" (ngSubmit)="onSubmit(authForm.value)">
-        <ion-item [ngClass]="{'error-border':!authForm.controls.username.valid && authForm.controls.username.touched}">
+    <form [formGroup]="authForm">
+        <ion-item [ngClass]="{'error-border':!authForm.controls.usernm.valid && authForm.controls.usernm.touched}">
             <ion-label floating><ion-icon name="people"></ion-icon> Username</ion-label>
-            <ion-input formControlName="username" type="text" [(ngModel)]="username"></ion-input>
+            <ion-input formControlName="usernm" type="email" [(ngModel)]="usernm" #email></ion-input>
         </ion-item>
 
-        <ion-item *ngIf="authForm.controls.username.hasError('required') && authForm.controls.username.touched">
+        <ion-item *ngIf="authForm.controls.usernm.hasError('required') && authForm.controls.usernm.touched">
             <p>Sorry, field username is required!</p>
         </ion-item>
-        <ion-item *ngIf="authForm.controls.username.hasError('pattern') && authForm.controls.username.touched">
-            <p>Sorry, only small and capital letters are allowed!</p>
-        </ion-item>
-        <ion-item *ngIf="authForm.controls.username.hasError('minlength') && authForm.controls.username.touched">
+
+        <ion-item *ngIf="authForm.controls.usernm.hasError('minlength') && authForm.controls.usernm.touched">
             <p>Sorry, minimum username length is 8!</p>
         </ion-item>
-        <ion-item *ngIf="authForm.controls.username.hasError('maxlength') && authForm.controls.username.touched">
+        <ion-item *ngIf="authForm.controls.usernm.hasError('maxlength') && authForm.controls.usernm.touched">
             <p>Sorry, maximum username length is 30!</p>
         </ion-item>
 
         <ion-item [ngClass]="{'error-border':!authForm.controls.password.valid && authForm.controls.password.touched}">
             <ion-label floating><ion-icon name="contact"></ion-icon> Password</ion-label>
-            <ion-input formControlName="password" type="password" [(ngModel)]="password"></ion-input>
+            <ion-input formControlName="password" type="password" [(ngModel)]="pwd" #password></ion-input>
         </ion-item>
         <ion-item *ngIf="authForm.controls.password.hasError('required') && authForm.controls.password.touched">
             <p>Sorry, field password is required!</p>
@@ -44,7 +42,7 @@
             <p>Sorry, minimum password length is 8!</p>
         </ion-item>
 
-        <button ion-button full color="button" [disabled]="!authForm.valid" style="margin-top: 20px;" type="submit">Login</button>
+        <button ion-button full color="button" [disabled]="!authForm.valid"  (click)="signInUser()"style="margin-top: 20px;" type="submit">Login</button>
     </form>
       <ion-list>
         <ion-item>

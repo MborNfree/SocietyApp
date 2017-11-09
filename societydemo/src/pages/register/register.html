@@ -11,110 +11,115 @@
 </ion-header>
 
 <ion-content padding class="bg-masters">
-  <form [formGroup]="authForm" (ngSubmit)="onSubmit(authForm.value)">
 
-      <ion-item [ngClass]="{'error-border':!authForm.controls.fnm.valid && authForm.controls.fnm.touched}">
-          <ion-label floating>  <ion-icon name="contact"></ion-icon> First Name</ion-label>
-          <ion-input formControlName="fnm" type="text" [(ngModel)]="fnm"></ion-input>
-      </ion-item>
-      <ion-item *ngIf="authForm.controls.fnm.hasError('required') && authForm.controls.fnm.touched">
-          <p>Sorry, field username is required!</p>
-      </ion-item>
-      <ion-item *ngIf="authForm.controls.fnm.hasError('pattern') && authForm.controls.fnm.touched">
-          <p>Sorry, only small and capital letters are allowed!</p>
-      </ion-item>
+<form [formGroup]="authForm">
+  <ion-list>
+    <ion-item [ngClass]="{'error-border':!authForm.controls.firstnme.valid && authForm.controls.firstnme.touched}">
+      <ion-label floating> <ion-icon name="contact"></ion-icon>First Name</ion-label>
+      <ion-input type="text" formControlName="firstnme" [(ngModel)]="firstnme" #fnm></ion-input>
+    </ion-item>
+    <ion-item *ngIf="authForm.controls.firstnme.hasError('required') && authForm.controls.firstnme.touched">
+        <p>Sorry, field First name is required!</p>
+    </ion-item>
+    <ion-item *ngIf="authForm.controls.firstnme.hasError('pattern') && authForm.controls.firstnme.touched">
+        <p>Sorry, only small and capital letters are allowed!</p>
+    </ion-item>
+    <ion-item [ngClass]="{'error-border':!authForm.controls.lastname.valid && authForm.controls.lastname.touched}">
+      <ion-label floating> <ion-icon name="contact"></ion-icon>Last Name</ion-label>
+      <ion-input type="text" formControlName="lastname" [(ngModel)]="lastname" #lnm></ion-input>
+    </ion-item>
+    <ion-item *ngIf="authForm.controls.lastname.hasError('required') && authForm.controls.lastname.touched">
+        <p>Sorry, field Last name is required!</p>
+    </ion-item>
+    <ion-item *ngIf="authForm.controls.lastname.hasError('pattern') && authForm.controls.lastname.touched">
+        <p>Sorry, only small and capital letters are allowed!</p>
+    </ion-item>
+    <ion-item [ngClass]="{'error-border':!authForm.controls.usernm.valid && authForm.controls.usernm.touched}">
+        <ion-label floating> <ion-icon name="person"></ion-icon>Username</ion-label>
+        <ion-input type="text" formControlName="usernm" [(ngModel)]="usernm"  #username></ion-input>
+    </ion-item>
+    <ion-item *ngIf="authForm.controls.usernm.hasError('required') && authForm.controls.usernm.touched">
+        <p>Sorry, field username is required!</p>
+    </ion-item>
+    <ion-item *ngIf="authForm.controls.usernm.hasError('pattern') && authForm.controls.usernm.touched">
+        <p>Sorry, only small and capital letters are allowed!</p>
+    </ion-item>
+    <ion-item *ngIf="authForm.controls.usernm.hasError('minlength') && authForm.controls.usernm.touched">
+        <p>Sorry, minimum username length is 8!</p>
+    </ion-item>
+    <ion-item *ngIf="authForm.controls.usernm.hasError('maxlength') && authForm.controls.usernm.touched">
+        <p>Sorry, maximum username length is 30!</p>
+    </ion-item>
+    <ion-item  [ngClass]="{'error-border':!authForm.controls.eml.valid && authForm.controls.eml.touched}">
+      <ion-label floating><ion-icon name="mail"></ion-icon>Email</ion-label>
+      <ion-input type="email" formControlName="eml"  [(ngModel)]="eml"  #email></ion-input>
+    </ion-item>
+    <ion-item *ngIf="authForm.controls.eml.hasError('required') && authForm.controls.eml.touched">
+        <p>Sorry, field email is required!</p>
+    </ion-item>
+    <ion-item *ngIf="authForm.controls.eml.hasError('minlength') && authForm.controls.eml.touched">
+        <p>Sorry, minimum email length is 8!</p>
+    </ion-item>
+    <ion-item [ngClass]="{'error-border':!authForm.controls.pwd.valid && authForm.controls.pwd.touched}">
+        <ion-label floating> <ion-icon name="contact"></ion-icon>Password</ion-label>
+        <ion-input type="password" formControlName="pwd"  [(ngModel)]="pwd" #password></ion-input>
+    </ion-item>
+    <ion-item *ngIf="authForm.controls.pwd.hasError('required') && authForm.controls.pwd.touched">
+        <p>Sorry, field password is required!</p>
+    </ion-item>
+    <ion-item *ngIf="authForm.controls.pwd.hasError('minlength') && authForm.controls.pwd.touched">
+        <p>Sorry, minimum password length is 8!</p>
+    </ion-item>
+    <ion-item [ngClass]="{'error-border':!authForm.controls.flat.valid && authForm.controls.flat.touched}">
+      <ion-label floating> <ion-icon name="home"></ion-icon>Flat No</ion-label>
+      <ion-input type="text" formControlName="flat"  [(ngModel)]="flat"  #flatn></ion-input>
+    </ion-item>
+    <ion-item *ngIf="authForm.controls.flat.hasError('required') && authForm.controls.flat.touched">
+        <p>Sorry, field Flat no is required!</p>
+    </ion-item>
+    <ion-item *ngIf="authForm.controls.flat.hasError('pattern') && authForm.controls.flat.touched">
+        <p>Sorry, only numbers are allowed!</p>
+    </ion-item>
+    <ion-item *ngIf="authForm.controls.flat.hasError('minlength') && authForm.controls.flat.touched">
+        <p>Sorry, minimum username length is 3!</p>
+    </ion-item>
+    <ion-item [ngClass]="{'error-border':!authForm.controls.wingno.valid && authForm.controls.wingno.touched}">
+      <ion-label floating> <ion-icon name="home"></ion-icon>Wing</ion-label>
+      <ion-input type="text" formControlName="wingno" [(ngModel)]="wingno"  #wing></ion-input>
+    </ion-item>
+    <ion-item  [ngClass]="{'error-border':!authForm.controls.family.valid && authForm.controls.family.touched}">
+      <ion-label floating> <ion-icon name="people"></ion-icon>Family Member</ion-label>
+      <ion-input type="text"  formControlName="family" [(ngModel)]="family" #familyMmber></ion-input>
+    </ion-item>
+    <ion-item *ngIf="authForm.controls.family.hasError('pattern') && authForm.controls.family.touched">
+        <p>Sorry, only  numbers are allowed!</p>
+    </ion-item>
+    <ion-item *ngIf="authForm.controls.family.hasError('required') && authForm.controls.family.touched">
+        <p>Sorry, field Total Family Member is required!</p>
+    </ion-item>
+    <ion-item *ngIf="authForm.controls.family.hasError('minlength') && authForm.controls.family.touched">
+        <p>Sorry, minimum Total Family Member length is 2!</p>
+    </ion-item>
+    <ion-item [ngClass]="{'error-border':!authForm.controls.car.valid && authForm.controls.car.touched}">
+      <ion-label floating> <ion-icon name="car"></ion-icon>Vehicles</ion-label>
+      <ion-input type="text" formControlName="car" [(ngModel)]="car" #vehicle></ion-input>
+    </ion-item>
+    <ion-item *ngIf="authForm.controls.car.hasError('pattern') && authForm.controls.car.touched">
+        <p>Sorry, only  numbers are allowed!</p>
+    </ion-item>
+    <ion-item *ngIf="authForm.controls.car.hasError('required') && authForm.controls.car.touched">
+        <p>Sorry, field Total vehicles is required!</p>
+    </ion-item>
+    <ion-item *ngIf="authForm.controls.car.hasError('minlength') && authForm.controls.car.touched">
+        <p>Sorry, minimum Total vehicles length is 8!</p>
+    </ion-item>
+  </ion-list>
 
-      <ion-item [ngClass]="{'error-border':!authForm.controls.fnm.valid && authForm.controls.fnm.touched}">
-          <ion-label floating> <ion-icon name="contact"></ion-icon> Last Name</ion-label>
-          <ion-input formControlName="lnm" type="text" [(ngModel)]="lnm"></ion-input>
-      </ion-item>
-      <ion-item *ngIf="authForm.controls.lnm.hasError('required') && authForm.controls.lnm.touched">
-          <p>Sorry, field username is required!</p>
-      </ion-item>
-      <ion-item *ngIf="authForm.controls.lnm.hasError('pattern') && authForm.controls.lnm.touched">
-          <p>Sorry, only small and capital letters are allowed!</p>
-      </ion-item>
-      <ion-item [ngClass]="{'error-border':!authForm.controls.username.valid && authForm.controls.username.touched}">
-           <ion-label floating> <ion-icon name="person"></ion-icon> Username</ion-label>
-          <ion-input formControlName="username" type="text" [(ngModel)]="username"></ion-input>
-      </ion-item>
-      <ion-item *ngIf="authForm.controls.username.hasError('required') && authForm.controls.username.touched">
-          <p>Sorry, field username is required!</p>
-      </ion-item>
-      <ion-item *ngIf="authForm.controls.username.hasError('pattern') && authForm.controls.username.touched">
-          <p>Sorry, only small and capital letters are allowed!</p>
-      </ion-item>
-      <ion-item *ngIf="authForm.controls.username.hasError('minlength') && authForm.controls.username.touched">
-          <p>Sorry, minimum username length is 8!</p>
-      </ion-item>
-      <ion-item *ngIf="authForm.controls.username.hasError('maxlength') && authForm.controls.username.touched">
-          <p>Sorry, maximum username length is 30!</p>
-      </ion-item>
+   <div padding>
+    <button block ion-button (click)="registerUser()" item-left>Register</button>
+  </div>
 
-      <ion-item [ngClass]="{'error-border':!authForm.controls.flatno.valid && authForm.controls.flatno.touched}">
-          <ion-label floating> <ion-icon name="home"></ion-icon> Flat No</ion-label>
-          <ion-input formControlName="flatno" type="text" [(ngModel)]="flatno"></ion-input>
-      </ion-item>
-      <ion-item *ngIf="authForm.controls.flatno.hasError('required') && authForm.controls.flatno.touched">
-          <p>Sorry, field username is required!</p>
-      </ion-item>
-      <ion-item *ngIf="authForm.controls.flatno.hasError('pattern') && authForm.controls.flatno.touched">
-          <p>Sorry, only small and capital letters and numbers are allowed!</p>
-      </ion-item>
-      <ion-item *ngIf="authForm.controls.flatno.hasError('minlength') && authForm.controls.flatno.touched">
-          <p>Sorry, minimum username length is 4!</p>
-      </ion-item>
-
-      <ion-item [ngClass]="{'error-border':!authForm.controls.email.valid && authForm.controls.email.touched}">
-        <ion-label floating>  <ion-icon name="mail"></ion-icon> Email</ion-label>
-         <ion-input formControlName="email" type="text" [(ngModel)]="email"></ion-input>
-      </ion-item>
-      <ion-item *ngIf="authForm.controls.email.hasError('required') && authForm.controls.email.touched">
-          <p>Sorry, field email is required!</p>
-      </ion-item>
-      <ion-item *ngIf="authForm.controls.email.hasError('minlength') && authForm.controls.email.touched">
-          <p>Sorry, minimum email length is 8!</p>
-      </ion-item>
-
-      <ion-item [ngClass]="{'error-border':!authForm.controls.password.valid && authForm.controls.password.touched}">
-          <ion-label floating>  <ion-icon name="contact"></ion-icon> Password</ion-label>
-          <ion-input formControlName="password" type="password" [(ngModel)]="password" ui-show-password ></ion-input>
-      </ion-item>
-      <ion-item *ngIf="authForm.controls.password.hasError('required') && authForm.controls.password.touched">
-          <p>Sorry, field password is required!</p>
-      </ion-item>
-      <ion-item *ngIf="authForm.controls.password.hasError('minlength') && authForm.controls.password.touched">
-          <p>Sorry, minimum password length is 8!</p>
-      </ion-item>
-
-      <ion-item [ngClass]="{'error-border':!authForm.controls.family.valid && authForm.controls.family.touched}">
-          <ion-label floating> <ion-icon name="people"></ion-icon> Total Family Member</ion-label>
-          <ion-input formControlName="family" type="text" [(ngModel)]="family"></ion-input>
-      </ion-item>
-      <ion-item *ngIf="authForm.controls.family.hasError('pattern') && authForm.controls.family.touched">
-          <p>Sorry, only  numbers are allowed!</p>
-      </ion-item>
-      <ion-item *ngIf="authForm.controls.family.hasError('required') && authForm.controls.family.touched">
-          <p>Sorry, field Total Family Member is required!</p>
-      </ion-item>
-      <ion-item *ngIf="authForm.controls.family.hasError('minlength') && authForm.controls.family.touched">
-          <p>Sorry, minimum Total Family Member length is 2!</p>
-      </ion-item>
-
-      <ion-item [ngClass]="{'error-border':!authForm.controls.vehicles.valid && authForm.controls.vehicles.touched}">
-          <ion-label floating> <ion-icon name="car"></ion-icon> Total Vehicles</ion-label>
-          <ion-input formControlName="vehicles" type="text" [(ngModel)]="vehicles"></ion-input>
-      </ion-item>
-      <ion-item *ngIf="authForm.controls.vehicles.hasError('pattern') && authForm.controls.vehicles.touched">
-          <p>Sorry, only  numbers are allowed!</p>
-      </ion-item>
-      <ion-item *ngIf="authForm.controls.vehicles.hasError('required') && authForm.controls.vehicles.touched">
-          <p>Sorry, field Total vehicles is required!</p>
-      </ion-item>
-      <ion-item *ngIf="authForm.controls.vehicles.hasError('minlength') && authForm.controls.vehicles.touched">
-          <p>Sorry, minimum Total vehicles length is 8!</p>
-      </ion-item>
-      <button ion-button full  [disabled]="!authForm.valid"  type="submit" class="button">Create Account</button>
-      <button ion-button  clear (click)="doLogin()" class="button">Already Registered?</button>
 </form>
+
+
 </ion-content>

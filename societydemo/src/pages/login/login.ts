@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
 import { HomePage } from '../home/home';
 import { RegisterPage } from '../register/register';
 import { ForgotpasswordPage } from '../forgotpassword/forgotpassword';
+import { AngularFireAuth } from 'angularfire2/auth';
 
 
 /**
@@ -19,17 +20,20 @@ import { ForgotpasswordPage } from '../forgotpassword/forgotpassword';
   templateUrl: 'login.html',
 })
 export class LoginPage {
-
-  username:any;
-  password:any;
   authForm: FormGroup;
-  constructor(public navCtrl: NavController, public navParams: NavParams,public formBuilder: FormBuilder) {
-    this.username = window.localStorage.getItem('username');
+
+  @ViewChild('password') password;
+  @ViewChild('email') email;
+
+  constructor(private alertCtrl: AlertController,private fire:AngularFireAuth,public navCtrl: NavController, public navParams: NavParams,public formBuilder: FormBuilder) {
+
+    this.email = window.localStorage.getItem('usernm');
     this.password = window.localStorage.getItem('password');
-    sessionStorage.setItem("Sessionusername", this.username);
+
+    sessionStorage.setItem("Sessionusername", this.email);
            this.authForm = formBuilder.group({
-               username: ['', Validators.compose([Validators.required, Validators.pattern('[a-zA-Z]*'), Validators.minLength(8), Validators.maxLength(30)])],
-               password: ['', Validators.compose([Validators.required, Validators.minLength(8)])]
+            usernm: ['', Validators.compose([Validators.required, Validators.minLength(8), Validators.maxLength(30)])],
+               password: ['', Validators.compose([Validators.required, Validators.minLength(6)])]
            });
   }
 
@@ -39,15 +43,38 @@ export class LoginPage {
 
   onSubmit(value: any): void {
     if(this.authForm.valid) {
-        window.localStorage.setItem('username', value.username);
+        window.localStorage.setItem('username', value.usernm);
         window.localStorage.setItem('password', value.password);
 
-        if (value.username != '' && value.password != '' && value.username != 'null'   && value.password != 'null' ) {
+        if (value.usernm != '' && value.password != '' && value.usernm != 'null'   && value.password != 'null' ) {
           this.navCtrl.push(HomePage);
         }
     }
   }
 
+  alert(message: string) {
+    this.alertCtrl.create({
+      title: 'Info!',
+      subTitle: message,
+      buttons: ['OK']
+    }).present();
+  }
+
+  signInUser() {
+    alert(this.email.value);
+    this.fire.auth.signInWithEmailAndPassword(this.email.value, this.password.value)
+    .then( data => {
+      console.log('got some data', this.fire.auth.currentUser);
+      this.alert('Success! You\'re logged in');
+      this.navCtrl.push( HomePage );
+      // user is logged in
+    })
+    .catch( error => {
+      console.log('got an error', error);
+      this.alert(error.message);
+    })
+  	console.log('Would sign in with ', this.email.value, this.password.value);
+  }
   signup()
   {
       this.navCtrl.push(RegisterPage);

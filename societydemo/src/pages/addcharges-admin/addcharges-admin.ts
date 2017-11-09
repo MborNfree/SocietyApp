@@ -1,7 +1,7 @@
 
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { BillchargeListAdminPage } from './../billcharge-list-admin/billcharge-list-admin';
 /**
  * Generated class for the AddchargesAdminPage page.

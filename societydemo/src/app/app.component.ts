@@ -4,7 +4,7 @@ import { HelpdeskPage } from './../pages/helpdesk/helpdesk';
 
 
 import { Component,ViewChild } from '@angular/core';
-import { Nav, Platform, MenuController, AlertController, NavController } from 'ionic-angular';
+import { Nav, Platform, MenuController, AlertController} from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -395,34 +395,34 @@ this.initializeApp();
 
       // Load special options
       // -----------------------------------------------
-      this.options.push({
-        displayName: 'Special options',
-        subItems: [
-          {
-            iconName: 'log-in',
-            displayName: 'Login',
-            custom: {
-              isLogin: true
-            }
-          },
-          {
-            iconName: 'log-out',
-            displayName: 'Logout',
-            custom: {
-              isLogout: true
+      // this.options.push({
+      //   displayName: 'Special options',
+      //   subItems: [
+      //     {
+      //       iconName: 'log-in',
+      //       displayName: 'Login',
+      //       custom: {
+      //         isLogin: true
+      //       }
+      //     },
+      //     {
+      //       iconName: 'log-out',
+      //       displayName: 'Logout',
+      //       custom: {
+      //         isLogout: true
 
-            }
-          },
-          {
-            iconName: 'globe',
-            displayName: 'Open Google',
-            custom: {
-              isExternalLink: true,
-              externalUrl: 'http://www.google.com'
-            }
-          }
-        ]
-      });
+      //       }
+      //     },
+      //     {
+      //       iconName: 'globe',
+      //       displayName: 'Open Google',
+      //       custom: {
+      //         isExternalLink: true,
+      //         externalUrl: 'http://www.google.com'
+      //       }
+      //     }
+      //   ]
+      // });
     }
     public selectOption(option: MenuOptionModel): void {
       this.menuCtrl.close().then(() => {

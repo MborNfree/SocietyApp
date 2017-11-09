@@ -8,8 +8,8 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { AngularFireModule } from 'angularfire2';
-import { AngularFireDatabase, AngularFireDatabaseModule } from 'angularfire2/database';
-import firebase from 'firebase';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import{ AngularFireAuthModule} from 'angularfire2/auth';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { EmojiProvider } from '../providers/emoji';
 import { FilePath } from '@ionic-native/file-path';
@@ -69,7 +69,6 @@ import { ServiceDetailAdminPage } from '../pages/service-detail-admin/service-de
 import { EmergencyListAdminPage } from '../pages/emergency-list-admin/emergency-list-admin';
 import { AddemergencyAdminPage } from './../pages/addemergency-admin/addemergency-admin';
 import { ServiceListAdminPage } from './../pages/service-list-admin/service-list-admin';
-import { ServiceDetailAdminPageModule } from './../pages/service-detail-admin/service-detail-admin.module';
 import { AddFlatwiseServiceAdminPage } from './../pages/add-flatwise-service-admin/add-flatwise-service-admin';
 import { AddServiceAdminPage } from './../pages/add-service-admin/add-service-admin';
 import { FlatwiseServiceListAdminPage } from '../pages/flatwise-service-list-admin/flatwise-service-list-admin';
@@ -92,7 +91,6 @@ var config = {
   storageBucket: "society-182906.appspot.com",
   messagingSenderId: "583609948893"
 };
- firebase.initializeApp(config);
 
 @NgModule({
   declarations: [
@@ -166,6 +164,7 @@ var config = {
     IonicModule.forRoot(MySocietyApp),
     AngularFireModule.initializeApp(config),
     AngularFireDatabaseModule,
+    AngularFireAuthModule,
     MatListModule,
     MatInputModule,
     MatToolbarModule,

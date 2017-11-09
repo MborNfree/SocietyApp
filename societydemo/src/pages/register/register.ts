@@ -1,8 +1,12 @@
 import { LoginPage } from './../login/login';
 import { HomePage } from './../home/home';
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
+import { Component, ViewChild } from '@angular/core';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { AngularFireAuth } from 'angularfire2/auth';
+
+import { AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireList } from 'angularfire2/database/interfaces';
 
 /**
  * Generated class for the RegisterPage page.
@@ -17,26 +21,41 @@ import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/fo
   templateUrl: 'register.html',
 })
 export class RegisterPage {
-  authForm: FormGroup;
-  fnm:string;
-  lnm:string;
-  username:string;
-  vehicles: number;
-  family: number;
-  password:string;
-  flatno:number;
-  email:string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public formBuilder: FormBuilder) {
+  users: AngularFireList<any>;
+  authForm: FormGroup;
+  arrData = [];
+  usernm;
+  firstnme;
+  lastname;
+ eml
+ pwd
+  flat
+  wingno
+  family
+  car
+	// @ViewChild('username') user;
+  @ViewChild('password') password;
+  @ViewChild('email') email;
+  // @ViewChild('fnm') fname;
+  // @ViewChild('lnm') lname;
+  // @ViewChild('car') vehicle;
+  // @ViewChild('familyMember') familyMember;
+  // @ViewChild('flatn') flatn;
+
+  constructor(private alertCtrl: AlertController,public navCtrl: NavController,private fdb: AngularFireDatabase, public navParams: NavParams,public formBuilder: FormBuilder,private fire: AngularFireAuth) {
+
+    this.users = fdb.list('/users');
     this.authForm = formBuilder.group({
-      username: ['', Validators.compose([Validators.required, Validators.pattern('[a-zA-Z]*'), Validators.minLength(8), Validators.maxLength(30)])],
-      password: ['', Validators.compose([Validators.required, Validators.minLength(8)])],
-      flatno: ['', Validators.compose([Validators.required,Validators.pattern('[0-9]*'), Validators.minLength(3)])],
-      email: ['',Validators.compose([Validators.required, Validators.pattern('[a-zA-Z]*'), Validators.minLength(8), Validators.maxLength(30)])],
+      usernm: ['', Validators.compose([Validators.required, Validators.pattern('[a-zA-Z]*'), Validators.minLength(6), Validators.maxLength(30)])],
+      pwd: ['', Validators.compose([Validators.required, Validators.minLength(6)])],
+      flat: ['', Validators.compose([Validators.required,Validators.pattern('[0-9]*'), Validators.minLength(3)])],
+      eml: ['',Validators.compose([Validators.required, Validators.minLength(8), Validators.maxLength(30)])],
       family: ['',Validators.compose([Validators.required,Validators.pattern('[0-9]*'), Validators.minLength(1)])],
-      vehicles: ['',Validators.compose([Validators.required,Validators.pattern('[0-9]*'), Validators.minLength(1)])],
-      fnm: ['',Validators.compose([Validators.required, Validators.minLength(4),Validators.maxLength(10)])],
-      lnm: ['',Validators.compose([Validators.required, Validators.minLength(4),Validators.maxLength(10)])]
+      car: ['',Validators.compose([Validators.required,Validators.pattern('[0-9]*'), Validators.minLength(1)])],
+      firstnme: ['',Validators.compose([Validators.required, Validators.minLength(4),Validators.maxLength(10)])],
+      lastname: ['',Validators.compose([Validators.required, Validators.minLength(4),Validators.maxLength(10)])],
+      wingno: ['',Validators.compose([Validators.required, Validators.minLength(1),Validators.maxLength(2)])]
 
   });
   }
@@ -45,44 +64,76 @@ export class RegisterPage {
     console.log('ionViewDidLoad RegisterPage');
   }
 
-  onSubmit(value: any): void {
-    if(this.authForm.valid) {
-        window.localStorage.setItem('username', value.username);
-        window.localStorage.setItem('password', value.password);
-        window.localStorage.setItem('fnm', value.fnm);
-        window.localStorage.setItem('lnm', value.lnm);
-        window.localStorage.setItem('flatno', value.flatno);
-        window.localStorage.setItem('email', value.email);
-        window.localStorage.setItem('family', value.family);
-        window.localStorage.setItem('vehicles', value.vehicles);
 
-        if (value.username != '' && value.password != '' && value.username != 'null'   && value.password != 'null' ) {
-          this.navCtrl.push(LoginPage);
-        }
-    }
+  // btnAddClicked(){
+  //   this.fdb.list("/myItems/").push(this.myInput);
+  //   this.arrData.push(this.myInput);
+  //   alert('added'+this.myInput);
+  // }
+  alert(message: string) {
+    this.alertCtrl.create({
+      title: 'Info!',
+      subTitle: message,
+      buttons: ['OK']
+    }).present();
   }
 
-  doSignup() {
-    // Attempt to login in through our User service
-    // this.e.signup(this.account).subscribe((resp) => {
-      this.navCtrl.push(HomePage);
-    // }, (err) => {
+  registerUser() {
+    alert(this.email.value);
+    this.fire.auth.createUserWithEmailAndPassword(this.email.value, this.password.value)
+    .then(data => {
 
-    //   this.navCtrl.push(HomePage);
-
-    //   // Unable to sign up
-    //   let toast = this.toastCtrl.create({
-    //     message: this.signupErrorString,
-    //     duration: 3000,
-    //     position: 'top'
-    //   });
-    //   toast.present();
-    // });
+      console.log('got data ', data);
+      this.alert('Registered!');
+      // this.users.push({
+      //   name: data.eml,
+      //   password : data.pwd
+      // });
+      this.navCtrl.push(LoginPage);
+    })
+    .catch(error => {
+      console.log('got an error ', error);
+      this.alert(error.message);
+    });
+  	console.log('Would register user with ', this.email.value, this.password.value);
   }
+
 
   doLogin() {
 
-      this.navCtrl.push(LoginPage);
-  }
+          this.navCtrl.push(LoginPage);
+      }
+
+  // onSubmit(value: any): void {
+  //   if(this.authForm.valid) {
+
+  //       window.localStorage.setItem('username', value.user);
+  //       window.localStorage.setItem('password', value.password);
+  //       window.localStorage.setItem('fnm', value.fnm);
+  //       window.localStorage.setItem('lnm', value.lnm);
+  //       window.localStorage.setItem('flatno', value.flatno);
+  //       window.localStorage.setItem('email', value.email);
+  //       window.localStorage.setItem('family', value.family);
+  //       window.localStorage.setItem('vehicles', value.vehicles);
+
+  //       if (value.user != '' && value.password != '' && value.user != 'null'   && value.password != 'null' ) {
+  //         this.navCtrl.push(LoginPage);
+  //       }else{
+  //         this.fire.auth.createUserWithEmailAndPassword(this.user.value, this.pwd.value)
+  //         .then(data => {
+  //           console.log('got data ', data);
+  //           this.alert('Registered!');
+  //         })
+  //         .catch(error => {
+  //           console.log('got an error ', error);
+  //           this.alert(error.message);
+  //         });
+  //         console.log('Would register user with ', this.user.value, this.pwd.value);
+  //       }
+  //   }
+  // }
+
+
+
 
 }
