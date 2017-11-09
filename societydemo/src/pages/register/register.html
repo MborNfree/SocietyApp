@@ -113,10 +113,18 @@
     <ion-item *ngIf="authForm.controls.car.hasError('minlength') && authForm.controls.car.touched">
         <p>Sorry, minimum Total vehicles length is 8!</p>
     </ion-item>
+    <ion-item>
+      <ion-label stacked>Phone Number</ion-label>
+      <ion-input type="number" formControlName="phoneNumber" [(ngModel)]="phoneNumber" #phone></ion-input>
+    </ion-item>
+    <div id="recaptcha-container"></div>
   </ion-list>
 
    <div padding>
-    <button block ion-button (click)="registerUser()" item-left>Register</button>
+      <!-- <button ion-button id="sign-in-button" (click)="signIn(phoneNumber)">
+          Sign In
+        </button> -->
+    <button block ion-button (click)="registerUser(phoneNumber)" item-left>Register</button>
   </div>
 
 </form>

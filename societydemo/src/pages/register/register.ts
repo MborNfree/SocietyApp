@@ -6,8 +6,8 @@ import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { AngularFireAuth } from 'angularfire2/auth';
 
 import { AngularFireDatabase } from 'angularfire2/database';
-import { AngularFireList } from 'angularfire2/database/interfaces';
-
+import { AngularFireList } from 'angularfire2/database';
+import firebase from 'firebase';
 /**
  * Generated class for the RegisterPage page.
  *
@@ -25,24 +25,20 @@ export class RegisterPage {
   users: AngularFireList<any>;
   authForm: FormGroup;
   arrData = [];
-  usernm;
-  firstnme;
-  lastname;
- eml
- pwd
-  flat
-  wingno
-  family
-  car
-	// @ViewChild('username') user;
+  usernm ;firstnme; lastname;phoneNumber;
+
+	 @ViewChild('username') user;
   @ViewChild('password') password;
   @ViewChild('email') email;
-  // @ViewChild('fnm') fname;
-  // @ViewChild('lnm') lname;
-  // @ViewChild('car') vehicle;
-  // @ViewChild('familyMember') familyMember;
-  // @ViewChild('flatn') flatn;
+  @ViewChild('fnm') fname;
+  @ViewChild('lnm') lname;
+  @ViewChild('vehicle') vehicle;
+  @ViewChild('familyMmber') familyMember;
+  @ViewChild('flatn') flatn;
+  @ViewChild('wing') wing;
+  @ViewChild('phone') phone;
 
+  public recaptchaVerifier:firebase.auth.RecaptchaVerifier;
   constructor(private alertCtrl: AlertController,public navCtrl: NavController,private fdb: AngularFireDatabase, public navParams: NavParams,public formBuilder: FormBuilder,private fire: AngularFireAuth) {
 
     this.users = fdb.list('/users');
@@ -55,21 +51,56 @@ export class RegisterPage {
       car: ['',Validators.compose([Validators.required,Validators.pattern('[0-9]*'), Validators.minLength(1)])],
       firstnme: ['',Validators.compose([Validators.required, Validators.minLength(4),Validators.maxLength(10)])],
       lastname: ['',Validators.compose([Validators.required, Validators.minLength(4),Validators.maxLength(10)])],
-      wingno: ['',Validators.compose([Validators.required, Validators.minLength(1),Validators.maxLength(2)])]
+      wingno: ['',Validators.compose([Validators.required, Validators.minLength(1),Validators.maxLength(2)])],
+      phoneNumber: ['',Validators.compose([Validators.required, Validators.minLength(1),Validators.maxLength(2)])]
 
   });
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RegisterPage');
+    this.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container');
   }
 
+  signIn(phoneNumber: number){
+    const appVerifier = this.recaptchaVerifier;
+    const phoneNumberString = "+91" + phoneNumber;
 
-  // btnAddClicked(){
-  //   this.fdb.list("/myItems/").push(this.myInput);
-  //   this.arrData.push(this.myInput);
-  //   alert('added'+this.myInput);
-  // }
+    firebase.auth().signInWithPhoneNumber(phoneNumberString, appVerifier)
+      .then( confirmationResult => {
+        // SMS sent. Prompt user to type the code from the message, then sign the
+        // user in with confirmationResult.confirm(code).
+        let prompt = this.alertCtrl.create({
+          title: 'Enter the Confirmation code',
+          inputs: [{ name: 'confirmationCode', placeholder: 'Confirmation Code' }],
+          buttons: [
+            { text: 'Cancel',
+              handler: data => { console.log('Cancel clicked'); }
+            },
+            { text: 'Send',
+              handler: data => {
+                // Here we need to handle the confirmation code
+                confirmationResult.confirm(data.confirmationCode)
+                .then(function (result) {
+                  // User signed in successfully.
+                  console.log(result.user);
+                  // ...
+                }).catch(function (error) {
+                  // User couldn't sign in (bad verification code?)
+                  // ...
+                });
+              }
+            }
+          ]
+        });
+        prompt.present();
+    })
+    .catch(function (error) {
+      console.error("SMS not sent", error);
+    });
+
+  }
+
   alert(message: string) {
     this.alertCtrl.create({
       title: 'Info!',
@@ -78,62 +109,67 @@ export class RegisterPage {
     }).present();
   }
 
-  registerUser() {
-    alert(this.email.value);
-    this.fire.auth.createUserWithEmailAndPassword(this.email.value, this.password.value)
-    .then(data => {
+  registerUser(phoneNumber: number) {
 
-      console.log('got data ', data);
-      this.alert('Registered!');
-      // this.users.push({
-      //   name: data.eml,
-      //   password : data.pwd
-      // });
-      this.navCtrl.push(LoginPage);
+    alert(this.fname.value);
+    const appVerifier = this.recaptchaVerifier;
+    const phoneNumberString = "+91" + phoneNumber;
+
+    firebase.auth().signInWithPhoneNumber(phoneNumberString, appVerifier)
+      .then( confirmationResult => {
+
+        // SMS sent. Prompt user to type the code from the message, then sign the
+        // user in with confirmationResult.confirm(code).
+        let prompt = this.alertCtrl.create({
+          title: 'Enter the Confirmation code',
+          inputs: [{ name: 'confirmationCode', placeholder: 'Confirmation Code' }],
+          buttons: [
+            { text: 'Cancel',
+              handler: data => { console.log('Cancel clicked'); }
+            },
+            { text: 'Send',
+              handler: data => {
+                // Here we need to handle the confirmation code
+                confirmationResult.confirm(data.confirmationCode)
+                .then(function (result) {
+
+                  this.alert('Registered!'+result.user);
+                  this.navCtrl.push(LoginPage);
+                  // User signed in successfully.
+                  console.log(result.user);
+                  // ...
+                }).catch(function (error) {
+                  // User couldn't sign in (bad verification code?)
+                  // ...
+                });
+              }
+            }
+          ]
+        });
+        prompt.present();
     })
-    .catch(error => {
-      console.log('got an error ', error);
-      this.alert(error.message);
+    .catch(function (error) {
+      console.error("SMS not sent", error);
+      this.alert("SMS not sent", error);
     });
+    // this.fire.auth.createUserWithEmailAndPassword(this.email.value, this.password.value)
+    // .then(data => {
+
+    //  this.fdb.list("/users/").push( { 'email': this.email.value, 'password': this.password.value,'fnm':this.fname.value,'lnm':this.lname.value,'flat':this.flatn.value,'wing':this.wing.value,'vehicle':this.vehicle.value,'family':this.familyMember.value,'unm':this.user.value });
+
+    //   console.log('got data ', data);
+
+    //   this.alert('Registered!');
+    //   this.navCtrl.push(LoginPage);
+    // })
+    // .catch(error => {
+    //   console.log('got an error ', error);
+    //   this.alert(error.message);
+    // });
   	console.log('Would register user with ', this.email.value, this.password.value);
   }
 
-
   doLogin() {
-
-          this.navCtrl.push(LoginPage);
+         this.navCtrl.push(LoginPage);
       }
-
-  // onSubmit(value: any): void {
-  //   if(this.authForm.valid) {
-
-  //       window.localStorage.setItem('username', value.user);
-  //       window.localStorage.setItem('password', value.password);
-  //       window.localStorage.setItem('fnm', value.fnm);
-  //       window.localStorage.setItem('lnm', value.lnm);
-  //       window.localStorage.setItem('flatno', value.flatno);
-  //       window.localStorage.setItem('email', value.email);
-  //       window.localStorage.setItem('family', value.family);
-  //       window.localStorage.setItem('vehicles', value.vehicles);
-
-  //       if (value.user != '' && value.password != '' && value.user != 'null'   && value.password != 'null' ) {
-  //         this.navCtrl.push(LoginPage);
-  //       }else{
-  //         this.fire.auth.createUserWithEmailAndPassword(this.user.value, this.pwd.value)
-  //         .then(data => {
-  //           console.log('got data ', data);
-  //           this.alert('Registered!');
-  //         })
-  //         .catch(error => {
-  //           console.log('got an error ', error);
-  //           this.alert(error.message);
-  //         });
-  //         console.log('Would register user with ', this.user.value, this.pwd.value);
-  //       }
-  //   }
-  // }
-
-
-
-
 }
