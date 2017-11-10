@@ -129,6 +129,7 @@ export class RegisterPage {
             },
             { text: 'Send',
               handler: data => {
+                this.fdb.list("/users/").push( { 'email': this.email.value,'phone':this.phone.value, 'password': this.password.value,'fnm':this.fname.value,'lnm':this.lname.value,'flat':this.flatn.value,'wing':this.wing.value,'vehicle':this.vehicle.value,'family':this.familyMember.value,'unm':this.user.value });
                 // Here we need to handle the confirmation code
                 confirmationResult.confirm(data.confirmationCode)
                 .then(function (result) {
