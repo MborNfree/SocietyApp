@@ -18,7 +18,7 @@
   <form [formGroup]="authForm" (ngSubmit)="onSubmit(authForm.value)">
     <ion-item [ngClass]="{'error-border':!authForm.controls.eventnm.valid && authForm.controls.eventnm.touched}">
         <ion-label floating>Event Name</ion-label>
-        <ion-input formControlName="eventnm" type="text" [(ngModel)]="eventnm"></ion-input>
+        <ion-input formControlName="eventnm" type="text" [(ngModel)]="eventnm" #enm></ion-input>
     </ion-item>
     <ion-item *ngIf="authForm.controls.eventnm.hasError('required') && authForm.controls.eventnm.touched">
         <p>Sorry, field username is required!</p>
@@ -28,14 +28,14 @@
     </ion-item>
     <ion-item [ngClass]="{'error-border':!authForm.controls.eventdt.valid && authForm.controls.eventdt.touched}">
         <ion-label floating>Event Date</ion-label>
-        <ion-input formControlName="eventdt" type="date" [(ngModel)]="eventdt"></ion-input>
+        <ion-input formControlName="eventdt" type="date" [(ngModel)]="eventdt" #edt></ion-input>
     </ion-item>
     <ion-item *ngIf="authForm.controls.eventdt.hasError('required') && authForm.controls.eventdt.touched">
         <p>Sorry, field username is required!</p>
     </ion-item>
     <ion-item [ngClass]="{'error-border':!authForm.controls.eventvenue.valid && authForm.controls.eventvenue.touched}">
         <ion-label floating>Event Venue</ion-label>
-        <ion-input formControlName="eventvenue" type="text" [(ngModel)]="eventvenue"></ion-input>
+        <ion-input formControlName="eventvenue" type="text" [(ngModel)]="eventvenue" #evenue></ion-input>
     </ion-item>
     <ion-item *ngIf="authForm.controls.eventvenue.hasError('required') && authForm.controls.eventvenue.touched">
         <p>Sorry, field Event Venue is required!</p>
