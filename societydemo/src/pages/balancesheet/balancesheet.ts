@@ -105,18 +105,23 @@ export class BalancesheetPage {
 
 
     if(this.platform.is('cordova')){
-      this.printer.isAvailable();
-      let options: PrintOptions = {
-        name: 'Balance Sheet',
-        duplex: true,
-        landscape: true,
-        grayscale: true
-      };
-      var page = document.getElementById('balanceSheet');
-      this.printer.print(page, options);
+      if(this.printer.isAvailable())
+      {
+        let options: PrintOptions = {
+          name: 'Balance Sheet',
+          duplex: true,
+          landscape: true,
+          grayscale: true
+        };
+        var page = document.getElementById('balanceSheet');
+        this.printer.print(page, options);
+      }
+      else{
+        this.alert('Please connect your device to a printer!');
+      }
     }
     else{
-      this.alert('You are on a web browser');
+      this.alert('You are on a web browser!');
     }
   }
 
