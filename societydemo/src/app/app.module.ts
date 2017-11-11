@@ -16,6 +16,7 @@ import { FilePath } from '@ionic-native/file-path';
 import { File } from '@ionic-native/file';
 import { Camera } from '@ionic-native/camera';
 import { Transfer } from '@ionic-native/transfer';
+import { Printer } from '@ionic-native/printer';
 import { HttpModule } from '@angular/http';
 // Angular Material
 import {  MatToolbarModule, MatSidenavModule, MatButtonModule, MatChipsModule, MatListModule, MatInputModule } from '@angular/material';
@@ -252,7 +253,8 @@ var config = {
     Camera,
     FilePath,
     RemoteServiceProvider,
-    InAppBrowser
+    InAppBrowser,
+    Printer
   ]
 })
 

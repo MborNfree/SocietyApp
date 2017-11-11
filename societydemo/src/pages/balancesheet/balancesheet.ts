@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Platform, AlertController } from 'ionic-angular';
+import { Printer, PrintOptions } from '@ionic-native/printer';
 
 /**
  * Generated class for the BalancesheetPage page.
@@ -24,7 +25,11 @@ export class BalancesheetPage {
   public otherLiabilities = [];
   public otherLiabilitiesAmt = [];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              public printer: Printer,
+              public platform: Platform,
+              public alertCtrl: AlertController) {
   }
 
   ionViewDidLoad() {
@@ -86,4 +91,40 @@ export class BalancesheetPage {
     ];
   }
 
+
+  print(){
+    // this.printer.isAvailable();
+    // let options: PrintOptions = {
+    //   name: 'Balance Sheet',
+    //   duplex: true,
+    //   landscape: true,
+    //   grayscale: true
+    // };
+    // var page = document.getElementById('balanceSheet');
+    // this.printer.print(page, options);
+
+
+    if(this.platform.is('cordova')){
+      this.printer.isAvailable();
+      let options: PrintOptions = {
+        name: 'Balance Sheet',
+        duplex: true,
+        landscape: true,
+        grayscale: true
+      };
+      var page = document.getElementById('balanceSheet');
+      this.printer.print(page, options);
+    }
+    else{
+      this.alert('You are on a web browser');
+    }
+  }
+
+  alert(message: string) {
+    this.alertCtrl.create({
+      title: 'Info!',
+      subTitle: message,
+      buttons: ['OK']
+    }).present();
+  }
 }

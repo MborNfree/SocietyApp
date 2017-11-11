@@ -18,7 +18,7 @@
 
 <ion-content padding>
 
-  <div class = "bill">
+  <div id="billReport" class = "bill">
       <div class = "row">
           <div class = "col societyName" align="center"><h3><b>SHEETAL VIEW PARIJAT CO-OP HSG. SOC. LTD.</b></h3></div>
         </div>
@@ -149,7 +149,7 @@
 
   <div>
     <ion-buttons>
-      <button ion-button>
+      <button ion-button (click)="print()">
         <ion-icon name="print">
           </ion-icon>
           Print

@@ -17,7 +17,7 @@
 
 
 <ion-content padding>
-  <div class = "balancesheet">
+  <div id="balanceSheet" class = "balancesheet">
     <div class = "row">
         <div class = "col balanceSheetHeading" align="left"><h3><b>BALANCE SHEET</b></h3></div>
     </div>
@@ -29,15 +29,15 @@
 
     <div class = "row">
       <div class = "col">
-          <div class = "row">
-              <div class = "col">CURRENT RATIO</div>
-              <div class = "col">3.38</div>
-          </div>
-          <div class = "row">
-              <div class = "col">QUICK RATIO</div>
-              <div class = "col">2.91</div>
-          </div>
-      </div>
+        <div class = "row">
+            <div class = "col">CURRENT RATIO</div>
+            <div class = "col">3.38</div>
+        </div>
+        <div class = "row">
+            <div class = "col">QUICK RATIO</div>
+            <div class = "col">2.91</div>
+        </div>
+    </div>
       <div class = "col">
           <div class = "row">
               <div class = "col">CASH RATIO</div>
@@ -118,7 +118,7 @@
             <div class = "col">$1,580.00</div>
           </div>
       </div>
-  </div>
+    </div>
 
     <div class = "row">
         <div class = "col subHeading"><b>OTHER ASSETS</b></div>
@@ -176,7 +176,7 @@
 
   <div>
       <ion-buttons>
-        <button ion-button>
+        <button ion-button (click)="print()">
           <ion-icon name="print">
             </ion-icon>
             Print
