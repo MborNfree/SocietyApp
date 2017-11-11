@@ -2,13 +2,6 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, Platform, AlertController } from 'ionic-angular';
 import { Printer, PrintOptions } from '@ionic-native/printer';
 
-/**
- * Generated class for the ViewbillPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-viewbill',
@@ -48,6 +41,7 @@ export class ViewbillPage {
   }
 
   print(){
+
     // this.printer.isAvailable();
     // let options: PrintOptions = {
     //   name: 'Balance Sheet',
@@ -58,8 +52,7 @@ export class ViewbillPage {
     // var page = document.getElementById('balanceSheet');
     // this.printer.print(page, options);
 
-
-    if(this.platform.is('cordova')){
+    if(this.platform.is('android')){
       if(this.printer.isAvailable())
       {
         let options: PrintOptions = {
@@ -87,5 +80,4 @@ export class ViewbillPage {
       buttons: ['OK']
     }).present();
   }
-
 }
