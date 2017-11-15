@@ -82,6 +82,7 @@ import { RemoteServiceProvider } from '../providers/remote-service/remote-servic
 import { ForumviewquestionPage } from '../pages/forumviewquestion/forumviewquestion';
 import { HelpdeskPage } from '../pages/helpdesk/helpdesk';
 import { ForumquestionPage } from '../pages/forumquestion/forumquestion';
+import { AddServiceCategoryAdminPage } from '../pages/add-service-category-admin/add-service-category-admin';
 
 
 var config = {
@@ -154,7 +155,8 @@ var config = {
     HelpdeskPage,
     ForumviewquestionPage,
     ViewbillPage,
-    BalancesheetPage
+    BalancesheetPage,
+    AddServiceCategoryAdminPage
 
   ],
 
@@ -239,7 +241,8 @@ var config = {
     HelpdeskPage,
     ForumviewquestionPage,
     ViewbillPage,
-    BalancesheetPage
+    BalancesheetPage,
+    AddServiceCategoryAdminPage
   ],
 
   providers: [

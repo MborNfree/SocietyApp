@@ -1,3 +1,4 @@
+import { AddServiceCategoryAdminPage } from './../pages/add-service-category-admin/add-service-category-admin';
 import { ViewbillPage } from './../pages/viewbill/viewbill';
 import { ForumviewquestionPage } from './../pages/forumviewquestion/forumviewquestion';
 import { HelpdeskPage } from './../pages/helpdesk/helpdesk';
@@ -361,17 +362,22 @@ this.initializeApp();
           },
           {
             iconName: 'bowtie',
+            displayName: 'Add Service Type',
+             component: AddServiceCategoryAdminPage
+          },
+          {
+            iconName: 'bowtie',
             displayName: 'Add Service',
              component: AddServiceAdminPage
           },
           {
             iconName: 'happy',
-            displayName: 'Add flatwise Service',
+            displayName: 'Add Flatwise Service',
              component: AddFlatwiseServiceAdminPage
           },
           {
             iconName: 'happy',
-            displayName: 'flatwise Service',
+            displayName: 'Flatwise Service',
              component: FlatwiseServiceListAdminPage
           },
           {
