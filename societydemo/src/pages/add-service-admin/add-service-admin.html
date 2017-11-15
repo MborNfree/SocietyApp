@@ -1,13 +1,7 @@
-<!--
-  Generated template for the AddServiceAdminPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar color="navbar">
-    <ion-title>addService-admin</ion-title>
+    <ion-title>Service</ion-title>
     <button ion-button icon-only menuToggle start>
         <ion-icon name="menu"></ion-icon>
     </button>
@@ -17,10 +11,10 @@
 
 
 <ion-content padding class="bg-masters">
-  <form [formGroup]="authForm" (ngSubmit)="onSubmit(authForm.value)">
+  <form [formGroup]="authForm">
     <ion-item [ngClass]="{'error-border':!authForm.controls.servicenm.valid && authForm.controls.servicenm.touched}">
         <ion-label floating>Service Person Name:</ion-label>
-        <ion-input formControlName="servicenm" type="text" [(ngModel)]="servicenm"></ion-input>
+        <ion-input formControlName="servicenm" type="text" #personName></ion-input>
     </ion-item>
     <ion-item *ngIf="authForm.controls.servicenm.hasError('required') && authForm.controls.servicenm.touched">
         <p>Sorry, field servicenm is required!</p>
@@ -30,18 +24,16 @@
     </ion-item>
     <ion-item [ngClass]="{'error-border':!authForm.controls.serviceType.valid && authForm.controls.serviceType.touched}">
         <ion-label floating>Service Type :</ion-label>
-        <ion-select formControlName="serviceType"  [(ngModel)]="serviceType">
-            <ion-option value="plumber">Plumber</ion-option>
-            <ion-option value="doctor">Doctor</ion-option>
-            <ion-option value="fire_bridage">Fire brigade</ion-option>
+        <ion-select formControlName="serviceType" #servType>
+            <ion-option *ngFor="let item of items" >{{ item.serviceCatName }}</ion-option>
         </ion-select>
     </ion-item>
     <ion-item *ngIf="authForm.controls.serviceType.hasError('required') && authForm.controls.serviceType.touched">
-        <p>Sorry, field username is required!</p>
+        <p>Sorry, field Service Type is required!</p>
     </ion-item>
     <ion-item [ngClass]="{'error-border':!authForm.controls.aboutservice.valid && authForm.controls.aboutservice.touched}">
         <ion-label floating>About Service :</ion-label>
-        <ion-input formControlName="aboutservice" type="text" [(ngModel)]="aboutservice"></ion-input>
+        <ion-input formControlName="aboutservice" type="text" #aboutServ></ion-input>
     </ion-item>
     <ion-item *ngIf="authForm.controls.aboutservice.hasError('required') && authForm.controls.aboutservice.touched">
         <p>Sorry, field About service is required!</p>
@@ -57,7 +49,7 @@
     </ion-item>
     <ion-item [ngClass]="{'error-border':!authForm.controls.serviceCnt.valid && authForm.controls.serviceCnt.touched}">
         <ion-label floating>Contact No.:</ion-label>
-        <ion-input formControlName="serviceCnt" type="text" [(ngModel)]="serviceCnt"></ion-input>
+        <ion-input formControlName="serviceCnt" type="text" #servContact></ion-input>
     </ion-item>
     <ion-item *ngIf="authForm.controls.serviceCnt.hasError('required') && authForm.controls.serviceCnt.touched">
         <p>Sorry, field Event Venue is required!</p>
@@ -66,11 +58,11 @@
         <p>Sorry, only number are allowed!</p>
     </ion-item>
     <ion-item *ngIf="authForm.controls.serviceCnt.hasError('maxlength') && authForm.controls.serviceCnt.touched">
-        <p>Sorry, maximum username length is 10!</p>
+        <p>Sorry, maximum Contact length is 10!</p>
     </ion-item>
     <ion-item *ngIf="authForm.controls.serviceCnt.hasError('minLength') && authForm.controls.serviceCnt.touched">
-        <p>Sorry, maximum username length is 8!</p>
+        <p>Sorry, minimum Contact length is 8!</p>
     </ion-item>
-    <button ion-button full color="button" type="submit">Add Service</button>
+    <button ion-button full color="button" [disabled]="!authForm.valid" (click)="addService(personName,servType.value,aboutServ,servContact);">Add Service</button>
 </form>
 </ion-content>

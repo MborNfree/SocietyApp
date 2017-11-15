@@ -61,7 +61,7 @@ export class LoginPage {
   }
 
   signInUser() {
-    alert(this.email.value);
+    // alert(this.email.value);
     this.fire.auth.signInWithEmailAndPassword(this.email.value, this.password.value)
     .then( data => {
       console.log('got some data', this.fire.auth.currentUser);

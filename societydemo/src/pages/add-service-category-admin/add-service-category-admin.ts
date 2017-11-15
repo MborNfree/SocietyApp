@@ -1,14 +1,12 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { ServiceListAdminPage } from '../service-list-admin/service-list-admin';
 
-/**
- * Generated class for the AddServiceCategoryAdminPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { AngularFireAuth } from 'angularfire2/auth';
+import { AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireList } from 'angularfire2/database';
+import firebase from 'firebase';
 
 @IonicPage()
 @Component({
@@ -17,23 +15,64 @@ import { ServiceListAdminPage } from '../service-list-admin/service-list-admin';
 })
 export class AddServiceCategoryAdminPage {
 
+  serviceCategories: AngularFireList<any>;
   authForm: FormGroup;
   ServiceCatnm:string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public formBuilder: FormBuilder) {
-    this.authForm = formBuilder.group({
-      ServiceCatnm: ['', Validators.compose([Validators.required, Validators.pattern('[a-zA-Z]*'), Validators.minLength(4), Validators.maxLength(20)])]
+  @ViewChild('serviceCategory') serviceCategory;
+
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              public formBuilder: FormBuilder,
+              public alertCtrl: AlertController,
+              public fdb: AngularFireDatabase,
+              public fire: AngularFireAuth) {
+
+      this.serviceCategories = fdb.list('/serviceCategories');
+      this.authForm = formBuilder.group({
+      ServiceCatnm: ['', Validators.compose([Validators.required, Validators.pattern('[a-zA-Z]*'), Validators.minLength(2), Validators.maxLength(20)])]
      });
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AddServiceCategoryAdminPage');
   }
-  onSubmit(value: any): void {
 
-          alert('added');
+  alert(message: string) {
+    this.alertCtrl.create({
+      title: 'Info!',
+      subTitle: message,
+      buttons: ['OK']
+    }).present();
+  }
 
-        this.navCtrl.push(ServiceListAdminPage);
+  addServiceCategory(serviceCategory){
 
-      }
+    alert(this.serviceCategory.value);
+
+    this.fdb.list("/serviceCategories/").push({ 'serviceCatName': this.serviceCategory.value })
+    .then(data => {
+
+      console.log('got data ', data);
+      this.alert('Service Category Added Successfully!');
+      this.navCtrl.push(ServiceListAdminPage);
+    }, error => {
+      console.log('got an error ', error);
+      this.alert(error.message);
+    });
+  }
+
+  // onSubmit(serviceCategory){
+
+  //   this.fdb.list("/serviceCategories/").push({ 'serviceCatName': serviceCategory })
+  //   .then(data => {
+
+  //     console.log('got data ', data);
+  //     this.alert('Service Category Added Successfully!');
+  //     this.navCtrl.push(ServiceListAdminPage);
+  //   }, error => {
+  //     console.log('got an error ', error);
+  //     this.alert(error.message);
+  //   });
+  // }
 }

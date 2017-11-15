@@ -1,15 +1,12 @@
-
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { FlatwiseServiceListAdminPage } from './../flatwise-service-list-admin/flatwise-service-list-admin';
 
-/**
- * Generated class for the AddFlatwiseServiceAdminPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { AngularFireAuth } from 'angularfire2/auth';
+import { AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireList } from 'angularfire2/database';
+import firebase from 'firebase';
 
 @IonicPage()
 @Component({
@@ -17,14 +14,31 @@ import { FlatwiseServiceListAdminPage } from './../flatwise-service-list-admin/f
   templateUrl: 'add-flatwise-service-admin.html',
 })
 export class AddFlatwiseServiceAdminPage {
+
+  flatwiseServices: AngularFireList<any>;
+
   authForm: FormGroup;
 
-  Personnm:string;
-  Serviceflat:string;
-  Personno:number;
+  // Personnm:string;
+  // Serviceflat:string;
+  // Personno:number;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public formBuilder: FormBuilder) {
-    this.authForm = formBuilder.group({
+  fwServices: any;
+
+  @ViewChild('personName') personName;
+  @ViewChild('personFlat') personFlat;
+  @ViewChild('personNo') personNo;
+
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              public formBuilder: FormBuilder,
+              public alertCtrl: AlertController,
+              public fdb: AngularFireDatabase,
+              public fire: AngularFireAuth) {
+
+      this.flatwiseServices = fdb.list('/flatwiseServices');
+
+      this.authForm = formBuilder.group({
       Personnm: ['', Validators.compose([Validators.required, Validators.pattern('[a-zA-Z]*')])],
       Serviceflat: ['', Validators.compose([Validators.required, Validators.minLength(3)])],
       Personno: ['', Validators.compose([Validators.required,Validators.pattern('[0-9]*'), Validators.minLength(10)])],
@@ -35,11 +49,57 @@ export class AddFlatwiseServiceAdminPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad AddFlatwiseServiceAdminPage');
   }
-  onSubmit(value: any): void {
 
-          alert('added');
+  alert(message: string) {
+    this.alertCtrl.create({
+      title: 'Info!',
+      subTitle: message,
+      buttons: ['OK']
+    }).present();
+  }
 
-        this.navCtrl.push(FlatwiseServiceListAdminPage);
 
-      }
+  addFlatwiseServices(personName, personFlat, personNo){
+
+    // alert(this.personName.value);
+    // alert(this.personFlat.value);
+    // alert(this.personNo.value);
+
+    this.fdb.list("/flatwiseServices/").push({ 'servicePersonName': this.personName.value, 'servicePersonFlat': this.personFlat.value, 'servicePersonNo': this.personNo.value})
+    .then(data => {
+
+
+      console.log('got data ', data);
+      this.alert('Flatwise Service Added Successfully!');
+      this.navCtrl.push(FlatwiseServiceListAdminPage);
+    }, error => {
+      console.log('got an error ', error);
+      this.alert(error.message);
+    });
+
+  }
+
+  // onSubmit(value) {
+
+  //   this.fwServices = JSON.stringify({ value });
+  //   alert('value'+ this.fwServices);
+
+
+
+  //   alert('personName' + this.fwServices.value);
+  //   alert('personFlat' + this.fwServices.Serviceflat.value);
+  //   alert('personNo' + this.fwServices.Personno.value);
+
+  //   this.fdb.list("/flatwiseServices/").push({ 'servicePersonName': personName, 'servicePersonFlat': personFlat, 'servicePersonNo': personNo})
+  //   .then(data => {
+
+
+  //     console.log('got data ', data);
+  //     this.alert('Flatwise Service Added Successfully!');
+  //     this.navCtrl.push(FlatwiseServiceListAdminPage);
+  //   }, error => {
+  //     console.log('got an error ', error);
+  //     this.alert(error.message);
+  //   });
+  // }
 }
