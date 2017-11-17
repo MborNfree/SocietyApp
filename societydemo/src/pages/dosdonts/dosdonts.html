@@ -30,9 +30,15 @@
      </div>
 
         <div [ngSwitch]="account.Instructions">
-            <ion-list *ngSwitchCase="'DoS'"  >
+          <ng-container *ngSwitchCase="'DoS'">
+            <ion-list  *ngFor="let item of items" >
               <ion-item>
-              <ul>
+                <ul>
+                <li>{{item.rule}}</li>
+                </ul>
+                
+
+              <!-- <ul>
                 <li>Keep Corridors! Lobby Clean and Tidy</li>
                 </ul>
               <ul>
@@ -46,16 +52,17 @@
               </ul>
                <ul>
                 <li>Operate Lift gently to avoid Frequent Breakdown and Inconvenience to the residents</li>
-              </ul>
+              </ul> -->
               </ion-item>
                 </ion-list >
-
-              <ion-list *ngSwitchCase="'Donts'">
-                    <ion-item>
-                      <ul>
-                      <li>Do Not Keep Dust Bins, Plastic Bags in the Corridor/ Lobby</li>
+          </ng-container>
+              <ng-container  *ngSwitchCase="'Donts'">
+              <ion-list *ngFor="let item of items">
+                    <ion-item >
+                       <ul>
+                      <li>{{item.rule}}</li>
                       </ul>
-                    <ul>
+                    <!-- <ul>
                       <li>Do not overload lift beyond its capacity.</li>
                     </ul>
                      <ul>
@@ -66,9 +73,10 @@
                     </ul>
                     <ul>
                       <li>Do not throw Wastes/Articles from Windows/ Balconies</li>
-                    </ul>
+                    </ul>  -->
                     </ion-item>
                 </ion-list>
+              </ng-container>
             </div>
 
 </ion-content>

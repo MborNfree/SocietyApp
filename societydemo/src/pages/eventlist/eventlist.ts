@@ -2,7 +2,7 @@ import { EventdetailsPage } from './../eventdetails/eventdetails';
 
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
-
+import { AngularFireDatabase } from 'angularfire2/database';
 /**
  * Generated class for the EventlistPage page.
  *
@@ -20,8 +20,14 @@ export class EventlistPage {
 
   public items = [];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public modalCtrl: ModalController) {
-   }
+  constructor(public navCtrl: NavController, public navParams: NavParams,public modalCtrl: ModalController, private fdb: AngularFireDatabase) {
+      this.fdb.list("/events/").valueChanges().subscribe(_data => {
+      this.items = _data;
+     console.log(this.items);
+    });
+
+  
+  }
 
    openModal(characterNum) {
 
