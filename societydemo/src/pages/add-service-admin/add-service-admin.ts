@@ -30,7 +30,7 @@ export class AddServiceAdminPage {
   @ViewChild('servContact') servContact;
 
   public items: Array<any> = [];
-  public itemRef: firebase.database.Reference = firebase.database().ref('/serviceCategories/');
+  public itemRef: firebase.database.Reference = firebase.database().ref('/service_category/');
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -80,7 +80,7 @@ export class AddServiceAdminPage {
     alert(this.aboutServ.value);
     alert(this.servContact.value);
 
-    this.fdb.list("/services/").push({ 'servicePersonName': this.personName.value, 'serviceType': this.servType.value, 'aboutService': this.aboutServ.value, 'serviceContact': this.servContact.value})
+    this.fdb.list("/services/").push({ 'Service_name': this.personName.value, 'Service_type': this.servType.value, 'Description': this.aboutServ.value, 'Contact_no': this.servContact.value})
     .then(data => {
 
       console.log('got data ', data);

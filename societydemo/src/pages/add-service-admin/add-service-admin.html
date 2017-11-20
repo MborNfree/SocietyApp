@@ -25,7 +25,7 @@
     <ion-item [ngClass]="{'error-border':!authForm.controls.serviceType.valid && authForm.controls.serviceType.touched}">
         <ion-label floating>Service Type :</ion-label>
         <ion-select formControlName="serviceType" #servType>
-            <ion-option *ngFor="let item of items" >{{ item.serviceCatName }}</ion-option>
+            <ion-option *ngFor="let item of items" >{{ item.service_category }}</ion-option>
         </ion-select>
     </ion-item>
     <ion-item *ngIf="authForm.controls.serviceType.hasError('required') && authForm.controls.serviceType.touched">
