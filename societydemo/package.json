@@ -64,7 +64,8 @@
     "rxjs": "5.4.3",
     "sw-toolbox": "3.6.0",
     "zone.js": "0.8.18",
-    "mx.ferreyra.callnumber": "~0.0.2"
+    "mx.ferreyra.callnumber": "~0.0.2",
+    "de.appplant.cordova.plugin.printer": "^0.7.3"
   },
   "devDependencies": {
     "@ionic/app-scripts": "3.0.0",
@@ -92,7 +93,8 @@
       "cordova-plugin-file-transfer": {},
       "cordova-plugin-filepath": {},
       "cordova-plugin-inappbrowser": {},
-      "mx.ferreyra.callnumber": {}
+      "mx.ferreyra.callnumber": {},
+      "de.appplant.cordova.plugin.printer": {}
     }
   }
 }

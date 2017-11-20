@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, QueryList } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CommitteeProfileAdminPage } from '../committee-profile-admin/committee-profile-admin';
-
+import { AngularFireDatabase } from 'angularfire2/database';
 /**
  * Generated class for the CommitteeListAdminPage page.
  *
@@ -15,18 +15,29 @@ import { CommitteeProfileAdminPage } from '../committee-profile-admin/committee-
   templateUrl: 'committee-list-admin.html',
 })
 export class CommitteeListAdminPage {
-  public users = [];
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+
+  
+ 
+  public items = [];
+  constructor(public navCtrl: NavController, public navParams: NavParams, private fdb: AngularFireDatabase) {
+       this.fdb.list("/users/").valueChanges().subscribe(_data => {
+      this.items = _data;
+     
+     console.log(this.items);
+    });
+
+
+
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CommitteeListAdminPage');
-    this.users = [
-      {name: 'Sanket Patil', role: 'test1',icon:'assets/plumber.jpg',flat:'1'},
-      {name: 'Shivani Mali', role: 'Secretary',icon:'assets/plumber.jpg',flat:'2'},
-      {name: 'Mayuri parmar', role: 'Treasury',icon:'assets/plumber.jpg',flat:'3'},
-      {name: 'Sachin ', role: 'Chairman',icon:'assets/plumber.jpg',flat:'4'}
-    ];
+    // this.users = [
+    //   {name: 'Sanket Patil', role: 'test1',icon:'assets/plumber.jpg',flat:'1'},
+    //   {name: 'Shivani Mali', role: 'Secretary',icon:'assets/plumber.jpg',flat:'2'},
+    //   {name: 'Mayuri parmar', role: 'Treasury',icon:'assets/plumber.jpg',flat:'3'},
+    //   {name: 'Sachin ', role: 'Chairman',icon:'assets/plumber.jpg',flat:'4'}
+    // ];
   }
   memberprofile(){
     this.navCtrl.push(CommitteeProfileAdminPage);
