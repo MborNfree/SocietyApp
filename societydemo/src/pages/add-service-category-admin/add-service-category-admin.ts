@@ -28,7 +28,7 @@ export class AddServiceCategoryAdminPage {
               public fdb: AngularFireDatabase,
               public fire: AngularFireAuth) {
 
-      this.serviceCategories = fdb.list('/serviceCategories');
+      this.serviceCategories = fdb.list('/service_category');
       this.authForm = formBuilder.group({
       ServiceCatnm: ['', Validators.compose([Validators.required, Validators.pattern('[a-zA-Z]*'), Validators.minLength(2), Validators.maxLength(20)])]
      });
@@ -50,7 +50,7 @@ export class AddServiceCategoryAdminPage {
 
     alert(this.serviceCategory.value);
 
-    this.fdb.list("/serviceCategories/").push({ 'serviceCatName': this.serviceCategory.value })
+    this.fdb.list("/service_category/").push({ 'service_category': this.serviceCategory.value })
     .then(data => {
 
       console.log('got data ', data);

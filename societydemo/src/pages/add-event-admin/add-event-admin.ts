@@ -11,12 +11,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { AngularFireList } from 'angularfire2/database';
 import firebase from 'firebase';
-/**
- * Generated class for the AddEventAdminPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+
 
 @IonicPage()
 @Component({
@@ -40,7 +35,7 @@ export class AddEventAdminPage {
   @ViewChild('evenue') evenue;
   constructor(public navCtrl: NavController, public navParams: NavParams,public view: ViewController,private fdb: AngularFireDatabase,public formBuilder: FormBuilder,private fire: AngularFireAuth,private alertCtrl: AlertController) {
 
-    
+
 
     this.users = fdb.list('/Event');
     this.authForm = formBuilder.group({
@@ -74,14 +69,14 @@ export class AddEventAdminPage {
 
     // AddEvent(){
 
-     
+
     //     this.fdb.list("/addevent/").push({'enm':this.eventname.value,'edt':this.eventdt.value,'evenue':this.evenue.value});
     //     //  console.log('got data ', data);
 
     //   this.alert('Registered!');
-    //   this.navCtrl.push(EventListAdminPage);      
+    //   this.navCtrl.push(EventListAdminPage);
 
-    
+
     // }
 
 
@@ -95,7 +90,7 @@ export class AddEventAdminPage {
         //  console.log('got data ', data);
 
       this.alert('Registered!');
-      this.navCtrl.push(EventListAdminPage);      
+      this.navCtrl.push(EventListAdminPage);
       alert('added');
 
     this.navCtrl.push(EventListAdminPage);
