@@ -20,7 +20,7 @@ import firebase from 'firebase';
 })
 export class AddEventAdminPage {
   items: { title: string; description: string; icon: string; }[];
-
+  public itemRef: firebase.database.Reference = firebase.database().ref('/users/Id');
   users: AngularFireList<any>;
   authForm: FormGroup;
   eventimg:any;
@@ -68,6 +68,13 @@ export class AddEventAdminPage {
   };
   ionViewDidLoad() {
     console.log('ionViewDidLoad AddEventAdminPage');
+    this.itemRef.on('value',itemSnapshot => {
+      this.items = [];
+      itemSnapshot.forEach(itemSnap => {
+        this.items.push(itemSnap.val());
+        return false;
+      });
+    });
   }
 
 

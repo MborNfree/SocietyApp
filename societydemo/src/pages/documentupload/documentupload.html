@@ -51,4 +51,21 @@
 
        </ion-list>
 
+       <ion-list *ngFor="let document of Circular">
+        <ion-item  (click)="viewItem()">
+            <ion-card>
+                <img src="{{document.icon}}"/>
+                <ion-card-content>
+                  <ion-card-title>{{document.title}}</ion-card-title>
+                  <p>{{document.doc_name}}</p>
+                </ion-card-content>
+                <ion-row>
+                  <ion-col>
+                    <a href="{{document.icon}}" target="_blank"><button ion-button icon-only default class="button"><ion-icon name="download"></ion-icon>Download</button></a>
+                  </ion-col>
+                </ion-row>
+              </ion-card>
+        </ion-item>
+    </ion-list>
+
 </ion-content>

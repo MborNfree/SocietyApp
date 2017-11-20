@@ -1,6 +1,7 @@
 import { ServiceDetailAdminPage } from './../service-detail-admin/service-detail-admin';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AngularFireDatabase } from 'angularfire2/database';
 
 /**
  * Generated class for the ServiceListAdminPage page.
@@ -16,7 +17,12 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ServiceListAdminPage {
   public items = [];
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private fdb: AngularFireDatabase) {
+    this.fdb.list("/services/").valueChanges().subscribe(_data => {
+      this.items = _data;
+     console.log(this.items);
+    });
+
   }
 
   ionViewDidLoad() {
@@ -34,5 +40,18 @@ export class ServiceListAdminPage {
       item: item
     });
   }
+
+  removeService(eventId: string){
+    alert(eventId);
+       // this.events.remove(events);
+        this.fdb.object('/services/' + eventId).remove();
+      }
+
+      updateService(EventId, EventTitle){
+        this.fdb.object('/services/' + EventId)
+        .update({ event_name: EventTitle});
+
+      }
+
 
 }

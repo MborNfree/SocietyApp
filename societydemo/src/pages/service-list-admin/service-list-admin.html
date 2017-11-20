@@ -19,8 +19,11 @@
 <ion-content padding class="bg-masters">
   <ion-list *ngFor="let item of items">
     <ion-item  (click)="viewItem(item)">
-        <img src="{{item.icon}}">
-        <p>{{item.title}}</p>
+        <!-- <img src="{{item.icon}}"> -->
+        <p>{{item.Service_name}}</p>
+        <p><strong>{{item.Service_type}}</strong></p>
     </ion-item>
+    <button ion-button (click)="removeService(item.S_ID)" class="button">Delete</button>
+    <button ion-button (click)="updateService(item.S_ID,item.Service_name)" class="button">Edit</button>
  </ion-list>
 </ion-content>

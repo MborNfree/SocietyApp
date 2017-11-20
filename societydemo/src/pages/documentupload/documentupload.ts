@@ -5,6 +5,7 @@ import { File } from '@ionic-native/file';
 import { Transfer, TransferObject } from '@ionic-native/transfer';
 import { FilePath } from '@ionic-native/file-path';
 import { Camera } from '@ionic-native/camera';
+import { AngularFireDatabase } from 'angularfire2/database';
 
 /**
  * Generated class for the DocumentuploadPage page.
@@ -23,7 +24,7 @@ declare var cordova: any;
 export class DocumentuploadPage {
 
   public items=[];
-
+  public Circular = [];
   constructor(public navCtrl: NavController,
               public navParams: NavParams ,
               public Platform:Platform,
@@ -34,7 +35,8 @@ export class DocumentuploadPage {
               public actionSheetCtrl: ActionSheetController,
               public toastCtrl: ToastController,
               public platform:Platform,
-              public loadingCtrl:LoadingController) {
+              public loadingCtrl:LoadingController,
+              private fdb: AngularFireDatabase) {
 
                 this.items = [
                     {title: 'document1'},
@@ -44,6 +46,12 @@ export class DocumentuploadPage {
                     {title: 'document5'},
                     {title: 'document6'}
                 ];
+
+
+                this.fdb.list("/documents/").valueChanges().subscribe(_data => {
+                  this.Circular = _data;
+                 console.log(this.Circular);
+                });
   }
 
   removeItem(item){

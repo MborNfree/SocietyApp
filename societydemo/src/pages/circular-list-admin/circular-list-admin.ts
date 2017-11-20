@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { AngularFireDatabase } from 'angularfire2/database';
 import { CircularDetailAdminPage } from '../circular-detail-admin/circular-detail-admin';
 
 /**
@@ -17,7 +17,14 @@ import { CircularDetailAdminPage } from '../circular-detail-admin/circular-detai
 })
 export class CircularListAdminPage {
   public items = [];
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  public Circular = [];
+  constructor(public navCtrl: NavController, public navParams: NavParams, private fdb: AngularFireDatabase) {
+
+    this.fdb.list("/documents/").valueChanges().subscribe(_data => {
+      this.Circular = _data;
+     console.log(this.Circular);
+    });
+
   }
 
   ionViewDidLoad() {
@@ -35,4 +42,15 @@ export class CircularListAdminPage {
      viewItem(){
       this.navCtrl.push(CircularDetailAdminPage);
     }
+    removeCircular(eventId: string){
+      alert(eventId);
+         // this.events.remove(events);
+          this.fdb.object('/documents/' + eventId).remove();
+        }
+
+        updateCircular(EventId, EventTitle){
+          this.fdb.object('/documents/' + EventId)
+          .update({ event_name: EventTitle});
+
+        }
 }

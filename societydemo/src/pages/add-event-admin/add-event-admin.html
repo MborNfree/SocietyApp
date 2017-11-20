@@ -29,7 +29,7 @@
     <ion-item [ngClass]="{'error-border':!authForm.controls.eventownernm.valid && authForm.controls.eventownernm.touched}">
       <ion-label floating>Event Owner Name:</ion-label>
       <ion-select formControlName="eventownernm" #eventowner>
-          <ion-option *ngFor="let item of items" >{{ item.title }}</ion-option>
+          <ion-option *ngFor="let item of items" >{{ item.firstname }}{{ item.lastname }}</ion-option>
       </ion-select>
   </ion-item>
   <ion-item *ngIf="authForm.controls.eventownernm.hasError('required') && authForm.controls.eventownernm.touched">

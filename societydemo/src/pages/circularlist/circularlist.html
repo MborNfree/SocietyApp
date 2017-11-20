@@ -18,17 +18,17 @@
 
 <ion-content padding class="bg-masters">
 
-  <ion-list *ngFor="let item of items">
+  <ion-list *ngFor="let document of Circular">
         <ion-item  (click)="viewItem()">
             <ion-card>
-                <img src="{{item.icon}}"/>
+                <img src="{{document.icon}}"/>
                 <ion-card-content>
-                  <ion-card-title>{{item.title}}</ion-card-title>
-                  <p>{{item.description}}</p>
+                  <ion-card-title>{{document.title}}</ion-card-title>
+                  <p>{{document.doc_name}}</p>
                 </ion-card-content>
                 <ion-row>
                   <ion-col>
-                    <a href="{{item.icon}}" target="_blank"><button ion-button icon-only default class="button"><ion-icon name="download"></ion-icon>Download</button></a>
+                    <a href="{{document.icon}}" target="_blank"><button ion-button icon-only default class="button"><ion-icon name="download"></ion-icon>Download</button></a>
                   </ion-col>
                 </ion-row>
               </ion-card>
