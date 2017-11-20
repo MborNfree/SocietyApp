@@ -72,16 +72,11 @@ export class AddEventAdminPage {
   }
 
 
-    // AddEvent(){
-
-     
+    // AddEvent(){     
     //     this.fdb.list("/addevent/").push({'enm':this.eventname.value,'edt':this.eventdt.value,'evenue':this.evenue.value});
     //     //  console.log('got data ', data);
-
     //   this.alert('Registered!');
-    //   this.navCtrl.push(EventListAdminPage);      
-
-    
+    //   this.navCtrl.push(EventListAdminPage);    
     // }
 
 

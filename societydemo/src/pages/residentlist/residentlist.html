@@ -19,28 +19,22 @@
 <ion-content padding class="bg-masters">
 
 
-     <ion-list *ngFor="let item of items">
-        <ion-card (click)="viewItem(item)">
-          <div class="row">
-                <div class="col">
-                <ion-card-header>
-                <ion-item>
-                    <ion-avatar>
-                      <img src="assets/doctor.jpg"/>
-                    </ion-avatar>
-                  </ion-item>
-                  </ion-card-header>
+    <ion-card *ngFor="let user of users">
+
+          <ion-item  (click)="viewItem()">
+                <div class="row">
+                  <div class="col">
+                      <ion-avatar>
+                            <img src="assets/doctor.jpg"/>
+                      </ion-avatar>
                   </div>
                   <div class="col">
-
-                  <ion-label >{{item.name}}</ion-label>
-                  <ion-label ><ion-icon name="call"></ion-icon> {{item.phoneno}}</ion-label>
+                      <p>Flat No.: {{user.flatno}}</p>
+                      <p>Name: {{user.first_name}} </p>
                   </div>
-                  </div>
-
-
-        </ion-card>
-      </ion-list>
+                </div>
+            </ion-item>
+              </ion-card>
 
 
 
