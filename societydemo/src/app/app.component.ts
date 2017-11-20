@@ -253,10 +253,7 @@ this.initializeApp();
         displayName: 'Help Desk',
         component: HelpdeskPage
       });
-      this.options.push({
-        displayName: 'View Bill',
-        component: ViewbillPage
-      });
+
       this.options.push({
         displayName: 'Balance Sheet',
         component: BalancesheetPage

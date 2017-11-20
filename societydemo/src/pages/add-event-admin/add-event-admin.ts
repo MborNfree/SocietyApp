@@ -24,6 +24,7 @@ import firebase from 'firebase';
   templateUrl: 'add-event-admin.html',
 })
 export class AddEventAdminPage {
+  items: { title: string; description: string; icon: string; }[];
 
   users: AngularFireList<any>;
   authForm: FormGroup;
@@ -32,21 +33,30 @@ export class AddEventAdminPage {
   eventdt:any;
   eventvenue:string;
   title: string;
+  eventownernm :string;
   description: string;
    arrData = [];
 
    	@ViewChild('enm') eventname;
   @ViewChild('edt') eventdate;
   @ViewChild('evenue') evenue;
+  @ViewChild('eventowner') eventowner;
+
   constructor(public navCtrl: NavController, public navParams: NavParams,public view: ViewController,private fdb: AngularFireDatabase,public formBuilder: FormBuilder,private fire: AngularFireAuth,private alertCtrl: AlertController) {
 
-    
+    this.items = [
+      {title: 'Diwali', description: 'test1',icon:'assets/diwali.jpg'},
+      {title: 'Holi', description: 'test2',icon:'assets/holi.jpg'},
+      {title: 'Independence day', description: 'test3',icon:'assets/independence day.png'},
+      {title: 'Chritmas', description: 'test3',icon:'assets/christmas.png'}
+    ];
 
     this.users = fdb.list('/Event');
     this.authForm = formBuilder.group({
       eventnm: ['', Validators.compose([Validators.required, Validators.pattern('[a-zA-Z]*'), Validators.minLength(4), Validators.maxLength(30)])],
       eventdt: ['', Validators.compose([Validators.required, Validators.minLength(8)])],
       eventvenue: ['', Validators.compose([Validators.required,Validators.pattern('[a-zA-Z]*'), Validators.minLength(4)])],
+      eventownernm: ['', Validators.compose([Validators.required])],
       eventimg: ['',Validators.compose([Validators.required, Validators.minLength(8), Validators.maxLength(30)])]
      });
   }
@@ -72,11 +82,11 @@ export class AddEventAdminPage {
   }
 
 
-    // AddEvent(){     
+    // AddEvent(){
     //     this.fdb.list("/addevent/").push({'enm':this.eventname.value,'edt':this.eventdt.value,'evenue':this.evenue.value});
     //     //  console.log('got data ', data);
     //   this.alert('Registered!');
-    //   this.navCtrl.push(EventListAdminPage);    
+    //   this.navCtrl.push(EventListAdminPage);
     // }
 
 
@@ -90,7 +100,7 @@ export class AddEventAdminPage {
         //  console.log('got data ', data);
 
       this.alert('Registered!');
-      this.navCtrl.push(EventListAdminPage);      
+      this.navCtrl.push(EventListAdminPage);
       alert('added');
 
     this.navCtrl.push(EventListAdminPage);

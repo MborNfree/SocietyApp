@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AngularFireDatabase } from 'angularfire2/database';
+import firebase from 'firebase';
+import { Subject } from 'rxjs/Subject';
 
 /**
  * Generated class for the MemberprofilePage page.
@@ -14,8 +17,14 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'memberprofile.html',
 })
 export class MemberprofilePage {
+  projects: any;
+  users: {}[];
+  constructor(public navCtrl: NavController, public navParams: NavParams,private fdb: AngularFireDatabase) {
+    this.fdb.list("/users/").valueChanges().subscribe(_data => {
+      this.users = _data;
+     console.log(this.users);
+    });
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {

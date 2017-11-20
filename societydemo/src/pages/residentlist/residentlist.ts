@@ -20,7 +20,7 @@ export class ResidentlistPage {
   public users = [];
   constructor(public navCtrl: NavController, public navParams: NavParams, private fdb: AngularFireDatabase) {
 this.fdb.list("/users/").valueChanges().subscribe(_data => {
-      this.users = _data;     
+      this.users = _data;
      console.log(this.users);
     });
 
@@ -45,6 +45,7 @@ this.fdb.list("/users/").valueChanges().subscribe(_data => {
 
 
 viewItem(item){
+  alert(item);
       this.navCtrl.push(MemberprofilePage, {
         item: item
       });

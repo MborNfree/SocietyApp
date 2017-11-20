@@ -1,11 +1,11 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
-import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { HomePage } from '../home/home';
 import { RegisterPage } from '../register/register';
 import { ForgotpasswordPage } from '../forgotpassword/forgotpassword';
 import { AngularFireAuth } from 'angularfire2/auth';
-
+// import { Router } from '@angular/router';
 
 /**
  * Generated class for the LoginPage page.
@@ -48,6 +48,13 @@ export class LoginPage {
 
         if (value.usernm != '' && value.password != '' && value.usernm != 'null'   && value.password != 'null' ) {
           this.navCtrl.push(HomePage);
+        }
+        // else if (value.usernm === 'admin@mail.com' && value.password === 'admin') {
+        //   this.router.navigate(['pages/dashboard']);
+        //   console.log('Success Login');
+        // }
+         else {
+          console.log('Error Login');
         }
     }
   }

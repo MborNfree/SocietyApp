@@ -1,6 +1,7 @@
-import { BillingchargesPage } from './../billingcharges/billingcharges';
+//import { BillingchargesPage } from './../billingcharges/billingcharges';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ViewbillPage } from './../viewbill/viewbill';
 
 /**
  * Generated class for the SocietybillPage page.
@@ -19,7 +20,7 @@ export class SocietybillPage {
 
 gotobilling()
 {
-  this.navCtrl.push(BillingchargesPage);
+  this.navCtrl.push(ViewbillPage);
 }
 
 
@@ -42,13 +43,13 @@ gotobilling()
           { description1: 'MAR 2017-APR 2017'},
           { description1: 'FEB 2017-MAR 2017'},
           { description1: 'JAN 2017-FEB 2017'},
-           
+
       ];
     }
 
 
  viewItem(item){
-      this.navCtrl.push(BillingchargesPage, {
+      this.navCtrl.push(ViewbillPage, {
         item: item
       });
     }

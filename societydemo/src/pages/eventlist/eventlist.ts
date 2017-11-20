@@ -26,7 +26,6 @@ export class EventlistPage {
      console.log(this.items);
     });
 
-  
   }
 
    openModal(characterNum) {

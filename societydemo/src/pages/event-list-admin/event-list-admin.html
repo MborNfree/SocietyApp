@@ -10,7 +10,7 @@
     <button ion-button icon-only menuToggle start>
         <ion-icon name="menu"></ion-icon>
     </button>
-    <button class="button button-icon" ng-click="newTask()">
+    <button class="button button-icon" ng-click="newTask()" end>
         <i class="icon ion-compose"></i>
       </button>
   </ion-navbar>
@@ -21,7 +21,16 @@
             <img src="{{item.icon}}">
             <p>{{item.title}}</p>
         </ion-item>
-        <button ion-button (click)="deleteEvent()" class="button">Delete</button>
-        <button ion-button (click)="EditEvent()" class="button">Edit</button>
+        <button ion-button (click)="removeEvent()" class="button">Delete</button>
+        <button ion-button (click)="updateEvent()" class="button">Edit</button>
     </ion-list>
-</ion-content>
+
+    <ion-list *ngFor="let event of events">
+      <ion-item  (click)="viewItem(events)">
+          <img src="{{event.event_img}}">
+          <p>{{event.event_name}}</p>
+      </ion-item>
+      <button ion-button (click)="removeEvent(event.E_id)" class="button">Delete</button>
+      <button ion-button (click)="updateEvent(event.E_id,event.event_name)" class="button">Edit</button>
+   </ion-list>
+  </ion-content>

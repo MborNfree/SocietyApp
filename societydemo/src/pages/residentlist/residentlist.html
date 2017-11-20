@@ -21,7 +21,7 @@
 
     <ion-card *ngFor="let user of users">
 
-          <ion-item  (click)="viewItem()">
+          <ion-item  (click)="viewItem(user.ID)">
                 <div class="row">
                   <div class="col">
                       <ion-avatar>

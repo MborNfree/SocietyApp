@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AngularFireDatabase } from 'angularfire2/database';
 
 /**
  * Generated class for the ResidentProfileAdminPage page.
@@ -14,8 +15,14 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'resident-profile-admin.html',
 })
 export class ResidentProfileAdminPage {
+  users: {}[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private fdb: AngularFireDatabase) {
+    this.fdb.list("/users/").valueChanges().subscribe(_data => {
+      this.users = _data;
+     console.log(this.users);
+    });
+
   }
 
   ionViewDidLoad() {
