@@ -36,7 +36,7 @@ export class AddFlatwiseServiceAdminPage {
               public fdb: AngularFireDatabase,
               public fire: AngularFireAuth) {
 
-      this.flatwiseServices = fdb.list('/flatwiseServices');
+      this.flatwiseServices = fdb.list('/flatwiseservice');
 
       this.authForm = formBuilder.group({
       Personnm: ['', Validators.compose([Validators.required, Validators.pattern('[a-zA-Z]*')])],
@@ -65,7 +65,7 @@ export class AddFlatwiseServiceAdminPage {
     // alert(this.personFlat.value);
     // alert(this.personNo.value);
 
-    this.fdb.list("/flatwiseServices/").push({ 'servicePersonName': this.personName.value, 'servicePersonFlat': this.personFlat.value, 'servicePersonNo': this.personNo.value})
+    this.fdb.list("/flatwiseservice/").push({ 'flatServiceName': this.personName.value, 'flatServiceNo': this.personFlat.value, 'flatServiceCntNo': this.personNo.value})
     .then(data => {
 
 
