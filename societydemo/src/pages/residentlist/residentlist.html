@@ -18,7 +18,28 @@
 
 <ion-content padding class="bg-masters">
 
-        <ion-card (click)="memberprofile()">
+
+    <ion-card *ngFor="let user of users">
+
+          <ion-item  (click)="viewItem()">
+                <div class="row">
+                  <div class="col">
+                      <ion-avatar>
+                            <img src="assets/doctor.jpg"/>
+                      </ion-avatar>
+                  </div>
+                  <div class="col">
+                      <p>Flat No.: {{user.flatno}}</p>
+                      <p>Name: {{user.first_name}} </p>
+                  </div>
+                </div>
+            </ion-item>
+              </ion-card>
+
+
+
+
+        <!-- <ion-card (click)="memberprofile()">
           <div class="row">
             <div class="col">
             <ion-card-header>
@@ -104,5 +125,5 @@
               <ion-label >Sachin </ion-label>
               </div>
               </div>
-        </ion-card>
+        </ion-card> -->
 </ion-content>

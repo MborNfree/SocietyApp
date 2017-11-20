@@ -20,7 +20,28 @@
 
 <ion-content padding class="bg-masters">
 
-        <ion-card (click)="memberprofile()">
+     <ion-card *ngFor="let item of items">
+
+            <ion-item  (click)="viewItem()">
+                <div class="row">
+                <div class="col">
+                  <ion-avatar>
+                    <img src="assets/doctor.jpg"/>
+                  </ion-avatar>
+                </div>
+                <div class="col">
+                  <p>Flat No.: {{item.flatno}}</p>
+                  <p>Name: {{item.first_name}} {{item.last_name}}</p>
+                  <p>Role: {{item.role}}</p>
+                </div>
+              </div>
+            </ion-item>
+      </ion-card>
+
+
+
+
+        <!-- <ion-card (click)="memberprofile()">
           <div class="row">
             <div class="col">
             <ion-card-header  >
@@ -112,5 +133,8 @@
 
               </div>
               </div>
-        </ion-card>
+        </ion-card> -->
+
+
+
 </ion-content>

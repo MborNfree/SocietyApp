@@ -67,16 +67,23 @@ export class AddEventAdminPage {
   }
 
 
+<<<<<<< HEAD
     // AddEvent(){
 
 
+=======
+    // AddEvent(){     
+>>>>>>> 9ac7c01a92188028b70bca4abc3d87d774a224ef
     //     this.fdb.list("/addevent/").push({'enm':this.eventname.value,'edt':this.eventdt.value,'evenue':this.evenue.value});
     //     //  console.log('got data ', data);
-
     //   this.alert('Registered!');
+<<<<<<< HEAD
     //   this.navCtrl.push(EventListAdminPage);
 
 
+=======
+    //   this.navCtrl.push(EventListAdminPage);    
+>>>>>>> 9ac7c01a92188028b70bca4abc3d87d774a224ef
     // }
 
 
