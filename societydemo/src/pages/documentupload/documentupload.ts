@@ -153,6 +153,9 @@ public pathForImage(img){
   }
 }
 
+viewItem(){
+alert('view');
+}
 // public uploadImage(){
 //   //Destination url
 //   var url = "http://yoururl/upload/php";

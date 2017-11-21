@@ -16,18 +16,18 @@ import { AngularFireDatabase } from 'angularfire2/database';
 })
 export class CommitteeListAdminPage {
 
-  
- 
+  key;
+
   public items = [];
   constructor(public navCtrl: NavController, public navParams: NavParams, private fdb: AngularFireDatabase) {
-       this.fdb.list("/users/").valueChanges().subscribe(_data => {
+
+    this.fdb.list("/users/").valueChanges().subscribe(_data => {
       this.items = _data;
-     
      console.log(this.items);
     });
 
-
-
+    this.key = '0';
+    this.fdb.object(`users/${this.key}`).valueChanges().subscribe((result) => console.log('com'+result));
   }
 
   ionViewDidLoad() {

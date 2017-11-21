@@ -28,13 +28,22 @@
     </ion-item>
     <ion-item [ngClass]="{'error-border':!authForm.controls.eventownernm.valid && authForm.controls.eventownernm.touched}">
       <ion-label floating>Event Owner Name:</ion-label>
-      <ion-select formControlName="eventownernm" #eventowner>
-          <ion-option *ngFor="let item of items" >{{ item.firstname }}{{ item.lastname }}</ion-option>
+      <ion-select formControlName="eventownernm" #eventowner [(ngModel)]="eventownernm" (ionChange)="pickOwner(eventownernm)">
+        <ion-option *ngFor="let cat of EventCat" value="{{ cat.service_category }}" >{{ cat.service_category }}{{ cat.service_category }}</ion-option>
       </ion-select>
   </ion-item>
   <ion-item *ngIf="authForm.controls.eventownernm.hasError('required') && authForm.controls.eventownernm.touched">
-      <p>Sorry, field Service Type is required!</p>
+      <p>Sorry, field Event owner is required!</p>
   </ion-item>
+  <ion-item [ngClass]="{'error-border':!authForm.controls.eventtype.valid && authForm.controls.eventtype.touched}">
+    <ion-label floating>Event Type</ion-label>
+    <ion-select formControlName="eventtype" #eventype [(ngModel)]="eventtype" (ionChange)="pickType(eventtype)">
+        <ion-option *ngFor="let cat of EventCat" value="{{ cat.service_category }}" >{{ cat.service_category }}</ion-option>
+    </ion-select>
+</ion-item>
+<ion-item *ngIf="authForm.controls.eventtype.hasError('required') && authForm.controls.eventtype.touched">
+    <p>Sorry, field Event Type is required!</p>
+</ion-item>
     <ion-item [ngClass]="{'error-border':!authForm.controls.eventdt.valid && authForm.controls.eventdt.touched}">
         <ion-label floating>Event Date</ion-label>
         <ion-input formControlName="eventdt" type="date" [(ngModel)]="eventdt" #edt></ion-input>
@@ -42,17 +51,17 @@
     <ion-item *ngIf="authForm.controls.eventdt.hasError('required') && authForm.controls.eventdt.touched">
         <p>Sorry, field username is required!</p>
     </ion-item>
-    <ion-item [ngClass]="{'error-border':!authForm.controls.eventvenue.valid && authForm.controls.eventvenue.touched}">
-        <ion-label floating>Event Venue</ion-label>
-        <ion-input formControlName="eventvenue" type="text" [(ngModel)]="eventvenue" #evenue></ion-input>
+    <ion-item [ngClass]="{'error-border':!authForm.controls.eventdesc.valid && authForm.controls.eventdesc.touched}">
+        <ion-label floating>Event desc</ion-label>
+        <ion-input formControlName="eventdesc" type="text" [(ngModel)]="eventdesc" #evedesc></ion-input>
     </ion-item>
-    <ion-item *ngIf="authForm.controls.eventvenue.hasError('required') && authForm.controls.eventvenue.touched">
+    <ion-item *ngIf="authForm.controls.eventdesc.hasError('required') && authForm.controls.eventdesc.touched">
         <p>Sorry, field Event Venue is required!</p>
     </ion-item>
-    <ion-item *ngIf="authForm.controls.eventvenue.hasError('pattern') && authForm.controls.eventvenue.touched">
+    <ion-item *ngIf="authForm.controls.eventdesc.hasError('pattern') && authForm.controls.eventdesc.touched">
         <p>Sorry, only small and capital letters are allowed!</p>
     </ion-item>
-    <ion-item *ngIf="authForm.controls.eventvenue.hasError('maxlength') && authForm.controls.eventvenue.touched">
+    <ion-item *ngIf="authForm.controls.eventdesc.hasError('maxlength') && authForm.controls.eventdesc.touched">
         <p>Sorry, maximum username length is 30!</p>
     </ion-item>
 

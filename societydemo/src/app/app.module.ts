@@ -85,6 +85,7 @@ import { ForumquestionPage } from '../pages/forumquestion/forumquestion';
 import { AddServiceCategoryAdminPage } from '../pages/add-service-category-admin/add-service-category-admin';
 
 
+
 var config = {
   apiKey: "AIzaSyCdBaGl6H_IuyzMyEnjq-6VRD5-2alxUtg",
   authDomain: "society-182906.firebaseapp.com",
@@ -258,6 +259,7 @@ var config = {
     RemoteServiceProvider,
     InAppBrowser,
     Printer
+
   ]
 })
 
