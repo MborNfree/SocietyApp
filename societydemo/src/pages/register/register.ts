@@ -162,7 +162,7 @@ export class RegisterPage {
       console.log('got an error ', error);
       this.alert(error.message);
     });
-  	console.log('Would register user with ', this.email.value, this.password.value);
+  //s	console.log('Would register user with ', this.email.value, this.password.value);
   }
 
   doLogin() {

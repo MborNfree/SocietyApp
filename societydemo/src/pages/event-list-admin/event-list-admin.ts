@@ -4,6 +4,7 @@ import { EventAdminPage } from '../event-admin/event-admin';
 import { AddEventAdminPage } from '../add-event-admin/add-event-admin';
 import { AngularFireList, AngularFireDatabase } from 'angularfire2/database';
 import { Http } from '@angular/http';
+import * as firebase from 'firebase';
 
 /**
  * Generated class for the EventListAdminPage page.
@@ -23,6 +24,7 @@ export class EventListAdminPage {
   events = [];
   arrData = [];
  public items = [];
+
   constructor(public http:Http,public actionSheetCtrl: ActionSheetController,public navCtrl: NavController, private fdb: AngularFireDatabase, public navParams: NavParams, public modalCtrl: ModalController,public alertCtrl: AlertController) {
     this.fdb.list("/events/").valueChanges().subscribe(_data => {
       this.events = _data;
@@ -71,12 +73,16 @@ export class EventListAdminPage {
     actionSheet.present();
   }
 
+
   removeEvent(eventId: string){
 
+    alert('eventid'+eventId);
+    this.fdb.object(`events/${eventId}`)
+    .remove()
+    .then(() => alert('events deletion requested !'));
    // this.events.remove(events);
-    this.fdb.object('/events/' + eventId).remove();
+    //this.fdb.object('/events/'+ eventId).remove();
   }
-
   updateEvent(EventId, EventTitle){
     this.fdb.object('/events/' + EventId)
     .update({ event_name: EventTitle});

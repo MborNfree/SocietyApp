@@ -21,6 +21,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 })
 export class LoginPage {
   authForm: FormGroup;
+  currentUserUid:any;
 
   @ViewChild('password') password;
   @ViewChild('email') email;

@@ -97,10 +97,8 @@
       "cordova-plugin-filepath": {},
       "cordova-plugin-inappbrowser": {},
       "mx.ferreyra.callnumber": {},
-      "de.appplant.cordova.plugin.printer": {}
+      "de.appplant.cordova.plugin.printer": {},
+      "cordova-plugin-file": {}
     }
-
   }
 }
-
-
