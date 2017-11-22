@@ -46,30 +46,30 @@
             <ion-input formControlName="flatno" type="text" [(ngModel)]="flatno"></ion-input>
         </ion-item>
         <ion-item *ngIf="authForm.controls.flatno.hasError('required') && authForm.controls.flatno.touched">
-            <p>Sorry, field username is required!</p>
+            <p>Sorry, field is required!</p>
         </ion-item>
         <ion-item *ngIf="authForm.controls.flatno.hasError('pattern') && authForm.controls.flatno.touched">
             <p>Sorry, only small and capital letters are allowed!</p>
         </ion-item>
         <ion-item *ngIf="authForm.controls.flatno.hasError('minlength') && authForm.controls.flatno.touched">
-            <p>Sorry, minimum username length is 4!</p>
+            <p>Sorry, minimum  length is 3!</p>
         </ion-item>
         <ion-item [ngClass]="{'error-border':!authForm.controls.email.valid && authForm.controls.email.touched}">
             <ion-label floating>Email</ion-label>
             <ion-input formControlName="email" type="text" [(ngModel)]="email"></ion-input>
         </ion-item>
         <ion-item *ngIf="authForm.controls.email.hasError('required') && authForm.controls.email.touched">
-            <p>Sorry, field password is required!</p>
+            <p>Sorry, field is required!</p>
         </ion-item>
         <ion-item *ngIf="authForm.controls.email.hasError('minlength') && authForm.controls.email.touched">
-            <p>Sorry, minimum password length is 8!</p>
+            <p>Sorry, minimum  length is 8!</p>
         </ion-item>
         <ion-item [ngClass]="{'error-border':!authForm.controls.password.valid && authForm.controls.password.touched}">
             <ion-label floating>Password</ion-label>
             <ion-input formControlName="password" type="password" [(ngModel)]="password"></ion-input>
         </ion-item>
         <ion-item *ngIf="authForm.controls.password.hasError('required') && authForm.controls.password.touched">
-            <p>Sorry, field password is required!</p>
+            <p>Sorry, field is required!</p>
         </ion-item>
         <ion-item *ngIf="authForm.controls.password.hasError('minlength') && authForm.controls.password.touched">
             <p>Sorry, minimum password length is 8!</p>

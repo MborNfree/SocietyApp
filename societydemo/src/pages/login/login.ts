@@ -21,6 +21,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 })
 export class LoginPage {
   authForm: FormGroup;
+  currentUserUid:any;
 
   @ViewChild('password') password;
   @ViewChild('email') email;
@@ -71,7 +72,7 @@ export class LoginPage {
     // alert(this.email.value);
     this.fire.auth.signInWithEmailAndPassword(this.email.value, this.password.value)
     .then( data => {
-      console.log('got some data', this.fire.auth.currentUser);
+     // console.log('got some data', this.fire.auth.currentUser);
       this.alert('Success! You\'re logged in');
       this.navCtrl.push( HomePage );
       // user is logged in
@@ -80,7 +81,7 @@ export class LoginPage {
       console.log('got an error', error);
       this.alert(error.message);
     })
-  	console.log('Would sign in with ', this.email.value, this.password.value);
+  //	console.log('Would sign in with ', this.email.value, this.password.value);
   }
   signup()
   {

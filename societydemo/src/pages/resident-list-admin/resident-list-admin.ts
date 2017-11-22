@@ -3,6 +3,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ResidentProfileAdminPage } from '../resident-profile-admin/resident-profile-admin';
 import { AngularFireDatabase } from 'angularfire2/database';
 
+import {Observer} from "rxjs";
+// import { AngularFireListObservable } from 'angularfire2';
+
 
 @IonicPage()
 @Component({
@@ -11,11 +14,16 @@ import { AngularFireDatabase } from 'angularfire2/database';
 })
 export class ResidentListAdminPage {
   public users = [];
+  // books:AngularFireListObservable<any>;
+
   constructor(public navCtrl: NavController, public navParams: NavParams, private fdb: AngularFireDatabase) {
- this.fdb.list("/users/").valueChanges().subscribe(_data => {
-      this.users = _data;     
+
+    this.fdb.list("/users/").valueChanges().subscribe(_data => {
+      this.users = _data;
      console.log(this.users);
     });
+
+    // this.route.data.forEach((data: {books: AngularFireListObservable<any>}) => this.books = data.books);
   }
 
   ionViewDidLoad() {
@@ -27,8 +35,9 @@ export class ResidentListAdminPage {
     //   {name: 'Sachin ', icon:'assets/plumber.jpg',flat:'4'}
     // ];
   }
- 
-  viewItem(){
+
+  viewItem(user:any){
+    alert(user);
     this.navCtrl.push(ResidentProfileAdminPage);
   }
 }

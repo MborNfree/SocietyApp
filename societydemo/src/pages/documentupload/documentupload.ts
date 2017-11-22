@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectorRef } from '@angular/core';
 import { IonicPage, NavController, NavParams , Platform , ActionSheetController , ToastController , LoadingController, Loading } from 'ionic-angular';
 
 import { File } from '@ionic-native/file';
@@ -6,6 +6,9 @@ import { Transfer, TransferObject } from '@ionic-native/transfer';
 import { FilePath } from '@ionic-native/file-path';
 import { Camera } from '@ionic-native/camera';
 import { AngularFireDatabase } from 'angularfire2/database';
+import { Http } from '@angular/http';
+import { BehaviorSubject } from 'rxjs';
+import * as firebase from 'firebase';
 
 /**
  * Generated class for the DocumentuploadPage page.
@@ -14,7 +17,7 @@ import { AngularFireDatabase } from 'angularfire2/database';
  * Ionic pages and navigation.
  */
 declare var cordova: any;
-
+declare var window: any;
 
 @IonicPage()
 @Component({
@@ -25,6 +28,17 @@ export class DocumentuploadPage {
 
   public items=[];
   public Circular = [];
+
+  // For Login
+ public userEmail: string;
+ public userPassword: string;
+
+ public authStatus: boolean;
+ public message: string;
+ picturesArray: any;
+ public todoArray: any;
+ private isAuth: BehaviorSubject<boolean>;
+
   constructor(public navCtrl: NavController,
               public navParams: NavParams ,
               public Platform:Platform,
@@ -36,7 +50,8 @@ export class DocumentuploadPage {
               public toastCtrl: ToastController,
               public platform:Platform,
               public loadingCtrl:LoadingController,
-              private fdb: AngularFireDatabase) {
+              private fdb: AngularFireDatabase,
+              private http: Http, private _cd:ChangeDetectorRef) {
 
                 this.items = [
                     {title: 'document1'},
@@ -47,12 +62,23 @@ export class DocumentuploadPage {
                     {title: 'document6'}
                 ];
 
+                this.isAuth = new BehaviorSubject(false);
 
+                this.isAuth.subscribe(val => this.authStatus = val);
+                console.log('auth'+this.isAuth);
                 this.fdb.list("/documents/").valueChanges().subscribe(_data => {
                   this.Circular = _data;
                  console.log(this.Circular);
                 });
   }
+
+  ngOnInit() {
+    // Let's load our data here
+    this.loadData();
+     }
+     ionViewDidLoad() {
+      console.log('ionViewDidLoad DocumentuploadPage');
+    }
 
   removeItem(item){
     var i;
@@ -153,42 +179,125 @@ public pathForImage(img){
   }
 }
 
-// public uploadImage(){
-//   //Destination url
-//   var url = "http://yoururl/upload/php";
+viewItem(){
+alert('view');
+}
 
-//   //file for upload
-//   var targetPath = this.pathForImage(this.lastImage);
+// convertIntoBlob(imagePath) {
+//   return new Promise((resolve, reject) => {
+//     window.resolveLocalFileSystemURL(imagePath, (fileEntry) => {
 
-//   //file name only
-//   var filename = this.lastImage;
+//       fileEntry.file((resFile) => {
 
-//   var options = {
-//     fileKey: 'file',
-//     fileName: filename,
-//     chunkedMode: false,
-//     mimeType: "multipart/form-data",
-//     params: {'fileName': filename}
-//   };
+//         var reader = new FileReader();
+//         reader.onloadend = (evt: any) => {
+//           var imgBlob: any = new Blob([evt.target.result], { type: 'image/jpeg' });
+//           imgBlob.name = 'sample.jpg';
+//           resolve(imgBlob);
+//         };
 
-//   const fileTransfer: TransferObject = this.transfer.create();
-//   this.loading = this.loadingCtrl.create({
-//     content: 'Uploding...',
-//   });
-//   this.loading.present();
+//         reader.onerror = (e) => {
+//           console.log('Failed file read: ' + e.toString());
+//           reject(e);
+//         };
 
-//   //use the FileTransfer to upload the image
-//   fileTransfer.upload(targetPath, url, options).then(data => {
-//     this.loading.dismissAll()
-//     this.presentToast('Image uploaded successfully.');
-//   }, err => {
-//     this.loading.dismissAll()
-//     this.presentToast('Error while uploading file.');
+//         reader.readAsArrayBuffer(resFile);
+//       });
+//     });
 //   });
 // }
+// uploadToFirebase(imageBlob) {
+//   // Let's use a simple name
+//      var fileName = 'image-' + new Date().getTime() + '.jpg';
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad DocumentuploadPage');
-  }
+//      return new Promise((resolve, reject) => {
+//        var fileRef = firebase.storage().ref('images/' + fileName);
+
+//        var uploadTask = fileRef.put(imageBlob);
+
+//        uploadTask.on('state_changed', (snapshot) => {
+//          console.log('snapshot progess ' + snapshot);
+//        }, (error) => {
+//          reject(error);
+//        }, () => {
+//          resolve(uploadTask.snapshot);
+//        });
+//      });
+//    }
+
+//    saveToDatabaseAssetList(uploadSnapshot) {
+//      var ref = firebase.database().ref('assets');
+
+
+//      return new Promise((resolve, reject) => {
+//        var dataToSave = {
+//          'URL': uploadSnapshot.downloadURL,
+//          'name': uploadSnapshot.metadata.name,
+//          'owner': firebase.auth().currentUser.uid,
+//          'email': firebase.auth().currentUser.email,
+//          'lastUpdated': new Date().getTime(),
+//        };
+
+//        ref.push(dataToSave, (response) => {
+//          resolve(response);
+//        }).catch((error) => {
+//          reject(error);
+//        });
+//      });
+//    }
+
+//    doGetPicture() {
+
+//      let imageSource = (Device.isVirtual ? Camera.PictureSourceType.PHOTOLIBRARY : Camera.PictureSourceType.CAMERA);
+
+//      Camera.getPicture({
+//        destinationType: Camera.DestinationType.FILE_URI,
+//        sourceType: imageSource,
+//        targetHeight: 640,
+//        correctOrientation: true
+//      }).then((imagePath) => {
+//        return this.convertIntoBlob(imagePath);
+//      }).then((imageBlob) => {
+//        return this.uploadToFirebase(imageBlob);
+//      }).then((uploadSnapshot: any) => {
+//        return this.saveToDatabaseAssetList(uploadSnapshot);
+
+//      }).then((uploadSnapshot: any) => {
+//        //alert('file saved to asset catalog successfully  ');
+//      }, (error) => {
+//        alert('Error ' + (error.message || error));
+//      });
+
+//    }
+
+
+// showData() {
+// var self = this;
+// var user = firebase.auth().currentUser;
+
+// if (user) {
+//  // User is signed in.
+//  this.userEmail = user.email;
+// } else {
+//  // No user is signed in.
+// }
+
+// var ref = firebase.database().ref('/todo/');
+// ref.once('value').then(function(snapshot) {
+// // We need to create this array first to store our local data
+// let rawList = [];
+// snapshot.forEach( snap => {
+// if (snap.val().email == self.userEmail) {
+// rawList.push({
+//  id: snap.key,
+//  email: snap.val().email,
+//  title: snap.val().title,
+//  description: snap.val().description,
+// });
+// }
+//  });
+// self.todoArray = rawList;
+// });
+// }
 
 }

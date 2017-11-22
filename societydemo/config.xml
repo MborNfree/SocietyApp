@@ -94,4 +94,5 @@
     <plugin name="cordova-plugin-inappbrowser" spec="^1.7.1" />
     <plugin name="mx.ferreyra.callnumber" spec="~0.0.2" />
     <plugin name="de.appplant.cordova.plugin.printer" spec="^0.7.3" />
+    <plugin name="cordova-plugin-file" spec="~4.3.3" />
 </widget>
