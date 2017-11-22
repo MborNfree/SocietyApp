@@ -40,7 +40,7 @@ export class AddEventAdminPage {
   constructor(public navCtrl: NavController, public navParams: NavParams,public view: ViewController,private fdb: AngularFireDatabase,public formBuilder: FormBuilder,private fire: AngularFireAuth,private alertCtrl: AlertController) {
 
 
-    this.users = fdb.list('/Event');
+    this.users = fdb.list('/events');
     this.authForm = formBuilder.group({
       eventnm: ['', Validators.compose([Validators.required, Validators.pattern('[a-zA-Z]*'), Validators.minLength(4), Validators.maxLength(30)])],
       eventdt: ['', Validators.compose([Validators.required, Validators.minLength(8)])],
@@ -82,10 +82,10 @@ export class AddEventAdminPage {
     alert('nm'+this.eventname.value);
      alert('dt'+this.eventdate.value);
       alert('vnue'+this.evenue.value);
-  this.fdb.list("/Events/").push({'enm':this.eventname.value,'edt':this.eventdate.value,'evenue':this.evenue.value});
+  this.fdb.list("/events/").push({'event_name':this.eventname.value,'event_date':this.eventdate.value,'evenue':this.evenue.value});
         //  console.log('got data ', data);
 
-      this.alert('Registered!');
+      this.alert('events added Successfully');
       this.navCtrl.push(EventListAdminPage);
       alert('added');
 
