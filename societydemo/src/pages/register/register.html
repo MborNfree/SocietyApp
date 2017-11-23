@@ -14,8 +14,14 @@
 
 <form [formGroup]="authForm">
   <ion-list>
+      <ion-item class="profile-item">
+          <div class="big-profile-picture">
+            <img src="../assets/join-us.png">
+            <!-- <img src="../assets/sign up.png"> -->
+          </div>
+        </ion-item>
     <ion-item [ngClass]="{'error-border':!authForm.controls.firstnme.valid && authForm.controls.firstnme.touched}">
-      <ion-label floating> <ion-icon name="contact"></ion-icon>First Name</ion-label>
+      <ion-label floating> <ion-icon class="reg-icon" name="contact"></ion-icon> First Name</ion-label>
       <ion-input type="text" formControlName="firstnme" [(ngModel)]="firstnme" #fnm></ion-input>
     </ion-item>
     <ion-item *ngIf="authForm.controls.firstnme.hasError('required') && authForm.controls.firstnme.touched">
@@ -25,7 +31,7 @@
         <p>Sorry, only small and capital letters are allowed!</p>
     </ion-item>
     <ion-item [ngClass]="{'error-border':!authForm.controls.lastname.valid && authForm.controls.lastname.touched}">
-      <ion-label floating> <ion-icon name="contact"></ion-icon>Last Name</ion-label>
+      <ion-label floating> <ion-icon class="reg-icon" name="contact"></ion-icon> Last Name</ion-label>
       <ion-input type="text" formControlName="lastname" [(ngModel)]="lastname" #lnm></ion-input>
     </ion-item>
     <ion-item *ngIf="authForm.controls.lastname.hasError('required') && authForm.controls.lastname.touched">
@@ -35,7 +41,7 @@
         <p>Sorry, only small and capital letters are allowed!</p>
     </ion-item>
     <ion-item [ngClass]="{'error-border':!authForm.controls.usernm.valid && authForm.controls.usernm.touched}">
-        <ion-label floating> <ion-icon name="person"></ion-icon>Username</ion-label>
+        <ion-label floating> <ion-icon class="reg-icon" name="person"></ion-icon> Username</ion-label>
         <ion-input type="text" formControlName="usernm" [(ngModel)]="usernm"  #username></ion-input>
     </ion-item>
     <ion-item *ngIf="authForm.controls.usernm.hasError('required') && authForm.controls.usernm.touched">
@@ -51,7 +57,7 @@
         <p>Sorry, maximum username length is 30!</p>
     </ion-item>
     <ion-item  [ngClass]="{'error-border':!authForm.controls.eml.valid && authForm.controls.eml.touched}">
-      <ion-label floating><ion-icon name="mail"></ion-icon>Email</ion-label>
+      <ion-label floating><ion-icon class="reg-icon" name="mail"></ion-icon> Email</ion-label>
       <ion-input type="email" formControlName="eml"  [(ngModel)]="eml"  #email></ion-input>
     </ion-item>
     <ion-item *ngIf="authForm.controls.eml.hasError('required') && authForm.controls.eml.touched">
@@ -61,7 +67,7 @@
         <p>Sorry, minimum email length is 8!</p>
     </ion-item>
     <ion-item [ngClass]="{'error-border':!authForm.controls.pwd.valid && authForm.controls.pwd.touched}">
-        <ion-label floating> <ion-icon name="contact"></ion-icon>Password</ion-label>
+        <ion-label floating> <ion-icon class="reg-icon" name="contact"></ion-icon> Password</ion-label>
         <ion-input type="password" formControlName="pwd"  [(ngModel)]="pwd" #password></ion-input>
     </ion-item>
     <ion-item *ngIf="authForm.controls.pwd.hasError('required') && authForm.controls.pwd.touched">
@@ -71,7 +77,7 @@
         <p>Sorry, minimum password length is 8!</p>
     </ion-item>
     <ion-item [ngClass]="{'error-border':!authForm.controls.flat.valid && authForm.controls.flat.touched}">
-      <ion-label floating> <ion-icon name="home"></ion-icon>Flat No</ion-label>
+      <ion-label floating> <ion-icon class="reg-icon" name="home"></ion-icon> Flat No</ion-label>
       <ion-input type="text" formControlName="flat"  [(ngModel)]="flat"  #flatn></ion-input>
     </ion-item>
     <ion-item *ngIf="authForm.controls.flat.hasError('required') && authForm.controls.flat.touched">
@@ -84,11 +90,11 @@
         <p>Sorry, minimum username length is 3!</p>
     </ion-item>
     <ion-item [ngClass]="{'error-border':!authForm.controls.wingno.valid && authForm.controls.wingno.touched}">
-      <ion-label floating> <ion-icon name="home"></ion-icon>Wing</ion-label>
+      <ion-label floating> <ion-icon  class="reg-icon" name="home"></ion-icon> Wing</ion-label>
       <ion-input type="text" formControlName="wingno" [(ngModel)]="wingno"  #wing></ion-input>
     </ion-item>
     <ion-item  [ngClass]="{'error-border':!authForm.controls.family.valid && authForm.controls.family.touched}">
-      <ion-label floating> <ion-icon name="people"></ion-icon>Family Member</ion-label>
+      <ion-label floating> <ion-icon  class="reg-icon" name="people"></ion-icon> Family Member</ion-label>
       <ion-input type="text"  formControlName="family" [(ngModel)]="family" #familyMmber></ion-input>
     </ion-item>
     <ion-item *ngIf="authForm.controls.family.hasError('pattern') && authForm.controls.family.touched">
@@ -101,7 +107,7 @@
         <p>Sorry, minimum Total Family Member length is 2!</p>
     </ion-item>
     <ion-item [ngClass]="{'error-border':!authForm.controls.car.valid && authForm.controls.car.touched}">
-      <ion-label floating> <ion-icon name="car"></ion-icon>Vehicles</ion-label>
+      <ion-label floating> <ion-icon class="reg-icon" name="car"></ion-icon> Vehicles</ion-label>
       <ion-input type="text" formControlName="car" [(ngModel)]="car" #vehicle></ion-input>
     </ion-item>
     <ion-item *ngIf="authForm.controls.car.hasError('pattern') && authForm.controls.car.touched">
@@ -114,7 +120,7 @@
         <p>Sorry, minimum Total vehicles length is 8!</p>
     </ion-item>
     <ion-item>
-      <ion-label stacked>Phone Number</ion-label>
+      <ion-label stacked> <ion-icon class="reg-icon" name="call"></ion-icon>Phone Number</ion-label>
       <ion-input type="number" formControlName="phoneNumber" [(ngModel)]="phoneNumber" #phone></ion-input>
     </ion-item>
     <div id="recaptcha-container"></div>

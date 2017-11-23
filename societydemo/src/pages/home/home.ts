@@ -1,7 +1,7 @@
 import { HelpdeskPage } from './../helpdesk/helpdesk';
 
 import { Component } from '@angular/core';
-import { NavController,NavParams } from 'ionic-angular';
+import { NavController, NavParams, IonicPage } from 'ionic-angular';
 import{ AlertController } from 'ionic-angular';
 
 // Angular Material
@@ -20,8 +20,7 @@ import { EventlistPage } from './../eventlist/eventlist';
 
 
 
-
-
+@IonicPage()
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'

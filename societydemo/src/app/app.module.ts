@@ -1,5 +1,4 @@
-import { BalancesheetPage } from './../pages/balancesheet/balancesheet';
-import { ViewbillPage } from './../pages/viewbill/viewbill';
+
 
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { BrowserModule } from '@angular/platform-browser';
@@ -18,6 +17,7 @@ import { Camera } from '@ionic-native/camera';
 import { Transfer } from '@ionic-native/transfer';
 import { Printer } from '@ionic-native/printer';
 import { HttpModule } from '@angular/http';
+import {SMS} from '@ionic-native/sms';
 // Angular Material
 import {  MatToolbarModule, MatSidenavModule, MatButtonModule, MatChipsModule, MatListModule, MatInputModule } from '@angular/material';
 
@@ -83,6 +83,9 @@ import { ForumviewquestionPage } from '../pages/forumviewquestion/forumviewquest
 import { HelpdeskPage } from '../pages/helpdesk/helpdesk';
 import { ForumquestionPage } from '../pages/forumquestion/forumquestion';
 import { AddServiceCategoryAdminPage } from '../pages/add-service-category-admin/add-service-category-admin';
+import { ProfileProvider } from '../providers/profile/profile';
+import { BalancesheetPage } from './../pages/balancesheet/balancesheet';
+import { ViewbillPage } from './../pages/viewbill/viewbill';
 
 
 
@@ -258,7 +261,9 @@ var config = {
     FilePath,
     RemoteServiceProvider,
     InAppBrowser,
-    Printer
+    Printer,
+    ProfileProvider,
+    SMS
 
   ]
 })

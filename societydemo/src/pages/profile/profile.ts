@@ -1,11 +1,10 @@
-import { LoginPage } from './../login/login';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { AngularFireAuth } from 'angularfire2/auth';
-import { Profile } from '../../models/Profile';
+// import { Profile } from '../../models/Profile';
 
 /**
  * Generated class for the ProfilePage page.
@@ -85,5 +84,6 @@ ngOnInit(){
       alert(status);
     }
   }
+
 
 }
