@@ -15,8 +15,14 @@
 <ion-content padding class="bg-masters">
 
     <form [formGroup]="authForm">
+        <ion-item class="profile-item">
+            <div class="big-profile-picture">
+              <img src="../assets/society.jpg">
+              <!-- <img src="../assets/sign up.png"> -->
+            </div>
+          </ion-item>
         <ion-item [ngClass]="{'error-border':!authForm.controls.usernm.valid && authForm.controls.usernm.touched}">
-            <ion-label floating><ion-icon name="mail"></ion-icon> Email ID</ion-label>
+            <ion-label floating><ion-icon  class="reg-icon" name="mail"></ion-icon> Email ID</ion-label>
             <ion-input formControlName="usernm" type="email" [(ngModel)]="usernm" #email></ion-input>
         </ion-item>
 
@@ -32,7 +38,7 @@
         </ion-item>
 
         <ion-item [ngClass]="{'error-border':!authForm.controls.password.valid && authForm.controls.password.touched}">
-            <ion-label floating><ion-icon name="contact"></ion-icon> Password</ion-label>
+            <ion-label floating><ion-icon  class="reg-icon" name="contact"></ion-icon> Password</ion-label>
             <ion-input formControlName="password" type="password" [(ngModel)]="pwd" #password></ion-input>
         </ion-item>
         <ion-item *ngIf="authForm.controls.password.hasError('required') && authForm.controls.password.touched">

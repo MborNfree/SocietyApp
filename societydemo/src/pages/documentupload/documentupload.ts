@@ -8,7 +8,7 @@ import { Camera } from '@ionic-native/camera';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { Http } from '@angular/http';
 import { BehaviorSubject } from 'rxjs';
-import * as firebase from 'firebase';
+// import * as firebase from 'firebase';
 
 /**
  * Generated class for the DocumentuploadPage page.
@@ -74,7 +74,7 @@ export class DocumentuploadPage {
 
   ngOnInit() {
     // Let's load our data here
-    this.loadData();
+    //this.loadData();
      }
      ionViewDidLoad() {
       console.log('ionViewDidLoad DocumentuploadPage');

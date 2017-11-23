@@ -6,6 +6,7 @@ import { RegisterPage } from '../register/register';
 import { ForgotpasswordPage } from '../forgotpassword/forgotpassword';
 import { AngularFireAuth } from 'angularfire2/auth';
 // import { Router } from '@angular/router';
+import { AngularFireDatabase } from 'angularfire2/database';
 
 /**
  * Generated class for the LoginPage page.
@@ -26,7 +27,7 @@ export class LoginPage {
   @ViewChild('password') password;
   @ViewChild('email') email;
 
-  constructor(private alertCtrl: AlertController,private fire:AngularFireAuth,public navCtrl: NavController, public navParams: NavParams,public formBuilder: FormBuilder) {
+  constructor(private alertCtrl: AlertController,private fdb: AngularFireDatabase,private fire:AngularFireAuth,public navCtrl: NavController, public navParams: NavParams,public formBuilder: FormBuilder) {
 
     this.email = window.localStorage.getItem('usernm');
     this.password = window.localStorage.getItem('password');
@@ -42,23 +43,23 @@ export class LoginPage {
     console.log('ionViewDidLoad LoginPage');
   }
 
-  onSubmit(value: any): void {
-    if(this.authForm.valid) {
-        window.localStorage.setItem('username', value.usernm);
-        window.localStorage.setItem('password', value.password);
+  // onSubmit(value: any): void {
+  //   if(this.authForm.valid) {
+  //       window.localStorage.setItem('username', value.usernm);
+  //       window.localStorage.setItem('password', value.password);
 
-        if (value.usernm != '' && value.password != '' && value.usernm != 'null'   && value.password != 'null' ) {
-          this.navCtrl.push(HomePage);
-        }
-        // else if (value.usernm === 'admin@mail.com' && value.password === 'admin') {
-        //   this.router.navigate(['pages/dashboard']);
-        //   console.log('Success Login');
-        // }
-         else {
-          console.log('Error Login');
-        }
-    }
-  }
+  //       if (value.usernm != '' && value.password != '' && value.usernm != 'null'   && value.password != 'null' ) {
+  //         this.navCtrl.push(HomePage);
+  //       }
+  //       // else if (value.usernm === 'admin@mail.com' && value.password === 'admin') {
+  //       //   this.router.navigate(['pages/dashboard']);
+  //       //   console.log('Success Login');
+  //       // }
+  //        else {
+  //         console.log('Error Login');
+  //       }
+  //   }
+  // }
 
   alert(message: string) {
     this.alertCtrl.create({
@@ -72,7 +73,11 @@ export class LoginPage {
     // alert(this.email.value);
     this.fire.auth.signInWithEmailAndPassword(this.email.value, this.password.value)
     .then( data => {
-     // console.log('got some data', this.fire.auth.currentUser);
+      console.log('got some data', this.fire.auth.currentUser);
+      let status= this.fdb.list('users', ref => ref.orderByChild('ID').equalTo('ID'));
+      console.log('Success! You\'re logged in');
+      console.log(status);
+      //this.alert('Success! You\'re logged in'+status);
       this.alert('Success! You\'re logged in');
       this.navCtrl.push( HomePage );
       // user is logged in

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 import { AngularFireDatabase } from 'angularfire2/database';
 // import { ActivatedRoute } from '@angular/router';
 // import { AngularFireListObservable } from 'angularfire2';
@@ -19,7 +19,7 @@ import { AngularFireDatabase } from 'angularfire2/database';
 export class ResidentProfileAdminPage {
   users: {}[];
   // book: AngularFireListObservable<any>;
-  constructor(public navCtrl: NavController, public navParams: NavParams, private fdb: AngularFireDatabase) {
+  constructor(public modalCtrl: ModalController,public navCtrl: NavController, public navParams: NavParams, private fdb: AngularFireDatabase) {
     this.fdb.list("/users/").valueChanges().subscribe(_data => {
       this.users = _data;
      console.log(this.users);
@@ -29,9 +29,14 @@ export class ResidentProfileAdminPage {
     //   this.book = fdb.object(params['email']);
     // });
   }
-
+  sendSms() {
+    var data = { message : 'hello world' };
+    var modalPage = this.modalCtrl.create('SendSmsModalPage',data);
+    modalPage.present();
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad ResidentProfileAdminPage');
   }
+
 
 }
