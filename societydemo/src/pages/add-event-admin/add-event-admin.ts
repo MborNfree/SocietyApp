@@ -105,7 +105,7 @@ export class AddEventAdminPage {
       this.fdb.list("/events/").push({'event_name':this.event_name.value,'event_date':this.event_date.value,'event_desc':this.event_desc.value,'ID':this.event_owner.value,'event_type':this.event_type.value});
         //  console.log('got data ', data);
 
-      this.alert('Registered!');
+      this.alert('events added Successfully');
       this.navCtrl.push(EventListAdminPage);
       alert('added');
 
