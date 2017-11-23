@@ -1,9 +1,10 @@
 
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { IonicPage, NavController, NavParams,AlertController } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { FileSelectDirective, FileDropDirective, FileUploader } from 'ng2-file-upload/ng2-file-upload';
-
+import { AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireList } from 'angularfire2/database';
 import { CircularListAdminPage } from './../circular-list-admin/circular-list-admin';
 /**
  * Generated class for the AddCircularAdminPage page.
@@ -20,12 +21,17 @@ import { CircularListAdminPage } from './../circular-list-admin/circular-list-ad
 
 export class AddCircularAdminPage {
 
+  users: AngularFireList<any>;
   authForm: FormGroup;
   Circularnm:string;
   cfile:string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public formBuilder: FormBuilder) {
 
+   @ViewChild('cirnm') circular_name;
+   @ViewChild('cirpath') circular_path;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams,public formBuilder: FormBuilder,private fdb: AngularFireDatabase,private alertCtrl: AlertController) {
+    this.users = fdb.list('/documents');
     this.authForm = formBuilder.group({
       Circularnm: ['', Validators.compose([Validators.required, Validators.pattern('[a-zA-Z]*'), Validators.minLength(4), Validators.maxLength(30)])],
        cfile: ['', Validators.compose([Validators.required])]
@@ -33,13 +39,27 @@ export class AddCircularAdminPage {
      });
   }
 
+  alert(message: string) {
+    this.alertCtrl.create({
+      title: 'Add!',
+      subTitle: message,
+      buttons: ['OK']
+    }).present();
+  }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad AddCircularAdminPage');
   }
 
   onSubmit(value: any): void {
-    alert('added');
-  this.navCtrl.push(CircularListAdminPage);
+
+       alert('nm'+this.circular_name.value);
+     this.fdb.list("/documents/").push({'doc_name':this.circular_name.value,'path':this.circular_path.value,});
+   this.alert('Circulars added Successfully');
+      this.navCtrl.push(CircularListAdminPage);
+      alert('added');
+
+      this.navCtrl.push(CircularListAdminPage);
 
 }
 }

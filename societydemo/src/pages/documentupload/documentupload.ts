@@ -74,7 +74,7 @@ export class DocumentuploadPage {
 
   ngOnInit() {
     // Let's load our data here
-    this.loadData();
+    // this.loadData();
      }
      ionViewDidLoad() {
       console.log('ionViewDidLoad DocumentuploadPage');
