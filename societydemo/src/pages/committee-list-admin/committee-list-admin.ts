@@ -42,7 +42,9 @@ export class CommitteeListAdminPage {
   memberprofile(){
     this.navCtrl.push(CommitteeProfileAdminPage);
   }
-  viewItem(){
-    this.navCtrl.push(CommitteeProfileAdminPage);
+  viewItem(item){
+    this.navCtrl.push(CommitteeProfileAdminPage, {
+      item: item
+    });
   }
 }

@@ -16,7 +16,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class EventdetailsPage {
 
   showSkip = true;
+
+  public itemsParam;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.itemsParam = navParams.get('item');
   }
 
   ionViewDidLoad() {

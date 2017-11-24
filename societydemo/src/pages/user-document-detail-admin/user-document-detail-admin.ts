@@ -15,7 +15,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class UserDocumentDetailAdminPage {
 
+  public itemsParam;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.itemsParam = navParams.get('item');
   }
 
   ionViewDidLoad() {

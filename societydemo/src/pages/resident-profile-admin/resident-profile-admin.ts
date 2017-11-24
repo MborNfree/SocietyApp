@@ -18,6 +18,7 @@ import { AngularFireDatabase } from 'angularfire2/database';
 })
 export class ResidentProfileAdminPage {
   users: {}[];
+  public itemsParam;
   // book: AngularFireListObservable<any>;
   constructor(public modalCtrl: ModalController,public navCtrl: NavController, public navParams: NavParams, private fdb: AngularFireDatabase) {
     this.fdb.list("/users/").valueChanges().subscribe(_data => {
@@ -25,9 +26,8 @@ export class ResidentProfileAdminPage {
      console.log(this.users);
     });
 
-    // route.params.forEach(params => {
-    //   this.book = fdb.object(params['email']);
-    // });
+    this.itemsParam = navParams.get('item');
+
   }
   sendSms() {
     var data = { message : 'hello world' };

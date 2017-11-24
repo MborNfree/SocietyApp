@@ -14,8 +14,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'committee-member-profile.html',
 })
 export class CommitteeMemberProfilePage {
-
+  public itemsParam;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.itemsParam = navParams.get('item');
   }
 
   ionViewDidLoad() {

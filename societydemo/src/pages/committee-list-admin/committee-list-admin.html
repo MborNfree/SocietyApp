@@ -16,16 +16,10 @@
 </ion-header>
 <ion-content padding class="bg-masters">
 
-    <!-- <ion-list *ngFor="let user of users">
-        <ion-item  (click)="viewItem()">
-            <img src="{{user.icon}}">
-            <p>{{user.name}}</p>
-        </ion-item>
-    </ion-list> -->
 
     <ion-card *ngFor="let item of items">
 
-            <ion-item  (click)="viewItem()">
+            <ion-item  (click)="viewItem(item)">
                 <div class="row">
                 <div class="col">
                   <ion-avatar>
@@ -40,96 +34,5 @@
               </div>
             </ion-item>
       </ion-card>
-    <!-- <ion-card (click)="memberprofile()">
-        <div class="row">
-          <div class="col">
-          <ion-card-header>
-          <ion-item>
-              <ion-avatar>
-                <img src="assets/plumber.jpg"/>
-              </ion-avatar>
-            </ion-item>
-            </ion-card-header>
-            </div>
-            <div class="col">
-            <ion-label >Flat No.  <ion-icon name="home"></ion-icon> 1</ion-label>
-            <ion-label >Sanket Patil</ion-label>
-            <ion-label >Sanket Patil</ion-label>
-            </div>
-            </div>
-      </ion-card>
 
-      <ion-card (click)="memberprofile()">
-          <div class="row">
-              <div class="col">
-          <ion-card-header>
-          <ion-item>
-              <ion-avatar>
-                <img src="assets/plumber.jpg"/>
-              </ion-avatar>
-            </ion-item>
-            </ion-card-header>
-          </div>
-          <div class="col">
-            <ion-label >Flat No.  <ion-icon name="home"></ion-icon> 2</ion-label>
-            <ion-label >Shivani Mali</ion-label>
-            <ion-label >Secretary</ion-label>
-          </div>
-        </div>
-      </ion-card>
-      <ion-card (click)="memberprofile()">
-          <div class="row">
-              <div class="col">
-          <ion-card-header>
-          <ion-item>
-              <ion-avatar>
-                <img src="assets/plumber.jpg"/>
-              </ion-avatar>
-            </ion-item>
-            </ion-card-header>
-            </div>
-            <div class="col">
-              <ion-label >Flat No.  <ion-icon name="home"></ion-icon> 3</ion-label>
-            <ion-label >Mayuri parmar</ion-label>
-            <ion-label >Treasury</ion-label>
-            </div>
-            </div>
-      </ion-card>
-      <ion-card>
-          <div class="row">
-              <div class="col">
-          <ion-card-header>
-          <ion-item>
-              <ion-avatar>
-                <img src="assets/plumber.jpg"/>
-              </ion-avatar>
-            </ion-item>
-            </ion-card-header>
-            </div>
-            <div class="col">
-              <ion-label >Flat No.  <ion-icon name="home"></ion-icon> 4</ion-label>
-            <ion-label>Sachin </ion-label>
-            <ion-label>Chairman</ion-label>
-            </div>
-            </div>
-      </ion-card>
-
-      <ion-card>
-          <div class="row">
-              <div class="col">
-          <ion-card-header>
-          <ion-item>
-              <ion-avatar>
-                <img src="assets/plumber.jpg"/>
-              </ion-avatar>
-            </ion-item>
-            </ion-card-header>
-            </div>
-            <div class="col">
-              <ion-label >Flat No.  <ion-icon name="home"></ion-icon> 5</ion-label>
-            <ion-label >Sachin </ion-label>
-            <ion-label >Sanket Patil</ion-label>
-            </div>
-            </div>
-      </ion-card> -->
 </ion-content>

@@ -38,16 +38,10 @@ this.fdb.list("/users/").valueChanges().subscribe(_data => {
     // ];
   }
 
-// memberprofile()
-// {
-//   this.navCtrl.push(MemberprofilePage);
-// }
-
-
-viewItem(item){
-  alert(item);
+  viewItem(user){
+  //alert(item);
       this.navCtrl.push(MemberprofilePage, {
-        item: item
+        item: user
       });
     }
 

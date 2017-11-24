@@ -18,13 +18,17 @@ import { AngularFireAuth } from 'angularfire2/auth';
   templateUrl: 'memberprofile.html',
 })
 export class MemberprofilePage {
-  projects: any;
+
   users: {}[];
+  public itemsParam;
+
   constructor(public navCtrl: NavController, public navParams: NavParams,private fdb: AngularFireDatabase,private fireAuth: AngularFireAuth) {
+
     this.fdb.list("/users/").valueChanges().subscribe(_data => {
       this.users = _data;
      console.log(this.users);
     });
+    this.itemsParam = navParams.get('item');
 
   }
 

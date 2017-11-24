@@ -9,33 +9,24 @@
   <ion-navbar color="navbar">
     <ion-title>Committee Profile</ion-title>
   </ion-navbar>
-
 </ion-header>
 
-
 <ion-content padding class="bg-masters">
-
-   <ion-list>
-
     <div class="logo">
-      <ion-item align="center">
-         <ion-avatar align="center">
-      <img src="../assets/doctor.jpg" alt="logo">
-     </ion-avatar>
+      <ion-list>
+          <ion-item align="center">
+              <ion-avatar align="center">
+               <img src="../assets/doctor.jpg" alt="logo">
+             </ion-avatar>
+           </ion-item>
+      </ion-list>
 
- </ion-item>
     </div>
-    <!-- </ion-item> -->
-     <ion-label color="primary"> <ion-icon name="person"></ion-icon> Role: President </ion-label>
-      <ion-label color="primary"> <ion-icon name="home"></ion-icon> Flat No. 02</ion-label>
-      <ion-label color="primary"> <ion-icon name="person"></ion-icon> Name: Akshay </ion-label>
-      <ion-label  color="primary"> <ion-icon name="call"></ion-icon> Mob No :987487478 </ion-label>
-      <ion-label color="primary"> <ion-icon name="mail"></ion-icon>  Email:akshay@gmail.com</ion-label>
-      <ion-label color="primary"> Member Role:Secretary</ion-label>
-
-  </ion-list>
-
-
-
-
+    <ion-label align="center"> Name:{{itemsParam.first_name}}</ion-label>
+              <ion-label>Details</ion-label>
+              <ion-label color="primary"> <ion-icon name="home"></ion-icon> Flat No.{{itemsParam.flatno}}</ion-label>
+              <ion-label color="primary"> <ion-icon name="person"></ion-icon> Name: Akshay </ion-label>
+              <ion-label  color="primary"> <ion-icon name="call"></ion-icon> Mob No :{{itemsParam.contact_no}}</ion-label>
+              <ion-label color="primary"> <ion-icon name="mail"></ion-icon>  Email:{{itemsParam.email}}</ion-label>
+              <ion-label color="primary"> Member Role:{{itemsParam.role}}</ion-label>
 </ion-content>

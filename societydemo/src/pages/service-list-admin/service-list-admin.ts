@@ -21,8 +21,8 @@ export class ServiceListAdminPage {
   itemsRef: AngularFireList<any>;
   itemsObject: Observable<any[]>;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private fdb: AngularFireDatabase) {
 
+  constructor(public navCtrl: NavController, public navParams: NavParams, private fdb: AngularFireDatabase) {
     this.fdb.list("/services/").valueChanges().subscribe(_data => {
       this.items = _data;
      console.log(this.items);
@@ -52,9 +52,9 @@ export class ServiceListAdminPage {
     });
   }
 
-  removeService(serviceId: number){
+  removeService(serviceId: any){
 
-    alert(serviceId);
+    alert(JSON.stringify(serviceId));
     //this.itemsRef.remove(serviceId);
        // this.events.remove(events);
         this.fdb.object('/services/' + serviceId).remove();

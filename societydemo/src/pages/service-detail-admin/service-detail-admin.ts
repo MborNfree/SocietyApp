@@ -14,8 +14,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'service-detail-admin.html',
 })
 export class ServiceDetailAdminPage {
+  public itemsParam;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.itemsParam = navParams.get('item');
   }
 
   ionViewDidLoad() {

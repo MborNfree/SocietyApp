@@ -17,11 +17,11 @@ import { AngularFireDatabase } from 'angularfire2/database';
 })
 export class CommitteelistPage {
 
-   public items = [];
+  public users = [];
   constructor(public navCtrl: NavController, public navParams: NavParams, private fdb: AngularFireDatabase) {
      this.fdb.list("/users/").valueChanges().subscribe(_data => {
-      this.items = _data;     
-     console.log(this.items);
+      this.users = _data;
+     console.log(this.users);
     });
   }
 
@@ -37,15 +37,9 @@ export class CommitteelistPage {
 //     ];
   }
 
-//   memberprofile()
-// {
-//   this.navCtrl.push(CommitteeMemberProfilePage);
-
-// }
-
-viewItem(item){
+viewItem(user){
       this.navCtrl.push(MemberprofilePage, {
-        item: item
+        item: user
       });
     }
 

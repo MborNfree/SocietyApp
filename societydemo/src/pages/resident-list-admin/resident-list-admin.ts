@@ -37,7 +37,8 @@ export class ResidentListAdminPage {
   }
 
   viewItem(user:any){
-    alert(user);
-    this.navCtrl.push(ResidentProfileAdminPage);
+    this.navCtrl.push(ResidentProfileAdminPage, {
+      item: user
+    });
   }
 }

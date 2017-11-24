@@ -5,7 +5,7 @@ import { ModalController } from 'ionic-angular';
 
 import { AddAssetsAdminPage } from './../add-assets-admin/add-assets-admin';
 import { AddPropertyAdminPage } from './../add-property-admin/add-property-admin';
-import { SampleModalPage } from '../sample-modal/sample-modal';
+
 /**
  * Generated class for the PropertyListAdminPage page.
  *
@@ -42,17 +42,17 @@ export class PropertyListAdminPage {
   AddAssets(){
     this.navCtrl.push(AddAssetsAdminPage);
   }
-  AddProperty() {
-    // let obj = {userId: '1', name: 'Bob', email: 'bob@unicorn.com'};
-    // let myModal = this.modalCtrl.create(SampleModalPage, obj);
-    // myModal.present();
-    let myModal = this.modalCtrl.create(SampleModalPage);
+  // AddProperty() {
+  //   // let obj = {userId: '1', name: 'Bob', email: 'bob@unicorn.com'};
+  //   // let myModal = this.modalCtrl.create(SampleModalPage, obj);
+  //   // myModal.present();
+  //   let myModal = this.modalCtrl.create(SampleModalPage);
 
-      myModal.onDidDismiss(data => {
-        this.userName = data.userName;
-      });
+  //     myModal.onDidDismiss(data => {
+  //       this.userName = data.userName;
+  //     });
 
-      myModal.present();
-  }
+  //     myModal.present();
+  // }
 
 }

@@ -17,6 +17,7 @@ import { NewsPage } from './../news/news';
 import { ProfilePage } from './../profile/profile';
 import { SocietybillPage } from './../societybill/societybill';
 import { EventlistPage } from './../eventlist/eventlist';
+import { AngularFireAuth } from 'angularfire2/auth';
 
 
 
@@ -31,7 +32,7 @@ export class HomePage {
 username:any;
 sessionUser:any;
 
-  constructor(public navCtrl: NavController,public alertCtrl: AlertController ,public navParams : NavParams) {
+  constructor(public afAuth: AngularFireAuth,public navCtrl: NavController,public alertCtrl: AlertController ,public navParams : NavParams) {
 
     this.username = window.localStorage.getItem('username');
     this.sessionUser =sessionStorage.getItem("username");
@@ -40,7 +41,7 @@ sessionUser:any;
  logout() {
     window.localStorage.removeItem('username');
     window.localStorage.removeItem('password');
-
+    this.afAuth.auth.signOut();
     this.navCtrl.setRoot(LoginPage);
     this.navCtrl.popToRoot();
 }

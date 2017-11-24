@@ -77,7 +77,6 @@ import { AddchargesAdminPage } from '../pages/addcharges-admin/addcharges-admin'
 import { BillchargeListAdminPage } from '../pages/billcharge-list-admin/billcharge-list-admin';
 import { UserDocumentListAdminPage } from '../pages/user-document-list-admin/user-document-list-admin';
 import { UserDocumentDetailAdminPage } from '../pages/user-document-detail-admin/user-document-detail-admin';
-import { SampleModalPage } from './../pages/sample-modal/sample-modal';
 import { RemoteServiceProvider } from '../providers/remote-service/remote-service';
 import { ForumviewquestionPage } from '../pages/forumviewquestion/forumviewquestion';
 import { HelpdeskPage } from '../pages/helpdesk/helpdesk';
@@ -154,7 +153,6 @@ var config = {
     BillchargeListAdminPage,
     UserDocumentListAdminPage,
     UserDocumentDetailAdminPage,
-    SampleModalPage,
     ForumquestionPage,
     HelpdeskPage,
     ForumviewquestionPage,
@@ -240,7 +238,6 @@ var config = {
     BillchargeListAdminPage,
     UserDocumentListAdminPage,
     UserDocumentDetailAdminPage,
-    SampleModalPage,
     ForumquestionPage,
     HelpdeskPage,
     ForumviewquestionPage,

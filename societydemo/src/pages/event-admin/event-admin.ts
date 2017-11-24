@@ -17,7 +17,10 @@ import { EventListAdminPage } from '../event-list-admin/event-list-admin';
 export class EventAdminPage {
   title;
   description;
+
+  public itemsParam;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.itemsParam = navParams.get('item');
   }
 
   ionViewDidLoad() {

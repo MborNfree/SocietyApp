@@ -1,13 +1,13 @@
-import { AddServiceCategoryAdminPage } from './../pages/add-service-category-admin/add-service-category-admin';
-import { ViewbillPage } from './../pages/viewbill/viewbill';
-import { ForumviewquestionPage } from './../pages/forumviewquestion/forumviewquestion';
-import { HelpdeskPage } from './../pages/helpdesk/helpdesk';
-
 
 import { Component,ViewChild } from '@angular/core';
 import { Nav, Platform, MenuController, AlertController} from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
+import { Observable } from 'rxjs/Observable';
+import * as firebase from 'firebase/app';
 
 // Models
 import { MenuOptionModel, SideMenuContentComponent } from '../shared/side-menu-content/side-menu-content.component';
@@ -47,8 +47,11 @@ import { GenerateBillAdminPage } from './../pages/generate-bill-admin/generate-b
 import { BillAdminPage } from './../pages/bill-admin/bill-admin';
 import { FlatwiseServiceListAdminPage } from '../pages/flatwise-service-list-admin/flatwise-service-list-admin';
 import { UserDocumentListAdminPage } from './../pages/user-document-list-admin/user-document-list-admin';
-import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { BalancesheetPage } from '../pages/balancesheet/balancesheet';
+import { AddServiceCategoryAdminPage } from './../pages/add-service-category-admin/add-service-category-admin';
+import { ViewbillPage } from './../pages/viewbill/viewbill';
+import { ForumviewquestionPage } from './../pages/forumviewquestion/forumviewquestion';
+import { HelpdeskPage } from './../pages/helpdesk/helpdesk';
 
 
 
@@ -62,6 +65,11 @@ export class MySocietyApp {
   username:string;
   password:string;
   status:any;
+
+  user: Observable<firebase.User>;
+  items: AngularFireList<any[]>;
+  msgVal: string = '';
+
 
   @ViewChild(Nav) nav: Nav;
 
@@ -89,12 +97,14 @@ export class MySocietyApp {
               public statusBar: StatusBar,
               public splashScreen: SplashScreen,
               private alertCtrl: AlertController,
-              public menuCtrl: MenuController) {
+              public menuCtrl: MenuController,
+              public afAuth: AngularFireAuth, public af: AngularFireDatabase) {
     // platform.ready().then(() => {
     //   // Okay, so the platform is ready and our plugins are available.
     //   // Here you can do any higher level native things you might need.
     //   statusBar.styleDefault();
     //   splashScreen.hide();
+    this.user = this.afAuth.authState;
 
 this.initializeApp();
 
