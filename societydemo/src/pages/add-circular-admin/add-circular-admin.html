@@ -18,7 +18,7 @@
         <ion-list>
             <ion-item [ngClass]="{'error-border':!authForm.controls.Circularnm.valid && authForm.controls.Circularnm.touched}">
                 <ion-label floating>Circular Name</ion-label>
-                <ion-input formControlName="Circularnm" type="text" [(ngModel)]="Circularnm"></ion-input>
+                <ion-input formControlName="Circularnm" type="text" [(ngModel)]="Circularnm" #cirnm></ion-input>
             </ion-item>
             <ion-item *ngIf="authForm.controls.Circularnm.hasError('required') && authForm.controls.Circularnm.touched">
                 <p>Sorry, field username is required!</p>
@@ -30,8 +30,8 @@
                 </ion-item>
             </ion-item>
             <ion-item [ngClass]="{'error-border':!authForm.controls.cfile.valid && authForm.controls.cfile.touched}">
-                <ion-label floating>File</ion-label>
-                <ion-input type="file"></ion-input>
+                <ion-label floating>File </ion-label>
+                <ion-input type="file"  #cirpath></ion-input>
             </ion-item>
             <ion-item *ngIf="authForm.controls.cfile.hasError('required') && authForm.controls.cfile.touched">
                 <p>Sorry, field username is required!</p>
