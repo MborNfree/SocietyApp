@@ -1,3 +1,4 @@
+import { AddEmergencyCategoryAdminPage } from './../pages/add-emergency-category-admin/add-emergency-category-admin';
 
 
 import { InAppBrowser } from '@ionic-native/in-app-browser';
@@ -158,7 +159,8 @@ var config = {
     ForumviewquestionPage,
     ViewbillPage,
     BalancesheetPage,
-    AddServiceCategoryAdminPage
+    AddServiceCategoryAdminPage,
+    AddEmergencyCategoryAdminPage
 
   ],
 
@@ -243,7 +245,8 @@ var config = {
     ForumviewquestionPage,
     ViewbillPage,
     BalancesheetPage,
-    AddServiceCategoryAdminPage
+    AddServiceCategoryAdminPage,
+    AddEmergencyCategoryAdminPage
   ],
 
   providers: [

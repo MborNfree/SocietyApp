@@ -1,3 +1,4 @@
+import { AddEmergencyCategoryAdminPage } from './../pages/add-emergency-category-admin/add-emergency-category-admin';
 
 import { Component,ViewChild } from '@angular/core';
 import { Nav, Platform, MenuController, AlertController} from 'ionic-angular';
@@ -387,6 +388,11 @@ this.initializeApp();
             displayName: 'Flatwise Service',
              component: FlatwiseServiceListAdminPage
           },
+           {
+            iconName: 'albums',
+            displayName: 'Add Emergency Category',
+             component: AddEmergencyCategoryAdminPage
+          }, 
           {
             iconName: 'albums',
             displayName: 'Add Emergency',

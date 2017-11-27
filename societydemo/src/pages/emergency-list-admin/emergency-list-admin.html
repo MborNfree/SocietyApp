@@ -19,16 +19,16 @@
 <ion-content padding class="bg-masters">
 
     <ion-list>
-        <ion-item  *ngFor="let d of diseases; let i=index" text-wrap (click)="toggleGroup(i)" [ngClass]="{active: isGroupShown(i)}">
+        <ion-item  *ngFor="let c of contacts; let i=index" text-wrap (click)="toggleGroup(i)" [ngClass]="{active: isGroupShown(i)}">
           <h3>
-            {{d.title}}
+            {{c.E_type}}
             <ion-icon color="success" item-right [name]="isGroupShown(i) ? 'arrow-dropdown' : 'arrow-dropright'" ></ion-icon>
           </h3>
-          <div *ngIf="isGroupShown(i)" (click)="launchDialer()"><ion-icon name="call"></ion-icon> {{d.description}}</div>
+          <div *ngIf="isGroupShown(i)" (click)="launchDialer(c.E_number)"><ion-icon name="call"></ion-icon> {{c.E_number}}</div>
           <h4>
-          <div *ngIf="isGroupShown(i)"  class="desc"><ion-icon name="tablet-portrait"></ion-icon>  {{d.MobileNo}}</div>
+          <div *ngIf="isGroupShown(i)"  ><ion-icon name="mail-open"></ion-icon>{{c.E_email}}</div>
           </h4>
-         <div *ngIf="isGroupShown(i)"> <ion-icon name="print"></ion-icon>   {{d.Fax}}</div>
+         <div *ngIf="isGroupShown(i)"> <ion-icon name="globe"></ion-icon>   {{c.E_web}}</div>
 
         </ion-item>
       </ion-list>

@@ -1,6 +1,7 @@
 import { Component} from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { EventdetailsPage } from '../eventdetails/eventdetails';
+import { AngularFireList, AngularFireDatabase } from 'angularfire2/database';
 import { CallNumber } from '@ionic-native/call-number';
 
 /**
@@ -18,13 +19,17 @@ import { CallNumber } from '@ionic-native/call-number';
 
 export class EmergencycontactlistPage {
 
+  contacts=[];
+  arrData = [];
+ public items = [];
   shownGroup = null;
   diseases = [
-    { title: "Mumbai Police", description: "Tel:+91 22 22620825",MobileNo:"Mob No:+91 78777445788",Fax:"Fax :+ 914565645"},
+    { title: "Mumbai Police", description: "+91 22 22620825",MobileNo:"Mob No:+91 78777445788",Fax:"Fax :+ 914565645"},
     { title: "Ambulance", description: "Tel:+011 3941676",MobileNo:"Mob No: +91 78777445788",Fax:"Fax:+91 225447" },
     { title: "Fire Brigade", description: "Tel:+011 3578771441", MobileNo:"Mob No:+91 78777445788", Fax:"Fax:+91 225447"},
   ];
-
+ 
+  
   toggleGroup(group) {
     if (this.isGroupShown(group)) {
         this.shownGroup = null;
@@ -33,10 +38,14 @@ export class EmergencycontactlistPage {
     }
 };
 isGroupShown(group) {
-    return this.shownGroup === group;
+    return this.shownGroup ===  group;
 };
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private callNumber: CallNumber) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private callNumber: CallNumber, private fdb: AngularFireDatabase) {
+     this.fdb.list("/emerg_contact/").valueChanges().subscribe(_data => {
+      this.contacts = _data;
+     console.log(this.contacts);
+    });
   }
 
 
