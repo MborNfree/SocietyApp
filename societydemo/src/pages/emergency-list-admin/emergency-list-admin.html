@@ -26,7 +26,7 @@
           </h3>
           <div *ngIf="isGroupShown(i)" (click)="launchDialer(c.E_number)"><ion-icon name="call"></ion-icon> {{c.E_number}}</div>
           <h4>
-          <div *ngIf="isGroupShown(i)"  ><ion-icon name="mail-open"></ion-icon>{{c.E_email}}</div>
+          <div *ngIf="isGroupShown(i)" (click)="sendemail(c.E_email)"><ion-icon name="mail-open"></ion-icon>{{c.E_email}}</div>
           </h4>
          <div *ngIf="isGroupShown(i)"> <ion-icon name="globe"></ion-icon>   {{c.E_web}}</div>
 

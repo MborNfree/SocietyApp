@@ -1,3 +1,4 @@
+import { EmailComposer } from '@ionic-native/email-composer';
 import { AddEmergencyCategoryAdminPage } from './../pages/add-emergency-category-admin/add-emergency-category-admin';
 
 
@@ -263,7 +264,8 @@ var config = {
     InAppBrowser,
     Printer,
     ProfileProvider,
-    SMS
+    SMS,
+    EmailComposer
 
   ]
 })
