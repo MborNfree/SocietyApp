@@ -18,29 +18,23 @@ import { AngularFireDatabase } from 'angularfire2/database';
 export class CommitteelistPage {
 
   public users = [];
+  public items = [];
   constructor(public navCtrl: NavController, public navParams: NavParams, private fdb: AngularFireDatabase) {
-     this.fdb.list("/users/").valueChanges().subscribe(_data => {
-      this.users = _data;
-     console.log(this.users);
+
+    this.fdb.list("/users/").valueChanges().subscribe(_data => {
+      this.items = _data;
+     console.log(this.items);
     });
+
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CommitteelistPage');
-// this.items=[
-//       {name: 'Akshay', phoneno: '9874587896'},
-//       {name: 'Sanket Patil', phoneno: '8521478965'},
-//       {name: 'Shivani Mali', phoneno: '9645875412'},
-//       {name: 'Mayuri parmar', phoneno: '7854879454'},
-//       {name: 'Pooja ', phoneno: '7854125632'},
-//       {name: 'Sania Mirza', phoneno: '9654787784'},
-//     ];
   }
-
-viewItem(user){
-      this.navCtrl.push(MemberprofilePage, {
-        item: user
-      });
-    }
+      viewItem(item){
+        this.navCtrl.push(MemberprofilePage, {
+          item: item
+        });
+      }
 
 }

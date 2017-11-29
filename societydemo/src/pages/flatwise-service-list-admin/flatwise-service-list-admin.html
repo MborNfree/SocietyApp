@@ -16,11 +16,11 @@
 <ion-content padding class="bg-masters">
     <ion-list *ngFor="let item of items">
         <ion-item>
-            <p>Name:{{item.Name}}</p>
-            <p>Flat:{{item.Flat}}</p>
-            <p>Number:{{item.Number}}</p>
-            <p>Servce Type:{{item.Service}}</p>
-            <button ion-button (click)="deleteFlatService()" class="button">Delete</button>
+            <p>Name:{{item.flatServiceName}}</p>
+            <p>Flat:{{item.flatServiceNo}}</p>
+            <p>Number:{{item.flatServiceCntNo}}</p>
+            <p>Servce Type:{{item.flatServiceType}}</p>
+            <button ion-button (click)="deleteFlatService(item.flatServiceId)" class="button">Delete</button>
             <button ion-button (click)="EditFlatService()" class="button">Edit</button>
         </ion-item>
 

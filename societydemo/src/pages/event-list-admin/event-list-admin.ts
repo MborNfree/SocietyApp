@@ -59,7 +59,7 @@ export class EventListAdminPage {
         },{
           text: 'Update title',
           handler: () => {
-            this.updateEvent(EventId, EventTitle);
+            this.updateEvent(Event);
           }
         },{
           text: 'Cancel',
@@ -83,9 +83,10 @@ export class EventListAdminPage {
    // this.events.remove(events);
     //this.fdb.object('/events/'+ eventId).remove();
   }
-  updateEvent(EventId, EventTitle){
-    this.fdb.object('/events/' + EventId)
-    .update({ event_name: EventTitle});
+  updateEvent(Event:any){
+    console.log(Event);
+    this.fdb.object('/events/' + Event.EventId)
+    .update({ event_name: Event.EventTitle});
     // let prompt = this.alertCtrl.create({
     //   title: 'Song Name',
     //   message: "Update the name for this song",

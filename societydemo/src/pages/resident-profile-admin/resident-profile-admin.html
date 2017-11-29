@@ -15,32 +15,18 @@
 
 
 <ion-content padding class="bg-masters">
+  <div class="logo">
+      <ion-avatar align="center">
+         <img src="../assets/doctor.jpg" alt="logo" >
+     </ion-avatar>
+  </div>
+  <ion-card>
+    <ion-label align="center"> Name:{{itemsParam1.first_name}}</ion-label>
+    <ion-label>Details</ion-label>
+    <ion-label color="primary"> <ion-icon name="mail"></ion-icon> <p text-wrap>{{itemsParam1.email}}</p></ion-label>
+    <ion-label color="primary"> <ion-icon name="person"></ion-icon> <p text-wrap>{{itemsParam1.username}}</p></ion-label>
+    <ion-label  color="primary"> <ion-icon name="call" (click)='sendSms()'></ion-icon><p text-wrap (click)= sendSms(itemsParam1.contact_no) >{{itemsParam1.contact_no}}</p></ion-label>
+    <ion-label color="primary"> <ion-icon name="home"></ion-icon> <p text-wrap>{{itemsParam1.flatno}}</p></ion-label>
+  </ion-card>
 
-
-    <ion-label align="center"> Name:{{itemsParam.first_name}}</ion-label>
-
-      <ion-label>Details</ion-label>
-      <p text-wrap>{{itemsParam.email}}</p>
-      <p text-wrap>{{itemsParam.username}}</p>
-      <p text-wrap>{{itemsParam.contact_no}}</p>
-      <p text-wrap>{{itemsParam.flatno}}</p>
-
-    <ion-list>
-
-            <div class="logo">
-              <ion-item>
-                 <ion-avatar align="center">
-              <img src="../assets/doctor.jpg" alt="logo" >
-             </ion-avatar>
-
-         </ion-item>
-            </div>
-            <!-- </ion-item> -->
-              <ion-label color="primary"> <ion-icon name="home"></ion-icon> Flat No. 02</ion-label>
-              <ion-label color="primary"> <ion-icon name="person"></ion-icon> Name: Akshay </ion-label>
-              <ion-label  color="primary"> <ion-icon name="call" (click)='sendSms()'></ion-icon> Mob No :987487478 </ion-label>
-              <ion-label color="primary"> <ion-icon name="mail"></ion-icon>  Email:akshay@gmail.com</ion-label>
-              <ion-label color="primary"> Member Role:Secretary</ion-label>
-
-          </ion-list>
 </ion-content>

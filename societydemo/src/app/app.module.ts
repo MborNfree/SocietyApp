@@ -8,7 +8,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
-import{ AngularFireAuthModule} from 'angularfire2/auth';
+import { AngularFireAuthModule} from 'angularfire2/auth';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { EmojiProvider } from '../providers/emoji';
 import { FilePath } from '@ionic-native/file-path';
@@ -18,6 +18,11 @@ import { Transfer } from '@ionic-native/transfer';
 import { Printer } from '@ionic-native/printer';
 import { HttpModule } from '@angular/http';
 import {SMS} from '@ionic-native/sms';
+import { Stripe } from '@ionic-native/stripe';
+import {  FormsModule,ReactiveFormsModule } from '@angular/forms';
+
+
+
 // Angular Material
 import {  MatToolbarModule, MatSidenavModule, MatButtonModule, MatChipsModule, MatListModule, MatInputModule } from '@angular/material';
 
@@ -85,7 +90,9 @@ import { AddServiceCategoryAdminPage } from '../pages/add-service-category-admin
 import { ProfileProvider } from '../providers/profile/profile';
 import { BalancesheetPage } from './../pages/balancesheet/balancesheet';
 import { ViewbillPage } from './../pages/viewbill/viewbill';
-
+import { Card } from '../pages/card/card';
+import { AddNormsPage } from '../pages/add-norms/add-norms';
+import { RuleListAdminPage } from '../pages/rule-list-admin/rule-list-admin';
 
 
 var config = {
@@ -158,7 +165,10 @@ var config = {
     ForumviewquestionPage,
     ViewbillPage,
     BalancesheetPage,
-    AddServiceCategoryAdminPage
+    AddServiceCategoryAdminPage,
+    Card,
+    AddNormsPage,
+    RuleListAdminPage,
 
   ],
 
@@ -166,6 +176,8 @@ var config = {
     HttpModule,
     BrowserModule,
     NgDatepickerModule,
+    FormsModule,
+    ReactiveFormsModule,
     IonicModule.forRoot(MySocietyApp),
     AngularFireModule.initializeApp(config),
     AngularFireDatabaseModule,
@@ -176,7 +188,8 @@ var config = {
     MatSidenavModule,
     MatButtonModule,
     MatChipsModule,
-    Ng2SmartTableModule
+    Ng2SmartTableModule,
+    //RouterModule.forRoot(appRoutes)
   ],
     bootstrap: [IonicApp],
   entryComponents: [
@@ -243,7 +256,10 @@ var config = {
     ForumviewquestionPage,
     ViewbillPage,
     BalancesheetPage,
-    AddServiceCategoryAdminPage
+    AddServiceCategoryAdminPage,
+    Card,
+    AddNormsPage,
+    RuleListAdminPage
   ],
 
   providers: [
@@ -260,7 +276,8 @@ var config = {
     InAppBrowser,
     Printer,
     ProfileProvider,
-    SMS
+    SMS,
+    Stripe
 
   ]
 })

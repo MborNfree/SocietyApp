@@ -5,12 +5,10 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
   <ion-navbar color="navbar">
     <ion-title>Committee Profile</ion-title>
   </ion-navbar>
 </ion-header>
-
 <ion-content padding class="bg-masters">
     <div class="logo">
       <ion-list>
@@ -20,13 +18,16 @@
              </ion-avatar>
            </ion-item>
       </ion-list>
-
     </div>
-    <ion-label align="center"> Name:{{itemsParam.first_name}}</ion-label>
-              <ion-label>Details</ion-label>
-              <ion-label color="primary"> <ion-icon name="home"></ion-icon> Flat No.{{itemsParam.flatno}}</ion-label>
-              <ion-label color="primary"> <ion-icon name="person"></ion-icon> Name: Akshay </ion-label>
-              <ion-label  color="primary"> <ion-icon name="call"></ion-icon> Mob No :{{itemsParam.contact_no}}</ion-label>
-              <ion-label color="primary"> <ion-icon name="mail"></ion-icon>  Email:{{itemsParam.email}}</ion-label>
-              <ion-label color="primary"> Member Role:{{itemsParam.role}}</ion-label>
-</ion-content>
+    <ion-card>
+      <ion-label align="center"> Name:{{itemsParam.first_name}}</ion-label>
+      <ion-label>Details</ion-label>
+        <ion-label color="primary"> <ion-icon name="home"></ion-icon> Flat No.{{itemsParam.flatno}}</ion-label>
+        <ion-label color="primary"> <ion-icon name="person"></ion-icon> Name: Akshay </ion-label>
+        <ion-label  color="primary"> <ion-icon name="call"></ion-icon> Mob No :{{itemsParam.contact_no}}</ion-label>
+        <ion-label color="primary"> <ion-icon name="mail"></ion-icon>  Email:{{itemsParam.email}}</ion-label>
+        <ion-label color="primary"> Member Role:{{itemsParam.role}}</ion-label>
+
+    </ion-card>
+
+  </ion-content>

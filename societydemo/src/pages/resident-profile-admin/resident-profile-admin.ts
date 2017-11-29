@@ -18,18 +18,18 @@ import { AngularFireDatabase } from 'angularfire2/database';
 })
 export class ResidentProfileAdminPage {
   users: {}[];
-  public itemsParam;
-  // book: AngularFireListObservable<any>;
+  public itemsParam1;
   constructor(public modalCtrl: ModalController,public navCtrl: NavController, public navParams: NavParams, private fdb: AngularFireDatabase) {
+
     this.fdb.list("/users/").valueChanges().subscribe(_data => {
       this.users = _data;
      console.log(this.users);
     });
 
-    this.itemsParam = navParams.get('item');
+    this.itemsParam1 = navParams.get('item');
 
   }
-  sendSms() {
+  sendSms(cnt:number) {
     var data = { message : 'hello world' };
     var modalPage = this.modalCtrl.create('SendSmsModalPage',data);
     modalPage.present();

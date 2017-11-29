@@ -19,7 +19,8 @@ export class ResidentlistPage {
 
   public users = [];
   constructor(public navCtrl: NavController, public navParams: NavParams, private fdb: AngularFireDatabase) {
-this.fdb.list("/users/").valueChanges().subscribe(_data => {
+
+    this.fdb.list("/users/").valueChanges().subscribe(_data => {
       this.users = _data;
      console.log(this.users);
     });
@@ -28,14 +29,7 @@ this.fdb.list("/users/").valueChanges().subscribe(_data => {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ResidentlistPage');
-    //  this.items=[
-    //   {name: 'Akshay', phoneno: '9874587896'},
-    //   {name: 'Sanket Patil', phoneno: '8521478965'},
-    //   {name: 'Shivani Mali', phoneno: '9645875412'},
-    //   {name: 'Mayuri parmar', phoneno: '7854879454'},
-    //   {name: 'Pooja ', phoneno: '7854125632'},
-    //   {name: 'Sania Mirza', phoneno: '9654787784'},
-    // ];
+
   }
 
   viewItem(user){

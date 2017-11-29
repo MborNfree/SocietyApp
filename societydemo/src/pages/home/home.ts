@@ -1,12 +1,11 @@
 import { HelpdeskPage } from './../helpdesk/helpdesk';
-
 import { Component } from '@angular/core';
 import { NavController, NavParams, IonicPage } from 'ionic-angular';
 import{ AlertController } from 'ionic-angular';
+import { AngularFireAuth } from 'angularfire2/auth';
 
 // Angular Material
 import {  MatToolbarModule, MatSidenavModule, MatButtonModule, MatChipsModule, MatListModule, MatInputModule } from '@angular/material';
-
 
 import { LoginPage } from './../login/login';
 import { CommitteelistPage } from './../committeelist/committeelist';
@@ -17,8 +16,7 @@ import { NewsPage } from './../news/news';
 import { ProfilePage } from './../profile/profile';
 import { SocietybillPage } from './../societybill/societybill';
 import { EventlistPage } from './../eventlist/eventlist';
-import { AngularFireAuth } from 'angularfire2/auth';
-
+import { Card } from '../card/card';
 
 
 @IonicPage()
@@ -31,19 +29,25 @@ export class HomePage {
 
 username:any;
 sessionUser:any;
+public uIDParam;
 
   constructor(public afAuth: AngularFireAuth,public navCtrl: NavController,public alertCtrl: AlertController ,public navParams : NavParams) {
 
     this.username = window.localStorage.getItem('username');
-    this.sessionUser =sessionStorage.getItem("username");
-
+    this.sessionUser =sessionStorage.getItem("Sessionuid");
+    this.uIDParam = navParams.get('uid');
   }
  logout() {
-    window.localStorage.removeItem('username');
-    window.localStorage.removeItem('password');
+
+  window.localStorage.removeItem('username');
+  window.localStorage.removeItem('Sessionuid');
     this.afAuth.auth.signOut();
     this.navCtrl.setRoot(LoginPage);
     this.navCtrl.popToRoot();
+}
+
+carddetails() {
+  this.navCtrl.push(Card);
 }
   shownews()
   {

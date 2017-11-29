@@ -14,7 +14,6 @@ import {Observer} from "rxjs";
 })
 export class ResidentListAdminPage {
   public users = [];
-  // books:AngularFireListObservable<any>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private fdb: AngularFireDatabase) {
 
@@ -23,17 +22,11 @@ export class ResidentListAdminPage {
      console.log(this.users);
     });
 
-    // this.route.data.forEach((data: {books: AngularFireListObservable<any>}) => this.books = data.books);
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ResidentListAdminPage');
-    // this.users = [
-    //   {name: 'Sanket Patil', icon:'assets/plumber.jpg',flat:'1'},
-    //   {name: 'Shivani Mali', icon:'assets/plumber.jpg',flat:'2'},
-    //   {name: 'Mayuri parmar', icon:'assets/plumber.jpg',flat:'3'},
-    //   {name: 'Sachin ', icon:'assets/plumber.jpg',flat:'4'}
-    // ];
+
   }
 
   viewItem(user:any){

@@ -1,0 +1,37 @@
+<!--
+  Generated template for the AddNormsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar  color="navbar">
+    <button ion-button icon-only menuToggle start>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title align="center">add-norms</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding class="bg-masters">
+    <form [formGroup]="authForm" (ngSubmit)="onSubmit(authForm.value)">
+        <ion-item [ngClass]="{'error-border':!authForm.controls.rulenm.valid && authForm.controls.rulenm.touched}">
+            <ion-label floating>Rule</ion-label>
+            <ion-input formControlName="rulenm" type="text" [(ngModel)]="rulenm"  #rule></ion-input>
+        </ion-item>
+        <ion-item *ngIf="authForm.controls.rulenm.hasError('required') && authForm.controls.rulenm.touched">
+            <p>Sorry, field username is required!</p>
+        </ion-item>
+        <ion-item *ngIf="authForm.controls.rulenm.hasError('pattern') && authForm.controls.rulenm.touched">
+            <p>Sorry, only small and capital letters are allowed!</p>
+        </ion-item>
+        <ion-item [ngClass]="{'error-border':!authForm.controls.ruletype.valid && authForm.controls.ruletype.touched}">
+            <ion-label floating>Rule Type :</ion-label>
+            <ion-select formControlName="ruletype" #rType>
+                <ion-option value="Do's">Do's</ion-option>
+                <ion-option value="Don't">Don't</ion-option>
+            </ion-select>
+        </ion-item>
+        <button ion-button full color="button" type="submit">Add Rule</button>
+    </form>
+</ion-content>

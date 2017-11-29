@@ -16,14 +16,14 @@
   </ion-navbar>
 </ion-header>
 <ion-content class="bg-masters">
-    <ion-list *ngFor="let item of items">
+    <!-- <ion-list *ngFor="let item of items">
         <ion-item  (click)="viewItem(item)">
             <img src="{{item.icon}}">
             <p>{{item.title}}</p>
         </ion-item>
         <button ion-button (click)="removeEvent()" class="button">Delete</button>
         <button ion-button (click)="updateEvent()" class="button">Edit</button>
-    </ion-list>
+    </ion-list> -->
 
     <ion-list *ngFor="let event of events">
       <ion-item  (click)="viewItem(events)">
@@ -31,6 +31,6 @@
           <p>{{event.event_name}}</p>
       </ion-item>
       <button ion-button (click)="removeEvent(event.E_id)" class="button">Delete</button>
-      <button ion-button (click)="updateEvent(event.E_id,event.event_name)" class="button">Edit</button>
+      <button ion-button (click)="updateEvent(event)" class="button">Edit</button>
    </ion-list>
   </ion-content>

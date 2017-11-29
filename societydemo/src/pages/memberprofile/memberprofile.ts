@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 import { AngularFireDatabase } from 'angularfire2/database';
 import firebase from 'firebase';
 import { Subject } from 'rxjs/Subject';
@@ -18,12 +18,10 @@ import { AngularFireAuth } from 'angularfire2/auth';
   templateUrl: 'memberprofile.html',
 })
 export class MemberprofilePage {
-
   users: {}[];
   public itemsParam;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,private fdb: AngularFireDatabase,private fireAuth: AngularFireAuth) {
-
+  constructor(public modalCtrl: ModalController,public navCtrl: NavController, public navParams: NavParams,private fdb: AngularFireDatabase,private fireAuth: AngularFireAuth) {
     this.fdb.list("/users/").valueChanges().subscribe(_data => {
       this.users = _data;
      console.log(this.users);
@@ -31,7 +29,11 @@ export class MemberprofilePage {
     this.itemsParam = navParams.get('item');
 
   }
-
+  sendSms(cnt:number) {
+    var data = { message : 'hello world' };
+    var modalPage = this.modalCtrl.create('SendSmsModalPage',data);
+    modalPage.present();
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad MemberprofilePage');
   }

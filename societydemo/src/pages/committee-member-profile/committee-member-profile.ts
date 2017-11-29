@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 
 /**
  * Generated class for the CommitteeMemberProfilePage page.
@@ -15,10 +15,15 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class CommitteeMemberProfilePage {
   public itemsParam;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public modalCtrl: ModalController,public navCtrl: NavController, public navParams: NavParams) {
     this.itemsParam = navParams.get('item');
   }
 
+  sendSms(cnt:number) {
+    var data = { message : 'hello world' };
+    var modalPage = this.modalCtrl.create('SendSmsModalPage',data);
+    modalPage.present();
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad CommitteeMemberProfilePage');
   }

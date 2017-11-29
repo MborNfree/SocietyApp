@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
-import { FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {  FormControl,FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { HomePage } from '../home/home';
 import { RegisterPage } from '../register/register';
 import { ForgotpasswordPage } from '../forgotpassword/forgotpassword';
@@ -21,19 +21,18 @@ import { AngularFireDatabase } from 'angularfire2/database';
   templateUrl: 'login.html',
 })
 export class LoginPage {
-  authForm: FormGroup;
+  signinForm: FormGroup;
   currentUserUid:any;
-
+  sessionUser:any;
   @ViewChild('password') password;
   @ViewChild('email') email;
 
   constructor(private alertCtrl: AlertController,private fdb: AngularFireDatabase,private fire:AngularFireAuth,public navCtrl: NavController, public navParams: NavParams,public formBuilder: FormBuilder) {
 
-    this.email = window.localStorage.getItem('usernm');
-    this.password = window.localStorage.getItem('password');
+    // this.email = window.localStorage.getItem('usernm');
+    // this.password = window.localStorage.getItem('password');
 
-    sessionStorage.setItem("Sessionusername", this.email);
-           this.authForm = formBuilder.group({
+           this.signinForm = formBuilder.group({
             usernm: ['', Validators.compose([Validators.required, Validators.minLength(8), Validators.maxLength(30)])],
                password: ['', Validators.compose([Validators.required, Validators.minLength(6)])]
            });
@@ -43,23 +42,7 @@ export class LoginPage {
     console.log('ionViewDidLoad LoginPage');
   }
 
-  // onSubmit(value: any): void {
-  //   if(this.authForm.valid) {
-  //       window.localStorage.setItem('username', value.usernm);
-  //       window.localStorage.setItem('password', value.password);
 
-  //       if (value.usernm != '' && value.password != '' && value.usernm != 'null'   && value.password != 'null' ) {
-  //         this.navCtrl.push(HomePage);
-  //       }
-  //       // else if (value.usernm === 'admin@mail.com' && value.password === 'admin') {
-  //       //   this.router.navigate(['pages/dashboard']);
-  //       //   console.log('Success Login');
-  //       // }
-  //        else {
-  //         console.log('Error Login');
-  //       }
-  //   }
-  // }
 
   alert(message: string) {
     this.alertCtrl.create({
@@ -70,16 +53,19 @@ export class LoginPage {
   }
 
   signInUser() {
-    // alert(this.email.value);
+
     this.fire.auth.signInWithEmailAndPassword(this.email.value, this.password.value)
     .then( data => {
-      console.log('got some data', this.fire.auth.currentUser);
+     this.currentUserUid =JSON.stringify(data.uid);
+     sessionStorage.setItem("Sessionuid", this.currentUserUid);
       let status= this.fdb.list('users', ref => ref.orderByChild('ID').equalTo('ID'));
       console.log('Success! You\'re logged in');
-      console.log(status);
-      //this.alert('Success! You\'re logged in'+status);
+     console.log(status);
+
       this.alert('Success! You\'re logged in');
-      this.navCtrl.push( HomePage );
+      this.navCtrl.push( HomePage , {
+        uid: this.currentUserUid
+      });
       // user is logged in
     })
     .catch( error => {

@@ -1,3 +1,4 @@
+import { AddNormsPage } from './../pages/add-norms/add-norms';
 
 import { Component,ViewChild } from '@angular/core';
 import { Nav, Platform, MenuController, AlertController} from 'ionic-angular';
@@ -7,6 +8,8 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
+// Import router
+// import { Router } from '@angular/router';
 import * as firebase from 'firebase/app';
 
 // Models
@@ -58,7 +61,7 @@ import { HelpdeskPage } from './../pages/helpdesk/helpdesk';
 @Component({
   templateUrl: 'app.html'
 })
-export class MySocietyApp {
+export class MySocietyApp  {
 
   rootPage: any = LoginPage;
   activePage:any;
@@ -98,7 +101,7 @@ export class MySocietyApp {
               public splashScreen: SplashScreen,
               private alertCtrl: AlertController,
               public menuCtrl: MenuController,
-              public afAuth: AngularFireAuth, public af: AngularFireDatabase) {
+              public afAuth: AngularFireAuth, public af: AngularFireDatabase ) {
     // platform.ready().then(() => {
     //   // Okay, so the platform is ready and our plugins are available.
     //   // Here you can do any higher level native things you might need.
@@ -171,6 +174,7 @@ this.initializeApp();
       }
     }
 
+
     checkPreviousAuthorization(): void {
       if((window.localStorage.getItem('username') === "undefined" || window.localStorage.getItem('username') === null) &&
          (window.localStorage.getItem('password') === "undefined" || window.localStorage.getItem('password') === null)) {
@@ -180,6 +184,15 @@ this.initializeApp();
       }
     }
 
+
+  //  Logout method
+  //  onLogout(){
+  //   this.authService.logout();
+  // }
+  // Check use is logged in
+  checkUserLoggedIn(){
+    return localStorage.getItem('isLoggedIn') ? true : false;
+  }
     private initializeOptions(): void {
       this.options = new Array<MenuOptionModel>();
 
@@ -401,6 +414,11 @@ this.initializeApp();
             iconName: 'albums',
             displayName: 'Service List',
              component: ServiceListAdminPage
+          },
+          {
+            iconName: 'hand',
+            displayName: 'Add Rules',
+             component: AddNormsPage
           }
 
         ]
