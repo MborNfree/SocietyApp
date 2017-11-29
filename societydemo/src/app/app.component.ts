@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { AddNormsPage } from './../pages/add-norms/add-norms';
+=======
+import { AddEmergencyCategoryAdminPage } from './../pages/add-emergency-category-admin/add-emergency-category-admin';
+>>>>>>> 36c0bc60724caf8df040a3c172367aa635d38182
 
 import { Component,ViewChild } from '@angular/core';
 import { Nav, Platform, MenuController, AlertController} from 'ionic-angular';
@@ -400,6 +404,11 @@ this.initializeApp();
             displayName: 'Flatwise Service',
              component: FlatwiseServiceListAdminPage
           },
+           {
+            iconName: 'albums',
+            displayName: 'Add Emergency Category',
+             component: AddEmergencyCategoryAdminPage
+          }, 
           {
             iconName: 'albums',
             displayName: 'Add Emergency',

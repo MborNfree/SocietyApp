@@ -31,6 +31,7 @@
     "@ionic-native/call-number": "^4.3.2",
     "@ionic-native/camera": "^4.3.3",
     "@ionic-native/core": "4.3.0",
+    "@ionic-native/email-composer": "^4.4.2",
     "@ionic-native/file": "^4.3.3",
     "@ionic-native/file-path": "^4.3.3",
     "@ionic-native/in-app-browser": "^4.3.3",
@@ -52,6 +53,7 @@
     "cordova-plugin-camera": "^2.4.1",
     "cordova-plugin-compat": "^1.1.0",
     "cordova-plugin-device": "^1.1.6",
+    "cordova-plugin-email-composer": "^0.8.11",
     "cordova-plugin-file": "~4.3.3",
     "cordova-plugin-file-transfer": "~1.6.3",
     "cordova-plugin-filepath": "^1.1.0",
@@ -112,7 +114,11 @@
       "de.appplant.cordova.plugin.printer": {},
       "cordova-plugin-file": {},
       "cordova-sms-plugin": {},
+<<<<<<< HEAD
       "cordova-plugin-stripe": {}
+=======
+      "cordova-plugin-email-composer": {}
+>>>>>>> 36c0bc60724caf8df040a3c172367aa635d38182
     }
   }
 }
