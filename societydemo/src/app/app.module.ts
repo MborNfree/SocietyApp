@@ -1,3 +1,4 @@
+import { EditModalPage } from './../pages/edit-modal/edit-modal';
 import { EmailComposer } from '@ionic-native/email-composer';
 import { AddEmergencyCategoryAdminPage } from './../pages/add-emergency-category-admin/add-emergency-category-admin';
 
@@ -168,13 +169,8 @@ var config = {
     ViewbillPage,
     BalancesheetPage,
     AddServiceCategoryAdminPage,
-<<<<<<< HEAD
-    Card,
-    AddNormsPage,
-    RuleListAdminPage,
-=======
-    AddEmergencyCategoryAdminPage
->>>>>>> 36c0bc60724caf8df040a3c172367aa635d38182
+    AddEmergencyCategoryAdminPage,
+    EditModalPage
 
   ],
 
@@ -263,13 +259,8 @@ var config = {
     ViewbillPage,
     BalancesheetPage,
     AddServiceCategoryAdminPage,
-<<<<<<< HEAD
-    Card,
-    AddNormsPage,
-    RuleListAdminPage
-=======
-    AddEmergencyCategoryAdminPage
->>>>>>> 36c0bc60724caf8df040a3c172367aa635d38182
+    AddEmergencyCategoryAdminPage,
+    EditModalPage
   ],
 
   providers: [
@@ -287,11 +278,7 @@ var config = {
     Printer,
     ProfileProvider,
     SMS,
-<<<<<<< HEAD
-    Stripe
-=======
     EmailComposer
->>>>>>> 36c0bc60724caf8df040a3c172367aa635d38182
 
   ]
 })

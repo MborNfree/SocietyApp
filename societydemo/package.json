@@ -114,11 +114,7 @@
       "de.appplant.cordova.plugin.printer": {},
       "cordova-plugin-file": {},
       "cordova-sms-plugin": {},
-<<<<<<< HEAD
-      "cordova-plugin-stripe": {}
-=======
       "cordova-plugin-email-composer": {}
->>>>>>> 36c0bc60724caf8df040a3c172367aa635d38182
     }
   }
 }
