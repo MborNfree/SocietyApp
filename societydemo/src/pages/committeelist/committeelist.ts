@@ -17,13 +17,12 @@ import { AngularFireDatabase } from 'angularfire2/database';
 })
 export class CommitteelistPage {
 
-  public users = [];
-  public items = [];
+  public Committeeitems = [];
   constructor(public navCtrl: NavController, public navParams: NavParams, private fdb: AngularFireDatabase) {
 
     this.fdb.list("/users/").valueChanges().subscribe(_data => {
-      this.items = _data;
-     console.log(this.items);
+      this.Committeeitems = _data;
+     console.log(this.Committeeitems);
     });
 
   }

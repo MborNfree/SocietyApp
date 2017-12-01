@@ -1,8 +1,9 @@
-import { HelpdeskPage } from './../helpdesk/helpdesk';
+
 import { Component } from '@angular/core';
-import { NavController, NavParams, IonicPage } from 'ionic-angular';
+import { NavController, NavParams, IonicPage, ToastController } from 'ionic-angular';
 import{ AlertController } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
+
 
 // Angular Material
 import {  MatToolbarModule, MatSidenavModule, MatButtonModule, MatChipsModule, MatListModule, MatInputModule } from '@angular/material';
@@ -17,6 +18,7 @@ import { ProfilePage } from './../profile/profile';
 import { SocietybillPage } from './../societybill/societybill';
 import { EventlistPage } from './../eventlist/eventlist';
 import { Card } from '../card/card';
+import { HelpdeskPage } from './../helpdesk/helpdesk';
 
 
 @IonicPage()
@@ -26,16 +28,33 @@ import { Card } from '../card/card';
 })
 export class HomePage {
 
+  username:any;
+  sessionUser:any;
+  public uIDParam;
 
-username:any;
-sessionUser:any;
-public uIDParam;
+  constructor(public toastCtrl: ToastController,private afAuth: AngularFireAuth,public navCtrl: NavController,public alertCtrl: AlertController ,public navParams : NavParams) {
 
-  constructor(public afAuth: AngularFireAuth,public navCtrl: NavController,public alertCtrl: AlertController ,public navParams : NavParams) {
-
-    this.username = window.localStorage.getItem('username');
+    this.username = window.localStorage.getItem('Sessioneml');
     this.sessionUser =sessionStorage.getItem("Sessionuid");
     this.uIDParam = navParams.get('uid');
+  }
+
+  ionViewDidLoad() {
+      console.log('ionViewDidLoad HomePage');
+      this.afAuth.authState.subscribe(data =>{
+        if(data.email && data.uid){
+          this.toastCtrl.create({
+            message:`Welcome,${data.email}`,
+            duration:3000
+          }).present();
+        }else{
+          this.toastCtrl.create({
+            message:`Could not found user`,
+            duration:3000
+          }).present();
+        }
+
+      });
   }
  logout() {
 

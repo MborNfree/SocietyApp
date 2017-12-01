@@ -97,5 +97,6 @@
     <plugin name="de.appplant.cordova.plugin.printer" spec="^0.7.3" />
     <plugin name="cordova-plugin-file" spec="~4.3.3" />
     <plugin name="cordova-sms-plugin" spec="^0.1.11" />
+    <plugin name="cordova-plugin-stripe" spec="^1.5.3" />
     <plugin name="cordova-plugin-email-composer" spec="^0.8.11" />
 </widget>

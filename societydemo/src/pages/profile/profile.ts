@@ -1,8 +1,8 @@
 import {FirebaseListObservable} from 'angularfire2/database-deprecated';
-import { Component } from '@angular/core';
+import { Component, QueryList, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
-
+import { Router, ActivatedRoute, Params } from '@angular/router';
 import {AngularFireObject, AngularFireDatabase} from 'angularfire2/database';
 import { AngularFireAuth } from 'angularfire2/auth';
 // import { Profile } from '../../models/Profile';
@@ -22,11 +22,18 @@ import { Observable } from 'rxjs/Observable';
   templateUrl: 'profile.html',
 })
 export class ProfilePage {
+  item: any;
+  subscription: any;
   items: any[];
   userp: FirebaseListObservable<any[]>;
   UserProfile: any;
+  userData1:any;
   user: FirebaseListObservable<{}>;
   userData:FirebaseListObservable<{}>;
+
+  items1: FirebaseListObservable<any[]> = null;
+  userId: string;
+
   username:any;
   password:any;
   fnm:any;
@@ -36,33 +43,32 @@ export class ProfilePage {
   family:any;
   vehicles:any;
   public uIDParam;
+  sessionUser:string;
 
   authForm: FormGroup;
-  o :any;
-  starCountRef:any;
-  UserElement:any;
-  updateStarCount:any;
   userRef: string = '/users/';
-  userId: string;
-  constructor(private afAuth: AngularFireAuth,public navCtrl: NavController, public navParams: NavParams,public formBuilder: FormBuilder,private fdb: AngularFireDatabase,private fireAuth: AngularFireAuth) {
+
+  constructor( private route: ActivatedRoute, private router: Router,private afAuth: AngularFireAuth,public navCtrl: NavController, public navParams: NavParams,public formBuilder: FormBuilder,private fdb: AngularFireDatabase,private fireAuth: AngularFireAuth) {
 
     this.uIDParam = navParams.get('uid');
+    this.sessionUser =sessionStorage.getItem("Sessioneml");
     var ref = firebase.database().ref("users");
 
     ref.on('value',itemSnapshot => {
       this.items = [];
       itemSnapshot.forEach(itemSnap => {
-        console.log(itemSnap.val());
+       // console.log(itemSnap.val());
         this.items.push(itemSnap.val());
         return false;
       });
-      console.log(this.items['0']);
+     // console.log(this.items['0']);
     });
 
     // Get a reference to the database service
 
     this.afAuth.authState.subscribe(user => {
       if(user) this.userId = user.uid
+
     })
     this.authForm = formBuilder.group({
       username: ['', Validators.compose([Validators.required, Validators.pattern('[a-zA-Z]*'), Validators.minLength(8), Validators.maxLength(30)])],
@@ -77,22 +83,40 @@ export class ProfilePage {
 
   }
   ngOnInit(){
-    this.UserProfile=this.getCurrentUserProfile();
-    console.log('profile'+JSON.stringify(this.UserProfile));
+
+   this.userData = this.getCurrentUserProfile('43');
+    console.log('profile'+JSON.stringify(this.userData));
   }
+
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProfilePage');
   }
+   // Return an observable list with optional query
+  // You will usually call this from OnInit in a component
+  getCurrentUserProfile(id: string): FirebaseListObservable<any[]> {
 
-  getCurrentUserProfile() {
-    let currentUserUid = this.fireAuth.auth.currentUser.uid;
-    console.log(currentUserUid);
-    return this.fdb.list(this.userRef);
-
+    const user = this.fdb.object('users/'+id);
+    console.log(user);
+    user.valueChanges().subscribe(data => {
+      if(data.$value !== null) {
+        console.log('User does not exist');
+      } else {
+        console.log('User does exist');
+      }
+    });
+   // return this.fdb.object('/users/'+id);
+    // if (!this.userId) return;
+    // let currentUserUid = this.fireAuth.auth.currentUser.uid;
+    // //let status= this.fdb.list('users', ref => ref.orderByChild('ID').equalTo(this.sessionUser));
+    // return this.fdb.list(`users/${currentUserUid}`);
+    // //return status;
   }
 
+
   onSubmit(value: any): void {
+    console.log('v'+JSON.stringify(value));
 
     if(this.authForm.valid) {
 
@@ -101,5 +125,6 @@ export class ProfilePage {
       alert(status);
     }
   }
+
 
 }

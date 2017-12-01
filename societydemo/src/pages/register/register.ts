@@ -109,7 +109,7 @@ export class RegisterPage {
     alert(this.fname.value);
     const appVerifier = this.recaptchaVerifier;
     const phoneNumberString = "+91" + phoneNumber;
-
+    let currentUserUid = this.fire.auth.currentUser.uid;
     // firebase.auth().signInWithPhoneNumber(phoneNumberString, appVerifier)
     //   .then( confirmationResult => {
 
@@ -151,7 +151,7 @@ export class RegisterPage {
     this.fire.auth.createUserWithEmailAndPassword(this.email.value, this.password.value)
     .then(data => {
 
-     this.fdb.list("/users/").push( { 'email': this.email.value, 'password': this.password.value,'fnm':this.fname.value,'lnm':this.lname.value,'flat':this.flatn.value,'wing':this.wing.value,'vehicle':this.vehicle.value,'family':this.familyMember.value,'unm':this.user.value });
+     this.fdb.list("/users/").push( {'ID':currentUserUid, 'email': this.email.value, 'password': this.password.value,'first_name':this.fname.value,'last_name':this.lname.value,'flatno':this.flatn.value,'wing':this.wing.value,'parking_slot':this.vehicle.value,'familyMember':this.familyMember.value,'username':this.user.value });
 
       console.log('got data ', data);
 

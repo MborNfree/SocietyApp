@@ -1,8 +1,5 @@
-import { EditModalPage } from './../pages/edit-modal/edit-modal';
+import {  Routes,ActivatedRoute, RouterModule } from '@angular/router';
 import { EmailComposer } from '@ionic-native/email-composer';
-import { AddEmergencyCategoryAdminPage } from './../pages/add-emergency-category-admin/add-emergency-category-admin';
-
-
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule} from '@angular/core';
@@ -24,9 +21,12 @@ import {SMS} from '@ionic-native/sms';
 import { Stripe } from '@ionic-native/stripe';
 import {  FormsModule,ReactiveFormsModule } from '@angular/forms';
 
-
-
+// import {
+//   routing,
+//   appRoutingProviders
+// } from './app.routing';
 // Angular Material
+
 import {  MatToolbarModule, MatSidenavModule, MatButtonModule, MatChipsModule, MatListModule, MatInputModule } from '@angular/material';
 
 
@@ -96,6 +96,11 @@ import { ViewbillPage } from './../pages/viewbill/viewbill';
 import { Card } from '../pages/card/card';
 import { AddNormsPage } from '../pages/add-norms/add-norms';
 import { RuleListAdminPage } from '../pages/rule-list-admin/rule-list-admin';
+import { BillListAdminPage } from '../pages/bill-list-admin/bill-list-admin';
+import { AddEmergencyCategoryAdminPage } from './../pages/add-emergency-category-admin/add-emergency-category-admin';
+import { routing    } from './app.routing';
+
+
 
 
 var config = {
@@ -170,7 +175,10 @@ var config = {
     BalancesheetPage,
     AddServiceCategoryAdminPage,
     AddEmergencyCategoryAdminPage,
-    EditModalPage
+    RuleListAdminPage,
+    AddNormsPage,
+    Card,
+    BillListAdminPage
 
   ],
 
@@ -191,7 +199,9 @@ var config = {
     MatButtonModule,
     MatChipsModule,
     Ng2SmartTableModule,
-    //RouterModule.forRoot(appRoutes)
+    RouterModule,
+    routing
+
   ],
     bootstrap: [IonicApp],
   entryComponents: [
@@ -260,7 +270,10 @@ var config = {
     BalancesheetPage,
     AddServiceCategoryAdminPage,
     AddEmergencyCategoryAdminPage,
-    EditModalPage
+    RuleListAdminPage,
+    AddNormsPage,
+    Card,
+    BillListAdminPage
   ],
 
   providers: [
@@ -278,7 +291,8 @@ var config = {
     Printer,
     ProfileProvider,
     SMS,
-    EmailComposer
+    EmailComposer,
+    Stripe
 
   ]
 })
