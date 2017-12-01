@@ -1,11 +1,12 @@
+import { BillListAdminPage } from './../bill-list-admin/bill-list-admin';
 
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 import firebase from 'firebase';
 
-import { BillAdminPage } from '../bill-admin/bill-admin';
 import { AddchargesAdminPage } from './../addcharges-admin/addcharges-admin';
+import { AngularFireDatabase } from 'angularfire2/database';
 
 
 /**
@@ -22,30 +23,23 @@ import { AddchargesAdminPage } from './../addcharges-admin/addcharges-admin';
 })
 export class GenerateBillAdminPage {
 
-public users =[];
-authForm: FormGroup;
-unm:string;
-flat:number;
-Utype:string;
-pan:number;
-park:number;
-total:number;
-charges1:number;
-charges2:number;
-charges3:number;
+  BillUnm: string;
+  public users =[];
+  authForm: FormGroup;
+  unm:string;
+  flat:number;
+  Utype:string;
+  pan:number;
+  park:number;
+  total:number;
+  charges1:number;
+  charges2:number;
+  charges3:number;
 
 public items: Array<any> = [];
 public itemRef: firebase.database.Reference = firebase.database().ref('/users/');
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public formBuilder: FormBuilder) {
-
-  //   this.users = [
-  //     {name:'mayuri Parmar',flat:'1',uid:'1'},
-  //     {name:'Tejaswi Pathari',flat:'2',uid:'2'},
-  //     {name:'Shreyas Pednekar',flat:'3',uid:'3'},
-  //     {name:'Mitesh Solanki',flat:'4',uid:'4'},
-  //     {name:'Dhaval Parmar',flat:'5',uid:'5'},
-  // ];
+  constructor( public alertCtrl: AlertController,public navCtrl: NavController, public navParams: NavParams,public formBuilder: FormBuilder,  public fdb: AngularFireDatabase) {
 
     this.authForm = formBuilder.group({
       unm: ['', Validators.compose([Validators.required, Validators.pattern('[a-zA-Z]*'), Validators.minLength(4), Validators.maxLength(30)])],
@@ -64,22 +58,38 @@ public itemRef: firebase.database.Reference = firebase.database().ref('/users/')
   ionViewDidLoad() {
     console.log('ionViewDidLoad GenerateBillAdminPage');
 
-      alert(this.itemRef);
+      //alert(this.itemRef);
        this.itemRef.on('value',itemSnapshot => {
         this.items = [];
         itemSnapshot.forEach(itemSnap => {
           this.items.push(itemSnap.val());
           return false;
         });
-        alert(this.items);
+       // alert(this.items);
       });
 
   }
+  alert(message: string) {
+    this.alertCtrl.create({
+      title: 'Info!',
+      subTitle: message,
+      buttons: ['OK']
+    }).present();
+  }
   onSubmit(value: any): void {
 
-        this.navCtrl.push(BillAdminPage);
+    this.BillUnm =JSON.stringify(value.unm);
 
-      }
+      this.fdb.list("/billing/").push({'bill_name': value.unm, 'total': value.total})
+      .then(data => {
+        console.log('got data ', data);
+        this.alert('bill Added Successfully!');
+        this.navCtrl.push(BillListAdminPage);
+      }, error => {
+        console.log('got an error ', error);
+        this.alert(error.message);
+      });
+    }
       addcharges(){
         this.navCtrl.push(AddchargesAdminPage);
 

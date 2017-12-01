@@ -11,32 +11,33 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding class="bg-masters">
-
-
-    <ion-label align="center"> Name:{{itemsParam.first_name}}</ion-label>
-
-          <ion-label>Details</ion-label>
-          <p text-wrap>{{itemsParam.email}}</p>
-          <p text-wrap>{{itemsParam.username}}</p>
-          <p text-wrap>{{itemsParam.contact_no}}</p>
-          <p text-wrap>{{itemsParam.flatno}}</p>
-          <p text-wrap>{{itemsParam.role}}</p>
-          <p text-wrap>{{itemsParam.com_post}</p>
+  <ion-card>
+    <div class="logo">
+      <ion-avatar align="center">
+          <img src="../assets/doctor.jpg" alt="logo" >
+    </ion-avatar>
+    </div>
     <ion-list>
-                    <div class="logo">
-                      <ion-item>
-                         <ion-avatar align="center">
-                      <img src="../assets/doctor.jpg" alt="logo" >
-                     </ion-avatar>
+      <ion-item>
+          <ion-label align="center"> Name:{{itemsParam.first_name}}</ion-label>
+      </ion-item>
+      <ion-item>
+          <ion-label>Details</ion-label>
+          <ion-label color="primary"> <ion-icon name="mail"></ion-icon> {{itemsParam.email}}</ion-label>
+      </ion-item>
+      <ion-item>
+          <ion-label color="primary"> <ion-icon name="person"></ion-icon>{{itemsParam.username}}</ion-label>
+      </ion-item>
+      <ion-item>
+          <ion-label  color="primary"> <ion-icon name="call"></ion-icon>{{itemsParam.contact_no}}</ion-label>
+      </ion-item>
+      <ion-item>
+          <ion-label color="primary"> <ion-icon name="home"></ion-icon>{{itemsParam.flatno}}</ion-label>
+      </ion-item>
+      <ion-item>
+          <p text-wrap>{{itemsParam.role}}</p>
+      </ion-item>
 
-                 </ion-item>
-                    </div>
-                    <!-- </ion-item> -->
-                      <ion-label color="primary"> <ion-icon name="home"></ion-icon> Flat No. 02</ion-label>
-                      <ion-label color="primary"> <ion-icon name="person"></ion-icon> Name: Akshay </ion-label>
-                      <ion-label  color="primary"> <ion-icon name="call"></ion-icon> Mob No :987487478 </ion-label>
-                      <ion-label color="primary"> <ion-icon name="mail"></ion-icon>  Email:akshay@gmail.com</ion-label>
-                      <ion-label color="primary"> Member Role:Secretary</ion-label>
-
-                  </ion-list>
+    </ion-list>
+  </ion-card>
 </ion-content>

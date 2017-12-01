@@ -22,7 +22,7 @@
     <form [formGroup]="authForm" (ngSubmit)="onSubmit(authForm.value)">
         <ion-item [ngClass]="{'error-border':!authForm.controls.unm.valid && authForm.controls.unm.touched}">
             <ion-label floating>Name</ion-label>
-            <ion-select formControlName="unm" [(ngModel)]="unm">
+            <ion-select formControlName="unm" [(ngModel)]="unm" multiple="true">
               <ion-option *ngFor="let item of items" >{{ item.first_name }}</ion-option>
           </ion-select>
         </ion-item>

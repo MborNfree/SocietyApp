@@ -15,18 +15,29 @@
 
 
 <ion-content padding class="bg-masters">
-  <div class="logo">
-      <ion-avatar align="center">
-         <img src="../assets/doctor.jpg" alt="logo" >
-     </ion-avatar>
-  </div>
-  <ion-card>
-    <ion-label align="center"> Name:{{itemsParam1.first_name}}</ion-label>
-    <ion-label>Details</ion-label>
-    <ion-label color="primary"> <ion-icon name="mail"></ion-icon> <p text-wrap>{{itemsParam1.email}}</p></ion-label>
-    <ion-label color="primary"> <ion-icon name="person"></ion-icon> <p text-wrap>{{itemsParam1.username}}</p></ion-label>
-    <ion-label  color="primary"> <ion-icon name="call" (click)='sendSms()'></ion-icon><p text-wrap (click)= sendSms(itemsParam1.contact_no) >{{itemsParam1.contact_no}}</p></ion-label>
-    <ion-label color="primary"> <ion-icon name="home"></ion-icon> <p text-wrap>{{itemsParam1.flatno}}</p></ion-label>
+    <ion-card>
+    <div class="logo">
+        <ion-avatar align="center">
+          <img src="../assets/doctor.jpg" alt="logo" >
+      </ion-avatar>
+    </div>
+    <ion-list>
+      <ion-item>
+          <ion-label align="center"> Name:{{itemsParam1.first_name}}</ion-label>
+      </ion-item>
+      <ion-item>
+          <ion-label>Details :</ion-label>
+      </ion-item>
+      <ion-item>
+          <ion-label color="primary"> <ion-icon name="mail"></ion-icon>{{itemsParam1.email}}</ion-label>
+      </ion-item>
+      <ion-item>
+          <ion-label color="primary"> <ion-icon name="person"></ion-icon>{{itemsParam1.username}}</ion-label>
+      </ion-item>
+      <ion-item>
+          <ion-label  color="primary"> <ion-icon name="call" (click)='sendSms()'></ion-icon>{{itemsParam1.contact_no}}</ion-label>
+      </ion-item>
+      <ion-item> <ion-label color="primary"> <ion-icon name="home"></ion-icon>{{itemsParam1.flatno}}</ion-label></ion-item>
+    </ion-list>
   </ion-card>
-
 </ion-content>

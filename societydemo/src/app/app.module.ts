@@ -1,6 +1,5 @@
+import {  Routes,ActivatedRoute, RouterModule } from '@angular/router';
 import { EmailComposer } from '@ionic-native/email-composer';
-import { AddEmergencyCategoryAdminPage } from './../pages/add-emergency-category-admin/add-emergency-category-admin';
-
 
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { BrowserModule } from '@angular/platform-browser';
@@ -22,8 +21,10 @@ import { HttpModule } from '@angular/http';
 import {SMS} from '@ionic-native/sms';
 import { Stripe } from '@ionic-native/stripe';
 import {  FormsModule,ReactiveFormsModule } from '@angular/forms';
-
-
+// import {
+//   routing,
+//   appRoutingProviders
+// } from './app.routing';
 
 // Angular Material
 import {  MatToolbarModule, MatSidenavModule, MatButtonModule, MatChipsModule, MatListModule, MatInputModule } from '@angular/material';
@@ -95,6 +96,11 @@ import { ViewbillPage } from './../pages/viewbill/viewbill';
 import { Card } from '../pages/card/card';
 import { AddNormsPage } from '../pages/add-norms/add-norms';
 import { RuleListAdminPage } from '../pages/rule-list-admin/rule-list-admin';
+import { BillListAdminPage } from '../pages/bill-list-admin/bill-list-admin';
+import { AddEmergencyCategoryAdminPage } from './../pages/add-emergency-category-admin/add-emergency-category-admin';
+import { routing,appRoutingProviders } from './app.routing';
+
+
 
 
 var config = {
@@ -168,13 +174,11 @@ var config = {
     ViewbillPage,
     BalancesheetPage,
     AddServiceCategoryAdminPage,
-<<<<<<< HEAD
-    Card,
-    AddNormsPage,
+    AddEmergencyCategoryAdminPage,
     RuleListAdminPage,
-=======
-    AddEmergencyCategoryAdminPage
->>>>>>> 36c0bc60724caf8df040a3c172367aa635d38182
+    AddNormsPage,
+    Card,
+    BillListAdminPage
 
   ],
 
@@ -195,7 +199,9 @@ var config = {
     MatButtonModule,
     MatChipsModule,
     Ng2SmartTableModule,
-    //RouterModule.forRoot(appRoutes)
+    RouterModule,
+    routing
+
   ],
     bootstrap: [IonicApp],
   entryComponents: [
@@ -263,13 +269,11 @@ var config = {
     ViewbillPage,
     BalancesheetPage,
     AddServiceCategoryAdminPage,
-<<<<<<< HEAD
-    Card,
+    AddEmergencyCategoryAdminPage,
+    RuleListAdminPage,
     AddNormsPage,
-    RuleListAdminPage
-=======
-    AddEmergencyCategoryAdminPage
->>>>>>> 36c0bc60724caf8df040a3c172367aa635d38182
+    Card,
+    BillListAdminPage
   ],
 
   providers: [
@@ -287,11 +291,8 @@ var config = {
     Printer,
     ProfileProvider,
     SMS,
-<<<<<<< HEAD
+    EmailComposer,
     Stripe
-=======
-    EmailComposer
->>>>>>> 36c0bc60724caf8df040a3c172367aa635d38182
 
   ]
 })
