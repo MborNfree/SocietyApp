@@ -98,4 +98,8 @@
     <plugin name="cordova-plugin-file" spec="^4.3.3" />
     <plugin name="cordova-sms-plugin" spec="^0.1.11" />
     <plugin name="cordova-plugin-stripe" spec="^1.5.3" />
+<<<<<<< HEAD
+=======
+    <plugin name="cordova-plugin-email-composer" spec="^0.8.11" />
+>>>>>>> b164be93998f3f356efc5ece4c8ec58c06688485
 </widget>
