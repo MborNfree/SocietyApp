@@ -9,6 +9,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase';
 import { Observable } from 'rxjs/Observable';
 
+
 /**
  * Generated class for the ProfilePage page.
  *
@@ -51,23 +52,25 @@ export class ProfilePage {
   constructor( private route: ActivatedRoute, private router: Router,private afAuth: AngularFireAuth,public navCtrl: NavController, public navParams: NavParams,public formBuilder: FormBuilder,private fdb: AngularFireDatabase,private fireAuth: AngularFireAuth) {
 
     this.uIDParam = navParams.get('uid');
-    this.sessionUser =sessionStorage.getItem("Sessioneml");
     var ref = firebase.database().ref("users");
+    //ref.on('value', this.gotData,this.errData);
 
-    ref.on('value',itemSnapshot => {
-      this.items = [];
-      itemSnapshot.forEach(itemSnap => {
-       // console.log(itemSnap.val());
-        this.items.push(itemSnap.val());
-        return false;
-      });
-     // console.log(this.items['0']);
-    });
+    // ref.on('value',itemSnapshot => {
+    //   this.items = [];
+    //   itemSnapshot.forEach(itemSnap => {
+    //    // console.log(itemSnap.val());
+    //     this.items.push(itemSnap.val());
+    //     return false;
+    //   });
+    //  // console.log(this.items['0']);
+    // });
 
     // Get a reference to the database service
 
     this.afAuth.authState.subscribe(user => {
-      if(user) this.userId = user.uid
+      if(user) this.userId = user.uid;
+
+      ref.on('value', this.gotData,this.errData);
 
     })
     this.authForm = formBuilder.group({
@@ -82,12 +85,35 @@ export class ProfilePage {
      });
 
   }
-  ngOnInit(){
+gotData(data){
+  console.log('data');
+ // console.log(data.val());
+  var users = data.val();
+  var keys = Object.keys(users);
+ // console.log('keys'+keys);
+  var i;
+  for(i=0; i < keys.length;i++){
 
-   this.userData = this.getCurrentUserProfile('43');
-    console.log('profile'+JSON.stringify(this.userData));
+    var k = keys[i];
+    var sessionUser =sessionStorage.getItem("Sessioneml");
+    // console.log(sessionUser);
+    if(users[k].email == sessionUser){
+        console.log('true');
+        var email = users[k].email;
+        var Id = users[k].ID;
+        var username = users[k].username;
+        var flatno = users[k].flatno;
+        var family = users[k].familyMember;
+        var vehicles= users[k].parking_slot;
+
+        console.log('user data ='+Id, username,flatno,family,vehicles);
+    }
   }
-
+}
+  errData(err){
+    console.log('Error');
+    console.log(err);
+  }
 
 
   ionViewDidLoad() {
@@ -95,24 +121,24 @@ export class ProfilePage {
   }
    // Return an observable list with optional query
   // You will usually call this from OnInit in a component
-  getCurrentUserProfile(id: string): FirebaseListObservable<any[]> {
+  // getCurrentUserProfile(id: string): FirebaseListObservable<Profile[]> {
 
-    const user = this.fdb.object('users/'+id);
-    console.log(user);
-    user.valueChanges().subscribe(data => {
-      if(data.$value !== null) {
-        console.log('User does not exist');
-      } else {
-        console.log('User does exist');
-      }
-    });
-   // return this.fdb.object('/users/'+id);
-    // if (!this.userId) return;
-    // let currentUserUid = this.fireAuth.auth.currentUser.uid;
-    // //let status= this.fdb.list('users', ref => ref.orderByChild('ID').equalTo(this.sessionUser));
-    // return this.fdb.list(`users/${currentUserUid}`);
-    // //return status;
-  }
+  //   const user = this.fdb.object('users/'+id);
+  //   console.log(user);
+  //   user.valueChanges().subscribe(data => {
+  //     if(data.$value !== null) {
+  //       console.log('User does not exist');
+  //     } else {
+  //       console.log('User does exist');
+  //     }
+  //   });
+  //  // return this.fdb.object('/users/'+id);
+  //   // if (!this.userId) return;
+  //   // let currentUserUid = this.fireAuth.auth.currentUser.uid;
+  //   // //let status= this.fdb.list('users', ref => ref.orderByChild('ID').equalTo(this.sessionUser));
+  //   // return this.fdb.list(`users/${currentUserUid}`);
+  //   // //return status;
+  // }
 
 
   onSubmit(value: any): void {

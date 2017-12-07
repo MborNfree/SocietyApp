@@ -15,7 +15,7 @@ import { EmojiProvider } from '../providers/emoji';
 import { FilePath } from '@ionic-native/file-path';
 import { File } from '@ionic-native/file';
 import { Camera } from '@ionic-native/camera';
-import { Transfer } from '@ionic-native/transfer';
+import {FileUploadOptions, Transfer,TransferObject} from '@ionic-native/transfer';
 import { Printer } from '@ionic-native/printer';
 import { HttpModule } from '@angular/http';
 import {SMS} from '@ionic-native/sms';
@@ -98,7 +98,7 @@ import { AddNormsPage } from '../pages/add-norms/add-norms';
 import { RuleListAdminPage } from '../pages/rule-list-admin/rule-list-admin';
 import { BillListAdminPage } from '../pages/bill-list-admin/bill-list-admin';
 import { AddEmergencyCategoryAdminPage } from './../pages/add-emergency-category-admin/add-emergency-category-admin';
-import { routing,appRoutingProviders } from './app.routing';
+import { routing} from './app.routing';
 
 
 
@@ -286,6 +286,8 @@ var config = {
     Transfer,
     Camera,
     FilePath,
+    TransferObject,
+   // FileUploadOptions,
     RemoteServiceProvider,
     InAppBrowser,
     Printer,

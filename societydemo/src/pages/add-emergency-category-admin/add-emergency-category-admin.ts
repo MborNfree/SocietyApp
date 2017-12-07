@@ -6,7 +6,6 @@ import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { AngularFireList } from 'angularfire2/database';
-import firebase from 'firebase';
 
 
 @IonicPage()

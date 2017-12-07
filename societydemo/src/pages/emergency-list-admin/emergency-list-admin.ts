@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { AngularFireList, AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireDatabase } from 'angularfire2/database';
 import { CallNumber } from '@ionic-native/call-number';
 import { EmailComposer } from '@ionic-native/email-composer';
 /**
@@ -61,10 +61,10 @@ sendemail(emailid){
 });
 
 alert(emailid);
-let email = {  
+let email = {
   to: emailid,
   cc: '',
-  
+
   attachments: [
      'file://img/logo.png',
     'res://icon.png',
@@ -83,7 +83,7 @@ this.email.addAlias('gmail', 'com.google.android.gm');
 
 // then use alias when sending email
 this.email.open({
-  app: 'gmail', 
+  app: 'gmail',
 },);
 }
 

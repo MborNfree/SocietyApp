@@ -1,7 +1,6 @@
 import { Component} from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { EventdetailsPage } from '../eventdetails/eventdetails';
-import { AngularFireList, AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireDatabase } from 'angularfire2/database';
 import { CallNumber } from '@ionic-native/call-number';
 import { EmailComposer } from '@ionic-native/email-composer';
 /**
@@ -29,8 +28,8 @@ export class EmergencycontactlistPage {
     { title: "Ambulance", description: "Tel:+011 3941676",MobileNo:"Mob No: +91 78777445788",Fax:"Fax:+91 225447" },
     { title: "Fire Brigade", description: "Tel:+011 3578771441", MobileNo:"Mob No:+91 78777445788", Fax:"Fax:+91 225447"},
   ];
- 
-  
+
+
   toggleGroup(group) {
     if (this.isGroupShown(group)) {
         this.shownGroup = null;
@@ -65,10 +64,10 @@ sendemail(emailid){
 });
 
 alert(emailid);
-let email = {  
+let email = {
   to: emailid,
   cc: '',
-  
+
   attachments: [
      'file://img/logo.png',
     'res://icon.png',
@@ -87,11 +86,11 @@ this.email.addAlias('gmail', 'com.google.android.gm');
 
 // then use alias when sending email
 this.email.open({
-  app: 'gmail', 
+  app: 'gmail',
 },);
 }
 
-  
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad EmergencycontactlistPage');
 
