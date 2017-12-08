@@ -17,7 +17,7 @@
         <ion-card>
             <div class="logo">
                 <ion-avatar align="center">
-                    <img src="../assets/doctor.jpg" alt="logo" >
+                    <img src="assets/doctor.jpg" alt="logo" >
               </ion-avatar>
             </div>
             <ion-list>
@@ -27,17 +27,17 @@
               <ion-item>
                   <ion-label>Details</ion-label>
               </ion-item>
-              <ion-item>
-                  <ion-label color="primary"> <ion-icon name="mail"></ion-icon>{{itemsParam.email}}</ion-label>
+              <ion-item *ngIf="itemsParam.email!=''">
+                  <ion-label color="primary"> <ion-icon name="mail"></ion-icon>Email: <p>{{itemsParam.email}}</p></ion-label>
               </ion-item>
-              <ion-item>
-                  <ion-label color="primary"> <ion-icon name="person"></ion-icon> {{itemsParam.username}}</ion-label>
+              <ion-item *ngIf="itemsParam.username!=''" >
+                  <ion-label color="primary"> <ion-icon name="person"></ion-icon>Username:<p> {{itemsParam.username}}</p></ion-label>
               </ion-item>
-              <ion-item>
+              <ion-item *ngIf="itemsParam.contact_no!=''">
                   <ion-label  color="primary"> <ion-icon name="call" (click)='sendSms()'></ion-icon> {{itemsParam.contact_no}}</ion-label>
               </ion-item>
-              <ion-item>
-                  <ion-label color="primary"> <ion-icon name="home"></ion-icon>{{itemsParam.flatno}}</ion-label>
+              <ion-item *ngIf="itemsParam.flatno!=''">
+                  <ion-label color="primary"> <ion-icon name="home"></ion-icon>Flat No:<p>{{itemsParam.flatno}}</p></ion-label>
               </ion-item>
             </ion-list>
         </ion-card>

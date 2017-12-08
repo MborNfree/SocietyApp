@@ -1,4 +1,4 @@
-import {RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { EmailComposer } from '@ionic-native/email-composer';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { BrowserModule } from '@angular/platform-browser';
@@ -14,7 +14,7 @@ import { EmojiProvider } from '../providers/emoji';
 import { FilePath } from '@ionic-native/file-path';
 import { File } from '@ionic-native/file';
 import { Camera } from '@ionic-native/camera';
-import {Transfer,TransferObject} from '@ionic-native/transfer';
+import { Transfer,TransferObject} from '@ionic-native/transfer';
 import { Printer } from '@ionic-native/printer';
 import { HttpModule } from '@angular/http';
 import {SMS} from '@ionic-native/sms';
@@ -99,6 +99,7 @@ import { RuleListAdminPage } from '../pages/rule-list-admin/rule-list-admin';
 import { BillListAdminPage } from '../pages/bill-list-admin/bill-list-admin';
 import { AddEmergencyCategoryAdminPage } from './../pages/add-emergency-category-admin/add-emergency-category-admin';
 import { routing    } from './app.routing';
+import { ImageGalleryPage } from '../pages/image-gallery/image-gallery';
 
 
 
@@ -178,7 +179,8 @@ var config = {
     RuleListAdminPage,
     AddNormsPage,
     Card,
-    BillListAdminPage
+    BillListAdminPage,
+    ImageGalleryPage
 
   ],
 
@@ -201,6 +203,7 @@ var config = {
     Ng2SmartTableModule,
     RouterModule,
     routing
+
 
   ],
     bootstrap: [IonicApp],
@@ -273,7 +276,8 @@ var config = {
     RuleListAdminPage,
     AddNormsPage,
     Card,
-    BillListAdminPage
+    BillListAdminPage,
+    ImageGalleryPage
   ],
 
   providers: [

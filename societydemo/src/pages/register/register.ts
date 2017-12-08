@@ -41,13 +41,13 @@ export class RegisterPage {
       usernm: ['', Validators.compose([Validators.required, Validators.pattern('[a-zA-Z]*'), Validators.minLength(6), Validators.maxLength(30)])],
       pwd: ['', Validators.compose([Validators.required, Validators.minLength(6)])],
       flat: ['', Validators.compose([Validators.required,Validators.pattern('[0-9]*'), Validators.minLength(3)])],
-      eml: ['',Validators.compose([Validators.required, Validators.minLength(8), Validators.maxLength(30)])],
+      eml: ['',Validators.compose([Validators.required,Validators.pattern("[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_\`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?]"), Validators.minLength(8), Validators.maxLength(30)])],
       family: ['',Validators.compose([Validators.required,Validators.pattern('[0-9]*'), Validators.minLength(1)])],
       car: ['',Validators.compose([Validators.required,Validators.pattern('[0-9]*'), Validators.minLength(1)])],
       firstnme: ['',Validators.compose([Validators.required, Validators.minLength(4),Validators.maxLength(10)])],
       lastname: ['',Validators.compose([Validators.required, Validators.minLength(4),Validators.maxLength(10)])],
       wingno: ['',Validators.compose([Validators.required, Validators.minLength(1),Validators.maxLength(2)])],
-      phoneNumber: ['',Validators.compose([Validators.required,Validators.pattern('[0-9]*'), Validators.minLength(1),Validators.maxLength(15)])]
+      phoneNumber: ['',Validators.compose([Validators.required, Validators.minLength(10),Validators.maxLength(12)])],
 
   });                                                                                                                                                                
   }
