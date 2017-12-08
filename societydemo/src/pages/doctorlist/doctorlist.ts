@@ -1,7 +1,7 @@
 import { MemberprofilePage } from './../memberprofile/memberprofile';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { AngularFireList, AngularFireDatabase } from 'angularfire2/database';
+import {AngularFireDatabase } from 'angularfire2/database';
 /**
  * Generated class for the DoctorlistPage page.
  *

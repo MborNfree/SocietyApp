@@ -1,5 +1,5 @@
 import { ForumquestionPage } from './../forumquestion/forumquestion';
-import { Component, QueryList } from '@angular/core';
+import { Component} from '@angular/core';
 import { ModalController, IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ForumviewquestionPage } from '../forumviewquestion/forumviewquestion';
 

@@ -1,4 +1,4 @@
-import { CommitteeMemberProfilePage } from './../committee-member-profile/committee-member-profile';
+
 import { MemberprofilePage } from './../memberprofile/memberprofile';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';

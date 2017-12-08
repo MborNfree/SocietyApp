@@ -7,7 +7,7 @@ import {AngularFireObject, AngularFireDatabase} from 'angularfire2/database';
 import { AngularFireAuth } from 'angularfire2/auth';
 // import { Profile } from '../../models/Profile';
 import * as firebase from 'firebase';
-import { Observable } from 'rxjs/Observable';
+// import { Observable } from 'rxjs/Observable';
 
 
 /**
@@ -49,7 +49,7 @@ export class ProfilePage {
   authForm: FormGroup;
   userRef: string = '/users/';
 
-  constructor( private route: ActivatedRoute, private router: Router,private afAuth: AngularFireAuth,public navCtrl: NavController, public navParams: NavParams,public formBuilder: FormBuilder,private fdb: AngularFireDatabase,private fireAuth: AngularFireAuth) {
+  constructor( private route: ActivatedRoute,private afAuth: AngularFireAuth,public navCtrl: NavController, public navParams: NavParams,public formBuilder: FormBuilder,private fdb: AngularFireDatabase,private fireAuth: AngularFireAuth) {
 
     this.uIDParam = navParams.get('uid');
     var ref = firebase.database().ref("users");
@@ -74,12 +74,12 @@ export class ProfilePage {
 
     })
     this.authForm = formBuilder.group({
-      username: ['', Validators.compose([Validators.required, Validators.pattern('[a-zA-Z]*'), Validators.minLength(8), Validators.maxLength(30)])],
+      username: ['', Validators.compose([Validators.required, Validators.pattern('[a-zA-Z\-]*'), Validators.minLength(8), Validators.maxLength(30)])],
       password: ['', Validators.compose([Validators.required, Validators.minLength(8)])],
       flatno: ['', Validators.compose([Validators.required,Validators.pattern('[0-9]*'), Validators.minLength(3)])],
       email: ['',Validators.compose([Validators.required, Validators.pattern('[a-zA-Z]*'), Validators.minLength(8), Validators.maxLength(30)])],
-      family: ['',Validators.compose([Validators.required,Validators.pattern('[0-9]*'), Validators.minLength(2)])],
-      vehicles: ['',Validators.compose([Validators.required,Validators.pattern('[0-9]*'), Validators.minLength(2)])],
+      family: ['',Validators.compose([Validators.required,Validators.pattern('[0-9]*'), Validators.minLength(1)])],
+      vehicles: ['',Validators.compose([Validators.required,Validators.pattern('[0-9]*'), Validators.minLength(1)])],
       fnm: ['',Validators.compose([Validators.required, Validators.minLength(10)])],
       lnm: ['',Validators.compose([Validators.required, Validators.minLength(10)])]
      });

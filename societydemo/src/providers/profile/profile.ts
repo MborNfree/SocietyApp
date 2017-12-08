@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { AngularFireDatabase } from 'angularfire2/database';
-import { Observable } from 'rxjs/Observable';
-import { Profile } from '../../models/Profile';
+
+
 
 /*
   Generated class for the ProfileProvider provider.
@@ -14,7 +14,7 @@ import { Profile } from '../../models/Profile';
 @Injectable()
 export class ProfileProvider {
 
-  constructor(public http: Http,private db: AngularFireDatabase) {
+  constructor(public http: Http) {
     console.log('Hello ProfileProvider Provider');
   }
 

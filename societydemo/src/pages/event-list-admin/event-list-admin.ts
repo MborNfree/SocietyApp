@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController, ActionSheetController, AlertController } from 'ionic-angular';
 import { EventAdminPage } from '../event-admin/event-admin';
 import { AddEventAdminPage } from '../add-event-admin/add-event-admin';
-import { AngularFireList, AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireDatabase } from 'angularfire2/database';
 import { Http } from '@angular/http';
-import * as firebase from 'firebase';
+
 
 /**
  * Generated class for the EventListAdminPage page.

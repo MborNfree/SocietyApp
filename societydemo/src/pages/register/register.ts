@@ -1,5 +1,5 @@
 import { LoginPage } from './../login/login';
-import { HomePage } from './../home/home';
+
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
@@ -22,7 +22,7 @@ export class RegisterPage {
   arrData = [];
   usernm ;firstnme; lastname;phoneNumber;
 
-	 @ViewChild('username') user;
+	@ViewChild('username') user;
   @ViewChild('password') password;
   @ViewChild('email') email;
   @ViewChild('fnm') fname;
@@ -47,9 +47,9 @@ export class RegisterPage {
       firstnme: ['',Validators.compose([Validators.required, Validators.minLength(4),Validators.maxLength(10)])],
       lastname: ['',Validators.compose([Validators.required, Validators.minLength(4),Validators.maxLength(10)])],
       wingno: ['',Validators.compose([Validators.required, Validators.minLength(1),Validators.maxLength(2)])],
-      phoneNumber: ['',Validators.compose([Validators.required, Validators.minLength(1),Validators.maxLength(2)])]
+      phoneNumber: ['',Validators.compose([Validators.required,Validators.pattern('[0-9]*'), Validators.minLength(1),Validators.maxLength(15)])]
 
-  });
+  });                                                                                                                                                                
   }
 
   ionViewDidLoad() {
@@ -107,8 +107,8 @@ export class RegisterPage {
   registerUser(phoneNumber: number) {
 
     alert(this.fname.value);
-    const appVerifier = this.recaptchaVerifier;
-    const phoneNumberString = "+91" + phoneNumber;
+    // const appVerifier = this.recaptchaVerifier;
+    // const phoneNumberString = "+91" + phoneNumber;
     let currentUserUid = this.fire.auth.currentUser.uid;
     // firebase.auth().signInWithPhoneNumber(phoneNumberString, appVerifier)
     //   .then( confirmationResult => {

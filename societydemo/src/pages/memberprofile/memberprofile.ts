@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 import { AngularFireDatabase } from 'angularfire2/database';
-import firebase from 'firebase';
-import { Subject } from 'rxjs/Subject';
-import { AngularFireAuth } from 'angularfire2/auth';
+
+
+// import { AngularFireAuth } from 'angularfire2/auth';
 
 /**
  * Generated class for the MemberprofilePage page.
@@ -21,7 +21,7 @@ export class MemberprofilePage {
   users: {}[];
   public itemsParam;
 
-  constructor(public modalCtrl: ModalController,public navCtrl: NavController, public navParams: NavParams,private fdb: AngularFireDatabase,private fireAuth: AngularFireAuth) {
+  constructor(public modalCtrl: ModalController,public navCtrl: NavController, public navParams: NavParams,private fdb: AngularFireDatabase) {
     this.fdb.list("/users/").valueChanges().subscribe(_data => {
       this.users = _data;
      console.log(this.users);
