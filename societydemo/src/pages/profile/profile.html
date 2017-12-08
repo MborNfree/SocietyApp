@@ -20,7 +20,7 @@
               <div class="profile-picture big-profile-picture">
                 <img src="{{username}}" >
               </div>
-              <h2 class="profile-name dark">{{username}}</h2>
+              <h2 class="profile-name dark">{{fnm}}</h2>
               <div class="profile-info">{{flatno}}</div>
             </ion-item>
 
@@ -43,7 +43,7 @@
         </ion-item>
         <ion-item [ngClass]="{'error-border':!authForm.controls.flatno.valid && authForm.controls.flatno.touched}">
             <ion-label floating>Flat No</ion-label>
-            <ion-input formControlName="flatno" type="text" [(ngModel)]="flatno"></ion-input>
+            <ion-input formControlName="flatno" type="text"  [(ngModel)]="flatno"></ion-input>
         </ion-item>
         <ion-item *ngIf="authForm.controls.flatno.hasError('required') && authForm.controls.flatno.touched">
             <p>Sorry, field is required!</p>
@@ -56,7 +56,7 @@
         </ion-item>
         <ion-item [ngClass]="{'error-border':!authForm.controls.email.valid && authForm.controls.email.touched}">
             <ion-label floating>Email</ion-label>
-            <ion-input formControlName="email" type="text" [(ngModel)]="email"></ion-input>
+            <ion-input formControlName="email" type="text"  [(ngModel)]="email" ></ion-input>
         </ion-item>
         <ion-item *ngIf="authForm.controls.email.hasError('required') && authForm.controls.email.touched">
             <p>Sorry, field is required!</p>
@@ -66,7 +66,7 @@
         </ion-item>
         <ion-item [ngClass]="{'error-border':!authForm.controls.password.valid && authForm.controls.password.touched}">
             <ion-label floating>Password</ion-label>
-            <ion-input formControlName="password" type="password" [(ngModel)]="password"></ion-input>
+            <ion-input formControlName="password" type="password"  [(ngModel)]="password" ></ion-input>
         </ion-item>
         <ion-item *ngIf="authForm.controls.password.hasError('required') && authForm.controls.password.touched">
             <p>Sorry, field is required!</p>
@@ -76,7 +76,7 @@
         </ion-item>
         <ion-item [ngClass]="{'error-border':!authForm.controls.family.valid && authForm.controls.family.touched}">
             <ion-label floating>Total Family Member</ion-label>
-            <ion-input formControlName="family" type="text" [(ngModel)]="family"></ion-input>
+            <ion-input formControlName="family" type="text"  [(ngModel)]="family"></ion-input>
         </ion-item>
         <ion-item *ngIf="authForm.controls.family.hasError('pattern') && authForm.controls.family.touched">
             <p>Sorry, only  numbers are allowed!</p>
@@ -89,7 +89,7 @@
         </ion-item>
         <ion-item [ngClass]="{'error-border':!authForm.controls.vehicles.valid && authForm.controls.vehicles.touched}">
             <ion-label floating>Total Vehicles</ion-label>
-            <ion-input formControlName="vehicles" type="text" [(ngModel)]="vehicles"></ion-input>
+            <ion-input formControlName="vehicles" type="text"  [(ngModel)]="vehicles" ></ion-input>
         </ion-item>
         <ion-item *ngIf="authForm.controls.vehicles.hasError('pattern') && authForm.controls.vehicles.touched">
             <p>Sorry, only  numbers are allowed!</p>

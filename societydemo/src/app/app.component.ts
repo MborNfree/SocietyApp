@@ -1,3 +1,4 @@
+import { ImageGalleryPage } from './../pages/image-gallery/image-gallery';
 import { BillListAdminPage } from './../pages/bill-list-admin/bill-list-admin';
 import { AddEmergencyCategoryAdminPage } from './../pages/add-emergency-category-admin/add-emergency-category-admin';
 
@@ -242,7 +243,11 @@ this.initializeApp();
         displayName: 'Events',
         component: EventlistPage
       });
-
+      this.options.push({
+        iconName: 'calendar',
+        displayName: 'Events Gallery',
+        component: ImageGalleryPage
+      });
       this.options.push({
         iconName: 'medkit',
         displayName: 'Emergency Contacts',

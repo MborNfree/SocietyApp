@@ -30,9 +30,42 @@ export class EventListAdminPage {
       this.events = _data;
      console.log(this.events);
     });
-
+    var ref = firebase.database().ref("events");
+    ref.on('value', this.gotEvent,this.errEvent);
   }
 
+
+
+  gotEvent(data){
+    console.log('data');
+   // console.log(data.val());
+    var users = data.val();
+    var keys = Object.keys(users);
+   // console.log('keys'+keys);
+    var i;
+    for(i=0; i < keys.length;i++){
+
+      var k = keys[i];
+      //var sessionUser =sessionStorage.getItem("Sessioneml");
+      //  console.log(sessionUser);
+      //  console.log(users[k].email);
+
+          console.log('true');
+          var email = users[k].email;
+          var Id = users[k].ID;
+          var username = users[k].username;
+          var flatno = users[k].flatno;
+          var family = users[k].familyMember;
+          var vehicles= users[k].parking_slot;
+
+          console.log('user data ='+Id, username,flatno,family,vehicles);
+
+    }
+  }
+  errEvent(err){
+      console.log('Error');
+      console.log(err);
+    }
   ionViewDidLoad() {
     console.log('ionViewDidLoad EventListAdminPage');
     this.items = [

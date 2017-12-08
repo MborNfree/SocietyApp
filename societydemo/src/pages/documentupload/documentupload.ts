@@ -1,5 +1,5 @@
-import { Component, ChangeDetectorRef } from '@angular/core';
-import { IonicPage, NavController, NavParams , Platform , ActionSheetController , ToastController , LoadingController, Loading } from 'ionic-angular';
+import { Component} from '@angular/core';
+import { IonicPage, NavController, NavParams , Platform , ActionSheetController , ToastController , LoadingController } from 'ionic-angular';
 
 import { File } from '@ionic-native/file';
 import { Transfer, TransferObject, FileUploadOptions} from '@ionic-native/transfer';
@@ -44,15 +44,14 @@ export class DocumentuploadPage {
               public navParams: NavParams ,
               public Platform:Platform,
               private camera: Camera,
-              private transfer: Transfer,
+             // private transfer: Transfer,
               private file:File,
               private filePath:FilePath,
               public actionSheetCtrl: ActionSheetController,
               public toastCtrl: ToastController,
               public platform:Platform,
               public loadingCtrl:LoadingController,
-              private fdb: AngularFireDatabase,
-              private http: Http, private _cd:ChangeDetectorRef) {
+              private fdb: AngularFireDatabase ) {
 
                 this.items = [
                     {title: 'document1'},
@@ -205,13 +204,13 @@ uploadFile() {
   loader.present();
 //  const fileTransfer: FileTransferObject = this.transfer.create();
 
-  let options: FileUploadOptions = {
-    fileKey: 'ionicfile',
-    fileName: 'ionicfile',
-    chunkedMode: false,
-    mimeType: "image/jpeg",
-    headers: {}
-  }
+  // let options: FileUploadOptions = {
+  //   fileKey: 'ionicfile',
+  //   fileName: 'ionicfile',
+  //   chunkedMode: false,
+  //   mimeType: "image/jpeg",
+  //   headers: {}
+  // }
 
   // fileTransfer.upload(this.imageURI, 'http://192.168.0.7:8080/api/uploadImage', options)
   //   .then((data) => {

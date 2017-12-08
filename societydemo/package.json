@@ -82,7 +82,9 @@
     "rxjs": "5.4.3",
     "stripe": "^5.3.0",
     "sw-toolbox": "3.6.0",
-    "zone.js": "0.8.18"
+    "zone.js": "0.8.18",
+    "com-sarriaroman-photoviewer": "^1.1.11",
+    "cordova-plugin-photo-library": "^2.1.0"
   },
   "devDependencies": {
     "@angular/cli": "^1.5.3",
@@ -107,7 +109,7 @@
       "cordova-plugin-camera": {
         "CAMERA_USAGE_DESCRIPTION": " ",
         "PHOTOLIBRARY_USAGE_DESCRIPTION": " ",
-        "cordova-plugin-inappbrowser": {}
+        "cordova-plugin-inappbrowser": "[object Object]"
       },
       "cordova-plugin-file-transfer": {},
       "cordova-plugin-filepath": {},
@@ -117,7 +119,11 @@
       "cordova-plugin-file": {},
       "cordova-sms-plugin": {},
       "cordova-plugin-stripe": {},
-      "cordova-plugin-email-composer": {}
+      "cordova-plugin-email-composer": {},
+      "com-sarriaroman-photoviewer": {},
+      "cordova-plugin-photo-library": {
+        "PHOTO_LIBRARY_USAGE_DESCRIPTION": "To choose photos"
+      }
     }
   }
 }
