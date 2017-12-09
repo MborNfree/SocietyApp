@@ -3,12 +3,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { CallNumber } from '@ionic-native/call-number';
 import { EmailComposer } from '@ionic-native/email-composer';
-/**
- * Generated class for the EmergencycontactlistPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { InAppBrowser } from '@ionic-native/in-app-browser';
+
 
 @IonicPage()
 @Component({
@@ -23,11 +19,11 @@ export class EmergencycontactlistPage {
   arrData = [];
  public items = [];
   shownGroup = null;
-  diseases = [
-    { title: "Mumbai Police", description: "+91 22 22620825",MobileNo:"Mob No:+91 78777445788",Fax:"Fax :+ 914565645"},
-    { title: "Ambulance", description: "Tel:+011 3941676",MobileNo:"Mob No: +91 78777445788",Fax:"Fax:+91 225447" },
-    { title: "Fire Brigade", description: "Tel:+011 3578771441", MobileNo:"Mob No:+91 78777445788", Fax:"Fax:+91 225447"},
-  ];
+  // diseases = [
+  //   { title: "Mumbai Police", description: "+91 22 22620825",MobileNo:"Mob No:+91 78777445788",Fax:"Fax :+ 914565645"},
+  //   { title: "Ambulance", description: "Tel:+011 3941676",MobileNo:"Mob No: +91 78777445788",Fax:"Fax:+91 225447" },
+  //   { title: "Fire Brigade", description: "Tel:+011 3578771441", MobileNo:"Mob No:+91 78777445788", Fax:"Fax:+91 225447"},
+  // ];
 
 
   toggleGroup(group) {
@@ -41,7 +37,7 @@ isGroupShown(group) {
     return this.shownGroup ===  group;
 };
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,private emailComposer: EmailComposer, private callNumber: CallNumber, private fdb: AngularFireDatabase) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,private iab: InAppBrowser,private emailComposer: EmailComposer, private callNumber: CallNumber, private fdb: AngularFireDatabase) {
      this.fdb.list("/emerg_contact/").valueChanges().subscribe(_data => {
       this.contacts = _data;
      console.log(this.contacts);
@@ -90,10 +86,15 @@ this.email.open({
 },);
 }
 
+gotoweb(web){
+alert(web);
+const browser = this.iab.create(web,'_blank','location:yes');
+}
+
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad EmergencycontactlistPage');
-
   }
 
 }

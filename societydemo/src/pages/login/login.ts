@@ -1,10 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
-<<<<<<< HEAD
-import { FormBuilder, FormGroup, Validators} from '@angular/forms';
-=======
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
->>>>>>> 6e5584e06542656b152eb2bc20bade0050757124
 import { HomePage } from '../home/home';
 import { RegisterPage } from '../register/register';
 import { ForgotpasswordPage } from '../forgotpassword/forgotpassword';

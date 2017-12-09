@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-
-=======
 import { ImageGalleryPage } from './../pages/image-gallery/image-gallery';
 import { BillListAdminPage } from './../pages/bill-list-admin/bill-list-admin';
->>>>>>> 6e5584e06542656b152eb2bc20bade0050757124
 import { AddEmergencyCategoryAdminPage } from './../pages/add-emergency-category-admin/add-emergency-category-admin';
 
 import { Component,ViewChild } from '@angular/core';

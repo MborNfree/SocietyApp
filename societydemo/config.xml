@@ -99,11 +99,8 @@
     <plugin name="cordova-sms-plugin" spec="^0.1.11" />
     <plugin name="cordova-plugin-stripe" spec="^1.5.3" />
     <plugin name="cordova-plugin-email-composer" spec="^0.8.11" />
-<<<<<<< HEAD
-=======
     <plugin name="com-sarriaroman-photoviewer" spec="^1.1.11" />
     <plugin name="cordova-plugin-photo-library" spec="^2.1.0">
         <variable name="PHOTO_LIBRARY_USAGE_DESCRIPTION" value="To choose photos" />
     </plugin>
->>>>>>> 6e5584e06542656b152eb2bc20bade0050757124
 </widget>

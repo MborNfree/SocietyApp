@@ -6,11 +6,6 @@ import {  ActivatedRoute} from '@angular/router';
 import {AngularFireDatabase} from 'angularfire2/database';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase';
-<<<<<<< HEAD
-// import { Observable } from 'rxjs/Observable';
-=======
-
->>>>>>> 6e5584e06542656b152eb2bc20bade0050757124
 
 
 /**
@@ -53,11 +48,7 @@ export class ProfilePage {
   authForm: FormGroup;
   userRef: string = '/users/';
 
-<<<<<<< HEAD
-  constructor( private route: ActivatedRoute,private afAuth: AngularFireAuth,public navCtrl: NavController, public navParams: NavParams,public formBuilder: FormBuilder,private fdb: AngularFireDatabase,private fireAuth: AngularFireAuth) {
-=======
   constructor( private route: ActivatedRoute, private afAuth: AngularFireAuth,public navCtrl: NavController, public navParams: NavParams,public formBuilder: FormBuilder,private fdb: AngularFireDatabase,private fireAuth: AngularFireAuth) {
->>>>>>> 6e5584e06542656b152eb2bc20bade0050757124
 
     this.uIDParam = navParams.get('uid');
     var ref = firebase.database().ref("users");
@@ -97,16 +88,6 @@ export class ProfilePage {
 
     })
     this.authForm = formBuilder.group({
-<<<<<<< HEAD
-      username: ['', Validators.compose([Validators.required, Validators.pattern('[a-zA-Z\-]*'), Validators.minLength(8), Validators.maxLength(30)])],
-      password: ['', Validators.compose([Validators.required, Validators.minLength(8)])],
-      flatno: ['', Validators.compose([Validators.required,Validators.pattern('[0-9]*'), Validators.minLength(3)])],
-      email: ['',Validators.compose([Validators.required, Validators.pattern('[a-zA-Z]*'), Validators.minLength(8), Validators.maxLength(30)])],
-      family: ['',Validators.compose([Validators.required,Validators.pattern('[0-9]*'), Validators.minLength(1)])],
-      vehicles: ['',Validators.compose([Validators.required,Validators.pattern('[0-9]*'), Validators.minLength(1)])],
-      fnm: ['',Validators.compose([Validators.required, Validators.minLength(10)])],
-      lnm: ['',Validators.compose([Validators.required, Validators.minLength(10)])]
-=======
       username: [this.username, Validators.compose([Validators.required, Validators.pattern('[a-zA-Z]*'), Validators.minLength(6), Validators.maxLength(30)])],
       password: [this.password, Validators.compose([Validators.required, Validators.minLength(8)])],
       flatno: [this.flatno, Validators.compose([Validators.required,Validators.pattern('[0-9]*'), Validators.minLength(3)])],
@@ -115,7 +96,6 @@ export class ProfilePage {
       vehicles: [this.vehicles,Validators.compose([Validators.required,Validators.pattern('[0-9]*'), Validators.minLength(1)])],
       fnm: [this.fnm,Validators.compose([Validators.required, Validators.minLength(6)])],
       lnm: [this.lnm,Validators.compose([Validators.required, Validators.minLength(6)])]
->>>>>>> 6e5584e06542656b152eb2bc20bade0050757124
      });
 
 
