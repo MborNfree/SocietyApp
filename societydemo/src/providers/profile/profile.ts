@@ -2,7 +2,12 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { AngularFireDatabase } from 'angularfire2/database';
+<<<<<<< HEAD
 import { Observable } from 'rxjs/Observable';
+=======
+
+
+>>>>>>> 9b92757622c059d0760b7985c91eed3d9e0f9f36
 
 /*
   Generated class for the ProfileProvider provider.

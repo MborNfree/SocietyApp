@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams , Platform , ActionSheetController , ToastController , LoadingController, Loading } from 'ionic-angular';
 
 import { File } from '@ionic-native/file';
-import { Transfer, TransferObject } from '@ionic-native/transfer';
+// import { Transfer, TransferObject } from '@ionic-native/transfer';
 import { FilePath } from '@ionic-native/file-path';
 import { Camera } from '@ionic-native/camera';
 
@@ -24,7 +24,7 @@ export class HelpdeskPage {
 
   Instructions:string="OpenIssues";
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public Platform:Platform, private camera: Camera, private transfer: Transfer, private file:File, private filePath:FilePath, public actionSheetCtrl: ActionSheetController, public toastCtrl: ToastController, public platform:Platform, public loadingCtrl:LoadingController   ) {
+ constructor(public navCtrl: NavController, public navParams: NavParams,public Platform:Platform, private camera: Camera, private file:File, private filePath:FilePath, public actionSheetCtrl: ActionSheetController, public toastCtrl: ToastController, public platform:Platform, public loadingCtrl:LoadingController   ) {
 
 
 

@@ -9,6 +9,10 @@ import { AngularFireAuth } from 'angularfire2/auth';
 
 
 import { LoginPage } from './../login/login';
+<<<<<<< HEAD
+=======
+  
+>>>>>>> 9b92757622c059d0760b7985c91eed3d9e0f9f36
 import { ElectricianlistPage } from './../electricianlist/electricianlist';
 import { PlumberlistPage } from './../plumberlist/plumberlist';
 import { DoctorlistPage } from './../doctorlist/doctorlist';

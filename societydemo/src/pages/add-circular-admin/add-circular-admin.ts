@@ -1,8 +1,8 @@
 
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams,AlertController } from 'ionic-angular';
-import { FormBuilder, FormGroup, Validators} from '@angular/forms';
-import { FileSelectDirective, FileDropDirective, FileUploader } from 'ng2-file-upload/ng2-file-upload';
+import { FormBuilder,Validators, FormGroup} from '@angular/forms';
+
 import { AngularFireDatabase } from 'angularfire2/database';
 import { AngularFireList } from 'angularfire2/database';
 import { CircularListAdminPage } from './../circular-list-admin/circular-list-admin';
@@ -39,6 +39,7 @@ export class AddCircularAdminPage {
      });
   }
 
+  
   alert(message: string) {
     this.alertCtrl.create({
       title: 'Add!',

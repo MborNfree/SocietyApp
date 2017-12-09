@@ -2,7 +2,6 @@ import { Component, ViewChild} from '@angular/core';
 import { IonicPage, NavController, NavParams ,ViewController,AlertController} from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { DatepickerOptions } from 'ng2-datepicker';
-import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { AngularFireList } from 'angularfire2/database';
 import firebase from 'firebase';
@@ -47,7 +46,7 @@ export class AddEventAdminPage {
   public owner: AngularFireList<any>;
   public type: AngularFireList<any>;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public view: ViewController,private fdb: AngularFireDatabase,public formBuilder: FormBuilder,private fire: AngularFireAuth,private alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public view: ViewController,private fdb: AngularFireDatabase,public formBuilder: FormBuilder,private alertCtrl: AlertController) {
     this.users = fdb.list('/events');
     this.authForm = formBuilder.group({
       eventnm: ['', Validators.compose([Validators.required, Validators.pattern('[a-zA-Z]*'), Validators.minLength(4), Validators.maxLength(30)])],

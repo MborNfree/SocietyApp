@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { Component} from '@angular/core';
+=======
+import { Component } from '@angular/core';
+>>>>>>> 9b92757622c059d0760b7985c91eed3d9e0f9f36
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CommitteeProfileAdminPage } from '../committee-profile-admin/committee-profile-admin';
 import { AngularFireDatabase } from 'angularfire2/database';

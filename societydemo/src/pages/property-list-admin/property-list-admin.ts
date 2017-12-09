@@ -4,7 +4,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ModalController } from 'ionic-angular';
 
 import { AddAssetsAdminPage } from './../add-assets-admin/add-assets-admin';
-import { AddPropertyAdminPage } from './../add-property-admin/add-property-admin';
+
 
 /**
  * Generated class for the PropertyListAdminPage page.

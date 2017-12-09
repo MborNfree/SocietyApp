@@ -100,7 +100,6 @@ import { RuleListAdminPage } from '../pages/rule-list-admin/rule-list-admin';
 import { BillListAdminPage } from '../pages/bill-list-admin/bill-list-admin';
 import { AddEmergencyCategoryAdminPage } from './../pages/add-emergency-category-admin/add-emergency-category-admin';
 import { routing    } from './app.routing';
-import { ImageGalleryPage } from '../pages/image-gallery/image-gallery';
 import { EventDataProvider } from '../providers/event-data/event-data';
 
 
@@ -181,8 +180,8 @@ var config = {
     RuleListAdminPage,
     AddNormsPage,
     Card,
-    BillListAdminPage,
-    ImageGalleryPage
+    BillListAdminPage
+
 
   ],
 
@@ -278,8 +277,8 @@ var config = {
     RuleListAdminPage,
     AddNormsPage,
     Card,
-    BillListAdminPage,
-    ImageGalleryPage
+    BillListAdminPage
+
   ],
 
   providers: [

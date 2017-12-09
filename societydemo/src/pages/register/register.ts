@@ -22,7 +22,7 @@ export class RegisterPage {
   arrData = [];
   usernm ;firstnme; lastname;phoneNumber;
 
-	 @ViewChild('username') user;
+	@ViewChild('username') user;
   @ViewChild('password') password;
   @ViewChild('email') email;
   @ViewChild('fnm') fname;
@@ -47,9 +47,9 @@ export class RegisterPage {
       firstnme: ['',Validators.compose([Validators.required, Validators.minLength(4),Validators.maxLength(10)])],
       lastname: ['',Validators.compose([Validators.required, Validators.minLength(4),Validators.maxLength(10)])],
       wingno: ['',Validators.compose([Validators.required, Validators.minLength(1),Validators.maxLength(2)])],
-      phoneNumber: ['',Validators.compose([Validators.required, Validators.minLength(10),Validators.maxLength(12)])]
+      phoneNumber: ['',Validators.compose([Validators.required, Validators.minLength(10),Validators.maxLength(12)])],
 
-  });
+  });                                                                                                                                                                
   }
 
   ionViewDidLoad() {
@@ -108,7 +108,11 @@ export class RegisterPage {
 
     alert(this.fname.value);
     // const appVerifier = this.recaptchaVerifier;
+<<<<<<< HEAD
     const phoneNumberString = "+91" + phoneNumber;
+=======
+    // const phoneNumberString = "+91" + phoneNumber;
+>>>>>>> 9b92757622c059d0760b7985c91eed3d9e0f9f36
     let currentUserUid = this.fire.auth.currentUser.uid;
     // firebase.auth().signInWithPhoneNumber(phoneNumberString, appVerifier)
     //   .then( confirmationResult => {

@@ -6,7 +6,7 @@ import { Component,ViewChild } from '@angular/core';
 import { Nav, Platform, MenuController, AlertController} from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { InAppBrowser } from '@ionic-native/in-app-browser';
+
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
@@ -49,13 +49,12 @@ import { ForumPage } from './../pages/forum/forum';
 import { InboxPage } from './../pages/inbox/inbox';
 import { AddAssetsAdminPage } from './../pages/add-assets-admin/add-assets-admin';
 import { GenerateBillAdminPage } from './../pages/generate-bill-admin/generate-bill-admin';
-import { BillAdminPage } from './../pages/bill-admin/bill-admin';
+
 import { FlatwiseServiceListAdminPage } from '../pages/flatwise-service-list-admin/flatwise-service-list-admin';
 import { UserDocumentListAdminPage } from './../pages/user-document-list-admin/user-document-list-admin';
 import { BalancesheetPage } from '../pages/balancesheet/balancesheet';
 import { AddServiceCategoryAdminPage } from './../pages/add-service-category-admin/add-service-category-admin';
-import { ViewbillPage } from './../pages/viewbill/viewbill';
-import { ForumviewquestionPage } from './../pages/forumviewquestion/forumviewquestion';
+
 import { HelpdeskPage } from './../pages/helpdesk/helpdesk';
 import { AddNormsPage } from '../pages/add-norms/add-norms';
 

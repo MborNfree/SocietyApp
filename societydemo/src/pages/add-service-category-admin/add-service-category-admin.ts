@@ -6,7 +6,7 @@ import { ServiceListAdminPage } from '../service-list-admin/service-list-admin';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { AngularFireList } from 'angularfire2/database';
-import firebase from 'firebase';
+
 
 @IonicPage()
 @Component({

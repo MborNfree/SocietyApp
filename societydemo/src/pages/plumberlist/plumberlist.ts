@@ -1,7 +1,11 @@
 import { MemberprofilePage } from './../memberprofile/memberprofile';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+<<<<<<< HEAD
 import {  AngularFireDatabase } from 'angularfire2/database';
+=======
+import { AngularFireDatabase } from 'angularfire2/database';
+>>>>>>> 9b92757622c059d0760b7985c91eed3d9e0f9f36
 /**
  * Generated class for the PlumberlistPage page.
  *
