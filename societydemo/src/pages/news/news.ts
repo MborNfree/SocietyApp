@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { RemoteServiceProvider } from '../../providers/remote-service/remote-service';
+
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 
@@ -17,10 +17,10 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
   templateUrl: 'news.html',
 })
 export class NewsPage {
- 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,private remoteService : RemoteServiceProvider,private iab: InAppBrowser) {
-    
+
+  constructor(public navCtrl: NavController, public navParams: NavParams,private iab: InAppBrowser) {
+
 
     const browser = this.iab.create('http://www.dnaindia.com/','_self','location=yes');
 

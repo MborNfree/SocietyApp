@@ -107,7 +107,7 @@ export class RegisterPage {
   registerUser(phoneNumber: number) {
 
     alert(this.fname.value);
-    const appVerifier = this.recaptchaVerifier;
+    // const appVerifier = this.recaptchaVerifier;
     const phoneNumberString = "+91" + phoneNumber;
     let currentUserUid = this.fire.auth.currentUser.uid;
     // firebase.auth().signInWithPhoneNumber(phoneNumberString, appVerifier)

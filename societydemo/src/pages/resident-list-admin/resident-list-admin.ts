@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ResidentProfileAdminPage } from '../resident-profile-admin/resident-profile-admin';
 import { AngularFireDatabase } from 'angularfire2/database';
 
-import {Observer} from "rxjs";
+
 // import { AngularFireListObservable } from 'angularfire2';
 
 

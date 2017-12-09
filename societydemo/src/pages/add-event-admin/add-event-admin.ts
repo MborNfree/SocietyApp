@@ -2,12 +2,10 @@ import { Component, ViewChild} from '@angular/core';
 import { IonicPage, NavController, NavParams ,ViewController,AlertController} from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { DatepickerOptions } from 'ng2-datepicker';
-import { FileSelectDirective, FileDropDirective, FileUploader } from 'ng2-file-upload/ng2-file-upload';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { AngularFireList } from 'angularfire2/database';
 import firebase from 'firebase';
-
 
 import { EventListAdminPage } from '../event-list-admin/event-list-admin';
 import { EventAdminPage } from '../event-admin/event-admin';

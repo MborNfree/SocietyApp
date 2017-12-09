@@ -2,7 +2,6 @@ import { RuleListAdminPage } from './../rule-list-admin/rule-list-admin';
 import { Component, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
-import firebase from 'firebase';
 import { AngularFireDatabase } from 'angularfire2/database';
 
 /**

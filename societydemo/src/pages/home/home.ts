@@ -6,10 +6,9 @@ import { AngularFireAuth } from 'angularfire2/auth';
 
 
 // Angular Material
-import {  MatToolbarModule, MatSidenavModule, MatButtonModule, MatChipsModule, MatListModule, MatInputModule } from '@angular/material';
+
 
 import { LoginPage } from './../login/login';
-import { CommitteelistPage } from './../committeelist/committeelist';
 import { ElectricianlistPage } from './../electricianlist/electricianlist';
 import { PlumberlistPage } from './../plumberlist/plumberlist';
 import { DoctorlistPage } from './../doctorlist/doctorlist';
