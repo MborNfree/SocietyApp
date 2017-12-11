@@ -1,18 +1,8 @@
-<<<<<<< HEAD
-import { Component} from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { AngularFireDatabase } from 'angularfire2/database';
-import { CallNumber } from '@ionic-native/call-number';
-import { EmailComposer } from '@ionic-native/email-composer';
-import { InAppBrowser } from '@ionic-native/in-app-browser';
-
-=======
 import { Component } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
 import { AngularFireDatabase } from "angularfire2/database";
 import { CallNumber } from "@ionic-native/call-number";
 import { EmailComposer } from "@ionic-native/email-composer";
->>>>>>> aea7b44807dfda4017e3c6cc120a717b4ce6b027
 
 @IonicPage()
 @Component({
@@ -25,15 +15,6 @@ export class EmergencycontactlistPage {
   arrData = [];
   public items = [];
   shownGroup = null;
-<<<<<<< HEAD
-  // diseases = [
-  //   { title: "Mumbai Police", description: "+91 22 22620825",MobileNo:"Mob No:+91 78777445788",Fax:"Fax :+ 914565645"},
-  //   { title: "Ambulance", description: "Tel:+011 3941676",MobileNo:"Mob No: +91 78777445788",Fax:"Fax:+91 225447" },
-  //   { title: "Fire Brigade", description: "Tel:+011 3578771441", MobileNo:"Mob No:+91 78777445788", Fax:"Fax:+91 225447"},
-  // ];
-
-=======
->>>>>>> aea7b44807dfda4017e3c6cc120a717b4ce6b027
 
   toggleGroup(group) {
     if (this.isGroupShown(group)) {
@@ -41,22 +22,9 @@ export class EmergencycontactlistPage {
     } else {
       this.shownGroup = group;
     }
-<<<<<<< HEAD
-};
-isGroupShown(group) {
-    return this.shownGroup ===  group;
-};
-
-  constructor(public navCtrl: NavController, public navParams: NavParams,private iab: InAppBrowser,private emailComposer: EmailComposer, private callNumber: CallNumber, private fdb: AngularFireDatabase) {
-     this.fdb.list("/emerg_contact/").valueChanges().subscribe(_data => {
-      this.contacts = _data;
-     console.log(this.contacts);
-    });
-=======
   }
   isGroupShown(group) {
     return this.shownGroup === group;
->>>>>>> aea7b44807dfda4017e3c6cc120a717b4ce6b027
   }
 
   constructor(
@@ -89,17 +57,6 @@ isGroupShown(group) {
       }
     });
 
-<<<<<<< HEAD
-gotoweb(web){
-alert(web);
-const browser = this.iab.create(web,'_blank','location:yes');
-}
-
-
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad EmergencycontactlistPage');
-=======
     alert(emailid);
     let email = {
       to: emailid,
@@ -129,6 +86,5 @@ const browser = this.iab.create(web,'_blank','location:yes');
 
   ionViewDidLoad() {
     console.log("ionViewDidLoad EmergencycontactlistPage");
->>>>>>> aea7b44807dfda4017e3c6cc120a717b4ce6b027
   }
 }

@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-import { Component, ViewChild } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import { HomePage } from '../home/home';
-import { RegisterPage } from '../register/register';
-import { ForgotpasswordPage } from '../forgotpassword/forgotpassword';
-import { AngularFireAuth } from 'angularfire2/auth';
-=======
 import { Component, ViewChild } from "@angular/core";
 import {
   IonicPage,
@@ -19,7 +10,6 @@ import { HomePage } from "../home/home";
 import { RegisterPage } from "../register/register";
 import { ForgotpasswordPage } from "../forgotpassword/forgotpassword";
 import { AngularFireAuth } from "angularfire2/auth";
->>>>>>> aea7b44807dfda4017e3c6cc120a717b4ce6b027
 // import { Router } from '@angular/router';
 import { AngularFireDatabase } from "angularfire2/database";
 
