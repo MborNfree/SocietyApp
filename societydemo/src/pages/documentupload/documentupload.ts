@@ -2,13 +2,14 @@ import { Component} from '@angular/core';
 import { IonicPage, NavController, NavParams , Platform , ActionSheetController , ToastController , LoadingController } from 'ionic-angular';
 
 import { File } from '@ionic-native/file';
-import { Transfer, TransferObject, FileUploadOptions} from '@ionic-native/transfer';
 import { FilePath } from '@ionic-native/file-path';
+import {FileChooser} from '@ionic-native/file-chooser';
+
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { AngularFireDatabase } from 'angularfire2/database';
-import { Http } from '@angular/http';
 import { BehaviorSubject } from 'rxjs';
-// import * as firebase from 'firebase';
+import * as firebase from 'firebase';
+import { EventDataProvider } from '../../providers/event-data/event-data';
 
 /**
  * Generated class for the DocumentuploadPage page.
@@ -17,7 +18,7 @@ import { BehaviorSubject } from 'rxjs';
  * Ionic pages and navigation.
  */
 declare var cordova: any;
-declare var window: any;
+
 
 @IonicPage()
 @Component({
@@ -25,9 +26,13 @@ declare var window: any;
   templateUrl: 'documentupload.html',
 })
 export class DocumentuploadPage {
+  sbaid: any;
 
   public items=[];
   public Circular = [];
+
+  filesnum:any;
+  files:any;
 
   // For Login
  public userEmail: string;
@@ -40,6 +45,7 @@ export class DocumentuploadPage {
  private isAuth: BehaviorSubject<boolean>;
  imageURI:any;
  imageFileName:any;
+
   constructor(public navCtrl: NavController,
               public navParams: NavParams ,
               public Platform:Platform,
@@ -47,6 +53,8 @@ export class DocumentuploadPage {
              // private transfer: Transfer,
               private file:File,
               private filePath:FilePath,
+              public FileChooser:FileChooser,
+              public eventsdata: EventDataProvider,
               public actionSheetCtrl: ActionSheetController,
               public toastCtrl: ToastController,
               public platform:Platform,
@@ -62,6 +70,20 @@ export class DocumentuploadPage {
                     {title: 'document6'}
                 ];
 
+
+                this.eventsdata.getRequestFiles(this.sbaid).on('value', snapshot => {
+                  let rawList = [];
+                  snapshot.forEach(snap => {
+                    rawList.unshift({
+                      id: snap.key,
+                      file: snap.val().file,
+                      name: snap.val().name,
+                      ext: snap.val().ext,
+                    })
+                  })
+                  this.files = rawList;
+                  this.filesnum = rawList.length
+                });
                 this.isAuth = new BehaviorSubject(false);
 
                 this.isAuth.subscribe(val => this.authStatus = val);
@@ -71,6 +93,97 @@ export class DocumentuploadPage {
                  console.log(this.Circular);
                 });
   }
+
+
+
+  selectFile(){
+    let file
+        this.FileChooser.open().then((uri) => {
+         this.filePath.resolveNativePath(uri).then((fileentry) => {
+           let filename = this.eventsdata.getfilename(fileentry);
+           let fileext = this.eventsdata.getfileext(fileentry);
+
+           if(fileext == "pdf"){
+              this.eventsdata.makeFileIntoBlob(fileentry, fileext,"application/pdf").then((fileblob) => {
+                file={
+                   blob : fileblob,
+                  type: "application/pdf",
+                  fileext: fileext,
+                  filename: filename
+                }
+                this.eventsdata.addAssignmentFile(this.sbaid.sbaid, file)
+          })
+           }
+             if(fileext == "docx"){
+              this.eventsdata.makeFileIntoBlob(fileentry, fileext,"application/vnd.openxmlformats-officedocument.wordprocessingml.document").then((fileblob) => {
+           file={
+                   blob : fileblob,
+                  type: "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                  fileext: fileext,
+                  filename: filename
+                }
+                this.eventsdata.addAssignmentFile(this.sbaid.sbaid, file)
+          })
+           }
+             if(fileext == "doc"){
+              this.eventsdata.makeFileIntoBlob(fileentry, fileext,"application/msword").then((fileblob) => {
+                file={
+                   blob : fileblob,
+                  type: "application/msword",
+                  fileext: fileext,
+                  filename: filename
+                }
+                this.eventsdata.addAssignmentFile(this.sbaid.sbaid, file)
+            })
+           }
+           if(fileext == "epub"){
+              this.eventsdata.makeFileIntoBlob(fileentry, fileext,"application/octet-stream").then((fileblob) => {
+             file={
+                   blob : fileblob,
+                  type: "application/octet-stream",
+                  fileext: fileext,
+                  filename: filename
+                }
+                this.eventsdata.addAssignmentFile(this.sbaid.sbaid, file)
+            })
+           }
+              if(fileext == "accdb"){
+              this.eventsdata.makeFileIntoBlob(fileentry, filename,"application/msaccess").then((fileblob) => {
+             file={
+                   blob : fileblob,
+                  type: "application/msaccess",
+                  fileext: fileext,
+                  filename: filename
+                }
+                this.eventsdata.addAssignmentFile(this.sbaid.sbaid, file)
+            })
+           }
+             if(fileext == "xlsx"){
+              this.eventsdata.makeFileIntoBlob(fileentry, filename,"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet").then((fileblob) => {
+             file={
+                   blob : fileblob,
+                  type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                  fileext: fileext,
+                  filename: filename
+                }
+                this.eventsdata.addAssignmentFile(this.sbaid.sbaid, file)
+            })
+           }
+
+     //      else if (fileext!="doc"||"epub"||"xlsx"||"pdf"||"accdb"||"docx" ){
+
+     //alert("Can't add "+  filename)
+
+     //      }
+
+          })
+        })
+    }
+
+      gotoFilePage(file){
+    cordova.InAppBrowser.open(file,"_system", "location=yes");
+      }
+
 
   ngOnInit() {
     // Let's load our data here

@@ -40,7 +40,7 @@ export class PlumberlistPage {
     // ];
  }
 
-    
+
 viewItem(item){
       this.navCtrl.push(MemberprofilePage, {
         item: item

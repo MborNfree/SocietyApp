@@ -6,7 +6,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 
 
 // Angular Material
-import {  MatToolbarModule, MatSidenavModule, MatButtonModule, MatChipsModule, MatListModule, MatInputModule } from '@angular/material';
+
 
 import { LoginPage } from './../login/login';
   

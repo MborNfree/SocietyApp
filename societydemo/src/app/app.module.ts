@@ -13,6 +13,7 @@ import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { EmojiProvider } from '../providers/emoji';
 import { FilePath } from '@ionic-native/file-path';
 import { File } from '@ionic-native/file';
+import {FileChooser} from '@ionic-native/file-chooser';
 import { Camera } from '@ionic-native/camera';
 import { Transfer,TransferObject} from '@ionic-native/transfer';
 import { Printer } from '@ionic-native/printer';
@@ -99,7 +100,7 @@ import { RuleListAdminPage } from '../pages/rule-list-admin/rule-list-admin';
 import { BillListAdminPage } from '../pages/bill-list-admin/bill-list-admin';
 import { AddEmergencyCategoryAdminPage } from './../pages/add-emergency-category-admin/add-emergency-category-admin';
 import { routing    } from './app.routing';
-import { ImageGalleryPage } from '../pages/image-gallery/image-gallery';
+import { EventDataProvider } from '../providers/event-data/event-data';
 
 
 
@@ -179,8 +180,8 @@ var config = {
     RuleListAdminPage,
     AddNormsPage,
     Card,
-    BillListAdminPage,
-    ImageGalleryPage
+    BillListAdminPage
+
 
   ],
 
@@ -276,8 +277,8 @@ var config = {
     RuleListAdminPage,
     AddNormsPage,
     Card,
-    BillListAdminPage,
-    ImageGalleryPage
+    BillListAdminPage
+
   ],
 
   providers: [
@@ -290,6 +291,7 @@ var config = {
     Transfer,
     Camera,
     FilePath,
+    FileChooser,
     TransferObject,
    // FileUploadOptions,
     RemoteServiceProvider,
@@ -298,7 +300,8 @@ var config = {
     ProfileProvider,
     SMS,
     EmailComposer,
-    Stripe
+    Stripe,
+    EventDataProvider
 
   ]
 })

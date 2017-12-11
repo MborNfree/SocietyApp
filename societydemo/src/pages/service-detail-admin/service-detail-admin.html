@@ -5,22 +5,35 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
   <ion-navbar  color="navbar">
     <ion-title>ServiceDetail-admin</ion-title>
   </ion-navbar>
-
 </ion-header>
 
-
 <ion-content padding class="bg-masters">
-
-
-  <ion-label align="center"> Name:{{itemsParam.Service_name}}</ion-label>
-  <ion-label>Photos</ion-label>
-
-    <ion-label>Event Details</ion-label>
-    <p text-wrap>{{itemsParam.Description}}</p>
-    <p>{{itemsParam.Service_type}}</p>
+  <ion-card>
+    <div class="logo">
+        <ion-avatar align="center">
+          <img src="../assets/doctor.jpg" alt="logo" >
+      </ion-avatar>
+    </div>
+    <ion-list>
+      <ion-item>
+          <ion-label align="center"> Name:{{itemsParam.Service_name}}</ion-label>
+      </ion-item>
+      <ion-item>
+          <ion-label>Details :</ion-label>
+      </ion-item>
+      <ion-item>
+          <ion-label color="primary"> <ion-icon name="info"></ion-icon>{{itemsParam.Description}}</ion-label>
+      </ion-item>
+      <ion-item>
+          <ion-label color="primary"> <ion-icon name="person"></ion-icon>{{itemsParam.Service_type}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary"> <ion-icon name="call"></ion-icon>{{itemsParam.Contact_no}}</ion-label>
+    </ion-item>
+    </ion-list>
+  </ion-card>
 
 </ion-content>
