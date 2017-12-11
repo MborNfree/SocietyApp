@@ -14,7 +14,7 @@
       </button>
     </ion-buttons>
     <ion-buttons class="profile-picture big-profile-picture" end>
-      <img src="assets/img/user3.jpg" (click)='ViewProfile()'>
+      <img src="assets/img/user3.jpg" (click)='ViewProfile()'/>
     </ion-buttons>
     <ion-title align="center">
       Home Page
@@ -22,17 +22,16 @@
   </ion-toolbar>
 </ion-header>
 
-
 <ion-content padding class="bg-masters">
   <ion-slides class="imgcarousel" autoplay="2000" loop="true" speed="3000">
     <ion-slide>
-      <img src='assets/img/b3.JPG'>
+      <ion-img src='assets/img/b3.JPG'></ion-img>
     </ion-slide>
     <ion-slide>
-      <img src='assets/img/b5.JPG'>
+      <ion-img src='assets/img/b5.JPG'></ion-img>
     </ion-slide>
     <ion-slide>
-      <img src='assets/img/b3.JPG'>
+      <ion-img src='assets/img/b3.JPG'></ion-img>
     </ion-slide>
   </ion-slides>
 
@@ -44,7 +43,7 @@
         <ion-col>
           <ion-item (click)="showdoctorlist()" color="info">
             <ion-avatar>
-              <img src="assets/img/doctor.jpg" align="center">
+              <ion-img src="assets/img/doctor.jpg" align="center"></ion-img>
               <div class="card-title" align="center">Doctor</div>
             </ion-avatar>
           </ion-item>
@@ -52,7 +51,7 @@
         <ion-col>
           <ion-item (click)="showelectricianlist()" color="info">
             <ion-avatar>
-              <img src="assets/img/electrician.jpg" align="center">
+              <ion-img src="assets/img/electrician.jpg" align="center"></ion-img>
               <div class="card-title" align="center">Electrician</div>
             </ion-avatar>
           </ion-item>

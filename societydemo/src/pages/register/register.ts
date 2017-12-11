@@ -1,5 +1,3 @@
-import { LoginPage } from "./../login/login";
-
 import { Component, ViewChild } from "@angular/core";
 import {
   IonicPage,
@@ -9,10 +7,11 @@ import {
 } from "ionic-angular";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { AngularFireAuth } from "angularfire2/auth";
-
 import { AngularFireDatabase } from "angularfire2/database";
 import { AngularFireList } from "angularfire2/database";
 import firebase from "firebase";
+
+import { LoginPage } from "./../login/login";
 
 @IonicPage()
 @Component({
@@ -247,20 +246,18 @@ export class RegisterPage {
     this.fire.auth
       .createUserWithEmailAndPassword(this.email.value, this.password.value)
       .then(data => {
-        this.fdb
-          .list("/users/")
-          .push({
-            ID: currentUserUid,
-            email: this.email.value,
-            password: this.password.value,
-            first_name: this.fname.value,
-            last_name: this.lname.value,
-            flatno: this.flatn.value,
-            wing: this.wing.value,
-            parking_slot: this.vehicle.value,
-            familyMember: this.familyMember.value,
-            username: this.user.value
-          });
+        this.fdb.list("/users/").push({
+          ID: currentUserUid,
+          email: this.email.value,
+          password: this.password.value,
+          first_name: this.fname.value,
+          last_name: this.lname.value,
+          flatno: this.flatn.value,
+          wing: this.wing.value,
+          parking_slot: this.vehicle.value,
+          familyMember: this.familyMember.value,
+          username: this.user.value
+        });
 
         console.log("got data ", data);
 

@@ -1,9 +1,9 @@
-import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { Component } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
 import { AngularFireDatabase } from "angularfire2/database";
 import { CallNumber } from "@ionic-native/call-number";
 import { EmailComposer } from "@ionic-native/email-composer";
+import { InAppBrowser } from "@ionic-native/in-app-browser";
 /**
  * Generated class for the EmergencyListAdminPage page.
  *
@@ -92,10 +92,10 @@ export class EmergencyListAdminPage {
     });
   }
 
-gotoweb(web){
-alert(web);
-const browser = this.iab.create(web,'_blank','location:yes');
-}
+  gotoweb(web) {
+    alert(web);
+    const browser = this.iab.create(web, "_blank", "location:yes");
+  }
   ionViewDidLoad() {
     console.log("ionViewDidLoad EmergencyListAdminPage");
   }

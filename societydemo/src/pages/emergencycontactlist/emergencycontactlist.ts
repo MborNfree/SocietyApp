@@ -3,6 +3,10 @@ import { IonicPage, NavController, NavParams } from "ionic-angular";
 import { AngularFireDatabase } from "angularfire2/database";
 import { CallNumber } from "@ionic-native/call-number";
 import { EmailComposer } from "@ionic-native/email-composer";
+<<<<<<< HEAD
+=======
+import { InAppBrowser } from "@ionic-native/in-app-browser";
+>>>>>>> e91eeddc69c5af8102519d0002b730cff52323d8
 
 @IonicPage()
 @Component({
@@ -56,6 +60,7 @@ export class EmergencycontactlistPage {
         //Now we know we can send
       }
     });
+<<<<<<< HEAD
 
     alert(emailid);
     let email = {
@@ -86,5 +91,12 @@ export class EmergencycontactlistPage {
 
   ionViewDidLoad() {
     console.log("ionViewDidLoad EmergencycontactlistPage");
+=======
+  }
+
+  gotoweb(web) {
+    alert(web);
+    const browser = this.iab.create(web, "_blank", "location:yes");
+>>>>>>> e91eeddc69c5af8102519d0002b730cff52323d8
   }
 }

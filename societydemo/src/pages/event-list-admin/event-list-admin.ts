@@ -74,7 +74,6 @@ export class EventListAdminPage {
   }
   ionViewDidLoad() {
     console.log("ionViewDidLoad EventListAdminPage");
-
   }
 
   EventDetailPage() {

@@ -8,6 +8,7 @@
 </ion-header>
 
 <ion-content padding class="bg-masters">
+<<<<<<< HEAD
 
     <form [formGroup]="authForm" (ngSubmit)="onSubmit(authForm.value)">
         <div class="list card">
@@ -27,21 +28,25 @@
 
             </ion-item>
 
+=======
+
+>>>>>>> e91eeddc69c5af8102519d0002b730cff52323d8
   <form [formGroup]="authForm" (ngSubmit)="onSubmit(authForm.value)">
     <div class="list card">
       <ion-item class="profile-item">
         <div class="profile-picture big-profile-picture">
-          <ion-img src="{{username}}"></ion-img>
+          <ion-img src="{{username}}"> </ion-img>
         </div>
-
         <h2 class="profile-name dark">{{username}}</h2>
+<<<<<<< HEAD
         <!-- <div class="profile-info">{{flatno}}</div> -->
 
 
+=======
+>>>>>>> e91eeddc69c5af8102519d0002b730cff52323d8
         <h2 class="profile-name dark">{{fnm}}</h2>
-
+        <div class="profile-info">{{flatno}}</div>
       </ion-item>
-
     </div>
     <ion-item [ngClass]="{'error-border':!authForm.controls.username.valid && authForm.controls.username.touched}">
       <ion-label floating>Username</ion-label>

@@ -3,12 +3,6 @@ import { Http } from "@angular/http";
 import "rxjs/add/operator/map";
 import firebase from "firebase";
 
-/*
-  Generated class for the EventDataProvider provider.
-
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
 @Injectable()
 export class EventDataProvider {
   sbaList: any;

@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+import { DashboardComponent } from '../dashboard/dashboard.component';
+>>>>>>> e91eeddc69c5af8102519d0002b730cff52323d8
 import { Component, ViewChild } from "@angular/core";
 import {
   IonicPage,
@@ -6,19 +10,16 @@ import {
   AlertController
 } from "ionic-angular";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-import { HomePage } from "../home/home";
-import { RegisterPage } from "../register/register";
 import { ForgotpasswordPage } from "../forgotpassword/forgotpassword";
 import { AngularFireAuth } from "angularfire2/auth";
+<<<<<<< HEAD
 // import { Router } from '@angular/router';
 import { AngularFireDatabase } from "angularfire2/database";
+=======
+>>>>>>> e91eeddc69c5af8102519d0002b730cff52323d8
 
-/**
- * Generated class for the LoginPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { HomePage } from "../home/home";
+import { RegisterPage } from "../register/register";
 
 @IonicPage()
 @Component({
@@ -34,14 +35,11 @@ export class LoginPage {
 
   constructor(
     private alertCtrl: AlertController,
-    private fdb: AngularFireDatabase,
     private fire: AngularFireAuth,
     public navCtrl: NavController,
     public navParams: NavParams,
     public formBuilder: FormBuilder
   ) {
-    // this.email = window.localStorage.getItem('usernm');
-    // this.password = window.localStorage.getItem('password');
 
     this.signinForm = formBuilder.group({
       usernm: [
@@ -80,14 +78,22 @@ export class LoginPage {
         this.currentUserUid = JSON.stringify(data.uid);
         sessionStorage.setItem("Sessionuid", this.currentUserUid);
         sessionStorage.setItem("Sessioneml", data.email);
-        let status = this.fdb.list("users", ref =>
-          ref.orderByChild("ID").equalTo("ID")
-        );
+        // let status = this.fdb.list("users", ref =>
+        //   ref.orderByChild("ID").equalTo("ID")
+        // );
         console.log("Success! You're logged in");
-        console.log("st" + JSON.stringify(status));
-        this.navCtrl.push(HomePage, {
-          uid: this.currentUserUid
-        });
+        // console.log("st" + JSON.stringify(status));
+        if(data.email=='admin@gmail.com'){
+          alert('Admin Dashboard');
+          this.navCtrl.push(DashboardComponent, {
+            uid: this.currentUserUid
+          });
+        }else{
+          this.navCtrl.push(HomePage, {
+            uid: this.currentUserUid
+          });
+        }
+
         // user is logged in
       })
       .catch(error => {
