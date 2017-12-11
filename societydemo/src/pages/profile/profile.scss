@@ -2,7 +2,6 @@ page-profile {
   .profile-item {
     text-align: center;
   }
-
   .profile-picture {
     border: 1px solid rgba(0, 0, 0, 0.25);
     padding: 3px;
@@ -15,12 +14,10 @@ page-profile {
     height: 128px;
     overflow: hidden;
   }
-
   .profile-picture img {
     width: 128px;
     border-radius: 100%;
   }
-
   .profile-name {
     padding-top: 20px;
     font-size: x-large !important;
@@ -28,3 +25,4 @@ page-profile {
     text-transform: capitalize;
   }
 }
+

@@ -1,13 +1,9 @@
-import { NgModule } from '@angular/core';
-import { IonicPageModule } from 'ionic-angular';
-import { AddNormsPage } from './add-norms';
+import { NgModule } from "@angular/core";
+import { IonicPageModule } from "ionic-angular";
+import { AddNormsPage } from "./add-norms";
 
 @NgModule({
-  declarations: [
-    AddNormsPage,
-  ],
-  imports: [
-    IonicPageModule.forChild(AddNormsPage),
-  ],
+  declarations: [AddNormsPage],
+  imports: [IonicPageModule.forChild(AddNormsPage)]
 })
 export class AddNormsPageModule {}

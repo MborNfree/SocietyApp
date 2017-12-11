@@ -1,12 +1,6 @@
-<!--
-  Generated template for the LoginPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
-  <ion-toolbar  color="navbar">
+  <ion-toolbar color="navbar">
     <ion-title align="center">Login</ion-title>
   </ion-toolbar>
 
@@ -14,53 +8,55 @@
 
 <ion-content padding class="bg-masters">
 
-    <form [formGroup]="signinForm">
-        <ion-item class="profile-item">
-            <div class="big-profile-picture">
-              <img src="../../assets/society.jpg">
-              <!-- <img src="../assets/sign up.png"> -->
-            </div>
-          </ion-item>
-        <ion-item [ngClass]="{'error-border':!signinForm.controls.usernm.valid && signinForm.controls.usernm.touched}">
-            <ion-label floating><ion-icon  class="reg-icon" name="mail"></ion-icon> Email ID</ion-label>
-            <ion-input formControlName="usernm" type="email" [(ngModel)]="usernm" #email></ion-input>
-        </ion-item>
+  <form [formGroup]="signinForm">
+    <ion-item class="profile-item">
+      <div class="big-profile-picture">
+        <ion-img src="assets/img/society.jpg"></ion-img>
 
-        <ion-item *ngIf="signinForm.controls.usernm.hasError('required') && signinForm.controls.usernm.touched">
-            <p>Sorry, field Email ID is required!</p>
-        </ion-item>
+      </div>
+    </ion-item>
+    <ion-item [ngClass]="{'error-border':!signinForm.controls.usernm.valid && signinForm.controls.usernm.touched}">
+      <ion-label floating>
+        <ion-icon class="reg-icon" name="mail"></ion-icon> Email ID</ion-label>
+      <ion-input formControlName="usernm" type="email" [(ngModel)]="usernm" #email></ion-input>
+    </ion-item>
 
-        <ion-item *ngIf="signinForm.controls.usernm.hasError('minlength') && signinForm.controls.usernm.touched">
-            <p>Sorry, minimum Email ID length is 8!</p>
-        </ion-item>
-        <ion-item *ngIf="signinForm.controls.usernm.hasError('maxlength') && signinForm.controls.usernm.touched">
-            <p>Sorry, maximum Email ID length is 30!</p>
-        </ion-item>
+    <ion-item *ngIf="signinForm.controls.usernm.hasError('required') && signinForm.controls.usernm.touched">
+      <p>Sorry, field Email ID is required!</p>
+    </ion-item>
 
-        <ion-item [ngClass]="{'error-border':!signinForm.controls.password.valid && signinForm.controls.password.touched}">
-            <ion-label floating><ion-icon  class="reg-icon" name="contact"></ion-icon> Password</ion-label>
-            <ion-input formControlName="password" type="password" [(ngModel)]="pwd" #password></ion-input>
-        </ion-item>
-        <ion-item *ngIf="signinForm.controls.password.hasError('required') && signinForm.controls.password.touched">
-            <p>Sorry, field password is required!</p>
-        </ion-item>
-        <ion-item *ngIf="signinForm.controls.password.hasError('minlength') && signinForm.controls.password.touched">
-            <p>Sorry, minimum password length is 6!</p>
-        </ion-item>
+    <ion-item *ngIf="signinForm.controls.usernm.hasError('minlength') && signinForm.controls.usernm.touched">
+      <p>Sorry, minimum Email ID length is 8!</p>
+    </ion-item>
+    <ion-item *ngIf="signinForm.controls.usernm.hasError('maxlength') && signinForm.controls.usernm.touched">
+      <p>Sorry, maximum Email ID length is 30!</p>
+    </ion-item>
 
-        <button ion-button full color="button" [disabled]="!signinForm.valid"  (click)="signInUser()"style="margin-top: 20px;" type="submit">Login</button>
-    </form>
-      <ion-list>
-        <ion-item>
-              <div class="row">
-                  <div class="col">
-                  <button ion-button  clear text-align="left"  (click)="forgotPwd()" >Forgot Password?</button>
-                  </div>
-                  <div class="col">
-                   <button ion-button  clear  text-align="right"  (click)="signup()" >Dont Have any account?</button>
-                  </div>
-              </div>
-        </ion-item>
-      </ion-list>
+    <ion-item [ngClass]="{'error-border':!signinForm.controls.password.valid && signinForm.controls.password.touched}">
+      <ion-label floating>
+        <ion-icon class="reg-icon" name="contact"></ion-icon> Password</ion-label>
+      <ion-input formControlName="password" type="password" [(ngModel)]="pwd" #password></ion-input>
+    </ion-item>
+    <ion-item *ngIf="signinForm.controls.password.hasError('required') && signinForm.controls.password.touched">
+      <p>Sorry, field password is required!</p>
+    </ion-item>
+    <ion-item *ngIf="signinForm.controls.password.hasError('minlength') && signinForm.controls.password.touched">
+      <p>Sorry, minimum password length is 6!</p>
+    </ion-item>
+
+    <button ion-button full color="button" [disabled]="!signinForm.valid" (click)="signInUser()" style="margin-top: 20px;" type="submit">Login</button>
+  </form>
+  <ion-list>
+    <ion-item>
+      <div class="row">
+        <div class="col">
+          <button ion-button clear text-align="left" (click)="forgotPwd()">Forgot Password?</button>
+        </div>
+        <div class="col">
+          <button ion-button clear text-align="right" (click)="signup()">Dont Have any account?</button>
+        </div>
+      </div>
+    </ion-item>
+  </ion-list>
 
 </ion-content>

@@ -1,9 +1,3 @@
-<!--
-  Generated template for the BillingchargesPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar color="navbar">
@@ -15,76 +9,64 @@
 
 <ion-content padding class="bg-masters">
 
+  <ion-label>Bill Due Date:10/10/2017</ion-label>
+  <ion-label>Name:</ion-label>
+  <ion-label>Flat No:A-201</ion-label>
+  <ion-label>Bill Due Date:10/10/2017</ion-label>
+  <ion-label>Bill Amount:2700</ion-label>
 
+  <table>
+    <tr>
+      <th>Particulars</th>
+      <th>Amount</th>
+    </tr>
+    <tr>
+      <td> Sinking Fund</td>
+      <td>1400</td>
 
+    </tr>
+    <tr>
+      <td>Repair Fund</td>
+      <td>1000</td>
 
-<ion-label>Bill Due Date:10/10/2017</ion-label>
-<ion-label>Name:</ion-label>
-<ion-label>Flat No:A-201</ion-label>
-<ion-label>Bill Due Date:10/10/2017</ion-label>
-<ion-label>Bill Amount:2700</ion-label>
+    </tr>
+    <tr>
+      <td>Electrical Charges</td>
+      <td>1200</td>
 
+    </tr>
+    <tr>
+      <td>Municipal Due</td>
+      <td>350</td>
 
+    </tr>
+    <tr>
+      <td>Parking Charges</td>
+      <td>500</td>
 
-<table>
-  <tr>
-    <th>Particulars</th>
-    <th>Amount</th>
-  </tr>
-  <tr>
-    <td> Sinking Fund</td>
-    <td>1400</td>
+    </tr>
+    <tr>
+      <td>Security Charges</td>
+      <td>350</td>
+    </tr>
+    <tr>
+      <td>Other Charges</td>
+      <td>200</td>
+    </tr>
+  </table>
 
-  </tr>
-  <tr>
-    <td>Repair Fund</td>
-    <td>1000</td>
+  <ion-row>
+    <ion-col col-6>
+      <button ion-button color="secondary" class="my-width">
+        <b>Cancel</b>
+      </button>
+    </ion-col>
 
-  </tr>
-  <tr>
-    <td>Electrical Charges</td>
-    <td>1200</td>
-
-  </tr>
-  <tr>
-    <td>Municipal Due</td>
-    <td>350</td>
-
-  </tr>
-  <tr>
-    <td>Parking Charges</td>
-    <td>500</td>
-
-  </tr>
-  <tr>
-    <td>Security Charges</td>
-    <td>350</td>
-  </tr>
-  <tr>
-    <td>Other Charges</td>
-    <td>200</td>
-  </tr>
-</table>
-
-<!-- <div class="row">
-	<div class="col col-50"><button class="button button-positive">
- Cancel
-</button> </div><div class="col col-50"><button class="button button-positive">
- Proceed To Payment
-</button></div>
-</div> -->
- <ion-row>
-	<ion-col col-6>
-		<button ion-button color="secondary" class="my-width" >
-			<b>Cancel</b>
-		</button>
-	</ion-col>
-
-	<ion-col col-6>
-		<button ion-button color="default" class="my-width" >
-			<b (click)="gotopayment()">Proceed To Payment</b>
-		</button>
-	</ion-col>
-</ion-row>
+    <ion-col col-6>
+      <button ion-button color="default" class="my-width">
+        <b (click)="gotopayment()">Proceed To Payment</b>
+      </button>
+    </ion-col>
+  </ion-row>
 
 </ion-content>

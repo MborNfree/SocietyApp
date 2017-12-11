@@ -22,8 +22,13 @@ export class SendSmsModalPage {
   };
     SMS: any;
     phonenumber:number;
+    data:string;
     textmessage:string;
-  constructor(public navCtrl: NavController, public navParams: NavParams,public viewCtrl : ViewController,private toast:ToastController,private sms: SMS) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public params: NavParams,public viewCtrl : ViewController,private toast:ToastController,private sms: SMS) {
+    console.log(params.get('data'));
+    this.data = JSON.stringify(params.get('data'));
+    console.log(this.data);
+    //console.log(this.data(contact));
   }
 
   ionViewDidLoad() {

@@ -1,15 +1,10 @@
-<!--
-  Generated template for the PropertyListAdminPage page.
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
-  <ion-navbar  color="navbar">
+  <ion-navbar color="navbar">
     <ion-title>propertyList-admin</ion-title>
     <button ion-button icon-only menuToggle start>
-        <ion-icon name="menu"></ion-icon>
+      <ion-icon name="menu"></ion-icon>
     </button>
   </ion-navbar>
 
@@ -17,15 +12,14 @@
 
 <ion-content padding class="bg-masters">
 
-
-    <button ion-button block (click)="AddProperty()" class="button">Add Property</button>
+  <button ion-button block (click)="AddProperty()" class="button">Add Property</button>
 
   <ion-label>Society Property</ion-label>
-    <ion-list>
-        <ion-item *ngFor="let item of items" >{{item.title}}</ion-item>
-     </ion-list>
-<ion-label>Society Assets</ion-label>
-     <ion-list>
-        <ion-item *ngFor="let asset of assets" >{{asset.title}}</ion-item>
-     </ion-list>
+  <ion-list>
+    <ion-item *ngFor="let item of items">{{item.title}}</ion-item>
+  </ion-list>
+  <ion-label>Society Assets</ion-label>
+  <ion-list>
+    <ion-item *ngFor="let asset of assets">{{asset.title}}</ion-item>
+  </ion-list>
 </ion-content>

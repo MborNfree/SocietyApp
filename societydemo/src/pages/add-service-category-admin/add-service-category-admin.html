@@ -1,8 +1,8 @@
 <ion-header>
   <ion-navbar color="navbar">
-      <button ion-button icon-only menuToggle start>
-          <ion-icon name="menu" ></ion-icon>
-      </button>
+    <button ion-button icon-only menuToggle start>
+      <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-title align="center">Service Category</ion-title>
   </ion-navbar>
 </ion-header>
@@ -10,21 +10,21 @@
 <ion-content padding class="bg-masters">
   <form [formGroup]="authForm">
     <ion-item [ngClass]="{'error-border':!authForm.controls.ServiceCatnm.valid && authForm.controls.ServiceCatnm.touched}">
-        <ion-label floating>Service Category Name</ion-label>
-        <ion-input formControlName="ServiceCatnm" type="text" #serviceCategory [(ngModel)]="ServiceCatnm"></ion-input>
+      <ion-label floating>Service Category Name</ion-label>
+      <ion-input formControlName="ServiceCatnm" type="text" #serviceCategory [(ngModel)]="ServiceCatnm"></ion-input>
     </ion-item>
     <ion-item *ngIf="authForm.controls.ServiceCatnm.hasError('required') && authForm.controls.ServiceCatnm.touched">
-        <p>Sorry, field Service Category Name is required!</p>
+      <p>Sorry, field Service Category Name is required!</p>
     </ion-item>
     <ion-item *ngIf="authForm.controls.ServiceCatnm.hasError('pattern') && authForm.controls.ServiceCatnm.touched">
-        <p>Sorry, only small and capital letters are allowed!</p>
+      <p>Sorry, only small and capital letters are allowed!</p>
     </ion-item>
     <ion-item *ngIf="authForm.controls.ServiceCatnm.hasError('minlength') && authForm.controls.ServiceCatnm.touched">
       <p>Sorry, maximum Service Category length is 2!</p>
-  </ion-item>
-  <ion-item *ngIf="authForm.controls.ServiceCatnm.hasError('maxlength') && authForm.controls.ServiceCatnm.touched">
-    <p>Sorry, maximum Service Category length is 20!</p>
-</ion-item>
+    </ion-item>
+    <ion-item *ngIf="authForm.controls.ServiceCatnm.hasError('maxlength') && authForm.controls.ServiceCatnm.touched">
+      <p>Sorry, maximum Service Category length is 20!</p>
+    </ion-item>
     <button ion-button full color="button" [disabled]="!authForm.valid" (click)="addServiceCategory(serviceCategory);">Add</button>
-</form>
+  </form>
 </ion-content>

@@ -1,9 +1,3 @@
-<!--
-  Generated template for the EventdetailsPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
   <ion-navbar color="navbar">
     <ion-title>Event Details</ion-title>
@@ -12,10 +6,12 @@
 
 <ion-content padding class="bg-masters">
   <ion-card>
-      <ion-label align="center">Event  Name:{{itemsParam.event_name}}</ion-label>
-      <ion-label>Event Details</ion-label>
-      <ion-label>Event Description:</ion-label><p text-wrap>{{itemsParam.event_desc}}</p>
-      <ion-label>Event Date :</ion-label><p>{{itemsParam.event_date}}</p>
+    <ion-label align="center">Event Name:{{itemsParam.event_name}}</ion-label>
+    <ion-label>Event Details</ion-label>
+    <ion-label>Event Description:</ion-label>
+    <p text-wrap>{{itemsParam.event_desc}}</p>
+    <ion-label>Event Date :</ion-label>
+    <p>{{itemsParam.event_date}}</p>
   </ion-card>
 
 </ion-content>

@@ -1,13 +1,8 @@
-import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
-import 'rxjs/add/operator/map';
-import { AngularFireDatabase } from 'angularfire2/database';
-<<<<<<< HEAD
-import { Observable } from 'rxjs/Observable';
-=======
-
-
->>>>>>> 9b92757622c059d0760b7985c91eed3d9e0f9f36
+import { Injectable } from "@angular/core";
+import { Http } from "@angular/http";
+import "rxjs/add/operator/map";
+import { AngularFireDatabase } from "angularfire2/database";
+import { Observable } from "rxjs/Observable";
 
 /*
   Generated class for the ProfileProvider provider.
@@ -17,9 +12,8 @@ import { Observable } from 'rxjs/Observable';
 */
 @Injectable()
 export class ProfileProvider {
-
   constructor(public http: Http) {
-    console.log('Hello ProfileProvider Provider');
+    console.log("Hello ProfileProvider Provider");
   }
 
   // getUserByUserId(userId:string): Observable<Profile>{
@@ -32,5 +26,4 @@ export class ProfileProvider {
   //   .first()
   //   .map(result => Profile.parseFromJson(result));
   // }
-
 }

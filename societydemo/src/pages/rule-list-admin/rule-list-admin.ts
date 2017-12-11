@@ -35,5 +35,8 @@ export class RuleListAdminPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad RuleListAdminPage');
   }
+  viewItem(d){
+    console.log('view method ');
+  }
 
 }
