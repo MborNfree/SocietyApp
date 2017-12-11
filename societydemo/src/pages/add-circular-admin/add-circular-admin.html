@@ -1,44 +1,38 @@
-<!--
-  Generated template for the AddCircularAdminPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-  <ion-navbar  color="navbar">
+  <ion-navbar color="navbar">
     <ion-title>addCircular-admin</ion-title>
     <button ion-button icon-only menuToggle start>
-        <ion-icon name="menu"></ion-icon>
+      <ion-icon name="menu"></ion-icon>
     </button>
   </ion-navbar>
 </ion-header>
 <ion-content padding class="bg-masters">
 
-    <form  [formGroup]="authForm" (ngSubmit)="onSubmit(authForm.value)">
-        <ion-list>
-            <ion-item [ngClass]="{'error-border':!authForm.controls.Circularnm.valid && authForm.controls.Circularnm.touched}">
-                <ion-label floating>Circular Name</ion-label>
-                <ion-input formControlName="Circularnm" type="text" [(ngModel)]="Circularnm" #cirnm></ion-input>
-            </ion-item>
-            <ion-item *ngIf="authForm.controls.Circularnm.hasError('required') && authForm.controls.Circularnm.touched">
-                <p>Sorry, field username is required!</p>
-                <ion-item *ngIf="authForm.controls.Circularnm.hasError('pattern') && authForm.controls.Circularnm.touched">
-                    <p>Sorry, only small and capital letters are allowed!</p>
-                </ion-item>
-                <ion-item *ngIf="authForm.controls.Circularnm.hasError('maxlength') && authForm.controls.Circularnm.touched">
-                    <p>Sorry, maximum username length is 30!</p>
-                </ion-item>
-            </ion-item>
-            <ion-item [ngClass]="{'error-border':!authForm.controls.cfile.valid && authForm.controls.cfile.touched}">
-                <ion-label floating>File </ion-label>
-                <ion-input type="file"  #cirpath></ion-input>
-            </ion-item>
-            <ion-item *ngIf="authForm.controls.cfile.hasError('required') && authForm.controls.cfile.touched">
-                <p>Sorry, field username is required!</p>
-            </ion-item>
-          <div padding>
-              <button ion-button full class="button" type="submit">Upload</button>
-          </div>
-        </ion-list>
-      </form>
+  <form [formGroup]="authForm" (ngSubmit)="onSubmit(authForm.value)">
+    <ion-list>
+      <ion-item [ngClass]="{'error-border':!authForm.controls.Circularnm.valid && authForm.controls.Circularnm.touched}">
+        <ion-label floating>Circular Name</ion-label>
+        <ion-input formControlName="Circularnm" type="text" [(ngModel)]="Circularnm" #cirnm></ion-input>
+      </ion-item>
+      <ion-item *ngIf="authForm.controls.Circularnm.hasError('required') && authForm.controls.Circularnm.touched">
+        <p>Sorry, field username is required!</p>
+        <ion-item *ngIf="authForm.controls.Circularnm.hasError('pattern') && authForm.controls.Circularnm.touched">
+          <p>Sorry, only small and capital letters are allowed!</p>
+        </ion-item>
+        <ion-item *ngIf="authForm.controls.Circularnm.hasError('maxlength') && authForm.controls.Circularnm.touched">
+          <p>Sorry, maximum username length is 30!</p>
+        </ion-item>
+      </ion-item>
+      <ion-item [ngClass]="{'error-border':!authForm.controls.cfile.valid && authForm.controls.cfile.touched}">
+        <ion-label floating>File </ion-label>
+        <ion-input type="file" #cirpath></ion-input>
+      </ion-item>
+      <ion-item *ngIf="authForm.controls.cfile.hasError('required') && authForm.controls.cfile.touched">
+        <p>Sorry, field username is required!</p>
+      </ion-item>
+      <div padding>
+        <button ion-button full class="button" type="submit">Upload</button>
+      </div>
+    </ion-list>
+  </form>
 </ion-content>

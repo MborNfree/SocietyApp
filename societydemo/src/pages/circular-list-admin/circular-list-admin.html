@@ -6,28 +6,31 @@
 -->
 <ion-header>
   <ion-navbar color="navbar">
-  <button ion-button icon-only menuToggle start>
-    <ion-icon name="menu"></ion-icon>
-</button>
+    <button ion-button icon-only menuToggle start>
+      <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-title>circularList-admin</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding class="bg-masters">
   <ion-list *ngFor="let document of Circular">
-    <ion-item  (click)="viewItem()">
-        <ion-card>
-            <img src="{{document.icon}}"/>
-            <ion-card-content>
-              <ion-card-title>{{document.title}}</ion-card-title>
-              <p>{{document.doc_name}}</p>
-            </ion-card-content>
-            <ion-row>
-              <ion-col>
-                <a href="{{document.icon}}" target="_blank"><button ion-button icon-only default class="button"><ion-icon name="download"></ion-icon>Download</button></a>
-              </ion-col>
-            </ion-row>
-          </ion-card>
+    <ion-item (click)="viewItem()">
+      <ion-card>
+        <ion-img src="{{document.icon}}" ></ion-img>
+        <ion-card-content>
+          <ion-card-title>{{document.title}}</ion-card-title>
+          <p>{{document.doc_name}}</p>
+        </ion-card-content>
+        <ion-row>
+          <ion-col>
+            <a href="{{document.icon}}" target="_blank">
+              <button ion-button icon-only default class="button">
+                <ion-icon name="download"></ion-icon>Download</button>
+            </a>
+          </ion-col>
+        </ion-row>
+      </ion-card>
     </ion-item>
-</ion-list>
+  </ion-list>
 </ion-content>

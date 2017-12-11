@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import {FirebaseListObservable} from 'angularfire2/database-deprecated';
 import { Component} from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
@@ -14,80 +15,101 @@ import * as firebase from 'firebase';
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
+=======
+import { FirebaseListObservable } from "angularfire2/database-deprecated";
+import { Component } from "@angular/core";
+import { IonicPage, NavController, NavParams } from "ionic-angular";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { ActivatedRoute } from "@angular/router";
+import { AngularFireDatabase } from "angularfire2/database";
+import { AngularFireAuth } from "angularfire2/auth";
+import * as firebase from "firebase";
+// import { Observable } from 'rxjs/Observable';
+>>>>>>> aea7b44807dfda4017e3c6cc120a717b4ce6b027
 
 @IonicPage()
 @Component({
-  selector: 'page-profile',
-  templateUrl: 'profile.html',
+  selector: "page-profile",
+  templateUrl: "profile.html"
 })
 export class ProfilePage {
-  item: any;
-  subscription: any;
-  items: any[];
-  userp: FirebaseListObservable<any[]>;
-  UserProfile: any;
-  userData1:any;
   user: FirebaseListObservable<{}>;
-  userData:FirebaseListObservable<{}>;
-
-  items1: FirebaseListObservable<any[]> = null;
   userId: string;
-
-  username:string;
-  password:string;
-  fnm:string;
-  lnm:string;
-  flatno:any;
-  email:string;
-  family:any;
-  Id :any;
-  vehicles:any;
+  username: string;
+  password: string;
+  fnm: string;
+  lnm: string;
+  flatno: any;
+  email: string;
+  family: any;
+  Id: any;
+  vehicles: any;
   public uIDParam;
-  sessionUser:string;
+  sessionUser: string;
+  public inactive: boolean = true;
 
   authForm: FormGroup;
+<<<<<<< HEAD
   userRef: string = '/users/';
 
   constructor( private route: ActivatedRoute, private afAuth: AngularFireAuth,public navCtrl: NavController, public navParams: NavParams,public formBuilder: FormBuilder,private fdb: AngularFireDatabase,private fireAuth: AngularFireAuth) {
 
     this.uIDParam = navParams.get('uid');
+=======
+  userRef: string = "/users/";
+
+  constructor(
+    private route: ActivatedRoute,
+    private afAuth: AngularFireAuth,
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public formBuilder: FormBuilder,
+    private fdb: AngularFireDatabase,
+    private fireAuth: AngularFireAuth
+  ) {
+    this.uIDParam = navParams.get("uid");
+>>>>>>> aea7b44807dfda4017e3c6cc120a717b4ce6b027
     var ref = firebase.database().ref("users");
     //ref.on('value', this.gotData,this.errData);
 
     // Get a reference to the database service
 
     this.afAuth.authState.subscribe(user => {
-      if(user) this.userId = user.uid;
+      if (user) this.userId = user.uid;
       let self = this;
-      ref.on('value', function (data) {
-      console.log('data');
+      ref.on(
+        "value",
+        function(data) {
+          console.log("data");
 
-      var users = data.val();
-      var keys = Object.keys(users);
+          var users = data.val();
+          var keys = Object.keys(users);
 
-       for ( var i = 0; i < keys.length; i++) {
-         var k = keys[i];
-         var sessionUser = sessionStorage.getItem("Sessioneml");
-         if (users[k].email == sessionUser) {
-          console.log('true');
-          self.fnm = users[k].first_name;
-          self.lnm = users[k].last_name;
-          self.password = users[k].password;
-          self.email = users[k].email;
-          self.Id = users[k].ID;
-          self.username = users[k].username;
-          self.flatno = users[k].flatno;
-          self.family = users[k].familyMember;
-          self.vehicles = users[k].parking_slot;
-         }
-       }
-      }, function (error) {
-            //Error code goes here
-      });
-     // ref.on('value', this.gotData,this.errData);
-
-    })
+          for (var i = 0; i < keys.length; i++) {
+            var k = keys[i];
+            var sessionUser = sessionStorage.getItem("Sessioneml");
+            if (users[k].email == sessionUser) {
+              console.log("true");
+              self.fnm = users[k].first_name;
+              self.lnm = users[k].last_name;
+              self.password = users[k].password;
+              self.email = users[k].email;
+              self.Id = users[k].ID;
+              self.username = users[k].username;
+              self.flatno = users[k].flatno;
+              self.family = users[k].familyMember;
+              self.vehicles = users[k].parking_slot;
+            }
+          }
+        },
+        function(error) {
+          //Error code goes here
+        }
+      );
+      // ref.on('value', this.gotData,this.errData);
+    });
     this.authForm = formBuilder.group({
+<<<<<<< HEAD
       username: [this.username, Validators.compose([Validators.required, Validators.pattern('[a-zA-Z]*'), Validators.minLength(6), Validators.maxLength(30)])],
       password: [this.password, Validators.compose([Validators.required, Validators.minLength(8)])],
       flatno: [this.flatno, Validators.compose([Validators.required,Validators.pattern('[0-9]*'), Validators.minLength(3)])],
@@ -99,79 +121,80 @@ export class ProfilePage {
      });
 
 
+=======
+      username: [
+        "",
+        Validators.compose([
+          Validators.required,
+          Validators.pattern("[a-zA-Z-]*"),
+          Validators.minLength(8),
+          Validators.maxLength(30)
+        ])
+      ],
+      password: [
+        "",
+        Validators.compose([Validators.required, Validators.minLength(8)])
+      ],
+      flatno: [
+        "",
+        Validators.compose([
+          Validators.required,
+          Validators.pattern("[0-9]*"),
+          Validators.minLength(3)
+        ])
+      ],
+      email: [
+        "",
+        Validators.compose([
+          Validators.required,
+          Validators.pattern("[a-zA-Z]*"),
+          Validators.minLength(8),
+          Validators.maxLength(30)
+        ])
+      ],
+      family: [
+        "",
+        Validators.compose([
+          Validators.required,
+          Validators.pattern("[0-9]*"),
+          Validators.minLength(1)
+        ])
+      ],
+      vehicles: [
+        "",
+        Validators.compose([
+          Validators.required,
+          Validators.pattern("[0-9]*"),
+          Validators.minLength(1)
+        ])
+      ],
+      fnm: [
+        "",
+        Validators.compose([Validators.required, Validators.minLength(10)])
+      ],
+      lnm: [
+        "",
+        Validators.compose([Validators.required, Validators.minLength(10)])
+      ]
+    });
+>>>>>>> aea7b44807dfda4017e3c6cc120a717b4ce6b027
   }
-// gotData(data){
-//   console.log('data');
-//  // console.log(data.val());
-//   var users = data.val();
-//   var keys = Object.keys(users);
-//  // console.log('keys'+keys);
-//   var i;
-//   for(i=0; i < keys.length;i++){
 
-//     var k = keys[i];
-//     var sessionUser =sessionStorage.getItem("Sessioneml");
-//     //  console.log(sessionUser);
-//     //  console.log(users[k].email);
-
-//     if(users[k].email == sessionUser){
-//         console.log('true');
-
-//         var email = users[k].email;
-//         var Id = users[k].ID;
-//         var username = users[k].username;
-//         var flatno = users[k].flatno;
-//         var family = users[k].familyMember;
-//         var vehicles= users[k].parking_slot;
-//         var fnm= users[k].first_name;
-//         var lnm= users[k].last_name;
-
-
-//         console.log('user data ='+Id, username,flatno,family,vehicles);
-//     }
-//   }
-// }
-//   errData(err){
-//     console.log('Error');
-//     console.log(err);
-//   }
-
+  changeStatus() {
+    this.inactive = !this.inactive;
+  }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ProfilePage');
+    console.log("ionViewDidLoad ProfilePage");
   }
-   // Return an observable list with optional query
-  // You will usually call this from OnInit in a component
-  // getCurrentUserProfile(id: string): FirebaseListObservable<Profile[]> {
-
-  //   const user = this.fdb.object('users/'+id);
-  //   console.log(user);
-  //   user.valueChanges().subscribe(data => {
-  //     if(data.$value !== null) {
-  //       console.log('User does not exist');
-  //     } else {
-  //       console.log('User does exist');
-  //     }
-  //   });
-  //  // return this.fdb.object('/users/'+id);
-  //   // if (!this.userId) return;
-  //   // let currentUserUid = this.fireAuth.auth.currentUser.uid;
-  //   // //let status= this.fdb.list('users', ref => ref.orderByChild('ID').equalTo(this.sessionUser));
-  //   // return this.fdb.list(`users/${currentUserUid}`);
-  //   // //return status;
-  // }
-
 
   onSubmit(value: any): void {
-    console.log('v'+JSON.stringify(value));
+    console.log("v" + JSON.stringify(value));
 
-    if(this.authForm.valid) {
-
+    if (this.authForm.valid) {
       let currentUserUid = this.fireAuth.auth.currentUser.uid;
-      let status =this.fdb.object(`users/${currentUserUid}`).update(value);
+      let status = this.fdb.object(`users/${currentUserUid}`).update(value);
       alert(status);
     }
   }
-
-
 }

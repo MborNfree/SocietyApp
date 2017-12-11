@@ -23,7 +23,7 @@
              class="message"
              [class.left]=" msg.userId === toUser.id "
              [class.right]=" msg.userId === user.id ">
-            <img class="user-img" [src]="msg.userAvatar" alt="" src="">
+            <ion-img class="user-img" [src]="msg.userAvatar" alt="" src=""></ion-img>
             <ion-spinner name="dots" *ngIf="msg.status === 'pending'"></ion-spinner>
             <div class="msg-detail">
                 <div class="msg-info">

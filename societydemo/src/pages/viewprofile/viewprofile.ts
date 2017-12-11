@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Component } from "@angular/core";
+import { IonicPage, NavController, NavParams } from "ionic-angular";
 
 /**
  * Generated class for the ViewprofilePage page.
@@ -10,16 +10,13 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-viewprofile',
-  templateUrl: 'viewprofile.html',
+  selector: "page-viewprofile",
+  templateUrl: "viewprofile.html"
 })
 export class ViewprofilePage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ViewprofilePage');
+    console.log("ionViewDidLoad ViewprofilePage");
   }
-
 }

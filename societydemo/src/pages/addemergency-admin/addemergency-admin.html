@@ -1,53 +1,52 @@
 <ion-header>
 
-  <ion-navbar  color="navbar">
-      <button ion-button icon-only menuToggle start>
-          <ion-icon name="menu"></ion-icon>
-      </button>
+  <ion-navbar color="navbar">
+    <button ion-button icon-only menuToggle start>
+      <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-title>Add Emergency-Admin</ion-title>
   </ion-navbar>
 
 </ion-header>
 
-
 <ion-content padding class="bg-masters">
-    <form [formGroup]="authForm" >
+  <form [formGroup]="authForm">
 
-       <ion-item [ngClass]="{'error-border':!authForm.controls.emergencyType.valid && authForm.controls.emergencyType.touched}">
-        <ion-label floating>Emergency Type :</ion-label>
-        <ion-select formControlName="emergencyType" #emergType>
-            <ion-option *ngFor="let item of items" >{{ item.emergency_category }}</ion-option>
-        </ion-select>
+    <ion-item [ngClass]="{'error-border':!authForm.controls.emergencyType.valid && authForm.controls.emergencyType.touched}">
+      <ion-label floating>Emergency Type :</ion-label>
+      <ion-select formControlName="emergencyType" #emergType>
+        <ion-option *ngFor="let item of items">{{ item.emergency_category }}</ion-option>
+      </ion-select>
     </ion-item>
     <ion-item *ngIf="authForm.controls.emergencyType.hasError('required') && authForm.controls.emergencyType.touched">
-        <p>Sorry, field Service Type is required!</p>
-    </ion-item> 
+      <p>Sorry, field Service Type is required!</p>
+    </ion-item>
 
-        <ion-item [ngClass]="{'error-border':!authForm.controls.emergencynum.valid && authForm.controls.emergencynum.touched}">
-            <ion-label floating>Emergency Number</ion-label>
-            <ion-input formControlName="emergencynum" type="text"  #enum></ion-input>
-        </ion-item>
-         <ion-item *ngIf="authForm.controls.emergencynum.hasError('required') && authForm.controls.emergencynum.touched">
-            <p>Sorry, field Emergency Number is required!</p>
-        </ion-item> 
-        <ion-item [ngClass]="{'error-border':!authForm.controls.emergencyweb.valid && authForm.controls.emergencyweb.touched}">
-            <ion-label floating>Emergency Website </ion-label>
-            <ion-input formControlName="emergencyweb" type="text" #eweb></ion-input>
-        </ion-item>
-        <ion-item *ngIf="authForm.controls.emergencyweb.hasError('required') && authForm.controls.emergencyweb.touched">
-            <p>Sorry, field emergency Website is required!</p>
-        </ion-item>
-        <ion-item *ngIf="authForm.controls.emergencyweb.hasError('pattern') && authForm.controls.emergencyweb.touched">
-            <p>Sorry, only small and capital letters are allowed!</p>
-        </ion-item>
-        <ion-item *ngIf="authForm.controls.emergencyweb.hasError('maxlength') && authForm.controls.emergencyweb.touched">
-            <p>Sorry, maximum website length is 40!</p>
-        </ion-item> 
+    <ion-item [ngClass]="{'error-border':!authForm.controls.emergencynum.valid && authForm.controls.emergencynum.touched}">
+      <ion-label floating>Emergency Number</ion-label>
+      <ion-input formControlName="emergencynum" type="text" #enum></ion-input>
+    </ion-item>
+    <ion-item *ngIf="authForm.controls.emergencynum.hasError('required') && authForm.controls.emergencynum.touched">
+      <p>Sorry, field Emergency Number is required!</p>
+    </ion-item>
+    <ion-item [ngClass]="{'error-border':!authForm.controls.emergencyweb.valid && authForm.controls.emergencyweb.touched}">
+      <ion-label floating>Emergency Website </ion-label>
+      <ion-input formControlName="emergencyweb" type="text" #eweb></ion-input>
+    </ion-item>
+    <ion-item *ngIf="authForm.controls.emergencyweb.hasError('required') && authForm.controls.emergencyweb.touched">
+      <p>Sorry, field emergency Website is required!</p>
+    </ion-item>
+    <ion-item *ngIf="authForm.controls.emergencyweb.hasError('pattern') && authForm.controls.emergencyweb.touched">
+      <p>Sorry, only small and capital letters are allowed!</p>
+    </ion-item>
+    <ion-item *ngIf="authForm.controls.emergencyweb.hasError('maxlength') && authForm.controls.emergencyweb.touched">
+      <p>Sorry, maximum website length is 40!</p>
+    </ion-item>
 
-        <ion-item [ngClass]="{'error-border':!authForm.controls.emergencyemail.valid && authForm.controls.emergencyemail.touched}">
-            <ion-label floating>Emergency E-mail</ion-label>
-            <ion-input formControlName="emergencyemail" type="text"  #email></ion-input>
-        </ion-item>
-        <button ion-button full color="button" [disabled]="!authForm.valid" (click)="addService(emergType.value,enum,eweb,email);">Add Emergency</button>
-    </form>
-</ion-content> 
+    <ion-item [ngClass]="{'error-border':!authForm.controls.emergencyemail.valid && authForm.controls.emergencyemail.touched}">
+      <ion-label floating>Emergency E-mail</ion-label>
+      <ion-input formControlName="emergencyemail" type="text" #email></ion-input>
+    </ion-item>
+    <button ion-button full color="button" [disabled]="!authForm.valid" (click)="addService(emergType.value,enum,eweb,email);">Add Emergency</button>
+  </form>
+</ion-content>

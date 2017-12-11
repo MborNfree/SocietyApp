@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Component } from "@angular/core";
+import { IonicPage, NavController, NavParams } from "ionic-angular";
 
 /**
  * Generated class for the CircularDetailAdminPage page.
@@ -10,18 +10,13 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-circular-detail-admin',
-  templateUrl: 'circular-detail-admin.html',
+  selector: "page-circular-detail-admin",
+  templateUrl: "circular-detail-admin.html"
 })
 export class CircularDetailAdminPage {
-
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-
-  }
+  constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad CircularDetailAdminPage');
+    console.log("ionViewDidLoad CircularDetailAdminPage");
   }
-
 }

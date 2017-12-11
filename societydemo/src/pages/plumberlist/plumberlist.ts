@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { MemberprofilePage } from './../memberprofile/memberprofile';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
@@ -8,43 +9,44 @@ import { AngularFireDatabase } from 'angularfire2/database';
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
+=======
+import { MemberprofilePage } from "./../memberprofile/memberprofile";
+import { Component } from "@angular/core";
+import { IonicPage, NavController, NavParams } from "ionic-angular";
+import { AngularFireDatabase } from "angularfire2/database";
+>>>>>>> aea7b44807dfda4017e3c6cc120a717b4ce6b027
 
 @IonicPage()
 @Component({
-  selector: 'page-plumberlist',
-  templateUrl: 'plumberlist.html',
+  selector: "page-plumberlist",
+  templateUrl: "plumberlist.html"
 })
 export class PlumberlistPage {
-
-
-    services=[];
-   arrData = [];
+  services = [];
+  arrData = [];
   public items = [];
-  constructor(public navCtrl: NavController, public navParams: NavParams, private fdb: AngularFireDatabase) {
-      this.fdb.list("/services/").valueChanges().subscribe(_data => {
-      this.items = _data;
-     console.log(this.items);
-    });
-
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    private fdb: AngularFireDatabase
+  ) {
+    this.fdb
+      .list("/services/")
+      .valueChanges()
+      .subscribe(_data => {
+        this.items = _data;
+        console.log(this.items);
+      });
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad PlumberlistPage');
-    //  this.items=[
-    //   {name: 'Mr Arun', phoneno: '9874587896'},
-    //   {name: 'Mr Deepak', phoneno: '8521478965'},
-    //   {name: 'Mr Ajit Patel', phoneno: '9645875412'},
-    //   {name: 'Mr Sanket Patil', phoneno: '7854879454'},
-    //    {name: 'Mr. Jayesh', phoneno: '7547547891'},
-    //     {name: 'Mr. Rahul', phoneno: '9125478451'},
-    // ];
- }
+    console.log("ionViewDidLoad PlumberlistPage");
 
+  }
 
-viewItem(item){
-      this.navCtrl.push(MemberprofilePage, {
-        item: item
-      });
-    }
-
+  viewItem(item) {
+    this.navCtrl.push(MemberprofilePage, {
+      item: item
+    });
+  }
 }

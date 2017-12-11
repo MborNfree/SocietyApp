@@ -1,16 +1,10 @@
-<!--
-  Generated template for the DosdontsPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
-  <ion-navbar  color="navbar">
+  <ion-navbar color="navbar">
 
-      <button ion-button icon-only menuToggle start>
-          <ion-icon name="menu"></ion-icon>
-      </button>
+    <button ion-button icon-only menuToggle start>
+      <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-title align="center">Do's & Don'ts</ion-title>
   </ion-navbar>
 
@@ -18,27 +12,27 @@
 
 
 <ion-content padding text-wrap class="bg-masters">
-      <div>
-      <ion-segment [(ngModel)]="account.Instructions">
-          <ion-segment-button value="DoS"  ng-selected="Dos">
-          DO'S
-          </ion-segment-button>
-          <ion-segment-button value="Donts">
-              Don'ts
-          </ion-segment-button>
-        </ion-segment>
-     </div>
+  <div>
+    <ion-segment [(ngModel)]="account.Instructions">
+      <ion-segment-button value="DoS" ng-selected="Dos">
+        DO'S
+      </ion-segment-button>
+      <ion-segment-button value="Donts">
+        Don'ts
+      </ion-segment-button>
+    </ion-segment>
+  </div>
 
-        <div [ngSwitch]="account.Instructions">
-          <ng-container *ngSwitchCase="'DoS'">
-            <ion-list  *ngFor="let item of items" >
-              <ion-item>
-                <ul>
-                <li>{{item.rule}}</li>
-                </ul>
-                
+  <div [ngSwitch]="account.Instructions">
+    <ng-container *ngSwitchCase="'DoS'">
+      <ion-list *ngFor="let item of items">
+        <ion-item>
+          <ul>
+            <li>{{item.rule}}</li>
+          </ul>
 
-              <!-- <ul>
+
+          <!-- <ul>
                 <li>Keep Corridors! Lobby Clean and Tidy</li>
                 </ul>
               <ul>
@@ -53,30 +47,19 @@
                <ul>
                 <li>Operate Lift gently to avoid Frequent Breakdown and Inconvenience to the residents</li>
               </ul> -->
-              </ion-item>
-                </ion-list >
-          </ng-container>
-              <ng-container  *ngSwitchCase="'Donts'">
-              <ion-list *ngFor="let item of items">
-                    <ion-item >
-                       <ul>
-                      <li>{{item.rule}}</li>
-                      </ul>
-                    <!-- <ul>
-                      <li>Do not overload lift beyond its capacity.</li>
-                    </ul>
-                     <ul>
-                      <li>Do not spit on the walls, floors, inside the lift, corridor, porch etc</li>
-                    </ul>
-                     <ul>
-                      <li>Do not park your vehicles on the Main Entrance.</li>
-                    </ul>
-                    <ul>
-                      <li>Do not throw Wastes/Articles from Windows/ Balconies</li>
-                    </ul>  -->
-                    </ion-item>
-                </ion-list>
-              </ng-container>
-            </div>
+        </ion-item>
+      </ion-list>
+    </ng-container>
+    <ng-container *ngSwitchCase="'Donts'">
+      <ion-list *ngFor="let item of items">
+        <ion-item>
+          <ul>
+            <li>{{item.rule}}</li>
+          </ul>
+
+        </ion-item>
+      </ion-list>
+    </ng-container>
+  </div>
 
 </ion-content>

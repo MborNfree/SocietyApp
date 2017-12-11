@@ -1,25 +1,17 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Component } from "@angular/core";
+import { IonicPage, NavController, NavParams } from "ionic-angular";
 
-/**
- * Generated class for the BillListAdminPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+
 
 @IonicPage()
 @Component({
-  selector: 'page-bill-list-admin',
-  templateUrl: 'bill-list-admin.html',
+  selector: "page-bill-list-admin",
+  templateUrl: "bill-list-admin.html"
 })
 export class BillListAdminPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad BillListAdminPage');
+    console.log("ionViewDidLoad BillListAdminPage");
   }
-
 }
