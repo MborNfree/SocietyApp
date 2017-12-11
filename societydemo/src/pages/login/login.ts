@@ -1,4 +1,5 @@
-import { DashboardComponent } from '../dashboard/dashboard.component';
+import { DashboardPage } from './../dashboard/dashboard';
+
 import { Component, ViewChild } from "@angular/core";
 import {
   IonicPage,
@@ -44,7 +45,7 @@ export class LoginPage {
       ],
       password: [
         "",
-        Validators.compose([Validators.required, Validators.minLength(6)])
+        Validators.compose([Validators.required, Validators.minLength(4)])
       ]
     });
   }
@@ -75,9 +76,9 @@ export class LoginPage {
         // );
         console.log("Success! You're logged in");
         // console.log("st" + JSON.stringify(status));
-        if(data.email=='admin@gmail.com'){
+        if(data.email=='admin@niyanta.co.in'){
           alert('Admin Dashboard');
-          this.navCtrl.push(DashboardComponent, {
+          this.navCtrl.push(DashboardPage, {
             uid: this.currentUserUid
           });
         }else{

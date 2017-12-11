@@ -126,11 +126,8 @@ export class MySocietyApp {
 
   checkPreviousAuthorization(): void {
     if (
-      (window.localStorage.getItem("username") === "undefined" ||
-        window.localStorage.getItem("username") === null) &&
-      (window.localStorage.getItem("password") === "undefined" ||
-        window.localStorage.getItem("password") === null)
-    ) {
+      (window.sessionStorage.getItem("username") === "undefined" ||
+        window.sessionStorage.getItem("username") === null)  ) {
       this.rootPage = LoginPage;
     } else {
       this.rootPage = HomePage;
@@ -139,7 +136,7 @@ export class MySocietyApp {
 
   // Check use is logged in
   checkUserLoggedIn() {
-    return localStorage.getItem("isLoggedIn") ? true : false;
+    return sessionStorage.getItem("isLoggedIn") ? true : false;
   }
   private initializeOptions(): void {
     this.options = new Array<MenuOptionModel>();
@@ -302,12 +299,12 @@ export class MySocietyApp {
         },
         {
           iconName: "people",
-          displayName: "Residents",
+          displayName: "Residents List",
           component: ResidentListAdminPage
         },
         {
           iconName: "contacts",
-          displayName: "Committee",
+          displayName: "Committee List",
           component: CommitteeListAdminPage
         },
         {
@@ -327,7 +324,7 @@ export class MySocietyApp {
         },
         {
           iconName: "cash",
-          displayName: "Bill",
+          displayName: "Generate Bill",
           component: GenerateBillAdminPage
         },
         {

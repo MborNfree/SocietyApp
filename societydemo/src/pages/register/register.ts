@@ -63,7 +63,7 @@ export class RegisterPage {
       ],
       pwd: [
         "",
-        Validators.compose([Validators.required, Validators.minLength(6)])
+        Validators.compose([Validators.required, Validators.minLength(4)])
       ],
       flat: [
         "",

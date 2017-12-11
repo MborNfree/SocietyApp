@@ -3,10 +3,7 @@ import { IonicPage, NavController, NavParams } from "ionic-angular";
 import { AngularFireDatabase } from "angularfire2/database";
 import { CallNumber } from "@ionic-native/call-number";
 import { EmailComposer } from "@ionic-native/email-composer";
-<<<<<<< HEAD
-=======
 import { InAppBrowser } from "@ionic-native/in-app-browser";
->>>>>>> e91eeddc69c5af8102519d0002b730cff52323d8
 
 @IonicPage()
 @Component({
@@ -19,6 +16,7 @@ export class EmergencycontactlistPage {
   arrData = [];
   public items = [];
   shownGroup = null;
+  iab:any;
 
   toggleGroup(group) {
     if (this.isGroupShown(group)) {
@@ -60,43 +58,10 @@ export class EmergencycontactlistPage {
         //Now we know we can send
       }
     });
-<<<<<<< HEAD
-
-    alert(emailid);
-    let email = {
-      to: emailid,
-      cc: "",
-
-      attachments: [
-        "file://img/logo.png",
-        "res://icon.png",
-        "base64:icon.png//iVBORw0KGgoAAAANSUhEUg",
-        "file://README.pdf"
-      ],
-      subject: "Test Mail",
-      body: "This is Test mail",
-      isHtml: true
-    };
-
-    // Send a text message using default options
-    this.emailComposer.open(email);
-    // add alias
-    this.email.addAlias("gmail", "com.google.android.gm");
-
-    // then use alias when sending email
-    this.email.open({
-      app: "gmail"
-    });
-  }
-
-  ionViewDidLoad() {
-    console.log("ionViewDidLoad EmergencycontactlistPage");
-=======
   }
 
   gotoweb(web) {
     alert(web);
     const browser = this.iab.create(web, "_blank", "location:yes");
->>>>>>> e91eeddc69c5af8102519d0002b730cff52323d8
   }
 }

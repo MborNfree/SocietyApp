@@ -11,10 +11,6 @@ import { AngularFireDatabase } from "angularfire2/database";
 // import { AngularFireAuth } from 'angularfire2/auth';
 import { SMS } from "@ionic-native/sms";
 
-<<<<<<< HEAD
-
-=======
->>>>>>> e91eeddc69c5af8102519d0002b730cff52323d8
 
 @IonicPage()
 @Component({

@@ -92,7 +92,7 @@ import { BillListAdminPage } from "../pages/bill-list-admin/bill-list-admin";
 import { AddEmergencyCategoryAdminPage } from "./../pages/add-emergency-category-admin/add-emergency-category-admin";
 
 import { EventDataProvider } from "../providers/event-data/event-data";
-import { DashboardComponent } from '../pages/dashboard/dashboard.component';
+import { DashboardPage } from '../pages/dashboard/dashboard';
 
 var config = {
   apiKey: "AIzaSyCdBaGl6H_IuyzMyEnjq-6VRD5-2alxUtg",
@@ -170,7 +170,8 @@ var config = {
     AddNormsPage,
     Card,
     BillListAdminPage,
-    DashboardComponent
+    DashboardPage
+
   ],
 
   imports: [
@@ -256,7 +257,8 @@ var config = {
     AddNormsPage,
     Card,
     BillListAdminPage,
-    DashboardComponent
+    DashboardPage
+
   ],
 
   providers: [
