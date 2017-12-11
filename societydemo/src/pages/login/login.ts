@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-=======
 import { DashboardComponent } from '../dashboard/dashboard.component';
->>>>>>> e91eeddc69c5af8102519d0002b730cff52323d8
 import { Component, ViewChild } from "@angular/core";
 import {
   IonicPage,
@@ -12,11 +9,6 @@ import {
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { ForgotpasswordPage } from "../forgotpassword/forgotpassword";
 import { AngularFireAuth } from "angularfire2/auth";
-<<<<<<< HEAD
-// import { Router } from '@angular/router';
-import { AngularFireDatabase } from "angularfire2/database";
-=======
->>>>>>> e91eeddc69c5af8102519d0002b730cff52323d8
 
 import { HomePage } from "../home/home";
 import { RegisterPage } from "../register/register";
