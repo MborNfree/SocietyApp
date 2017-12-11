@@ -1,19 +1,3 @@
-<<<<<<< HEAD
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ModalController, ActionSheetController, AlertController } from 'ionic-angular';
-import { EventAdminPage } from '../event-admin/event-admin';
-import { AddEventAdminPage } from '../add-event-admin/add-event-admin';
-import { AngularFireDatabase } from 'angularfire2/database';
-import { Http } from '@angular/http';
-import firebase from 'firebase';
-
-/**
- * Generated class for the EventListAdminPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-=======
 import { Component } from "@angular/core";
 import {
   IonicPage,
@@ -28,7 +12,6 @@ import { AddEventAdminPage } from "../add-event-admin/add-event-admin";
 import { AngularFireDatabase } from "angularfire2/database";
 import { Http } from "@angular/http";
 import * as firebase from "firebase";
->>>>>>> aea7b44807dfda4017e3c6cc120a717b4ce6b027
 
 @IonicPage()
 @Component({
@@ -91,7 +74,6 @@ export class EventListAdminPage {
   }
   ionViewDidLoad() {
     console.log("ionViewDidLoad EventListAdminPage");
-
   }
 
   EventDetailPage() {

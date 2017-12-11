@@ -1,21 +1,3 @@
-<<<<<<< HEAD
-import {FirebaseListObservable} from 'angularfire2/database-deprecated';
-import { Component} from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {  ActivatedRoute} from '@angular/router';
-import {AngularFireDatabase} from 'angularfire2/database';
-import { AngularFireAuth } from 'angularfire2/auth';
-import * as firebase from 'firebase';
-
-
-/**
- * Generated class for the ProfilePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-=======
 import { FirebaseListObservable } from "angularfire2/database-deprecated";
 import { Component } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
@@ -25,7 +7,6 @@ import { AngularFireDatabase } from "angularfire2/database";
 import { AngularFireAuth } from "angularfire2/auth";
 import * as firebase from "firebase";
 // import { Observable } from 'rxjs/Observable';
->>>>>>> aea7b44807dfda4017e3c6cc120a717b4ce6b027
 
 @IonicPage()
 @Component({
@@ -49,13 +30,6 @@ export class ProfilePage {
   public inactive: boolean = true;
 
   authForm: FormGroup;
-<<<<<<< HEAD
-  userRef: string = '/users/';
-
-  constructor( private route: ActivatedRoute, private afAuth: AngularFireAuth,public navCtrl: NavController, public navParams: NavParams,public formBuilder: FormBuilder,private fdb: AngularFireDatabase,private fireAuth: AngularFireAuth) {
-
-    this.uIDParam = navParams.get('uid');
-=======
   userRef: string = "/users/";
 
   constructor(
@@ -68,7 +42,6 @@ export class ProfilePage {
     private fireAuth: AngularFireAuth
   ) {
     this.uIDParam = navParams.get("uid");
->>>>>>> aea7b44807dfda4017e3c6cc120a717b4ce6b027
     var ref = firebase.database().ref("users");
     //ref.on('value', this.gotData,this.errData);
 
@@ -109,19 +82,6 @@ export class ProfilePage {
       // ref.on('value', this.gotData,this.errData);
     });
     this.authForm = formBuilder.group({
-<<<<<<< HEAD
-      username: [this.username, Validators.compose([Validators.required, Validators.pattern('[a-zA-Z]*'), Validators.minLength(6), Validators.maxLength(30)])],
-      password: [this.password, Validators.compose([Validators.required, Validators.minLength(8)])],
-      flatno: [this.flatno, Validators.compose([Validators.required,Validators.pattern('[0-9]*'), Validators.minLength(3)])],
-      email: [this.email,Validators.compose([Validators.required, Validators.pattern("[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_\`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?]"), Validators.minLength(6), Validators.maxLength(30)])],
-      family: [this.family,Validators.compose([Validators.required,Validators.pattern('[0-9]*'), Validators.minLength(1)])],
-      vehicles: [this.vehicles,Validators.compose([Validators.required,Validators.pattern('[0-9]*'), Validators.minLength(1)])],
-      fnm: [this.fnm,Validators.compose([Validators.required, Validators.minLength(6)])],
-      lnm: [this.lnm,Validators.compose([Validators.required, Validators.minLength(6)])]
-     });
-
-
-=======
       username: [
         "",
         Validators.compose([
@@ -177,7 +137,6 @@ export class ProfilePage {
         Validators.compose([Validators.required, Validators.minLength(10)])
       ]
     });
->>>>>>> aea7b44807dfda4017e3c6cc120a717b4ce6b027
   }
 
   changeStatus() {

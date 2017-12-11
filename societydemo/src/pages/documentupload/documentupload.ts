@@ -1,17 +1,3 @@
-<<<<<<< HEAD
-import { Component} from '@angular/core';
-import { IonicPage, NavController, NavParams , Platform , ActionSheetController , ToastController , LoadingController } from 'ionic-angular';
-
-import { File } from '@ionic-native/file';
-import { FilePath } from '@ionic-native/file-path';
-import {FileChooser} from '@ionic-native/file-chooser';
-
-import { Camera, CameraOptions } from '@ionic-native/camera';
-import { AngularFireDatabase } from 'angularfire2/database';
-import { BehaviorSubject } from 'rxjs';
-import * as firebase from 'firebase';
-import { EventDataProvider } from '../../providers/event-data/event-data';
-=======
 import { Component } from "@angular/core";
 import {
   IonicPage,
@@ -32,7 +18,6 @@ import { AngularFireDatabase } from "angularfire2/database";
 import { BehaviorSubject } from "rxjs";
 // import * as firebase from 'firebase';
 import { EventDataProvider } from "../../providers/event-data/event-data";
->>>>>>> aea7b44807dfda4017e3c6cc120a717b4ce6b027
 
 declare var cordova: any;
 
@@ -51,65 +36,6 @@ export class DocumentuploadPage {
   files: any;
 
   // For Login
-<<<<<<< HEAD
- public userEmail: string;
- public userPassword: string;
-
- public authStatus: boolean;
- public message: string;
- picturesArray: any;
- public todoArray: any;
- private isAuth: BehaviorSubject<boolean>;
- imageURI:any;
- imageFileName:any;
-
-  constructor(public navCtrl: NavController,
-              public navParams: NavParams ,
-              public Platform:Platform,
-              private camera: Camera,
-             // private transfer: Transfer,
-              private file:File,
-              private filePath:FilePath,
-              public FileChooser:FileChooser,
-              public eventsdata: EventDataProvider,
-              public actionSheetCtrl: ActionSheetController,
-              public toastCtrl: ToastController,
-              public platform:Platform,
-              public loadingCtrl:LoadingController,
-              private fdb: AngularFireDatabase ) {
-
-                this.items = [
-                    {title: 'document1'},
-                    {title: 'document2'},
-                    {title: 'document3'},
-                    {title: 'document4'},
-                    {title: 'document5'},
-                    {title: 'document6'}
-                ];
-
-
-                this.eventsdata.getRequestFiles(this.sbaid).on('value', snapshot => {
-                  let rawList = [];
-                  snapshot.forEach(snap => {
-                    rawList.unshift({
-                      id: snap.key,
-                      file: snap.val().file,
-                      name: snap.val().name,
-                      ext: snap.val().ext,
-                    })
-                  })
-                  this.files = rawList;
-                  this.filesnum = rawList.length
-                });
-                this.isAuth = new BehaviorSubject(false);
-
-                this.isAuth.subscribe(val => this.authStatus = val);
-                console.log('auth'+this.isAuth);
-                this.fdb.list("/documents/").valueChanges().subscribe(_data => {
-                  this.Circular = _data;
-                 console.log(this.Circular);
-                });
-=======
   public userEmail: string;
   public userPassword: string;
 
@@ -170,7 +96,6 @@ export class DocumentuploadPage {
         this.Circular = _data;
         console.log(this.Circular);
       });
->>>>>>> aea7b44807dfda4017e3c6cc120a717b4ce6b027
   }
 
   selectFile() {

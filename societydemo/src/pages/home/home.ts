@@ -12,20 +12,6 @@ import { AngularFireAuth } from "angularfire2/auth";
 
 import { LoginPage } from "./../login/login";
 
-<<<<<<< HEAD
-import { LoginPage } from './../login/login';
-  
-import { ElectricianlistPage } from './../electricianlist/electricianlist';
-import { PlumberlistPage } from './../plumberlist/plumberlist';
-import { DoctorlistPage } from './../doctorlist/doctorlist';
-import { NewsPage } from './../news/news';
-import { ProfilePage } from './../profile/profile';
-import { SocietybillPage } from './../societybill/societybill';
-import { EventlistPage } from './../eventlist/eventlist';
-import { Card } from '../card/card';
-import { HelpdeskPage } from './../helpdesk/helpdesk';
-
-=======
 import { ElectricianlistPage } from "./../electricianlist/electricianlist";
 import { PlumberlistPage } from "./../plumberlist/plumberlist";
 import { DoctorlistPage } from "./../doctorlist/doctorlist";
@@ -35,7 +21,6 @@ import { SocietybillPage } from "./../societybill/societybill";
 import { EventlistPage } from "./../eventlist/eventlist";
 import { Card } from "../card/card";
 import { HelpdeskPage } from "./../helpdesk/helpdesk";
->>>>>>> aea7b44807dfda4017e3c6cc120a717b4ce6b027
 
 @IonicPage()
 @Component({

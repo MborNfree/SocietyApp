@@ -45,7 +45,6 @@
     "@ionic-native/transfer": "^3.14.0",
     "@ionic/storage": "2.0.1",
     "angular-file-upload": "^2.5.0",
-    "angular-route": "^1.6.6",
     "angularfire2": "^5.0.0-rc.3",
     "body-parser": "^1.18.2",
     "bootstrap": "^3.3.7",

@@ -1,17 +1,9 @@
-<<<<<<< HEAD
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { AngularFireDatabase } from 'angularfire2/database';
-import { CallNumber } from '@ionic-native/call-number';
-import { EmailComposer } from '@ionic-native/email-composer';
-import { InAppBrowser } from '@ionic-native/in-app-browser';
-=======
 import { Component } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
 import { AngularFireDatabase } from "angularfire2/database";
 import { CallNumber } from "@ionic-native/call-number";
 import { EmailComposer } from "@ionic-native/email-composer";
->>>>>>> aea7b44807dfda4017e3c6cc120a717b4ce6b027
+import { InAppBrowser } from "@ionic-native/in-app-browser";
 /**
  * Generated class for the EmergencyListAdminPage page.
  *
@@ -31,19 +23,6 @@ export class EmergencyListAdminPage {
   arrData = [];
   public items = [];
   shownGroup = null;
-<<<<<<< HEAD
-  diseases = [
-    { title: "Mumbai Police", description: "Tel:+91 22 22620825",MobileNo:"Mob No:+91 78777445788",Fax:"Fax :+ 914565645"},
-    { title: "Ambulance", description: "Tel:+011 3941676",MobileNo:"Mob No: +91 78777445788",Fax:"Fax:+91 225447" },
-    { title: "Fire Brigade", description: "Tel:+011 3578771441", MobileNo:"Mob No:+91 78777445788", Fax:"Fax:+91 225447"},
-  ];
-  constructor(public navCtrl: NavController, public navParams: NavParams, private callNumber: CallNumber, private iab: InAppBrowser,private fdb: AngularFireDatabase,private emailComposer: EmailComposer) {
-      this.fdb.list("/emerg_contact/").valueChanges().subscribe(_data => {
-      this.contacts = _data;
-     console.log(this.contacts);
-    });
-=======
->>>>>>> aea7b44807dfda4017e3c6cc120a717b4ce6b027
 
   constructor(
     public navCtrl: NavController,
@@ -112,10 +91,10 @@ export class EmergencyListAdminPage {
     });
   }
 
-gotoweb(web){
-alert(web);
-const browser = this.iab.create(web,'_blank','location:yes');
-}
+  gotoweb(web) {
+    alert(web);
+    const browser = this.iab.create(web, "_blank", "location:yes");
+  }
   ionViewDidLoad() {
     console.log("ionViewDidLoad EmergencyListAdminPage");
   }
