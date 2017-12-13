@@ -27,7 +27,14 @@ export class ElectricianlistPage {
   ionViewDidLoad() {
     console.log("ionViewDidLoad ElectricianlistPage");
   }
+  doRefresh(refresher) {
+    console.log('Begin async operation', refresher);
 
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      refresher.complete();
+    }, 2000);
+  }
   viewItem(item) {
     this.navCtrl.push(MemberprofilePage, {
       item: item

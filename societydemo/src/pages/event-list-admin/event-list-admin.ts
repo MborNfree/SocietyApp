@@ -23,6 +23,9 @@ export class EventListAdminPage {
   events = [];
   arrData = [];
   public items = [];
+  enm:string;
+  key:any;
+
 
   constructor(
     public http: Http,
@@ -41,31 +44,29 @@ export class EventListAdminPage {
         console.log(this.events);
       });
     var ref = firebase.database().ref("events");
+    var ref1 = firebase.database().ref();
     ref.on("value", this.gotEvent, this.errEvent);
+
+    var  applesQuery = ref1.child("events").orderByChild("event_name").equalTo("birthday");
+    console.log('apple'+applesQuery);
+    // console.log(applesQuery[event_name]);
   }
 
   gotEvent(data) {
     console.log("data");
     // console.log(data.val());
-    var users = data.val();
-    var keys = Object.keys(users);
+    var events = data.val();
+    var keys = Object.keys(events);
     // console.log('keys'+keys);
     var i;
     for (i = 0; i < keys.length; i++) {
       var k = keys[i];
-      //var sessionUser =sessionStorage.getItem("Sessioneml");
-      //  console.log(sessionUser);
-      //  console.log(users[k].email);
 
       console.log("true");
-      var email = users[k].email;
-      var Id = users[k].ID;
-      var username = users[k].username;
-      var flatno = users[k].flatno;
-      var family = users[k].familyMember;
-      var vehicles = users[k].parking_slot;
+       var enm = events[k].event_name;
+       var key = k;
 
-      console.log("user data =" + Id, username, flatno, family, vehicles);
+      console.log("user data =" + enm, key);
     }
   }
   errEvent(err) {
@@ -75,7 +76,14 @@ export class EventListAdminPage {
   ionViewDidLoad() {
     console.log("ionViewDidLoad EventListAdminPage");
   }
+  doRefresh(refresher) {
+    console.log('Begin async operation', refresher);
 
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      refresher.complete();
+    }, 2000);
+  }
   EventDetailPage() {
     this.navCtrl.push(EventAdminPage);
   }
@@ -108,10 +116,12 @@ export class EventListAdminPage {
     actionSheet.present();
   }
 
-  removeEvent(eventId: string) {
-    alert("eventid" + eventId);
+  removeEvent(eventId: any) {
+    alert(eventId);
+    alert("eventid" + JSON.stringify(eventId.E_id));
+    alert('key'+eventId.$key);
     this.fdb
-      .object(`events/${eventId}`)
+      .object(`events/${eventId.E_id}`)
       .remove()
       .then(() => alert("events deletion requested !"));
     // this.events.remove(events);

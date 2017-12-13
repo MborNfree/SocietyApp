@@ -44,7 +44,14 @@ export class ServiceListAdminPage {
   ionViewDidLoad() {
     console.log("ionViewDidLoad ServiceListAdminPage");
   }
+  doRefresh(refresher) {
+    console.log('Begin async operation', refresher);
 
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      refresher.complete();
+    }, 2000);
+  }
   viewItem(item) {
     this.navCtrl.push(ServiceDetailAdminPage, {
       item: item

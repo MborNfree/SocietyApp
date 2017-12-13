@@ -8,6 +8,9 @@
 </ion-header>
 
 <ion-content padding class="bg-masters">
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+      </ion-refresher>
   <ion-card *ngFor="let Committeeitem of Committeeitems">
     <ion-item (click)="viewItem(Committeeitem)">
       <div class="row">

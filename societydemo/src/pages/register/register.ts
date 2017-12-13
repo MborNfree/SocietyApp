@@ -70,7 +70,7 @@ export class RegisterPage {
         Validators.compose([
           Validators.required,
           Validators.pattern("[0-9]*"),
-          Validators.minLength(3)
+          Validators.maxLength(3)
         ])
       ],
       eml: [

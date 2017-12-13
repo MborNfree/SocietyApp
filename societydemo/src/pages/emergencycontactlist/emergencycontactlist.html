@@ -9,7 +9,9 @@
 </ion-header>
 
 <ion-content padding class="bg-masters">
-
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+      </ion-refresher>
   <ion-list>
     <ion-item *ngFor="let c of contacts; let i=index" text-wrap (click)="toggleGroup(i)" [ngClass]="{active: isGroupShown(i)}">
       <h3>

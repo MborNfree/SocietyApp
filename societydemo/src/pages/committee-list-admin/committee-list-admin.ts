@@ -28,7 +28,14 @@ export class CommitteeListAdminPage {
   ionViewDidLoad() {
     console.log("ionViewDidLoad CommitteeListAdminPage");
   }
+  doRefresh(refresher) {
+    console.log('Begin async operation', refresher);
 
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      refresher.complete();
+    }, 2000);
+  }
   viewItem(item) {
     this.navCtrl.push(CommitteeProfileAdminPage, {
       item: item

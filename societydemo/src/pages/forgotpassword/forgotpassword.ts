@@ -37,7 +37,7 @@ export class ForgotpasswordPage {
     alert(JSON.stringify(email['email']));
     return firebase.auth().sendPasswordResetEmail(JSON.stringify(email['email']));
   }
-  onSubmit() {
+  gotoLogin() {
     this.navCtrl.push(LoginPage);
   }
   gotoregister() {

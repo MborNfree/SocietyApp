@@ -34,6 +34,14 @@ export class PropertyListAdminPage {
   AddAssets() {
     this.navCtrl.push(AddAssetsAdminPage);
   }
+  doRefresh(refresher) {
+    console.log('Begin async operation', refresher);
+
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      refresher.complete();
+    }, 2000);
+  }
   // AddProperty() {
   //   // let obj = {userId: '1', name: 'Bob', email: 'bob@unicorn.com'};
   //   // let myModal = this.modalCtrl.create(SampleModalPage, obj);

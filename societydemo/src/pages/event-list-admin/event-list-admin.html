@@ -10,12 +10,16 @@
   </ion-navbar>
 </ion-header>
 <ion-content class="bg-masters">
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+      </ion-refresher>
   <ion-list *ngFor="let event of events">
-    <ion-item (click)="viewItem(events)">
+    <ion-item (click)="viewItem(event)">
       <ion-img src="{{event.event_img}}"></ion-img>
       <p>{{event.event_name}}</p>
+      <p>kkk {{event.E_id}}</p>
     </ion-item>
-    <button ion-button (click)="removeEvent(event.E_id)" class="button">Delete</button>
+    <button ion-button (click)="removeEvent(key)" class="button">Delete</button>
     <button ion-button (click)="updateEvent(event)" class="button">Edit</button>
   </ion-list>
 </ion-content>
