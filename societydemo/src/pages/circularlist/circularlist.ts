@@ -2,6 +2,7 @@ import { CirculardetailsPage } from "./../circulardetails/circulardetails";
 import { Component } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
 import { AngularFireDatabase } from "angularfire2/database";
+import { Observable } from 'rxjs/Observable';
 
 @IonicPage()
 @Component({
@@ -10,18 +11,18 @@ import { AngularFireDatabase } from "angularfire2/database";
 })
 export class CircularlistPage {
   public items = [];
-  public Circular = [];
+  public Circular :Observable<any[]>;
+
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     private fdb: AngularFireDatabase
   ) {
-    this.fdb
-      .list("/documents/")
-      .valueChanges()
-      .subscribe(_data => {
-        this.Circular = _data;
-        console.log(this.Circular);
+      this.Circular = this.fdb
+      .list("/societydoc/")
+      .snapshotChanges()
+      .map(changes => {
+        return changes.map(c => ({ key: c.payload.key, ...c.payload.val() }));
       });
   }
 
@@ -43,13 +44,5 @@ export class CircularlistPage {
     this.navCtrl.push(CirculardetailsPage);
   }
 
-  removeCircular(eventId: string) {
-    alert(eventId);
-    // this.events.remove(events);
-    this.fdb.object("/documents/" + eventId).remove();
-  }
 
-  updateCircular(EventId, EventTitle) {
-    this.fdb.object("/documents/" + EventId).update({ event_name: EventTitle });
-  }
 }

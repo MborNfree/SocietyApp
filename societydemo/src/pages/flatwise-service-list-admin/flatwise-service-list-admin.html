@@ -17,14 +17,14 @@
     <ion-refresher (ionRefresh)="doRefresh($event)">
         <ion-refresher-content></ion-refresher-content>
       </ion-refresher>
-  <ion-list *ngFor="let item of items">
+  <ion-list *ngFor="let item of items | async">
     <ion-item>
       <p>Name:{{item.flatServiceName}}</p>
       <p>Flat:{{item.flatServiceNo}}</p>
       <p>Number:{{item.flatServiceCntNo}}</p>
       <p>Servce Type:{{item.flatServiceType}}</p>
-      <button ion-button (click)="deleteFlatService(item.flatServiceId)" class="button">Delete</button>
-      <button ion-button (click)="EditFlatService()" class="button">Edit</button>
+      <button ion-button (click)="deleteFlatService(item.key)" class="button">Delete</button>
+      <button ion-button (click)="EditFlatService(item.key, item.flatServiceName)" class="button">Edit</button>
     </ion-item>
 
   </ion-list>

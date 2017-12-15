@@ -1,6 +1,8 @@
 import { Component } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
 import { UserDocumentDetailAdminPage } from "./../user-document-detail-admin/user-document-detail-admin";
+import { AngularFireDatabase } from 'angularfire2/database';
+import { Observable } from 'rxjs/Observable';
 
 @IonicPage()
 @Component({
@@ -8,17 +10,19 @@ import { UserDocumentDetailAdminPage } from "./../user-document-detail-admin/use
   templateUrl: "user-document-list-admin.html"
 })
 export class UserDocumentListAdminPage {
-  public items = [];
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  public items : Observable<any[]>;
+  constructor(public navCtrl: NavController, public navParams: NavParams,private fdb: AngularFireDatabase) {
+
+    this.items = this.fdb
+    .list("/documents/")
+    .snapshotChanges()
+    .map(changes => {
+      return changes.map(c => ({ key: c.payload.key, ...c.payload.val() }));
+    });
+  }
 
   ionViewDidLoad() {
     console.log("ionViewDidLoad UserDocumentListAdminPage");
-    this.items = [
-      { unm: "sinking", documentnm: "1000", document: "fixed" },
-      { unm: "sinking", Documentnm: "1000", document: "fixed" },
-      { unm: "sinking", Documentnm: "1000", document: "fixed" },
-      { unm: "sinking", Documentnm: "1000", document: "fixed" }
-    ];
   }
   doRefresh(refresher) {
     console.log('Begin async operation', refresher);
@@ -32,5 +36,13 @@ export class UserDocumentListAdminPage {
     this.navCtrl.push(UserDocumentDetailAdminPage, {
       item: item
     });
+  }
+
+  removeUdoc(key: string){
+    alert('Are you sure wated to Delete?');
+    this.fdb.list("/documents/").remove(key);
+  }
+  updateUdoc(){
+    alert('Are you sure wated to Update?');
   }
 }

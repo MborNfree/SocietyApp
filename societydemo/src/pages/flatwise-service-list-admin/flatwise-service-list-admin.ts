@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
-import { AngularFireDatabase } from "angularfire2/database";
+import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
+import { Observable } from 'rxjs/Observable';
 
 @IonicPage()
 @Component({
@@ -8,21 +9,23 @@ import { AngularFireDatabase } from "angularfire2/database";
   templateUrl: "flatwise-service-list-admin.html"
 })
 export class FlatwiseServiceListAdminPage {
-  public items = [];
 
+  items: Observable<any[]>;
+  itemsRef: AngularFireList<any>;
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     private fdb: AngularFireDatabase
   ) {
-    this.fdb
+      this.items = this.fdb
       .list("/flatwiseservice/")
-      .valueChanges()
-      .subscribe(_data => {
-        this.items = _data;
-        console.log(this.items);
+      .snapshotChanges()
+      .map(changes => {
+        return changes.map(c => ({ key: c.payload.key, ...c.payload.val() }));
       });
   }
+
+
   doRefresh(refresher) {
     console.log('Begin async operation', refresher);
 
@@ -34,10 +37,14 @@ export class FlatwiseServiceListAdminPage {
   ionViewDidLoad() {
     console.log("ionViewDidLoad FlatwiseServiceListAdminPage");
   }
-  deleteFlatService(Id) {
+  deleteFlatService(Id:string) {
     alert("deleted");
+    this.fdb.list("/flatwiseservice/").remove(Id);
   }
-  EditFlatService() {
+  EditFlatService(key: string, newText: string) {
     alert("edited");
+    // this.itemsRef.update(key, { text: newText });
+    this.fdb
+    .list("/flatwiseservice/").update(key, { flatServiceName: newText });
   }
 }

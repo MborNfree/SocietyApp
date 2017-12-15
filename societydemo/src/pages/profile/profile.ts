@@ -2,7 +2,7 @@ import { FirebaseListObservable } from "angularfire2/database-deprecated";
 import { Component } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-import { ActivatedRoute } from "@angular/router";
+
 import { AngularFireDatabase } from "angularfire2/database";
 import { AngularFireAuth } from "angularfire2/auth";
 import * as firebase from "firebase";
@@ -33,7 +33,7 @@ export class ProfilePage {
   userRef: string = "/users/";
 
   constructor(
-    private route: ActivatedRoute,
+
     private afAuth: AngularFireAuth,
     public navCtrl: NavController,
     public navParams: NavParams,

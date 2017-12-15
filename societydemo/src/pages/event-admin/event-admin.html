@@ -6,13 +6,10 @@
 </ion-header>
 
 <ion-content padding class="bg-masters">
-
-  <ion-label align="center">Event Name:{{itemsParam.event_name}}</ion-label>
-  <ion-label>Photos</ion-label>
-
-  <ion-label>Event Details</ion-label>
-  <ion-label>Event Description</ion-label>
-  <p text-wrap>{{itemsParam.event_desc}}</p>
-  <ion-label>Event Date</ion-label>
-  <p>{{itemsParam.event_date}}</p>
+  <ion-card>
+    <ion-label align="center">Event Name:{{itemsParam.event_name}}</ion-label>
+    <ion-label color="info">Event Details</ion-label>
+    <ion-label color="success">Event Description : {{itemsParam.event_desc}}</ion-label>
+    <ion-label color="success">Event Date : {{itemsParam.event_date}}</ion-label>
+</ion-card>
 </ion-content>

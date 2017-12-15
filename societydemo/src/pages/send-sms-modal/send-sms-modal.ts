@@ -24,11 +24,11 @@ export class SendSmsModalPage {
     phonenumber:number;
     data:string;
     textmessage:string;
-  constructor(public navCtrl: NavController, public navParams: NavParams,public params: NavParams,public viewCtrl : ViewController,private toast:ToastController,private sms: SMS) {
-    console.log(params.get('data'));
-    this.data = JSON.stringify(params.get('data'));
-    console.log(this.data);
-    //console.log(this.data(contact));
+  constructor(public navCtrl: NavController, public navParams: NavParams,public viewCtrl : ViewController,private toast:ToastController,private sms: SMS) {
+
+    this.data = JSON.stringify(navParams.get('data'));
+    //console.log(this.data);
+
   }
 
   ionViewDidLoad() {
@@ -39,7 +39,7 @@ export class SendSmsModalPage {
   }
 
   sendTextMessage() {
-    alert(this.text.number);
+    //alert(this.text.number);
     this.sms.send(this.text.number, this.text.message).then((result) => {
       alert(result);
       let successToast = this.toast.create({

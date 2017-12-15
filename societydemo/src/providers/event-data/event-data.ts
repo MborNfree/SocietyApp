@@ -18,21 +18,8 @@ export class EventDataProvider {
     alert("type" + type);
     // INSTALL PLUGIN - cordova plugin add cordova-plugin-file
     return new Promise((resolve, reject) => {
-      // window.resolveLocalFileSystemURL(_imagePath, (fileEntry) => {
-      //     fileEntry.file((resFile) => {
-      //       var reader = new FileReader();
-      //       reader.onloadend = (evt: any) => {
-      //         var imgBlob: any = new Blob([evt.target.result], { type: type });
-      //         imgBlob.name = name;
-      //         resolve(imgBlob);
-      //       };
-      //       reader.onerror = (e) => {
-      //        alert('Failed file read: ' + e.toString());
-      //         reject(e);
-      //       };
-      //       reader.readAsArrayBuffer(resFile);
-      //     });
-      //  });
+
+
     });
   }
 
@@ -57,6 +44,7 @@ export class EventDataProvider {
         //Saves the file to storage
         .put(file.blob, { contentType: file.type })
         .then(savedFile => {
+          alert('save'+savedFile);
           //Gets the file url and saves it in the database
           this.sbaList.child("sbafiles").push({
             file: savedFile.downloadURL,

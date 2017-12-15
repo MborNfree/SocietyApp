@@ -48,7 +48,7 @@ export class AddEventAdminPage {
   public EventCat: Array<any> = [];
   public EventCatRef: firebase.database.Reference = firebase
     .database()
-    .ref("/service_category/");
+    .ref("/users/");
 
   public owner: AngularFireList<any>;
   public type: AngularFireList<any>;
@@ -126,6 +126,7 @@ export class AddEventAdminPage {
     this.EventCatRef.on("value", itemSnapshot => {
       this.EventCat = [];
       itemSnapshot.forEach(itemSnap => {
+       // alert(JSON.stringify(itemSnap));
         this.EventCat.push(itemSnap.val());
         return false;
       });
@@ -133,9 +134,6 @@ export class AddEventAdminPage {
   }
 
   onSubmit(value: any): void {
-    alert("nm" + this.event_name.value);
-    alert("dt" + this.event_date.value);
-    alert("desc" + this.event_desc.value);
 
     this.fdb
       .list("/events/")
@@ -149,9 +147,6 @@ export class AddEventAdminPage {
     //  console.log('got data ', data);
 
     this.alert("events added Successfully");
-    this.navCtrl.push(EventListAdminPage);
-    alert("added");
-
     this.navCtrl.push(EventListAdminPage);
   }
 
@@ -176,8 +171,8 @@ export class AddEventAdminPage {
     );
   }
   pickType(type: string) {
-    this.type = this.fdb.list("service_category", ref =>
-      ref.orderByChild("service_type").equalTo(type)
+    this.type = this.fdb.list("users", ref =>
+      ref.orderByChild("first_name").equalTo(type)
     );
   }
 }

@@ -1,0 +1,39 @@
+<!--
+  Generated template for the EditEventModalPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>edit-event-modal</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="closeModal()">Close</button>
+      </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card>
+    <ion-item>
+      <ion-label stacked>Event Name</ion-label>
+      <ion-input [(ngModel)]="dataEvent.name" type="text"></ion-input>
+
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Event Venue</ion-label>
+      <ion-input [(ngModel)]="dataEvent.venue" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <button ion-button icon-left clear item-right (click)="updateItem(dataEvent.name,dataEvent.venue)">
+      <ion-icon name="checkmark"></ion-icon>
+      Send
+    </button>
+    </ion-item>
+ </ion-card>
+</ion-content>

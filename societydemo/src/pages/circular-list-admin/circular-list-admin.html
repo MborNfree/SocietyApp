@@ -17,7 +17,7 @@
     <ion-refresher (ionRefresh)="doRefresh($event)">
         <ion-refresher-content></ion-refresher-content>
       </ion-refresher>
-  <ion-list *ngFor="let document of Circular">
+  <ion-list *ngFor="let document of Circular | async">
     <ion-item (click)="viewItem()">
       <ion-card>
         <ion-img src="{{document.icon}}" ></ion-img>
@@ -35,5 +35,7 @@
         </ion-row>
       </ion-card>
     </ion-item>
+    <button ion-button (click)="removeCircular(document.key)" class="button">Delete</button>
+    <button ion-button (click)="updateCircular(document.key,document.title)" class="button">Edit</button>
   </ion-list>
 </ion-content>

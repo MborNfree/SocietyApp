@@ -17,26 +17,19 @@ import { Observable } from "rxjs/Observable";
   templateUrl: "service-list-admin.html"
 })
 export class ServiceListAdminPage {
-  public items = [];
+
   itemsRef: AngularFireList<any>;
-  itemsObject: Observable<any[]>;
+  Services: Observable<any[]>;
 
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     private fdb: AngularFireDatabase
   ) {
-    this.fdb
-      .list("/services/")
-      .valueChanges()
-      .subscribe(_data => {
-        this.items = _data;
-        console.log(this.items);
-      });
 
-    this.itemsRef = fdb.list("messages");
+    this.itemsRef = fdb.list("services");
     // Use snapshotChanges().map() to store the key
-    this.itemsObject = this.itemsRef.snapshotChanges().map(changes => {
+    this.Services = this.itemsRef.snapshotChanges().map(changes => {
       return changes.map(c => ({ key: c.payload.key, ...c.payload.val() }));
     });
   }
@@ -59,9 +52,7 @@ export class ServiceListAdminPage {
   }
 
   removeService(serviceId: any) {
-    alert(JSON.stringify(serviceId));
-    //this.itemsRef.remove(serviceId);
-    // this.events.remove(events);
+    alert('Are you sure wated to Delete?');
     this.fdb.object("/services/" + serviceId).remove();
   }
 

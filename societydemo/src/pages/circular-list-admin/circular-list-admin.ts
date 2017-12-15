@@ -2,6 +2,7 @@ import { Component } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
 import { AngularFireDatabase } from "angularfire2/database";
 import { CircularDetailAdminPage } from "../circular-detail-admin/circular-detail-admin";
+import { Observable } from 'rxjs/Observable';
 
 @IonicPage()
 @Component({
@@ -10,19 +11,18 @@ import { CircularDetailAdminPage } from "../circular-detail-admin/circular-detai
 })
 export class CircularListAdminPage {
   public items = [];
-  public Circular = [];
+  public Circular :Observable<any[]>;
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     private fdb: AngularFireDatabase
   ) {
-    this.fdb
-      .list("/documents/")
-      .valueChanges()
-      .subscribe(_data => {
-        this.Circular = _data;
-        console.log(this.Circular);
-      });
+    this.Circular = this.fdb
+    .list("/societydoc/")
+    .snapshotChanges()
+    .map(changes => {
+      return changes.map(c => ({ key: c.payload.key, ...c.payload.val() }));
+    });
   }
 
   ionViewDidLoad() {
@@ -36,19 +36,17 @@ export class CircularListAdminPage {
       refresher.complete();
     }, 2000);
   }
-  saveItem(item) {
-    this.items.push(item);
-  }
+
   viewItem() {
     this.navCtrl.push(CircularDetailAdminPage);
   }
-  removeCircular(eventId: string) {
-    alert(eventId);
+  removeCircular(CircularId: string) {
+    alert(CircularId);
     // this.events.remove(events);
-    this.fdb.object("/documents/" + eventId).remove();
+    this.fdb.object("/societydoc/" + CircularId).remove();
   }
 
-  updateCircular(EventId, EventTitle) {
-    this.fdb.object("/documents/" + EventId).update({ event_name: EventTitle });
+  updateCircular(CircularId, CircularTitle) {
+    this.fdb.object("/societydoc/" + CircularId).update({ event_name: CircularTitle });
   }
 }

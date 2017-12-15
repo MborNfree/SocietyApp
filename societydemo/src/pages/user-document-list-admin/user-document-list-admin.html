@@ -13,11 +13,13 @@
     <ion-refresher (ionRefresh)="doRefresh($event)">
         <ion-refresher-content></ion-refresher-content>
       </ion-refresher>
-  <ion-list *ngFor="let item of items">
+  <ion-list *ngFor="let item of items | async">
     <ion-item (click)="viewItem(item)">
-      <p>User Name :{{item.unm}}</p>
-      <p>Document Name:{{item.documentnm}}</p>
-      <p>Document:{{item.tydocumentpe}}</p>
+      <p>User Id :{{item.ID}}</p>
+      <p>Document Name:{{item.title}}</p>
+      <p>Document date:{{item.date}}</p>
     </ion-item>
+    <button ion-button (click)="removeUdoc(item.key)" class="button">Delete</button>
+    <button ion-button (click)="updateUdoc(item.key,item.Service_name)" class="button">Edit</button>
   </ion-list>
 </ion-content>

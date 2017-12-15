@@ -13,13 +13,26 @@
     <ion-refresher (ionRefresh)="doRefresh($event)">
         <ion-refresher-content></ion-refresher-content>
       </ion-refresher>
-  <ion-list *ngFor="let event of events">
+      <button ion-button  class="button" (click)="addItem()"><ion-icon name="pen"></ion-icon> Add New Event</button>
+      <button  ion-button class="button" (click)="deleteEverything()"><ion-icon name="trash"></ion-icon> Delete All</button>
+  <ion-list *ngFor="let event of events1 | async">
     <ion-item (click)="viewItem(event)">
       <ion-img src="{{event.event_img}}"></ion-img>
       <p>{{event.event_name}}</p>
-      <p>kkk {{event.E_id}}</p>
+      <!-- <p>kkk {{event.E_id}}</p> -->
     </ion-item>
-    <button ion-button (click)="removeEvent(key)" class="button">Delete</button>
-    <button ion-button (click)="updateEvent(event)" class="button">Edit</button>
+    <button ion-button (click)="deleteItem(event.key)" class="button">Delete</button>
+    <button ion-button (click)="updateItem(event.key, event.event_name)" class="button">Edit</button>
   </ion-list>
+
+
+  <ul>
+    <li *ngFor="let event1 of events1 | async">
+      <input type="text" #updatetext [value]="event1.event_name" />
+      <button (click)="updateItem(event1.key, updatetext.value)">Update</button>
+      <button (click)="deleteItem(event1.key)">Delete</button>
+    </li>
+  </ul>
+  <input type="text" #newitem />
+  <button (click)="deleteEverything()">Delete All</button>
 </ion-content>

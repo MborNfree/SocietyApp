@@ -9,9 +9,11 @@ import {
 } from "ionic-angular";
 import { EventAdminPage } from "../event-admin/event-admin";
 import { AddEventAdminPage } from "../add-event-admin/add-event-admin";
-import { AngularFireDatabase } from "angularfire2/database";
+import { AngularFireDatabase, AngularFireList } from "angularfire2/database";
 import { Http } from "@angular/http";
 import * as firebase from "firebase";
+import { Observable } from "rxjs/Observable";
+import "rxjs/add/operator/map";
 
 @IonicPage()
 @Component({
@@ -19,13 +21,13 @@ import * as firebase from "firebase";
   templateUrl: "event-list-admin.html"
 })
 export class EventListAdminPage {
-  //public items;
+  itemsRef: AngularFireList<any>;
+  events1: Observable<any[]>;
   events = [];
   arrData = [];
   public items = [];
-  enm:string;
-  key:any;
-
+  enm: string;
+  key: any;
 
   constructor(
     public http: Http,
@@ -36,25 +38,20 @@ export class EventListAdminPage {
     public modalCtrl: ModalController,
     public alertCtrl: AlertController
   ) {
-    this.fdb
+    this.events1 = this.fdb
       .list("/events/")
-      .valueChanges()
-      .subscribe(_data => {
-        this.events = _data;
-        console.log(this.events);
+      .snapshotChanges()
+      .map(changes => {
+        return changes.map(c => ({ key: c.payload.key, ...c.payload.val() }));
       });
-    var ref = firebase.database().ref("events");
-    var ref1 = firebase.database().ref();
-    ref.on("value", this.gotEvent, this.errEvent);
 
-    var  applesQuery = ref1.child("events").orderByChild("event_name").equalTo("birthday");
-    console.log('apple'+applesQuery);
-    // console.log(applesQuery[event_name]);
+    var ref1 = firebase.database().ref();
+    var ref = firebase.database().ref("events");
+    ref.on("value", this.gotEvent, this.errEvent);
   }
 
   gotEvent(data) {
     console.log("data");
-    // console.log(data.val());
     var events = data.val();
     var keys = Object.keys(events);
     // console.log('keys'+keys);
@@ -63,10 +60,8 @@ export class EventListAdminPage {
       var k = keys[i];
 
       console.log("true");
-       var enm = events[k].event_name;
-       var key = k;
-
-      console.log("user data =" + enm, key);
+      var enm = events[k].event_name;
+      var key = k;
     }
   }
   errEvent(err) {
@@ -77,61 +72,38 @@ export class EventListAdminPage {
     console.log("ionViewDidLoad EventListAdminPage");
   }
   doRefresh(refresher) {
-    console.log('Begin async operation', refresher);
+    console.log("Begin async operation", refresher);
 
     setTimeout(() => {
-      console.log('Async operation has ended');
+      console.log("Async operation has ended");
       refresher.complete();
     }, 2000);
   }
   EventDetailPage() {
     this.navCtrl.push(EventAdminPage);
   }
-  showOptions(EventId, EventTitle) {
-    let actionSheet = this.actionSheetCtrl.create({
-      title: "What do you want to do?",
-      buttons: [
-        {
-          text: "Delete Song",
-          role: "destructive",
-          handler: () => {
-            this.removeEvent(EventId);
-          }
-        },
-        {
-          text: "Update title",
-          handler: () => {
-            this.updateEvent(Event);
-          }
-        },
-        {
-          text: "Cancel",
-          role: "cancel",
-          handler: () => {
-            console.log("Cancel clicked");
-          }
-        }
-      ]
-    });
-    actionSheet.present();
+
+  updateItem(key: string, newText: string) {
+    var data = { key: key, newText: newText };
+    alert(JSON.stringify(data));
+    var modalPage = this.modalCtrl.create("EditEventModalPage", { data: data });
+    modalPage.present();
   }
 
-  removeEvent(eventId: any) {
-    alert(eventId);
-    alert("eventid" + JSON.stringify(eventId.E_id));
-    alert('key'+eventId.$key);
-    this.fdb
-      .object(`events/${eventId.E_id}`)
-      .remove()
-      .then(() => alert("events deletion requested !"));
-    // this.events.remove(events);
-    //this.fdb.object('/events/'+ eventId).remove();
+  // updateItem(key: string, newText: string) {
+  // //  this.itemsRef.update(key, { text: newText });
+  // alert(newText);
+  //   this.fdb
+  //   .list("/events/").update(key, { event_name: newText });
+  // }
+  deleteItem(key: string) {
+    //  this.itemsRef.remove(key);
+    alert('Are you sure wated to Delete?');
+    this.fdb.list("/events/").remove(key);
   }
-  updateEvent(Event: any) {
-    console.log(Event);
-    this.fdb
-      .object("/events/" + Event.EventId)
-      .update({ event_name: Event.EventTitle });
+  deleteEverything() {
+    // this.itemsRef.remove();
+    this.fdb.list("/events/").remove();
   }
 
   addItem() {

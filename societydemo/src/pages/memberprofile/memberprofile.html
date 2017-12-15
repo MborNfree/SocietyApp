@@ -1,37 +1,33 @@
 
 <ion-header>
-
   <ion-navbar color='navbar'>
     <ion-title>Member Profile</ion-title>
-
   </ion-navbar>
-
 </ion-header>
 
 <ion-content padding class="bg-masters">
   <ion-card>
-    <div class="logo">
+    <!-- <div class="logo"> -->
       <ion-avatar align="center">
         <ion-img src="assets/img/doctor.jpg" alt="logo"></ion-img>
       </ion-avatar>
-    </div>
+    <!-- </div> -->
     <ion-list>
       <ion-item>
-        <ion-label align="center"> Name:{{itemsParam.first_name}}</ion-label>
+        <ion-label align="center">
+            <ion-icon name="person"></ion-icon> Name:{{itemsParam.first_name}}</ion-label>
       </ion-item>
-      <ion-item>
-        <ion-label>Details</ion-label>
-      </ion-item>
+
       <ion-item *ngIf="itemsParam.email!=''">
         <ion-label color="primary">
-          <ion-icon name="mail"></ion-icon>
-          <p>{{itemsParam.email}}</p>
+          <ion-icon name="mail" (click)="sendemail(itemsParam.email)"></ion-icon> {{itemsParam.email}}
+
         </ion-label>
       </ion-item>
       <ion-item *ngIf="itemsParam.username!=''">
         <ion-label color="primary">
-          <ion-icon name="person"></ion-icon>
-          <p> {{itemsParam.username}}</p>
+          <ion-icon name="person"></ion-icon> {{itemsParam.username}}
+
         </ion-label>
       </ion-item>
       <ion-item *ngIf="itemsParam.contact_no!=''">
@@ -40,8 +36,8 @@
       </ion-item>
       <ion-item *ngIf="itemsParam.flatno!=''">
         <ion-label color="primary">
-          <ion-icon name="home"></ion-icon>
-          <p>#{{itemsParam.flatno}}</p>
+          <ion-icon name="home"></ion-icon>#{{itemsParam.flatno}}
+
         </ion-label>
       </ion-item>
     </ion-list>

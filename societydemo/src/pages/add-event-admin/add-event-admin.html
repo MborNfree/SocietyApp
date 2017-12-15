@@ -23,7 +23,7 @@
     <ion-item [ngClass]="{'error-border':!authForm.controls.eventownernm.valid && authForm.controls.eventownernm.touched}">
       <ion-label floating>Event Owner Name:</ion-label>
       <ion-select formControlName="eventownernm" #eventowner [(ngModel)]="eventownernm" (ionChange)="pickOwner(eventownernm)">
-        <ion-option *ngFor="let cat of EventCat" value="{{ cat.service_category }}">{{ cat.service_category }}{{ cat.service_category }}</ion-option>
+        <ion-option *ngFor="let cat of EventCat" value="{{ cat.first_name }}">{{ cat.first_name }}{{ cat.last_name }}</ion-option>
       </ion-select>
     </ion-item>
     <ion-item *ngIf="authForm.controls.eventownernm.hasError('required') && authForm.controls.eventownernm.touched">
@@ -31,9 +31,10 @@
     </ion-item>
     <ion-item [ngClass]="{'error-border':!authForm.controls.eventtype.valid && authForm.controls.eventtype.touched}">
       <ion-label floating>Event Type</ion-label>
-      <ion-select formControlName="eventtype" #eventype [(ngModel)]="eventtype" (ionChange)="pickType(eventtype)">
-        <ion-option *ngFor="let cat of EventCat" value="{{ cat.service_category }}">{{ cat.service_category }}</ion-option>
-      </ion-select>
+      <ion-input formControlName="eventtype" type="text" [(ngModel)]="eventtype" #eventype></ion-input>
+      <!-- <ion-select formControlName="eventtype" #eventype [(ngModel)]="eventtype" (ionChange)="pickType(eventtype)">
+        <ion-option *ngFor="let cat of EventCat" value="{{ cat.event_type}}">{{ cat.event_type}}</ion-option>
+      </ion-select> -->
     </ion-item>
     <ion-item *ngIf="authForm.controls.eventtype.hasError('required') && authForm.controls.eventtype.touched">
       <p>Sorry, field Event Type is required!</p>
