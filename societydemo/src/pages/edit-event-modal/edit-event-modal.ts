@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams, ModalController, ViewController } 
 import { AngularFireDatabase } from 'angularfire2/database';
 
 
-@IonicPge()
+@IonicPage()
 @Component({
   selector: 'page-edit-event-modal',
   templateUrl: 'edit-event-modal.html',

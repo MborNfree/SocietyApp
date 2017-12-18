@@ -95,11 +95,12 @@ export class HomePage {
   showdoctorlist() {
     this.navCtrl.push(DoctorlistPage);
   }
+
   // showelectricianlist()
   // {
   //   this.navCtrl.push(electricianpage);
   // }
-
+  
   showplumberlist() {
     this.navCtrl.push(PlumberlistPage);
   }
@@ -115,10 +116,18 @@ export class HomePage {
 
   // for sending sms to multiple numbers
   sendTextMessage() {
-    this.array1=[+917507526151,+919664993545,+919987566826,+918655156422];
-    
+    this.array1=["+917507526151","+919664993545","+919987566826","+918655156422"];
     alert(this.array1);
-    this.sms.send('array1','Hii Users').then((result) => {
+    var options = {
+      replaceLineBreaks: false, // true to replace \n by a new line, false by default
+      android: {
+        intent: '' // send SMS with the native android SMS messaging
+          //intent: '' // send SMS without open any other app
+          //intent: 'INTENT' // send SMS inside a default SMS app
+      }
+    }
+   
+    this.sms.send(this.array1.toString(),'Hii Users',options).then((result) => {
       alert(result);
       let successToast = this.toastCtrl.create({
         message: "Text message sent successfully",
@@ -132,13 +141,8 @@ export class HomePage {
         duration: 3000
       })
       errorToast.present();
-    });
-    
+    });    
   }
-
-
-
-
 
 
 

@@ -7,7 +7,7 @@
     <ion-title align="center">add-norms</ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content padding class="bg-masters">
+<!-- <ion-content padding class="bg-masters">
   <form [formGroup]="authForm" (ngSubmit)="onSubmit(authForm.value)">
     <ion-item [ngClass]="{'error-border':!authForm.controls.rulenm.valid && authForm.controls.rulenm.touched}">
       <ion-label floating>Rule</ion-label>
@@ -27,5 +27,37 @@
       </ion-select>
     </ion-item>
     <button ion-button full color="button" type="submit">Add Rule</button>
+  </form>
+</ion-content> -->
+
+<ion-content padding class="bg-masters">
+  <form [formGroup]="authForm">
+
+    <ion-item [ngClass]="{'error-border':!authForm.controls.rulenm.valid && authForm.controls.rulenm.touched}">
+      <ion-label floating>Rule</ion-label>
+      <ion-input formControlName="rulenm" type="text" #rulenm></ion-input>
+     
+    </ion-item>
+    <ion-item *ngIf="authForm.controls.rulenm.hasError('required') && authForm.controls.rulenm.touched">
+      <p>Sorry, field Rule is  is required!</p>
+    </ion-item>
+    <ion-item *ngIf="authForm.controls.rulenm.hasError('pattern') && authForm.controls.rulenm.touched">
+      <p>Sorry, only small and capital letters are allowed!</p>
+    </ion-item>
+    
+    <ion-item [ngClass]="{'error-border':!authForm.controls.ruletype.valid && authForm.controls.ruletype.touched}">
+      <ion-label floating>Rule Type</ion-label>
+      <ion-select formControlName="ruletype" #rType>
+        <ion-option value="Do's">Do's</ion-option>
+        <ion-option value="Don't">Don't</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item *ngIf="authForm.controls.ruletype.hasError('required') && authForm.controls.ruletype.touched">
+      <p>Sorry, field Rule Type is required!</p>
+    </ion-item>     
+
+
+    
+    <button ion-button full color="button" [disabled]="!authForm.valid" (click)="addnorms(rType.value,rulenm);">Add Rules</button>
   </form>
 </ion-content>

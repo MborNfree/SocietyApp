@@ -17,10 +17,10 @@ import { AngularFireDatabase } from "angularfire2/database";
 })
 export class AddNormsPage {
   authForm: FormGroup;
-  rulenm: string;
+  // rulenm: string;
   ruletype: string;
 
-  @ViewChild("rule") rule;
+  @ViewChild("rulenm") rulenm;
   @ViewChild("rType") rType;
 
   constructor(
@@ -35,18 +35,11 @@ export class AddNormsPage {
         "",
         Validators.compose([
           Validators.required,
-          Validators.pattern("[a-zA-Z]*"),
           Validators.minLength(4),
-          Validators.maxLength(30)
+          Validators.maxLength(40)
         ])
       ],
-      ruletype: [
-        "",
-        Validators.compose([
-          Validators.required,
-          Validators.pattern("[a-zA-Z]*")
-        ])
-      ]
+      ruletype: ["", Validators.compose([Validators.required])],
     });
   }
 
@@ -63,14 +56,15 @@ export class AddNormsPage {
       })
       .present();
   }
-  onSubmit(value: any): void {
+
+  addnorms(rulenm,rType){
     this.fdb
       .list("/society_rules/")
-      .push({ rule: this.rule.value, rule_type: this.rType.value })
+      .push({ rule: this.rulenm.value, rule_type: this.rType.value })
       .then(
         data => {
           console.log("got data ", data);
-          this.alert("Service Added Successfully!");
+          this.alert("Rules Added Successfully!");
           this.navCtrl.push(RuleListAdminPage);
         },
         error => {
