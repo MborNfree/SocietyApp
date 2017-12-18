@@ -23,9 +23,9 @@ export class EditEventModalPage {
     console.log('ionViewDidLoad EditEventModalPage');
   }
    updateItem(nm: string, venue: string) {
-  //   this.data = JSON.stringify(this.navParams.get('data'));
-  //   console.log( this.data );
-  // //  this.itemsRef.update(key, { text: newText });
+    this.data = JSON.stringify(this.navParams.get('data'));
+    console.log( this.data );
+  //  this.itemsRef.update(key, { text: newText });
   // alert(nm);
   //   this.fdb
   //   .list("/events/").update(this.data[key], { event_name: nm });

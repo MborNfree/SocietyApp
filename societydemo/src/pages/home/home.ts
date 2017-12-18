@@ -7,7 +7,7 @@ import {
 } from "ionic-angular";
 import { AlertController } from "ionic-angular";
 import { AngularFireAuth } from "angularfire2/auth";
-
+import { SMS } from '@ionic-native/sms';
 // Angular Material
 
 import { LoginPage } from "./../login/login";
@@ -28,6 +28,7 @@ import { HelpdeskPage } from "./../helpdesk/helpdesk";
   templateUrl: "home.html"
 })
 export class HomePage {
+  array1: any[];
   username: any;
   sessionUser: any;
   public uIDParam;
@@ -37,7 +38,8 @@ export class HomePage {
     private afAuth: AngularFireAuth,
     public navCtrl: NavController,
     public alertCtrl: AlertController,
-    public navParams: NavParams
+    public navParams: NavParams,
+    private sms: SMS
   ) {
     this.username = window.localStorage.getItem("Sessioneml");
     this.sessionUser = sessionStorage.getItem("Sessionuid");
@@ -109,6 +111,38 @@ export class HomePage {
   ViewProfile() {
     this.navCtrl.push(ProfilePage);
   }
+
+
+  // for sending sms to multiple numbers
+  sendTextMessage() {
+    this.array1=[+917507526151,+919664993545,+919987566826,+918655156422];
+    
+    alert(this.array1);
+    this.sms.send('array1','Hii Users').then((result) => {
+      alert(result);
+      let successToast = this.toastCtrl.create({
+        message: "Text message sent successfully",
+        duration: 3000
+      })
+      successToast.present();
+    }, (error) => {
+      alert(error);
+      let errorToast = this.toastCtrl.create({
+        message: "Text message not sent. :(",
+        duration: 3000
+      })
+      errorToast.present();
+    });
+    
+  }
+
+
+
+
+
+
+
+
   showAlert() {
     let confirm = this.alertCtrl.create({
       title: "Exit Application?",

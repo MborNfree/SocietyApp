@@ -24,7 +24,7 @@
         <div *ngIf="isGroupShown(i)" (click)="sendemail(c.E_email)" class="desc">
           <ion-icon name="mail-open"></ion-icon> {{c.E_email}}</div>
       </h4>
-      <div *ngIf="isGroupShown(i)">
+      <div *ngIf="isGroupShown(i)"   (click)="gotoweb(c.E_web)">
         <ion-icon name="globe"></ion-icon>{{c.E_web}}</div>
 
     </ion-item>

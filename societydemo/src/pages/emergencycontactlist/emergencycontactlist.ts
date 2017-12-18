@@ -11,12 +11,13 @@ import { InAppBrowser } from "@ionic-native/in-app-browser";
   templateUrl: "emergencycontactlist.html"
 })
 export class EmergencycontactlistPage {
+ 
   email: any;
   contacts = [];
   arrData = [];
   public items = [];
   shownGroup = null;
-  iab:any;
+
 
   toggleGroup(group) {
     if (this.isGroupShown(group)) {
@@ -43,7 +44,8 @@ export class EmergencycontactlistPage {
     public navParams: NavParams,
     private emailComposer: EmailComposer,
     private callNumber: CallNumber,
-    private fdb: AngularFireDatabase
+    private fdb: AngularFireDatabase,
+    public iab:InAppBrowser,
   ) {
     this.fdb
       .list("/emerg_contact/")
@@ -71,6 +73,6 @@ export class EmergencycontactlistPage {
 
   gotoweb(web) {
     alert(web);
-    const browser = this.iab.create(web, "_blank", "location:yes");
+    const browser = this.iab.create("http://"+web,'_blank');
   }
 }

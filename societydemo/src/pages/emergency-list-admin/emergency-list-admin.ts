@@ -94,7 +94,7 @@ export class EmergencyListAdminPage {
 
   gotoweb(web) {
     alert(web);
-    const browser = this.iab.create(web, "_blank", "location:yes");
+    const browser = this.iab.create("http://"+web,'_blank');
   }
   ionViewDidLoad() {
     console.log("ionViewDidLoad EmergencyListAdminPage");
