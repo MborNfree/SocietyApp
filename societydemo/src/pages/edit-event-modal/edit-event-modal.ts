@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams, ModalController, ViewController } 
 import { AngularFireDatabase } from 'angularfire2/database';
 
 
-@IonicPge()
+@IonicPage()
 @Component({
   selector: 'page-edit-event-modal',
   templateUrl: 'edit-event-modal.html',
@@ -23,12 +23,12 @@ export class EditEventModalPage {
     console.log('ionViewDidLoad EditEventModalPage');
   }
    updateItem(nm: string, venue: string) {
-    this.data = JSON.stringify(this.navParams.get('data'));
-    console.log( this.data );
-  //  this.itemsRef.update(key, { text: newText });
-  alert(nm);
-    this.fdb
-    .list("/events/").update(this.data[key], { event_name: nm });
+  //   this.data = JSON.stringify(this.navParams.get('data'));
+  //   console.log( this.data );
+  // //  this.itemsRef.update(key, { text: newText });
+  // alert(nm);
+  //   this.fdb
+  //   .list("/events/").update(this.data[key], { event_name: nm });
   }
 
   closeModal(){

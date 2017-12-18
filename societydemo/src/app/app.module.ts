@@ -1,4 +1,3 @@
-
 import { EmailComposer } from "@ionic-native/email-composer";
 import { InAppBrowser } from "@ionic-native/in-app-browser";
 import { BrowserModule } from "@angular/platform-browser";
@@ -21,6 +20,7 @@ import { HttpModule } from "@angular/http";
 import { SMS } from "@ionic-native/sms";
 import { Stripe } from "@ionic-native/stripe";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+
 
 import { DocumentuploadPage } from "./../pages/documentupload/documentupload";
 import { ElectricianlistPage } from "./../pages/electricianlist/electricianlist";
@@ -90,9 +90,9 @@ import { AddNormsPage } from "../pages/add-norms/add-norms";
 import { RuleListAdminPage } from "../pages/rule-list-admin/rule-list-admin";
 import { BillListAdminPage } from "../pages/bill-list-admin/bill-list-admin";
 import { AddEmergencyCategoryAdminPage } from "./../pages/add-emergency-category-admin/add-emergency-category-admin";
-
 import { EventDataProvider } from "../providers/event-data/event-data";
 import { DashboardPage } from '../pages/dashboard/dashboard';
+
 
 var config = {
   apiKey: "AIzaSyCdBaGl6H_IuyzMyEnjq-6VRD5-2alxUtg",
@@ -102,6 +102,7 @@ var config = {
   storageBucket: "society-182906.appspot.com",
   messagingSenderId: "583609948893"
 };
+
 
 @NgModule({
   declarations: [
@@ -171,8 +172,7 @@ var config = {
     Card,
     BillListAdminPage,
     DashboardPage
-
-  ],
+   ],
 
   imports: [
     HttpModule,
@@ -184,7 +184,8 @@ var config = {
     AngularFireModule.initializeApp(config),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    Ng2SmartTableModule
+    Ng2SmartTableModule,
+
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -258,7 +259,6 @@ var config = {
     Card,
     BillListAdminPage,
     DashboardPage
-
   ],
 
   providers: [
