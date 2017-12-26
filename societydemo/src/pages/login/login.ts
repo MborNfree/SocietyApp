@@ -1,4 +1,4 @@
-import { DashboardPage } from './../dashboard/dashboard';
+// import { DashboardPage } from './../dashboard/dashboard';
 
 import { Component, ViewChild } from "@angular/core";
 import {
@@ -33,7 +33,6 @@ export class LoginPage {
     public navParams: NavParams,
     public formBuilder: FormBuilder
   ) {
-
     this.signinForm = formBuilder.group({
       usernm: [
         "",
@@ -76,12 +75,12 @@ export class LoginPage {
         // );
         console.log("Success! You're logged in");
         // console.log("st" + JSON.stringify(status));
-        if(data.email=='admin@niyanta.co.in'){
-          alert('Admin Dashboard');
-          this.navCtrl.push(DashboardPage, {
+        if (data.email == "admin@niyanta.co.in") {
+          // alert('Admin Dashboard');
+          this.navCtrl.push(HomePage, {
             uid: this.currentUserUid
           });
-        }else{
+        } else {
           this.navCtrl.push(HomePage, {
             uid: this.currentUserUid
           });
