@@ -42,7 +42,7 @@ export class ProfilePage {
     private fdb: AngularFireDatabase,
     private fireAuth: AngularFireAuth,
     public cameraPlugin: Camera
-  ) {
+    ) {
     this.uIDParam = navParams.get("uid");
     var ref = firebase.database().ref("users");
     //ref.on('value', this.gotData,this.errData);
@@ -128,7 +128,7 @@ export class ProfilePage {
         Validators.compose([
           Validators.required,
           Validators.pattern("[0-9]*"),
-          Validators.minLength(1)
+          Validators.maxLength(1)
         ])
       ],
       fnm: [
@@ -182,10 +182,30 @@ export class ProfilePage {
           .push(savedProfilePicture.downloadURL);
       });
   },
-    
      error => {
       // Log an error to the console if something goes wrong.
       console.log("ERROR -> " + JSON.stringify(error));
-    });
+    });    
    }
+ 
+
+  //  storageRef = firebase.storage().ref().child('profilePictures/user1/img.png');
+  //  abc=this.storageRef.getDownloadURL().then(url =>
+  //      console.log(url)
+  //  );
+
+ 
+
+  //  var currentUserUid=firebase.auth().currentUser.uid;
+  //  var storageRef=firebase.storage();
+  //    var pathReference=storageRef.ref('/' + currentUserUid +'/profilePicture/'+ Image.name);
+
+  //    pathReference.getDownloadURL().then(function(url) {
+  //     // Insert url into an <img> tag to "download"
+  //         $scope.imageUrl = url;
+  //         console.log($scope.imageUrl);
+  //     });
+
+    
 }
+

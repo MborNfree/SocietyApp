@@ -96,6 +96,7 @@ export class EventListAdminPage {
   //   this.fdb
   //   .list("/events/").update(key, { event_name: newText });
   // }
+  
   deleteItem(key: string) {
     //  this.itemsRef.remove(key);
     alert('Are you sure wated to Delete?');
