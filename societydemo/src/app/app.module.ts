@@ -25,8 +25,11 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { APP_BASE_HREF } from "@angular/common";
 
 
+<<<<<<< HEAD
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 
+=======
+>>>>>>> cb39507494bb3f55aeb9fa8e085161db8def8dea
 import { DocumentuploadPage } from "./../pages/documentupload/documentupload";
 import { ElectricianlistPage } from "./../pages/electricianlist/electricianlist";
 import { PlumberlistPage } from "./../pages/plumberlist/plumberlist";
@@ -95,8 +98,8 @@ import { AddNormsPage } from "../pages/add-norms/add-norms";
 import { RuleListAdminPage } from "../pages/rule-list-admin/rule-list-admin";
 import { BillListAdminPage } from "../pages/bill-list-admin/bill-list-admin";
 import { AddEmergencyCategoryAdminPage } from "./../pages/add-emergency-category-admin/add-emergency-category-admin";
-import { EventDataProvider } from "../providers/event-data/event-data";
 
+import { EventDataProvider } from "../providers/event-data/event-data";
 
 
 var config = {
@@ -174,7 +177,12 @@ var config = {
     RuleListAdminPage,
     AddNormsPage,
     Card,
+<<<<<<< HEAD
     BillListAdminPage
+=======
+    BillListAdminPage,
+    DashboardPage
+>>>>>>> cb39507494bb3f55aeb9fa8e085161db8def8dea
 
   ],
 
@@ -188,8 +196,12 @@ var config = {
     AngularFireModule.initializeApp(config),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
+<<<<<<< HEAD
     NgbModule.forRoot(),
     BrowserAnimationsModule
+=======
+    Ng2SmartTableModule
+>>>>>>> cb39507494bb3f55aeb9fa8e085161db8def8dea
   ],
   bootstrap: [IonicApp, MySocietyApp],
   entryComponents: [
@@ -261,7 +273,12 @@ var config = {
     RuleListAdminPage,
     AddNormsPage,
     Card,
+<<<<<<< HEAD
     BillListAdminPage
+=======
+    BillListAdminPage,
+    DashboardPage
+>>>>>>> cb39507494bb3f55aeb9fa8e085161db8def8dea
 
   ],
 

@@ -6,6 +6,7 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { AngularFireDatabase } from "angularfire2/database";
 import { AngularFireAuth } from "angularfire2/auth";
 import * as firebase from "firebase";
+import { Camera } from '@ionic-native/camera';
 // import { Observable } from 'rxjs/Observable';
 
 @IonicPage()
@@ -39,7 +40,8 @@ export class ProfilePage {
     public navParams: NavParams,
     public formBuilder: FormBuilder,
     private fdb: AngularFireDatabase,
-    private fireAuth: AngularFireAuth
+    private fireAuth: AngularFireAuth,
+    public cameraPlugin: Camera
   ) {
     this.uIDParam = navParams.get("uid");
     var ref = firebase.database().ref("users");
@@ -79,7 +81,8 @@ export class ProfilePage {
           //Error code goes here
         }
       );
-      // ref.on('value', this.gotData,this.errData);
+
+        // ref.on('value', this.gotData,this.errData);
     });
     this.authForm = formBuilder.group({
       username: [
@@ -156,4 +159,33 @@ export class ProfilePage {
       alert(status);
     }
   }
+
+  takeSelfie(): void {
+    this.cameraPlugin.getPicture({
+      quality : 95,
+      destinationType : this.cameraPlugin.DestinationType.DATA_URL,
+      sourceType : this.cameraPlugin.PictureSourceType.CAMERA,
+      allowEdit : true,
+      encodingType: this.cameraPlugin.EncodingType.PNG,
+      targetWidth: 500,
+      targetHeight: 500,
+      saveToPhotoAlbum: true
+    }).then(profilePicture => {
+    // Send the picture to Firebase Storage
+    const selfieRef = firebase.storage().ref('profilePictures/user1/'+Image);
+    selfieRef
+      .putString(profilePicture, 'base64', {contentType: 'image/png'})
+      .then(savedProfilePicture => {
+        firebase
+          .database()
+          .ref(`users/user1/profilePicture`)
+          .push(savedProfilePicture.downloadURL);
+      });
+  },
+    
+     error => {
+      // Log an error to the console if something goes wrong.
+      console.log("ERROR -> " + JSON.stringify(error));
+    });
+   }
 }

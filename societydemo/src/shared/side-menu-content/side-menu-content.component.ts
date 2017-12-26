@@ -131,7 +131,7 @@ export class SideMenuContentComponent {
 
   // Outputs: return the selected option to the caller
   @Output() selectOption = new EventEmitter<any>();
-  sessionUser:string;
+
   constructor(
     private platform: Platform,
     private renderer: Renderer2,
@@ -139,8 +139,6 @@ export class SideMenuContentComponent {
     private eventsCtrl: Events,
     private cdRef: ChangeDetectorRef
   ) {
-
-     this.sessionUser = sessionStorage.getItem("Sessioneml");
     this.eventsCtrl.subscribe(
       SideMenuRedirectEvent,
       (data: SideMenuRedirectEventData) => {
