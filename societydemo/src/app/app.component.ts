@@ -30,9 +30,9 @@ import { LoginPage } from "./../pages/login/login";
 import { AddEventAdminPage } from "../pages/add-event-admin/add-event-admin";
 import { AddPropertyAdminPage } from "../pages/add-property-admin/add-property-admin";
 import { AddCircularAdminPage } from "../pages/add-circular-admin/add-circular-admin";
-import { CommitteeListAdminPage } from "../pages/committee-list-admin/committee-list-admin";
+// import { CommitteeListAdminPage } from "../pages/committee-list-admin/committee-list-admin";
 import { SocietybillPage } from "../pages/societybill/societybill";
-import { ResidentListAdminPage } from "./../pages/resident-list-admin/resident-list-admin";
+// import { ResidentListAdminPage } from "./../pages/resident-list-admin/resident-list-admin";
 import { PropertyListAdminPage } from "./../pages/property-list-admin/property-list-admin";
 import { SideMenuSettings } from "./../shared/side-menu-content/side-menu-content.component";
 import { EventListAdminPage } from "../pages/event-list-admin/event-list-admin";
@@ -53,13 +53,14 @@ import { AddServiceCategoryAdminPage } from "./../pages/add-service-category-adm
 import { HelpdeskPage } from "./../pages/helpdesk/helpdesk";
 import { AddNormsPage } from "../pages/add-norms/add-norms";
 import { ImageGalleryPage } from "./../pages/image-gallery/image-gallery";
-import { BillListAdminPage } from "./../pages/bill-list-admin/bill-list-admin";
+// import { BillListAdminPage } from "./../pages/bill-list-admin/bill-list-admin";
 import { AddEmergencyCategoryAdminPage } from "./../pages/add-emergency-category-admin/add-emergency-category-admin";
 
 @Component({
   templateUrl: "app.html"
 })
-export class MySocietyApp {
+
+export class MySocietyApp  {
   rootPage: any = LoginPage;
   username: string;
   password: string;
@@ -99,6 +100,7 @@ export class MySocietyApp {
     public menuCtrl: MenuController,
     public afAuth: AngularFireAuth,
     public af: AngularFireDatabase
+
   ) {
     this.user = this.afAuth.authState;
 
@@ -126,8 +128,9 @@ export class MySocietyApp {
 
   checkPreviousAuthorization(): void {
     if (
-      (window.sessionStorage.getItem("username") === "undefined" ||
-        window.sessionStorage.getItem("username") === null)  ) {
+      window.sessionStorage.getItem("username") === "undefined" ||
+      window.sessionStorage.getItem("username") === null
+    ) {
       this.rootPage = LoginPage;
     } else {
       this.rootPage = HomePage;
@@ -297,16 +300,16 @@ export class MySocietyApp {
           displayName: "Events List",
           component: EventListAdminPage
         },
-        {
-          iconName: "people",
-          displayName: "Residents List",
-          component: ResidentListAdminPage
-        },
-        {
-          iconName: "contacts",
-          displayName: "Committee List",
-          component: CommitteeListAdminPage
-        },
+        // {
+        //   iconName: "people",
+        //   displayName: "Residents List",
+        //   component: ResidentListAdminPage
+        // },
+        // {
+        //   iconName: "contacts",
+        //   displayName: "Committee List",
+        //   component: CommitteeListAdminPage
+        // },
         {
           iconName: "albums",
           displayName: "Society Property",

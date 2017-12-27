@@ -1,6 +1,7 @@
 import { EmailComposer } from "@ionic-native/email-composer";
 import { InAppBrowser } from "@ionic-native/in-app-browser";
 import { BrowserModule } from "@angular/platform-browser";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ErrorHandler, NgModule } from "@angular/core";
 import { IonicApp, IonicErrorHandler, IonicModule } from "ionic-angular";
 import { SplashScreen } from "@ionic-native/splash-screen";
@@ -8,7 +9,7 @@ import { StatusBar } from "@ionic-native/status-bar";
 import { AngularFireModule } from "angularfire2";
 import { AngularFireDatabaseModule } from "angularfire2/database";
 import { AngularFireAuthModule } from "angularfire2/auth";
-import { Ng2SmartTableModule } from "ng2-smart-table";
+
 import { EmojiProvider } from "../providers/emoji";
 import { FilePath } from "@ionic-native/file-path";
 import { File } from "@ionic-native/file";
@@ -20,7 +21,13 @@ import { HttpModule } from "@angular/http";
 import { SMS } from "@ionic-native/sms";
 import { Stripe } from "@ionic-native/stripe";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { APP_BASE_HREF } from "@angular/common";
 
+
+
+
+
+// import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 
 import { DocumentuploadPage } from "./../pages/documentupload/documentupload";
 import { ElectricianlistPage } from "./../pages/electricianlist/electricianlist";
@@ -42,9 +49,9 @@ import { ForgotpasswordPage } from "../pages/forgotpassword/forgotpassword";
 import { MemberprofilePage } from "../pages/memberprofile/memberprofile";
 import { AddEventAdminPage } from "../pages/add-event-admin/add-event-admin";
 import { EventAdminPage } from "../pages/event-admin/event-admin";
-import { CommitteeListAdminPage } from "../pages/committee-list-admin/committee-list-admin";
+// import { CommitteeListAdminPage } from "../pages/committee-list-admin/committee-list-admin";
 import { EventListAdminPage } from "../pages/event-list-admin/event-list-admin";
-import { ResidentListAdminPage } from "../pages/resident-list-admin/resident-list-admin";
+// import { ResidentListAdminPage } from "../pages/resident-list-admin/resident-list-admin";
 import { AddCircularAdminPage } from "../pages/add-circular-admin/add-circular-admin";
 import { EventdetailsPage } from "../pages/eventdetails/eventdetails";
 import { AddPropertyAdminPage } from "../pages/add-property-admin/add-property-admin";
@@ -91,7 +98,7 @@ import { RuleListAdminPage } from "../pages/rule-list-admin/rule-list-admin";
 import { BillListAdminPage } from "../pages/bill-list-admin/bill-list-admin";
 import { AddEmergencyCategoryAdminPage } from "./../pages/add-emergency-category-admin/add-emergency-category-admin";
 import { EventDataProvider } from "../providers/event-data/event-data";
-import { DashboardPage } from '../pages/dashboard/dashboard';
+
 
 
 var config = {
@@ -128,8 +135,8 @@ var config = {
     AddEventAdminPage,
     EventAdminPage,
     EventListAdminPage,
-    CommitteeListAdminPage,
-    ResidentListAdminPage,
+    // CommitteeListAdminPage,
+    // ResidentListAdminPage,
     AddCircularAdminPage,
     AddPropertyAdminPage,
     EventdetailsPage,
@@ -171,8 +178,8 @@ var config = {
     AddNormsPage,
     Card,
     BillListAdminPage,
-    DashboardPage
-   ],
+    BillListAdminPage,
+   ], 
 
   imports: [
     HttpModule,
@@ -184,10 +191,15 @@ var config = {
     AngularFireModule.initializeApp(config),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    Ng2SmartTableModule,
+
+    // Ng2SmartTableModule,
+
+
+    // NgbModule.forRoot(),
+    BrowserAnimationsModule   
 
   ],
-  bootstrap: [IonicApp],
+  bootstrap: [IonicApp, MySocietyApp],
   entryComponents: [
     MySocietyApp,
     HomePage,
@@ -212,8 +224,8 @@ var config = {
     AddEventAdminPage,
     EventAdminPage,
     EventListAdminPage,
-    CommitteeListAdminPage,
-    ResidentListAdminPage,
+    // CommitteeListAdminPage,
+    // ResidentListAdminPage,
     AddCircularAdminPage,
     AddPropertyAdminPage,
     ForgotpasswordPage,
@@ -225,7 +237,7 @@ var config = {
     BillingchargesPage,
     PropertyListAdminPage,
     ResidentProfileAdminPage,
-    CommitteeListAdminPage,
+    // CommitteeListAdminPage,
     CommitteeProfileAdminPage,
     CircularListAdminPage,
     CommitteeMemberProfilePage,
@@ -258,7 +270,9 @@ var config = {
     AddNormsPage,
     Card,
     BillListAdminPage,
-    DashboardPage
+    BillListAdminPage,
+    
+
   ],
 
   providers: [
@@ -281,7 +295,8 @@ var config = {
     SMS,
     EmailComposer,
     Stripe,
-    EventDataProvider
+    EventDataProvider,
+    { provide: APP_BASE_HREF, useValue: "/" }
   ]
 })
 export class AppModule {}
