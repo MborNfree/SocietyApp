@@ -262,12 +262,23 @@ export class RegisterPage {
         console.log("got data ", data);
 
         this.alert("Registered!");
+
+        data.sendEmailVerification().then(function() {
+            this.alert("Email Sent Please check your mailbox!");
+
+        }, function(error) {
+          this.alert("error!");
+
+        });
+
         this.navCtrl.push(LoginPage);
       })
       .catch(error => {
         console.log("got an error ", error);
         this.alert(error.message);
       });
+
+
     //s	console.log('Would register user with ', this.email.value, this.password.value);
   }
 
