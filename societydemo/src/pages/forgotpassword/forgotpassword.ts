@@ -34,18 +34,17 @@ export class ForgotpasswordPage {
   }
 
   resetPassword(email: string) {
-    alert(JSON.stringify(email['email']));
+   // alert(JSON.stringify(email['email']));
 
       var auth = firebase.auth();
      // var emailAddress = "user@example.com";
       var emailAddress = email['email'];
-
       auth.sendPasswordResetEmail(emailAddress).then(function() {
        alert('Please check your mail for password reset link');
       }).catch(function(error) {
         alert('Can not found account related to email address');
       });
-  //  return firebase.auth().sendPasswordResetEmail(JSON.stringify(email['email']));
+
   }
   gotoLogin() {
     this.navCtrl.push(LoginPage);
