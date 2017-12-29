@@ -103,5 +103,5 @@
     <plugin name="cordova-plugin-photo-library" spec="^2.1.0">
         <variable name="PHOTO_LIBRARY_USAGE_DESCRIPTION" value="To choose photos" />
     </plugin>
-    <plugin name="cordova-plugin-filechooser" spec="~1.0.1" />
+    <plugin name="cordova-plugin-filechooser" spec="^1.0.1" />
 </widget>

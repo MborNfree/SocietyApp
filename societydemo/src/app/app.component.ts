@@ -1,10 +1,11 @@
-import { Component, ViewChild } from "@angular/core";
+import { Component, ViewChild, OnInit } from "@angular/core";
 import { Nav, Platform, MenuController, AlertController } from "ionic-angular";
 import { StatusBar } from "@ionic-native/status-bar";
 import { SplashScreen } from "@ionic-native/splash-screen";
 import { AngularFireAuth } from "angularfire2/auth";
 import { AngularFireDatabase, AngularFireList } from "angularfire2/database";
 import { Observable } from "rxjs/Observable";
+
 
 import * as firebase from "firebase/app";
 
@@ -53,11 +54,13 @@ import { AddServiceCategoryAdminPage } from "./../pages/add-service-category-adm
 import { HelpdeskPage } from "./../pages/helpdesk/helpdesk";
 import { AddNormsPage } from "../pages/add-norms/add-norms";
 import { ImageGalleryPage } from "./../pages/image-gallery/image-gallery";
-// import { BillListAdminPage } from "./../pages/bill-list-admin/bill-list-admin";
+import { BillListAdminPage } from "./../pages/bill-list-admin/bill-list-admin";
 import { AddEmergencyCategoryAdminPage } from "./../pages/add-emergency-category-admin/add-emergency-category-admin";
 
 @Component({
-  templateUrl: "app.html"
+  templateUrl: "app.html",
+
+
 })
 
 export class MySocietyApp  {
@@ -99,7 +102,7 @@ export class MySocietyApp  {
     private alertCtrl: AlertController,
     public menuCtrl: MenuController,
     public afAuth: AngularFireAuth,
-    public af: AngularFireDatabase
+    public af: AngularFireDatabase,
 
   ) {
     this.user = this.afAuth.authState;

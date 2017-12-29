@@ -10,7 +10,7 @@ import { StatusBar } from "@ionic-native/status-bar";
 import { AngularFireModule } from "angularfire2";
 import { AngularFireDatabaseModule } from "angularfire2/database";
 import { AngularFireAuthModule } from "angularfire2/auth";
-
+import { Ng2SmartTableModule } from "ng2-smart-table";
 import { EmojiProvider } from "../providers/emoji";
 import { FilePath } from "@ionic-native/file-path";
 import { File } from "@ionic-native/file";
@@ -22,8 +22,11 @@ import { HttpModule } from "@angular/http";
 import { SMS } from "@ionic-native/sms";
 import { Stripe } from "@ionic-native/stripe";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+
 import { APP_BASE_HREF } from "@angular/common";
 
+
+import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 
 import { DocumentuploadPage } from "./../pages/documentupload/documentupload";
 import { ElectricianlistPage } from "./../pages/electricianlist/electricianlist";
@@ -93,9 +96,9 @@ import { AddNormsPage } from "../pages/add-norms/add-norms";
 import { RuleListAdminPage } from "../pages/rule-list-admin/rule-list-admin";
 import { BillListAdminPage } from "../pages/bill-list-admin/bill-list-admin";
 import { AddEmergencyCategoryAdminPage } from "./../pages/add-emergency-category-admin/add-emergency-category-admin";
-
 import { EventDataProvider } from "../providers/event-data/event-data";
-import { DashboardPage } from '../pages/dashboard/dashboard';
+//import { DashboardPage } from "../pages/dashboard/dashboard";
+
 
 
 var config = {
@@ -173,9 +176,7 @@ var config = {
     RuleListAdminPage,
     AddNormsPage,
     Card,
-    BillListAdminPage,
-    DashboardPage
-
+    BillListAdminPage
 
   ],
 
@@ -188,12 +189,15 @@ var config = {
     IonicModule.forRoot(MySocietyApp),
     AngularFireModule.initializeApp(config),
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    Ng2SmartTableModule,
+    NgbModule.forRoot(),
 
+    BrowserAnimationsModule
   ],
-  bootstrap: [IonicApp, MySocietyApp],
+  bootstrap: [IonicApp],
   entryComponents: [
-    MySocietyApp,
+
     HomePage,
     LoginPage,
     ResidentlistPage,
@@ -261,8 +265,8 @@ var config = {
     RuleListAdminPage,
     AddNormsPage,
     Card,
-    BillListAdminPage,
-    DashboardPage
+    BillListAdminPage
+
   ],
 
   providers: [
