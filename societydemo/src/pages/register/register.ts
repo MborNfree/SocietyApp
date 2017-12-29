@@ -184,6 +184,7 @@ export class RegisterPage {
           ]
         });
         prompt.present();
+
       })
       .catch(function(error) {
         console.error("SMS not sent", error);
@@ -262,6 +263,14 @@ export class RegisterPage {
         console.log("got data ", data);
 
         this.alert("Registered!");
+        data.sendEmailVerification().then(function() {
+          // Email sent.
+          alert("verifiaction mail sent!");
+        }).catch(function(error) {
+          // An error happened.
+          alert("An error happened");
+        });
+
         this.navCtrl.push(LoginPage);
       })
       .catch(error => {

@@ -33,9 +33,20 @@ export class ForgotpasswordPage {
     console.log("ionViewDidLoad ForgotpasswordPage");
   }
 
-  resetPassword(email: string): Promise<void> {
+  resetPassword(email: string) {
     alert(JSON.stringify(email['email']));
-    return firebase.auth().sendPasswordResetEmail(JSON.stringify(email['email']));
+
+    //var emailAddress = "user@example.com";
+    var emailAddress = email['email'];
+    firebase.auth().sendPasswordResetEmail(emailAddress).then(function() {
+      // Email sent.
+      alert("Check your mail for reset your password");
+    }).catch(function(error) {
+      // An error happened.
+      alert("An error happened");
+    });
+
+   // firebase.auth().sendPasswordResetEmail(JSON.stringify(email['email']));
   }
   gotoLogin() {
     this.navCtrl.push(LoginPage);
