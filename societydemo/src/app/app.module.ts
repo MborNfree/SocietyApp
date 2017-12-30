@@ -1,7 +1,7 @@
 import { EmailComposer } from "@ionic-native/email-composer";
 import { InAppBrowser } from "@ionic-native/in-app-browser";
 import { BrowserModule } from "@angular/platform-browser";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ErrorHandler, NgModule } from "@angular/core";
 import { IonicApp, IonicErrorHandler, IonicModule } from "ionic-angular";
 import { SplashScreen } from "@ionic-native/splash-screen";
@@ -192,9 +192,8 @@ var config = {
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     Ng2SmartTableModule,
-    NgbModule.forRoot(),
+    NgbModule.forRoot()
 
-    BrowserAnimationsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

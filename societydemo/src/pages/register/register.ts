@@ -38,7 +38,7 @@ export class RegisterPage {
   @ViewChild("email") email;
   @ViewChild("fnm") fname;
   @ViewChild("lnm") lname;
-  @ViewChild("car") vehicle;
+  @ViewChild("vehicle") vehicle;
   @ViewChild("familyMmber") familyMember;
   @ViewChild("flatn") flatn;
   @ViewChild("wing") wing;
@@ -70,7 +70,7 @@ export class RegisterPage {
       ],
       flat: [
         "",
-        Validators.compose([ 
+        Validators.compose([
           Validators.required,
           Validators.pattern("[0-9]*"),
           Validators.maxLength(3)
@@ -83,7 +83,7 @@ export class RegisterPage {
           Validators.pattern(
             "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?]"
           ),
-          Validators.minLength(8),
+          Validators.minLength(5),
           Validators.maxLength(30)
         ])
       ],
@@ -245,7 +245,7 @@ export class RegisterPage {
     //         }
     //       ]
     //     });
-    //     prompt.present();  
+    //     prompt.present();
     // })
     // .catch(function (error) {
     //   console.error("SMS not sent", error);
@@ -262,7 +262,7 @@ export class RegisterPage {
           last_name: this.lname.value,
           flatno: this.flatn.value,
           wing: this.wing.value,
-          parking_slot: this.car.value,
+          parking_slot: this.vehicle.value,
           familyMember: this.familyMember.value,
           username: this.usernm.value,
           phoneNumber:this.phoneNumber.value
@@ -270,14 +270,15 @@ export class RegisterPage {
 
         console.log("got data ", data);
 
-        //this.alert("Registered!");
+        this.alert("Registered!");
         data.sendEmailVerification().then(function() {
-          // Email sent.
-          alert("verifiaction mail sent!");
-        }).catch(function(error) {
-          // An error happened.
-          alert("An error happened");
-        });
+          this.alert("Email Sent Please check your mailbox!");
+
+      }, function(error) {
+        this.alert("error!");
+
+      });
+
 
         this.navCtrl.push(LoginPage);
       })
