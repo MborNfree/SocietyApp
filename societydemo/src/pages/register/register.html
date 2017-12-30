@@ -148,7 +148,7 @@
       <p>Sorry, field firstnme is required!</p>
     </ion-item>
     <ion-item *ngIf="authForm.controls.firstnme.hasError('pattern') && authForm.controls.firstnme.touched">
-        <p>Sorry, only small and capital letters are allowed!</p>
+        <p>Sorry, only numbers are not allowed!</p>
       </ion-item>
     <ion-item *ngIf="authForm.controls.firstnme.hasError('minLength') && authForm.controls.firstnme.touched">
       <p>Sorry, maximum lastname length is 4!</p>
