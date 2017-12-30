@@ -6,7 +6,6 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { AngularFireDatabase } from "angularfire2/database";
 import { AngularFireAuth } from "angularfire2/auth";
 import * as firebase from "firebase";
-import { Camera } from '@ionic-native/camera';
 // import { Observable } from 'rxjs/Observable';
 
 @IonicPage()
@@ -40,9 +39,14 @@ export class ProfilePage {
     public navParams: NavParams,
     public formBuilder: FormBuilder,
     private fdb: AngularFireDatabase,
+<<<<<<< HEAD
+    private fireAuth: AngularFireAuth
+  ) {
+=======
     private fireAuth: AngularFireAuth,
     public cameraPlugin: Camera
     ) {
+>>>>>>> d9e4864eb486aba9aff6aa1f2a687653381e905f
     this.uIDParam = navParams.get("uid");
     var ref = firebase.database().ref("users");
     //ref.on('value', this.gotData,this.errData);
@@ -81,8 +85,7 @@ export class ProfilePage {
           //Error code goes here
         }
       );
-
-        // ref.on('value', this.gotData,this.errData);
+      // ref.on('value', this.gotData,this.errData);
     });
     this.authForm = formBuilder.group({
       username: [
@@ -156,9 +159,11 @@ export class ProfilePage {
     if (this.authForm.valid) {
       let currentUserUid = this.fireAuth.auth.currentUser.uid;
       let status = this.fdb.object(`users/${currentUserUid}`).update(value);
-      alert(status);
+      //alert(status);
     }
   }
+<<<<<<< HEAD
+=======
 
   takeSelfie(): void {
     this.cameraPlugin.getPicture({
@@ -207,5 +212,6 @@ export class ProfilePage {
   //     });
 
     
+>>>>>>> d9e4864eb486aba9aff6aa1f2a687653381e905f
 }
 

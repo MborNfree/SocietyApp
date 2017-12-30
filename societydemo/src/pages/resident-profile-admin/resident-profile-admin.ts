@@ -6,6 +6,15 @@ import {
   ModalController
 } from "ionic-angular";
 import { AngularFireDatabase } from "angularfire2/database";
+// import { ActivatedRoute } from '@angular/router';
+// import { AngularFireListObservable } from 'angularfire2';
+
+/**
+ * Generated class for the ResidentProfileAdminPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
 
 @IonicPage()
 @Component({

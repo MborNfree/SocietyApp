@@ -41,14 +41,14 @@ export class SendSmsModalPage {
   sendTextMessage() {
     //alert(this.text.number);
     this.sms.send(this.text.number, this.text.message).then((result) => {
-      alert(result);
+      //alert(result);
       let successToast = this.toast.create({
         message: "Text message sent successfully",
         duration: 3000
       })
       successToast.present();
     }, (error) => {
-      alert(error);
+     //alert(error);
       let errorToast = this.toast.create({
         message: "Text message not sent. :(",
         duration: 3000

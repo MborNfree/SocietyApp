@@ -191,6 +191,7 @@ export class RegisterPage {
           ]
         });
         prompt.present();
+
       })
       .catch(function(error) {
         console.error("SMS not sent", error);
@@ -269,6 +270,7 @@ export class RegisterPage {
 
         console.log("got data ", data);
 
+<<<<<<< HEAD
         this.alert("Registered!");
         data.sendEmailVerification().then(function() {
           this.alert("Email Sent Please check your mailbox!");
@@ -278,6 +280,16 @@ export class RegisterPage {
 
       });
 
+=======
+        //this.alert("Registered!");
+        data.sendEmailVerification().then(function() {
+          // Email sent.
+          alert("verifiaction mail sent!");
+        }).catch(function(error) {
+          // An error happened.
+          alert("An error happened");
+        });
+>>>>>>> f11dc6dd5710894b95c89ea85a67aa1f8452b717
 
         this.navCtrl.push(LoginPage);
       })

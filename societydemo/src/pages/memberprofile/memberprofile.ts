@@ -48,7 +48,7 @@ export class MemberprofilePage {
     this.itemsParam = navParams.get("item");
   }
   sendSms(cnt: number) {
-    alert(cnt);
+   // alert(cnt);
     var data = cnt ;
    // var data ={ message: "hello world", contact: cnt };
     var modalPage = this.modalCtrl.create("SendSmsModalPage", { data: data });
@@ -66,7 +66,7 @@ export class MemberprofilePage {
       }
     });
 
-    alert(emailid);
+    //alert(emailid);
     let email = {
       to: emailid,
       cc: "",

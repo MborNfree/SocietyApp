@@ -69,7 +69,7 @@ export class AddServiceCategoryAdminPage {
       .then(
         data => {
           console.log("got data ", data);
-          this.alert("Service Category Added Successfully!");
+         // this.alert("Service Category Added Successfully!");
           this.navCtrl.push(ServiceListAdminPage);
         },
         error => {

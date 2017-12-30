@@ -104,7 +104,7 @@ export class DocumentuploadPage {
       this.filePath.resolveNativePath(uri).then(fileentry => {
         let filename = this.eventsdata.getfilename(fileentry);
         let fileext = this.eventsdata.getfileext(fileentry);
-        alert("ext" + fileext);
+        //alert("ext" + fileext);
         if (fileext == "pdf") {
           this.eventsdata
             .makeFileIntoBlob(fileentry, fileext, "application/pdf")
@@ -335,7 +335,7 @@ export class DocumentuploadPage {
   }
 
   viewItem() {
-    alert("view");
+    alert("view in progress");
   }
   getImage() {
     const options: CameraOptions = {

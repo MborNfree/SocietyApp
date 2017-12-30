@@ -9,7 +9,7 @@ import { StatusBar } from "@ionic-native/status-bar";
 import { AngularFireModule } from "angularfire2";
 import { AngularFireDatabaseModule } from "angularfire2/database";
 import { AngularFireAuthModule } from "angularfire2/auth";
-
+import { Ng2SmartTableModule } from "ng2-smart-table";
 import { EmojiProvider } from "../providers/emoji";
 import { FilePath } from "@ionic-native/file-path";
 import { File } from "@ionic-native/file";
@@ -21,14 +21,20 @@ import { HttpModule } from "@angular/http";
 import { SMS } from "@ionic-native/sms";
 import { Stripe } from "@ionic-native/stripe";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+
 import { APP_BASE_HREF } from "@angular/common";
 
 
+<<<<<<< HEAD
+import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+
+=======
 
 
 
 // import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 
+>>>>>>> d9e4864eb486aba9aff6aa1f2a687653381e905f
 import { DocumentuploadPage } from "./../pages/documentupload/documentupload";
 import { ElectricianlistPage } from "./../pages/electricianlist/electricianlist";
 import { PlumberlistPage } from "./../pages/plumberlist/plumberlist";
@@ -98,6 +104,8 @@ import { RuleListAdminPage } from "../pages/rule-list-admin/rule-list-admin";
 import { BillListAdminPage } from "../pages/bill-list-admin/bill-list-admin";
 import { AddEmergencyCategoryAdminPage } from "./../pages/add-emergency-category-admin/add-emergency-category-admin";
 import { EventDataProvider } from "../providers/event-data/event-data";
+//import { DashboardPage } from "../pages/dashboard/dashboard";
+
 
 
 
@@ -177,9 +185,15 @@ var config = {
     RuleListAdminPage,
     AddNormsPage,
     Card,
+<<<<<<< HEAD
+    BillListAdminPage
+
+  ],
+=======
     BillListAdminPage,
     BillListAdminPage,
    ], 
+>>>>>>> d9e4864eb486aba9aff6aa1f2a687653381e905f
 
   imports: [
     HttpModule,
@@ -191,6 +205,12 @@ var config = {
     AngularFireModule.initializeApp(config),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
+<<<<<<< HEAD
+    Ng2SmartTableModule,
+    NgbModule.forRoot(),
+
+    BrowserAnimationsModule
+=======
 
     // Ng2SmartTableModule,
 
@@ -198,10 +218,11 @@ var config = {
     // NgbModule.forRoot(),
    
 
+>>>>>>> d9e4864eb486aba9aff6aa1f2a687653381e905f
   ],
-  bootstrap: [IonicApp, MySocietyApp],
+  bootstrap: [IonicApp],
   entryComponents: [
-    MySocietyApp,
+
     HomePage,
     LoginPage,
     ResidentlistPage,
@@ -269,9 +290,13 @@ var config = {
     RuleListAdminPage,
     AddNormsPage,
     Card,
+<<<<<<< HEAD
+    BillListAdminPage
+=======
     BillListAdminPage,
     BillListAdminPage,
     
+>>>>>>> d9e4864eb486aba9aff6aa1f2a687653381e905f
 
   ],
 
