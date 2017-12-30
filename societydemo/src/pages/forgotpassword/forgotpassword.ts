@@ -34,7 +34,7 @@ export class ForgotpasswordPage {
   }
 
   resetPassword(email: string) {
-    alert(JSON.stringify(email['email']));
+   //alert(JSON.stringify(email['email']));
 
     //var emailAddress = "user@example.com";
     var emailAddress = email['email'];

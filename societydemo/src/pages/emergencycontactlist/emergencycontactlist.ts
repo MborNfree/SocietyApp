@@ -11,7 +11,7 @@ import { InAppBrowser } from "@ionic-native/in-app-browser";
   templateUrl: "emergencycontactlist.html"
 })
 export class EmergencycontactlistPage {
- 
+
   email: any;
   contacts = [];
   arrData = [];
@@ -72,7 +72,7 @@ export class EmergencycontactlistPage {
   }
 
   gotoweb(web) {
-    alert(web);
+   // alert(web);
     const browser = this.iab.create("http://"+web,'_blank');
   }
 }

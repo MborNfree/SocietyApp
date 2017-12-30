@@ -57,7 +57,7 @@ export class ServiceListAdminPage {
   }
 
   updateService(serviceId, ServiceTitle) {
-    alert(serviceId);
+    //alert(serviceId);
     this.fdb
       .object("/services/" + serviceId)
       .update({ event_name: ServiceTitle });

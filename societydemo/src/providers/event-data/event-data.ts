@@ -13,9 +13,9 @@ export class EventDataProvider {
   }
 
   makeFileIntoBlob(_imagePath, name, type) {
-    alert("name" + name);
-    alert("_imagePath" + _imagePath);
-    alert("type" + type);
+    //alert("name" + name);
+   // alert("_imagePath" + _imagePath);
+  //  alert("type" + type);
     // INSTALL PLUGIN - cordova plugin add cordova-plugin-file
     return new Promise((resolve, reject) => {
 
@@ -44,7 +44,7 @@ export class EventDataProvider {
         //Saves the file to storage
         .put(file.blob, { contentType: file.type })
         .then(savedFile => {
-          alert('save'+savedFile);
+         // alert('save'+savedFile);
           //Gets the file url and saves it in the database
           this.sbaList.child("sbafiles").push({
             file: savedFile.downloadURL,

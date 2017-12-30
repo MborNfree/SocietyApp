@@ -153,7 +153,7 @@ export class ProfilePage {
     if (this.authForm.valid) {
       let currentUserUid = this.fireAuth.auth.currentUser.uid;
       let status = this.fdb.object(`users/${currentUserUid}`).update(value);
-      alert(status);
+      //alert(status);
     }
   }
 }

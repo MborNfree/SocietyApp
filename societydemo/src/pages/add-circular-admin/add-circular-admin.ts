@@ -62,15 +62,13 @@ export class AddCircularAdminPage {
   }
 
   onSubmit(value: any): void {
-    alert("nm" + this.circular_name.value);
+   // alert("nm" + this.circular_name.value);
     this.fdb.list("/documents/").push({
       doc_name: this.circular_name.value,
       path: this.circular_path.value
     });
-    this.alert("Circulars added Successfully");
+    //this.alert("Circulars added Successfully");
     this.navCtrl.push(CircularListAdminPage);
-    alert("added");
 
-    this.navCtrl.push(CircularListAdminPage);
   }
 }

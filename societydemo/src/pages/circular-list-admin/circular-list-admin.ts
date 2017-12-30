@@ -41,7 +41,7 @@ export class CircularListAdminPage {
     this.navCtrl.push(CircularDetailAdminPage);
   }
   removeCircular(CircularId: string) {
-    alert(CircularId);
+    //alert(CircularId);
     // this.events.remove(events);
     this.fdb.object("/societydoc/" + CircularId).remove();
   }

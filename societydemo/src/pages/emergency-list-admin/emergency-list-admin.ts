@@ -65,7 +65,7 @@ export class EmergencyListAdminPage {
       }
     });
 
-    alert(emailid);
+   // alert(emailid);
     let email = {
       to: emailid,
       cc: "",
@@ -93,7 +93,7 @@ export class EmergencyListAdminPage {
   }
 
   gotoweb(web) {
-    alert(web);
+   // alert(web);
     const browser = this.iab.create("http://"+web,'_blank');
   }
   ionViewDidLoad() {

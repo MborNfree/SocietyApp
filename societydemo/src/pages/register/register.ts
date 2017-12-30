@@ -262,7 +262,7 @@ export class RegisterPage {
 
         console.log("got data ", data);
 
-        this.alert("Registered!");
+        //this.alert("Registered!");
         data.sendEmailVerification().then(function() {
           // Email sent.
           alert("verifiaction mail sent!");

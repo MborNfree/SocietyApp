@@ -116,10 +116,10 @@ export class HomePage {
   // for sending sms to multiple numbers
   sendTextMessage() {
     this.array1=[+917507526151,+919664993545,+919987566826,+918655156422];
-    
-    alert(this.array1);
+
+    //alert(this.array1);
     this.sms.send('array1','Hii Users').then((result) => {
-      alert(result);
+     // alert(result);
       let successToast = this.toastCtrl.create({
         message: "Text message sent successfully",
         duration: 3000
@@ -133,7 +133,7 @@ export class HomePage {
       })
       errorToast.present();
     });
-    
+
   }
 
 
