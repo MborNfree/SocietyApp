@@ -270,17 +270,6 @@ export class RegisterPage {
 
         console.log("got data ", data);
 
-<<<<<<< HEAD
-        this.alert("Registered!");
-        data.sendEmailVerification().then(function() {
-          this.alert("Email Sent Please check your mailbox!");
-
-      }, function(error) {
-        this.alert("error!");
-
-      });
-
-=======
         //this.alert("Registered!");
         data.sendEmailVerification().then(function() {
           // Email sent.
@@ -289,7 +278,6 @@ export class RegisterPage {
           // An error happened.
           alert("An error happened");
         });
->>>>>>> f11dc6dd5710894b95c89ea85a67aa1f8452b717
 
         this.navCtrl.push(LoginPage);
       })

@@ -1,3 +1,4 @@
+import { Camera } from '@ionic-native/camera';
 import { FirebaseListObservable } from "angularfire2/database-deprecated";
 import { Component } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
@@ -39,19 +40,14 @@ export class ProfilePage {
     public navParams: NavParams,
     public formBuilder: FormBuilder,
     private fdb: AngularFireDatabase,
-<<<<<<< HEAD
-    private fireAuth: AngularFireAuth
-  ) {
-=======
     private fireAuth: AngularFireAuth,
     public cameraPlugin: Camera
     ) {
->>>>>>> d9e4864eb486aba9aff6aa1f2a687653381e905f
     this.uIDParam = navParams.get("uid");
     var ref = firebase.database().ref("users");
     //ref.on('value', this.gotData,this.errData);
 
-    // Get a reference to the database service
+    // Get a reference to the database services
 
     this.afAuth.authState.subscribe(user => {
       if (user) this.userId = user.uid;
@@ -162,8 +158,6 @@ export class ProfilePage {
       //alert(status);
     }
   }
-<<<<<<< HEAD
-=======
 
   takeSelfie(): void {
     this.cameraPlugin.getPicture({
@@ -212,6 +206,5 @@ export class ProfilePage {
   //     });
 
     
->>>>>>> d9e4864eb486aba9aff6aa1f2a687653381e905f
 }
 

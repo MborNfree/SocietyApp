@@ -25,16 +25,11 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { APP_BASE_HREF } from "@angular/common";
 
 
-<<<<<<< HEAD
-import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
-
-=======
 
 
 
 // import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 
->>>>>>> d9e4864eb486aba9aff6aa1f2a687653381e905f
 import { DocumentuploadPage } from "./../pages/documentupload/documentupload";
 import { ElectricianlistPage } from "./../pages/electricianlist/electricianlist";
 import { PlumberlistPage } from "./../pages/plumberlist/plumberlist";
@@ -185,15 +180,9 @@ var config = {
     RuleListAdminPage,
     AddNormsPage,
     Card,
-<<<<<<< HEAD
-    BillListAdminPage
-
-  ],
-=======
     BillListAdminPage,
     BillListAdminPage,
    ], 
->>>>>>> d9e4864eb486aba9aff6aa1f2a687653381e905f
 
   imports: [
     HttpModule,
@@ -205,12 +194,6 @@ var config = {
     AngularFireModule.initializeApp(config),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-<<<<<<< HEAD
-    Ng2SmartTableModule,
-    NgbModule.forRoot(),
-
-    BrowserAnimationsModule
-=======
 
     // Ng2SmartTableModule,
 
@@ -218,7 +201,6 @@ var config = {
     // NgbModule.forRoot(),
    
 
->>>>>>> d9e4864eb486aba9aff6aa1f2a687653381e905f
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -290,13 +272,9 @@ var config = {
     RuleListAdminPage,
     AddNormsPage,
     Card,
-<<<<<<< HEAD
-    BillListAdminPage
-=======
     BillListAdminPage,
     BillListAdminPage,
     
->>>>>>> d9e4864eb486aba9aff6aa1f2a687653381e905f
 
   ],
 
