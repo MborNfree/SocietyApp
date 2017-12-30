@@ -1,4 +1,3 @@
-
 import { EmailComposer } from "@ionic-native/email-composer";
 import { InAppBrowser } from "@ionic-native/in-app-browser";
 import { BrowserModule } from "@angular/platform-browser";
@@ -26,8 +25,16 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { APP_BASE_HREF } from "@angular/common";
 
 
+<<<<<<< HEAD
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 
+=======
+
+
+
+// import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+
+>>>>>>> d9e4864eb486aba9aff6aa1f2a687653381e905f
 import { DocumentuploadPage } from "./../pages/documentupload/documentupload";
 import { ElectricianlistPage } from "./../pages/electricianlist/electricianlist";
 import { PlumberlistPage } from "./../pages/plumberlist/plumberlist";
@@ -101,6 +108,7 @@ import { EventDataProvider } from "../providers/event-data/event-data";
 
 
 
+
 var config = {
   apiKey: "AIzaSyCdBaGl6H_IuyzMyEnjq-6VRD5-2alxUtg",
   authDomain: "society-182906.firebaseapp.com",
@@ -109,6 +117,7 @@ var config = {
   storageBucket: "society-182906.appspot.com",
   messagingSenderId: "583609948893"
 };
+
 
 @NgModule({
   declarations: [
@@ -176,9 +185,15 @@ var config = {
     RuleListAdminPage,
     AddNormsPage,
     Card,
+<<<<<<< HEAD
     BillListAdminPage
 
   ],
+=======
+    BillListAdminPage,
+    BillListAdminPage,
+   ], 
+>>>>>>> d9e4864eb486aba9aff6aa1f2a687653381e905f
 
   imports: [
     HttpModule,
@@ -190,10 +205,20 @@ var config = {
     AngularFireModule.initializeApp(config),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
+<<<<<<< HEAD
     Ng2SmartTableModule,
     NgbModule.forRoot(),
 
     BrowserAnimationsModule
+=======
+
+    // Ng2SmartTableModule,
+
+
+    // NgbModule.forRoot(),
+    BrowserAnimationsModule   
+
+>>>>>>> d9e4864eb486aba9aff6aa1f2a687653381e905f
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -265,7 +290,13 @@ var config = {
     RuleListAdminPage,
     AddNormsPage,
     Card,
+<<<<<<< HEAD
     BillListAdminPage
+=======
+    BillListAdminPage,
+    BillListAdminPage,
+    
+>>>>>>> d9e4864eb486aba9aff6aa1f2a687653381e905f
 
   ],
 

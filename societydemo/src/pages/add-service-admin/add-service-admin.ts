@@ -47,7 +47,7 @@ export class AddServiceAdminPage {
         "",
         Validators.compose([
           Validators.required,
-          Validators.pattern("[a-zA-Z]*"),
+          Validators.pattern("[a-zA-Z\ \]*"),
           Validators.minLength(4),
           Validators.maxLength(30)
         ])
@@ -57,7 +57,7 @@ export class AddServiceAdminPage {
         "",
         Validators.compose([
           Validators.required,
-          Validators.pattern("[a-zA-Z]*"),
+          Validators.pattern("[a-zA-Z\ \]*"),
           Validators.minLength(4),
           Validators.maxLength(30)
         ])

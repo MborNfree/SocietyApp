@@ -45,7 +45,7 @@
     <ion-item *ngIf="authForm.controls.flatno.hasError('pattern') && authForm.controls.flatno.touched">
       <p>Sorry, only small and capital letters are allowed!</p>
     </ion-item>
-    <ion-item *ngIf="authForm.controls.flatno.hasError('minlength') && authForm.controls.flatno.touched">
+    <ion-item *ngIf="authForm.controls.flatno.hasError('minLength') && authForm.controls.flatno.touched">
       <p>Sorry, minimum length is 3!</p>
     </ion-item>
     <ion-item [ngClass]="{'error-border':!authForm.controls.email.valid && authForm.controls.email.touched}">
@@ -55,7 +55,7 @@
     <ion-item *ngIf="authForm.controls.email.hasError('required') && authForm.controls.email.touched">
       <p>Sorry, field is required!</p>
     </ion-item>
-    <ion-item *ngIf="authForm.controls.email.hasError('minlength') && authForm.controls.email.touched">
+    <ion-item *ngIf="authForm.controls.email.hasError('minLength') && authForm.controls.email.touched">
       <p>Sorry, minimum length is 8!</p>
     </ion-item>
     <ion-item [ngClass]="{'error-border':!authForm.controls.password.valid && authForm.controls.password.touched}">
@@ -65,7 +65,7 @@
     <ion-item *ngIf="authForm.controls.password.hasError('required') && authForm.controls.password.touched">
       <p>Sorry, field is required!</p>
     </ion-item>
-    <ion-item *ngIf="authForm.controls.password.hasError('minlength') && authForm.controls.password.touched">
+    <ion-item *ngIf="authForm.controls.password.hasError('minLength') && authForm.controls.password.touched">
       <p>Sorry, minimum password length is 8!</p>
     </ion-item>
     <ion-item [ngClass]="{'error-border':!authForm.controls.family.valid && authForm.controls.family.touched}">
@@ -78,8 +78,8 @@
     <ion-item *ngIf="authForm.controls.family.hasError('required') && authForm.controls.family.touched">
       <p>Sorry, field Total Family Member is required!</p>
     </ion-item>
-    <ion-item *ngIf="authForm.controls.family.hasError('minlength') && authForm.controls.family.touched">
-      <p>Sorry, minimum Total Family Member length is 8!</p>
+    <ion-item *ngIf="authForm.controls.family.hasError('minLength') && authForm.controls.family.touched">
+      <p>Sorry, minimum Total Family Member length is 1!</p>
     </ion-item>
     <ion-item [ngClass]="{'error-border':!authForm.controls.vehicles.valid && authForm.controls.vehicles.touched}">
       <ion-label floating>Total Vehicles</ion-label>
@@ -91,7 +91,7 @@
     <ion-item *ngIf="authForm.controls.vehicles.hasError('required') && authForm.controls.vehicles.touched">
       <p>Sorry, field Total vehicles is required!</p>
     </ion-item>
-    <ion-item *ngIf="authForm.controls.vehicles.hasError('minlength') && authForm.controls.vehicles.touched">
+    <ion-item *ngIf="authForm.controls.vehicles.hasError('maxLength') && authForm.controls.vehicles.touched">
       <p>Sorry, minimum Total vehicles length is 8!</p>
     </ion-item>
     <!-- <button ion-button full color="button"  style="margin-top: 20px;" type="submit">Save</button> -->

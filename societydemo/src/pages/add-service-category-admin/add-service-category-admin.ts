@@ -38,7 +38,7 @@ export class AddServiceCategoryAdminPage {
         "",
         Validators.compose([
           Validators.required,
-          Validators.pattern("[a-zA-Z]*"),
+          Validators.pattern("[a-zA-Z\ \]*"),
           Validators.minLength(2),
           Validators.maxLength(20)
         ])

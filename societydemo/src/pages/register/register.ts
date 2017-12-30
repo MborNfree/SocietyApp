@@ -29,13 +29,16 @@ export class RegisterPage {
   car;
   wingno;
   family;
+ eml;
+ paswd;
+ flat;
 
   @ViewChild("username") user;
   @ViewChild("password") password;
   @ViewChild("email") email;
   @ViewChild("fnm") fname;
   @ViewChild("lnm") lname;
-  @ViewChild("vehicle") vehicle;
+  @ViewChild("car") vehicle;
   @ViewChild("familyMmber") familyMember;
   @ViewChild("flatn") flatn;
   @ViewChild("wing") wing;
@@ -56,7 +59,7 @@ export class RegisterPage {
         "",
         Validators.compose([
           Validators.required,
-          Validators.pattern("[a-zA-Z]*"),
+          Validators.pattern("[a-zA-Z\ \]*"),
           Validators.minLength(6),
           Validators.maxLength(30)
         ])
@@ -67,7 +70,7 @@ export class RegisterPage {
       ],
       flat: [
         "",
-        Validators.compose([
+        Validators.compose([ 
           Validators.required,
           Validators.pattern("[0-9]*"),
           Validators.maxLength(3)
@@ -89,7 +92,7 @@ export class RegisterPage {
         Validators.compose([
           Validators.required,
           Validators.pattern("[0-9]*"),
-          Validators.minLength(1)
+          Validators.maxLength(1)
         ])
       ],
       car: [
@@ -104,6 +107,7 @@ export class RegisterPage {
         "",
         Validators.compose([
           Validators.required,
+          Validators.pattern("[a-zA-Z\ \]*"),
           Validators.minLength(4),
           Validators.maxLength(10)
         ])
@@ -112,6 +116,7 @@ export class RegisterPage {
         "",
         Validators.compose([
           Validators.required,
+          Validators.pattern("[a-zA-Z\ \]*"),
           Validators.minLength(4),
           Validators.maxLength(10)
         ])
@@ -120,6 +125,7 @@ export class RegisterPage {
         "",
         Validators.compose([
           Validators.required,
+          Validators.pattern("[a-zA-Z0-9]*"),
           Validators.minLength(1),
           Validators.maxLength(2)
         ])
@@ -128,6 +134,7 @@ export class RegisterPage {
         "",
         Validators.compose([
           Validators.required,
+          Validators.pattern("[0-9]*"),
           Validators.minLength(10),
           Validators.maxLength(12)
         ])
@@ -201,7 +208,7 @@ export class RegisterPage {
       .present();
   }
 
-  registerUser(phoneNumber: number) {
+  registerUser(usernm,email,password,flatn,wing,familyMember,car,phoneNumber: number) {
     alert(this.fname.value);
     // const appVerifier = this.recaptchaVerifier;
     const phoneNumberString = "+91" + phoneNumber;
@@ -238,7 +245,7 @@ export class RegisterPage {
     //         }
     //       ]
     //     });
-    //     prompt.present();
+    //     prompt.present();  
     // })
     // .catch(function (error) {
     //   console.error("SMS not sent", error);
@@ -255,9 +262,10 @@ export class RegisterPage {
           last_name: this.lname.value,
           flatno: this.flatn.value,
           wing: this.wing.value,
-          parking_slot: this.vehicle.value,
+          parking_slot: this.car.value,
           familyMember: this.familyMember.value,
-          username: this.user.value
+          username: this.usernm.value,
+          phoneNumber:this.phoneNumber.value
         });
 
         console.log("got data ", data);
