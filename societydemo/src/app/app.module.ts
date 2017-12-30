@@ -21,7 +21,7 @@ import { HttpModule } from "@angular/http";
 import { SMS } from "@ionic-native/sms";
 import { Stripe } from "@ionic-native/stripe";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-
+import * as $ from 'jquery';
 import { APP_BASE_HREF } from "@angular/common";
 
 
