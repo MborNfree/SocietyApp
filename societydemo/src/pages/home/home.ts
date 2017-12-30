@@ -7,7 +7,8 @@ import {
 } from "ionic-angular";
 import { AlertController } from "ionic-angular";
 import { AngularFireAuth } from "angularfire2/auth";
-import { SMS } from '@ionic-native/sms';
+import { SMS } from "@ionic-native/sms";
+
 // Angular Material
 
 import { LoginPage } from "./../login/login";
@@ -21,6 +22,7 @@ import { SocietybillPage } from "./../societybill/societybill";
 import { EventlistPage } from "./../eventlist/eventlist";
 import { Card } from "../card/card";
 import { HelpdeskPage } from "./../helpdesk/helpdesk";
+import { Http } from "@angular/http";
 
 @IonicPage()
 @Component({
@@ -112,36 +114,50 @@ export class HomePage {
     this.navCtrl.push(ProfilePage);
   }
 
+  //for sending sms to multiple numbers
+  // sendTextMessage() {
+  //   this.array1=[+917507526151,+919664993545,+919987566826,+918655156422];
 
-  // for sending sms to multiple numbers
+  //   //alert(this.array1);
+  //   this.sms.send('array1','Hii Users').then((result) => {
+  //    // alert(result);
+  //     let successToast = this.toastCtrl.create({
+  //       message: "Text message sent successfully",
+  //       duration: 3000
+  //     })
+  //     successToast.present();
+  //   }, (error) => {
+  //     alert(error);
+  //     let errorToast = this.toastCtrl.create({
+  //       message: "Text message not sent. :(",
+  //       duration: 3000
+  //     })
+  //     errorToast.present();
+  //   });
+
+  // }
+
   sendTextMessage() {
-    this.array1=[+917507526151,+919664993545,+919987566826,+918655156422];
 
-    //alert(this.array1);
-    this.sms.send('array1','Hii Users').then((result) => {
-     // alert(result);
-      let successToast = this.toastCtrl.create({
-        message: "Text message sent successfully",
-        duration: 3000
-      })
-      successToast.present();
-    }, (error) => {
-      alert(error);
-      let errorToast = this.toastCtrl.create({
-        message: "Text message not sent. :(",
-        duration: 3000
-      })
-      errorToast.present();
+    var request = new XMLHttpRequest();
+    request.open("POST", "https://control.msg91.com", true);
+    request.setRequestHeader("Access-Control-Allow-Origin", "*");
+
+    var settings = {
+      async: true,
+      crossDomain: true,
+      url: "https://control.msg91.com/api/postsms.php",
+      method: "POST",
+      headers: {
+        "content-type": "application/xml"
+      },
+      data: "assets/users.xml"
+    };
+
+    $.ajax(settings).done(function(response) {
+      console.log("sms response"+response);
     });
-
   }
-
-
-
-
-
-
-
 
   showAlert() {
     let confirm = this.alertCtrl.create({

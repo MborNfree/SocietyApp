@@ -39,14 +39,8 @@ export class ProfilePage {
     public navParams: NavParams,
     public formBuilder: FormBuilder,
     private fdb: AngularFireDatabase,
-<<<<<<< HEAD
     private fireAuth: AngularFireAuth
   ) {
-=======
-    private fireAuth: AngularFireAuth,
-    public cameraPlugin: Camera
-    ) {
->>>>>>> d9e4864eb486aba9aff6aa1f2a687653381e905f
     this.uIDParam = navParams.get("uid");
     var ref = firebase.database().ref("users");
     //ref.on('value', this.gotData,this.errData);
@@ -162,56 +156,5 @@ export class ProfilePage {
       //alert(status);
     }
   }
-<<<<<<< HEAD
-=======
-
-  takeSelfie(): void {
-    this.cameraPlugin.getPicture({
-      quality : 95,
-      destinationType : this.cameraPlugin.DestinationType.DATA_URL,
-      sourceType : this.cameraPlugin.PictureSourceType.CAMERA,
-      allowEdit : true,
-      encodingType: this.cameraPlugin.EncodingType.PNG,
-      targetWidth: 500,
-      targetHeight: 500,
-      saveToPhotoAlbum: true
-    }).then(profilePicture => {
-    // Send the picture to Firebase Storage
-    const selfieRef = firebase.storage().ref('profilePictures/user1/'+Image);
-    selfieRef
-      .putString(profilePicture, 'base64', {contentType: 'image/png'})
-      .then(savedProfilePicture => {
-        firebase
-          .database()
-          .ref(`users/user1/profilePicture`)
-          .push(savedProfilePicture.downloadURL);
-      });
-  },
-     error => {
-      // Log an error to the console if something goes wrong.
-      console.log("ERROR -> " + JSON.stringify(error));
-    });    
-   }
- 
-
-  //  storageRef = firebase.storage().ref().child('profilePictures/user1/img.png');
-  //  abc=this.storageRef.getDownloadURL().then(url =>
-  //      console.log(url)
-  //  );
-
- 
-
-  //  var currentUserUid=firebase.auth().currentUser.uid;
-  //  var storageRef=firebase.storage();
-  //    var pathReference=storageRef.ref('/' + currentUserUid +'/profilePicture/'+ Image.name);
-
-  //    pathReference.getDownloadURL().then(function(url) {
-  //     // Insert url into an <img> tag to "download"
-  //         $scope.imageUrl = url;
-  //         console.log($scope.imageUrl);
-  //     });
-
-    
->>>>>>> d9e4864eb486aba9aff6aa1f2a687653381e905f
 }
 
