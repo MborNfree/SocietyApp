@@ -1,7 +1,7 @@
 import { EmailComposer } from "@ionic-native/email-composer";
 import { InAppBrowser } from "@ionic-native/in-app-browser";
 import { BrowserModule } from "@angular/platform-browser";
-// import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ErrorHandler, NgModule } from "@angular/core";
 import { IonicApp, IonicErrorHandler, IonicModule } from "ionic-angular";
 import { SplashScreen } from "@ionic-native/splash-screen";
@@ -25,10 +25,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { APP_BASE_HREF } from "@angular/common";
 
 
-
-
-
-// import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 
 import { DocumentuploadPage } from "./../pages/documentupload/documentupload";
 import { ElectricianlistPage } from "./../pages/electricianlist/electricianlist";
@@ -180,9 +177,9 @@ var config = {
     RuleListAdminPage,
     AddNormsPage,
     Card,
-    BillListAdminPage,
-    BillListAdminPage,
-   ], 
+    BillListAdminPage
+
+  ],
 
   imports: [
     HttpModule,
@@ -194,12 +191,8 @@ var config = {
     AngularFireModule.initializeApp(config),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-
-    // Ng2SmartTableModule,
-
-
-    // NgbModule.forRoot(),
-   
+    Ng2SmartTableModule,
+    NgbModule.forRoot()
 
   ],
   bootstrap: [IonicApp],
@@ -272,9 +265,7 @@ var config = {
     RuleListAdminPage,
     AddNormsPage,
     Card,
-    BillListAdminPage,
-    BillListAdminPage,
-    
+    BillListAdminPage
 
   ],
 

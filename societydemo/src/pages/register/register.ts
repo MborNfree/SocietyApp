@@ -70,7 +70,7 @@ export class RegisterPage {
       ],
       flat: [
         "",
-        Validators.compose([ 
+        Validators.compose([
           Validators.required,
           Validators.pattern("[0-9]*"),
           Validators.maxLength(3)
@@ -245,7 +245,7 @@ export class RegisterPage {
     //         }
     //       ]
     //     });
-    //     prompt.present();  
+    //     prompt.present();
     // })
     // .catch(function (error) {
     //   console.error("SMS not sent", error);
@@ -270,14 +270,15 @@ export class RegisterPage {
 
         console.log("got data ", data);
 
-        //this.alert("Registered!");
+        this.alert("Registered!");
         data.sendEmailVerification().then(function() {
-          // Email sent.
-          alert("verifiaction mail sent!");
-        }).catch(function(error) {
-          // An error happened.
-          alert("An error happened");
-        });
+          this.alert("Email Sent Please check your mailbox!");
+
+      }, function(error) {
+        this.alert("error!");
+
+      });
+
 
         this.navCtrl.push(LoginPage);
       })
