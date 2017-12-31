@@ -24,6 +24,8 @@ import { Card } from "../card/card";
 import { HelpdeskPage } from "./../helpdesk/helpdesk";
 import { Http } from "@angular/http";
 
+
+
 @IonicPage()
 @Component({
   selector: "page-home",
@@ -41,7 +43,8 @@ export class HomePage {
     public navCtrl: NavController,
     public alertCtrl: AlertController,
     public navParams: NavParams,
-    private sms: SMS
+    private sms: SMS,
+    private http:Http
   ) {
     this.username = window.localStorage.getItem("Sessioneml");
     this.sessionUser = sessionStorage.getItem("Sessionuid");
@@ -137,28 +140,60 @@ export class HomePage {
 
   // }
 
-  sendTextMessage() {
+  // sendTextMessage() {
+  //   var request = new XMLHttpRequest();
+  //   request.open("POST", "https://control.msg91.com", true);
+  //   request.setRequestHeader("Access-Control-Allow-Origin", "*");
 
+  //   var settings = {
+  //     async: true,
+  //     crossDomain: true,
+  //     url: "https://control.msg91.com/api/postsms.php",
+  //     method: "POST",
+  //     headers: {
+  //       "content-type": "application/xml"
+  //     },
+  //    // data: "<MESSAGE><AUTHKEY>190301AU2RL0SzSK5a460060</AUTHKEY><SENDER>vishwa</SENDER><ROUTE>Template</ROUTE><CAMPAIGN>XML API</CAMPAIGN> <COUNTRY>91</COUNTRY><SMS TEXT='test message1'><ADDRESS TO='8401081227'></ADDRESS><ADDRESS TO='7507526151'></ADDRESS></SMS><SMS TEXT='hi test message'><ADDRESS TO='8080328322'></ADDRESS><ADDRESS TO='8355891739'></ADDRESS></SMS></MESSAGE>"
+  //     data: "assets/users.xml"
+  //   };
+
+  //   $.ajax(settings).done(function(response) {
+  //     console.log(response.data);
+  //     alert(response.data);
+  //     console.log("sms response" + response);
+  //     //alert("sms response =" + response)
+  //     if(response){
+  //       alert("Sms Sent");
+  //     }else{
+  //       alert("Error Occured");
+  //     }
+
+  //   });
+  // }
+
+  sendTextMessage() {
     var request = new XMLHttpRequest();
     request.open("POST", "https://control.msg91.com", true);
     request.setRequestHeader("Access-Control-Allow-Origin", "*");
 
     var settings = {
-      async: true,
-      crossDomain: true,
-      url: "https://control.msg91.com/api/postsms.php",
-      method: "POST",
-      headers: {
-        "content-type": "application/xml"
+      "async": true,
+      "crossDomain": true,
+      "url": "http://api.msg91.com/api/v2/sendsms",
+      "method": "POST",
+      "headers": {
+        "authkey": "190301AU2RL0SzSK5a460060",
+        "content-type": "application/json"
       },
-      data: "assets/users.xml"
-    };
+      "processData": false,
+      "data": "{ \"sender\": \"SOCKET\", \"route\": \"4\", \"country\": \"91\", \"sms\": [ { \"message\": \"Message1\", \"to\": [ \"8401081227\", \"7507526151\" ] }, { \"message\": \"Message2\", \"to\": [ \"8080328322\", \"8355891739\" ] } ] }"
+    }
 
-    $.ajax(settings).done(function(response) {
-      console.log("sms response"+response);
+    $.ajax(settings).done(function (response) {
+      console.log(response);
+       alert("sms response =" + response)
     });
   }
-
   showAlert() {
     let confirm = this.alertCtrl.create({
       title: "Exit Application?",
