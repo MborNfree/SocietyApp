@@ -8,7 +8,8 @@ import {
 import { AlertController } from "ionic-angular";
 import { AngularFireAuth } from "angularfire2/auth";
 import { SMS } from "@ionic-native/sms";
-
+import 'rxjs/add/operator/map';
+import xml2js from 'xml2js';
 // Angular Material
 
 import { LoginPage } from "./../login/login";
@@ -36,6 +37,7 @@ export class HomePage {
   username: any;
   sessionUser: any;
   public uIDParam;
+  public xmlItems : any;
 
   constructor(
     public toastCtrl: ToastController,
@@ -53,6 +55,7 @@ export class HomePage {
 
   ionViewDidLoad() {
     console.log("ionViewDidLoad HomePage");
+
     this.afAuth.authState.subscribe(data => {
       if (data.email && data.uid) {
         this.toastCtrl
@@ -70,6 +73,60 @@ export class HomePage {
           .present();
       }
     });
+  }
+
+  ionViewWillEnter()
+  {
+     this.loadXML();
+  }
+
+
+
+  loadXML()
+  {
+     this.http.get('/assets/data/comics.xml')
+     .map(res => res.text())
+     .subscribe((data)=>
+     {
+        this.parseXML(data)
+        .then((data)=>
+        {
+           this.xmlItems = data;
+           console.log(this.xmlItems);
+        });
+     });
+  }
+
+
+  parseXML(data)
+  {
+     return new Promise(resolve =>
+     {
+        var k,
+            arr    = [],
+            parser = new xml2js.Parser(
+            {
+               trim: true,
+               explicitArray: true
+            });
+
+        parser.parseString(data, function (err, result)
+        {
+           var obj = result.comics;
+           for(k in obj.publication)
+           {
+              var item = obj.publication[k];
+              arr.push({
+                 id           : item.id[0],
+                 title        : item.title[0],
+                 publisher : item.publisher[0],
+                 genre        : item.genre[0]
+              });
+           }
+
+           resolve(arr);
+        });
+     });
   }
   logout() {
     window.sessionStorage.removeItem("username");
@@ -154,7 +211,7 @@ export class HomePage {
   //       "content-type": "application/xml"
   //     },
   //    // data: "<MESSAGE><AUTHKEY>190301AU2RL0SzSK5a460060</AUTHKEY><SENDER>vishwa</SENDER><ROUTE>Template</ROUTE><CAMPAIGN>XML API</CAMPAIGN> <COUNTRY>91</COUNTRY><SMS TEXT='test message1'><ADDRESS TO='8401081227'></ADDRESS><ADDRESS TO='7507526151'></ADDRESS></SMS><SMS TEXT='hi test message'><ADDRESS TO='8080328322'></ADDRESS><ADDRESS TO='8355891739'></ADDRESS></SMS></MESSAGE>"
-  //     data: "assets/users.xml"
+  //     data: this.xmlItems
   //   };
 
   //   $.ajax(settings).done(function(response) {
@@ -186,7 +243,8 @@ export class HomePage {
         "content-type": "application/json"
       },
       "processData": false,
-      "data": "{ \"sender\": \"SOCKET\", \"route\": \"4\", \"country\": \"91\", \"sms\": [ { \"message\": \"Message1\", \"to\": [ \"8401081227\", \"7507526151\" ] }, { \"message\": \"Message2\", \"to\": [ \"8080328322\", \"8355891739\" ] } ] }"
+     // "data": "{ \"sender\": \"SOCKET\", \"route\": \"4\", \"country\": \"91\", \"sms\": [ { \"message\": \"Message1\", \"to\": [ \"8401081227\", \"7507526151\" ] }, { \"message\": \"Message2\", \"to\": [ \"8080328322\", \"8355891739\" ] } ] }"
+      "data" : 'asstes/data/users.json'
     }
 
     $.ajax(settings).done(function (response) {

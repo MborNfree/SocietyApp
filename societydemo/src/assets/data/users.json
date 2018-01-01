@@ -1,0 +1,21 @@
+{
+  "sender": "SOCKET",
+  "route": "4",
+  "country": "91",
+  "sms": [
+    {
+      "message": "Message1",
+      "to": [
+        "98260XXXXX",
+        "98261XXXXX"
+      ]
+    },
+    {
+      "message": "Message2",
+      "to": [
+        "98260XXXXX",
+        "98261XXXXX"
+      ]
+    }
+  ]
+}
