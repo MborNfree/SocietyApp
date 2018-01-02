@@ -169,27 +169,25 @@ export class RegisterPage {
       .createUserWithEmailAndPassword(this.email.value, this.password.value)
       .then(data => {
         let currentUserUid = this.fire.auth.currentUser.uid;
-        this.fdb
-          .list("/users/")
-          .push({
-            ID: currentUserUid,
-            email: this.email.value,
-            password: this.password.value,
-            first_name: this.fname.value,
-            last_name: this.lname.value,
-            flatno: this.flatn.value,
-            wing: this.wing.value,
-            parking_slot: this.vehicle.value,
-            familyMember: this.familyMember.value,
-            username: this.user.value
-          });
+        this.fdb.list("/users/").push({
+          ID: currentUserUid,
+          email: this.email.value,
+          password: this.password.value,
+          first_name: this.fname.value,
+          last_name: this.lname.value,
+          flatno: this.flatn.value,
+          wing: this.wing.value,
+          parking_slot: this.vehicle.value,
+          familyMember: this.familyMember.value,
+          username: this.user.value
+        });
 
         console.log("got data ", data);
 
         this.alert("Registered!");
         data.sendEmailVerification().then(
           function() {
-           alert("Email Sent Please check your mailbox!");
+            alert("Email Sent Please check your mailbox!");
           },
           function(error) {
             alert("error!");
@@ -202,61 +200,8 @@ export class RegisterPage {
         this.alert(error.message);
       });
 
-
-    //s	console.log('Would register user with ', this.email.value, this.password.value);
+    // console.log('Would register user with ', this.email.value, this.password.value);
   }
-
-  //   registerUser(
-  //     usernm,
-  //     email,
-  //     password,
-  //     flatn,
-  //     wing,
-  //     familyMember,
-  //     car,
-  //     phoneNumber: number
-  //   ) {
-  //     alert(this.fname.value);
-  //     // const appVerifier = this.recaptchaVerifier;
-  //     const phoneNumberString = "+91" + phoneNumber;
-  //     //let currentUserUid = this.fire.auth.currentUser.uid;
-  // console.log(this.fire.auth);
-  //     this.fire.auth
-  //       .createUserWithEmailAndPassword(this.email.value, this.password.value)
-  //       .then(data => {
-  //         this.fdb.list("/users/").push({
-  //          // ID: currentUserUid,
-  //           email: this.email.value,
-  //           password: this.password.value,
-  //           first_name: this.fname.value,
-  //           last_name: this.lname.value,
-  //           flatno: this.flatn.value,
-  //           wing: this.wing.value,
-  //           parking_slot: this.vehicle.value,
-  //           familyMember: this.familyMember.value,
-  //           username: this.usernm.value,
-  //           phoneNumber: this.phoneNumber.value
-  //         });
-
-  //         console.log("got data ", data);
-
-  //         this.alert("Registered!");
-  //         data.sendEmailVerification().then(
-  //           function() {
-  //             this.alert("Email Sent Please check your mailbox!");
-  //           },
-  //           function(error) {
-  //             this.alert("error!");
-  //           }
-  //         );
-  //         this.navCtrl.push(LoginPage);
-  //       })
-  //       .catch(error => {
-  //         console.log("got an error ", error);
-  //         this.alert(error.message);
-  //       });
-  //     //	console.log('Would register user with ', this.email.value, this.password.value);
-  //   }
 
   doLogin() {
     this.navCtrl.push(LoginPage);
