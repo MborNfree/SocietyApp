@@ -53,6 +53,7 @@ export class RegisterPage {
     public formBuilder: FormBuilder,
     private fire: AngularFireAuth
   ) {
+    alert(this.user);
     this.users = fdb.list("/users");
     this.authForm = formBuilder.group({
       usernm: [
@@ -73,7 +74,7 @@ export class RegisterPage {
         Validators.compose([
           Validators.required,
           Validators.pattern("[0-9]*"),
-          Validators.maxLength(3)
+          Validators.minLength(3)
         ])
       ],
       eml: [
@@ -100,7 +101,7 @@ export class RegisterPage {
         Validators.compose([
           Validators.required,
           Validators.pattern("[0-9]*"),
-          Validators.minLength(1)
+          Validators.maxLength(1)
         ])
       ],
       firstnme: [
@@ -149,55 +150,7 @@ export class RegisterPage {
     );
   }
 
-  signIn(phoneNumber: number) {
-    const appVerifier = this.recaptchaVerifier;
-    const phoneNumberString = "+91" + phoneNumber;
-
-    firebase
-      .auth()
-      .signInWithPhoneNumber(phoneNumberString, appVerifier)
-      .then(confirmationResult => {
-        // SMS sent. Prompt user to type the code from the message, then sign the
-        // user in with confirmationResult.confirm(code).
-        let prompt = this.alertCtrl.create({
-          title: "Enter the Confirmation code",
-          inputs: [
-            { name: "confirmationCode", placeholder: "Confirmation Code" }
-          ],
-          buttons: [
-            {
-              text: "Cancel",
-              handler: data => {
-                console.log("Cancel clicked");
-              }
-            },
-            {
-              text: "Send",
-              handler: data => {
-                // Here we need to handle the confirmation code
-                confirmationResult
-                  .confirm(data.confirmationCode)
-                  .then(function(result) {
-                    // User signed in successfully.
-                    console.log(result.user);
-                    // ...
-                  })
-                  .catch(function(error) {
-                    // User couldn't sign in (bad verification code?)
-                    // ...
-                  });
-              }
-            }
-          ]
-        });
-        prompt.present();
-
-      })
-      .catch(function(error) {
-        console.error("SMS not sent", error);
-      });
-  }
-
+  
   alert(message: string) {
     this.alertCtrl
       .create({
@@ -209,53 +162,20 @@ export class RegisterPage {
   }
 
   registerUser(usernm,email,password,flatn,wing,familyMember,car,phoneNumber: number) {
-    alert(this.fname.value);
+    
+alert(phoneNumber)
     // const appVerifier = this.recaptchaVerifier;
     const phoneNumberString = "+91" + phoneNumber;
-    let currentUserUid = this.fire.auth.currentUser.uid;
-    // firebase.auth().signInWithPhoneNumber(phoneNumberString, appVerifier)
-    //   .then( confirmationResult => {
+    
+   
+    // let currentUserUid = this.fire.auth.currentUser.uid;
+    // alert('cusr'+this.fire.auth.currentUser);
+    // alert("icuid"+currentUserUid);
 
-    //     // SMS sent. Prompt user to type the code from the message, then sign the
-    //     // user in with confirmationResult.confirm(code).
-    //     let prompt = this.alertCtrl.create({
-    //       title: 'Enter the Confirmation code',
-    //       inputs: [{ name: 'confirmationCode', placeholder: 'Confirmation Code' }],
-    //       buttons: [
-    //         { text: 'Cancel',
-    //           handler: data => { console.log('Cancel clicked'); }
-    //         },
-    //         { text: 'Send',
-    //           handler: data => {
-    //             this.fdb.list("/users/").push( { 'email': this.email.value,'phone':this.phone.value, 'password': this.password.value,'fnm':this.fname.value,'lnm':this.lname.value,'flat':this.flatn.value,'wing':this.wing.value,'vehicle':this.vehicle.value,'family':this.familyMember.value,'unm':this.user.value });
-    //             // Here we need to handle the confirmation code
-    //             confirmationResult.confirm(data.confirmationCode)
-    //             .then(function (result) {
-
-    //               this.alert('Registered!'+result.user);
-    //               this.navCtrl.push(LoginPage);
-    //               // User signed in successfully.
-    //               console.log(result.user);
-    //               // ...
-    //             }).catch(function (error) {
-    //               // User couldn't sign in (bad verification code?)
-    //               // ...
-    //             });
-    //           }
-    //         }
-    //       ]
-    //     });
-    //     prompt.present();
-    // })
-    // .catch(function (error) {
-    //   console.error("SMS not sent", error);
-    //   this.alert("SMS not sent", error);
-    // });
     this.fire.auth
       .createUserWithEmailAndPassword(this.email.value, this.password.value)
       .then(data => {
         this.fdb.list("/users/").push({
-          ID: currentUserUid,
           email: this.email.value,
           password: this.password.value,
           first_name: this.fname.value,
@@ -278,14 +198,14 @@ export class RegisterPage {
         this.alert("error!");
 
       });
-
-
         this.navCtrl.push(LoginPage);
       })
       .catch(error => {
         console.log("got an error ", error);
         this.alert(error.message);
       });
+
+    
     //s	console.log('Would register user with ', this.email.value, this.password.value);
   }
 

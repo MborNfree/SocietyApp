@@ -7,7 +7,7 @@
 
 <ion-content padding class="bg-masters">
 
-  <!-- <form [formGroup]="authForm">
+  <form [formGroup]="authForm">
     <ion-list>
       <ion-item class="profile-item">
         <div class="big-profile-picture">
@@ -86,8 +86,8 @@
       <ion-item *ngIf="authForm.controls.flat.hasError('pattern') && authForm.controls.flat.touched">
         <p>Sorry, only numbers are allowed!</p>
       </ion-item>
-      <ion-item *ngIf="authForm.controls.flat.hasError('minLength') && authForm.controls.flat.touched">
-        <p>Sorry, minimum username length is 3!</p>
+      <ion-item *ngIf="authForm.controls.flat.hasError('maxLength') && authForm.controls.flat.touched">
+        <p>Sorry, maximum flatNo length is 3!</p>
       </ion-item>
       <ion-item [ngClass]="{'error-border':!authForm.controls.wingno.valid && authForm.controls.wingno.touched}">
         <ion-label floating>
@@ -129,15 +129,16 @@
       </ion-item>
       <div id="recaptcha-container"></div>
     </ion-list>
-</form>
      <div padding> 
       <!-- <button ion-button id="sign-in-button" (click)="signIn(phoneNumber)">
           Sign In
         </button> -->
-       <!-- <button block ion-button (click)="registerUser(usernm,email,password,flatn,wing,familyMember,car,phoneNumber);" item-left>Register</button>
-    </div> --> 
+       <button block ion-button (click)="registerUser(usernm,email,password,flatn,wing,familyMember,car,phoneNumber);" item-left>Register</button>
+    </div> 
+</form>
+    
   
-
+<!-- 
   <form [formGroup]="authForm">
     <ion-list>
     <ion-item [ngClass]="{'error-border':!authForm.controls.firstnme.valid && authForm.controls.firstnme.touched}">
@@ -200,11 +201,12 @@
       <p>Sorry, field email is required!</p>
     </ion-item>
     <ion-item *ngIf="authForm.controls.eml.hasError('minLength') && authForm.controls.eml.touched">
-      <p>Sorry, minimum email length is 8!</p>
+      <p>Sorry, minimum email length is !</p>
     </ion-item>
-    <ion-item *ngIf="authForm.controls.eml.hasError('pattern') && authForm.controls.eml.touched">
+     <ion-item *ngIf="authForm.controls.eml.hasError('pattern') && authForm.controls.eml.touched">
       <p>Sorry, email should be in proper format!</p>
-    </ion-item>
+    </ion-item> 
+
     <ion-item *ngIf="authForm.controls.eml.hasError('maxLength') && authForm.controls.eml.touched">
       <p>Sorry, maximum Email length is 30!</p>
     </ion-item>
@@ -280,8 +282,8 @@
     <ion-item *ngIf="authForm.controls.car.hasError('required') && authForm.controls.car.touched">
       <p>Sorry, field Total vehicles is required!</p>
     </ion-item>
-    <ion-item *ngIf="authForm.controls.car.hasError('minLength') && authForm.controls.car.touched">
-      <p>Sorry, minimum Total vehicles length is 8!</p>
+    <ion-item *ngIf="authForm.controls.car.hasError('maxLength') && authForm.controls.car.touched">
+      <p>Sorry, maximum Total vehicles length is 1!</p>
     </ion-item>
 
     <ion-item>
@@ -308,7 +310,7 @@
      
       <button block ion-button (click)="registerUser(usernm,email,password,flatn,wing,familyMember,car,phoneNumber);" item-left>Register</button>
     </div>
-  </form> 
+  </form>  -->
 
      <!-- <button ion-button full color="button" [disabled]="!authForm.valid" (click)="addService(personName,servType.value,aboutServ,servContact);">Add Service</button> -->
  </ion-content>
