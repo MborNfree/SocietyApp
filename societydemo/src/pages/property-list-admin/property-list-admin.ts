@@ -4,7 +4,6 @@ import { ModalController } from "ionic-angular";
 
 import { AddAssetsAdminPage } from "./../add-assets-admin/add-assets-admin";
 
-
 @IonicPage()
 @Component({
   selector: "page-property-list-admin",
@@ -35,10 +34,10 @@ export class PropertyListAdminPage {
     this.navCtrl.push(AddAssetsAdminPage);
   }
   doRefresh(refresher) {
-    console.log('Begin async operation', refresher);
+    console.log("Begin async operation", refresher);
 
     setTimeout(() => {
-      console.log('Async operation has ended');
+      console.log("Async operation has ended");
       refresher.complete();
     }, 2000);
   }

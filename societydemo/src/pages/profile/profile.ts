@@ -33,7 +33,6 @@ export class ProfilePage {
   userRef: string = "/users/";
 
   constructor(
-
     private afAuth: AngularFireAuth,
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -157,4 +156,3 @@ export class ProfilePage {
     }
   }
 }
-

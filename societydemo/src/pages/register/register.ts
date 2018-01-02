@@ -29,9 +29,9 @@ export class RegisterPage {
   car;
   wingno;
   family;
- eml;
- paswd;
- flat;
+  eml;
+  paswd;
+  flat;
 
   @ViewChild("username") user;
   @ViewChild("password") password;
@@ -59,7 +59,7 @@ export class RegisterPage {
         "",
         Validators.compose([
           Validators.required,
-          Validators.pattern("[a-zA-Z\ \]*"),
+          Validators.pattern("[a-zA-Z ]*"),
           Validators.minLength(6),
           Validators.maxLength(30)
         ])
@@ -81,7 +81,7 @@ export class RegisterPage {
         Validators.compose([
           Validators.required,
           Validators.pattern(
-            "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?]"
+            "[a-z0-9!#$%&.'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?]"
           ),
           Validators.minLength(5),
           Validators.maxLength(30)
@@ -107,7 +107,7 @@ export class RegisterPage {
         "",
         Validators.compose([
           Validators.required,
-          Validators.pattern("[a-zA-Z\ \]*"),
+          Validators.pattern("[a-zA-Z ]*"),
           Validators.minLength(4),
           Validators.maxLength(10)
         ])
@@ -116,7 +116,7 @@ export class RegisterPage {
         "",
         Validators.compose([
           Validators.required,
-          Validators.pattern("[a-zA-Z\ \]*"),
+          Validators.pattern("[a-zA-Z ]*"),
           Validators.minLength(4),
           Validators.maxLength(10)
         ])
@@ -149,55 +149,6 @@ export class RegisterPage {
     );
   }
 
-  signIn(phoneNumber: number) {
-    const appVerifier = this.recaptchaVerifier;
-    const phoneNumberString = "+91" + phoneNumber;
-
-    firebase
-      .auth()
-      .signInWithPhoneNumber(phoneNumberString, appVerifier)
-      .then(confirmationResult => {
-        // SMS sent. Prompt user to type the code from the message, then sign the
-        // user in with confirmationResult.confirm(code).
-        let prompt = this.alertCtrl.create({
-          title: "Enter the Confirmation code",
-          inputs: [
-            { name: "confirmationCode", placeholder: "Confirmation Code" }
-          ],
-          buttons: [
-            {
-              text: "Cancel",
-              handler: data => {
-                console.log("Cancel clicked");
-              }
-            },
-            {
-              text: "Send",
-              handler: data => {
-                // Here we need to handle the confirmation code
-                confirmationResult
-                  .confirm(data.confirmationCode)
-                  .then(function(result) {
-                    // User signed in successfully.
-                    console.log(result.user);
-                    // ...
-                  })
-                  .catch(function(error) {
-                    // User couldn't sign in (bad verification code?)
-                    // ...
-                  });
-              }
-            }
-          ]
-        });
-        prompt.present();
-
-      })
-      .catch(function(error) {
-        console.error("SMS not sent", error);
-      });
-  }
-
   alert(message: string) {
     this.alertCtrl
       .create({
@@ -208,78 +159,41 @@ export class RegisterPage {
       .present();
   }
 
-  registerUser(usernm,email,password,flatn,wing,familyMember,car,phoneNumber: number) {
+  registerUser(phoneNumber: number) {
     alert(this.fname.value);
-    // const appVerifier = this.recaptchaVerifier;
-    const phoneNumberString = "+91" + phoneNumber;
-    let currentUserUid = this.fire.auth.currentUser.uid;
-    // firebase.auth().signInWithPhoneNumber(phoneNumberString, appVerifier)
-    //   .then( confirmationResult => {
+    const appVerifier = this.recaptchaVerifier;
+    //const phoneNumberString = "+91" + phoneNumber;
 
-    //     // SMS sent. Prompt user to type the code from the message, then sign the
-    //     // user in with confirmationResult.confirm(code).
-    //     let prompt = this.alertCtrl.create({
-    //       title: 'Enter the Confirmation code',
-    //       inputs: [{ name: 'confirmationCode', placeholder: 'Confirmation Code' }],
-    //       buttons: [
-    //         { text: 'Cancel',
-    //           handler: data => { console.log('Cancel clicked'); }
-    //         },
-    //         { text: 'Send',
-    //           handler: data => {
-    //             this.fdb.list("/users/").push( { 'email': this.email.value,'phone':this.phone.value, 'password': this.password.value,'fnm':this.fname.value,'lnm':this.lname.value,'flat':this.flatn.value,'wing':this.wing.value,'vehicle':this.vehicle.value,'family':this.familyMember.value,'unm':this.user.value });
-    //             // Here we need to handle the confirmation code
-    //             confirmationResult.confirm(data.confirmationCode)
-    //             .then(function (result) {
-
-    //               this.alert('Registered!'+result.user);
-    //               this.navCtrl.push(LoginPage);
-    //               // User signed in successfully.
-    //               console.log(result.user);
-    //               // ...
-    //             }).catch(function (error) {
-    //               // User couldn't sign in (bad verification code?)
-    //               // ...
-    //             });
-    //           }
-    //         }
-    //       ]
-    //     });
-    //     prompt.present();
-    // })
-    // .catch(function (error) {
-    //   console.error("SMS not sent", error);
-    //   this.alert("SMS not sent", error);
-    // });
     this.fire.auth
       .createUserWithEmailAndPassword(this.email.value, this.password.value)
       .then(data => {
-        this.fdb.list("/users/").push({
-          ID: currentUserUid,
-          email: this.email.value,
-          password: this.password.value,
-          first_name: this.fname.value,
-          last_name: this.lname.value,
-          flatno: this.flatn.value,
-          wing: this.wing.value,
-          parking_slot: this.vehicle.value,
-          familyMember: this.familyMember.value,
-          username: this.usernm.value,
-          phoneNumber:this.phoneNumber.value
-        });
+        let currentUserUid = this.fire.auth.currentUser.uid;
+        this.fdb
+          .list("/users/")
+          .push({
+            ID: currentUserUid,
+            email: this.email.value,
+            password: this.password.value,
+            first_name: this.fname.value,
+            last_name: this.lname.value,
+            flatno: this.flatn.value,
+            wing: this.wing.value,
+            parking_slot: this.vehicle.value,
+            familyMember: this.familyMember.value,
+            username: this.user.value
+          });
 
         console.log("got data ", data);
 
         this.alert("Registered!");
-        data.sendEmailVerification().then(function() {
-          this.alert("Email Sent Please check your mailbox!");
-
-      }, function(error) {
-        this.alert("error!");
-
-      });
-
-
+        data.sendEmailVerification().then(
+          function() {
+            this.alert("Email Sent Please check your mailbox!");
+          },
+          function(error) {
+            this.alert("error!");
+          }
+        );
         this.navCtrl.push(LoginPage);
       })
       .catch(error => {
@@ -288,6 +202,58 @@ export class RegisterPage {
       });
     //s	console.log('Would register user with ', this.email.value, this.password.value);
   }
+
+  //   registerUser(
+  //     usernm,
+  //     email,
+  //     password,
+  //     flatn,
+  //     wing,
+  //     familyMember,
+  //     car,
+  //     phoneNumber: number
+  //   ) {
+  //     alert(this.fname.value);
+  //     // const appVerifier = this.recaptchaVerifier;
+  //     const phoneNumberString = "+91" + phoneNumber;
+  //     //let currentUserUid = this.fire.auth.currentUser.uid;
+  // console.log(this.fire.auth);
+  //     this.fire.auth
+  //       .createUserWithEmailAndPassword(this.email.value, this.password.value)
+  //       .then(data => {
+  //         this.fdb.list("/users/").push({
+  //          // ID: currentUserUid,
+  //           email: this.email.value,
+  //           password: this.password.value,
+  //           first_name: this.fname.value,
+  //           last_name: this.lname.value,
+  //           flatno: this.flatn.value,
+  //           wing: this.wing.value,
+  //           parking_slot: this.vehicle.value,
+  //           familyMember: this.familyMember.value,
+  //           username: this.usernm.value,
+  //           phoneNumber: this.phoneNumber.value
+  //         });
+
+  //         console.log("got data ", data);
+
+  //         this.alert("Registered!");
+  //         data.sendEmailVerification().then(
+  //           function() {
+  //             this.alert("Email Sent Please check your mailbox!");
+  //           },
+  //           function(error) {
+  //             this.alert("error!");
+  //           }
+  //         );
+  //         this.navCtrl.push(LoginPage);
+  //       })
+  //       .catch(error => {
+  //         console.log("got an error ", error);
+  //         this.alert(error.message);
+  //       });
+  //     //	console.log('Would register user with ', this.email.value, this.password.value);
+  //   }
 
   doLogin() {
     this.navCtrl.push(LoginPage);
