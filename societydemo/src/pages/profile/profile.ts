@@ -1,3 +1,4 @@
+import { Camera } from '@ionic-native/camera';
 import { FirebaseListObservable } from "angularfire2/database-deprecated";
 import { Component } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
@@ -44,7 +45,7 @@ export class ProfilePage {
     var ref = firebase.database().ref("users");
     //ref.on('value', this.gotData,this.errData);
 
-    // Get a reference to the database service
+    // Get a reference to the database services
 
     this.afAuth.authState.subscribe(user => {
       if (user) this.userId = user.uid;
