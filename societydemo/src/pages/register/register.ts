@@ -53,7 +53,7 @@ export class RegisterPage {
     public formBuilder: FormBuilder,
     private fire: AngularFireAuth
   ) {
-    alert(this.user);
+
     this.users = fdb.list("/users");
     this.authForm = formBuilder.group({
       usernm: [
@@ -150,10 +150,6 @@ export class RegisterPage {
     );
   }
 
-<<<<<<< HEAD
-=======
-  
->>>>>>> e28a80e393d3a8d41b52ce2e661bcc5fd6cec580
   alert(message: string) {
     this.alertCtrl
       .create({
@@ -164,28 +160,14 @@ export class RegisterPage {
       .present();
   }
 
-<<<<<<< HEAD
   registerUser(phoneNumber: number) {
-    alert(this.fname.value);
+
     const appVerifier = this.recaptchaVerifier;
     //const phoneNumberString = "+91" + phoneNumber;
-=======
-  registerUser(usernm,email,password,flatn,wing,familyMember,car,phoneNumber: number) {
-    
-alert(phoneNumber)
-    // const appVerifier = this.recaptchaVerifier;
-    const phoneNumberString = "+91" + phoneNumber;
-    
-   
-    // let currentUserUid = this.fire.auth.currentUser.uid;
-    // alert('cusr'+this.fire.auth.currentUser);
-    // alert("icuid"+currentUserUid);
->>>>>>> e28a80e393d3a8d41b52ce2e661bcc5fd6cec580
 
     this.fire.auth
       .createUserWithEmailAndPassword(this.email.value, this.password.value)
       .then(data => {
-<<<<<<< HEAD
         let currentUserUid = this.fire.auth.currentUser.uid;
         this.fdb
           .list("/users/")
@@ -201,42 +183,18 @@ alert(phoneNumber)
             familyMember: this.familyMember.value,
             username: this.user.value
           });
-=======
-        this.fdb.list("/users/").push({
-          email: this.email.value,
-          password: this.password.value,
-          first_name: this.fname.value,
-          last_name: this.lname.value,
-          flatno: this.flatn.value,
-          wing: this.wing.value,
-          parking_slot: this.vehicle.value,
-          familyMember: this.familyMember.value,
-          username: this.usernm.value,
-          phoneNumber:this.phoneNumber.value
-        });
->>>>>>> e28a80e393d3a8d41b52ce2e661bcc5fd6cec580
 
         console.log("got data ", data);
 
         this.alert("Registered!");
-<<<<<<< HEAD
         data.sendEmailVerification().then(
           function() {
-            this.alert("Email Sent Please check your mailbox!");
+           alert("Email Sent Please check your mailbox!");
           },
           function(error) {
-            this.alert("error!");
+            alert("error!");
           }
         );
-=======
-        data.sendEmailVerification().then(function() {
-          this.alert("Email Sent Please check your mailbox!");
-
-      }, function(error) {
-        this.alert("error!");
-
-      });
->>>>>>> e28a80e393d3a8d41b52ce2e661bcc5fd6cec580
         this.navCtrl.push(LoginPage);
       })
       .catch(error => {
@@ -244,7 +202,7 @@ alert(phoneNumber)
         this.alert(error.message);
       });
 
-    
+
     //s	console.log('Would register user with ', this.email.value, this.password.value);
   }
 
