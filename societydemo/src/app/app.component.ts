@@ -1,16 +1,22 @@
+import {firebase} from 'firebase';
 import { Component, ViewChild, OnInit } from "@angular/core";
-import { Nav, Platform, MenuController, AlertController,Events,ModalController } from "ionic-angular";
-import { Network} from 'ionic-native';
+import {
+  Nav,
+  Platform,
+  MenuController,
+  AlertController,
+  Events,
+  ModalController
+} from "ionic-angular";
+import { Network } from "ionic-native";
 import { StatusBar } from "@ionic-native/status-bar";
 import { SplashScreen } from "@ionic-native/splash-screen";
 import { AngularFireAuth } from "angularfire2/auth";
 import { AngularFireDatabase, AngularFireList } from "angularfire2/database";
 import { Observable } from "rxjs/Observable";
-import { AuthService } from '../shared/services/auth.service';
-import { DataService } from '../shared/services/data.service';
+// import { AuthService } from "../shared/services/auth.service";
+// import { DataService } from "../shared/services/data.service";
 
-
-import * as firebase from "firebase/app";
 
 // Models
 import {
@@ -40,12 +46,10 @@ import { HelpdeskPage } from "./../pages/helpdesk/helpdesk";
 import { ImageGalleryPage } from "./../pages/image-gallery/image-gallery";
 
 @Component({
-  templateUrl: "app.html",
-
-
+  templateUrl: "app.html"
 })
+export class MySocietyApp implements OnInit {
 
-export class MySocietyApp  {
   rootPage: any = LoginPage;
   username: string;
   password: string;
@@ -56,6 +60,7 @@ export class MySocietyApp  {
   msgVal: string = "";
 
   @ViewChild(Nav) nav: Nav;
+
 
   // Get the instance to call the public methods
   @ViewChild(SideMenuContentComponent) sideMenu: SideMenuContentComponent;
@@ -85,77 +90,78 @@ export class MySocietyApp  {
     public menuCtrl: MenuController,
     public afAuth: AngularFireAuth,
     public af: AngularFireDatabase,
-    public dataService: DataService,
-    public authService: AuthService,
+    // public dataService: DataService,
+    // public authService: AuthService,
     public events: Events,
     public modalCtrl: ModalController,
-    public menu: MenuController,
-
+    public menu: MenuController
   ) {
     this.user = this.afAuth.authState;
 
     this.initializeApp();
   }
-
-  watchForConnection() {
-    var self = this;
-    Network.onConnect().subscribe(() => {
-      console.log('network connected!');
-      // We just got a connection but we need to wait briefly
-      // before we determine the connection type.  Might need to wait
-      // prior to doing any api requests as well.
-      setTimeout(() => {
-        console.log('we got a connection..');
-        console.log('Firebase: Go Online..');
-        self.dataService.goOnline();
-        self.events.publish('network:connected', true);
-      }, 3000);
-    });
+  ngOnInit(): void {
+    throw new Error("Method not implemented.");
   }
+  // watchForConnection() {
+  //   var self = this;
+  //   Network.onConnect().subscribe(() => {
+  //     console.log("network connected!");
+  //     // We just got a connection but we need to wait briefly
+  //     // before we determine the connection type.  Might need to wait
+  //     // prior to doing any api requests as well.
+  //     setTimeout(() => {
+  //       console.log("we got a connection..");
+  //       console.log("Firebase: Go Online..");
+  //       self.dataService.goOnline();
+  //       self.events.publish("network:connected", true);
+  //     }, 3000);
+  //   });
+  // }
 
-  watchForDisconnect() {
-    var self = this;
-    // watch network for a disconnect
-    Network.onDisconnect().subscribe(() => {
-      console.log('network was disconnected :-(');
-      console.log('Firebase: Go Offline..');
-      //self.sqliteService.resetDatabase();
-      self.dataService.goOffline();
-      self.events.publish('network:connected', false);
-    });
-  }
+  // watchForDisconnect() {
+  //   var self = this;
+  //   // watch network for a disconnect
+  //   Network.onDisconnect().subscribe(() => {
+  //     console.log("network was disconnected :-(");
+  //     console.log("Firebase: Go Offline..");
+  //     //self.sqliteService.resetDatabase();
+  //     self.dataService.goOffline();
+  //     self.events.publish("network:connected", false);
+  //   });
+  // }
 
-  signout() {
-    var self = this;
-    self.menu.close();
-    self.authService.signOut();
-  }
+  // signout() {
+  //   var self = this;
+  //   self.menu.close();
+  //   self.authService.signOut();
+  // }
 
-  isUserLoggedIn(): boolean {
-    let user = this.authService.getLoggedInUser();
-    return user !== null;
-  }
-  ngAfterViewInit() {
-    var self = this;
+  // isUserLoggedIn(): boolean {
+  //   let user = this.authService.getLoggedInUser();
+  //   return user !== null;
+  // }
+  // ngAfterViewInit() {
+  //   var self = this;
 
-    this.authService.onAuthStateChanged(function (user) {
-      if (user === null) {
-        self.menu.close();
-        //self.nav.setRoot(LoginPage);
+  //   this.authService.onAuthStateChanged(function(user) {
+  //     if (user === null) {
+  //       self.menu.close();
+  //       //self.nav.setRoot(LoginPage);
 
-        let loginodal = self.modalCtrl.create(LoginPage);
-        loginodal.present();
-      }
-    });
-  }
+  //       let loginodal = self.modalCtrl.create(LoginPage);
+  //       loginodal.present();
+  //     }
+  //   });
+  // }
 
   initializeApp() {
     this.platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
-      this.watchForConnection();
-      this.watchForDisconnect();
+      // this.watchForConnection();
+      // this.watchForDisconnect();
       this.splashScreen.hide();
       this.getStatus();
       // Initialize some options
