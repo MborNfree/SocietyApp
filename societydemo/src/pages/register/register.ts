@@ -9,7 +9,8 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { AngularFireAuth } from "angularfire2/auth";
 import { AngularFireDatabase } from "angularfire2/database";
 import { AngularFireList } from "angularfire2/database";
-import firebase from "firebase";
+// import firebase from "firebase";
+import * as firebase from "firebase/app";
 
 import { LoginPage } from "./../login/login";
 

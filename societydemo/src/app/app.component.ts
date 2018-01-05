@@ -1,6 +1,6 @@
 // import {firebase} from 'firebase';
-import * as firebase from 'firebase';
-import { Component, ViewChild, OnInit } from "@angular/core";
+import * as firebase from "firebase/app";
+import { Component, ViewChild } from "@angular/core";
 import {
   Nav,
   Platform,
@@ -15,9 +15,8 @@ import { SplashScreen } from "@ionic-native/splash-screen";
 import { AngularFireAuth } from "angularfire2/auth";
 import { AngularFireDatabase, AngularFireList } from "angularfire2/database";
 import { Observable } from "rxjs/Observable";
-// import { AuthService } from "../shared/services/auth.service";
+import { AuthService } from "../shared/services/auth.service";
 // import { DataService } from "../shared/services/data.service";
-
 
 // Models
 import {
@@ -45,12 +44,13 @@ import { InboxPage } from "./../pages/inbox/inbox";
 import { BalancesheetPage } from "../pages/balancesheet/balancesheet";
 import { HelpdeskPage } from "./../pages/helpdesk/helpdesk";
 import { ImageGalleryPage } from "./../pages/image-gallery/image-gallery";
+import { ThreadCreatePage } from "../pages/thread-create/thread-create";
+import { ThreadsPage } from "../pages/threads/threads";
 
 @Component({
   templateUrl: "app.html"
 })
 export class MySocietyApp {
-
   rootPage: any = LoginPage;
   username: string;
   password: string;
@@ -61,7 +61,6 @@ export class MySocietyApp {
   msgVal: string = "";
 
   @ViewChild(Nav) nav: Nav;
-
 
   // Get the instance to call the public methods
   @ViewChild(SideMenuContentComponent) sideMenu: SideMenuContentComponent;
@@ -92,7 +91,7 @@ export class MySocietyApp {
     public afAuth: AngularFireAuth,
     public af: AngularFireDatabase,
     // public dataService: DataService,
-    // public authService: AuthService,
+    public authService: AuthService,
     public events: Events,
     public modalCtrl: ModalController,
     public menu: MenuController
@@ -101,24 +100,22 @@ export class MySocietyApp {
 
     this.initializeApp();
   }
-  // ngOnInit(): void {
-  //   throw new Error("Method not implemented.");
-  // }
-  // watchForConnection() {
-  //   var self = this;
-  //   Network.onConnect().subscribe(() => {
-  //     console.log("network connected!");
-  //     // We just got a connection but we need to wait briefly
-  //     // before we determine the connection type.  Might need to wait
-  //     // prior to doing any api requests as well.
-  //     setTimeout(() => {
-  //       console.log("we got a connection..");
-  //       console.log("Firebase: Go Online..");
-  //       self.dataService.goOnline();
-  //       self.events.publish("network:connected", true);
-  //     }, 3000);
-  //   });
-  // }
+
+  watchForConnection() {
+    var self = this;
+    Network.onConnect().subscribe(() => {
+      console.log("network connected!");
+      // We just got a connection but we need to wait briefly
+      // before we determine the connection type.  Might need to wait
+      // prior to doing any api requests as well.
+      setTimeout(() => {
+        console.log("we got a connection..");
+        console.log("Firebase: Go Online..");
+        //self.dataService.goOnline();
+        self.events.publish("network:connected", true);
+      }, 3000);
+    });
+  }
 
   // watchForDisconnect() {
   //   var self = this;
@@ -132,29 +129,29 @@ export class MySocietyApp {
   //   });
   // }
 
-  // signout() {
-  //   var self = this;
-  //   self.menu.close();
-  //   self.authService.signOut();
-  // }
+  signout() {
+    var self = this;
+    self.menu.close();
+    self.authService.signOut();
+  }
 
-  // isUserLoggedIn(): boolean {
-  //   let user = this.authService.getLoggedInUser();
-  //   return user !== null;
-  // }
-  // ngAfterViewInit() {
-  //   var self = this;
+  isUserLoggedIn(): boolean {
+    let user = this.authService.getLoggedInUser();
+    return user !== null;
+  }
+  ngAfterViewInit() {
+    var self = this;
 
-  //   this.authService.onAuthStateChanged(function(user) {
-  //     if (user === null) {
-  //       self.menu.close();
-  //       //self.nav.setRoot(LoginPage);
+    this.authService.onAuthStateChanged(function(user) {
+      if (user === null) {
+        self.menu.close();
+        //self.nav.setRoot(LoginPage);
 
-  //       let loginodal = self.modalCtrl.create(LoginPage);
-  //       loginodal.present();
-  //     }
-  //   });
-  // }
+        let loginodal = self.modalCtrl.create(LoginPage);
+        loginodal.present();
+      }
+    });
+  }
 
   initializeApp() {
     this.platform.ready().then(() => {
@@ -275,6 +272,11 @@ export class MySocietyApp {
       component: ForumPage
     });
 
+    this.options.push({
+      iconName: "chatbubbles",
+      displayName: "Threads",
+      component: ThreadsPage
+    });
     this.options.push({
       iconName: "help-circle",
       displayName: "Help Desk",
