@@ -275,111 +275,111 @@ export class MySocietyApp  {
         }
       ]
     });
-    this.options.push({
-      displayName: "Admin Section",
-      subItems: [
-        {
-          iconName: "basket",
-          displayName: "User Documents",
-          component: UserDocumentListAdminPage
-        },
-        {
-          iconName: "clipboard",
-          displayName: "Circualrs",
-          component: CircularListAdminPage
-        },
-        {
-          iconName: "folder",
-          displayName: "Add Circualrs",
-          component: AddCircularAdminPage
-        },
-        {
-          iconName: "calendar",
-          displayName: "Add Events",
-          component: AddEventAdminPage
-        },
-        {
-          iconName: "calendar",
-          displayName: "Events List",
-          component: EventListAdminPage
-        },
-        // {
-        //   iconName: "people",
-        //   displayName: "Residents List",
-        //   component: ResidentListAdminPage
-        // },
-        // {
-        //   iconName: "contacts",
-        //   displayName: "Committee List",
-        //   component: CommitteeListAdminPage
-        // },
-        {
-          iconName: "albums",
-          displayName: "Society Property",
-          component: PropertyListAdminPage
-        },
-        {
-          iconName: "albums",
-          displayName: "Add Society Property",
-          component: AddPropertyAdminPage
-        },
-        {
-          iconName: "albums",
-          displayName: "Add Society Assets",
-          component: AddAssetsAdminPage
-        },
-        {
-          iconName: "cash",
-          displayName: "Generate Bill",
-          component: GenerateBillAdminPage
-        },
-        {
-          iconName: "bowtie",
-          displayName: "Add Service Type",
-          component: AddServiceCategoryAdminPage
-        },
-        {
-          iconName: "bowtie",
-          displayName: "Add Service",
-          component: AddServiceAdminPage
-        },
-        {
-          iconName: "happy",
-          displayName: "Add Flatwise Service",
-          component: AddFlatwiseServiceAdminPage
-        },
-        {
-          iconName: "happy",
-          displayName: "Flatwise Service",
-          component: FlatwiseServiceListAdminPage
-        },
-        {
-          iconName: "albums",
-          displayName: "Add Emergency Category",
-          component: AddEmergencyCategoryAdminPage
-        },
-        {
-          iconName: "albums",
-          displayName: "Add Emergency",
-          component: AddemergencyAdminPage
-        },
-        {
-          iconName: "medkit",
-          displayName: "Emergency List",
-          component: EmergencyListAdminPage
-        },
-        {
-          iconName: "albums",
-          displayName: "Service List",
-          component: ServiceListAdminPage
-        },
-        {
-          iconName: "hand",
-          displayName: "Add Rules",
-          component: AddNormsPage
-        }
-      ]
-    });
+    // this.options.push({
+    //   displayName: "Admin Section",
+    //   subItems: [
+    //     {
+    //       iconName: "basket",
+    //       displayName: "User Documents",
+    //       component: UserDocumentListAdminPage
+    //     },
+    //     {
+    //       iconName: "clipboard",
+    //       displayName: "Circualrs",
+    //       component: CircularListAdminPage
+    //     },
+    //     {
+    //       iconName: "folder",
+    //       displayName: "Add Circualrs",
+    //       component: AddCircularAdminPage
+    //     },
+    //     {
+    //       iconName: "calendar",
+    //       displayName: "Add Events",
+    //       component: AddEventAdminPage
+    //     },
+    //     {
+    //       iconName: "calendar",
+    //       displayName: "Events List",
+    //       component: EventListAdminPage
+    //     },
+    //     // {
+    //     //   iconName: "people",
+    //     //   displayName: "Residents List",
+    //     //   component: ResidentListAdminPage
+    //     // },
+    //     // {
+    //     //   iconName: "contacts",
+    //     //   displayName: "Committee List",
+    //     //   component: CommitteeListAdminPage
+    //     // },
+    //     {
+    //       iconName: "albums",
+    //       displayName: "Society Property",
+    //       component: PropertyListAdminPage
+    //     },
+    //     {
+    //       iconName: "albums",
+    //       displayName: "Add Society Property",
+    //       component: AddPropertyAdminPage
+    //     },
+    //     {
+    //       iconName: "albums",
+    //       displayName: "Add Society Assets",
+    //       component: AddAssetsAdminPage
+    //     },
+    //     {
+    //       iconName: "cash",
+    //       displayName: "Generate Bill",
+    //       component: GenerateBillAdminPage
+    //     },
+    //     {
+    //       iconName: "bowtie",
+    //       displayName: "Add Service Type",
+    //       component: AddServiceCategoryAdminPage
+    //     },
+    //     {
+    //       iconName: "bowtie",
+    //       displayName: "Add Service",
+    //       component: AddServiceAdminPage
+    //     },
+    //     {
+    //       iconName: "happy",
+    //       displayName: "Add Flatwise Service",
+    //       component: AddFlatwiseServiceAdminPage
+    //     },
+    //     {
+    //       iconName: "happy",
+    //       displayName: "Flatwise Service",
+    //       component: FlatwiseServiceListAdminPage
+    //     },
+    //     {
+    //       iconName: "albums",
+    //       displayName: "Add Emergency Category",
+    //       component: AddEmergencyCategoryAdminPage
+    //     },
+    //     {
+    //       iconName: "albums",
+    //       displayName: "Add Emergency",
+    //       component: AddemergencyAdminPage
+    //     },
+    //     {
+    //       iconName: "medkit",
+    //       displayName: "Emergency List",
+    //       component: EmergencyListAdminPage
+    //     },
+    //     {
+    //       iconName: "albums",
+    //       displayName: "Service List",
+    //       component: ServiceListAdminPage
+    //     },
+    //     {
+    //       iconName: "hand",
+    //       displayName: "Add Rules",
+    //       component: AddNormsPage
+    //     }
+    //   ]
+    // });
   }
   public selectOption(option: MenuOptionModel): void {
     this.menuCtrl.close().then(() => {
