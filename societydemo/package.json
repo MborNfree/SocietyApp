@@ -124,7 +124,7 @@
     "@types/jquery": "^3.2.16",
     "browser-sync": "^2.18.13",
     "connect-history-api-fallback": "^1.5.0",
-    "firebase": "^4.6.1",
+    "firebase": "^4.8.0",
     "@angular/language-service": "^4.4.6",
     "@compodoc/compodoc": "^1.0.1",
     "@types/d3-color": "1.0.4",
@@ -162,7 +162,6 @@
     "typescript": "2.3.4",
     "web-component-tester": "^6.4.1",
     "@types/lodash": "4.14.58"
-
   },
   "description": "An Ionic project",
   "cordova": {
