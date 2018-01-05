@@ -9,7 +9,7 @@ import { StatusBar } from "@ionic-native/status-bar";
 import { AngularFireModule } from "angularfire2";
 import { AngularFireDatabaseModule } from "angularfire2/database";
 import { AngularFireAuthModule } from "angularfire2/auth";
-import { Ng2SmartTableModule } from "ng2-smart-table";
+
 import { EmojiProvider } from "../providers/emoji";
 import { FilePath } from "@ionic-native/file-path";
 import { File } from "@ionic-native/file";
@@ -21,11 +21,10 @@ import { HttpModule } from "@angular/http";
 import { SMS } from "@ionic-native/sms";
 import { Stripe } from "@ionic-native/stripe";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import * as $ from 'jquery';
+import * as $ from "jquery";
 import { APP_BASE_HREF } from "@angular/common";
 
 
-import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 
 import { DocumentuploadPage } from "./../pages/documentupload/documentupload";
 import { ElectricianlistPage } from "./../pages/electricianlist/electricianlist";
@@ -67,19 +66,17 @@ import { ViewbillPage } from "./../pages/viewbill/viewbill";
 import { Card } from "../pages/card/card";
 import { EventDataProvider } from "../providers/event-data/event-data";
 //import { DashboardPage } from "../pages/dashboard/dashboard";
-import { ThreadCommentsPage } from '../pages/thread-comments/thread-comments';
-import { ThreadCreatePage } from '../pages/thread-create/thread-create';
-import { ThreadsPage } from '../pages/threads/threads';
-import { CommentCreatePage } from '../pages/comment-create/comment-create';
-import { AboutPage } from '../pages/about/about';
+// import { ThreadCommentsPage } from "../pages/thread-comments/thread-comments";
+// import { ThreadCreatePage } from "../pages/thread-create/thread-create";
+// import { ThreadsPage } from "../pages/threads/threads";
+// import { CommentCreatePage } from "../pages/comment-create/comment-create";
+// import { AboutPage } from "../pages/about/about";
 
 // Custom components
-import { ThreadComponent } from '../shared/components/thread.component';
-import { UserAvatarComponent } from '../shared/components/user-avatar.component';
+// import { ThreadComponent } from "../shared/components/thread.component";
+// import { UserAvatarComponent } from "../shared/components/user-avatar.component";
 // providers
-import { APP_PROVIDERS } from '../providers/app.providers';
-
-
+// import { APP_PROVIDERS } from "../providers/app.providers";
 
 var config = {
   apiKey: "AIzaSyCdBaGl6H_IuyzMyEnjq-6VRD5-2alxUtg",
@@ -89,7 +86,6 @@ var config = {
   storageBucket: "society-182906.appspot.com",
   messagingSenderId: "583609948893"
 };
-
 
 @NgModule({
   declarations: [
@@ -126,14 +122,13 @@ var config = {
     ForumviewquestionPage,
     ViewbillPage,
     BalancesheetPage,
-    Card,
-    ThreadCommentsPage,
-    ThreadCreatePage,
-    ThreadsPage,
-    ThreadComponent,
-    AboutPage,
-    CommentCreatePage
-
+    Card
+    // ThreadCommentsPage,
+    // ThreadCreatePage,
+    // ThreadsPage,
+    // // ThreadComponent,
+    // AboutPage,
+    // CommentCreatePage
   ],
 
   imports: [
@@ -146,13 +141,9 @@ var config = {
     AngularFireModule.initializeApp(config),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    Ng2SmartTableModule,
-    NgbModule.forRoot()
-
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-
     HomePage,
     LoginPage,
     ResidentlistPage,
@@ -189,14 +180,12 @@ var config = {
     ViewbillPage,
     BalancesheetPage,
     Card,
-    ThreadCommentsPage,
-    ThreadCreatePage,
-    ThreadsPage,
-    ThreadComponent,
-    AboutPage,
-    CommentCreatePage
-
-
+    // ThreadCommentsPage,
+    // ThreadCreatePage,
+    // ThreadsPage,
+    // // ThreadComponent,
+    // AboutPage,
+    // CommentCreatePage
   ],
 
   providers: [
@@ -220,7 +209,7 @@ var config = {
     EmailComposer,
     Stripe,
     EventDataProvider,
-    APP_PROVIDERS,
+    // APP_PROVIDERS,
     { provide: APP_BASE_HREF, useValue: "/" }
   ]
 })
