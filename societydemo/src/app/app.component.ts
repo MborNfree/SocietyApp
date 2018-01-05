@@ -1,4 +1,5 @@
-import {firebase} from 'firebase';
+// import {firebase} from 'firebase';
+import * as firebase from 'firebase';
 import { Component, ViewChild, OnInit } from "@angular/core";
 import {
   Nav,
@@ -48,7 +49,7 @@ import { ImageGalleryPage } from "./../pages/image-gallery/image-gallery";
 @Component({
   templateUrl: "app.html"
 })
-export class MySocietyApp implements OnInit {
+export class MySocietyApp {
 
   rootPage: any = LoginPage;
   username: string;
@@ -100,9 +101,9 @@ export class MySocietyApp implements OnInit {
 
     this.initializeApp();
   }
-  ngOnInit(): void {
-    throw new Error("Method not implemented.");
-  }
+  // ngOnInit(): void {
+  //   throw new Error("Method not implemented.");
+  // }
   // watchForConnection() {
   //   var self = this;
   //   Network.onConnect().subscribe(() => {
