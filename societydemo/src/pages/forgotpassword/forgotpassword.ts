@@ -2,7 +2,8 @@ import { RegisterPage } from "./../register/register";
 import { LoginPage } from "./../login/login";
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from "ionic-angular";
-import firebase from "firebase";
+// import firebase from "firebase";
+import * as firebase from "firebase/app";
 import { FormGroup, FormBuilder,Validators } from '@angular/forms';
 
 @IonicPage()

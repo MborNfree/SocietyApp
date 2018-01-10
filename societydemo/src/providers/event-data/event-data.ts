@@ -1,7 +1,8 @@
 import { Injectable } from "@angular/core";
 import { Http } from "@angular/http";
 import "rxjs/add/operator/map";
-import firebase from "firebase";
+// import firebase from "firebase"
+import * as firebase from "firebase/app";;
 
 @Injectable()
 export class EventDataProvider {

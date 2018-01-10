@@ -23,10 +23,8 @@ import { HttpModule } from "@angular/http";
 import { SMS } from "@ionic-native/sms";
 import { Stripe } from "@ionic-native/stripe";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import * as $ from "jquery";
+// import * as $ from "jquery";
 import { APP_BASE_HREF } from "@angular/common";
-
-
 
 import { DocumentuploadPage } from "./../pages/documentupload/documentupload";
 import { ElectricianlistPage } from "./../pages/electricianlist/electricianlist";
@@ -67,18 +65,17 @@ import { BalancesheetPage } from "./../pages/balancesheet/balancesheet";
 import { ViewbillPage } from "./../pages/viewbill/viewbill";
 import { Card } from "../pages/card/card";
 import { EventDataProvider } from "../providers/event-data/event-data";
-//import { DashboardPage } from "../pages/dashboard/dashboard";
-// import { ThreadCommentsPage } from "../pages/thread-comments/thread-comments";
-// import { ThreadCreatePage } from "../pages/thread-create/thread-create";
-// import { ThreadsPage } from "../pages/threads/threads";
-// import { CommentCreatePage } from "../pages/comment-create/comment-create";
-// import { AboutPage } from "../pages/about/about";
+import { ThreadCommentsPage } from "../pages/thread-comments/thread-comments";
+import { ThreadCreatePage } from "../pages/thread-create/thread-create";
+import { ThreadsPage } from "../pages/threads/threads";
+import { CommentCreatePage } from "../pages/comment-create/comment-create";
+import { AboutPage } from "../pages/about/about";
 
 // Custom components
-// import { ThreadComponent } from "../shared/components/thread.component";
+import { ThreadComponent } from "../shared/components/thread.component";
 // import { UserAvatarComponent } from "../shared/components/user-avatar.component";
 // providers
-// import { APP_PROVIDERS } from "../providers/app.providers";
+import { APP_PROVIDERS } from "../providers/app.providers";
 
 var config = {
   apiKey: "AIzaSyCdBaGl6H_IuyzMyEnjq-6VRD5-2alxUtg",
@@ -125,14 +122,12 @@ var config = {
     ViewbillPage,
     BalancesheetPage,
     Card,
-    ImageGalleryPage,
-    PhotosPage
-    // ThreadCommentsPage,
-    // ThreadCreatePage,
-    // ThreadsPage,
-    // // ThreadComponent,
-    // AboutPage,
-    // CommentCreatePage
+    ThreadCommentsPage,
+    ThreadCreatePage,
+    ThreadsPage,
+    ThreadComponent,
+    AboutPage,
+   CommentCreatePage
   ],
 
   imports: [
@@ -184,14 +179,12 @@ var config = {
     ViewbillPage,
     BalancesheetPage,
     Card,
-    ImageGalleryPage,
-    PhotosPage
-    // ThreadCommentsPage,
-    // ThreadCreatePage,
-    // ThreadsPage,
-    // // ThreadComponent,
-    // AboutPage,
-    // CommentCreatePage
+    ThreadCommentsPage,
+    ThreadCreatePage,
+    ThreadsPage,
+    ThreadComponent,
+    AboutPage,
+    CommentCreatePage
   ],
 
   providers: [
@@ -215,7 +208,7 @@ var config = {
     EmailComposer,
     Stripe,
     EventDataProvider,
-    // APP_PROVIDERS,
+    APP_PROVIDERS,
     { provide: APP_BASE_HREF, useValue: "/" }
   ]
 })

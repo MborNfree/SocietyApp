@@ -16,7 +16,7 @@ import { FileChooser } from "@ionic-native/file-chooser";
 import { Camera, CameraOptions } from "@ionic-native/camera";
 import { AngularFireDatabase } from "angularfire2/database";
 import { BehaviorSubject } from "rxjs";
-// import * as firebase from 'firebase';
+import * as firebase from 'firebase/app';
 import { EventDataProvider } from "../../providers/event-data/event-data";
 
 declare var cordova: any;
@@ -207,10 +207,10 @@ export class DocumentuploadPage {
     cordova.InAppBrowser.open(file, "_system", "location=yes");
   }
 
-  ngOnInit() {
-    // Let's load our data here
-    //this.loadData();
-  }
+  // ngOnInit() {
+  //   // Let's load our data here
+  //   //this.loadData();
+  // }
   ionViewDidLoad() {
     console.log("ionViewDidLoad DocumentuploadPage");
   }
