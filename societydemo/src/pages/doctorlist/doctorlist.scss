@@ -1,3 +1,13 @@
 page-doctorlist {
-
+    .item-md ion-avatar ion-img, .item-md ion-avatar img {
+        border-radius: 50%;
+        overflow: hidden;
+        width: 80px;
+        height: 64px;
+    }
+    ion-card {
+        display: block;
+        overflow: hidden;
+        height: 94px;
+    }
 }

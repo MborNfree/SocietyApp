@@ -5,15 +5,37 @@
     <button ion-button icon-only menuToggle start>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title align="center">Image-gallery</ion-title>
+    <ion-title align="center">Image-Gallery</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 <ion-content padding>
-  <ion-slides class="image-slider" loop="true" slidesPerView="2">
+  <!-- <ion-slides class="image-slider" loop="true" slidesPerView="2">
     <ion-slide *ngFor="let img of images">
       <ion-img src="assets/img/{{img}}" class="thumb-img" imageViewer ></ion-img>
     </ion-slide>
-  </ion-slides>
+  </ion-slides> -->
+
+  <div class="row">
+    <div class="col col-md-6">
+      <ion-card  (click)="gotogallary()" color='news' class="fixcard col-50">
+        <ion-buttons align="center" large class="call-to-action">
+
+          <ion-img class="action-img" ></ion-img>
+        </ion-buttons>
+        <div class="card-title"  align="center">NATURE</div>
+      </ion-card>
+    </div>
+    <div class="col col-md-6">
+      <ion-card  (click)="gotogallary()" color='event' class="fixcard col-50">
+        <ion-buttons align="center" large class="call-to-action">
+
+          <ion-img class="action-img"  ></ion-img>
+        </ion-buttons>
+        <div class="card-title" align="center">FESTIVALS</div>
+      </ion-card>
+    </div>
+  </div>
+  
 </ion-content>
