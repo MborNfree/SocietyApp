@@ -3,7 +3,7 @@ import { Observable } from 'rxjs/Observable';
 
 import { IThread, IComment } from '../interfaces';
 import * as firebase from "firebase/app";
-// declare var firebase: any;
+//declare var firebase: any;
 
 @Injectable()
 export class DataService {

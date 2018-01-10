@@ -49,9 +49,9 @@ export class UserAvatarComponent  {
         PhotoViewer.show(this.imageUrl, this.user.username, { share: false });
     }
 
-    getUserImage() {
-        var self = this;
+    // getUserImage() {
+    //     var self = this;
 
-        return self.dataService.getStorageRef().child('images/' + self.user.uid + '/profile.png').getDownloadURL();
-    }
+    //     return self.dataService.getStorageRef().child('images/' + self.user.uid + '/profile.png').getDownloadURL();
+    // }
 }

@@ -24,7 +24,7 @@ import { EventlistPage } from "./../eventlist/eventlist";
 import { Card } from "../card/card";
 import { HelpdeskPage } from "./../helpdesk/helpdesk";
 import { Http } from "@angular/http";
-
+declare const jQuery : any;
 
 
 @IonicPage()
@@ -32,12 +32,16 @@ import { Http } from "@angular/http";
   selector: "page-home",
   templateUrl: "home.html"
 })
+
+
 export class HomePage {
   array1: any[];
   username: any;
   sessionUser: any;
   public uIDParam;
   public xmlItems : any;
+
+
 
   constructor(
     public toastCtrl: ToastController,
@@ -243,11 +247,11 @@ export class HomePage {
         "content-type": "application/json"
       },
       "processData": false,
-     // "data": "{ \"sender\": \"SOCKET\", \"route\": \"4\", \"country\": \"91\", \"sms\": [ { \"message\": \"Message1\", \"to\": [ \"8401081227\", \"7507526151\" ] }, { \"message\": \"Message2\", \"to\": [ \"8080328322\", \"8355891739\" ] } ] }"
-      "data" : 'asstes/data/users.json'
+      "data": "{ \"sender\": \"SOCKET\", \"route\": \"4\", \"country\": \"91\", \"sms\": [ { \"message\": \"Hello User testing Message1\", \"to\": [ \"8401081227\", \"9819347279\" ] }, { \"message\": \"Message2\", \"to\": [ \"8080328322\", \"8355891739\" ] } ] }"
+      //"data" : 'asstes/data/users.json'
     }
 
-    $.ajax(settings).done(function (response) {
+    jQuery.ajax(settings).done(function (response) {
       console.log(response);
        alert("sms response =" + response)
     });
