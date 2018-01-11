@@ -1,3 +1,4 @@
+
 // import {firebase} from 'firebase';
 import * as firebase from "firebase/app";
 import { Component, ViewChild } from "@angular/core";
@@ -41,11 +42,12 @@ import { SocietybillPage } from "../pages/societybill/societybill";
 import { SideMenuSettings } from "./../shared/side-menu-content/side-menu-content.component";
 import { ForumPage } from "./../pages/forum/forum";
 import { InboxPage } from "./../pages/inbox/inbox";
-import { BalancesheetPage } from "../pages/balancesheet/balancesheet";
 import { HelpdeskPage } from "./../pages/helpdesk/helpdesk";
 import { ImageGalleryPage } from "./../pages/image-gallery/image-gallery";
 import { ThreadCreatePage } from "../pages/thread-create/thread-create";
 import { ThreadsPage } from "../pages/threads/threads";
+import { ConfigCctvPage } from './../pages/config-cctv/config-cctv';
+
 
 @Component({
   templateUrl: "app.html"
@@ -231,7 +233,11 @@ export class MySocietyApp {
         }
       ]
     });
-
+    this.options.push({
+      iconName: "tv",
+      displayName: "Configure CCTV",
+      component: ConfigCctvPage
+    });
     this.options.push({
       iconName: "calendar",
       displayName: "Events",
@@ -281,11 +287,6 @@ export class MySocietyApp {
       iconName: "help-circle",
       displayName: "Help Desk",
       component: HelpdeskPage
-    });
-
-    this.options.push({
-      displayName: "Balance Sheet",
-      component: BalancesheetPage
     });
 
     // Load options with nested items (without icons)

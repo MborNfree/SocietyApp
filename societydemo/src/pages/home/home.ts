@@ -10,6 +10,8 @@ import { AngularFireAuth } from "angularfire2/auth";
 import { SMS } from "@ionic-native/sms";
 import 'rxjs/add/operator/map';
 import xml2js from 'xml2js';
+import { UniqueDeviceID } from '@ionic-native/unique-device-id';
+
 // Angular Material
 
 import { LoginPage } from "./../login/login";
@@ -50,7 +52,9 @@ export class HomePage {
     public alertCtrl: AlertController,
     public navParams: NavParams,
     private sms: SMS,
-    private http:Http
+    private http:Http,
+    private uniqueDeviceID: UniqueDeviceID
+
   ) {
     this.username = window.localStorage.getItem("Sessioneml");
     this.sessionUser = sessionStorage.getItem("Sessionuid");
@@ -77,14 +81,16 @@ export class HomePage {
           .present();
       }
     });
+
+    this.uniqueDeviceID.get()
+    .then((uuid: any) => console.log(uuid))
+    .catch((error: any) => console.log(error));
   }
 
   ionViewWillEnter()
   {
      this.loadXML();
   }
-
-
 
   loadXML()
   {
@@ -143,6 +149,8 @@ export class HomePage {
   carddetails() {
     this.navCtrl.push(Card);
   }
+
+
   shownews() {
     this.navCtrl.push(NewsPage);
   }
