@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { ResidentlistPage } from './residentlist';
+// import { Script } from 'vm';
 
 @NgModule({
   declarations: [
@@ -10,4 +11,7 @@ import { ResidentlistPage } from './residentlist';
     IonicPageModule.forChild(ResidentlistPage),
   ],
 })
+
 export class ResidentlistPageModule {}
+
+

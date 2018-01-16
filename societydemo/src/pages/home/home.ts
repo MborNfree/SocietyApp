@@ -10,7 +10,7 @@ import { AngularFireAuth } from "angularfire2/auth";
 import { SMS } from "@ionic-native/sms";
 import 'rxjs/add/operator/map';
 import xml2js from 'xml2js';
-import { UniqueDeviceID } from '@ionic-native/unique-device-id';
+
 
 // Angular Material
 
@@ -53,7 +53,7 @@ export class HomePage {
     public navParams: NavParams,
     private sms: SMS,
     private http:Http,
-    private uniqueDeviceID: UniqueDeviceID
+
 
   ) {
     this.username = window.localStorage.getItem("Sessioneml");
@@ -82,9 +82,7 @@ export class HomePage {
       }
     });
 
-    this.uniqueDeviceID.get()
-    .then((uuid: any) => console.log(uuid))
-    .catch((error: any) => console.log(error));
+
   }
 
   ionViewWillEnter()

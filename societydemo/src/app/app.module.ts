@@ -1,3 +1,5 @@
+import { PhotosPage } from './../pages/photos/photos';
+import { ImageGalleryPage } from './../pages/image-gallery/image-gallery';
 import { EmailComposer } from "@ionic-native/email-composer";
 import { InAppBrowser } from "@ionic-native/in-app-browser";
 import { BrowserModule } from "@angular/platform-browser";

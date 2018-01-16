@@ -148,6 +148,7 @@ export class ProfilePage {
   }
 
   onSubmit(value: any): void {
+    alert(JSON.stringify(value));
     console.log("v" + JSON.stringify(value));
 
     if (this.authForm.valid) {

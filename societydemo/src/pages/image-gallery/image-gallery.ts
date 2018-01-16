@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
+import { PhotosPage } from "../photos/photos";
 
 @IonicPage()
 @Component({
@@ -14,4 +15,9 @@ export class ImageGalleryPage {
     "diwali.jpg"
   ];
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
+
+  gotogallary(){
+  this.navCtrl.push(PhotosPage);
+  }
+
 }

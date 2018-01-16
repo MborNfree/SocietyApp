@@ -11,6 +11,7 @@ import { AngularFireDatabase } from 'angularfire2/database';
   templateUrl: 'eventlist.html',
 })
 export class EventlistPage {
+  addNewQuestionSetForm: any;
 
 
   public items = [];
@@ -33,6 +34,7 @@ export class EventlistPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad EventlistPage');
   }
+
 
   doRefresh(refresher) {
     console.log('Begin async operation', refresher);
