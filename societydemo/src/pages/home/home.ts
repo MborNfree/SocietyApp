@@ -13,9 +13,9 @@ import xml2js from 'xml2js';
 
 
 // Angular Material
-
+import firebase from 'firebase';
 import { LoginPage } from "./../login/login";
-
+import { Camera } from '@ionic-native/camera';
 import { ElectricianlistPage } from "./../electricianlist/electricianlist";
 import { PlumberlistPage } from "./../plumberlist/plumberlist";
 import { DoctorlistPage } from "./../doctorlist/doctorlist";
@@ -52,6 +52,7 @@ export class HomePage {
     public navCtrl: NavController,
     public alertCtrl: AlertController,
     public navParams: NavParams,
+    
     private sms: SMS,
     private http:Http,
 
@@ -185,6 +186,19 @@ export class HomePage {
   ViewProfile() {
     this.navCtrl.push(ProfilePage);
   }
+
+
+
+  
+
+
+
+
+
+
+
+
+
 
   //for sending sms to multiple numbers
   // sendTextMessage() {

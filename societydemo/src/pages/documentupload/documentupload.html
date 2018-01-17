@@ -17,7 +17,7 @@
 
 
 <ion-content padding class="bg-masters">
-  <ion-item text-wrap (click)="selectFile()">
+  <!-- <ion-item text-wrap (click)="selectFile()">
 
     <button item-left ion-fab color="primary">
       <ion-icon name="list-box"></ion-icon>
@@ -34,7 +34,7 @@
         <ion-icon name="download" color="danger"></ion-icon>
       </button>
     </ion-item>
-  </div>
+  </div> -->
   <!-- <form>
     <ion-list>
       <ion-buttons>
@@ -49,7 +49,7 @@
       </div>
     </ion-list>
   </form> -->
-
+<!-- 
   <ion-list>
 
     <ion-item-sliding *ngFor="let item of items" no-lines>
@@ -59,12 +59,13 @@
       </ion-item>
 
       <ion-item-options>
+        
         <button ion-button color="danger" (click)="removeItem(item)">
           <ion-icon name="trash"></ion-icon> Delete</button>
       </ion-item-options>
     </ion-item-sliding>
 
-  </ion-list>
+  </ion-list> -->
 
   <ion-list *ngFor="let document of Circular">
     <ion-item (click)="viewItem()">
@@ -77,7 +78,9 @@
         <ion-row>
           <ion-col>
             <a href="{{document.icon}}" target="_blank">
-              <button ion-button icon-only default class="button">
+                <button ion-button icon-only default class="button">
+                    <ion-icon name="download"></ion-icon>View</button>
+              <button ion-button icon-only default  class="button">
                 <ion-icon name="download"></ion-icon>Download</button>
             </a>
           </ion-col>

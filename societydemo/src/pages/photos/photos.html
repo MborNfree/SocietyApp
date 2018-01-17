@@ -17,11 +17,41 @@
 
 
 <ion-content padding>
-  <ion-slides class="image-slider" loop="true" slidesPerView="2">
+  <!-- <ion-slides class="image-slider" loop="true" slidesPerView="2">
     <ion-slide *ngFor="let img of   ">
       <ion-img src="assets/img/{{img}}" class="thumb-img" imageViewer ></ion-img>
     </ion-slide>
-  </ion-slides> 
+  </ion-slides>-->
 
+  <ion-grid>
+  
+        <ion-row>
+      <ion-col click="display()">
+        
+          <img src="assets/img/diwali.jpg"/>
+        </ion-col>
+        <ion-col>
+            <img src="assets/img/diwali.jpg"/>
+          </ion-col>
 
+          <ion-col>
+              <img src="assets/img/diwali.jpg" >
+            </ion-col>
+        </ion-row>
+          
+                <ion-row>
+                    <ion-col>
+                        <img src="assets/img/diwali.jpg" >
+                      </ion-col>
+                      <ion-col>
+                          <img src="assets/img/diwali.jpg" >
+                        </ion-col>              
+                        <ion-col>
+                            <img src="assets/img/diwali.jpg" >
+                          </ion-col>
+            </ion-row>
+                  </ion-grid>
+
+                  <button ion-button (click)="display()">Display</button>
+                  <img src="{{imgsource}}">
 </ion-content>

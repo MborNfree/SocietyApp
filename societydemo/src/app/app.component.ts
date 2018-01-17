@@ -19,6 +19,8 @@ import { Observable } from "rxjs/Observable";
 import { AuthService } from "../shared/services/auth.service";
 // import { DataService } from "../shared/services/data.service";
 
+// import { Push, PushObject, PushOptions } from '@ionic-native/push';
+
 // Models
 import {
   MenuOptionModel,
@@ -93,6 +95,7 @@ export class MySocietyApp {
     public afAuth: AngularFireAuth,
     public af: AngularFireDatabase,
     // public dataService: DataService,
+   
     public authService: AuthService,
     public events: Events,
     public modalCtrl: ModalController,
@@ -166,8 +169,52 @@ export class MySocietyApp {
       this.getStatus();
       // Initialize some options
       this.initializeOptions();
+
+      // // pushsetup
+      // this.pushsetup();
     });
   }
+
+  // //method  for pushsetup
+  // pushsetup() {
+  //   const options: PushOptions = {
+  //    android: {
+  //        senderID: '583609948893'
+  //    },
+  //    ios: {
+  //        alert: 'true',
+  //        badge: true,
+  //        sound: 'false'
+  //    },
+  //    windows: {}
+  // };
+ 
+  // const pushObject: PushObject = this.push.init(options);
+ 
+  // pushObject.on('notification').subscribe((notification: any) => {
+  //   if (notification.additionalData.foreground) {
+  //     let youralert = this.alertCtrl.create({
+  //       title: 'New Push notification',
+  //       message: notification.message
+  //     });
+  //     youralert.present();
+  //   }
+  // });
+ 
+  // pushObject.on('registration').subscribe((registration: any) => {
+  //    //do whatever you want with the registration ID
+  // });
+ 
+  // pushObject.on('error').subscribe(error => alert('Error with Push plugin' + error));
+  // }
+ 
+  // //////////////END METHOD ///////
+  
+    
+
+
+
+
 
   getStatus() {
     if ((this.username = "admin")) {

@@ -6,9 +6,10 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
 import { AngularFireDatabase } from "angularfire2/database";
 import { AngularFireAuth } from "angularfire2/auth";
-import * as firebase from "firebase/app";
+// import * as firebase from "firebase/app";
 // import { Observable } from 'rxjs/Observable';
-
+import firebase from 'firebase';
+import { Item } from 'ionic-angular/components/item/item';
 @IonicPage()
 @Component({
   selector: "page-profile",
@@ -38,6 +39,7 @@ export class ProfilePage {
     public navCtrl: NavController,
     public navParams: NavParams,
     public formBuilder: FormBuilder,
+    public cameraPlugin: Camera,
     private fdb: AngularFireDatabase,
     private fireAuth: AngularFireAuth
   ) {
@@ -72,6 +74,7 @@ export class ProfilePage {
               self.flatno = users[k].flatno;
               self.family = users[k].familyMember;
               self.vehicles = users[k].parking_slot;
+              
             }
           }
         },
@@ -139,6 +142,7 @@ export class ProfilePage {
     });
   }
 
+
   changeStatus() {
     this.inactive = !this.inactive;
   }
@@ -157,4 +161,34 @@ export class ProfilePage {
       console.log(status);
     }
   }
+
+
+  takeSelfie(): void {
+
+    this.cameraPlugin.getPicture({
+      quality : 95,
+      destinationType : this.cameraPlugin.DestinationType.DATA_URL,
+      sourceType : this.cameraPlugin.PictureSourceType.CAMERA,
+      allowEdit : true,
+      encodingType: this.cameraPlugin.EncodingType.PNG,
+      targetWidth: 500,
+      targetHeight: 500,
+      saveToPhotoAlbum: true
+    }).then(profilePicture => {
+    // Send the picture to Firebase Storage
+    const selfieRef = firebase.storage().ref('profilePictures/user1/'+Image);
+    selfieRef
+      .putString(profilePicture, 'base64', {contentType: 'image/png'})
+      .then(savedProfilePicture => {
+        firebase
+          .database()
+          .ref(`users/user1/profilePicture`)
+          .push(savedProfilePicture.downloadURL);
+      });
+  },
+     error => {
+      // Log an error to the console if something goes wrong.
+      console.log("ERROR -> " + JSON.stringify(error));
+    });    
+   }
 }

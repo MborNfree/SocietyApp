@@ -1,3 +1,6 @@
+
+import { CctvFootagePage } from './../pages/cctv-footage/cctv-footage';
+import { StreamingMedia } from '@ionic-native/streaming-media';
 import { PhotosPage } from './../pages/photos/photos';
 import { ImageGalleryPage } from './../pages/image-gallery/image-gallery';
 import { EmailComposer } from "@ionic-native/email-composer";
@@ -23,7 +26,7 @@ import { HttpModule } from "@angular/http";
 import { SMS } from "@ionic-native/sms";
 import { Stripe } from "@ionic-native/stripe";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { StreamingMedia } from '@ionic-native/streaming-media';
+
 import { UniqueDeviceID } from '@ionic-native/unique-device-id';
 
 // import * as $ from "jquery";
@@ -214,6 +217,8 @@ var config = {
     EmailComposer,
     Stripe,
     EventDataProvider,
+    StreamingMedia,
+    
     APP_PROVIDERS,
     { provide: APP_BASE_HREF, useValue: "/" },
     StreamingMedia,
