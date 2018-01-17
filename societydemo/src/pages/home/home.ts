@@ -10,6 +10,8 @@ import { AngularFireAuth } from "angularfire2/auth";
 import { SMS } from "@ionic-native/sms";
 import 'rxjs/add/operator/map';
 import xml2js from 'xml2js';
+
+
 // Angular Material
 import firebase from 'firebase';
 import { LoginPage } from "./../login/login";
@@ -51,7 +53,9 @@ export class HomePage {
     public navParams: NavParams,
     
     private sms: SMS,
-    private http:Http
+    private http:Http,
+
+
   ) {
     this.username = window.localStorage.getItem("Sessioneml");
     this.sessionUser = sessionStorage.getItem("Sessionuid");
@@ -78,14 +82,14 @@ export class HomePage {
           .present();
       }
     });
+
+
   }
 
   ionViewWillEnter()
   {
      this.loadXML();
   }
-
-
 
   loadXML()
   {
@@ -144,6 +148,8 @@ export class HomePage {
   carddetails() {
     this.navCtrl.push(Card);
   }
+
+
   shownews() {
     this.navCtrl.push(NewsPage);
   }

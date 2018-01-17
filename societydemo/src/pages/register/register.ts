@@ -11,6 +11,7 @@ import { AngularFireDatabase } from "angularfire2/database";
 import { AngularFireList } from "angularfire2/database";
 // import firebase from "firebase";
 import * as firebase from "firebase/app";
+import { UniqueDeviceID } from '@ionic-native/unique-device-id';
 
 import { LoginPage } from "./../login/login";
 
@@ -20,6 +21,7 @@ import { LoginPage } from "./../login/login";
   templateUrl: "register.html"
 })
 export class RegisterPage {
+  uDid: any;
   users: AngularFireList<any>;
   authForm: FormGroup;
   arrData = [];
@@ -52,9 +54,10 @@ export class RegisterPage {
     private fdb: AngularFireDatabase,
     public navParams: NavParams,
     public formBuilder: FormBuilder,
-    private fire: AngularFireAuth
+    private fire: AngularFireAuth,
+    private uniqueDeviceID: UniqueDeviceID
   ) {
-    alert(this.user);
+    //alert(this.user);
     this.users = fdb.list("/users");
     this.authForm = formBuilder.group({
       usernm: [
@@ -142,6 +145,12 @@ export class RegisterPage {
         ])
       ]
     });
+
+  //  this.uDid = this.uniqueDeviceID.get()
+  //   .then((uDid: any) => alert('id'+uDid))
+  //   .catch((error: any) => alert('err'+error));
+
+  //   alert('did'+ JSON.parse(this.uDid));
   }
 
   ionViewDidLoad() {
@@ -162,7 +171,9 @@ export class RegisterPage {
   }
 
   registerUser(phoneNumber: number) {
-    alert(this.fname.value);
+
+
+    //alert(this.fname.value);
     const appVerifier = this.recaptchaVerifier;
     //const phoneNumberString = "+91" + phoneNumber;
 
@@ -170,7 +181,7 @@ export class RegisterPage {
       .createUserWithEmailAndPassword(this.email.value, this.password.value)
       .then(data => {
         let currentUserUid = this.fire.auth.currentUser.uid;
-        this.fdb.list("/users/").push({
+        this.fdb.list("/users/"+this.fire.auth.currentUser.uid).push({
           ID: currentUserUid,
           email: this.email.value,
           password: this.password.value,
@@ -181,6 +192,7 @@ export class RegisterPage {
           parking_slot: this.vehicle.value,
           familyMember: this.familyMember.value,
           username: this.user.value
+
         });
 
         console.log("got data ", data);

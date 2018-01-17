@@ -26,6 +26,9 @@ import { HttpModule } from "@angular/http";
 import { SMS } from "@ionic-native/sms";
 import { Stripe } from "@ionic-native/stripe";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+
+import { UniqueDeviceID } from '@ionic-native/unique-device-id';
+
 // import * as $ from "jquery";
 import { APP_BASE_HREF } from "@angular/common";
 
@@ -73,6 +76,7 @@ import { ThreadCreatePage } from "../pages/thread-create/thread-create";
 import { ThreadsPage } from "../pages/threads/threads";
 import { CommentCreatePage } from "../pages/comment-create/comment-create";
 import { AboutPage } from "../pages/about/about";
+import { ConfigCctvPage } from '../pages/config-cctv/config-cctv';
 
 // Custom components
 import { ThreadComponent } from "../shared/components/thread.component";
@@ -130,10 +134,8 @@ var config = {
     ThreadsPage,
     ThreadComponent,
     AboutPage,
-    CctvFootagePage,
    CommentCreatePage,
-   ImageGalleryPage,
-   PhotosPage
+   ConfigCctvPage
   ],
 
   imports: [
@@ -191,10 +193,8 @@ var config = {
     ThreadComponent,
     AboutPage,
     CommentCreatePage,
-    CctvFootagePage,
-    ImageGalleryPage,
-    PhotosPage
-  ], 
+    ConfigCctvPage
+  ],
 
   providers: [
     StatusBar,
@@ -220,7 +220,9 @@ var config = {
     StreamingMedia,
     
     APP_PROVIDERS,
-    { provide: APP_BASE_HREF, useValue: "/" }
+    { provide: APP_BASE_HREF, useValue: "/" },
+    StreamingMedia,
+    UniqueDeviceID
   ]
 })
 export class AppModule {}
