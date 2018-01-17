@@ -14,9 +14,9 @@
     <ion-refresher (ionRefresh)="doRefresh($event)">
         <ion-refresher-content></ion-refresher-content>
       </ion-refresher>
-  <ion-card *ngFor="let item of items">
+  <ion-card *ngFor="let user of users">
 
-    <ion-item (click)="viewItem(item)">
+    <ion-item (click)="viewItem(user)">
       <div class="row">
         <div class="col">
           <ion-avatar>
@@ -25,9 +25,9 @@
           </ion-avatar>
         </div>            
         <div class="col">
-          <p>{{item.Service_name}}</p>
-          <p>{{item.Service_type}} </p>
-          <p><ion-icon name="call"></ion-icon>{{item.Contact_no}}</p>
+          <p>{{user.Service_name}}</p>
+          <p>{{user.Service_type}} </p>
+          <p><ion-icon name="call"></ion-icon>{{user.Contact_no}}</p>
         </div> 
       </div>     
     </ion-item>

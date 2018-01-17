@@ -11,7 +11,7 @@ import { AngularFireDatabase } from "angularfire2/database";
 export class DoctorlistPage {
   services = [];
   arrData = [];
-  public items = [];
+  public users = [];
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -21,8 +21,8 @@ export class DoctorlistPage {
       .list("/services/")
       .valueChanges()
       .subscribe(_data => {
-        this.items = _data;
-        console.log(this.items);
+        this.users = _data;
+        console.log(this.users);
       });
   }
 
@@ -37,9 +37,9 @@ export class DoctorlistPage {
       refresher.complete();
     }, 2000);
   }
-  viewItem(item) {
+  viewItem(user) {
     this.navCtrl.push(MemberprofilePage, {
-      item: item
+      item: user
     });
   }
 }

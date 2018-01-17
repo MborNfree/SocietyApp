@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component,NgZone } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import firebase from 'firebase';
 /**
  * Generated class for the PhotosPage page.
  *
@@ -14,18 +14,27 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'photos.html',
 })
 export class PhotosPage {
+  imgsource: any;
 
   images = [
     "holi.jpg",
     "independence day.png",
     "Party-Poppers-icon.png",
     "diwali.jpg"
-  ];
+  ]; 
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public zone: NgZone) {
   }
 
+
+  display() {
+    firebase.storage().ref().child('upload/festival.jpg').getDownloadURL().then((url) => {
+      this.zone.run(() => {
+        this.imgsource = url;
+       })
+    })
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad PhotosPage');
   }

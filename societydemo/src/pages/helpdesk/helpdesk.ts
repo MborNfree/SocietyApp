@@ -14,6 +14,7 @@ import { File } from "@ionic-native/file";
 // import { Transfer, TransferObject } from '@ionic-native/transfer';
 import { FilePath } from "@ionic-native/file-path";
 import { Camera } from "@ionic-native/camera";
+import firebase from 'firebase';
 
 declare var cordova: any;
 
@@ -25,11 +26,15 @@ declare var cordova: any;
 export class HelpdeskPage {
   Instructions: string = "OpenIssues";
 
+  public myPhotosRef: any;
+  public myPhoto: any;
+public myPhotoURL: any;
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     public Platform: Platform,
     private camera: Camera,
+    public cameraPlugin: Camera,
     private file: File,
     private filePath: FilePath,
     public actionSheetCtrl: ActionSheetController,
@@ -37,6 +42,7 @@ export class HelpdeskPage {
     public platform: Platform,
     public loadingCtrl: LoadingController
   ) {
+    this.myPhotosRef = firebase.storage().ref('/Photos_gallary/');
     this.account.Instructions = "OpenIssues";
     //  this.isAndroid = Platform.is('android');
   }
@@ -53,12 +59,56 @@ export class HelpdeskPage {
           text: "Load From Library",
           handler: () => {
             this.takePicture(this.camera.PictureSourceType.PHOTOLIBRARY);
+            this.cameraPlugin.getPicture({
+              quality: 100,
+              destinationType: this.cameraPlugin.DestinationType.DATA_URL,
+             sourceType:this.cameraPlugin.PictureSourceType.PHOTOLIBRARY,
+              encodingType: this.cameraPlugin.EncodingType.PNG,
+            }).then(imageData => {
+              // Send the picture to Firebase Storage
+              const selfieRef = firebase.storage().ref('profilePictures/user1/'+Image);
+              selfieRef
+                .putString(imageData, 'base64', {contentType: 'image/png'})
+                .then(savedProfilePicture => {
+                  firebase
+                    .database()
+                    .ref(`users/user1/profilePicture`)
+                    .push(savedProfilePicture.downloadURL);
+                });
+            }, error => {
+              console.log("ERROR -> " + JSON.stringify(error));
           }
+          )}      
         },
         {
           text: "Use Camera",
           handler: () => {
             this.takePicture(this.camera.PictureSourceType.CAMERA);
+            this.cameraPlugin.getPicture({
+              quality : 95,
+              destinationType : this.cameraPlugin.DestinationType.DATA_URL,
+              sourceType : this.cameraPlugin.PictureSourceType.CAMERA,
+              allowEdit : true,
+              encodingType: this.cameraPlugin.EncodingType.PNG,
+              targetWidth: 500,
+              targetHeight: 500,
+              saveToPhotoAlbum: true
+            }).then(profilePicture => {
+            // Send the picture to Firebase Storage
+            const selfieRef = firebase.storage().ref('profilePictures/user1/'+Image);
+            selfieRef
+              .putString(profilePicture, 'base64', {contentType: 'image/png'})
+              .then(savedProfilePicture => {
+                firebase
+                  .database()
+                  .ref(`users/user1/profilePicture`)
+                  .push(savedProfilePicture.downloadURL);
+              });
+          },
+             error => {
+              // Log an error to the console if something goes wrong.
+              console.log("ERROR -> " + JSON.stringify(error));
+            });                         
           }
         },
         {
@@ -113,6 +163,28 @@ export class HelpdeskPage {
         this.presentToast("Error while selecting image.");
       }
     );
+  }
+
+
+  private uploadPhoto(): void {
+    this.myPhotosRef.child(this.generateUUID()).child('myPhoto.png')
+    // // const selfieRef = firebase.storage().ref('profilePictures/user1/'+Image);
+    // selfieRef
+      .putString(this.myPhoto, 'base64', { contentType: 'image/png' })
+      .then((savedPicture) => {
+        this.myPhotoURL = savedPicture.downloadURL;
+      });
+  }
+
+  
+  private generateUUID(): any {
+    var d = new Date().getTime();
+    var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx'.replace(/[xy]/g, function (c) {
+      var r = (d + Math.random() * 16) % 16 | 0;
+      d = Math.floor(d / 16);
+      return (c == 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+    });
+    return uuid;
   }
 
   //create a new name for the image

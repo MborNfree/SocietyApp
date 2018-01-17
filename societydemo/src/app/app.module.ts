@@ -1,3 +1,6 @@
+
+import { CctvFootagePage } from './../pages/cctv-footage/cctv-footage';
+import { StreamingMedia } from '@ionic-native/streaming-media';
 import { PhotosPage } from './../pages/photos/photos';
 import { ImageGalleryPage } from './../pages/image-gallery/image-gallery';
 import { EmailComposer } from "@ionic-native/email-composer";
@@ -127,7 +130,10 @@ var config = {
     ThreadsPage,
     ThreadComponent,
     AboutPage,
-   CommentCreatePage
+    CctvFootagePage,
+   CommentCreatePage,
+   ImageGalleryPage,
+   PhotosPage
   ],
 
   imports: [
@@ -184,8 +190,11 @@ var config = {
     ThreadsPage,
     ThreadComponent,
     AboutPage,
-    CommentCreatePage
-  ],
+    CommentCreatePage,
+    CctvFootagePage,
+    ImageGalleryPage,
+    PhotosPage
+  ], 
 
   providers: [
     StatusBar,
@@ -208,6 +217,8 @@ var config = {
     EmailComposer,
     Stripe,
     EventDataProvider,
+    StreamingMedia,
+    
     APP_PROVIDERS,
     { provide: APP_BASE_HREF, useValue: "/" }
   ]
