@@ -33,6 +33,7 @@ declare const jQuery : any;
 @Component({
   selector: "page-home",
   templateUrl: "home.html"
+
 })
 
 
@@ -59,6 +60,7 @@ export class HomePage {
     this.username = window.localStorage.getItem("Sessioneml");
     this.sessionUser = sessionStorage.getItem("Sessionuid");
     this.uIDParam = navParams.get("uid");
+
   }
 
   ionViewDidLoad() {

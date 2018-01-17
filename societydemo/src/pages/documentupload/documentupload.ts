@@ -16,7 +16,7 @@ import { FileChooser } from "@ionic-native/file-chooser";
 import { Camera, CameraOptions } from "@ionic-native/camera";
 import { AngularFireDatabase } from "angularfire2/database";
 import { BehaviorSubject } from "rxjs";
-import * as firebase from 'firebase/app';
+// import * as firebase from 'firebase/app';
 import { EventDataProvider } from "../../providers/event-data/event-data";
 
 declare var cordova: any;

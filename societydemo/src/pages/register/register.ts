@@ -24,6 +24,7 @@ export class RegisterPage {
   uDid: any;
   users: AngularFireList<any>;
   authForm: FormGroup;
+
   arrData = [];
   usernm;
   firstnme;
@@ -146,11 +147,6 @@ export class RegisterPage {
       ]
     });
 
-  //  this.uDid = this.uniqueDeviceID.get()
-  //   .then((uDid: any) => alert('id'+uDid))
-  //   .catch((error: any) => alert('err'+error));
-
-  //   alert('did'+ JSON.parse(this.uDid));
   }
 
   ionViewDidLoad() {
@@ -172,16 +168,25 @@ export class RegisterPage {
 
   registerUser(phoneNumber: number) {
 
-
+  // alert('did'+ JSON.parse(this.uDid));
+  //   alert(JSON.stringify(this.uDid));
     //alert(this.fname.value);
-    const appVerifier = this.recaptchaVerifier;
+   // const appVerifier = this.recaptchaVerifier;
     //const phoneNumberString = "+91" + phoneNumber;
-
+    // this.fdb.list("/users/DeviceId").push({
+    //   device_id :this.uDid
+    // });
+// alert(this.uDid);
     this.fire.auth
       .createUserWithEmailAndPassword(this.email.value, this.password.value)
       .then(data => {
+
+        this.uniqueDeviceID.get()
+        .then((uDid: any) => this.uDid = uDid)
+        .catch((error: any) => alert('err'+error));
+        alert(this.uDid);
         let currentUserUid = this.fire.auth.currentUser.uid;
-        this.fdb.list("/users/"+this.fire.auth.currentUser.uid).push({
+        this.fdb.list("/users/").push({
           ID: currentUserUid,
           email: this.email.value,
           password: this.password.value,
@@ -191,10 +196,12 @@ export class RegisterPage {
           wing: this.wing.value,
           parking_slot: this.vehicle.value,
           familyMember: this.familyMember.value,
-          username: this.user.value
-
+          username: this.user.value,
+          device_id :this.uDid
         });
-
+        this.fdb.list("/users_device/").push({
+          device_id :this.uDid
+        });
         console.log("got data ", data);
 
         this.alert("Registered!");
