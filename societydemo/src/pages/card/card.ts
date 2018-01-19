@@ -4,12 +4,6 @@ import { Http, Headers } from "@angular/http";
 
 import { Stripe } from "@ionic-native/stripe";
 
-/**
- * Generated class for the Card page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
 @IonicPage()
 @Component({
   selector: "page-card",
@@ -27,7 +21,7 @@ export class Card {
     public navParams: NavParams,
     public stripe: Stripe,
     public http: Http
-  ) {}
+  ) { }
 
   ionViewDidLoad() {
     console.log("ionViewDidLoad Card");

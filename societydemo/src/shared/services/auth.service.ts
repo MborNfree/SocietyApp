@@ -8,35 +8,35 @@ import * as firebase from "firebase/app";
 @Injectable()
 export class AuthService {
 
-    usersRef: any = firebase.database().ref('users');
+  usersRef: any = firebase.database().ref('users');
 
-    constructor() { }
+  constructor() { }
 
-    registerUser(user: UserCredentials) {
-        return firebase.auth().createUserWithEmailAndPassword(user.email, user.password);
-    }
+  registerUser(user: UserCredentials) {
+    return firebase.auth().createUserWithEmailAndPassword(user.email, user.password);
+  }
 
-    signInUser(email: string, password: string) {
-        return firebase.auth().signInWithEmailAndPassword(email, password);
-    }
+  signInUser(email: string, password: string) {
+    return firebase.auth().signInWithEmailAndPassword(email, password);
+  }
 
-    signOut() {
-        return firebase.auth().signOut();
-    }
+  signOut() {
+    return firebase.auth().signOut();
+  }
 
-    addUser(username: string, dateOfBirth: string, uid: string) {
-        this.usersRef.child(uid).update({
-            username: username,
-            dateOfBirth: dateOfBirth
-        });
-    }
+  addUser(username: string, dateOfBirth: string, uid: string) {
+    this.usersRef.child(uid).update({
+      username: username,
+      dateOfBirth: dateOfBirth
+    });
+  }
 
-    getLoggedInUser() {
-        return firebase.auth().currentUser;
-    }
+  getLoggedInUser() {
+    return firebase.auth().currentUser;
+  }
 
-    onAuthStateChanged(callback) {
-        return firebase.auth().onAuthStateChanged(callback);
-    }
+  onAuthStateChanged(callback) {
+    return firebase.auth().onAuthStateChanged(callback);
+  }
 
 }

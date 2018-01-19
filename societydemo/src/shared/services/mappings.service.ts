@@ -17,6 +17,7 @@ export class MappingsService {
 
         Object.keys(snapshot.val()).map((key: any) => {
             let thread: any = list[key];
+            //console.log("map"+thread);
             threads.push({
                 key: key,
                 title: thread.title,

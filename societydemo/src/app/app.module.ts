@@ -1,12 +1,9 @@
+// Dependency
 
-import { CctvFootagePage } from './../pages/cctv-footage/cctv-footage';
 import { StreamingMedia } from '@ionic-native/streaming-media';
-import { PhotosPage } from './../pages/photos/photos';
-import { ImageGalleryPage } from './../pages/image-gallery/image-gallery';
 import { EmailComposer } from "@ionic-native/email-composer";
 import { InAppBrowser } from "@ionic-native/in-app-browser";
 import { BrowserModule } from "@angular/platform-browser";
-// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ErrorHandler, NgModule } from "@angular/core";
 import { IonicApp, IonicErrorHandler, IonicModule } from "ionic-angular";
 import { SplashScreen } from "@ionic-native/splash-screen";
@@ -32,6 +29,7 @@ import { UniqueDeviceID } from '@ionic-native/unique-device-id';
 // import * as $ from "jquery";
 import { APP_BASE_HREF } from "@angular/common";
 
+//pages
 import { DocumentuploadPage } from "./../pages/documentupload/documentupload";
 import { ElectricianlistPage } from "./../pages/electricianlist/electricianlist";
 import { PlumberlistPage } from "./../pages/plumberlist/plumberlist";
@@ -47,11 +45,9 @@ import { LoginPage } from "./../pages/login/login";
 import { MySocietyApp } from "./app.component";
 import { HomePage } from "../pages/home/home";
 import { RegisterPage } from "../pages/register/register";
-import { ViewprofilePage } from "../pages/viewprofile/viewprofile";
 import { ForgotpasswordPage } from "../pages/forgotpassword/forgotpassword";
 import { MemberprofilePage } from "../pages/memberprofile/memberprofile";
 import { EventdetailsPage } from "../pages/eventdetails/eventdetails";
-
 import { SocietybillPage } from "../pages/societybill/societybill";
 import { BillingchargesPage } from "../pages/billingcharges/billingcharges";
 import { SideMenuContentComponent } from "../shared/side-menu-content/side-menu-content.component";
@@ -76,13 +72,21 @@ import { ThreadCreatePage } from "../pages/thread-create/thread-create";
 import { ThreadsPage } from "../pages/threads/threads";
 import { CommentCreatePage } from "../pages/comment-create/comment-create";
 import { AboutPage } from "../pages/about/about";
+import { PhotosPage } from './../pages/photos/photos';
+import { ImageGalleryPage } from './../pages/image-gallery/image-gallery';
 import { ConfigCctvPage } from '../pages/config-cctv/config-cctv';
-
+import { CctvFootagePage } from './../pages/cctv-footage/cctv-footage';
+import { ServiceDetailPage } from '../pages/service-detail/service-detail';
 // Custom components
 import { ThreadComponent } from "../shared/components/thread.component";
 // import { UserAvatarComponent } from "../shared/components/user-avatar.component";
+
 // providers
 import { APP_PROVIDERS } from "../providers/app.providers";
+import { DatabaseProvider } from '../providers/database/database';
+import { ImageProvider } from '../providers/image/image';
+import { PreloaderProvider } from '../providers/preloader/preloader';
+
 
 var config = {
   apiKey: "AIzaSyCdBaGl6H_IuyzMyEnjq-6VRD5-2alxUtg",
@@ -107,7 +111,6 @@ var config = {
     PlumberlistPage,
     ElectricianlistPage,
     DocumentuploadPage,
-    ViewprofilePage,
     RegisterPage,
     ForgotpasswordPage,
     EventlistPage,
@@ -134,8 +137,9 @@ var config = {
     ThreadsPage,
     ThreadComponent,
     AboutPage,
-   CommentCreatePage,
-   ConfigCctvPage
+    CommentCreatePage,
+    ConfigCctvPage,
+    ServiceDetailPage
   ],
 
   imports: [
@@ -163,7 +167,6 @@ var config = {
     RegisterPage,
     ElectricianlistPage,
     DocumentuploadPage,
-    ViewprofilePage,
     RegisterPage,
     ForgotpasswordPage,
     EventlistPage,
@@ -193,7 +196,8 @@ var config = {
     ThreadComponent,
     AboutPage,
     CommentCreatePage,
-    ConfigCctvPage
+    ConfigCctvPage,
+    ServiceDetailPage
   ],
 
   providers: [
@@ -218,11 +222,14 @@ var config = {
     Stripe,
     EventDataProvider,
     StreamingMedia,
-    
+
     APP_PROVIDERS,
     { provide: APP_BASE_HREF, useValue: "/" },
     StreamingMedia,
-    UniqueDeviceID
+    UniqueDeviceID,
+    DatabaseProvider,
+    ImageProvider,
+    PreloaderProvider
   ]
 })
-export class AppModule {}
+export class AppModule { }

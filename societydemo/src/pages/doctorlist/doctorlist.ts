@@ -1,7 +1,8 @@
-import { MemberprofilePage } from "./../memberprofile/memberprofile";
+
 import { Component } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
 import { AngularFireDatabase } from "angularfire2/database";
+import { ServiceDetailPage } from '../service-detail/service-detail';
 
 @IonicPage()
 @Component({
@@ -38,7 +39,7 @@ export class DoctorlistPage {
     }, 2000);
   }
   viewItem(user) {
-    this.navCtrl.push(MemberprofilePage, {
+    this.navCtrl.push(ServiceDetailPage, {
       item: user
     });
   }

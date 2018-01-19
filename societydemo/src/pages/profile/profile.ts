@@ -6,8 +6,7 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
 import { AngularFireDatabase } from "angularfire2/database";
 import { AngularFireAuth } from "angularfire2/auth";
-// import * as firebase from "firebase/app";
-// import { Observable } from 'rxjs/Observable';
+
 import firebase from 'firebase';
 import { Item } from 'ionic-angular/components/item/item';
 @IonicPage()
@@ -54,7 +53,7 @@ export class ProfilePage {
       let self = this;
       ref.on(
         "value",
-        function(data) {
+        function (data) {
           console.log("data");
 
           var users = data.val();
@@ -74,11 +73,11 @@ export class ProfilePage {
               self.flatno = users[k].flatno;
               self.family = users[k].familyMember;
               self.vehicles = users[k].parking_slot;
-              
+
             }
           }
         },
-        function(error) {
+        function (error) {
           //Error code goes here
         }
       );
@@ -142,7 +141,6 @@ export class ProfilePage {
     });
   }
 
-
   changeStatus() {
     this.inactive = !this.inactive;
   }
@@ -154,7 +152,6 @@ export class ProfilePage {
   onSubmit(value: any): void {
     alert(JSON.stringify(value));
     console.log("v" + JSON.stringify(value));
-
     if (this.authForm.valid) {
       let currentUserUid = this.fireAuth.auth.currentUser.uid;
       let status = this.fdb.object(`users/${currentUserUid}`).update(value);
@@ -166,29 +163,29 @@ export class ProfilePage {
   takeSelfie(): void {
 
     this.cameraPlugin.getPicture({
-      quality : 95,
-      destinationType : this.cameraPlugin.DestinationType.DATA_URL,
-      sourceType : this.cameraPlugin.PictureSourceType.CAMERA,
-      allowEdit : true,
+      quality: 95,
+      destinationType: this.cameraPlugin.DestinationType.DATA_URL,
+      sourceType: this.cameraPlugin.PictureSourceType.CAMERA,
+      allowEdit: true,
       encodingType: this.cameraPlugin.EncodingType.PNG,
       targetWidth: 500,
       targetHeight: 500,
       saveToPhotoAlbum: true
     }).then(profilePicture => {
-    // Send the picture to Firebase Storage
-    const selfieRef = firebase.storage().ref('profilePictures/user1/'+Image);
-    selfieRef
-      .putString(profilePicture, 'base64', {contentType: 'image/png'})
-      .then(savedProfilePicture => {
-        firebase
-          .database()
-          .ref(`users/user1/profilePicture`)
-          .push(savedProfilePicture.downloadURL);
+      // Send the picture to Firebase Storage
+      const selfieRef = firebase.storage().ref('profilePictures/user1/' + Image);
+      selfieRef
+        .putString(profilePicture, 'base64', { contentType: 'image/png' })
+        .then(savedProfilePicture => {
+          firebase
+            .database()
+            .ref(`users/user1/profilePicture`)
+            .push(savedProfilePicture.downloadURL);
+        });
+    },
+      error => {
+        // Log an error to the console if something goes wrong.
+        console.log("ERROR -> " + JSON.stringify(error));
       });
-  },
-     error => {
-      // Log an error to the console if something goes wrong.
-      console.log("ERROR -> " + JSON.stringify(error));
-    });    
-   }
+  }
 }
