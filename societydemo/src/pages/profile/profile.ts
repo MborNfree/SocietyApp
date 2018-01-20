@@ -173,7 +173,7 @@ export class ProfilePage {
       encodingType: this.cameraPlugin.EncodingType.PNG,
       targetWidth: 500,
       targetHeight: 500,
-      saveToPhotoAlbum: true
+      saveToPhotoAlbum: true  
     }).then(profilePicture => {
     // Send the picture to Firebase Storage
     const selfieRef = firebase.storage().ref('profilePictures/user1/'+Image);

@@ -135,6 +135,8 @@ var config = {
     ThreadComponent,
     AboutPage,
    CommentCreatePage,
+   ImageGalleryPage,
+   PhotosPage,
    ConfigCctvPage
   ],
 
@@ -193,6 +195,8 @@ var config = {
     ThreadComponent,
     AboutPage,
     CommentCreatePage,
+    ImageGalleryPage,
+    PhotosPage,
     ConfigCctvPage
   ],
 
