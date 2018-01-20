@@ -73,17 +73,16 @@ export class LoginPage {
         this.currentUserUid = JSON.stringify(data.uid);
         sessionStorage.setItem("Sessionuid", this.currentUserUid);
         sessionStorage.setItem("Sessioneml", data.email);
-        // let status = this.fdb.list("users", ref =>
-        //   ref.orderByChild("ID").equalTo("ID")
-        // );
+        sessionStorage.setItem("isLoggedIn", "true");
+
         console.log("Success! You're logged in");
         // console.log("st" + JSON.stringify(status));
-        if(data.email=='admin@niyanta.co.in'){
-         // alert('Admin Dashboard');
+        if (data.email == 'admin@niyanta.co.in') {
+          // alert('Admin Dashboard');
           this.navCtrl.push(HomePage, {
             uid: this.currentUserUid
           });
-        }else{
+        } else {
           this.navCtrl.push(HomePage, {
             uid: this.currentUserUid
           });

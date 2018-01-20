@@ -1,6 +1,6 @@
 page-home {
-  .imgcarousel {
-    height: 100px;
+  .imgcarousel{
+    height: 40%;
   }
   .fixcard {
      height:100%;
@@ -10,6 +10,12 @@ page-home {
       align-self: center;
     padding: 20px !important;
   }
+  .slide{
+    height: 80%;
+  }
+.slide img{
+  height: 80%;
+}
   .swiper-slide img {
     width: auto;
     max-width: 100%;
@@ -45,7 +51,7 @@ page-home {
     text-transform: capitalize;
   }
 
- 
+
   .item-service{
       width: 100px  !important;
       height: 100px !important;
@@ -54,7 +60,7 @@ page-home {
   @media (max-width : 676px ) and (min-height:480 px){
    ion-avatar img  {
     width:100% !important;
-    height : 100% !important; 
+    height : 100% !important;
     max-width: 100px !important;  //any size
     max-height: 100px !important; //any size
     }
@@ -86,12 +92,12 @@ page-home {
   //     margin-top: 20px;
   //   }
   // }
-  
+
 
   .service-col-33 {
     width: 33%;
     height:140px;
-    
+
   }
 
   .cards-action-img {
@@ -111,7 +117,7 @@ page-home {
     width: 40px;
     height: 30px;
     overflow: hidden;
-  } 
+  }
 
   .service-card {
     height: 118px;

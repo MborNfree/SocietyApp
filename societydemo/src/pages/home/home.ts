@@ -33,6 +33,7 @@ declare const jQuery : any;
 @Component({
   selector: "page-home",
   templateUrl: "home.html"
+
 })
 
 
@@ -51,7 +52,7 @@ export class HomePage {
     public navCtrl: NavController,
     public alertCtrl: AlertController,
     public navParams: NavParams,
-    
+
     private sms: SMS,
     private http:Http,
 
@@ -60,6 +61,7 @@ export class HomePage {
     this.username = window.localStorage.getItem("Sessioneml");
     this.sessionUser = sessionStorage.getItem("Sessionuid");
     this.uIDParam = navParams.get("uid");
+
   }
 
   ionViewDidLoad() {
@@ -186,18 +188,6 @@ export class HomePage {
   }
 
 
-
-  
-
-
-
-
-
-
-
-
-
-
   //for sending sms to multiple numbers
   // sendTextMessage() {
   //   this.array1=[+917507526151,+919664993545,+919987566826,+918655156422];
@@ -267,7 +257,7 @@ export class HomePage {
         "content-type": "application/json"
       },
       "processData": false,
-      "data": "{ \"sender\": \"SOCKET\", \"route\": \"4\", \"country\": \"91\", \"sms\": [ { \"message\": \"Hello User testing Message1\", \"to\": [ \"8401081227\", \"9819347279\" ] }, { \"message\": \"Message2\", \"to\": [ \"8080328322\", \"8355891739\" ] } ] }"
+      "data": "{ \"sender\": \"SOCKET\", \"route\": \"4\", \"country\": \"91\", \"sms\": [ { \"message\": \"Hello User testing Message1 from society App\", \"to\": [ \"8401081227\", \"9819347279\" ] }, { \"message\": \"Message2 from society app\", \"to\": [ \"8080328322\", \"8355891739\" ] } ] }"
       //"data" : 'asstes/data/users.json'
     }
 

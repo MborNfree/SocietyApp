@@ -3,14 +3,7 @@
     <button ion-button menuToggle>
       <ion-icon name='menu'></ion-icon>
     </button>
-    <ion-segment [(ngModel)]="segment" (ionChange)="filterThreads(segment)">
-      <ion-segment-button value="all">
-        All
-      </ion-segment-button>
-      <ion-segment-button value="favorites">
-        Favorites
-      </ion-segment-button>
-    </ion-segment>
+
 
     <ion-buttons end>
       <button ion-button *ngIf="!internetConnected" (click)="notify('Working offline..')">
@@ -21,7 +14,14 @@
       </button>
     </ion-buttons>
   </ion-navbar>
-
+  <ion-segment [(ngModel)]="segment" (ionChange)="filterThreads(segment)">
+    <ion-segment-button value="all">
+      All
+    </ion-segment-button>
+    <ion-segment-button value="favorites">
+      Favorites
+    </ion-segment-button>
+  </ion-segment>
   <ion-toolbar no-border-top>
     <ion-searchbar primary [(ngModel)]="queryText" (ionInput)="searchThreads()" placeholder="Search for a thread..">
     </ion-searchbar>
@@ -39,8 +39,8 @@
   </div>
 
   <ion-list *ngIf="!loading">
-    <!-- <forum-thread *ngFor="let thread of threads" [thread]="thread" (onViewComments)="viewComments($event)"></forum-thread> -->
-    <ion-item *ngFor="let thread of threads" (onViewComments)="viewComments($event)"></ion-item>
+    <forum-thread *ngFor="let thread of threads" [thread]="thread" (onViewComments)="viewComments($event)"></forum-thread>
+    <!-- <ion-item *ngFor="let thread of threads" (onViewComments)="viewComments($event)"></ion-item> -->
   </ion-list>
 
   <ion-infinite-scroll (ionInfinite)="fetchNextThreads($event)" threshold="10px" *ngIf="(start > 0) && (queryText.trim().length == 0) && segment=='all' && internetConnected">

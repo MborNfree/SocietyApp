@@ -1,6 +1,5 @@
-
-// import {firebase} from 'firebase';
-import * as firebase from "firebase/app";
+// import * as firebase from "firebase/app";
+import * as firebase from 'firebase';
 import { Component, ViewChild } from "@angular/core";
 import {
   Nav,
@@ -8,7 +7,8 @@ import {
   MenuController,
   AlertController,
   Events,
-  ModalController
+  ModalController,
+  ToastController
 } from "ionic-angular";
 import { Network } from "ionic-native";
 import { StatusBar } from "@ionic-native/status-bar";
@@ -18,8 +18,6 @@ import { AngularFireDatabase, AngularFireList } from "angularfire2/database";
 import { Observable } from "rxjs/Observable";
 import { AuthService } from "../shared/services/auth.service";
 // import { DataService } from "../shared/services/data.service";
-
-// import { Push, PushObject, PushOptions } from '@ionic-native/push';
 
 // Models
 import {
@@ -49,7 +47,6 @@ import { ImageGalleryPage } from "./../pages/image-gallery/image-gallery";
 import { ThreadCreatePage } from "../pages/thread-create/thread-create";
 import { ThreadsPage } from "../pages/threads/threads";
 import { ConfigCctvPage } from './../pages/config-cctv/config-cctv';
-
 
 @Component({
   templateUrl: "app.html"
@@ -86,6 +83,11 @@ export class MySocietyApp {
     }
   };
 
+  public backButtonPressedTimer: any;
+  public backButtonPressed = false;
+  // Unregister when entering other pages. I register another one later somewhere else for different callback.
+  public unregisterBackButtonAction: any = null;
+
   constructor(
     public platform: Platform,
     public statusBar: StatusBar,
@@ -94,16 +96,19 @@ export class MySocietyApp {
     public menuCtrl: MenuController,
     public afAuth: AngularFireAuth,
     public af: AngularFireDatabase,
+    public toastCtrl: ToastController,
     // public dataService: DataService,
-   
+
     public authService: AuthService,
     public events: Events,
     public modalCtrl: ModalController,
     public menu: MenuController
   ) {
     this.user = this.afAuth.authState;
-
+    this.checkUserLoggedIn();
+    this.checkPreviousAuthorization();
     this.initializeApp();
+
   }
 
   watchForConnection() {
@@ -122,18 +127,6 @@ export class MySocietyApp {
     });
   }
 
-  // watchForDisconnect() {
-  //   var self = this;
-  //   // watch network for a disconnect
-  //   Network.onDisconnect().subscribe(() => {
-  //     console.log("network was disconnected :-(");
-  //     console.log("Firebase: Go Offline..");
-  //     //self.sqliteService.resetDatabase();
-  //     self.dataService.goOffline();
-  //     self.events.publish("network:connected", false);
-  //   });
-  // }
-
   signout() {
     var self = this;
     self.menu.close();
@@ -147,7 +140,7 @@ export class MySocietyApp {
   ngAfterViewInit() {
     var self = this;
 
-    this.authService.onAuthStateChanged(function(user) {
+    this.authService.onAuthStateChanged(function (user) {
       if (user === null) {
         self.menu.close();
         //self.nav.setRoot(LoginPage);
@@ -160,61 +153,18 @@ export class MySocietyApp {
 
   initializeApp() {
     this.platform.ready().then(() => {
+
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
-      // this.watchForConnection();
-      // this.watchForDisconnect();
+
       this.splashScreen.hide();
       this.getStatus();
       // Initialize some options
       this.initializeOptions();
 
-      // // pushsetup
-      // this.pushsetup();
     });
   }
-
-  // //method  for pushsetup
-  // pushsetup() {
-  //   const options: PushOptions = {
-  //    android: {
-  //        senderID: '583609948893'
-  //    },
-  //    ios: {
-  //        alert: 'true',
-  //        badge: true,
-  //        sound: 'false'
-  //    },
-  //    windows: {}
-  // };
- 
-  // const pushObject: PushObject = this.push.init(options);
- 
-  // pushObject.on('notification').subscribe((notification: any) => {
-  //   if (notification.additionalData.foreground) {
-  //     let youralert = this.alertCtrl.create({
-  //       title: 'New Push notification',
-  //       message: notification.message
-  //     });
-  //     youralert.present();
-  //   }
-  // });
- 
-  // pushObject.on('registration').subscribe((registration: any) => {
-  //    //do whatever you want with the registration ID
-  // });
- 
-  // pushObject.on('error').subscribe(error => alert('Error with Push plugin' + error));
-  // }
- 
-  // //////////////END METHOD ///////
-  
-    
-
-
-
-
 
   getStatus() {
     if ((this.username = "admin")) {
@@ -227,7 +177,7 @@ export class MySocietyApp {
   checkPreviousAuthorization(): void {
     if (
       window.sessionStorage.getItem("username") === "undefined" ||
-      window.sessionStorage.getItem("username") === null
+      window.sessionStorage.getItem("username") === null && window.sessionStorage.getItem("isLoggedIn") === "false"
     ) {
       this.rootPage = LoginPage;
     } else {
@@ -322,14 +272,9 @@ export class MySocietyApp {
     this.options.push({
       iconName: "chatbubbles",
       displayName: "Forum",
-      component: ForumPage
-    });
-
-    this.options.push({
-      iconName: "chatbubbles",
-      displayName: "Threads",
       component: ThreadsPage
     });
+
     this.options.push({
       iconName: "help-circle",
       displayName: "Help Desk",
@@ -374,111 +319,7 @@ export class MySocietyApp {
         }
       ]
     });
-    // this.options.push({
-    //   displayName: "Admin Section",
-    //   subItems: [
-    //     {
-    //       iconName: "basket",
-    //       displayName: "User Documents",
-    //       component: UserDocumentListAdminPage
-    //     },
-    //     {
-    //       iconName: "clipboard",
-    //       displayName: "Circualrs",
-    //       component: CircularListAdminPage
-    //     },
-    //     {
-    //       iconName: "folder",
-    //       displayName: "Add Circualrs",
-    //       component: AddCircularAdminPage
-    //     },
-    //     {
-    //       iconName: "calendar",
-    //       displayName: "Add Events",
-    //       component: AddEventAdminPage
-    //     },
-    //     {
-    //       iconName: "calendar",
-    //       displayName: "Events List",
-    //       component: EventListAdminPage
-    //     },
-    //     // {
-    //     //   iconName: "people",
-    //     //   displayName: "Residents List",
-    //     //   component: ResidentListAdminPage
-    //     // },
-    //     // {
-    //     //   iconName: "contacts",
-    //     //   displayName: "Committee List",
-    //     //   component: CommitteeListAdminPage
-    //     // },
-    //     {
-    //       iconName: "albums",
-    //       displayName: "Society Property",
-    //       component: PropertyListAdminPage
-    //     },
-    //     {
-    //       iconName: "albums",
-    //       displayName: "Add Society Property",
-    //       component: AddPropertyAdminPage
-    //     },
-    //     {
-    //       iconName: "albums",
-    //       displayName: "Add Society Assets",
-    //       component: AddAssetsAdminPage
-    //     },
-    //     {
-    //       iconName: "cash",
-    //       displayName: "Generate Bill",
-    //       component: GenerateBillAdminPage
-    //     },
-    //     {
-    //       iconName: "bowtie",
-    //       displayName: "Add Service Type",
-    //       component: AddServiceCategoryAdminPage
-    //     },
-    //     {
-    //       iconName: "bowtie",
-    //       displayName: "Add Service",
-    //       component: AddServiceAdminPage
-    //     },
-    //     {
-    //       iconName: "happy",
-    //       displayName: "Add Flatwise Service",
-    //       component: AddFlatwiseServiceAdminPage
-    //     },
-    //     {
-    //       iconName: "happy",
-    //       displayName: "Flatwise Service",
-    //       component: FlatwiseServiceListAdminPage
-    //     },
-    //     {
-    //       iconName: "albums",
-    //       displayName: "Add Emergency Category",
-    //       component: AddEmergencyCategoryAdminPage
-    //     },
-    //     {
-    //       iconName: "albums",
-    //       displayName: "Add Emergency",
-    //       component: AddemergencyAdminPage
-    //     },
-    //     {
-    //       iconName: "medkit",
-    //       displayName: "Emergency List",
-    //       component: EmergencyListAdminPage
-    //     },
-    //     {
-    //       iconName: "albums",
-    //       displayName: "Service List",
-    //       component: ServiceListAdminPage
-    //     },
-    //     {
-    //       iconName: "hand",
-    //       displayName: "Add Rules",
-    //       component: AddNormsPage
-    //     }
-    //   ]
-    // });
+
   }
   public selectOption(option: MenuOptionModel): void {
     this.menuCtrl.close().then(() => {

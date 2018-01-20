@@ -19,7 +19,7 @@ import { SqliteService } from "../../shared/services/sqlite.service";
 @Component({
   templateUrl: "threads.html"
 })
-export class ThreadsPage  {
+export class ThreadsPage {
   @ViewChild(Content) content: Content;
   segment: string = "all";
   selectedSegment: string = this.segment;
@@ -54,19 +54,10 @@ export class ThreadsPage  {
     self.checkFirebase();
   }
 
-  // ngOnInit() {
-  //   var self = this;
-  //   self.segment = "all";
-  //   self.events.subscribe("network:connected", self.networkConnected);
-  //   self.events.subscribe("threads:add", self.addNewThreads);
-
-  //   self.checkFirebase();
-  // }
-
   checkFirebase() {
     let self = this;
     if (!self.dataService.isFirebaseConnected()) {
-      setTimeout(function() {
+      setTimeout(function () {
         console.log("Retry : " + self.firebaseConnectionAttempts);
         self.firebaseConnectionAttempts++;
         if (self.firebaseConnectionAttempts < 5) {
@@ -80,7 +71,7 @@ export class ThreadsPage  {
     } else {
       console.log(
         "Firebase connection found (threads.ts) - attempt: " +
-          self.firebaseConnectionAttempts
+        self.firebaseConnectionAttempts
       );
       self.dataService
         .getStatisticsRef()
@@ -143,7 +134,7 @@ export class ThreadsPage  {
     } else {
       self.notify("Connection lost. Working offline..");
       // save current threads..
-      setTimeout(function() {
+      setTimeout(function () {
         console.log(self.threads.length);
         self.sqliteService.saveThreads(self.threads);
         self.loadSqliteThreads();
@@ -162,7 +153,7 @@ export class ThreadsPage  {
       .orderByPriority()
       .equalTo(priority)
       .once("value")
-      .then(function(dataSnapshot) {
+      .then(function (dataSnapshot) {
         let key = Object.keys(dataSnapshot.val())[0];
         let newThread: IThread = self.mappingsService.getThread(
           dataSnapshot.val()[key],
@@ -174,7 +165,7 @@ export class ThreadsPage  {
 
   public addNewThreads = () => {
     var self = this;
-    self.newThreads.forEach(function(thread: IThread) {
+    self.newThreads.forEach(function (thread: IThread) {
       self.threads.unshift(thread);
     });
 
@@ -192,7 +183,7 @@ export class ThreadsPage  {
       self.newThreads = [];
 
       if (self.segment === "all") {
-        this.dataService.getTotalThreads().then(function(snapshot) {
+        this.dataService.getTotalThreads().then(function (snapshot) {
           self.start = snapshot.val();
           self.getThreads();
         });
@@ -201,11 +192,11 @@ export class ThreadsPage  {
         self.favoriteThreadKeys = [];
         self.dataService
           .getFavoriteThreads(self.authService.getLoggedInUser().uid)
-          .then(function(dataSnapshot) {
+          .then(function (dataSnapshot) {
             let favoriteThreads = dataSnapshot.val();
             self.itemsService
               .getKeys(favoriteThreads)
-              .forEach(function(threadKey) {
+              .forEach(function (threadKey) {
                 self.start++;
                 self.favoriteThreadKeys.push(threadKey);
               });
@@ -227,11 +218,13 @@ export class ThreadsPage  {
         .orderByPriority()
         .startAt(startFrom)
         .endAt(self.start)
-        .once("value", function(snapshot) {
+        .once("value", function (snapshot) {
           self.itemsService
             .reversedItems<IThread>(self.mappingsService.getThreads(snapshot))
-            .forEach(function(thread) {
+            .forEach(function (thread) {
+
               self.threads.push(thread);
+              //console.log(self.threads);
             });
           self.start -= self.pageSize + 1;
           self.events.publish("threads:viewed");
@@ -243,7 +236,7 @@ export class ThreadsPage  {
           .getThreadsRef()
           .child(key)
           .once("value")
-          .then(function(dataSnapshot) {
+          .then(function (dataSnapshot) {
             self.threads.unshift(
               self.mappingsService.getThread(dataSnapshot.val(), key)
             );
@@ -272,14 +265,16 @@ export class ThreadsPage  {
       self.segment = "all";
       // empty current threads
       self.threads = [];
-      self.dataService.loadThreads().then(function(snapshot) {
+      self.dataService.loadThreads().then(function (snapshot) {
         self.itemsService
           .reversedItems<IThread>(self.mappingsService.getThreads(snapshot))
-          .forEach(function(thread) {
+          .forEach(function (thread) {
+            console.log(thread);
             if (
               thread.title.toLowerCase().includes(self.queryText.toLowerCase())
             )
               self.threads.push(thread);
+            console.log(self.threads);
           });
       });
     } else {
@@ -341,7 +336,7 @@ export class ThreadsPage  {
 
   scrollToTop() {
     var self = this;
-    setTimeout(function() {
+    setTimeout(function () {
       self.content.scrollToTop();
     }, 1500);
   }

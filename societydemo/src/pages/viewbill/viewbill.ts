@@ -23,7 +23,7 @@ export class ViewbillPage {
     public printer: Printer,
     public platform: Platform,
     public alertCtrl: AlertController
-  ) {}
+  ) { }
 
   ionViewDidLoad() {
     console.log("ionViewDidLoad ViewbillPage");
@@ -43,22 +43,13 @@ export class ViewbillPage {
   }
 
   print() {
-    // this.printer.isAvailable();
-    // let options: PrintOptions = {
-    //   name: 'Balance Sheet',
-    //   duplex: true,
-    //   landscape: true,
-    //   grayscale: true
-    // };
-    // var page = document.getElementById('balanceSheet');
-    // this.printer.print(page, options);
 
     if (this.platform.is("android")) {
       if (this.printer.isAvailable()) {
         let options: PrintOptions = {
           name: "Bill Report",
           duplex: true,
-          landscape: true,
+          landscape: false,
           grayscale: true
         };
         var page = document.getElementById("billReport");
