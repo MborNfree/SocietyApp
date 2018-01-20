@@ -15,7 +15,7 @@ export class EditEventModalPage {
     "venue": "",
   };
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public modalCtrl: ModalController,public viewCtrl : ViewController,  private fdb: AngularFireDatabase) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public modalCtrl: ModalController,public viewCtrl : ViewController) {
     this.data = JSON.stringify(navParams.get('data'));
   }
 

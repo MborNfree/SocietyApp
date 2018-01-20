@@ -78,7 +78,7 @@ public myPhotoURL: any;
             }, error => {
               console.log("ERROR -> " + JSON.stringify(error));
           }
-          )}      
+          )}
         },
         {
           text: "Use Camera",
@@ -108,7 +108,7 @@ public myPhotoURL: any;
              error => {
               // Log an error to the console if something goes wrong.
               console.log("ERROR -> " + JSON.stringify(error));
-            });                         
+            });
           }
         },
         {
@@ -166,17 +166,17 @@ public myPhotoURL: any;
   }
 
 
-  private uploadPhoto(): void {
-    this.myPhotosRef.child(this.generateUUID()).child('myPhoto.png')
-    // // const selfieRef = firebase.storage().ref('profilePictures/user1/'+Image);
-    // selfieRef
-      .putString(this.myPhoto, 'base64', { contentType: 'image/png' })
-      .then((savedPicture) => {
-        this.myPhotoURL = savedPicture.downloadURL;
-      });
-  }
+  // private uploadPhoto(): void {
+  //   this.myPhotosRef.child(this.generateUUID()).child('myPhoto.png')
+  //   // // const selfieRef = firebase.storage().ref('profilePictures/user1/'+Image);
+  //   // selfieRef
+  //     .putString(this.myPhoto, 'base64', { contentType: 'image/png' })
+  //     .then((savedPicture) => {
+  //       this.myPhotoURL = savedPicture.downloadURL;
+  //     });
+  // }
 
-  
+
   private generateUUID(): any {
     var d = new Date().getTime();
     var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx'.replace(/[xy]/g, function (c) {

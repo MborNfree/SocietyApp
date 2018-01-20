@@ -1,3 +1,4 @@
+
 // Dependency
 
 import { StreamingMedia } from '@ionic-native/streaming-media';
@@ -25,7 +26,8 @@ import { Stripe } from "@ionic-native/stripe";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 import { UniqueDeviceID } from '@ionic-native/unique-device-id';
-
+import { FCM } from '@ionic-native/fcm';
+// import { FCM } from '@ionic-native/fcm';
 // import * as $ from "jquery";
 import { APP_BASE_HREF } from "@angular/common";
 
@@ -72,10 +74,9 @@ import { ThreadCreatePage } from "../pages/thread-create/thread-create";
 import { ThreadsPage } from "../pages/threads/threads";
 import { CommentCreatePage } from "../pages/comment-create/comment-create";
 import { AboutPage } from "../pages/about/about";
-import { PhotosPage } from './../pages/photos/photos';
-import { ImageGalleryPage } from './../pages/image-gallery/image-gallery';
+
 import { ConfigCctvPage } from '../pages/config-cctv/config-cctv';
-import { CctvFootagePage } from './../pages/cctv-footage/cctv-footage';
+
 import { ServiceDetailPage } from '../pages/service-detail/service-detail';
 // Custom components
 import { ThreadComponent } from "../shared/components/thread.component";
@@ -198,6 +199,7 @@ var config = {
     CommentCreatePage,
     ConfigCctvPage,
     ServiceDetailPage
+
   ],
 
   providers: [
@@ -229,7 +231,9 @@ var config = {
     UniqueDeviceID,
     DatabaseProvider,
     ImageProvider,
-    PreloaderProvider
+    PreloaderProvider,
+    FCM
+
   ]
 })
 export class AppModule { }

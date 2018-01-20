@@ -13,7 +13,8 @@ export class UserAvatarComponent  {
     imageLoaded: boolean = false;
     imageUrl: string;
 
-    constructor(private dataService: DataService) { }
+    // constructor(private dataService: DataService) { }
+    constructor() { }
 
     // ngOnInit() {
     //     let self = this;

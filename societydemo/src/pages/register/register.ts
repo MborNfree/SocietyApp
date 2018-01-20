@@ -13,6 +13,8 @@ import { AngularFireList } from "angularfire2/database";
 import * as firebase from "firebase/app";
 import { UniqueDeviceID } from '@ionic-native/unique-device-id';
 
+// import { FCM } from '@ionic-native/fcm';
+
 import { LoginPage } from "./../login/login";
 
 @IonicPage()
@@ -56,7 +58,8 @@ export class RegisterPage {
     public navParams: NavParams,
     public formBuilder: FormBuilder,
     private fire: AngularFireAuth,
-    private uniqueDeviceID: UniqueDeviceID
+    private uniqueDeviceID: UniqueDeviceID,
+    // private fcm: FCM
   ) {
     //alert(this.user);
     this.users = fdb.list("/users");
@@ -147,6 +150,14 @@ export class RegisterPage {
       ]
     });
 
+
+    // this.firebase.getToken()
+    //   .then(token => alert(`The token is ${token}`)) // save the token server-side and use it to push notifications to this device
+    //   .catch(error => alert('Error getting token'+error));
+
+    // this.firebase.onTokenRefresh()
+    //   .subscribe((token: string) => alert(`Got a new token ${token}`));
+
   }
 
   ionViewDidLoad() {
@@ -155,6 +166,7 @@ export class RegisterPage {
       "recaptcha-container"
     );
   }
+
 
   alert(message: string) {
     this.alertCtrl
@@ -185,6 +197,36 @@ export class RegisterPage {
         .then((uDid: any) => this.uDid = uDid)
         .catch((error: any) => alert('err'+error));
         alert(this.uDid);
+
+        // this.firebase.getToken()
+        // .then(token => alert(`The token is`+token)) // save the token server-side and use it to push notifications to this device
+        // .catch(error => alert('Error getting token'+error));
+
+        // this.firebase.onTokenRefresh()
+        // .subscribe((token: string) => alert(`Got a new token ${token}`));
+
+        // this.fcm.subscribeToTopic('marketing');
+
+        // this.fcm.getToken().then(token=>{
+        //   // backend.registerToken(token);
+        //   console.log('getToken'+token);
+        //   alert('getToken'+token);
+        // })
+
+        // this.fcm.onNotification().subscribe(data=>{
+
+        //   if(data.wasTapped){
+        //     console.log("Received in background");
+        //   } else {
+        //     console.log("Received in foreground");
+        //   };
+        // })
+
+        // this.fcm.onTokenRefresh().subscribe(token=>{
+        //  // backend.registerToken(token);
+        //   console.log('onTokenRefresh'+token);
+        // })
+
         let currentUserUid = this.fire.auth.currentUser.uid;
         this.fdb.list("/users/").push({
           ID: currentUserUid,
