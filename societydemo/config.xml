@@ -11,7 +11,7 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
-    <allow-navigation href="https://api.stripe.com" />
+
     <preference name="ScrollEnabled" value="false" />
     <preference name="android-minSdkVersion" value="16" />
     <preference name="BackupWebStorage" value="none" />
@@ -96,7 +96,7 @@
     <plugin name="de.appplant.cordova.plugin.printer" spec="^0.7.3" />
     <plugin name="cordova-plugin-file" spec="^4.3.3" />
     <plugin name="cordova-sms-plugin" spec="^0.1.11" />
-    <plugin name="cordova-plugin-stripe" spec="^1.5.3" />
+
     <plugin name="cordova-plugin-email-composer" spec="^0.8.11" />
     <plugin name="com-sarriaroman-photoviewer" spec="^1.1.11" />
     <plugin name="cordova-plugin-photo-library" spec="^2.1.0">
