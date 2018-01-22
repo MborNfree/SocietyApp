@@ -263,7 +263,9 @@ export class HomePage {
 
     jQuery.ajax(settings).done(function (response) {
       console.log(response);
-       alert("sms response =" + response)
+       //alert("sms response =" + response)
+
+       alert("Sms Sent!");
     });
   }
   showAlert() {

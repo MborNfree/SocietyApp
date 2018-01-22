@@ -8,8 +8,8 @@
 </ion-header>
 
 <ion-content padding class="bg-masters">
-  <form [formGroup]="authForm" (ngSubmit)="onSubmit(authForm.value)">
-      <!-- <form [formGroup]="authForm" (ngSubmit)="editUser(authForm.value)"> -->
+  <!-- <form [formGroup]="authForm" (ngSubmit)="onSubmit(authForm.value)"> -->
+      <form [formGroup]="authForm" (ngSubmit)="editUser(authForm.value)">
     <div class="list card">
       <ion-item class="profile-item">
         <div class="profile-picture big-profile-picture">
@@ -38,14 +38,6 @@
       </ion-item> -->
 
     </div>
-    <ion-item [ngClass]="{'error-border':!authForm.controls.fnm.valid && authForm.controls.username.touched}">
-        <ion-label floating>first name</ion-label>
-        <ion-input formControlName="fnm" type="text" [(ngModel)]="fnm" [disabled]="inactive"></ion-input>
-      </ion-item>
-      <ion-item [ngClass]="{'error-border':!authForm.controls.lnm.valid && authForm.controls.username.touched}">
-          <ion-label floating>last name</ion-label>
-          <ion-input formControlName="lnm" type="text" [(ngModel)]="lnm" [disabled]="inactive"></ion-input>
-        </ion-item>
     <ion-item [ngClass]="{'error-border':!authForm.controls.username.valid && authForm.controls.username.touched}">
       <ion-label floating>Username</ion-label>
       <ion-input formControlName="username" type="text" [(ngModel)]="username" [disabled]="inactive"></ion-input>
@@ -129,7 +121,7 @@
       <button ion-button class="col col-50" (click)="changeStatus()" *ngIf="!inactive">
         <ion-icon name="close-circle">Cancel</ion-icon>
       </button>
-      <button ion-button  class="col col-50" color="button" type="submit"  *ngIf="!inactive">
+      <button ion-button  class="col col-50" color="button" type="submit" *ngIf="!inactive">
         <ion-icon name="add">Save</ion-icon>
       </button>
     </ion-buttons>

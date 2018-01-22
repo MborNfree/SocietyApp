@@ -48,6 +48,7 @@ import { ThreadCreatePage } from "../pages/thread-create/thread-create";
 import { ThreadsPage } from "../pages/threads/threads";
 import { ConfigCctvPage } from './../pages/config-cctv/config-cctv';
 
+
 @Component({
   templateUrl: "app.html"
 })
@@ -202,6 +203,12 @@ export class MySocietyApp {
       // This option is already selected
       selected: true
     });
+    // this.options.push({
+    //   iconName: "person",
+    //   displayName: "User Profile",
+    //   component: UserProfilePage
+    // });
+
 
     this.options.push({
       iconName: "card",
