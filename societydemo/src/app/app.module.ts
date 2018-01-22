@@ -22,7 +22,7 @@ import { Transfer, TransferObject } from "@ionic-native/transfer";
 import { Printer } from "@ionic-native/printer";
 import { HttpModule } from "@angular/http";
 import { SMS } from "@ionic-native/sms";
-import { Stripe } from "@ionic-native/stripe";
+
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 import { UniqueDeviceID } from '@ionic-native/unique-device-id';
@@ -222,7 +222,6 @@ var config = {
     ProfileProvider,
     SMS,
     EmailComposer,
-    Stripe,
     EventDataProvider,
     StreamingMedia,
     
