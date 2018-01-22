@@ -42,13 +42,20 @@ $colors: (
   info:       #55acee,
   help:       grey,
   rule:       rgb(231, 216, 7),
-  navbar:     rgb(255, 173, 22),
+  navbar:     #530006,
   event :     #97D0AE,
   news:       #f9900b,
   helpdesk :  #02D681,
-  button:rgb(167, 226, 5)
-
+  sidemenulabel:#530006,
+  sidemenu-selected:rgb(188, 17, 33),
+  button:rgb(188, 17, 33)
+  
 );
+
+
+$toolbar-ios-title-font-size: 14pt;
+$toolbar-md-title-font-size: 14pt;
+$toolbar-wp-title-font-size: 14pt;
 
 
 // App iOS Variables
@@ -93,5 +100,7 @@ $colors: (
 // Fonts
 // --------------------------------------------------
 
-@import "roboto";
-@import "noto-sans";
+// @import "roboto";
+
+@import "../assets/fonts/tt0003m_.ttf";
+// @import "noto-sans";

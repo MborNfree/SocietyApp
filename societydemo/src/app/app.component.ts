@@ -231,7 +231,7 @@ export class MySocietyApp {
       ]
     });
     this.options.push({
-      iconName: "tv",
+      iconName: "desktop",
       displayName: "Configure CCTV",
       component: ConfigCctvPage
     });

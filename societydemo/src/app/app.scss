@@ -15,8 +15,10 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 .my-selected-option {
-  color: map-get($colors, button);
-  font-weight: 700;
+  color: map-get($colors,sidemenu-selected);
+  // font-weight: 700;
+  font-weight: 100;
+  font-size: 14pt;
 }
 .bg-masters {
   background-color: whitesmoke;

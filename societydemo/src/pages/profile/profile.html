@@ -123,8 +123,8 @@
     </ion-item>
     <!-- <button ion-button full color="button"  style="margin-top: 20px;" type="submit">Save</button> -->
     <ion-buttons *ngIf="!toggle">
-      <button ion-button (click)="changeStatus()" *ngIf="inactive" full>
-        <ion-icon name="create">Update</ion-icon>
+      <button ion-button color=button (click)="changeStatus()" *ngIf="inactive" full>
+        <ion-icon  name="create">Update</ion-icon>
       </button>
       <button ion-button class="col col-50" (click)="changeStatus()" *ngIf="!inactive">
         <ion-icon name="close-circle">Cancel</ion-icon>

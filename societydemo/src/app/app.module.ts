@@ -139,7 +139,8 @@ var config = {
     AboutPage,
     CommentCreatePage,
     ConfigCctvPage,
-    ServiceDetailPage
+    ServiceDetailPage,
+    ImageGalleryPage
   ],
 
   imports: [
@@ -197,7 +198,8 @@ var config = {
     AboutPage,
     CommentCreatePage,
     ConfigCctvPage,
-    ServiceDetailPage
+    ServiceDetailPage,
+    ImageGalleryPage
   ],
 
   providers: [
@@ -222,7 +224,7 @@ var config = {
     Stripe,
     EventDataProvider,
     StreamingMedia,
-
+    
     APP_PROVIDERS,
     { provide: APP_BASE_HREF, useValue: "/" },
     StreamingMedia,
