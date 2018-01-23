@@ -26,6 +26,8 @@ import { SMS } from "@ionic-native/sms";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 import { UniqueDeviceID } from '@ionic-native/unique-device-id';
+
+import { FCM } from '@ionic-native/fcm';
 // import { FCM } from '@ionic-native/fcm';
 // import { FCM } from '@ionic-native/fcm';
 // import * as $ from "jquery";
@@ -141,7 +143,7 @@ var config = {
     CommentCreatePage,
     ConfigCctvPage,
     ServiceDetailPage,
-   
+
   ],
 
   imports: [
@@ -200,7 +202,7 @@ var config = {
     CommentCreatePage,
     ConfigCctvPage,
     ServiceDetailPage,
-  
+
   ],
 
   providers: [
@@ -224,7 +226,7 @@ var config = {
     EmailComposer,
     EventDataProvider,
     StreamingMedia,
-    
+
     APP_PROVIDERS,
     { provide: APP_BASE_HREF, useValue: "/" },
     StreamingMedia,
@@ -232,8 +234,7 @@ var config = {
     DatabaseProvider,
     ImageProvider,
     PreloaderProvider,
-   
-
+    FCM
   ]
 })
 export class AppModule { }

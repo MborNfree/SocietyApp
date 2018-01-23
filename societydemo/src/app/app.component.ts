@@ -19,6 +19,8 @@ import { Observable } from "rxjs/Observable";
 import { AuthService } from "../shared/services/auth.service";
 // import { DataService } from "../shared/services/data.service";
 
+import { FCM } from '@ionic-native/fcm';
+
 // Models
 import {
   MenuOptionModel,
@@ -59,8 +61,6 @@ export class MySocietyApp {
   status: any;
 
   user: Observable<firebase.User>;
-  items: AngularFireList<any[]>;
-  msgVal: string = "";
 
   @ViewChild(Nav) nav: Nav;
 
@@ -103,9 +103,10 @@ export class MySocietyApp {
     public authService: AuthService,
     public events: Events,
     public modalCtrl: ModalController,
-    public menu: MenuController
+    public menu: MenuController,
+    private fcm: FCM
   ) {
-    this.user = this.afAuth.authState;
+
     this.checkUserLoggedIn();
     this.checkPreviousAuthorization();
     this.initializeApp();
@@ -163,6 +164,22 @@ export class MySocietyApp {
       this.getStatus();
       // Initialize some options
       this.initializeOptions();
+
+      // this.fcm.subscribeToTopic('all');
+      // this.fcm.getToken().then(token => {
+      //   // backend.registerToken(token);
+      // });
+      // this.fcm.onNotification().subscribe(data => {
+      //   alert('message received')
+      //   if(data.wasTapped) {
+      //    console.info("Received in background");
+      //   } else {
+      //    console.info("Received in foreground");
+      //   };
+      // });
+      // this.fcm.onTokenRefresh().subscribe(token => {
+      //   // backend.registerToken(token);
+      // });
 
     });
   }
