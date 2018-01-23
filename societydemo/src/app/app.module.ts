@@ -1,3 +1,5 @@
+import { Network } from '@ionic-native/network';
+import { UserAvatarComponent } from './../shared/components/user-avatar.component';
 import { PhotosPage } from './../pages/photos/photos';
 import { ImageGalleryPage } from './../pages/image-gallery/image-gallery';
 
@@ -147,7 +149,8 @@ var config = {
     ConfigCctvPage,
     ServiceDetailPage,
     ImageGalleryPage,
-    PhotosPage
+    PhotosPage,
+    UserAvatarComponent,
    
   ],
 
@@ -208,7 +211,8 @@ var config = {
     ConfigCctvPage,
     ServiceDetailPage,
     ImageGalleryPage,
-    PhotosPage
+    PhotosPage,
+    UserAvatarComponent
   
   ],
 
@@ -240,6 +244,7 @@ var config = {
     UniqueDeviceID,
     DatabaseProvider,
     ImageProvider,
+    Network,
     PreloaderProvider,
     FCM
   ]

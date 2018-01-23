@@ -10,7 +10,8 @@ import {
   ModalController,
   ToastController
 } from "ionic-angular";
-import { Network } from "ionic-native";
+//  import { Network } from "ionic-native";
+ import { Network } from '@ionic-native/network';
 import { StatusBar } from "@ionic-native/status-bar";
 import { SplashScreen } from "@ionic-native/splash-screen";
 import { AngularFireAuth } from "angularfire2/auth";
@@ -98,6 +99,7 @@ export class MySocietyApp {
     public afAuth: AngularFireAuth,
     public af: AngularFireDatabase,
     public toastCtrl: ToastController,
+    private network: Network,
     // public dataService: DataService,
 
     public authService: AuthService,
@@ -115,7 +117,7 @@ export class MySocietyApp {
 
   watchForConnection() {
     var self = this;
-    Network.onConnect().subscribe(() => {
+    this.network.onConnect().subscribe(() => {
       console.log("network connected!");
       // We just got a connection but we need to wait briefly
       // before we determine the connection type.  Might need to wait
