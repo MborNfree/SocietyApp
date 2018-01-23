@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { PhotoViewer } from 'ionic-native';
+// import { PhotoViewer } from 'ionic-native';
+import { PhotoViewer } from '@ionic-native/photo-viewer';
 
 import { IUser } from '../interfaces';
 import { DataService } from '../services/data.service';
@@ -12,9 +13,10 @@ export class UserAvatarComponent  {
     @Input() user: IUser;
     imageLoaded: boolean = false;
     imageUrl: string;
+   
 
     // constructor(private dataService: DataService) { }
-    constructor() { }
+    constructor( private photoViewer:PhotoViewer) { }
 
     // ngOnInit() {
     //     let self = this;
@@ -47,7 +49,7 @@ export class UserAvatarComponent  {
     // }
 
     zoom() {
-        PhotoViewer.show(this.imageUrl, this.user.username, { share: false });
+        this.photoViewer.show(this.imageUrl, this.user.username, { share: false });
     }
 
     // getUserImage() {

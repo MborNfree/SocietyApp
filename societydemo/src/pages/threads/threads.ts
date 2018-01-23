@@ -48,99 +48,99 @@ export class ThreadsPage {
   ) {
     var self = this;
     self.segment = "all";
-    self.events.subscribe("network:connected", self.networkConnected);
+    // self.events.subscribe("network:connected", self.networkConnected);
     self.events.subscribe("threads:add", self.addNewThreads);
 
-    self.checkFirebase();
+    // self.checkFirebase();
   }
 
-  checkFirebase() {
-    let self = this;
-    if (!self.dataService.isFirebaseConnected()) {
-      setTimeout(function () {
-        console.log("Retry : " + self.firebaseConnectionAttempts);
-        self.firebaseConnectionAttempts++;
-        if (self.firebaseConnectionAttempts < 5) {
-          self.checkFirebase();
-        } else {
-          self.internetConnected = false;
-          self.dataService.goOffline();
-          self.loadSqliteThreads();
-        }
-      }, 1000);
-    } else {
-      console.log(
-        "Firebase connection found (threads.ts) - attempt: " +
-        self.firebaseConnectionAttempts
-      );
-      self.dataService
-        .getStatisticsRef()
-        .on("child_changed", self.onThreadAdded);
-      if (self.authService.getLoggedInUser() === null) {
-        //
-      } else {
-        self.loadThreads(true);
-      }
-    }
-  }
+  // checkFirebase() {
+  //   let self = this;
+  //   if (!self.dataService.isFirebaseConnected()) {
+  //     setTimeout(function () {
+  //       console.log("Retry : " + self.firebaseConnectionAttempts);
+  //       self.firebaseConnectionAttempts++;
+  //       if (self.firebaseConnectionAttempts < 5) {
+  //         self.checkFirebase();
+  //       } else {
+  //         self.internetConnected = false;
+  //         self.dataService.goOffline();
+  //         self.loadSqliteThreads();
+  //       }
+  //     }, 1000);
+  //   } else {
+  //     console.log(
+  //       "Firebase connection found (threads.ts) - attempt: " +
+  //       self.firebaseConnectionAttempts
+  //     );
+  //     self.dataService
+  //       .getStatisticsRef()
+  //       .on("child_changed", self.onThreadAdded);
+  //     if (self.authService.getLoggedInUser() === null) {
+  //       //
+  //     } else {
+  //       self.loadThreads(true);
+  //     }
+  //   }
+  // }
 
-  loadSqliteThreads() {
-    let self = this;
+  // loadSqliteThreads() {
+  //   let self = this;
 
-    if (self.threads.length > 0) return;
+  //   if (self.threads.length > 0) return;
 
-    self.threads = [];
-    console.log("Loading from db..");
-    self.sqliteService.getThreads().then(
-      data => {
-        console.log("Found in db: " + data.rows.length + " threads");
-        if (data.rows.length > 0) {
-          for (var i = 0; i < data.rows.length; i++) {
-            let thread: IThread = {
-              key: data.rows.item(i).key,
-              title: data.rows.item(i).title,
-              question: data.rows.item(i).question,
-              category: data.rows.item(i).category,
-              dateCreated: data.rows.item(i).datecreated,
-              user: {
-                uid: data.rows.item(i).user,
-                username: data.rows.item(i).username
-              },
-              comments: data.rows.item(i).comments
-            };
+  //   self.threads = [];
+  //   console.log("Loading from db..");
+  //   self.sqliteService.getThreads().then(
+  //     data => {
+  //       console.log("Found in db: " + data.rows.length + " threads");
+  //       if (data.rows.length > 0) {
+  //         for (var i = 0; i < data.rows.length; i++) {
+  //           let thread: IThread = {
+  //             key: data.rows.item(i).key,
+  //             title: data.rows.item(i).title,
+  //             question: data.rows.item(i).question,
+  //             category: data.rows.item(i).category,
+  //             dateCreated: data.rows.item(i).datecreated,
+  //             user: {
+  //               uid: data.rows.item(i).user,
+  //               username: data.rows.item(i).username
+  //             },
+  //             comments: data.rows.item(i).comments
+  //           };
 
-            self.threads.push(thread);
-            console.log("Thread added from db:" + thread.key);
-            console.log(thread);
-          }
-          self.loading = false;
-        }
-      },
-      error => {
-        console.log("Error: " + JSON.stringify(error));
-        self.loading = true;
-      }
-    );
-  }
+  //           self.threads.push(thread);
+  //           console.log("Thread added from db:" + thread.key);
+  //           console.log(thread);
+  //         }
+  //         self.loading = false;
+  //       }
+  //     },
+  //     error => {
+  //       console.log("Error: " + JSON.stringify(error));
+  //       self.loading = true;
+  //     }
+  //   );
+  // }
 
-  public networkConnected = connection => {
-    var self = this;
-    self.internetConnected = connection[0];
-    console.log("NetworkConnected event: " + self.internetConnected);
+  // public networkConnected = connection => {
+  //   var self = this;
+  //   self.internetConnected = connection[0];
+  //   console.log("NetworkConnected event: " + self.internetConnected);
 
-    if (self.internetConnected) {
-      self.threads = [];
-      self.loadThreads(true);
-    } else {
-      self.notify("Connection lost. Working offline..");
-      // save current threads..
-      setTimeout(function () {
-        console.log(self.threads.length);
-        self.sqliteService.saveThreads(self.threads);
-        self.loadSqliteThreads();
-      }, 1000);
-    }
-  };
+  //   if (self.internetConnected) {
+  //     self.threads = [];
+  //     self.loadThreads(true);
+  //   } else {
+  //     self.notify("Connection lost. Working offline..");
+  //     // save current threads..
+  //     setTimeout(function () {
+  //       console.log(self.threads.length);
+  //       self.sqliteService.saveThreads(self.threads);
+  //       self.loadSqliteThreads();
+  //     }, 1000);
+  //   }
+  // };
 
   // Notice function declarion to keep the right this reference
   public onThreadAdded = (childSnapshot, prevChildKey) => {

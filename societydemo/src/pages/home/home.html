@@ -3,6 +3,7 @@
     <button ion-button icon-only menuToggle start>
       <ion-icon name="menu"></ion-icon>
     </button>
+<<<<<<< HEAD
     <ion-buttons end (click)="sendTextMessage()">
       <img src="assets/img/icon_profile.png" />
     </ion-buttons>
@@ -13,6 +14,29 @@
     </ion-buttons>
     <ion-buttons class="profile-picture" end>
       <img src="assets/img/icon_panic.png" (click)='ViewProfile()' />
+=======
+    <ion-buttons end>
+      <button ion-button icon-only (click)="sendTextMessage()">
+        <!-- <ion-icon name="send"></ion-icon> -->
+        <img src="assets/img/icon_panic.png" />
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button ion-button icon-only>
+          
+          <img src="assets/img/icon_notification.png" />
+        <!-- <ion-icon name="notifications"></ion-icon> -->
+    </button>
+    </ion-buttons>
+    <ion-buttons end>
+        
+      <!-- <button ion-button icon-only (click)="showAlert()">
+        <ion-icon name="power"></ion-icon>
+      </button> -->
+    </ion-buttons>
+    <ion-buttons class="profile-picture big-profile-picture" end>
+      <img src="assets/img/icon_profile.png" (click)='ViewProfile()'/>
+>>>>>>> c389a99dc112790b123d4963f5ec161a932b77c0
     </ion-buttons>
     <ion-title align="center">
       Home
@@ -23,6 +47,7 @@
 <ion-content padding class="bg-masters">
   <div align="center">
     <ion-slides class="imgcarousel" autoplay="2000" loop="true" speed="3000">
+<<<<<<< HEAD
       <ion-slide class="slide">
         <img src='assets/img/banner_1.png' /> </ion-slide>
       <ion-slide class="slide">
@@ -31,6 +56,13 @@
         <img src='assets/img/banner_3.png' /> </ion-slide>
     </ion-slides>
   </div>
+=======
+        <ion-slide class="slide"> <img src='assets/img/banner_1.png'/> </ion-slide>
+        <ion-slide class="slide"> <img src='assets/img/banner_2.png'/> </ion-slide>
+        <ion-slide class="slide"> <img src='assets/img/banner_3.png'/> </ion-slide>
+      </ion-slides>
+</div>
+>>>>>>> c389a99dc112790b123d4963f5ec161a932b77c0
 
   <!-- <ion-label stacked align="center">Services</ion-label> -->
 
@@ -38,27 +70,46 @@
     <ion-card class="service-card">
       <ion-slides>
         <ion-col class="service-col-33">
+<<<<<<< HEAD
           <ion-item (click)="showdoctorlist()" class="item-service" color="info">
             <ion-avatar class="ion-avatar img">
               <ion-img src="assets/img/doctor.jpg" align="center"></ion-img>
             </ion-avatar>
+=======
+          <ion-item (click)="showdoctorlist()"  class="item-service" >
+            
+              <ion-img   src="assets/img/icon_dr.png" align="center"></ion-img>
+            
+>>>>>>> c389a99dc112790b123d4963f5ec161a932b77c0
             <div class="card-title" align="center">Doctor</div>
           </ion-item>
         </ion-col>
         <ion-col class="service-col-33">
+<<<<<<< HEAD
           <ion-item (click)="showelectricianlist()" class="item-service" color="info">
             <ion-avatar>
               <ion-img src="assets/img/electrician.jpg" align="center"></ion-img>
+=======
+          <ion-item (click)="showelectricianlist()"  class="item-service" >
+            
+              <ion-img src="assets/img/icon_electrician.png" align="center"></ion-img>
+>>>>>>> c389a99dc112790b123d4963f5ec161a932b77c0
               <div class="card-title" align="center">Electrician</div>
-            </ion-avatar>
+            
           </ion-item>
         </ion-col>
         <ion-col class="service-col-33">
+<<<<<<< HEAD
           <ion-item (click)="showplumberlist()" class="item-service" color="info">
             <ion-avatar>
               <ion-img align="center" class="action-img" src='assets/img/plumber.jpg'></ion-img>
+=======
+          <ion-item (click)="showplumberlist()"  class="item-service">
+            
+              <ion-img align="center" class="action-img" src='assets/img/icon_plumber.png'></ion-img>
+>>>>>>> c389a99dc112790b123d4963f5ec161a932b77c0
               <div class="card-title" align="center">Plumber</div>
-            </ion-avatar>
+            
           </ion-item>
         </ion-col>
       </ion-slides>
@@ -72,7 +123,7 @@
       <ion-card (click)="shownews()" color='news' class="fixcard col-33">
         <ion-buttons align="center" align-content="center" align-self="center" large class="call-to-action">
 
-          <ion-img class="cards-action-img" src='assets/img/news_icon.png'></ion-img>
+          <ion-img class="cards-action-img" src='assets/img/icon_news.png'></ion-img>
         </ion-buttons>
         <div class="card-title" align="center">NEWS</div>
       </ion-card>
@@ -81,9 +132,9 @@
       <ion-card (click)="showmembers()" color='button'>
         <ion-buttons align="center" large class="call-to-action">
 
-          <ion-img class="cards-action-img" src='assets/img/CCN-2.png'></ion-img>
+          <ion-img class="cards-action-img" src='assets/img/icon_bills.png'></ion-img>
         </ion-buttons>
-        <div class="card-title" align="center">Events</div>
+        <div class="card-title" align="center">BILLS</div>
       </ion-card>
     </div>
   </div>
@@ -91,20 +142,20 @@
     <div class="col col-md-6">
       <ion-card class="fixcard col-50" (click)="ShowHelpDesk()" color='button'>
         <ion-buttons align="center" large class="call-to-action">
-          <ion-img class="cards-action-img" src='assets/img/servicedesk_256x256-512.png'></ion-img>
+          <ion-img class="cards-action-img" src='assets/img/icon_forum.png'></ion-img>
         </ion-buttons>
 
-        <div class="card-title" align="center">HELPDESK</div>
+        <div class="card-title" align="center">FORUM</div>
       </ion-card>
     </div>
     <div class="col col-md-6">
       <ion-card class="card" (click)="ShowBills()" class=" fixcard col-50">
         <ion-buttons align="center" large class="call-to-action">
           <!-- <ion-icon name="clipboard" ></ion-icon> -->
-          <ion-img class="cards-action-img" src='assets/img/bill_finance_business_trade_invoice_cost_report-2-512.png'></ion-img>
+          <ion-img class="cards-action-img" src='assets/img/icon_event.png'></ion-img>
           <!-- /<img class="action-img" src="../../assets/bill_finance_business_trade_invoice_cost_report-2-512.png"/> -->
         </ion-buttons>
-        <div class="card-title" align="center">Bills</div>
+        <div class="card-title" align="center">EVENTS</div>
       </ion-card>
     </div>
   </div>
