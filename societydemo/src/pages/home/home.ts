@@ -103,7 +103,7 @@ export class HomePage {
         .then((data)=>
         {
            this.xmlItems = data;
-           console.log(this.xmlItems);
+           //console.log(this.xmlItems);
         });
      });
   }

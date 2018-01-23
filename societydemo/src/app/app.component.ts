@@ -165,21 +165,27 @@ export class MySocietyApp {
       // Initialize some options
       this.initializeOptions();
 
-      // this.fcm.subscribeToTopic('all');
-      // this.fcm.getToken().then(token => {
-      //   // backend.registerToken(token);
-      // });
-      // this.fcm.onNotification().subscribe(data => {
-      //   alert('message received')
-      //   if(data.wasTapped) {
-      //    console.info("Received in background");
-      //   } else {
-      //    console.info("Received in foreground");
-      //   };
-      // });
-      // this.fcm.onTokenRefresh().subscribe(token => {
-      //   // backend.registerToken(token);
-      // });
+      if (this.platform.is("android"))
+      {
+          this.fcm.subscribeToTopic('all');
+          this.fcm.getToken().then(token => {
+            // backend.registerToken(token);
+            alert(token);
+          });
+          this.fcm.onNotification().subscribe(data => {
+            alert('message received');
+            alert(JSON.stringify(data));
+            if(data.wasTapped) {
+            console.info("Received in background");
+            } else {
+            console.info("Received in foreground");
+            };
+          });
+          this.fcm.onTokenRefresh().subscribe(token => {
+            // backend.registerToken(token);
+            alert(token);
+          });
+        }
 
     });
   }
