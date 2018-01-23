@@ -148,7 +148,7 @@ var config = {
     ServiceDetailPage,
     ImageGalleryPage,
     PhotosPage
-   
+
   ],
 
   imports: [
@@ -209,7 +209,6 @@ var config = {
     ServiceDetailPage,
     ImageGalleryPage,
     PhotosPage
-  
   ],
 
   providers: [
@@ -233,7 +232,6 @@ var config = {
     EmailComposer,
     EventDataProvider,
     StreamingMedia,
-
     APP_PROVIDERS,
     { provide: APP_BASE_HREF, useValue: "/" },
     StreamingMedia,
