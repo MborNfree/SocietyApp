@@ -1,6 +1,7 @@
 page-home {
   .imgcarousel{
-    height: 40%;
+    height: 80%;
+    width:130%;
   }
   .fixcard {
      height:100%;
@@ -14,14 +15,28 @@ page-home {
     height: 80%;
   }
 .slide img{
-  height: 80%;
+  height: 90%;
+}
+.services-slides{
+  height:120px;
+
 }
   .swiper-slide img {
     width: auto;
     max-width: 100%;
     height: 150px!important;
-    max-height: 100%;
+    max-height: 210px;
   }
+  // page-home .profile-picture {
+  //   padding: 4px;
+  //   border-radius: 100%;
+  //   -webkit-box-sizing: content-box;
+  //   box-sizing: content-box;
+  //   margin: 0 auto;
+  //   width: 28px;
+  //   height: 24px;
+  //   overflow: hidden;
+  // }
   .slide-zoom {
     text-align: center;
     display: block;
@@ -41,7 +56,8 @@ page-home {
     text-align: center;
   }
   .profile-picture img {
-    width: 40px;
+    width: 35px;
+    height:30px;
     border-radius: 100%;
   }
   .profile-name {
@@ -51,6 +67,7 @@ page-home {
     text-transform: capitalize;
   }
 
+  
 
   .item-service{
       width: 100px  !important;
@@ -120,7 +137,7 @@ page-home {
   }
 
   .service-card {
-    height: 118px;
+    height: 97px;
   }
 
   .platform-android.platform-cordova {

@@ -21,8 +21,14 @@ ion-item.item-wp {
   padding-right: 16px;
   min-height: 50px;
   &.active-side-menu-option {
-    color: map-get($colors, sidemenulabel);
+    color: map-get($colors, sidemenulabel);   //side menu-options
     font-size:11pt;
+    ion-icon.header-icon {
+      will-change: transform;
+      transition: transform $animation-duration ease;
+      color:map-get($colors ,sidemenulabel);  // side menu icon
+      font-size:14pt;
+    }
   }
   &.item.item-block {
     border-bottom: 1px solid $item-color-bg;
@@ -43,7 +49,7 @@ ion-item.item-wp {
 ion-list.accordion-menu {
   ion-item.header {
     background-color: $header-color-bg;  
-    color:map-get($colors ,sidemenulabel);
+    color:map-get($colors ,sidemenulabel);   /// side menu label with options
     font-size: 11pt;
     ion-icon.header-icon {
       will-change: transform;
@@ -65,10 +71,13 @@ ion-list.accordion-menu {
     overflow-y: hidden;
     height: 0;
     color:map-get($colors,sidemenulabel);
+   
+
   } // Sub options without icons
   ion-item.item.item-block.item-ios.no-icon .item-inner {
     margin-left: 48px;
     color:map-get($colors ,sidemenulabel);
+   
   }
   ion-item.item.item-block.item-md.no-icon .item-inner,
   ion-item.item.item-block.item-wp.no-icon .item-inner {

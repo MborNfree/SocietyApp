@@ -1,3 +1,5 @@
+import { PhotosPage } from './../pages/photos/photos';
+import { ImageGalleryPage } from './../pages/image-gallery/image-gallery';
 
 // Dependency
 
@@ -91,6 +93,7 @@ import { ImageProvider } from '../providers/image/image';
 import { PreloaderProvider } from '../providers/preloader/preloader';
 
 
+
 var config = {
   apiKey: "AIzaSyCdBaGl6H_IuyzMyEnjq-6VRD5-2alxUtg",
   authDomain: "society-182906.firebaseapp.com",
@@ -143,7 +146,9 @@ var config = {
     CommentCreatePage,
     ConfigCctvPage,
     ServiceDetailPage,
-
+    ImageGalleryPage,
+    PhotosPage
+   
   ],
 
   imports: [
@@ -202,7 +207,9 @@ var config = {
     CommentCreatePage,
     ConfigCctvPage,
     ServiceDetailPage,
-
+    ImageGalleryPage,
+    PhotosPage
+  
   ],
 
   providers: [
