@@ -1,21 +1,21 @@
 page-home {
-  .imgcarousel{
+  .imgcarousel {
     height: 40%;
   }
   .fixcard {
-     height:100%;
-      width: 100%;
-      text-align: center;
-      align-content: center;
-      align-self: center;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    align-content: center;
+    align-self: center;
     padding: 20px !important;
   }
-  .slide{
+  .slide {
     height: 80%;
   }
-.slide img{
-  height: 80%;
-}
+  .slide img {
+    height: 80%;
+  }
   .swiper-slide img {
     width: auto;
     max-width: 100%;
@@ -28,7 +28,8 @@ page-home {
     width: 100%;
     height: 200px;
   }
-  .item-md ion-avatar ion-img, .item-md ion-avatar img {
+  .item-md ion-avatar ion-img,
+  .item-md ion-avatar img {
     border-radius: 50%;
     overflow: hidden;
     width: 51px!important;
@@ -50,56 +51,22 @@ page-home {
     font-weight: bold !important;
     text-transform: capitalize;
   }
-
-
-  .item-service{
-      width: 100px  !important;
-      height: 100px !important;
-
+  .item-service {
+    width: 100px !important;
+    height: 100px !important;
   }
-  @media (max-width : 676px ) and (min-height:480 px){
-   ion-avatar img  {
-    width:100% !important;
-    height : 100% !important;
-    max-width: 100px !important;  //any size
-    max-height: 100px !important; //any size
+  @media (max-width: 676px) and (min-height:480 px) {
+    ion-avatar img {
+      width: 100% !important;
+      height: 100% !important;
+      max-width: 100px !important; //any size
+      max-height: 100px !important; //any size
     }
   }
-
-  // @media screen and (max-height: 780px) {
-  //   .statusbar {
-  //     width: 340px;
-  //   }
-  //   .phone-frame-wrap {
-  //     width: 340px;
-  //     height: 605px;
-  //   }
-  //   #android-frame iframe, #windows-frame iframe {
-  //     height: 585px;
-  //     margin-top: 20px;
-  //   }
-  // }
-  // @media screen and (max-height: 680px) {
-  //   .statusbar {
-  //     width: 325px;
-  //   }
-  //   .phone-frame-wrap {
-  //     width: 325px;
-  //     height: 578px;
-  //   }
-  //   #android-frame iframe, #windows-frame iframe {
-  //     height: 558px;
-  //     margin-top: 20px;
-  //   }
-  // }
-
-
   .service-col-33 {
     width: 33%;
-    height:140px;
-
+    height: 140px;
   }
-
   .cards-action-img {
     height: 118px;
     text-align: center;
@@ -107,7 +74,6 @@ page-home {
     width: 110%;
     background: none;
   }
-
   .profile-picture {
     padding: 4px;
     border-radius: 100%;
@@ -118,16 +84,14 @@ page-home {
     height: 30px;
     overflow: hidden;
   }
-
   .service-card {
     height: 118px;
   }
-
   .platform-android.platform-cordova {
     page-landing {
       .scroll-content {
         margin-top: 20px !important;
-         }
+      }
     }
   }
 }
