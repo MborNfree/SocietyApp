@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 // import { SQLite } from 'ionic-native';
-import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
+// import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
 import { IThread, IComment, IUser } from '../interfaces';
 import { ItemsService } from '../services/items.service';
 
 @Injectable()
 export class SqliteService {
-    db: SQLite;
+    // db: SQLite;
 
     constructor(private itemsService: ItemsService) {
 

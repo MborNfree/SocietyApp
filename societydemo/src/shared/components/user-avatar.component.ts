@@ -1,13 +1,13 @@
 import { Component, Input } from '@angular/core';
-// import { PhotoViewer } from 'ionic-native';
-import { PhotoViewer } from '@ionic-native/photo-viewer';
+// // import { PhotoViewer } from 'ionic-native';
+// import { PhotoViewer } from '@ionic-native/photo-viewer';
 
 import { IUser } from '../interfaces';
 import { DataService } from '../services/data.service';
 
 @Component({
     selector: 'forum-user-avatar',
-    template: ` <img *ngIf="imageLoaded" src="{{imageUrl}}" (click)="zoom()">`
+    template: ` <img *ngIf="imageLoaded" src="{{imageUrl}}" >`
 })
 export class UserAvatarComponent  {
     @Input() user: IUser;
@@ -16,7 +16,7 @@ export class UserAvatarComponent  {
    
 
     // constructor(private dataService: DataService) { }
-    constructor( private photoViewer:PhotoViewer) { }
+    constructor( ) { }
 
     // ngOnInit() {
     //     let self = this;
@@ -48,9 +48,9 @@ export class UserAvatarComponent  {
     // }*/
     // }
 
-    zoom() {
-        this.photoViewer.show(this.imageUrl, this.user.username, { share: false });
-    }
+    // zoom() {
+    //     this.photoViewer.show(this.imageUrl, this.user.username, { share: false });
+    // }
 
     // getUserImage() {
     //     var self = this;
