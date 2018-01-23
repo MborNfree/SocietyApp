@@ -3,18 +3,6 @@
     <button ion-button icon-only menuToggle start>
       <ion-icon name="menu"></ion-icon>
     </button>
-<<<<<<< HEAD
-    <ion-buttons end (click)="sendTextMessage()">
-      <img src="assets/img/icon_profile.png" />
-    </ion-buttons>
-    <ion-buttons end>
-      <button ion-button icon-only>
-        <ion-icon name="notifications"></ion-icon>
-      </button>
-    </ion-buttons>
-    <ion-buttons class="profile-picture" end>
-      <img src="assets/img/icon_panic.png" (click)='ViewProfile()' />
-=======
     <ion-buttons end>
       <button ion-button icon-only (click)="sendTextMessage()">
         <!-- <ion-icon name="send"></ion-icon> -->
@@ -23,20 +11,19 @@
     </ion-buttons>
     <ion-buttons end>
       <button ion-button icon-only>
-          
+
           <img src="assets/img/icon_notification.png" />
         <!-- <ion-icon name="notifications"></ion-icon> -->
     </button>
     </ion-buttons>
     <ion-buttons end>
-        
+
       <!-- <button ion-button icon-only (click)="showAlert()">
         <ion-icon name="power"></ion-icon>
       </button> -->
     </ion-buttons>
     <ion-buttons class="profile-picture big-profile-picture" end>
       <img src="assets/img/icon_profile.png" (click)='ViewProfile()'/>
->>>>>>> c389a99dc112790b123d4963f5ec161a932b77c0
     </ion-buttons>
     <ion-title align="center">
       Home
@@ -47,22 +34,11 @@
 <ion-content padding class="bg-masters">
   <div align="center">
     <ion-slides class="imgcarousel" autoplay="2000" loop="true" speed="3000">
-<<<<<<< HEAD
-      <ion-slide class="slide">
-        <img src='assets/img/banner_1.png' /> </ion-slide>
-      <ion-slide class="slide">
-        <img src='assets/img/banner_2.png' /> </ion-slide>
-      <ion-slide class="slide">
-        <img src='assets/img/banner_3.png' /> </ion-slide>
-    </ion-slides>
-  </div>
-=======
         <ion-slide class="slide"> <img src='assets/img/banner_1.png'/> </ion-slide>
         <ion-slide class="slide"> <img src='assets/img/banner_2.png'/> </ion-slide>
         <ion-slide class="slide"> <img src='assets/img/banner_3.png'/> </ion-slide>
       </ion-slides>
 </div>
->>>>>>> c389a99dc112790b123d4963f5ec161a932b77c0
 
   <!-- <ion-label stacked align="center">Services</ion-label> -->
 
@@ -70,46 +46,27 @@
     <ion-card class="service-card">
       <ion-slides>
         <ion-col class="service-col-33">
-<<<<<<< HEAD
-          <ion-item (click)="showdoctorlist()" class="item-service" color="info">
-            <ion-avatar class="ion-avatar img">
-              <ion-img src="assets/img/doctor.jpg" align="center"></ion-img>
-            </ion-avatar>
-=======
           <ion-item (click)="showdoctorlist()"  class="item-service" >
-            
+
               <ion-img   src="assets/img/icon_dr.png" align="center"></ion-img>
-            
->>>>>>> c389a99dc112790b123d4963f5ec161a932b77c0
+
             <div class="card-title" align="center">Doctor</div>
           </ion-item>
         </ion-col>
         <ion-col class="service-col-33">
-<<<<<<< HEAD
-          <ion-item (click)="showelectricianlist()" class="item-service" color="info">
-            <ion-avatar>
-              <ion-img src="assets/img/electrician.jpg" align="center"></ion-img>
-=======
           <ion-item (click)="showelectricianlist()"  class="item-service" >
-            
+
               <ion-img src="assets/img/icon_electrician.png" align="center"></ion-img>
->>>>>>> c389a99dc112790b123d4963f5ec161a932b77c0
               <div class="card-title" align="center">Electrician</div>
-            
+
           </ion-item>
         </ion-col>
         <ion-col class="service-col-33">
-<<<<<<< HEAD
-          <ion-item (click)="showplumberlist()" class="item-service" color="info">
-            <ion-avatar>
-              <ion-img align="center" class="action-img" src='assets/img/plumber.jpg'></ion-img>
-=======
           <ion-item (click)="showplumberlist()"  class="item-service">
-            
+
               <ion-img align="center" class="action-img" src='assets/img/icon_plumber.png'></ion-img>
->>>>>>> c389a99dc112790b123d4963f5ec161a932b77c0
               <div class="card-title" align="center">Plumber</div>
-            
+
           </ion-item>
         </ion-col>
       </ion-slides>

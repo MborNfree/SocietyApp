@@ -10,8 +10,7 @@ import {
   ModalController,
   ToastController
 } from "ionic-angular";
-//  import { Network } from "ionic-native";
- import { Network } from '@ionic-native/network';
+ import { Network } from "ionic-native";
 import { StatusBar } from "@ionic-native/status-bar";
 import { SplashScreen } from "@ionic-native/splash-screen";
 import { AngularFireAuth } from "angularfire2/auth";

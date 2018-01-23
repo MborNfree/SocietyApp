@@ -1,7 +1,5 @@
-import { Network } from '@ionic-native/network';
-import { UserAvatarComponent } from './../shared/components/user-avatar.component';
-import { PhotosPage } from './../pages/photos/photos';
-import { ImageGalleryPage } from './../pages/image-gallery/image-gallery';
+
+
 
 // Dependency
 
@@ -26,6 +24,7 @@ import { Transfer, TransferObject } from "@ionic-native/transfer";
 import { Printer } from "@ionic-native/printer";
 import { HttpModule } from "@angular/http";
 import { SMS } from "@ionic-native/sms";
+import { Network } from 'ionic-native';
 
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
@@ -74,18 +73,21 @@ import { ProfileProvider } from "../providers/profile/profile";
 import { BalancesheetPage } from "./../pages/balancesheet/balancesheet";
 import { ViewbillPage } from "./../pages/viewbill/viewbill";
 import { Card } from "../pages/card/card";
-import { EventDataProvider } from "../providers/event-data/event-data";
+
 import { ThreadCommentsPage } from "../pages/thread-comments/thread-comments";
 import { ThreadCreatePage } from "../pages/thread-create/thread-create";
 import { ThreadsPage } from "../pages/threads/threads";
 import { CommentCreatePage } from "../pages/comment-create/comment-create";
 import { AboutPage } from "../pages/about/about";
 
+import { PhotosPage } from './../pages/photos/photos';
+import { ImageGalleryPage } from './../pages/image-gallery/image-gallery';
 import { ConfigCctvPage } from '../pages/config-cctv/config-cctv';
-
 import { ServiceDetailPage } from '../pages/service-detail/service-detail';
+
 // Custom components
 import { ThreadComponent } from "../shared/components/thread.component";
+import { UserAvatarComponent } from './../shared/components/user-avatar.component';
 // import { UserAvatarComponent } from "../shared/components/user-avatar.component";
 
 // providers
@@ -93,6 +95,7 @@ import { APP_PROVIDERS } from "../providers/app.providers";
 import { DatabaseProvider } from '../providers/database/database';
 import { ImageProvider } from '../providers/image/image';
 import { PreloaderProvider } from '../providers/preloader/preloader';
+import { EventDataProvider } from "../providers/event-data/event-data";
 
 
 
@@ -149,14 +152,8 @@ var config = {
     ConfigCctvPage,
     ServiceDetailPage,
     ImageGalleryPage,
-<<<<<<< HEAD
     PhotosPage
 
-=======
-    PhotosPage,
-    UserAvatarComponent,
-   
->>>>>>> c389a99dc112790b123d4963f5ec161a932b77c0
   ],
 
   imports: [
@@ -216,13 +213,7 @@ var config = {
     ConfigCctvPage,
     ServiceDetailPage,
     ImageGalleryPage,
-<<<<<<< HEAD
     PhotosPage
-=======
-    PhotosPage,
-    UserAvatarComponent
-  
->>>>>>> c389a99dc112790b123d4963f5ec161a932b77c0
   ],
 
   providers: [
