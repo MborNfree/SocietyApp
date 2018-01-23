@@ -29,7 +29,8 @@ export class PhotosPage {
 
 
   display() {
-    firebase.storage().ref().child('upload/festival.jpg').getDownloadURL().then((url) => {
+
+    firebase.storage().ref().child('upload/${filename}').getDownloadURL().then((url) => {
       this.zone.run(() => {
         this.imgsource = url;
        })

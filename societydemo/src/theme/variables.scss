@@ -46,17 +46,20 @@ $colors: (
   event :     #97D0AE,
   news:       #f9900b,
   helpdesk :  #02D681,
-  sidemenulabel:#530006,
+  sidemenulabel:#4d4d4f,
   sidemenu-selected:rgb(188, 17, 33),
   button:rgb(188, 17, 33)
   
 );
 
-
+//---Font Size Of Title in Navbar----//
 $toolbar-ios-title-font-size: 14pt;
 $toolbar-md-title-font-size: 14pt;
 $toolbar-wp-title-font-size: 14pt;
 
+$label-ios-font-size:4em;
+$label-md-font-size:4em;
+$label-wp-font-size:4em;
 
 // App iOS Variables
 // --------------------------------------------------

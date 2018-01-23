@@ -22,6 +22,16 @@ page-home {
     height: 150px!important;
     max-height: 100%;
   }
+  // page-home .profile-picture {
+  //   padding: 4px;
+  //   border-radius: 100%;
+  //   -webkit-box-sizing: content-box;
+  //   box-sizing: content-box;
+  //   margin: 0 auto;
+  //   width: 28px;
+  //   height: 24px;
+  //   overflow: hidden;
+  // }
   .slide-zoom {
     text-align: center;
     display: block;
@@ -41,7 +51,8 @@ page-home {
     text-align: center;
   }
   .profile-picture img {
-    width: 40px;
+    width: 35px;
+    height:30px;
     border-radius: 100%;
   }
   .profile-name {

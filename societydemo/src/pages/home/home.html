@@ -4,22 +4,23 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-buttons end>
-      <button ion-button icon-only (click)="sendTextMessage()">
-        <ion-icon name="send"></ion-icon>
+      <button ion-button icon-only class="profile-picture big-profile-picture" (click)="sendTextMessage()">
+          <img src="assets/img/icon_panic.png"  />
       </button>
     </ion-buttons>
     <ion-buttons end>
-      <button ion-button icon-only>
-        <ion-icon name="notifications"></ion-icon>
-    </button>
+      <button ion-button class="profile-picture big-profile-picture" >
+          <img src="assets/img/icon_notification.png"  />
+        <!-- <ion-icon name="notifications"></ion-icon> -->
+    </button>    
     </ion-buttons>
     <ion-buttons end>
-      <button ion-button icon-only (click)="showAlert()">
+      <!-- <button ion-button icon-only (click)="showAlert()">
         <ion-icon name="power"></ion-icon>
-      </button>
-    </ion-buttons>
+      </button> -->
+    </ion-buttons>  
     <ion-buttons class="profile-picture big-profile-picture" end>
-      <img src="assets/img/user3.jpg" (click)='ViewProfile()'/>
+      <img src="assets/img/icon_profile.png" (click)='ViewProfile()'/>
     </ion-buttons>
     <ion-title align="center">
       Home
@@ -42,9 +43,9 @@
 
   <div align="center">
     <ion-slides class="imgcarousel" autoplay="2000" loop="true" speed="3000">
-        <ion-slide class="slide"> <img src='assets/img/b3.JPG'/> </ion-slide>
-        <ion-slide class="slide"> <img src='assets/img/b5.JPG'/> </ion-slide>
-        <ion-slide class="slide"> <img src='assets/img/b3.JPG'/> </ion-slide>
+        <ion-slide class="slide"> <img src='assets/img/banner_1.png'/> </ion-slide>
+        <ion-slide class="slide"> <img src='assets/img/banner_2.png'/> </ion-slide>
+        <ion-slide class="slide"> <img src='assets/img/banner_3.png'/> </ion-slide>
       </ion-slides>
 </div>
 
@@ -84,7 +85,7 @@
 
   </div>
   <div class="row">
-    <div class="col col-md-6">
+    <div class="col col-md-3">
       <ion-card (click)="shownews()"  color='news' class="fixcard col-33">
         <ion-buttons align="center"align-content="center" align-self="center" large class="call-to-action">
 
@@ -94,7 +95,7 @@
       </ion-card>
     </div>
     <div class="col col-md-6">
-      <ion-card (click)="showmembers()" color='event' class="fixcard col-50">
+      <ion-card (click)="showmembers()" color='event'>
         <ion-buttons align="center" large class="call-to-action">
 
           <ion-img class="cards-action-img" src='assets/img/CCN-2.png'></ion-img>
