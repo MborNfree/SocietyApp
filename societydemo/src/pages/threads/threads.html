@@ -3,8 +3,7 @@
     <button ion-button menuToggle>
       <ion-icon name='menu'></ion-icon>
     </button>
-
-
+    <ion-title align="left">Forum</ion-title>
     <ion-buttons end>
       <button ion-button *ngIf="!internetConnected" (click)="notify('Working offline..')">
         <ion-icon name="warning"></ion-icon>
@@ -40,7 +39,7 @@
 
   <ion-list *ngIf="!loading">
     <forum-thread *ngFor="let thread of threads" [thread]="thread" (onViewComments)="viewComments($event)"></forum-thread>
-    <!-- <ion-item *ngFor="let thread of threads" (onViewComments)="viewComments($event)"></ion-item> -->
+    <!-- <ion-item *ngFor="let thread of threads" (onViewComments)="viewComments($event)">{{thread.title}}</ion-item> -->
   </ion-list>
 
   <ion-infinite-scroll (ionInfinite)="fetchNextThreads($event)" threshold="10px" *ngIf="(start > 0) && (queryText.trim().length == 0) && segment=='all' && internetConnected">

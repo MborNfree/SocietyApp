@@ -14,7 +14,7 @@ import { AuthService } from "../../shared/services/auth.service";
 import { DataService } from "../../shared/services/data.service";
 import { MappingsService } from "../../shared/services/mappings.service";
 import { ItemsService } from "../../shared/services/items.service";
-import { SqliteService } from "../../shared/services/sqlite.service";
+//import { SqliteService } from "../../shared/services/sqlite.service";
 
 @Component({
   templateUrl: "threads.html"
@@ -28,11 +28,9 @@ export class ThreadsPage {
   public pageSize: number = 3;
   public loading: boolean = true;
   public internetConnected: boolean = true;
-
   public threads: Array<IThread> = [];
   public newThreads: Array<IThread> = [];
   public favoriteThreadKeys: string[];
-
   public firebaseConnectionAttempts: number = 0;
 
   constructor(
@@ -41,7 +39,7 @@ export class ThreadsPage {
     public toastCtrl: ToastController,
     public authService: AuthService,
     public dataService: DataService,
-    public sqliteService: SqliteService,
+    // public sqliteService: SqliteService,
     public mappingsService: MappingsService,
     public itemsService: ItemsService,
     public events: Events
@@ -51,38 +49,38 @@ export class ThreadsPage {
     // self.events.subscribe("network:connected", self.networkConnected);
     self.events.subscribe("threads:add", self.addNewThreads);
 
-    // self.checkFirebase();
+     self.checkFirebase();
   }
 
-  // checkFirebase() {
-  //   let self = this;
-  //   if (!self.dataService.isFirebaseConnected()) {
-  //     setTimeout(function () {
-  //       console.log("Retry : " + self.firebaseConnectionAttempts);
-  //       self.firebaseConnectionAttempts++;
-  //       if (self.firebaseConnectionAttempts < 5) {
-  //         self.checkFirebase();
-  //       } else {
-  //         self.internetConnected = false;
-  //         self.dataService.goOffline();
-  //         self.loadSqliteThreads();
-  //       }
-  //     }, 1000);
-  //   } else {
-  //     console.log(
-  //       "Firebase connection found (threads.ts) - attempt: " +
-  //       self.firebaseConnectionAttempts
-  //     );
-  //     self.dataService
-  //       .getStatisticsRef()
-  //       .on("child_changed", self.onThreadAdded);
-  //     if (self.authService.getLoggedInUser() === null) {
-  //       //
-  //     } else {
-  //       self.loadThreads(true);
-  //     }
-  //   }
-  // }
+  checkFirebase() {
+    let self = this;
+    if (!self.dataService.isFirebaseConnected()) {
+      setTimeout(function () {
+        console.log("Retry : " + self.firebaseConnectionAttempts);
+        self.firebaseConnectionAttempts++;
+        if (self.firebaseConnectionAttempts < 5) {
+          self.checkFirebase();
+        } else {
+          self.internetConnected = false;
+          self.dataService.goOffline();
+          //self.loadSqliteThreads();
+        }
+      }, 1000);
+    } else {
+      console.log(
+        "Firebase connection found (threads.ts) - attempt: " +
+        self.firebaseConnectionAttempts
+      );
+      self.dataService
+        .getStatisticsRef()
+        .on("child_changed", self.onThreadAdded);
+      if (self.authService.getLoggedInUser() === null) {
+        //
+      } else {
+        self.loadThreads(true);
+      }
+    }
+  }
 
   // loadSqliteThreads() {
   //   let self = this;
@@ -260,19 +258,21 @@ export class ThreadsPage {
   }
 
   searchThreads() {
+
     var self = this;
     if (self.queryText.trim().length !== 0) {
       self.segment = "all";
       // empty current threads
       self.threads = [];
       self.dataService.loadThreads().then(function (snapshot) {
+        console.log('snap'+JSON.stringify(snapshot));
         self.itemsService
           .reversedItems<IThread>(self.mappingsService.getThreads(snapshot))
           .forEach(function (thread) {
             console.log(thread);
             if (
               thread.title.toLowerCase().includes(self.queryText.toLowerCase())
-            )
+             )
               self.threads.push(thread);
             console.log(self.threads);
           });

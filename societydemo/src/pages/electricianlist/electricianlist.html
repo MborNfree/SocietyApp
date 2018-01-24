@@ -6,7 +6,7 @@
       <ion-icon name="menu"></ion-icon>
     </button>
 
-    <ion-title align="center">Electrician List</ion-title>
+    <ion-title align="left">Electrician List</ion-title>
   </ion-toolbar>
 
 </ion-header>
@@ -14,25 +14,26 @@
 
 <ion-content padding class="bg-masters">
 
-    <ion-refresher (ionRefresh)="doRefresh($event)">
-        <ion-refresher-content></ion-refresher-content>
-      </ion-refresher>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
 
   <ion-card *ngFor="let item of items">
 
     <ion-item (click)="viewItem(item)">
-      <div class="row">  
-        <div class="col">      
+      <div class="row">
+        <div class="col">
           <ion-avatar>
-            <ion-img src="assets/img/doctor.jpg" ></ion-img>
+            <ion-img src="assets/img/doctor.jpg"></ion-img>
           </ion-avatar>
-        </div>        
+        </div>
         <div class="col">
           <p>{{item.Service_name}}</p>
           <p>{{item.Service_type}} </p>
-          <p><ion-icon name="call"></ion-icon>{{item.Contact_no}}</p>
-        </div> 
-        </div>   
+          <p>
+            <ion-icon name="call"></ion-icon>{{item.Contact_no}}</p>
+        </div>
+      </div>
     </ion-item>
   </ion-card>
 

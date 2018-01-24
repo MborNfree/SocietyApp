@@ -9,27 +9,27 @@
       <button ion-button icon-only menuToggle start>
           <ion-icon name="menu"></ion-icon>
       </button>
-    <ion-title align="center">Resident List</ion-title>
+    <ion-title  align="left">Resident List</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding class="bg-masters">
     <ion-card *ngFor="let user of users">
         <ion-item  (click)="viewItem(user)">
-            <div class="row">  
-                <div class="col">              
+            <div class="row">
+                <div class="col">
                       <ion-avatar>
                             <ion-img src="assets/img/doctor.jpg"></ion-img>
                       </ion-avatar>
                       </div>
-                             
-                    <div class="col">                                   
-                      <p># {{user.flatno}}</p>                      
+
+                    <div class="col">
+                      <p># {{user.flatno}}</p>
                       <p>{{user.first_name}} </p>
-                      <p><ion-icon name="call"></ion-icon>{{user.contact_no}} </p> 
-                      <!-- <p>Email: {{user.email}}</p> --> 
-                      </div>                   
-            </div>   
+                      <p><ion-icon name="call"></ion-icon>{{user.contact_no}} </p>
+                      <!-- <p>Email: {{user.email}}</p> -->
+                      </div>
+            </div>
         </ion-item>
     </ion-card>
 </ion-content>

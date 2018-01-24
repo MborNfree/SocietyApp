@@ -5,9 +5,9 @@ import { FlashCardComponent } from './flash-card/flash-card';
 @NgModule({
 	declarations: [AccordionListComponent,
     FlashCardComponent
-   
+
     ]
-	
+
 })
 
 export class ComponentsModule {}

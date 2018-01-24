@@ -6,6 +6,7 @@
       <ion-item  class="item-ios active-side-menu-option" [ngClass]="menuSettings?.showSelectedOption && option.selected ? menuSettings.selectedOptionClass : null" tappable
         (tap)="select(option)">
         <ion-icon *ngIf="option.iconName" class="header-icon" [name]="option.iconName" item-left></ion-icon>
+        <!-- <ion-icon *ngIf="option.displayName=='Logout'" class="header-icon" (click)="logoutClicked()" [name]="option.iconName" item-left></ion-icon> -->
         {{ option.displayName }}
       </ion-item>
     </ng-template>

@@ -67,4 +67,5 @@
     <plugin name="mx.ferreyra.callnumber" spec="~0.0.2" />
     <plugin name="cordova-plugin-fcm" spec="^2.1.2" />
     <plugin name="cordova-sqlite-storage" spec="^2.2.0" />
+    <engine name="android" spec="~7.0.0" />
 </widget>

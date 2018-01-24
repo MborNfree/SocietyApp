@@ -3,7 +3,7 @@
     <button ion-button icon-only menuToggle start>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title align="center">Committee List</ion-title>
+    <ion-title  align="left">Committee List</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -14,17 +14,17 @@
   <ion-card *ngFor="let Committeeitem of Committeeitems">
     <ion-item (click)="viewItem(Committeeitem)">
       <div class="row">
-        <div class="col">       
+        <div class="col">
           <ion-avatar>
             <ion-img src="assets/img/doctor.jpg" ></ion-img>
           </ion-avatar>
-        </div>        
+        </div>
          <div class="col">
           <p>#: {{Committeeitem.flatno}}</p>
           <p>{{Committeeitem.first_name}} </p>
           <p><ion-icon name="call"></ion-icon>{{Committeeitem.contact_no}}</p>
           <!-- <p>Email: {{Committeeitem.email}}</p>  -->
-        </div> 
+        </div>
         </div>
     </ion-item>
   </ion-card>

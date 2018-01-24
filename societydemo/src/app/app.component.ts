@@ -1,5 +1,5 @@
-// import * as firebase from "firebase/app";
-import * as firebase from 'firebase';
+
+
 import { Component, ViewChild } from "@angular/core";
 import {
   Nav,
@@ -10,15 +10,15 @@ import {
   ModalController,
   ToastController
 } from "ionic-angular";
- import { Network } from "ionic-native";
+import { Network } from "ionic-native";
 import { StatusBar } from "@ionic-native/status-bar";
 import { SplashScreen } from "@ionic-native/splash-screen";
 import { AngularFireAuth } from "angularfire2/auth";
-import { AngularFireDatabase, AngularFireList } from "angularfire2/database";
+import { AngularFireDatabase } from "angularfire2/database";
 import { Observable } from "rxjs/Observable";
 import { AuthService } from "../shared/services/auth.service";
-// import { DataService } from "../shared/services/data.service";
-
+import { DataService } from "../shared/services/data.service";
+import * as firebase from 'firebase';
 import { FCM } from '@ionic-native/fcm';
 
 // Models
@@ -26,6 +26,8 @@ import {
   MenuOptionModel,
   SideMenuContentComponent
 } from "../shared/side-menu-content/side-menu-content.component";
+import { SideMenuSettings } from "./../shared/side-menu-content/side-menu-content.component";
+
 import { CircularlistPage } from "./../pages/circularlist/circularlist";
 import { DocumentuploadPage } from "./../pages/documentupload/documentupload";
 import { EventlistPage } from "./../pages/eventlist/eventlist";
@@ -41,12 +43,9 @@ import { ResidentlistPage } from "./../pages/residentlist/residentlist";
 import { ProfilePage } from "./../pages/profile/profile";
 import { LoginPage } from "./../pages/login/login";
 import { SocietybillPage } from "../pages/societybill/societybill";
-import { SideMenuSettings } from "./../shared/side-menu-content/side-menu-content.component";
-import { ForumPage } from "./../pages/forum/forum";
 import { InboxPage } from "./../pages/inbox/inbox";
 import { HelpdeskPage } from "./../pages/helpdesk/helpdesk";
 import { ImageGalleryPage } from "./../pages/image-gallery/image-gallery";
-import { ThreadCreatePage } from "../pages/thread-create/thread-create";
 import { ThreadsPage } from "../pages/threads/threads";
 import { ConfigCctvPage } from './../pages/config-cctv/config-cctv';
 
@@ -98,7 +97,7 @@ export class MySocietyApp {
     public afAuth: AngularFireAuth,
     public af: AngularFireDatabase,
     public toastCtrl: ToastController,
-    // public dataService: DataService,
+    public dataService: DataService,
 
     public authService: AuthService,
     public events: Events,
@@ -123,7 +122,7 @@ export class MySocietyApp {
       setTimeout(() => {
         console.log("we got a connection..");
         console.log("Firebase: Go Online..");
-        //self.dataService.goOnline();
+        self.dataService.goOnline();
         self.events.publish("network:connected", true);
       }, 3000);
     });
@@ -165,27 +164,26 @@ export class MySocietyApp {
       // Initialize some options
       this.initializeOptions();
 
-      if (this.platform.is("android"))
-      {
-          this.fcm.subscribeToTopic('all');
-          this.fcm.getToken().then(token => {
-            // backend.registerToken(token);
-            alert(token);
-          });
-          this.fcm.onNotification().subscribe(data => {
-            alert('message received');
-            alert(JSON.stringify(data));
-            if(data.wasTapped) {
+      if (this.platform.is("android")) {
+        this.fcm.subscribeToTopic('all');
+        this.fcm.getToken().then(token => {
+          // backend.registerToken(token);
+          alert(token);
+        });
+        this.fcm.onNotification().subscribe(data => {
+          alert('message received');
+          alert(JSON.stringify(data));
+          if (data.wasTapped) {
             console.info("Received in background");
-            } else {
+          } else {
             console.info("Received in foreground");
-            };
-          });
-          this.fcm.onTokenRefresh().subscribe(token => {
-            // backend.registerToken(token);
-            alert(token);
-          });
-        }
+          };
+        });
+        this.fcm.onTokenRefresh().subscribe(token => {
+          // backend.registerToken(token);
+          alert(token);
+        });
+      }
 
     });
   }
@@ -349,6 +347,15 @@ export class MySocietyApp {
         }
       ]
     });
+    // this.options.push({
+    //   displayName: 'Logout',
+    //   iconName: 'log-out',
+    //   custom: {
+    //     			isLoggedIn: false
+    //         },
+    //   component: LoginPage
+
+    // });
 
   }
   public selectOption(option: MenuOptionModel): void {
