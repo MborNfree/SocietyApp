@@ -1,6 +1,6 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Comments</ion-title>
+  <ion-navbar  color="navbar">
+    <ion-title align="left">Comments</ion-title>
     <ion-buttons end>
       <button ion-button (click)="showCommentActions()">
         <ion-icon name="options"></ion-icon>
@@ -54,8 +54,8 @@
   </ion-list>
 
   <ion-fab right bottom>
-    <button ion-fab color="primary">
-      <ion-icon name="create" (click)="createComment()"></ion-icon>
+    <button ion-fab color="primary" (click)="createComment()">
+      <ion-icon name="create"></ion-icon>
     </button>
   </ion-fab>
 </ion-content>

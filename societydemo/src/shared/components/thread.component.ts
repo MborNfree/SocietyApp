@@ -16,7 +16,7 @@ export class ThreadComponent implements OnInit, OnDestroy {
 
     ngOnInit() {
         var self = this;
-        //alert(self.thread.key);
+       // alert(self.thread.key);
 
         self.dataService.getThreadsRef().child(self.thread.key).on('child_changed', self.onCommentAdded);
     }

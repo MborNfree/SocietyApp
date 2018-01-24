@@ -1,7 +1,7 @@
 <ion-header>
 
   <ion-navbar color='navbar'>
-    <ion-title>Service Detail</ion-title>
+    <ion-title align="left">Service Detail</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -9,14 +9,14 @@
 <ion-content padding class="bg-masters">
   <ion-card>
     <!-- <div class="logo"> -->
-      <ion-avatar align="center">
-        <ion-img src="assets/img/doctor.jpg" alt="logo"></ion-img>
-      </ion-avatar>
+    <ion-avatar align="center">
+      <ion-img src="assets/img/doctor.jpg" alt="logo"></ion-img>
+    </ion-avatar>
     <!-- </div> -->
     <ion-list>
       <ion-item>
         <ion-label align="center">
-            <ion-icon name="person"></ion-icon> Name:{{itemsParam.Service_name}}</ion-label>
+          <ion-icon name="person"></ion-icon> Name:{{itemsParam.Service_name}}</ion-label>
       </ion-item>
       <ion-item *ngIf="itemsParam.Service_type!=''">
         <ion-label color="primary">

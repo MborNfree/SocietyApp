@@ -11,7 +11,6 @@ import { SMS } from "@ionic-native/sms";
 import 'rxjs/add/operator/map';
 import xml2js from 'xml2js';
 
-
 // Angular Material
 import firebase from 'firebase';
 import { LoginPage } from "./../login/login";
@@ -23,7 +22,6 @@ import { NewsPage } from "./../news/news";
 import { ProfilePage } from "./../profile/profile";
 import { SocietybillPage } from "./../societybill/societybill";
 import { EventlistPage } from "./../eventlist/eventlist";
-import { Card } from "../card/card";
 import { HelpdeskPage } from "./../helpdesk/helpdesk";
 import { Http } from "@angular/http";
 declare const jQuery : any;
@@ -36,7 +34,6 @@ declare const jQuery : any;
 
 })
 
-
 export class HomePage {
   array1: any[];
   username: any;
@@ -44,18 +41,14 @@ export class HomePage {
   public uIDParam;
   public xmlItems : any;
 
-
-
   constructor(
     public toastCtrl: ToastController,
     private afAuth: AngularFireAuth,
     public navCtrl: NavController,
     public alertCtrl: AlertController,
     public navParams: NavParams,
-
     private sms: SMS,
     private http:Http,
-
 
   ) {
     this.username = window.localStorage.getItem("Sessioneml");
@@ -85,7 +78,6 @@ export class HomePage {
       }
     });
 
-
   }
 
   ionViewWillEnter()
@@ -107,7 +99,6 @@ export class HomePage {
         });
      });
   }
-
 
   parseXML(data)
   {
@@ -147,11 +138,6 @@ export class HomePage {
     this.navCtrl.popToRoot();
   }
 
-  carddetails() {
-    this.navCtrl.push(Card);
-  }
-
-
   shownews() {
     this.navCtrl.push(NewsPage);
   }
@@ -170,10 +156,6 @@ export class HomePage {
   showdoctorlist() {
     this.navCtrl.push(DoctorlistPage);
   }
-  // showelectricianlist()
-  // {
-  //   this.navCtrl.push(electricianpage);
-  // }
 
   showplumberlist() {
     this.navCtrl.push(PlumberlistPage);

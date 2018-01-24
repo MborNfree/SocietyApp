@@ -22,6 +22,7 @@ import { RegisterPage } from "../register/register";
   templateUrl: "login.html"
 })
 export class LoginPage {
+
   signinForm: FormGroup;
   currentUserUid: any;
   sessionUser: any;

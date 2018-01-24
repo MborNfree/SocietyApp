@@ -69,7 +69,7 @@ export class ThreadCommentsPage {
 
   createComment() {
     let self = this;
-
+   // alert('create comment');
     let modalPage = this.modalCtrl.create(CommentCreatePage, {
       threadKey: this.threadKey
     });
