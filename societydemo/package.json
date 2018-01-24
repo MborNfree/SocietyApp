@@ -71,7 +71,9 @@
     "ng2-datepicker": "^2.2.2",
     "rxjs": "5.5.2",
     "sw-toolbox": "3.6.0",
-    "zone.js": "0.8.18"
+    "zone.js": "0.8.18",
+    "mx.ferreyra.callnumber": "~0.0.2",
+    "cordova-sqlite-storage": "^2.2.0"
   },
   "devDependencies": {
     "@ionic/app-scripts": "3.1.6",
@@ -103,7 +105,9 @@
       },
       "cordova-plugin-firebase": {},
       "cordova-sms-plugin": {},
-      "mx.ferreyra.callnumber": {}
+      "mx.ferreyra.callnumber": {},
+      "cordova-plugin-fcm": {},
+      "cordova-sqlite-storage": {}
     },
     "platforms": [
       "android"
