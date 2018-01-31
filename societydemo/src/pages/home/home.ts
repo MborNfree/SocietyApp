@@ -1,3 +1,4 @@
+import { ThreadsPage } from './../threads/threads';
 import { Component } from "@angular/core";
 import {
   NavController,
@@ -24,6 +25,7 @@ import { SocietybillPage } from "./../societybill/societybill";
 import { EventlistPage } from "./../eventlist/eventlist";
 import { HelpdeskPage } from "./../helpdesk/helpdesk";
 import { Http } from "@angular/http";
+import { ForumPage } from "../forum/forum";
 declare const jQuery : any;
 
 
@@ -142,19 +144,19 @@ export class HomePage {
     this.navCtrl.push(NewsPage);
   }
 
-  showmembers() {
-    this.navCtrl.push(EventlistPage);
+  showEvents() {
+   this.navCtrl.push(EventlistPage);
   }
   ShowBills() {
     this.navCtrl.push(SocietybillPage);
   }
 
-  ShowHelpDesk() {
-    this.navCtrl.push(HelpdeskPage);
+  ShowForum() {
+   this.navCtrl.push(ThreadsPage);
   }
 
   showdoctorlist() {
-    this.navCtrl.push(DoctorlistPage);
+   this.navCtrl.push(DoctorlistPage);
   }
 
   showplumberlist() {
