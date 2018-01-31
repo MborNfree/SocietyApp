@@ -1,3 +1,4 @@
+import { Http } from "@angular/http";
 import { Component } from "@angular/core";
 import {
   NavController,
@@ -23,7 +24,8 @@ import { ProfilePage } from "./../profile/profile";
 import { SocietybillPage } from "./../societybill/societybill";
 import { EventlistPage } from "./../eventlist/eventlist";
 import { HelpdeskPage } from "./../helpdesk/helpdesk";
-import { Http } from "@angular/http";
+import { ThreadsPage } from './../threads/threads';
+
 declare const jQuery : any;
 
 
@@ -51,7 +53,7 @@ export class HomePage {
     private http:Http,
 
   ) {
-    this.username = window.localStorage.getItem("Sessioneml");
+    this.username = window.sessionStorage.getItem("Sessioneml");
     this.sessionUser = sessionStorage.getItem("Sessionuid");
     this.uIDParam = navParams.get("uid");
 
@@ -149,8 +151,8 @@ export class HomePage {
     this.navCtrl.push(SocietybillPage);
   }
 
-  ShowHelpDesk() {
-    this.navCtrl.push(HelpdeskPage);
+  ShowForum() {
+    this.navCtrl.push(ThreadsPage);
   }
 
   showdoctorlist() {
@@ -161,6 +163,9 @@ export class HomePage {
     this.navCtrl.push(PlumberlistPage);
   }
 
+  showEvents() {
+    this.navCtrl.push(EventlistPage);
+  }
   showelectricianlist() {
     this.navCtrl.push(ElectricianlistPage);
   }

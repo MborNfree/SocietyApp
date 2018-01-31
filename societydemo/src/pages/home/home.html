@@ -29,7 +29,7 @@
       Home
     </ion-title>
   </ion-toolbar>
-  
+
 </ion-header>
 
 <ion-content class="bg-masters">
@@ -40,44 +40,44 @@
             <ion-slide class="slide"> <img src='assets/img/banner_3.png'/> </ion-slide>
           </ion-slides>
     </div>
-    
+
     <div padding>
         <div class="services-wrapper1">
             <div class="box1 e">
-                <ion-img class="img-dr"  src="assets/img/icon_dr.png" align="center"></ion-img>
+              <ion-img class="img-dr" (click)="showdoctorlist()" src="assets/img/icon_dr.png" align="center"></ion-img>
                 <div class="label-name" align="center">Doctor</div>
             </div>
             <div class="box1 f">
-                <ion-img  class="img-dr" src="assets/img/icon_electrician.png" align="center"></ion-img>
+              <ion-img  class="img-dr"  (click)="showelectricianlist()" src="assets/img/icon_electrician.png" align="center"></ion-img>
                   <div  class="label-name" align="center">Electrician</div>
             </div>
             <div class="box1 g">
-                <ion-img class="img-dr" src="assets/img/icon_plumber.png" align="center"></ion-img>
+                <ion-img class="img-dr" (click)="showplumberlist()"  src="assets/img/icon_plumber.png" align="center"></ion-img>
                   <div class="label-name" align="center">Plumber</div>
             </div>
-           
+
           </div>
-  
+
             <div class="wrapper">
                 <div class="box a" >
-                    <ion-img  class="cards-action-img" src='assets/img/icon_news.png'></ion-img>
+                    <ion-img  class="cards-action-img"  (click)="shownews()" src='assets/img/icon_news.png'></ion-img>
                     <div class="label-name" align="center" TEXT-WRAP FLOAT-RIGHT> DAILY ECONOMIC NEWS</div>
-                
+
                 </div>
                 <div class="box b">
-                    <ion-img class="cards-action-img" src='assets/img/icon_bills.png'></ion-img>
+                    <ion-img class="cards-action-img" (click)="ShowBills()" src='assets/img/icon_bills.png'></ion-img>
                         <div class="label-name" align="center">BILLS</div>
                 </div>
                 <div class="box c">
-                    <ion-img class="cards-action-img" src='assets/img/icon_forum.png'></ion-img>
+                    <ion-img class="cards-action-img" (click)="ShowForum()" src='assets/img/icon_forum.png'></ion-img>
                     <div  class="label-name" align="center">FORUM</div>
                 </div>
                 <div class="box d">
                     <!-- <ion-img  src='assets/img/icon_event.png'></ion-img> -->
-                    <div class="label-name" align="center" FLOAT-RIGHT>EVENTS</div>    
+                    <div class="label-name" (click)="showEvents()" align="center" FLOAT-RIGHT>EVENTS</div>
                 </div>
-                
-            </div> 
+
+            </div>
     </div>
 
 </ion-content>

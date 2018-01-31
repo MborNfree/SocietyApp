@@ -3,6 +3,7 @@ import { Component } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
 import { AngularFireDatabase } from "angularfire2/database";
 import { ServiceDetailPage } from '../service-detail/service-detail';
+import * as firebase from 'firebase';
 
 @IonicPage()
 @Component({
@@ -18,17 +19,27 @@ export class DoctorlistPage {
     public navParams: NavParams,
     private fdb: AngularFireDatabase
   ) {
-    this.fdb
-      .list("/services/")
-      .valueChanges()
-      .subscribe(_data => {
-        this.users = _data;
-        console.log(this.users);
-      });
+
+    var ref = firebase.database().ref("services");
+
+    // this.fdb
+    //   .list("/services/")
+    //   .valueChanges()
+    //   .subscribe(_data => {
+    //     this.users = _data;
+    //     console.log(this.users);
+    //   });
   }
 
   ionViewDidLoad() {
     console.log("ionViewDidLoad DoctorlistPage");
+    firebase.database().ref("services").orderByChild("Service_type").equalTo('Doctor').once("value", (snapshot) => {
+      console.log(snapshot.key);
+      console.log(snapshot.val());
+
+      this.users.push(snapshot.val());
+      console.log('item' + JSON.stringify(this.users));
+    });
   }
   doRefresh(refresher) {
     console.log('Begin async operation', refresher);
