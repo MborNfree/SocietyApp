@@ -103,15 +103,15 @@ page-home {
     color: #444;
   }
   .box {
-    background-color: #444;
+    background-color: #BC1121;
     color: #fff;
     border-radius: 5px;
     padding: 20px;
     font-size: 150%;
   }
-  .services-wrapper1 {
+  .services-wrapper {
     display: grid;
-    grid-gap: 8px;
+    grid-gap: 30px;
     grid-template-columns: auto auto auto;
     background-color: whitesmoke;
     color: white;
@@ -121,90 +121,69 @@ page-home {
     background-color: whitesmoke;
     color: #444;
     border-radius: 5px;
-    padding: 30px;
+    padding: 20px;
     font-size: 90%;
   }
-  .box1.a {
-    grid-column: col / span 2;
-    grid-row: row;
-    background-color: rgba(65, 77, 184, 0.925)
-  }
-  .box1.b {
-    grid-column: col 3 / span 1;
-    grid-row: row;
-    background-color: rgb(188, 17, 33);
-  }
-  .box1 .c {
-    grid-column: col;
-    grid-row: row 2;
-    background-color: rgb(188, 17, 33);
-  }
-  .box1 .d {
-    grid-column: col 2 / span 2;
-    grid-row: row 2;
-    background-image: url('../assets/img/icon_event.png');
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-  }
-  .box1 .e {
+  .box1 .doctorlist {
     grid-area: 1 / 1 / 2 / 2;
   }
-  .box1 .f {
+  .box1 .electricianlist {
     grid-area: 1 / 2 / 2 / 3;
   }
-  .box1  .g {
+  .box1  .plumberlist{
     grid-area: 1 / 3 / 2 / 4;
   }
   .label-name {
     font-size: 14px;
-    width: 70px;
   }
-  .img-dr {
+  .box1 .img-dr {
     height: 80px;
     width: 80px;
+    position: relative;
+    left: 158px;
+
   }
 
   .wrapper {
-    display: grid;
+		display: grid;
     grid-gap: 10px;
-    grid-template-columns: [col] 100px [col] 100px [col] 100px [col] 100px;
-    grid-template-rows: [row] auto [row] auto [row];
-    background-color: #fff;
-    color: #444;
-  }
-  .box {
-    background-color: #444;
-    color: #fff;
-    border-radius: 5px;
-    padding: 0px;
-    font-size: 130%;
-  }
-  .a {
-    grid-column: col / span 2;
+		grid-template-columns: [col] 100px [col] 100px [col] ;
+		grid-template-rows: [row] auto [row] auto [row] ;
+		background-color: #fff;
+		color: #444;
+	}
+
+	.box {
+		background-color: #BC1121;
+		color: #fff;
+		border-radius: 5px;
+		padding: 20px;
+		font-size: 150%;
+
+	}
+
+	.shownews {
+		grid-column: col 1 / span 7;
     grid-row: row;
-  }
-  .b {
-    grid-column: col 3 / span 1;
-    grid-row: row;
-  }
-  .c {
-    grid-column: col;
-    grid-row: row 2;
-  }
-  .d {
-    grid-column: col 2 / span 2;
-    grid-row: row 2;
-  }
-  .e {
-    grid-area: 1 / 1 / 2 / 2;
-  }
-  .f {
-    grid-area: 1 / 2 / 2 / 3;
-  }
-  .g {
-    grid-area: 1 / 3 / 2 / 4;
-  }
+    background-color: rgba(65, 77, 184, 0.925);
+	}
+	.showbills {
+		grid-column: col 8 / span 3 ;
+    grid-row: row ;
+    background-color: rgb(188, 17, 33);
+	}
+	.showforum {
+		grid-column: col 1 /span 4 ;
+    grid-row: row 2 ;
+    background-color: rgb(188, 17, 33);
+	}
+	.showevent {
+		grid-column: col 5 / span 6 ;
+    grid-row: row 2 ;
+    background-image:url('../assets/img/icon_event.png');
+	}
+
+
   .platform-android.platform-cordova {
     page-landing {
       .scroll-content {
@@ -213,53 +192,83 @@ page-home {
     }
   }
   //Mobile view
-  @media (max-width: 676px) and (min-height:480 px) {
+  @media only screen and (max-width: 330px) {
     ion-avatar img {
       width: 100% !important;
       height: 100% !important;
       max-width: 100px !important; //any size
       max-height: 100px !important; //any size
     }
-    .wrapper {
+
+    .services-wrapper {
       display: grid;
       grid-gap: 10px;
-      grid-template-columns: [col] 100px [col] 100px [col] 100px [col] 100px;
-      grid-template-rows: [row] auto [row] auto [row];
+      grid-template-columns: auto auto auto;
+      background-color: whitesmoke;
+      color: white;
+      margin-bottom: 10px;
+    }
+    .box1 {
+      background-color: whitesmoke;
+      color: #444;
+      border-radius: 5px;
+      padding: 5px;
+      font-size: 90%;
+    }
+    .doctorlist {
+      grid-area: 1 / 1 / 2 / 2;
+    }
+     .electricianlist {
+      grid-area: 1 / 2 / 2 / 3;
+    }
+    .plumberlist{
+      grid-area: 1 / 3 / 2 / 4;
+    }
+    .wrapper {
+      display: grid;
+      grid-gap: 3px;
+      grid-template-columns: [col] auto [col] auto ;
+      grid-template-rows: [row] auto [row] auto  ;
       background-color: #fff;
       color: #444;
     }
+
     .box {
       background-color: #444;
       color: #fff;
       border-radius: 5px;
-      padding: 0px;
-      font-size: 130%;
+      padding: 10px;
+      font-size: 150%;
     }
-    .a {
-      grid-column: col / span 2;
+
+    .shownews {
+      grid-column: col 1 / span 2;
       grid-row: row;
+      background-color: rgba(65, 77, 184, 0.925);
     }
-    .b {
-      grid-column: col 3 / span 1;
-      grid-row: row;
+     .showbills {
+      grid-column: col 3 / span 1 ;
+      grid-row: row ;
+      background-color: rgb(188, 17, 33);
     }
-    .c {
-      grid-column: col;
-      grid-row: row 2;
+     .showforum {
+      grid-column: col 1 /span 1 ;
+      grid-row: row 2 ;
+      background-color: rgb(188, 17, 33);
     }
-    .d {
-      grid-column: col 2 / span 2;
-      grid-row: row 2;
+    .showevent {
+      grid-column: col 2 / span 3 ;
+      grid-row: row 2 ;
+      background-image:url('../assets/img/icon_event.png');
     }
-    .e {
-      grid-area: 1 / 1 / 2 / 2;
+    .box1 .img-dr {
+      height: 80px;
+      width: 80px;
+      position: relative;
+      left: 2px;
+
     }
-    .f {
-      grid-area: 1 / 2 / 2 / 3;
-    }
-    .g {
-      grid-area: 1 / 3 / 2 / 4;
-    }
+
   }
 }
 
