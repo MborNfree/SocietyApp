@@ -17,17 +17,24 @@ export class PlumberlistPage {
     public navParams: NavParams,
     private fdb: AngularFireDatabase
   ) {
-    this.fdb
-      .list("/services/")
-      .valueChanges()
-      .subscribe(_data => {
-        this.items = _data;
-        console.log(this.items);
-      });
+    // this.fdb
+    //   .list("/services/")
+    //   .valueChanges()
+    //   .subscribe(_data => {
+    //     this.items = _data;
+    //     console.log(this.items);
+    //   });
   }
 
   ionViewDidLoad() {
     console.log("ionViewDidLoad PlumberlistPage");
+    firebase.database().ref("services").orderByChild("Service_type").equalTo('Plumber').once("value", (snapshot) => {
+      console.log(snapshot.key);
+      console.log(snapshot.val());
+
+      this.items.push(snapshot.val());
+      console.log('item' + JSON.stringify(this.items));
+    });
 
   }
   doRefresh(refresher) {
