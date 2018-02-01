@@ -2,6 +2,7 @@ import { Component } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
 import { AngularFireDatabase } from "angularfire2/database";
 import { ServiceDetailPage } from '../service-detail/service-detail';
+import * as firebase from 'firebase';
 
 @IonicPage()
 @Component({
@@ -16,22 +17,13 @@ export class PlumberlistPage {
     public navCtrl: NavController,
     public navParams: NavParams,
     private fdb: AngularFireDatabase
-  ) {
-    // this.fdb
-    //   .list("/services/")
-    //   .valueChanges()
-    //   .subscribe(_data => {
-    //     this.items = _data;
-    //     console.log(this.items);
-    //   });
-  }
+  ) { }
 
   ionViewDidLoad() {
     console.log("ionViewDidLoad PlumberlistPage");
     firebase.database().ref("services").orderByChild("Service_type").equalTo('Plumber').once("value", (snapshot) => {
       console.log(snapshot.key);
       console.log(snapshot.val());
-
       this.items.push(snapshot.val());
       console.log('item' + JSON.stringify(this.items));
     });

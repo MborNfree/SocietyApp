@@ -12,15 +12,15 @@ export class ServiceDetailPage {
   itemsParam: any;
   users: {}[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, private fdb: AngularFireDatabase,) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, private fdb: AngularFireDatabase, ) {
     this.fdb
-    .list("/services/")
-    .valueChanges()
-    .subscribe(_data => {
-      this.users = _data;
-      console.log(this.users);
-    });
-  this.itemsParam = navParams.get("item");
+      .list("/services/")
+      .valueChanges()
+      .subscribe(_data => {
+        this.users = _data;
+        //console.log(this.users);
+      });
+    this.itemsParam = navParams.get("item");
   }
 
   ionViewDidLoad() {
@@ -29,10 +29,10 @@ export class ServiceDetailPage {
 
   sendSms(cnt: number) {
     // alert(cnt);
-     var data = cnt ;
+    var data = cnt;
     // var data ={ message: "hello world", contact: cnt };
-     var modalPage = this.modalCtrl.create("SendSmsModalPage", { data: data });
-     modalPage.present();
-   }
+    var modalPage = this.modalCtrl.create("SendSmsModalPage", { data: data });
+    modalPage.present();
+  }
 
 }

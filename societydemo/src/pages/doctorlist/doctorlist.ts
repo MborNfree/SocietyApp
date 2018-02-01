@@ -5,6 +5,7 @@ import { AngularFireDatabase } from "angularfire2/database";
 import { ServiceDetailPage } from '../service-detail/service-detail';
 import * as firebase from 'firebase';
 
+
 @IonicPage()
 @Component({
   selector: "page-doctorlist",
@@ -17,28 +18,17 @@ export class DoctorlistPage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    private fdb: AngularFireDatabase
-  ) {
-
-    var ref = firebase.database().ref("services");
-
-    // this.fdb
-    //   .list("/services/")
-    //   .valueChanges()
-    //   .subscribe(_data => {
-    //     this.users = _data;
-    //     console.log(this.users);
-    //   });
-  }
+    private fdb: AngularFireDatabase) { }
 
   ionViewDidLoad() {
     console.log("ionViewDidLoad DoctorlistPage");
     firebase.database().ref("services").orderByChild("Service_type").equalTo('Doctor').once("value", (snapshot) => {
-      console.log(snapshot.key);
-      console.log(snapshot.val());
+      // console.log(snapshot.key);
+      //console.log(snapshot.val());
 
-      this.users.push(snapshot.val());
-      console.log('item' + JSON.stringify(this.users));
+      this.users.push(JSON.stringify(snapshot.val()));
+      console.log('item' + this.users);
+      console.log('test' + this.users['Contact_no']);
     });
   }
   doRefresh(refresher) {
