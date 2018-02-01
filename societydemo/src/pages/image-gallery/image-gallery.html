@@ -6,11 +6,34 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title align="center">Image-Gallery</ion-title>
+
+    
   </ion-navbar>
 
 </ion-header>
 
 <ion-content padding>
+
+    <ion-buttons>
+        <button ion-button clear (click)="addAlbum()"><ion-icon name="add"></ion-icon>Add Album</button>
+      </ion-buttons>
+
+      <ion-buttons end>
+          <button
+             ion-button
+             icon-only
+             (click)="addRecord()">
+         <ion-icon name="add"></ion-icon>Add AlbumImages
+          </button>
+       </ion-buttons>
+    
+      <!-- <ion-list>
+        <ion-card class="album" text-wrap *ngFor="let album of albums | async">
+          <h2 (click)="showAlbum(album.id)">{{album.albumName}}</h2>
+        </ion-card>
+      </ion-list> -->
+
+
   <!-- <ion-slides class="image-slider" loop="true" slidesPerView="2">
     <ion-slide *ngFor="let img of images">
       <ion-img src="assets/img/{{img}}" class="thumb-img" imageViewer ></ion-img>
@@ -19,15 +42,18 @@
 
   <div class="row">
     <div class="col col-md-6">
-      <ion-card  (click)="gotogallery()" color='news' class="fixcard col-50">
-        <ion-buttons align="center" large class="call-to-action">
-          <ion-icon name="albums"></ion-icon>
-          <ion-img class="action-img" ></ion-img>
+      <ion-card  *ngFor="let album of albums | async" color='news' class="fixcard col-50">
+        <ion-buttons  align="center" large class="call-to-action">
+          <button (click)="showAlbum(album.id)">
+              <ion-icon name="albums"></ion-icon>
+              <ion-img class="action-img" ></ion-img>
+          </button>
+          
         </ion-buttons>
-        <div class="card-title"  align="center">Nature</div>
+        <div class="card-title"  align="center">{{album.albumName}}</div>
       </ion-card>
     </div>
-    <div class="col col-md-6">
+    <!-- <div class="col col-md-6">
       <ion-card  (click)="gotogallery()" color='event' class="fixcard col-50">
         <ion-buttons align="center" large class="call-to-action">
           <ion-icon name="albums"></ion-icon>
@@ -35,7 +61,7 @@
         </ion-buttons>
         <div class="card-title" align="center">Diwali</div>
       </ion-card>
-    </div>
+    </div> -->
   </div>
  
 </ion-content>

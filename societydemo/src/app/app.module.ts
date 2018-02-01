@@ -21,7 +21,7 @@ import { HttpModule } from "@angular/http";
 import { SMS } from "@ionic-native/sms";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { UniqueDeviceID } from '@ionic-native/unique-device-id';
-import { FCM } from '@ionic-native/fcm';
+
 import { NgDatepickerModule } from "ng2-datepicker";
 import { CallNumber } from "@ionic-native/call-number";
 // import { FCM } from '@ionic-native/fcm';
@@ -84,6 +84,8 @@ import { PreloaderProvider } from '../providers/preloader/preloader';
 import { EventDataProvider } from "../providers/event-data/event-data";
 import { EmojiProvider } from "../providers/emoji";
 import { RemoteServiceProvider } from "../providers/remote-service/remote-service";
+import { ModalpagePage } from '../pages/modalpage/modalpage';
+import { ShowAlbumPage } from '../pages/show-album/show-album';
 
 
 var config = {
@@ -139,7 +141,9 @@ var config = {
     ConfigCctvPage,
     ServiceDetailPage,
     ImageGalleryPage,
-    PhotosPage
+    PhotosPage,
+   
+    ShowAlbumPage
 
   ],
 
@@ -200,7 +204,9 @@ var config = {
     ConfigCctvPage,
     ServiceDetailPage,
     ImageGalleryPage,
-    PhotosPage
+    PhotosPage,
+    
+    ShowAlbumPage
   ],
 
   providers: [
@@ -230,8 +236,8 @@ var config = {
     UniqueDeviceID,
     DatabaseProvider,
     ImageProvider,
-    PreloaderProvider,
-    FCM
+    PreloaderProvider
+    
   ]
 })
 export class AppModule { }
