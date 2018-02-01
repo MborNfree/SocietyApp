@@ -40,7 +40,7 @@
         <splash density="port-xxhdpi" src="resources/android/splash/drawable-port-xxhdpi-screen.png" />
         <splash density="port-xxxhdpi" src="resources/android/splash/drawable-port-xxxhdpi-screen.png" />
     </platform>
-    <engine name="android" spec="6.3.0" />
+    <engine name="android" spec="~6.3.0" />
     <plugin name="cordova-plugin-uniquedeviceid" />
     <plugin name="cordova-plugin-device" spec="^1.1.6" />
     <plugin name="cordova-plugin-ionic-webview" spec="^1.1.16" />
@@ -62,9 +62,8 @@
     <plugin name="cordova-android-support-gradle-release" spec="^1.2.0">
         <variable name="ANDROID_SUPPORT_VERSION" value="26.+" />
     </plugin>
-    <plugin name="cordova-plugin-firebase" spec="^0.1.25" />
     <plugin name="cordova-sms-plugin" spec="^0.1.11" />
-    <plugin name="mx.ferreyra.callnumber" spec="0.0.2" />
+    <plugin name="mx.ferreyra.callnumber" spec="~0.0.2" />
     <plugin name="cordova-sqlite-storage" spec="^2.2.0" />
-    <plugin name="call-number" spec="^1.0.1" />
+    <plugin name="cordova-plugin-fcm" spec="~2.1.2" />
 </widget>

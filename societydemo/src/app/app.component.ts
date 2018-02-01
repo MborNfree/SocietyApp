@@ -168,11 +168,11 @@ export class MySocietyApp {
         this.fcm.subscribeToTopic('all');
         this.fcm.getToken().then(token => {
           // backend.registerToken(token);
-          alert(token);
+          //alert(token);
         });
         this.fcm.onNotification().subscribe(data => {
           alert('message received');
-          alert(JSON.stringify(data));
+          //alert(JSON.stringify(data));
           if (data.wasTapped) {
             console.info("Received in background");
           } else {
@@ -181,7 +181,7 @@ export class MySocietyApp {
         });
         this.fcm.onTokenRefresh().subscribe(token => {
           // backend.registerToken(token);
-          alert(token);
+          //alert(token);
         });
       }
 
@@ -224,6 +224,12 @@ export class MySocietyApp {
       // This option is already selected
       selected: true
     });
+
+    this.options.push({
+      iconName: "person",
+      displayName: "Profile",
+      component: ProfilePage
+    });
     // this.options.push({
     //   iconName: "person",
     //   displayName: "User Profile",
@@ -236,12 +242,14 @@ export class MySocietyApp {
       displayName: "Bill",
       component: SocietybillPage
     });
+
     this.options.push({
-      iconName: "mail",
-      displayName: "Inbox",
-      component: InboxPage
+      iconName: "desktop",
+      displayName: "Configure CCTV",
+      component: ConfigCctvPage
     });
-    // Load options with nested items (with icons)
+
+        // Load options with nested items (with icons)
     // -----------------------------------------------
     this.options.push({
       displayName: "Documents",
@@ -258,11 +266,7 @@ export class MySocietyApp {
         }
       ]
     });
-    this.options.push({
-      iconName: "desktop",
-      displayName: "Configure CCTV",
-      component: ConfigCctvPage
-    });
+
     this.options.push({
       iconName: "calendar",
       displayName: "Events",
@@ -273,28 +277,11 @@ export class MySocietyApp {
       displayName: "Events Gallery",
       component: ImageGalleryPage
     });
+
     this.options.push({
       iconName: "medkit",
       displayName: "Emergency Contacts",
       component: EmergencycontactlistPage
-    });
-
-    this.options.push({
-      iconName: "easel",
-      displayName: "News",
-      component: NewsPage
-    });
-
-    this.options.push({
-      iconName: "person",
-      displayName: "Profile",
-      component: ProfilePage
-    });
-
-    this.options.push({
-      iconName: "hand",
-      displayName: "Rules and Regulation",
-      component: DosdontsPage
     });
 
     this.options.push({
@@ -309,8 +296,45 @@ export class MySocietyApp {
       component: HelpdeskPage
     });
 
-    // Load options with nested items (without icons)
+    this.options.push({
+      iconName: "mail",
+      displayName: "Inbox",
+      component: InboxPage
+    });
+
+
+    this.options.push({
+      displayName: "Member List",
+      subItems: [
+        {
+          iconName: "people",
+          displayName: "Residents",
+          component: ResidentlistPage
+        },
+        {
+          iconName: "contacts",
+          displayName: "Committee",
+          component: CommitteelistPage
+        }
+      ]
+    });
+
+    this.options.push({
+      iconName: "easel",
+      displayName: "News",
+      component: NewsPage
+    });
+
+    this.options.push({
+      iconName: "hand",
+      displayName: "Rules and Regulation",
+      component: DosdontsPage
+    });
+
+  // Load options with nested items (without icons)
     // -----------------------------------------------
+
+
     this.options.push({
       displayName: "Services",
       subItems: [
@@ -332,21 +356,7 @@ export class MySocietyApp {
       ]
     });
 
-    this.options.push({
-      displayName: "Member List",
-      subItems: [
-        {
-          iconName: "people",
-          displayName: "Residents",
-          component: ResidentlistPage
-        },
-        {
-          iconName: "contacts",
-          displayName: "Committee",
-          component: CommitteelistPage
-        }
-      ]
-    });
+
     // this.options.push({
     //   displayName: 'Logout',
     //   iconName: 'log-out',

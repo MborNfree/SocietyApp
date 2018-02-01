@@ -53,7 +53,7 @@ export class HomePage {
     private http:Http,
 
   ) {
-    this.username = window.localStorage.getItem("Sessioneml");
+    this.username = window.sessionStorage.getItem("Sessioneml");
     this.sessionUser = sessionStorage.getItem("Sessionuid");
     this.uIDParam = navParams.get("uid");
 
@@ -152,7 +152,7 @@ export class HomePage {
   }
 
   ShowForum() {
-   this.navCtrl.push(ThreadsPage);
+    this.navCtrl.push(ThreadsPage);
   }
 
   showdoctorlist() {
@@ -163,6 +163,9 @@ export class HomePage {
     this.navCtrl.push(PlumberlistPage);
   }
 
+  // showEvents() {
+  //   this.navCtrl.push(EventlistPage);
+  // }
   showelectricianlist() {
     this.navCtrl.push(ElectricianlistPage);
   }

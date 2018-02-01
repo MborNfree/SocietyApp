@@ -27,6 +27,7 @@ export class ElectricianlistPage {
 
   ionViewDidLoad() {
     console.log("ionViewDidLoad ElectricianlistPage");
+    
   }
   doRefresh(refresher) {
     console.log('Begin async operation', refresher);

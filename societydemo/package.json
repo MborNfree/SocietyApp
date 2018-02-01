@@ -41,7 +41,6 @@
     "@ngx-translate/http-loader": "^2.0.0",
     "angularfire2": "^5.0.0-rc.4",
     "call-number": "^1.0.1",
-    "cordova-android": "6.3.0",
     "cordova-android-support-gradle-release": "^1.2.0",
     "cordova-ios": "^4.5.2",
     "cordova-plugin-camera": "^2.4.1",
@@ -51,7 +50,6 @@
     "cordova-plugin-file": "^4.3.3",
     "cordova-plugin-filechooser": "^1.0.1",
     "cordova-plugin-filepath": "^1.1.0",
-    "cordova-plugin-firebase": "^0.1.25",
     "cordova-plugin-inappbrowser": "^1.7.1",
     "cordova-plugin-ionic-webview": "^1.1.16",
     "cordova-plugin-splashscreen": "^4.0.3",
@@ -67,11 +65,13 @@
     "ionic-plugin-keyboard": "^2.2.1",
     "ionicons": "3.0.0",
     "moment": "^2.19.1",
-    "mx.ferreyra.callnumber": "0.0.2",
+    "mx.ferreyra.callnumber": "~0.0.2",
     "ng2-datepicker": "^2.2.2",
     "rxjs": "5.5.2",
     "sw-toolbox": "3.6.0",
-    "zone.js": "0.8.18"
+    "zone.js": "0.8.18",
+    "cordova-android": "~6.3.0",
+    "cordova-plugin-fcm": "~2.1.2"
   },
   "devDependencies": {
     "@ionic/app-scripts": "3.1.6",
@@ -101,11 +101,10 @@
       "cordova-android-support-gradle-release": {
         "ANDROID_SUPPORT_VERSION": "26.+"
       },
-      "cordova-plugin-firebase": {},
       "cordova-sms-plugin": {},
       "mx.ferreyra.callnumber": {},
       "cordova-sqlite-storage": {},
-      "call-number": {}
+      "cordova-plugin-fcm": {}
     },
     "platforms": [
       "android"
