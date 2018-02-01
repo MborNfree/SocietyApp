@@ -48,6 +48,7 @@ import { HelpdeskPage } from "./../pages/helpdesk/helpdesk";
 import { ImageGalleryPage } from "./../pages/image-gallery/image-gallery";
 import { ThreadsPage } from "../pages/threads/threads";
 import { ConfigCctvPage } from './../pages/config-cctv/config-cctv';
+import { HomePage } from '../pages/home/home';
 
 
 @Component({
@@ -103,7 +104,7 @@ export class MySocietyApp {
     public events: Events,
     public modalCtrl: ModalController,
     public menu: MenuController
-  
+
   ) {
 
     this.checkUserLoggedIn();
@@ -203,7 +204,7 @@ export class MySocietyApp {
     ) {
       this.rootPage = LoginPage;
     } else {
-      this.rootPage = ImageGalleryPage;
+      this.rootPage = HomePage;
     }
   }
 

@@ -1,6 +1,6 @@
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="navbar">
     <ion-title>Show Album</ion-title>
   </ion-navbar>
 
@@ -20,7 +20,7 @@
               <h2>{{ movie.title }}</h2>
               <small>{{ movie.date }} ({{ movie.duration }})</small>
               <p>{{ movie.summary }}</p>
-    
+
               <section class="multiples">
                  <h3>Actors/Actresses</h3>
                <ion-chip
@@ -29,8 +29,8 @@
                   padding-right
                   margin-right>{{ actor.name }}</ion-chip>
               </section>
-    
-    
+
+
               <section class="multiples">
                  <h3>Genres</h3>
                  <ion-chip
@@ -39,9 +39,9 @@
                     padding-right
                     margin-right>{{ genre.name }}</ion-chip>
               </section>
-    
+
            </ion-item>
-    
+
       </ion-card>
      </ion-list>
 </ion-content>
