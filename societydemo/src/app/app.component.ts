@@ -48,7 +48,7 @@ import { HelpdeskPage } from "./../pages/helpdesk/helpdesk";
 import { ImageGalleryPage } from "./../pages/image-gallery/image-gallery";
 import { ThreadsPage } from "../pages/threads/threads";
 import { ConfigCctvPage } from './../pages/config-cctv/config-cctv';
-import { HomePage } from '../pages/home/home';
+
 
 
 @Component({
