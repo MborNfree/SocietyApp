@@ -19,7 +19,7 @@ import { Observable } from "rxjs/Observable";
 import { AuthService } from "../shared/services/auth.service";
 import { DataService } from "../shared/services/data.service";
 import * as firebase from 'firebase';
-import { FCM } from '@ionic-native/fcm';
+
 
 // Models
 import {
@@ -102,8 +102,8 @@ export class MySocietyApp {
     public authService: AuthService,
     public events: Events,
     public modalCtrl: ModalController,
-    public menu: MenuController,
-    private fcm: FCM
+    public menu: MenuController
+  
   ) {
 
     this.checkUserLoggedIn();
@@ -164,26 +164,26 @@ export class MySocietyApp {
       // Initialize some options
       this.initializeOptions();
 
-      if (this.platform.is("android")) {
-        this.fcm.subscribeToTopic('all');
-        this.fcm.getToken().then(token => {
-          // backend.registerToken(token);
-          //alert(token);
-        });
-        this.fcm.onNotification().subscribe(data => {
-          alert('message received');
-          //alert(JSON.stringify(data));
-          if (data.wasTapped) {
-            console.info("Received in background");
-          } else {
-            console.info("Received in foreground");
-          };
-        });
-        this.fcm.onTokenRefresh().subscribe(token => {
-          // backend.registerToken(token);
-          //alert(token);
-        });
-      }
+      // if (this.platform.is("android")) {
+      //   this.fcm.subscribeToTopic('all');
+      //   this.fcm.getToken().then(token => {
+      //     // backend.registerToken(token);
+      //     //alert(token);
+      //   });
+      //   this.fcm.onNotification().subscribe(data => {
+      //     alert('message received');
+      //     //alert(JSON.stringify(data));
+      //     if (data.wasTapped) {
+      //       console.info("Received in background");
+      //     } else {
+      //       console.info("Received in foreground");
+      //     };
+      //   });
+      //   this.fcm.onTokenRefresh().subscribe(token => {
+      //     // backend.registerToken(token);
+      //     //alert(token);
+      //   });
+      // }
 
     });
   }
@@ -203,7 +203,7 @@ export class MySocietyApp {
     ) {
       this.rootPage = LoginPage;
     } else {
-      this.rootPage = HomePage;
+      this.rootPage = ImageGalleryPage;
     }
   }
 

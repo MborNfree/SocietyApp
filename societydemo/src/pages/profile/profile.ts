@@ -1,3 +1,4 @@
+// import { *as$ } from 'jquery';
 import { Camera } from '@ionic-native/camera';
 import { FirebaseListObservable } from "angularfire2/database-deprecated";
 import { Component } from "@angular/core";
@@ -188,4 +189,9 @@ export class ProfilePage {
         console.log("ERROR -> " + JSON.stringify(error));
       });
   }
+
+
+  
+
+
 }

@@ -1,4 +1,4 @@
-import { Http } from "@angular/http";
+import { ThreadsPage } from './../threads/threads';
 import { Component } from "@angular/core";
 import {
   NavController,
@@ -24,8 +24,8 @@ import { ProfilePage } from "./../profile/profile";
 import { SocietybillPage } from "./../societybill/societybill";
 import { EventlistPage } from "./../eventlist/eventlist";
 import { HelpdeskPage } from "./../helpdesk/helpdesk";
-import { ThreadsPage } from './../threads/threads';
-
+import { Http } from "@angular/http";
+import { ForumPage } from "../forum/forum";
 declare const jQuery : any;
 
 
@@ -144,8 +144,8 @@ export class HomePage {
     this.navCtrl.push(NewsPage);
   }
 
-  showmembers() {
-    this.navCtrl.push(EventlistPage);
+  showEvents() {
+   this.navCtrl.push(EventlistPage);
   }
   ShowBills() {
     this.navCtrl.push(SocietybillPage);
@@ -156,16 +156,16 @@ export class HomePage {
   }
 
   showdoctorlist() {
-    this.navCtrl.push(DoctorlistPage);
+   this.navCtrl.push(DoctorlistPage);
   }
 
   showplumberlist() {
     this.navCtrl.push(PlumberlistPage);
   }
 
-  showEvents() {
-    this.navCtrl.push(EventlistPage);
-  }
+  // showEvents() {
+  //   this.navCtrl.push(EventlistPage);
+  // }
   showelectricianlist() {
     this.navCtrl.push(ElectricianlistPage);
   }
