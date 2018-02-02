@@ -24,33 +24,35 @@ export class SocietybillPage {
     let self = this;
     this.username = window.sessionStorage.getItem("Sessioneml");
     this.uIDParam = sessionStorage.getItem("Sessionuid");
-    var ref = firebase.database().ref("billing");
-
-
-    ref.orderByChild("bill_eml").equalTo(window.sessionStorage.getItem("Sessioneml")).once("child_added", function(snapshot) {
-      console.log(snapshot.key);
-      console.log(snapshot.val());
-
-      self.items.push(snapshot.val());
-      console.log('item'+JSON.stringify(self.items));
-    });
 
   }
 
   ionViewDidLoad() {
     console.log("ionViewDidLoad SocietybillPage");
 
-    // this.items = [
-    //   { description1: "SEPT 2017-OCT 2017" },
-    //   { description1: "AUG 2017-Sept 2017" },
-    //   { description1: "JULY 2017-AUG 2017" },
-    //   { description1: "JUN 2017-JULY 2017" },
-    //   { description1: "MAY 2017-JUN 2017" },
-    //   { description1: "APR 2017-MAY 2017" },
-    //   { description1: "MAR 2017-APR 2017" },
-    //   { description1: "FEB 2017-MAR 2017" },
-    //   { description1: "JAN 2017-FEB 2017" }
-    // ];
+    var ref = firebase.database().ref("billing");
+    ref.orderByChild("bill_eml").equalTo(window.sessionStorage.getItem("Sessioneml")).once("value", (items : any)=> {
+      console.log(items.key);
+      console.log(items.val());
+
+      let users : any = [];
+
+      items.forEach((item) =>
+      {
+        users.push({
+          key          : item.key,
+          bill_name    : item.val().bill_name,
+          bill_eml     : item.val().bill_eml,
+          bill_id      : item.val().bill_id,
+          bill_period  : item.val().bill_period,
+          bill_flat  : item.val().bill_flat,
+          total  : item.val().total,
+
+        });
+      });
+      this.items = users;
+      console.log("Doctor Data: ",this.items);
+    });
   }
 
   viewItem(item) {

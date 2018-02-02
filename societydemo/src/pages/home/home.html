@@ -15,9 +15,11 @@
           <img src="assets/img/icon_notification.png" />
         <!-- <ion-icon name="notifications"></ion-icon> -->
     </button>
-    </ion-buttons>   
-    <ion-buttons class="profile-picture big-profile-picture" end>
-      <img src="assets/img/icon_profile.png" (click)='ViewProfile()'/>
+    </ion-buttons>
+    <ion-buttons   end>
+      <button ion-button icon-only class="profile-picture"  (click)="ViewProfile()">
+        <img src="assets/img/icon_profile.png" />
+      </button>
     </ion-buttons>
     <ion-title align="left">
       Home

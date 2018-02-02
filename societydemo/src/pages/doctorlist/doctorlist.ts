@@ -22,13 +22,26 @@ export class DoctorlistPage {
 
   ionViewDidLoad() {
     console.log("ionViewDidLoad DoctorlistPage");
-    firebase.database().ref("services").orderByChild("Service_type").equalTo('Doctor').once("value", (snapshot) => {
-      // console.log(snapshot.key);
-      //console.log(snapshot.val());
+    var ref = firebase.database().ref("services");
+    ref.orderByChild("Service_type").equalTo('Doctor').once("value", (items : any)=> {
+      console.log(items.key);
+      console.log(items.val());
 
-      this.users.push(JSON.stringify(snapshot.val()));
-      console.log('item' + this.users);
-      console.log('test' + this.users['Contact_no']);
+      let users : any = [];
+
+      items.forEach((item) =>
+      {
+        users.push({
+          key           : item.key,
+          Contact_no    : item.val().Contact_no,
+          Description   : item.val().Description,
+          S_ID          : item.val().S_ID,
+          Service_name  : item.val().Service_name,
+          Service_type  : item.val().Service_type
+        });
+      });
+      this.users = users;
+      console.log("Doctor Data: ",this.users);
     });
   }
   doRefresh(refresher) {

@@ -9,7 +9,7 @@
 
 <ion-content padding class="bg-masters">
   <!-- <form [formGroup]="authForm" (ngSubmit)="onSubmit(authForm.value)"> -->
-      <form [formGroup]="authForm" (ngSubmit)="editUser(authForm.value)">
+      <form [formGroup]="authForm" *ngFor="let user of userData">
     <div class="list card">
       <ion-item class="profile-item">
         <div class="profile-picture big-profile-picture">
@@ -39,8 +39,8 @@
 
     </div>
     <ion-item [ngClass]="{'error-border':!authForm.controls.username.valid && authForm.controls.username.touched}">
-      <ion-label >Username</ion-label>
-      <ion-input formControlName="username" type="text" [(ngModel)]="username" [disabled]="inactive"></ion-input>
+      <ion-label floating>Username</ion-label>
+      <ion-input formControlName="username" type="text" [(ngModel)]="username" [disabled]="inactive" value={{user.username}}></ion-input>
     </ion-item>
     <ion-item *ngIf="authForm.controls.username.hasError('required') && authForm.controls.username.touched">
       <p>Sorry, field username is required!</p>
@@ -56,7 +56,7 @@
     </ion-item>
     <ion-item [ngClass]="{'error-border':!authForm.controls.flatno.valid && authForm.controls.flatno.touched}">
       <ion-label floating>Flat No</ion-label>
-      <ion-input formControlName="flatno" type="text" [(ngModel)]="flatno" [disabled]="inactive"></ion-input>
+      <ion-input formControlName="flatno" type="text" [(ngModel)]="flatno" [disabled]="inactive" value={{user.flatno}}></ion-input>
     </ion-item>
     <ion-item *ngIf="authForm.controls.flatno.hasError('required') && authForm.controls.flatno.touched">
       <p>Sorry, field is required!</p>
@@ -69,7 +69,7 @@
     </ion-item>
     <ion-item [ngClass]="{'error-border':!authForm.controls.email.valid && authForm.controls.email.touched}">
       <ion-label floating>Email</ion-label>
-      <ion-input formControlName="email" type="text" [(ngModel)]="email" [disabled]="inactive"></ion-input>
+      <ion-input formControlName="email" type="text" [(ngModel)]="email" [disabled]="inactive" value={{user.email}}></ion-input>
     </ion-item>
     <ion-item *ngIf="authForm.controls.email.hasError('required') && authForm.controls.email.touched">
       <p>Sorry, field is required!</p>
@@ -79,7 +79,7 @@
     </ion-item>
     <ion-item [ngClass]="{'error-border':!authForm.controls.password.valid && authForm.controls.password.touched}">
       <ion-label floating>Password</ion-label>
-      <ion-input formControlName="password" type="password" [(ngModel)]="password" [disabled]="inactive"></ion-input>
+      <ion-input formControlName="password" type="password" [(ngModel)]="password" [disabled]="inactive" value={{user.password}}></ion-input>
     </ion-item>
     <ion-item *ngIf="authForm.controls.password.hasError('required') && authForm.controls.password.touched">
       <p>Sorry, field is required!</p>
@@ -89,7 +89,7 @@
     </ion-item>
     <ion-item [ngClass]="{'error-border':!authForm.controls.family.valid && authForm.controls.family.touched}">
       <ion-label floating>Total Family Member</ion-label>
-      <ion-input formControlName="family" type="text" [(ngModel)]="family" [disabled]="inactive"></ion-input>
+      <ion-input formControlName="family" type="text" [(ngModel)]="family" [disabled]="inactive" value={{user.familyMember}}></ion-input>
     </ion-item>
     <ion-item *ngIf="authForm.controls.family.hasError('pattern') && authForm.controls.family.touched">
       <p>Sorry, only numbers are allowed!</p>
@@ -102,7 +102,7 @@
     </ion-item>
     <ion-item [ngClass]="{'error-border':!authForm.controls.vehicles.valid && authForm.controls.vehicles.touched}">
       <ion-label floating>Total Vehicles</ion-label>
-      <ion-input formControlName="vehicles" type="text" [(ngModel)]="vehicles" [disabled]="inactive"></ion-input>
+      <ion-input formControlName="vehicles" type="text" [(ngModel)]="vehicles" [disabled]="inactive" value={{user.parking_slot}}></ion-input>
     </ion-item>
     <ion-item *ngIf="authForm.controls.vehicles.hasError('pattern') && authForm.controls.vehicles.touched">
       <p>Sorry, only numbers are allowed!</p>
@@ -121,7 +121,7 @@
       <button ion-button class="col col-50" (click)="changeStatus()" *ngIf="!inactive">
         <ion-icon name="close-circle">Cancel</ion-icon>
       </button>
-      <button ion-button  class="col col-50" color="button" type="submit" *ngIf="!inactive">
+      <button ion-button  class="col col-50" color="button" (click)="saveClick()" *ngIf="!inactive">
         <ion-icon name="add">Save</ion-icon>
       </button>
     </ion-buttons>

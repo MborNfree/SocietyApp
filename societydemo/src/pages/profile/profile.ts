@@ -1,8 +1,7 @@
-// import { *as$ } from 'jquery';
 import { Camera } from '@ionic-native/camera';
 import { FirebaseListObservable } from "angularfire2/database-deprecated";
 import { Component } from "@angular/core";
-import { IonicPage, NavController, NavParams } from "ionic-angular";
+import { IonicPage, NavController, NavParams, ToastController } from "ionic-angular";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
 import { AngularFireDatabase } from 'angularfire2/database';
@@ -16,6 +15,11 @@ import firebase from 'firebase';
   templateUrl: "profile.html"
 })
 export class ProfilePage {
+
+  public userData: any;
+  public userID: any;
+  public userKey: any;
+
   user: FirebaseListObservable<{}>;
   userId: string;
   username: string;
@@ -35,6 +39,7 @@ export class ProfilePage {
   userRef: string = "/users/";
 
   constructor(
+    public toastCtrl: ToastController,
     private afAuth: AngularFireAuth,
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -44,46 +49,7 @@ export class ProfilePage {
     private fireAuth: AngularFireAuth
   ) {
     this.uIDParam = navParams.get("uid");
-    var ref = firebase.database().ref("users");
-    //ref.on('value', this.gotData,this.errData);
 
-    // Get a reference to the database services
-
-    this.afAuth.authState.subscribe(user => {
-      if (user) this.userId = user.uid;
-      let self = this;
-      ref.on(
-        "value",
-        function (data) {
-          console.log("data");
-
-          var users = data.val();
-          var keys = Object.keys(users);
-
-          for (var i = 0; i < keys.length; i++) {
-            var k = keys[i];
-            var sessionUser = sessionStorage.getItem("Sessioneml");
-            if (users[k].email == sessionUser) {
-              console.log("true");
-              self.fnm = users[k].first_name;
-              self.lnm = users[k].last_name;
-              self.password = users[k].password;
-              self.email = users[k].email;
-              self.Id = users[k].ID;
-              self.username = users[k].username;
-              self.flatno = users[k].flatno;
-              self.family = users[k].familyMember;
-              self.vehicles = users[k].parking_slot;
-
-            }
-          }
-        },
-        function (error) {
-          //Error code goes here
-        }
-      );
-      // ref.on('value', this.gotData,this.errData);
-    });
     this.authForm = formBuilder.group({
       username: [
         "",
@@ -148,18 +114,83 @@ export class ProfilePage {
 
   ionViewDidLoad() {
     console.log("ionViewDidLoad ProfilePage");
+
+    var sessionUser = sessionStorage.getItem("Sessioneml");
+    console.log("Email: ",sessionStorage.getItem("Sessioneml"));
+
+    var ref = firebase.database().ref('users');
+    ref.orderByChild("email").equalTo(sessionUser).once("value", (items : any) => {
+      console.log("Key: ",items.key);
+      console.log("Value: ",items.val());
+
+      let users : any = [];
+
+      items.forEach((item) =>
+      {
+        users.push({
+	        key           : item.key,
+	        device_id     : item.val().device_id,
+	        email         : item.val().email,
+	        familyMember  : item.val().familyMember,
+	        first_name    : item.val().first_name,
+	        flatno        : item.val().flatno,
+	        last_name     : item.val().last_name,
+	        parking_slot  : item.val().parking_slot,
+          password      : item.val().password,
+          username      : item.val().username,
+          wing          : item.val().wing,
+          id            : item.val().ID
+        });
+        this.userID = item.val().ID;
+        console.log("User ID: ",this.userID);
+        this.userKey = item.key;
+        console.log("User Key: ",this.userKey);
+      });
+      console.log("User Data: ",users);
+      this.userData = users;
+    });
   }
 
-  onSubmit(value: any): void {
-    alert(JSON.stringify(value));
-    console.log("v" + JSON.stringify(value));
-    if (this.authForm.valid) {
-      let currentUserUid = this.fireAuth.auth.currentUser.uid;
-      let status = this.fdb.object(`users/${currentUserUid}`).update(value);
-      console.log(status);
-    }
+  saveClick()
+  {
+    let username   : string = this.authForm.controls["username"].value,
+        flatno     : string = this.authForm.controls["flatno"].value,
+        email      : string = this.authForm.controls["email"].value,
+        password   : string = this.authForm.controls["password"].value,
+        family     : string = this.authForm.controls["family"].value,
+        vehicles   : string = this.authForm.controls["vehicles"].value
+
+    //alert("Key: "+this.userID+" Username: "+username+" Flat No: "+flatno+" Email: "+email+" Password: "+password+" Family: "+family+" Vehicles: "+vehicles);
+    //console.log("1 Key: "+this.userKey+" User ID: "+this.userID+" Username: "+username+" Flat No: "+flatno+" Email: "+email+" Password: "+password+" Family: "+family+" Vehicles: "+vehicles);
+    this.updateProfile(this.userKey,this.userID,username,flatno,email,password,family,vehicles);
   }
 
+  updateProfile(Key, ID, Username, FlatNo, Email, Password, Family, Vehicles)
+  {
+    //console.log("2 Key: "+Key+" User ID: "+ID+" Username: "+Username+" Flat No: "+FlatNo+" Email: "+Email+" Password: "+Password+" Family: "+Family+" Vehicles: "+Vehicles);
+
+    this.updateUser(Key,
+      {
+        email: Email,
+        familyMember: Family,
+        flatno: FlatNo,
+        parking_slot: Vehicles,
+        password: Password,
+        username: Username
+      });
+
+      this.toastCtrl.create({message: 'Profile updated successfully!', duration: 3000}).present();
+  }
+
+  updateUser(id, userObj) : Promise<any>
+   {
+      return new Promise((resolve) =>
+      {
+        var updateRef = firebase.database().ref('users').child(id);
+	      updateRef.update(userObj);
+        resolve(true);
+      });
+   }
 
   takeSelfie(): void {
 
@@ -171,7 +202,7 @@ export class ProfilePage {
       encodingType: this.cameraPlugin.EncodingType.PNG,
       targetWidth: 500,
       targetHeight: 500,
-      saveToPhotoAlbum: true  
+      saveToPhotoAlbum: true
     }).then(profilePicture => {
       // Send the picture to Firebase Storage
       const selfieRef = firebase.storage().ref('profilePictures/user1/' + Image);
@@ -180,7 +211,7 @@ export class ProfilePage {
         .then(savedProfilePicture => {
           firebase
             .database()
-            .ref(`users/user1/profilePicture`)
+            .ref(`users/profilePicture`)
             .push(savedProfilePicture.downloadURL);
         });
     },
@@ -189,9 +220,4 @@ export class ProfilePage {
         console.log("ERROR -> " + JSON.stringify(error));
       });
   }
-
-
-  
-
-
 }

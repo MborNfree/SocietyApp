@@ -230,6 +230,7 @@ export class HomePage {
   // }
 
   sendTextMessage() {
+    alert('Do u wanted to send panic message?');
     var request = new XMLHttpRequest();
     request.open("POST", "https://control.msg91.com", true);
     request.setRequestHeader("Access-Control-Allow-Origin", "*");

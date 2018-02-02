@@ -14,16 +14,21 @@ import { Printer, PrintOptions } from "@ionic-native/printer";
   templateUrl: "viewbill.html"
 })
 export class ViewbillPage {
+  name: any;
   public srNo = [];
   public particulars = [];
   public particularAmt = [];
+
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     public printer: Printer,
     public platform: Platform,
-    public alertCtrl: AlertController
-  ) { }
+    public alertCtrl: AlertController) {
+
+      this.name = this.navParams.get('item');
+      console.log(this.name);
+  }
 
   ionViewDidLoad() {
     console.log("ionViewDidLoad ViewbillPage");

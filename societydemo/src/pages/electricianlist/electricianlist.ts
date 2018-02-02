@@ -20,12 +20,26 @@ export class ElectricianlistPage {
 
   ionViewDidLoad() {
     console.log("ionViewDidLoad ElectricianlistPage");
-    firebase.database().ref("services").orderByChild("Service_type").equalTo('Electrician').once("value", (snapshot) => {
-      console.log(snapshot.key);
-      console.log(snapshot.val());
+    var ref = firebase.database().ref("services");
+    ref.orderByChild("Service_type").equalTo('Electrician').once("value", (items : any)=> {
+      console.log(items.key);
+      console.log(items.val());
 
-      this.items.push(snapshot.val());
-      console.log('item' + JSON.stringify(this.items));
+      let users : any = [];
+
+      items.forEach((item) =>
+      {
+        users.push({
+          key           : item.key,
+          Contact_no    : item.val().Contact_no,
+          Description   : item.val().Description,
+          S_ID          : item.val().S_ID,
+          Service_name  : item.val().Service_name,
+          Service_type  : item.val().Service_type
+        });
+      });
+      this.items = users;
+      console.log("Doctor Data: ",this.items);
     });
   }
   doRefresh(refresher) {
