@@ -245,7 +245,7 @@ export class HomePage {
         "content-type": "application/json"
       },
       "processData": false,
-      "data": "{ \"sender\": \"SOCKET\", \"route\": \"4\", \"country\": \"91\", \"sms\": [ { \"message\": \"Hello User testing Message1 from society App\", \"to\": [ \"8401081227\", \"9819347279\" ] }, { \"message\": \"Message2 from society app\", \"to\": [ \"8080328322\", \"8355891739\" ] } ] }"
+      "data": "{ \"sender\": \"SOCKET\", \"route\": \"4\", \"country\": \"91\", \"sms\": [ { \"message\": \"Panic Alert from flat no 104\", \"to\": [ \"8401081227\", \"9819347279\" ] }, { \"message\": \"Panic Alert from flat no 104\", \"to\": [ \"8080328322\", \"8355891739\" ] } ] }"
       //"data" : 'asstes/data/users.json'
     }
 

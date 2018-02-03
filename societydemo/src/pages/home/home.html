@@ -9,12 +9,17 @@
         <img src="assets/img/icon_panic.png" />
       </button>
     </ion-buttons>
-    <ion-buttons end>
+    <!-- <ion-buttons end>
       <button ion-button class="button-notification" icon-only>
 
           <img src="assets/img/icon_notification.png" />
-        <!-- <ion-icon name="notifications"></ion-icon> -->
     </button>
+    </ion-buttons> -->
+    <ion-buttons end>
+      <button ion-button icon-only class="button-panic" (click)="logout()">
+        <ion-icon name="log-out"></ion-icon>
+        <!-- <img src="assets/img/icon_panic.png" /> -->
+      </button>
     </ion-buttons>
     <ion-buttons   end>
       <button ion-button icon-only class="profile-picture"  (click)="ViewProfile()">
@@ -30,13 +35,19 @@
 
 <ion-content class="bg-masters">
     <div align="center">
-        <ion-slides class="imgcarousel" autoplay="2000" loop="true" speed="3000">
-            <ion-slide class="slide"> <img src='assets/img/banner_1.png'/> </ion-slide>
+        <!-- <ion-slides class="imgcarousel" autoplay="2000" loop="true" speed="3000">
+            <ion-slide class="slide"><img src='assets/img/banner_1.png'/></ion-slide>
             <ion-slide class="slide"> <img src='assets/img/banner_2.png'/> </ion-slide>
             <ion-slide class="slide"> <img src='assets/img/banner_3.png'/> </ion-slide>
+          </ion-slides> -->
+
+          <ion-slides class="imgcarousel" autoplay="2000" loop="true" speed="3000">
+            <ion-slide class="slide"> <img src='assets/img/banner_1.png'/></ion-slide>
+            <ion-slide class="slide">  Niyanta Softwares </ion-slide>
+            <ion-slide class="slide">  Niyanta Softwares </ion-slide>
           </ion-slides>
     </div>
-
+<div class="stripe"></div>
     <div padding>
         <div class="services-wrapper">
             <div class="box1 doctorlist">
