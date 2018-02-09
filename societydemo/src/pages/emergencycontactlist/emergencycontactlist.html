@@ -14,19 +14,17 @@
       </ion-refresher>
   <ion-list>
     <ion-item *ngFor="let c of contacts; let i=index" text-wrap (click)="toggleGroup(i)" [ngClass]="{active: isGroupShown(i)}">
-      <h3>
+      <h3 class="emerge_head">
         {{c.E_type}}
         <ion-icon color="success" item-right [name]="isGroupShown(i) ? 'arrow-dropdown' : 'arrow-dropright'"></ion-icon>
       </h3>
-      <div *ngIf="isGroupShown(i)" (click)="launchDialer(c.E_number)">
+      <div *ngIf="isGroupShown(i)" class="left" (click)="launchDialer(c.E_number)">
         <ion-icon name="call"></ion-icon> {{c.E_number}}</div>
-      <h4>
-        <div *ngIf="isGroupShown(i)" (click)="sendemail(c.E_email)" class="desc">
-          <ion-icon name="mail-open"></ion-icon> {{c.E_email}}</div>
-      </h4>
-      <div *ngIf="isGroupShown(i)"   (click)="gotoweb(c.E_web)">
-        <ion-icon name="globe"></ion-icon>{{c.E_web}}</div>
 
+      <div *ngIf="isGroupShown(i)"  (click)="sendemail(c.E_email)" class="desc left">
+          <ion-icon name="mail-open"></ion-icon> {{c.E_email}}</div>
+      <div *ngIf="isGroupShown(i)"  class="left" (click)="gotoweb(c.E_web)">
+        <ion-icon name="globe"></ion-icon>{{c.E_web}}</div>
     </ion-item>
   </ion-list>
 

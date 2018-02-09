@@ -10,4 +10,30 @@ page-image-gallery {
   .thumb-img {
       padding: 10px;
   }
+   .album-list{
+    width: 60px;
+    float: left!important;
+    display: block;
+  }
+  .album-wrap{
+    display: block!important;
+  }
+  .album-btn{
+    height: 40px;
+    width: 45px;
+    padding: 0;
+    background-color: white;
+  }
+  .album-folder{
+    height: 30px;
+    width: 30px;
+    font-size: 4.2em;
+    color: orange;
+  }
+  .addAlbum{
+    width: 106px;
+    float: left;
+    font-size: 3.2em;
+    text-transform: capitalize!important;
+  }
 }

@@ -25,7 +25,7 @@
 
   <div [ngSwitch]="account.Instructions">
     <ng-container *ngSwitchCase="'DoS'">
-      <ion-list *ngFor="let item of items_dos">
+      <ion-list *ngFor="let item of items">
         <ion-item>
           <ul>
             <li>{{item.rule}}</li>
@@ -34,7 +34,7 @@
       </ion-list>
     </ng-container>
     <ng-container *ngSwitchCase="'Donts'">
-      <ion-list *ngFor="let item of items_dont">
+      <ion-list *ngFor="let item of items">
         <ion-item>
           <ul>
             <li>{{item.rule}}</li>

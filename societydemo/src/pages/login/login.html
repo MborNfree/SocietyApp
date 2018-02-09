@@ -1,9 +1,7 @@
 <ion-header>
-
   <ion-toolbar color="navbar">
     <ion-title  align="left">Login</ion-title>
   </ion-toolbar>
-
 </ion-header>
 
 <ion-content padding class="bg-masters">
@@ -11,8 +9,7 @@
   <form [formGroup]="signinForm">
     <ion-item class="profile-item">
       <div class="big-profile-picture">
-        <ion-img src="assets/img/society.jpg"></ion-img>
-
+        <img src="assets/img/society-logo-small.png"/>
       </div>
     </ion-item>
     <ion-item [ngClass]="{'error-border':!signinForm.controls.usernm.valid && signinForm.controls.usernm.touched}">
@@ -43,7 +40,6 @@
     <ion-item *ngIf="signinForm.controls.password.hasError('minlength') && signinForm.controls.password.touched">
       <p>Sorry, minimum password length is 6!</p>
     </ion-item>
-
     <button ion-button full color="button" [disabled]="!signinForm.valid" (click)="signInUser()" style="margin-top: 20px;" type="submit">Login</button>
   </form>
   <ion-list>

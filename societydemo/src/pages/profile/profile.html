@@ -9,16 +9,30 @@
 
 <ion-content padding class="bg-masters">
   <!-- <form [formGroup]="authForm" (ngSubmit)="onSubmit(authForm.value)"> -->
-      <form [formGroup]="authForm" *ngFor="let user of userData">
+  <form [formGroup]="authForm" *ngFor="let user of userData">
     <div class="list card">
       <ion-item class="profile-item">
-        <div class="profile-picture big-profile-picture">
-            <ion-icon align="center" (click)="takeSelfie()" name="camera"></ion-icon>
-          <ion-img src="{{username}}"> </ion-img>
+
+        <div class="profile-item">
+          <!-- <ion-item class="profile-item" no-lines align="center" > -->
+          <ion-card class="profile-item profile-height" align="center">
+            <div class="profile-picture" (click)="takeSelfie()" align="center">
+              <!-- <img *ngIf="displayImage" src="{{displayImage}}" alt="Add Image"> -->
+              <img src="assets/img/icon_profile.png" alt="Add Image">
+            </div>
+            <!-- </ion-item> -->
+            <button clear color="other" (click)="takeSelfie()" ion-button class="selfie">&nbsp;
+              <ion-icon name="camera" class="profile_cam"></ion-icon>
+            </button>
+          </ion-card>
+          <h2 class="profile-name dark">{{ user.first_name + " " + user.last_name}}</h2>
         </div>
-        <h2 class="profile-name dark">{{username}}</h2>
-        <h2 class="profile-name dark">{{fnm}}</h2>
-        <div class="profile-info">{{flatno}}</div>
+        <!-- <div class="profile-picture big-profile-picture">
+            <ion-icon align="center" (click)="takeSelfie()" name="camera"></ion-icon>
+
+          <ion-img src="assets/img/icon_profile.png"></ion-img>
+        </div> -->
+
       </ion-item>
       <!-- <ion-item>
         <span
@@ -116,14 +130,14 @@
     <!-- <button ion-button full color="button"  style="margin-top: 20px;" type="submit">Save</button> -->
     <ion-buttons *ngIf="!toggle">
       <button ion-button color=button (click)="changeStatus()" *ngIf="inactive" full>
-        <ion-icon  name="create">Update</ion-icon>
+        <ion-icon name="create">Update</ion-icon>
       </button>
       <button ion-button class="col col-50" (click)="changeStatus()" *ngIf="!inactive">
         <ion-icon name="close-circle">Cancel</ion-icon>
       </button>
-      <button ion-button  class="col col-50" color="button" (click)="saveClick()" *ngIf="!inactive">
+      <button ion-button class="col col-50" color="button" (click)="saveClick()" *ngIf="!inactive">
         <ion-icon name="add">Save</ion-icon>
       </button>
     </ion-buttons>
-    </form>
+  </form>
 </ion-content>

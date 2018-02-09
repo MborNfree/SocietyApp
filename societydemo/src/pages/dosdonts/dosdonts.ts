@@ -9,8 +9,10 @@ import * as firebase from 'firebase';
   templateUrl: "dosdonts.html"
 })
 export class DosdontsPage {
+  public items = [];
   public items_dos = [];
   public items_dont = [];
+  public dont : any;
   Instructions: string = "DoS";
   //  isAndroid: boolean = true;
 
@@ -20,13 +22,13 @@ export class DosdontsPage {
     public Platform: Platform,
     private fdb: AngularFireDatabase
   ) {
-    // this.fdb
-    //   .list("/society_rules/")
-    //   .valueChanges()
-    //   .subscribe(_data => {
-    //     this.items = _data;
-    //     console.log(this.items);
-    //   });
+    this.fdb
+      .list("/society_rules/")
+      .valueChanges()
+      .subscribe(_data => {
+        this.items = _data;
+        console.log(this.items);
+      });
 
     this.account.Instructions = "DoS";
     //  this.isAndroid = Platform.is('android');
@@ -39,19 +41,25 @@ export class DosdontsPage {
   ionViewDidLoad() {
     console.log("ionViewDidLoad DosdontsPage");
     firebase.database().ref("society_rules").orderByChild("rule_type").equalTo('Do\'s').once("value", (snapshot) => {
-      console.log(snapshot.key);
-      console.log(snapshot.val());
+      // console.log(snapshot.key);
+      // console.log(snapshot.val());
 
       this.items_dos.push(snapshot.val());
-      console.log('item' + JSON.stringify(this.items_dos));
+      console.log('item dos' + JSON.stringify(this.items_dos));
     });
 
     firebase.database().ref("society_rules").orderByChild("rule_type").equalTo('Don\'t').once("value", (snapshot) => {
-      console.log(snapshot.key);
-      console.log(snapshot.val());
+      // console.log(snapshot.key);
+      // console.log(snapshot.val());
 
       this.items_dont.push(snapshot.val());
-      console.log('item' + JSON.stringify(this.items_dont));
+      this.dont =   JSON.stringify(this.items_dont);
+      console.log('item dnt' + JSON.stringify(this.items_dont));
+
+      for(let val in this.dont){
+          console.log('val'+val);
+          console.log('dont'+this.dont);
+      }
     });
   }
 }

@@ -1,20 +1,35 @@
-
-
-
 expandable {
-    
-       .expand-wrapper {
-           transition: 0.2s linear;
-       }  
-    
-       .collapsed {
-           height: 0 !important;
-       }
-    
+  .expand-wrapper {
+    transition: 0.2s linear;
+  }
+  .collapsed {
+    height: 0 !important;
+  }
+  .desc {
+    font: bold;
+  }
+}
 
-       .desc{
-           font :bold;
-       }
-   }
+.left {
+  float: left;
+  margin-right: 20px;
+}
 
+.emerge_head {
+  color: grey;
+} //Mobile view
+@media only screen and (max-width: 480px) {
+  .left {
+    float: left;
+    margin-right: 10px;
+    font-family: 'Roman';
+    font-size: 11px;
+  }
+  .emerge_head {
+    color: grey;
+  }
+  .emerge_head .ion-ios-arrow-dropdown {
+    color: red;
+  }
+}
 

@@ -1,6 +1,4 @@
 // http://ionicframework.com/docs/theming/
-
-
 // App Global Sass
 // --------------------------------------------------
 // Put style rules here that you want to apply globally. These
@@ -15,26 +13,28 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 .my-selected-option {
-  color: map-get($colors,button);
-  // font-weight: 700;
+  color: map-get($colors, button); // font-weight: 700;
   font-weight: 100;
   font-size: 14pt;
 }
+
 .bg-masters {
-  background-color: whitesmoke;
-
+  background-color: white;
 }
+
 .call-to-action {
-
-	position: relative;
-	left: 20px;
+  position: relative;
+  left: 20px;
 }
-.action-img{
-  height:100%;
+
+.action-img {
+  height: 100%;
   text-align: center;
   width: 100%;
   background: none;
 }
+
 .reg-icon.icon {
-  color: red;
+  color: grey
 }
+

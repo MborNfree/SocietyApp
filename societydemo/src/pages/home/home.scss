@@ -10,12 +10,15 @@ page-home {
     align-self: center;
     padding: 20px !important;
   }
-  .stripe{
-      height:30px;
-      background-color: #BC1121;
+  .stripe {
+    height: 30px;
+    background-color: #BC1121;
+  }
+  .society_title {
+    position: relative;
+    top: 40px;
   }
   .slide {
-    padding-top: 50px;
     height: 80%;
     background-color: rgb(228, 123, 134);
   }
@@ -25,7 +28,7 @@ page-home {
   .swiper-slide img {
     width: auto;
     max-width: 100%;
-    height: 150px!important;
+    height: 150px !important;
     max-height: 100%;
   }
   .slide-zoom {
@@ -38,7 +41,7 @@ page-home {
   .item-md ion-avatar img {
     border-radius: 50%;
     overflow: hidden;
-    width: 51px!important;
+    width: 51px !important;
     height: 73px !important;
   }
   .homeIcon {
@@ -105,7 +108,7 @@ page-home {
     grid-gap: 10px;
     grid-template-columns: [col] 100px [col] 100px [col] 100px [col] 100px;
     grid-template-rows: [row] auto [row] auto [row];
-    background-color: whitesmoke;
+    background-color: white;
     color: #444;
   }
   .box {
@@ -119,12 +122,12 @@ page-home {
     display: grid;
     grid-gap: 30px;
     grid-template-columns: auto auto auto;
-    background-color: whitesmoke;
+    background-color: white;
     color: white;
     margin-bottom: 10px;
   }
   .box1 {
-    background-color: whitesmoke;
+    background-color: white;
     color: #444;
     border-radius: 5px;
     padding: 20px;
@@ -136,86 +139,126 @@ page-home {
   .box1 .electricianlist {
     grid-area: 1 / 2 / 2 / 3;
   }
-  .box1  .plumberlist{
+  .box1 .plumberlist {
     grid-area: 1 / 3 / 2 / 4;
   }
   .label-name {
     font-size: 14px;
   }
   .box1 .img-dr {
-    height: 50px;
-    width: 50px;
+    height: 80px;
+    width: 80px;
     position: relative;
     left: 158px;
-
+    background-color: white;
   }
-
   .wrapper {
-		display: grid;
+    display: grid;
     grid-gap: 10px;
-		grid-template-columns: [col] 100px [col] 100px [col] ;
-		grid-template-rows: [row] auto [row] auto [row] ;
-		background-color: #fff;
-		color: #444;
-	}
-
-	.box {
-		background-color: #BC1121;
-		color: #fff;
-		border-radius: 5px;
-		padding: 20px;
-		font-size: 150%;
-
-	}
-
-	.shownews {
-		grid-column: col 1 / span 7;
+    grid-template-columns: [col] 100px [col] 100px [col];
+    grid-template-rows: [row] auto [row] auto [row];
+    background-color: #fff;
+    color: #444;
+  }
+  .box {
+    background-color: #BC1121;
+    color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    font-size: 150%;
+  }
+  .shownews {
+    grid-column: col 1 / span 7;
     grid-row: row;
     background-color: rgba(65, 77, 184, 0.925);
-	}
-	.showbills {
-		grid-column: col 8 / span 3 ;
-    grid-row: row ;
-    background-color: rgb(188, 17, 33);
-	}
-	.showforum {
-		grid-column: col 1 /span 4 ;
-    grid-row: row 2 ;
-    background-color: rgb(188, 17, 33);
-	}
-	.showevent {
-		grid-column: col 5 / span 6 ;
-    grid-row: row 2 ;
-    background-image:url('../assets/img/icon_event.png');
-	}
-
-
+  }
+  .showbills {
+    grid-column: col 8 / span 3;
+    grid-row: row;
+    background-color: #bc1121;
+  }
+  .showforum {
+    grid-column: col 1 /span 4;
+    grid-row: row 2;
+    background-color: #bc1121;
+  }
+  .showevent {
+    grid-column: col 5 / span 6;
+    grid-row: row 2;
+    background-image: url('../assets/img/icon_event.png');
+  }
   .platform-android.platform-cordova {
     page-landing {
       .scroll-content {
         margin-top: 20px !important;
       }
     }
-  }
-  //Mobile view
-  @media only screen and (max-width: 330px) {
+  } //Mobile view
+  @media only screen and (max-width: 480px) {
+    /**************************************
+HELP PROVIDED BY DARREN KYNASTON TREEHOUSE
+Hi Adam - I'm sure you've got this one under
+wraps now - but it doesn't seem to clear on the
+forum what needed doing. You had the id="navlist"
+in the wrong element really - in needed to be within the <li> below is (where the actual dropdown list is held aka it's parent) - you then needed to give it's parent a position=relative and then the sub_navlist a position=absolute - this will solve the problem of the dropdown pushing content out of the way for you.
+Darren
+***************************************/
+    #navlist {
+      position: relative;
+    }
+    #sub_navlist {
+      position: absolute;
+      display: none;
+      width: 400px;
+      text-align: left;
+    }
+    #sub_navlist li {
+      padding: 5px 0;
+    }
+    #navlist:hover>#sub_navlist {
+      display: block;
+    }
+    /**************************************
+CSS BELOW TO MAKE THE NAV HOROZONTAL
+***************************************/
+    nav ul {
+      text-align: right;
+      margin-right: 30px;
+    }
+    nav li {
+      display: inline-block;
+      margin: 0 10px;
+    }
+    /**************************************
+CSS BELOW FOR DECORATION - so you can
+see whats going on a little better
+***************************************/
+    #sub_navlist {
+      margin: 10 0;
+      padding: 0;
+    }
     ion-avatar img {
       width: 100% !important;
       height: 100% !important;
       max-width: 100px !important; //any size
       max-height: 100px !important; //any size
     }
-
+    .label-name {
+      font-size: 10px;
+    }
+    .news {
+      float: right;
+    }
     .services-wrapper {
       display: grid;
       grid-gap: 10px;
       grid-template-columns: auto auto auto;
-      background-color: whitesmoke;
+      background-color: white;
       color: white;
       margin-bottom: 10px;
     }
     .box1 {
-      background-color: whitesmoke;
+      background-color: white;
       color: #444;
       border-radius: 5px;
       padding: 5px;
@@ -224,57 +267,55 @@ page-home {
     .doctorlist {
       grid-area: 1 / 1 / 2 / 2;
     }
-     .electricianlist {
+    .electricianlist {
       grid-area: 1 / 2 / 2 / 3;
     }
-    .plumberlist{
+    .plumberlist {
       grid-area: 1 / 3 / 2 / 4;
     }
     .wrapper {
       display: grid;
       grid-gap: 3px;
-      grid-template-columns: [col] auto [col] auto ;
-      grid-template-rows: [row] auto [row] auto  ;
+      grid-template-columns: [col] auto [col] auto;
+      grid-template-rows: [row] auto [row] auto;
       background-color: #fff;
       color: #444;
     }
-
     .box {
-      background-color: #444;
       color: #fff;
       border-radius: 5px;
       padding: 10px;
-      font-size: 150%;
+      font-size: 100%;
     }
-
     .shownews {
       grid-column: col 1 / span 2;
       grid-row: row;
-      background-color: rgba(65, 77, 184, 0.925);
+      background-color: #5565ad;
+      ;
     }
-     .showbills {
-      grid-column: col 3 / span 1 ;
-      grid-row: row ;
+    .showbills {
+      grid-area: 1 / 3 / 2 / 4;
       background-color: rgb(188, 17, 33);
     }
-     .showforum {
-      grid-column: col 1 /span 1 ;
-      grid-row: row 2 ;
+    .showforum {
+      grid-column: col 1 /span 1;
+      grid-row: row 2;
       background-color: rgb(188, 17, 33);
     }
     .showevent {
-      grid-column: col 2 / span 3 ;
-      grid-row: row 2 ;
-      background-image:url('../assets/img/icon_event.png');
+      grid-area: 2 / 2 / 3 / 4;
+      background: url('../assets/img/icon_event.png') no-repeat;
     }
     .box1 .img-dr {
-      height: 80px;
-      width: 80px;
+      height: 50px;
+      width: 50px;
       position: relative;
-      left: 2px;
-
+      left: 15px;
     }
-
+    .stripe {
+      height: 20px;
+      background-color: #BC1121;
+    }
   }
 }
 
