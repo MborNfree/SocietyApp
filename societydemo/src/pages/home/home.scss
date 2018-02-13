@@ -193,7 +193,23 @@ page-home {
         margin-top: 20px !important;
       }
     }
-  } //Mobile view
+  }
+  .event_lbl{
+    position: relative;
+    top:80px;
+  }
+  .news {
+    float: right;
+    position: relative;
+    bottom: 0px;
+
+  }
+  .news_img {
+    float: left;
+    height: 100%;
+  }
+
+  //Mobile view
   @media only screen and (max-width: 480px) {
     /**************************************
 HELP PROVIDED BY DARREN KYNASTON TREEHOUSE
@@ -246,8 +262,25 @@ see whats going on a little better
     .label-name {
       font-size: 10px;
     }
-    .news {
+    .event_lbl{
+      position: relative;
+      top:78px;
+    }
+    .news_wrap{
+      position: relative;
+      top:20px;
+    }
+   .news {
       float: right;
+      position: relative;
+      bottom: 2px;
+      left: 5px;
+    }
+    .news_img {
+      float: left;
+    }
+    .word_break{
+      width: 80px;
     }
     .services-wrapper {
       display: grid;
@@ -304,7 +337,7 @@ see whats going on a little better
     }
     .showevent {
       grid-area: 2 / 2 / 3 / 4;
-      background: url('../assets/img/icon_event.png') no-repeat;
+      background: url('../assets/img/icon_event.png') no-repeat right center;
     }
     .box1 .img-dr {
       height: 50px;

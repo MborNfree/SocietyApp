@@ -4,12 +4,12 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding class="bg-masters">
+<ion-content padding  class="bg-masters">
   <form [formGroup]="authForm">
     <ion-list>
       <ion-item class="profile-item">
         <div class="big-profile-picture">
-          <ion-img src="assets/img/join-us.png"></ion-img>
+          <img src="assets/img/society-logo-small.png"/>
         </div>
       </ion-item>
       <ion-item [ngClass]="{'error-border':!authForm.controls.firstnme.valid && authForm.controls.firstnme.touched}">

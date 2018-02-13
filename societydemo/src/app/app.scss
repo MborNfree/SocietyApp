@@ -38,3 +38,20 @@
   color: grey
 }
 
+.big-profile-picture {
+  width: 30%;
+  text-align: center;
+  position: relative;
+  left: 444px;
+  background: none;
+}
+
+@media only screen and (max-width: 480px) {
+  .big-profile-picture {
+      width: 76%;
+      position: relative;
+      left: 30px;
+      height: 50%;
+    }
+
+  }
