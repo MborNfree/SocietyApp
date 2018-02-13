@@ -10,4 +10,17 @@ page-doctorlist {
         overflow: hidden;
         height: 94px;
     }
+
+    .doctorIcon{
+      padding-top: 10px;
+      width: 55px;
+	    height: 55px;
+	    -moz-border-radius: 50px;
+	    -webkit-border-radius: 50px;
+	    border-radius: 100%;
+    }
+
+    .service_name{
+      color:#bc1121;
+    }
 }

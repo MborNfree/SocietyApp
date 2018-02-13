@@ -47,14 +47,22 @@ page-profile {
     }
     .profile_cam{
       color: #ffffff;
+      padding-right: 2px;
     }
     .selfie {
       padding: 0;
       position: relative;
       bottom: 40px;
       left: 30px;
-      background-color: #bc1121;
-      border-radius: 100%;
+      // background-color: #bc1121;
+      // border-radius: 100%;
+
+      width: 28px;
+	    height: 28px;
+	    background-color: #bc1121;
+	    -moz-border-radius: 50px;
+	    -webkit-border-radius: 50px;
+	    border-radius: 100%;
     }
   }
 }
