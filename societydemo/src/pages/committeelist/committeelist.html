@@ -3,30 +3,31 @@
     <button ion-button icon-only menuToggle start>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title  align="left">Committee List</ion-title>
+    <ion-title align="left">Committee List</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding class="bg-masters">
-    <ion-refresher (ionRefresh)="doRefresh($event)">
-        <ion-refresher-content></ion-refresher-content>
-      </ion-refresher>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
   <ion-card *ngFor="let Committeeitem of Committeeitems">
     <ion-item (click)="viewItem(Committeeitem)">
       <div class="row">
         <div class="col">
           <ion-avatar>
-            <ion-img src="assets/img/doctor.jpg" ></ion-img>
+            <ion-img src="assets/img/doctor.jpg"></ion-img>
           </ion-avatar>
         </div>
-         <div class="col">
+        <div class="col">
           <p>#: {{Committeeitem.flatno}}</p>
           <p>Name:{{Committeeitem.first_name}} </p>
-          <p><ion-icon name="call"></ion-icon>{{Committeeitem.contact_no}}</p>
+          <p>
+            <ion-icon name="call"></ion-icon>{{Committeeitem.contact_no}}</p>
           <p>Role :{{Committeeitem.role}} </p>
           <!-- <p>Email: {{Committeeitem.email}}</p>  -->
         </div>
-        </div>
+      </div>
     </ion-item>
   </ion-card>
 </ion-content>

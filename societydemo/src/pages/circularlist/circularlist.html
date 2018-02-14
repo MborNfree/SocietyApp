@@ -1,7 +1,7 @@
 <ion-header>
 
   <ion-navbar color="navbar">
-    <ion-title  align="left">Circularlist</ion-title>
+    <ion-title align="left">Circularlist</ion-title>
     <button ion-button icon-only menuToggle start>
       <ion-icon name="menu"></ion-icon>
     </button>
@@ -9,15 +9,14 @@
 
 </ion-header>
 
-
 <ion-content padding class="bg-masters">
-    <ion-refresher (ionRefresh)="doRefresh($event)">
-        <ion-refresher-content></ion-refresher-content>
-      </ion-refresher>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
   <ion-list *ngFor="let document of Circular">
     <ion-item (click)="viewItem()">
       <ion-card>
-        <ion-img src="{{document.icon}}" ></ion-img>
+        <ion-img src="{{document.icon}}"></ion-img>
         <ion-card-content>
           <ion-card-title>{{document.title}}</ion-card-title>
           <p>{{document.doc_name}}</p>

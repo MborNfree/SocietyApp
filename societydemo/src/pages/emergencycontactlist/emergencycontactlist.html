@@ -9,9 +9,9 @@
 </ion-header>
 
 <ion-content padding class="bg-masters">
-    <ion-refresher (ionRefresh)="doRefresh($event)">
-        <ion-refresher-content></ion-refresher-content>
-      </ion-refresher>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
   <ion-list>
     <ion-item *ngFor="let c of contacts; let i=index" text-wrap (click)="toggleGroup(i)" [ngClass]="{active: isGroupShown(i)}">
       <h3 class="emerge_head">
@@ -21,9 +21,9 @@
       <div *ngIf="isGroupShown(i)" class="left" (click)="launchDialer(c.E_number)">
         <ion-icon name="call"></ion-icon> {{c.E_number}}</div>
 
-      <div *ngIf="isGroupShown(i)"  (click)="sendemail(c.E_email)" class="desc left">
-          <ion-icon name="mail-open"></ion-icon> {{c.E_email}}</div>
-      <div *ngIf="isGroupShown(i)"  class="left" (click)="gotoweb(c.E_web)">
+      <div *ngIf="isGroupShown(i)" (click)="sendemail(c.E_email)" class="desc left">
+        <ion-icon name="mail-open"></ion-icon> {{c.E_email}}</div>
+      <div *ngIf="isGroupShown(i)" class="left" (click)="gotoweb(c.E_web)">
         <ion-icon name="globe"></ion-icon>{{c.E_web}}</div>
     </ion-item>
   </ion-list>

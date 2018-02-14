@@ -11,14 +11,14 @@ import { Observable } from 'rxjs/Observable';
 })
 export class CircularlistPage {
   public items = [];
-  public Circular :Observable<any[]>;
+  public Circular: Observable<any[]>;
 
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     private fdb: AngularFireDatabase
   ) {
-      this.Circular = this.fdb
+    this.Circular = this.fdb
       .list("/societydoc/")
       .snapshotChanges()
       .map(changes => {

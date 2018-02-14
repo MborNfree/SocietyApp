@@ -13,28 +13,23 @@ import { AngularFireDatabase } from 'angularfire2/database';
 export class EventlistPage {
   addNewQuestionSetForm: any;
 
-
   public items = [];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public modalCtrl: ModalController, private fdb: AngularFireDatabase) {
-      this.fdb.list("/events/").valueChanges().subscribe(_data => {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, private fdb: AngularFireDatabase) {
+    this.fdb.list("/events/").valueChanges().subscribe(_data => {
       this.items = _data;
-     console.log(this.items);
+      console.log(this.items);
     });
 
   }
-
-   openModal(characterNum) {
-
-        let modal = this.modalCtrl.create( characterNum);
-        modal.present();
-      }
-
+  openModal(characterNum) {
+    let modal = this.modalCtrl.create(characterNum);
+    modal.present();
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad EventlistPage');
   }
-
 
   doRefresh(refresher) {
     console.log('Begin async operation', refresher);
@@ -45,11 +40,11 @@ export class EventlistPage {
     }, 2000);
   }
 
-  Event(){
+  Event() {
     this.navCtrl.push(EventdetailsPage);
   }
 
-  viewItem(item){
+  viewItem(item) {
     this.navCtrl.push(EventdetailsPage, {
       item: item
     });

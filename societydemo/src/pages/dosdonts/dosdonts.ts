@@ -12,7 +12,7 @@ export class DosdontsPage {
   public items = [];
   public items_dos = [];
   public items_dont = [];
-  public dont : any;
+  public dont: any;
   Instructions: string = "DoS";
   //  isAndroid: boolean = true;
 
@@ -53,12 +53,12 @@ export class DosdontsPage {
       // console.log(snapshot.val());
 
       this.items_dont.push(snapshot.val());
-      this.dont =   JSON.stringify(this.items_dont);
+      this.dont = JSON.stringify(this.items_dont);
       console.log('item dnt' + JSON.stringify(this.items_dont));
 
-      for(let val in this.dont){
-          console.log('val'+val);
-          console.log('dont'+this.dont);
+      for (let val in this.dont) {
+        console.log('val' + val);
+        console.log('dont' + this.dont);
       }
     });
   }

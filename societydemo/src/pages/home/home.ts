@@ -25,8 +25,8 @@ import { SocietybillPage } from "./../societybill/societybill";
 import { EventlistPage } from "./../eventlist/eventlist";
 import { HelpdeskPage } from "./../helpdesk/helpdesk";
 import { Http } from "@angular/http";
-import { ForumPage } from "../forum/forum";
-declare const jQuery : any;
+
+declare const jQuery: any;
 
 
 @IonicPage()
@@ -41,7 +41,7 @@ export class HomePage {
   username: any;
   sessionUser: any;
   public uIDParam;
-  public xmlItems : any;
+  public xmlItems: any;
 
   constructor(
     public toastCtrl: ToastController,
@@ -50,7 +50,7 @@ export class HomePage {
     public alertCtrl: AlertController,
     public navParams: NavParams,
     private sms: SMS,
-    private http:Http,
+    private http: Http,
 
   ) {
     this.username = window.sessionStorage.getItem("Sessioneml");
@@ -82,55 +82,47 @@ export class HomePage {
 
   }
 
-  ionViewWillEnter()
-  {
-     this.loadXML();
+  ionViewWillEnter() {
+    this.loadXML();
   }
 
-  loadXML()
-  {
-     this.http.get('/assets/data/comics.xml')
-     .map(res => res.text())
-     .subscribe((data)=>
-     {
+  loadXML() {
+    this.http.get('/assets/data/comics.xml')
+      .map(res => res.text())
+      .subscribe((data) => {
         this.parseXML(data)
-        .then((data)=>
-        {
-           this.xmlItems = data;
-           console.log(this.xmlItems);
-        });
-     });
+          .then((data) => {
+            this.xmlItems = data;
+            console.log(this.xmlItems);
+          });
+      });
   }
 
-  parseXML(data)
-  {
-     return new Promise(resolve =>
-     {
-        var k,
-            arr    = [],
-            parser = new xml2js.Parser(
-            {
-               trim: true,
-               explicitArray: true
-            });
+  parseXML(data) {
+    return new Promise(resolve => {
+      var k,
+        arr = [],
+        parser = new xml2js.Parser(
+          {
+            trim: true,
+            explicitArray: true
+          });
 
-        parser.parseString(data, function (err, result)
-        {
-           var obj = result.comics;
-           for(k in obj.publication)
-           {
-              var item = obj.publication[k];
-              arr.push({
-                 id           : item.id[0],
-                 title        : item.title[0],
-                 publisher : item.publisher[0],
-                 genre        : item.genre[0]
-              });
-           }
+      parser.parseString(data, function (err, result) {
+        var obj = result.comics;
+        for (k in obj.publication) {
+          var item = obj.publication[k];
+          arr.push({
+            id: item.id[0],
+            title: item.title[0],
+            publisher: item.publisher[0],
+            genre: item.genre[0]
+          });
+        }
 
-           resolve(arr);
-        });
-     });
+        resolve(arr);
+      });
+    });
   }
   logout() {
     window.sessionStorage.removeItem("username");
@@ -145,7 +137,7 @@ export class HomePage {
   }
 
   showEvents() {
-   this.navCtrl.push(EventlistPage);
+    this.navCtrl.push(EventlistPage);
   }
   ShowBills() {
     this.navCtrl.push(SocietybillPage);
@@ -156,16 +148,14 @@ export class HomePage {
   }
 
   showdoctorlist() {
-   this.navCtrl.push(DoctorlistPage);
+    this.navCtrl.push(DoctorlistPage);
   }
 
   showplumberlist() {
     this.navCtrl.push(PlumberlistPage);
   }
 
-  // showEvents() {
-  //   this.navCtrl.push(EventlistPage);
-  // }
+
   showelectricianlist() {
     this.navCtrl.push(ElectricianlistPage);
   }
@@ -174,60 +164,6 @@ export class HomePage {
     this.navCtrl.push(ProfilePage);
   }
 
-
-  //for sending sms to multiple numbers
-  // sendTextMessage() {
-  //   this.array1=[+917507526151,+919664993545,+919987566826,+918655156422];
-
-  //   //alert(this.array1);
-  //   this.sms.send('array1','Hii Users').then((result) => {
-  //    // alert(result);
-  //     let successToast = this.toastCtrl.create({
-  //       message: "Text message sent successfully",
-  //       duration: 3000
-  //     })
-  //     successToast.present();
-  //   }, (error) => {
-  //     alert(error);
-  //     let errorToast = this.toastCtrl.create({
-  //       message: "Text message not sent. :(",
-  //       duration: 3000
-  //     })
-  //     errorToast.present();
-  //   });
-
-  // }
-
-  // sendTextMessage() {
-  //   var request = new XMLHttpRequest();
-  //   request.open("POST", "https://control.msg91.com", true);
-  //   request.setRequestHeader("Access-Control-Allow-Origin", "*");
-
-  //   var settings = {
-  //     async: true,
-  //     crossDomain: true,
-  //     url: "https://control.msg91.com/api/postsms.php",
-  //     method: "POST",
-  //     headers: {
-  //       "content-type": "application/xml"
-  //     },
-  //    // data: "<MESSAGE><AUTHKEY>190301AU2RL0SzSK5a460060</AUTHKEY><SENDER>vishwa</SENDER><ROUTE>Template</ROUTE><CAMPAIGN>XML API</CAMPAIGN> <COUNTRY>91</COUNTRY><SMS TEXT='test message1'><ADDRESS TO='8401081227'></ADDRESS><ADDRESS TO='7507526151'></ADDRESS></SMS><SMS TEXT='hi test message'><ADDRESS TO='8080328322'></ADDRESS><ADDRESS TO='8355891739'></ADDRESS></SMS></MESSAGE>"
-  //     data: this.xmlItems
-  //   };
-
-  //   $.ajax(settings).done(function(response) {
-  //     console.log(response.data);
-  //     alert(response.data);
-  //     console.log("sms response" + response);
-  //     //alert("sms response =" + response)
-  //     if(response){
-  //       alert("Sms Sent");
-  //     }else{
-  //       alert("Error Occured");
-  //     }
-
-  //   });
-  // }
 
   sendTextMessage() {
     alert('Do u wanted to send panic message?');
@@ -251,9 +187,9 @@ export class HomePage {
 
     jQuery.ajax(settings).done(function (response) {
       console.log(response);
-       //alert("sms response =" + response)
+      //alert("sms response =" + response)
 
-       alert("Sms Sent!");
+      alert("Sms Sent!");
     });
   }
   showAlert() {

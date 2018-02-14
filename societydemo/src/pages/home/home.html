@@ -36,10 +36,14 @@
 <ion-content class="bg-masters">
   <div align="center">
     <ion-slides class="imgcarousel" autoplay="2000" loop="true" speed="3000">
-            <ion-slide class="slide"><img src='assets/img/banner_1.png'/></ion-slide>
-            <ion-slide class="slide"> <img src='assets/img/banner_2.png'/> </ion-slide>
-            <ion-slide class="slide"> <img src='assets/img/banner_3.png'/> </ion-slide>
-          </ion-slides>
+      <ion-slide class="slide">
+        <img src='assets/img/banner_1.png' />
+      </ion-slide>
+      <ion-slide class="slide">
+        <img src='assets/img/banner_2.png' /> </ion-slide>
+      <ion-slide class="slide">
+        <img src='assets/img/banner_3.png' /> </ion-slide>
+    </ion-slides>
   </div>
   <div class="stripe"></div>
   <div padding class="">
@@ -62,13 +66,13 @@
     <div class="wrapper">
       <div class="box shownews">
         <div class="news_wrap">
-            <div class="news_img">
-                <ion-img class="cards-action-img" (click)="shownews()" src='assets/img/icon_news.png'></ion-img>
-            </div>
-            <div class="news">
-                <div class="label-name "> NewsPaper</div>
-                <div class="label-name word_break"> Daily Economic News</div>
-            </div>
+          <div class="news_img">
+            <ion-img class="cards-action-img" (click)="shownews()" src='assets/img/icon_news.png'></ion-img>
+          </div>
+          <div class="news">
+            <div class="label-name "> NewsPaper</div>
+            <div class="label-name word_break"> Daily Economic News</div>
+          </div>
         </div>
 
 
@@ -82,8 +86,8 @@
         <ion-img class="cards-action-img" (click)="ShowForum()" src='assets/img/icon_forum.png'></ion-img>
         <div class="label-name" align="center">FORUM</div>
       </div>
-      <div class="box showevent" (click)="showEvents()" >
-        <div class="label-name event_lbl" align="center" >EVENTS</div>
+      <div class="box showevent" (click)="showEvents()">
+        <div class="label-name event_lbl" align="center">EVENTS</div>
       </div>
 
     </div>

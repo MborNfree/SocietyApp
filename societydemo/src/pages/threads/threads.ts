@@ -49,7 +49,7 @@ export class ThreadsPage {
     // self.events.subscribe("network:connected", self.networkConnected);
     self.events.subscribe("threads:add", self.addNewThreads);
 
-     self.checkFirebase();
+    self.checkFirebase();
   }
 
   checkFirebase() {
@@ -265,14 +265,14 @@ export class ThreadsPage {
       // empty current threads
       self.threads = [];
       self.dataService.loadThreads().then(function (snapshot) {
-        console.log('snap'+JSON.stringify(snapshot));
+        console.log('snap' + JSON.stringify(snapshot));
         self.itemsService
           .reversedItems<IThread>(self.mappingsService.getThreads(snapshot))
           .forEach(function (thread) {
             console.log(thread);
             if (
               thread.title.toLowerCase().includes(self.queryText.toLowerCase())
-             )
+            )
               self.threads.push(thread);
             console.log(self.threads);
           });

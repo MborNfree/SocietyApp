@@ -1,13 +1,13 @@
 <ion-header>
   <ion-navbar color="navbar">
-    <ion-title  align="left">Event Details</ion-title>
+    <ion-title align="left">Event Details</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding class="bg-masters">
-    <ion-refresher (ionRefresh)="doRefresh($event)">
-        <ion-refresher-content></ion-refresher-content>
-      </ion-refresher>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
   <ion-card>
     <ion-label align="center">Event Name:{{itemsParam.event_name}}</ion-label>
     <ion-label>Event Details</ion-label>

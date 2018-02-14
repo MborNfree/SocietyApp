@@ -15,7 +15,7 @@ import { StreamingMedia, StreamingVideoOptions, StreamingAudioOptions } from '@i
 })
 export class ConfigCctvPage {
   cctvConfig = { "url": "" };
-  CCtvurl :any ;
+  CCtvurl: any;
   constructor(public navCtrl: NavController, public navParams: NavParams, private streamingMedia: StreamingMedia) {
   }
 
@@ -23,7 +23,7 @@ export class ConfigCctvPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad ConfigCctvPage');
   }
-  CctvConfig(url){
+  CctvConfig(url) {
     alert(url);
     this.CCtvurl = url;
     this.startVideo(this.CCtvurl);

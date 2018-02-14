@@ -231,12 +231,6 @@ export class MySocietyApp {
       displayName: "Profile",
       component: ProfilePage
     });
-    // this.options.push({
-    //   iconName: "person",
-    //   displayName: "User Profile",
-    //   component: UserProfilePage
-    // });
-
 
     this.options.push({
       iconName: "card",
@@ -357,16 +351,6 @@ export class MySocietyApp {
       ]
     });
 
-
-    // this.options.push({
-    //   displayName: 'Logout',
-    //   iconName: 'log-out',
-    //   custom: {
-    //     			isLoggedIn: false
-    //         },
-    //   component: LoginPage
-
-    // });
 
   }
   public selectOption(option: MenuOptionModel): void {

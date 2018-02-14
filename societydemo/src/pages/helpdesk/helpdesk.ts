@@ -28,7 +28,7 @@ export class HelpdeskPage {
 
   public myPhotosRef: any;
   public myPhoto: any;
-public myPhotoURL: any;
+  public myPhotoURL: any;
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -62,13 +62,13 @@ public myPhotoURL: any;
             this.cameraPlugin.getPicture({
               quality: 100,
               destinationType: this.cameraPlugin.DestinationType.DATA_URL,
-             sourceType:this.cameraPlugin.PictureSourceType.PHOTOLIBRARY,
+              sourceType: this.cameraPlugin.PictureSourceType.PHOTOLIBRARY,
               encodingType: this.cameraPlugin.EncodingType.PNG,
             }).then(imageData => {
               // Send the picture to Firebase Storage
-              const selfieRef = firebase.storage().ref('profilePictures/user1/'+Image);
+              const selfieRef = firebase.storage().ref('profilePictures/user1/' + Image);
               selfieRef
-                .putString(imageData, 'base64', {contentType: 'image/png'})
+                .putString(imageData, 'base64', { contentType: 'image/png' })
                 .then(savedProfilePicture => {
                   firebase
                     .database()
@@ -77,38 +77,39 @@ public myPhotoURL: any;
                 });
             }, error => {
               console.log("ERROR -> " + JSON.stringify(error));
+            }
+            )
           }
-          )}
         },
         {
           text: "Use Camera",
           handler: () => {
             this.takePicture(this.camera.PictureSourceType.CAMERA);
             this.cameraPlugin.getPicture({
-              quality : 95,
-              destinationType : this.cameraPlugin.DestinationType.DATA_URL,
-              sourceType : this.cameraPlugin.PictureSourceType.CAMERA,
-              allowEdit : true,
+              quality: 95,
+              destinationType: this.cameraPlugin.DestinationType.DATA_URL,
+              sourceType: this.cameraPlugin.PictureSourceType.CAMERA,
+              allowEdit: true,
               encodingType: this.cameraPlugin.EncodingType.PNG,
               targetWidth: 500,
               targetHeight: 500,
               saveToPhotoAlbum: true
             }).then(profilePicture => {
-            // Send the picture to Firebase Storage
-            const selfieRef = firebase.storage().ref('profilePictures/user1/'+Image);
-            selfieRef
-              .putString(profilePicture, 'base64', {contentType: 'image/png'})
-              .then(savedProfilePicture => {
-                firebase
-                  .database()
-                  .ref(`users/user1/profilePicture`)
-                  .push(savedProfilePicture.downloadURL);
+              // Send the picture to Firebase Storage
+              const selfieRef = firebase.storage().ref('profilePictures/user1/' + Image);
+              selfieRef
+                .putString(profilePicture, 'base64', { contentType: 'image/png' })
+                .then(savedProfilePicture => {
+                  firebase
+                    .database()
+                    .ref(`users/user1/profilePicture`)
+                    .push(savedProfilePicture.downloadURL);
+                });
+            },
+              error => {
+                // Log an error to the console if something goes wrong.
+                console.log("ERROR -> " + JSON.stringify(error));
               });
-          },
-             error => {
-              // Log an error to the console if something goes wrong.
-              console.log("ERROR -> " + JSON.stringify(error));
-            });
           }
         },
         {
