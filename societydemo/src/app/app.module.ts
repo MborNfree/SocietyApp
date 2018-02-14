@@ -135,7 +135,6 @@ var config = {
     PhotosPage,
 
     ShowAlbumPage
-
   ],
 
   imports: [

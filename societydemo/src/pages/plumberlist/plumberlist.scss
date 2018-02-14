@@ -1,13 +1,26 @@
 page-plumberlist {
     .item-md ion-avatar ion-img, .item-md ion-avatar img {
-        border-radius: 50%;
-        overflow: hidden;
-        width: 80px;
-        height: 64px;
+        // border-radius: 50%;
+        // overflow: hidden;
+        // width: 80px;
+        // height: 64px;
     }
     ion-card {
         display: block;
         overflow: hidden;
         height: 94px;
+    }
+
+    .plumberIcon{
+      padding-top: 10px;
+      width: 55px;
+	    height: 55px;
+	    -moz-border-radius: 50px;
+	    -webkit-border-radius: 50px;
+	    border-radius: 100%;
+    }
+
+    .service_name{
+      color:#bc1121;
     }
 }

@@ -22,16 +22,19 @@
 
     <ion-item (click)="viewItem(item)">
       <div class="row">
-        <div class="col">
-          <ion-avatar>
-            <ion-img src="assets/img/doctor.jpg"></ion-img>
-          </ion-avatar>
+        <div class="col" class="col-6">
+
+          <!-- <div class="electricianIcon"> -->
+            <ion-avatar>
+              <ion-img src="assets/img/doctor.jpg"></ion-img>
+            </ion-avatar>
+          <!-- </div> -->
+
         </div>
-        <div class="col">
-          <p>{{item.Service_name}}</p>
+        <div class="col" class="col-6">
+            <div class="service_name"><p class="service_name">{{item.Service_name}}</p></div>
           <p>{{item.Service_type}} </p>
-          <p>
-            <ion-icon name="call"></ion-icon>{{item.Contact_no}}</p>
+          <p>{{item.Service_type}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<ion-icon name="call"></ion-icon>{{item.Contact_no}}</p>
         </div>
       </div>
     </ion-item>

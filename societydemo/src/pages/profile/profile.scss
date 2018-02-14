@@ -1,5 +1,9 @@
 page-profile {
 
+  .item {
+    min-height: 1rem;
+  }
+
 
   .profile-item {
     text-align: center;
@@ -35,7 +39,9 @@ page-profile {
   @media only screen and (max-width: 480px) {
 
     .profile-height{
-      padding-top: 10px;
+      padding-top: 1px;
+      height: 115px;
+
     }
     .profile-picture img {
       margin-top: 15px;
