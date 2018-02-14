@@ -186,6 +186,8 @@ page-home {
     grid-column: col 5 / span 6;
     grid-row: row 2;
     background-image: url('../assets/img/icon_event.png');
+    background-repeat: no-repeat;
+    //background-size: 100px 50px;
   }
   .platform-android.platform-cordova {
     page-landing {
@@ -346,8 +348,12 @@ see whats going on a little better
       left: 15px;
     }
     .stripe {
-      height: 20px;
+      height: 0px;
       background-color: #BC1121;
+    }
+    .eventImg{
+      height: 80px;
+      width: 158px;
     }
   }
 }

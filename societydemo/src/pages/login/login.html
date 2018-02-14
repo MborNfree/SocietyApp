@@ -7,11 +7,13 @@
 <ion-content padding class="bg-masters">
 
   <form [formGroup]="signinForm">
+    <!-- <div class="profile-item" align="center"> -->
     <ion-item class="profile-item">
       <div class="big-profile-picture">
         <img src="assets/img/society-logo-small.png"/>
       </div>
     </ion-item>
+    <!-- </div> -->
     <ion-item [ngClass]="{'error-border':!signinForm.controls.usernm.valid && signinForm.controls.usernm.touched}">
       <ion-label floating>
         <ion-icon class="reg-icon" name="mail"></ion-icon> Email ID</ion-label>
@@ -41,8 +43,22 @@
       <p>Sorry, minimum password length is 6!</p>
     </ion-item>
     <button ion-button full color="button" [disabled]="!signinForm.valid" (click)="signInUser()" style="margin-top: 20px;" type="submit">Login</button>
+
+    <div>
+      <button
+      ion-button
+      color="navbar"
+      clear
+      (click)="forgotPwd()">Forgot Password?</button>
+
+      <button
+      ion-button
+      color="navbar"
+      clear
+      (click)="signup()">Don't have any account?</button>
+    </div>
   </form>
-  <ion-list>
+  <!-- <ion-list>
     <ion-item>
       <div class="row">
         <div class="col">
@@ -53,6 +69,6 @@
         </div>
       </div>
     </ion-item>
-  </ion-list>
+  </ion-list> -->
 
 </ion-content>

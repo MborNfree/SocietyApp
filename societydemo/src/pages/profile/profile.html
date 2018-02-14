@@ -4,6 +4,12 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title align="left">Profile</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only *ngIf="inactive" (click)="changeStatus()"><ion-icon name="create"></ion-icon></button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button ion-button icon-only *ngIf="!inactive" (click)="changeStatus()"><ion-icon name="close"></ion-icon></button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
@@ -128,7 +134,7 @@
       <p>Sorry, minimum Total vehicles length is 8!</p>
     </ion-item>
     <!-- <button ion-button full color="button"  style="margin-top: 20px;" type="submit">Save</button> -->
-    <ion-buttons *ngIf="!toggle">
+    <!-- <ion-buttons *ngIf="!toggle">
       <button ion-button color=button (click)="changeStatus()" *ngIf="inactive" full>
         <ion-icon name="create">Update</ion-icon>
       </button>
@@ -138,6 +144,23 @@
       <button ion-button class="col col-50" color="button" (click)="saveClick()" *ngIf="!inactive">
         <ion-icon name="add">Save</ion-icon>
       </button>
-    </ion-buttons>
+    </ion-buttons> -->
+
+    <div>
+      <ion-grid>
+        <ion-row wrap>
+          <ion-col col-6>
+            <button ion-button class="col col-50" color="button" (click)="saveClick()" *ngIf="!inactive">
+              Save
+            </button>
+          </ion-col>
+          <ion-col col-6>
+            <button ion-button class="col col-50" (click)="changeStatus()" *ngIf="!inactive">
+              Cancel
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
   </form>
 </ion-content>

@@ -18,17 +18,17 @@
 
     <ion-item (click)="viewItem(user)">
       <div class="row">
-        <div class="col">
-          <ion-avatar>
+        <div class="col" class="col-5">
+          <div class="doctorIcon">
+          <ion-avatar >
             <!-- <ion-img src="assets/img/doctor.jpg" ></ion-img> -->
-            <ion-img src="assets/img/icon_dr.png"></ion-img>
+             <ion-img src="assets/img/icon_dr.png"></ion-img>
           </ion-avatar>
         </div>
+        </div>
         <div class="col">
-          <p>{{user.Service_name}}</p>
-          <p>{{user.Service_type}} </p>
-          <p>
-            <ion-icon name="call"></ion-icon>{{user.Contact_no}}</p>
+        <div class="service_name"><p class="service_name">{{user.Service_name}}</p></div>
+          <p>{{user.Service_type}} &nbsp;&nbsp;&nbsp;<ion-icon name="call"></ion-icon>{{user.Contact_no}}</p>
         </div>
       </div>
     </ion-item>
