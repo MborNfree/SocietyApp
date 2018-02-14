@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, ViewController, LoadingController, NavParams } from 'ionic-angular';
-import { FormBuilder, FormGroup, Validators, AbstractControl} from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
 
 import { IComment, IUser } from '../../shared/interfaces';
 import { AuthService } from '../../shared/services/auth.service';
@@ -9,7 +9,7 @@ import { DataService } from '../../shared/services/data.service';
 @Component({
   templateUrl: 'comment-create.html'
 })
-export class CommentCreatePage  {
+export class CommentCreatePage {
 
   createCommentForm: FormGroup;
   comment: AbstractControl;
@@ -24,7 +24,7 @@ export class CommentCreatePage  {
     public authService: AuthService,
     public dataService: DataService) {
 
-      this.threadKey = this.navParams.get('threadKey');
+    this.threadKey = this.navParams.get('threadKey');
 
     this.createCommentForm = this.fb.group({
       'comment': ['', Validators.compose([Validators.required, Validators.minLength(10)])]

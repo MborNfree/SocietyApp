@@ -45,7 +45,7 @@ export class EmergencycontactlistPage {
     private emailComposer: EmailComposer,
     private callNumber: CallNumber,
     private fdb: AngularFireDatabase,
-    public iab:InAppBrowser,
+    public iab: InAppBrowser,
   ) {
     this.fdb
       .list("/emerg_contact/")
@@ -72,7 +72,7 @@ export class EmergencycontactlistPage {
   }
 
   gotoweb(web) {
-   // alert(web);
-    const browser = this.iab.create("http://"+web,'_blank');
+    // alert(web);
+    const browser = this.iab.create("http://" + web, '_blank');
   }
 }

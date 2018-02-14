@@ -24,7 +24,7 @@ import { UniqueDeviceID } from '@ionic-native/unique-device-id';
 
 import { NgDatepickerModule } from "ng2-datepicker";
 import { CallNumber } from "@ionic-native/call-number";
-// import { FCM } from '@ionic-native/fcm';
+
 // import { FCM } from '@ionic-native/fcm';
 // import * as $ from "jquery";
 import { APP_BASE_HREF } from "@angular/common";
@@ -53,20 +53,16 @@ import { BillingchargesPage } from "../pages/billingcharges/billingcharges";
 import { SideMenuContentComponent } from "../shared/side-menu-content/side-menu-content.component";
 import { CommitteeMemberProfilePage } from "../pages/committee-member-profile/committee-member-profile";
 import { InboxPage } from "../pages/inbox/inbox";
-import { ForumPage } from "../pages/forum/forum";
 import { CirculardetailsPage } from "../pages/circulardetails/circulardetails";
 import { CircularlistPage } from "../pages/circularlist/circularlist";
-import { ForumviewquestionPage } from "../pages/forumviewquestion/forumviewquestion";
 import { HelpdeskPage } from "../pages/helpdesk/helpdesk";
-import { ForumquestionPage } from "../pages/forumquestion/forumquestion";
 import { ProfileProvider } from "../providers/profile/profile";
-import { BalancesheetPage } from "./../pages/balancesheet/balancesheet";
 import { ViewbillPage } from "./../pages/viewbill/viewbill";
 import { ThreadCommentsPage } from "../pages/thread-comments/thread-comments";
 import { ThreadCreatePage } from "../pages/thread-create/thread-create";
 import { ThreadsPage } from "../pages/threads/threads";
 import { CommentCreatePage } from "../pages/comment-create/comment-create";
-import { AboutPage } from "../pages/about/about";
+
 import { PhotosPage } from './../pages/photos/photos';
 import { ImageGalleryPage } from './../pages/image-gallery/image-gallery';
 import { ConfigCctvPage } from '../pages/config-cctv/config-cctv';
@@ -74,7 +70,7 @@ import { ServiceDetailPage } from '../pages/service-detail/service-detail';
 
 // Custom components
 import { ThreadComponent } from "../shared/components/thread.component";
-// import { UserAvatarComponent } from "../shared/components/user-avatar.component";
+
 
 // providers
 import { APP_PROVIDERS } from "../providers/app.providers";
@@ -124,25 +120,20 @@ var config = {
     SideMenuContentComponent,
     CommitteeMemberProfilePage,
     InboxPage,
-    ForumPage,
     CirculardetailsPage,
-    ForumquestionPage,
     HelpdeskPage,
-    ForumviewquestionPage,
     ViewbillPage,
-    BalancesheetPage,
 
     ThreadCommentsPage,
     ThreadCreatePage,
     ThreadsPage,
     ThreadComponent,
-    AboutPage,
     CommentCreatePage,
     ConfigCctvPage,
     ServiceDetailPage,
     ImageGalleryPage,
     PhotosPage,
-   
+
     ShowAlbumPage
 
   ],
@@ -187,25 +178,18 @@ var config = {
     BillingchargesPage,
     CommitteeMemberProfilePage,
     InboxPage,
-    ForumPage,
     CirculardetailsPage,
-    ForumquestionPage,
     HelpdeskPage,
-    ForumviewquestionPage,
     ViewbillPage,
-    BalancesheetPage,
-
     ThreadCommentsPage,
     ThreadCreatePage,
     ThreadsPage,
     ThreadComponent,
-    AboutPage,
     CommentCreatePage,
     ConfigCctvPage,
     ServiceDetailPage,
     ImageGalleryPage,
     PhotosPage,
-    
     ShowAlbumPage
   ],
 
@@ -237,7 +221,7 @@ var config = {
     DatabaseProvider,
     ImageProvider,
     PreloaderProvider
-    
+
   ]
 })
 export class AppModule { }

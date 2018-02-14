@@ -24,24 +24,23 @@ export class CommitteelistPage {
   ionViewDidLoad() {
     console.log("ionViewDidLoad CommitteelistPage");
     var ref = firebase.database().ref("users");
-    ref.orderByChild("role").equalTo('Committee Member').once("value", (items : any)=> {
+    ref.orderByChild("role").equalTo('Committee Member').once("value", (items: any) => {
       console.log(items.key);
       console.log(items.val());
 
-      let users : any = [];
+      let users: any = [];
 
-      items.forEach((item) =>
-      {
+      items.forEach((item) => {
         users.push({
-          key          : item.key,
-          flatno       : item.val().flatno,
-          first_name   : item.val().first_name,
-          contact_no   : item.val().contact_no,
-          role         :item.val().role,
+          key: item.key,
+          flatno: item.val().flatno,
+          first_name: item.val().first_name,
+          contact_no: item.val().contact_no,
+          role: item.val().role,
         });
       });
       this.Committeeitems = users;
-      console.log("Committe Data: ",this.Committeeitems);
+      console.log("Committe Data: ", this.Committeeitems);
     });
   }
   doRefresh(refresher) {

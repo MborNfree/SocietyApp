@@ -15,23 +15,20 @@ export class EditEventModalPage {
     "venue": "",
   };
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public modalCtrl: ModalController,public viewCtrl : ViewController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, public viewCtrl: ViewController) {
     this.data = JSON.stringify(navParams.get('data'));
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad EditEventModalPage');
   }
-   updateItem(nm: string, venue: string) {
+  updateItem(nm: string, venue: string) {
     this.data = JSON.stringify(this.navParams.get('data'));
-    console.log( this.data );
-  //  this.itemsRef.update(key, { text: newText });
-  // alert(nm);
-  //   this.fdb
-  //   .list("/events/").update(this.data[key], { event_name: nm });
+    console.log(this.data);
+
   }
 
-  closeModal(){
+  closeModal() {
     this.viewCtrl.dismiss();
   }
 

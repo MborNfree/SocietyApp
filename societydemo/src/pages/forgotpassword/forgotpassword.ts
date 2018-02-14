@@ -4,7 +4,7 @@ import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from "ionic-angular";
 // import firebase from "firebase";
 import * as firebase from "firebase/app";
-import { FormGroup, FormBuilder,Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @IonicPage()
 @Component({
@@ -14,7 +14,7 @@ import { FormGroup, FormBuilder,Validators } from '@angular/forms';
 export class ForgotpasswordPage {
 
   authForm: FormGroup;
-  email:string;
+  email: string;
   @ViewChild("eml") Forgotemail;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public formBuilder: FormBuilder) {
@@ -35,19 +35,19 @@ export class ForgotpasswordPage {
   }
 
   resetPassword(email: string) {
-   //alert(JSON.stringify(email['email']));
+    //alert(JSON.stringify(email['email']));
 
     //var emailAddress = "user@example.com";
     var emailAddress = email['email'];
-    firebase.auth().sendPasswordResetEmail(emailAddress).then(function() {
+    firebase.auth().sendPasswordResetEmail(emailAddress).then(function () {
       // Email sent.
       alert("Check your mail for reset your password");
-    }).catch(function(error) {
+    }).catch(function (error) {
       // An error happened.
       alert("An error happened");
     });
 
-   // firebase.auth().sendPasswordResetEmail(JSON.stringify(email['email']));
+    // firebase.auth().sendPasswordResetEmail(JSON.stringify(email['email']));
   }
   gotoLogin() {
     this.navCtrl.push(LoginPage);
