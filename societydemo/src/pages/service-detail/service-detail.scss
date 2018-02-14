@@ -1,3 +1,21 @@
 page-service-detail {
 
+  .doctorIcon{
+    padding-top: 10px;
+    width: 85px;
+    height: 85px;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 100%;
+  }
+
+  .doctorIconSize{
+    height: 50px;
+    width: 50px;
+  }
+
+  .service_name{
+    color:#bc1121;
+  }
+
 }

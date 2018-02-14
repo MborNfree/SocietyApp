@@ -8,29 +8,30 @@
 
 <ion-content padding class="bg-masters">
   <ion-card>
-    <!-- <div class="logo"> -->
-    <ion-avatar align="center">
-      <ion-img src="assets/img/icon_dr.png" alt="logo"></ion-img>
-    </ion-avatar>
-    <!-- </div> -->
+    <div align="center">
+      <ion-avatar class="doctorIcon">
+        <ion-img src="assets/img/icon_dr.png" class="doctorIconSize"></ion-img>
+      </ion-avatar>
+    </div>
+
     <ion-list>
       <ion-item>
-        <ion-label align="center">
+          <ion-label align="center" class="service_name">
           <ion-icon name="person"></ion-icon> Name:{{itemsParam.Service_name}}</ion-label>
       </ion-item>
       <ion-item *ngIf="itemsParam.Service_type!=''">
-        <ion-label color="primary">
-          <ion-icon name="person"></ion-icon> {{itemsParam.Service_type}}
+        <ion-label>
+          Category: {{itemsParam.Service_type}}
         </ion-label>
       </ion-item>
       <ion-item *ngIf="itemsParam.Description!=''">
-        <ion-label color="primary">
-          <ion-icon name="person"></ion-icon> {{itemsParam.Description}}
+        <ion-label>
+          Description: {{itemsParam.Description}}
         </ion-label>
       </ion-item>
       <ion-item *ngIf="itemsParam.Contact_no!=''">
-        <ion-label color="primary">
-          <ion-icon name="call" (click)='sendSms(itemsParam.Contact_no)'></ion-icon> {{itemsParam.Contact_no}}</ion-label>
+        <ion-label (click)='sendSms(itemsParam.Contact_no)'>
+          Contact No: {{itemsParam.Contact_no}}</ion-label>
       </ion-item>
     </ion-list>
   </ion-card>
