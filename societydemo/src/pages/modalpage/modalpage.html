@@ -1,18 +1,17 @@
 <ion-header>
-
   <ion-navbar color="navbar">
     <ion-title>Add Image to Album</ion-title>
-
     <ion-buttons start>
       <button ion-button (click)="closeModal()">
-        <span ion-text color="primary" showWhen="ios">Cancel</span>
-        <ion-icon name="md-close" showWhen="android,windows"></ion-icon>
+        <span ion-text color="white" showWhen="android,windows">Cancel</span>
+        <!-- <ion-icon name="md-close" showWhen="android,windows"></ion-icon> -->
       </button>
     </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
+
   <form [formGroup]="form" (ngSubmit)="saveMovie(form.value)">
 
     <ion-item-divider color="light">
@@ -28,33 +27,28 @@
     <ion-item>
       <span ion-text color="primary" block text-center padding-top padding-bottom (click)="selectImage()">
           <ion-icon name="camera"></ion-icon>&nbsp;Select an image</span>
-      <!-- <button ion-button clear (click)="selectImage()"><ion-icon name="camera"></ion-icon>&nbsp;Select an image</button> -->
       <input type="hidden" name="image" formControlName="image" [(ngModel)]="filmImage">
       <img [src]="filmImage">
     </ion-item>
 
     <ion-item>
-      <ion-label stacked>Add To Album:</ion-label>
+      <ion-label stacked>Add To Album: </ion-label>
       <ion-select formControlName="album">
         <ion-option *ngFor="let album of albums | async" value={{album.id}}>{{album.albumName}}</ion-option>
       </ion-select>
     </ion-item>
 
-    <!-- <ion-item> -->
-      <div>
-          <input type="hidden" name="movieId">
-          <button ion-button block color="primary" text-center padding-top padding-bottom>
-            <div *ngIf="!isEditable">
-              Add a new movie
-            </div>
+    <div>
+      <input type="hidden" name="movieId">
+        <button ion-button block color="primary" text-center padding-top padding-bottom>
+          <div *ngIf="!isEditable">
+            Add
+          </div>
 
-            <div *ngIf="isEditable">
-              Update this movie
-            </div>
-          </button>
-      </div>
-
-    <!-- </ion-item> -->
-
+          <div *ngIf="isEditable">
+            Update
+          </div>
+        </button>
+    </div>
   </form>
 </ion-content>

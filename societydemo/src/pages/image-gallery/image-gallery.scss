@@ -36,4 +36,14 @@ page-image-gallery {
     font-size: 3.2em;
     text-transform: capitalize!important;
   }
+
+  .box1{
+    grid-row: row;
+    grid-column: col 1 / span 5;
+  }
+
+  .box2{
+    grid-row: row;
+    grid-column: col 5 / span 5;
+  }
 }

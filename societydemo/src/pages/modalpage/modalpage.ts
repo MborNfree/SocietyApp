@@ -31,20 +31,19 @@ export class ModalpagePage {
   private email: string = 'tejaswi@gmail.com';
   private pass: string = 'tejaswi@123';
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,
-    public params: NavParams,
-    private _FB: FormBuilder,
-    private _IMG: ImageProvider,
-    public viewCtrl: ViewController,
-    private _LOADER: PreloaderProvider,
-    private _DB: DatabaseProvider,
-    private platform: Platform) {
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              public params: NavParams,
+              private _FB: FormBuilder,
+              private _IMG: ImageProvider,
+              public viewCtrl: ViewController,
+              private _LOADER: PreloaderProvider,
+              private _DB: DatabaseProvider,
+              private platform: Platform) {
 
-      this.loadAndParseAlbums();
-
+    this.loadAndParseAlbums();
 
     this.form = _FB.group({
-
       'name': ['', Validators.required],
       'image': ['', Validators.required],
       'album': ['', Validators.required]
@@ -66,29 +65,27 @@ export class ModalpagePage {
     }
   }
 
-  ionViewDidEnter() {
+  ionViewDidEnter() {}
 
-  }
-
-  loadAndParseAlbums() {
+  loadAndParseAlbums()
+  {
     this.albums = this._DB.renderAlbums();
     //alert(this.albums);
   }
 
-  saveMovie(val) {
-
-
+  saveMovie(val)
+  {
     //this._LOADER.displayPreloader();
 
     let title: string = this.form.controls["name"].value,
+        album: string = this.form.controls["album"].value,
+        image: string = this.filmImage
 
-      album: string = this.form.controls["album"].value,
-      image: string = this.filmImage
 
-
-    if (this.isEditable) {
-
-      if (image !== this.movieImage) {
+    if (this.isEditable)
+    {
+      if (image !== this.movieImage)
+      {
         this._DB.uploadImage(image)
           .then((snapshot: any) => {
             let uploadedImage: any = snapshot.downloadURL;

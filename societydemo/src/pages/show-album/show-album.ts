@@ -17,7 +17,7 @@ export class ShowAlbumPage {
   public albumID: any;
   public movies: any;
 
-  constructor(public navCtrl: NavController, 
+  constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public params: NavParams,
               private _FB: FormBuilder,
@@ -39,22 +39,22 @@ export class ShowAlbumPage {
       console.log(items.val());
 
       let films : any = [];
-      
+
       //let items = [];
       //items = snapshot.val();
-      
+
       items.forEach((item) =>
       {
         films.push({
 	        id        : item.key,
-	        actors    : item.val().actors,
-	        date      : item.val().date,
-	        duration  : item.val().duration,
-	        genres    : item.val().genres,
-	        image     : item.val().image,
-	        rating    : item.val().rating,
-	        summary   : item.val().summary,
-          title     : item.val().title,
+	        // actors    : item.val().actors,
+	        // date      : item.val().date,
+	        // duration  : item.val().duration,
+	        // genres    : item.val().genres,
+	         image     : item.val().image,
+	        // rating    : item.val().rating,
+	        // summary   : item.val().summary,
+          // title     : item.val().title,
           album     : item.val().album
 	      });
       });
