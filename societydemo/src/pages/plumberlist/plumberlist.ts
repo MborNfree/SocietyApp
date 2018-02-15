@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
-import { AngularFireDatabase } from "angularfire2/database";
+//import { AngularFireDatabase } from "angularfire2/database";
 import { ServiceDetailPage } from '../service-detail/service-detail';
 import * as firebase from 'firebase';
 
@@ -16,7 +16,7 @@ export class PlumberlistPage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    private fdb: AngularFireDatabase
+   // private fdb: AngularFireDatabase
   ) { }
 
   ionViewDidLoad() {

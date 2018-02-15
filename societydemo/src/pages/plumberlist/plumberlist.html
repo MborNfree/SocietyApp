@@ -21,10 +21,9 @@
           </ion-avatar>
         </div>
         </div>
-        <div class="col">
+        <div class="col" class="col-6">
           <div class="service_name"><p *ngIf="item.Service_name!=''" class="service_name">{{item.Service_name}}</p></div>
-          <p *ngIf="item.Service_type!=''">{{item.Service_type}} </p>
-          <p *ngIf="item.Contact_no!=''"><ion-icon name="call"></ion-icon>{{item.Contact_no}}</p>
+          <p *ngIf="item.Service_type!=''">{{item.Service_type}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<ion-icon name="call"></ion-icon>{{item.Contact_no}}</p>
         </div>
       </div>
     </ion-item>

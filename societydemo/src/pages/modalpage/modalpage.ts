@@ -28,8 +28,7 @@ export class ModalpagePage {
   public movieId: string = '';
   public isEditable: boolean = false;
   public albums: any;
-  private email: string = 'tejaswi@gmail.com';
-  private pass: string = 'tejaswi@123';
+
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -53,8 +52,7 @@ export class ModalpagePage {
 
 
     if (params.get('isEdited')) {
-      let movie = params.get('movie'),
-        k;
+      let movie = params.get('movie') ;
 
       this.movieName = movie.title;
       this.movieImage = movie.image;
