@@ -24,18 +24,20 @@
     </button>
   </ion-buttons>
 
-  <div class="row album-wrap">
-    <div class="col col-md-6">
-      <ion-list class="album-list" *ngFor="let album of albums | async">
-        <ion-buttons align="center" large>
-          <button class="album-btn" (click)="showAlbum(album.id)">
-            <ion-icon class="album-folder" name="folder"></ion-icon>
-          </button>
-          <div class="card-title" align="center">{{album.albumName}}</div>
-        </ion-buttons>
-      </ion-list>
-    </div>
-
+  <div>
+      <div class="row album-wrap">
+          <div class="col col-md-6">
+            <ion-list class="album-list" *ngFor="let album of albums | async">
+              <ion-buttons align="center" large>
+                <button class="album-btn" (click)="showAlbum(album.id)">
+                  <ion-icon class="album-folder" name="folder"></ion-icon>
+                </button>
+                <div class="card-title" align="center">{{album.albumName}}</div>
+              </ion-buttons>
+            </ion-list>
+          </div>
+        </div>
   </div>
+
 
 </ion-content>

@@ -17,7 +17,12 @@ export class ImageGalleryPage {
   imgsource: any;
 
   constructor(public navCtrl: NavController, private platform: Platform, private _DB: DatabaseProvider,
-    private _LOADER: PreloaderProvider, public navParams: NavParams, private modalCtrl: ModalController, public zone: NgZone) { }
+    private _LOADER: PreloaderProvider, public navParams: NavParams, private modalCtrl: ModalController, public zone: NgZone)
+    {
+      this.loadAndParseAlbums();
+
+
+    }
 
   gotogallery() {
     this.navCtrl.push(PhotosPage);
@@ -31,7 +36,7 @@ export class ImageGalleryPage {
 
   loadAndParseAlbums() {
     this.albums = this._DB.renderAlbums();
-    alert(this.albums);
+    //alert(this.albums);
   }
 
   addAlbum() {

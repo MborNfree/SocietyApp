@@ -26,7 +26,9 @@
     </ion-item-divider>
 
     <ion-item>
-      <span ion-text color="danger" block text-center padding-top padding-bottom (click)="selectImage()">Select an image</span>
+      <span ion-text color="primary" block text-center padding-top padding-bottom (click)="selectImage()">
+          <ion-icon name="camera"></ion-icon>&nbsp;Select an image</span>
+      <!-- <button ion-button clear (click)="selectImage()"><ion-icon name="camera"></ion-icon>&nbsp;Select an image</button> -->
       <input type="hidden" name="image" formControlName="image" [(ngModel)]="filmImage">
       <img [src]="filmImage">
     </ion-item>
@@ -38,18 +40,21 @@
       </ion-select>
     </ion-item>
 
-    <ion-item>
-      <input type="hidden" name="movieId">
-      <button ion-button block color="primary" text-center padding-top padding-bottom [disabled]="!form.valid">
-        <div *ngIf="!isEditable">
-          Add a new movie
-        </div>
+    <!-- <ion-item> -->
+      <div>
+          <input type="hidden" name="movieId">
+          <button ion-button block color="primary" text-center padding-top padding-bottom>
+            <div *ngIf="!isEditable">
+              Add a new movie
+            </div>
 
-        <div *ngIf="isEditable">
-          Update this movie
-        </div>
-      </button>
-    </ion-item>
+            <div *ngIf="isEditable">
+              Update this movie
+            </div>
+          </button>
+      </div>
+
+    <!-- </ion-item> -->
 
   </form>
 </ion-content>

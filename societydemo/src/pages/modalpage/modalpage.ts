@@ -40,6 +40,8 @@ export class ModalpagePage {
     private _DB: DatabaseProvider,
     private platform: Platform) {
 
+      this.loadAndParseAlbums();
+
 
     this.form = _FB.group({
 
@@ -70,13 +72,13 @@ export class ModalpagePage {
 
   loadAndParseAlbums() {
     this.albums = this._DB.renderAlbums();
-    alert(this.albums);
+    //alert(this.albums);
   }
 
   saveMovie(val) {
 
 
-    this._LOADER.displayPreloader();
+    //this._LOADER.displayPreloader();
 
     let title: string = this.form.controls["name"].value,
 
